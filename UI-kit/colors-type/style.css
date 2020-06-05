@@ -50,17 +50,20 @@ body, p, h1, h2, h3, h4, h5, h6 {
 }
 
 /* Body */
-.wrap {
+.content__item {
     display: flex;
     justify-content: space-between;
     margin: 0 191px 0 150px;
 }
 
 /* Colors-block */
-.color-block {
+.colors__item {
     display: flex;
     margin-bottom: 20px;
     align-items: center;
+}
+
+.color-block {
     font-size: 19px;
 }
 
@@ -76,6 +79,7 @@ body, p, h1, h2, h3, h4, h5, h6 {
 
 .color-block__color_dark_100 {
     background-color: #1F2041;
+    opacity: 100%;
 }
 
 .color-block__color_dark_75 {
@@ -113,11 +117,11 @@ body, p, h1, h2, h3, h4, h5, h6 {
 
 .color-block__hex {
     font-family: 'Conv_Quicksand-Regular',Sans-Serif;
-    color: #1F2041;
+    color: rgb(198, 198, 212);
 }
 
 /* Type-block */
-.type-block {
+.types__item {
     display: flex;
     margin-bottom: 50px;
 }
