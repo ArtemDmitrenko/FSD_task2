@@ -1,0 +1,15 @@
+//- home.pug
+extends template.pug
+
+block variables
+    - var pageTitle= 'First pug'
+    - var youAreUsingPug= false  
+
+  
+block content
+    if youAreUsingPug
+        h1 Hello!
+    else
+        p(class='cool') I have NO file
+block footer
+    p Artem is the best
