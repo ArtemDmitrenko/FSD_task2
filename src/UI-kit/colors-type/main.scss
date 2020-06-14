@@ -1,0 +1,44 @@
+// Подключение базы данных цветов
+@import "../../colors.scss";
+// Подключение базы данных шрифтов
+@import "../../fonts.scss";
+// Подключение nullstyle
+@import "../../nullstyle.scss";
+
+// Header
+@import "../../common.blocks/UIkit/header/__logo/header__logo.scss";
+// Content
+@import "../../common.blocks/UIkit/content/__item/content__item.scss";
+// Color-block
+@import "../../common.blocks/UIkit/colors/__item/colors__item.scss";
+@import "../../common.blocks/UIkit/color-block/__color/color-block__color.scss";
+@import "../../common.blocks/UIkit/color-block/__description/color-block__description.scss";
+@import "../../common.blocks/UIkit/color-block/__hex/color-block__hex.scss";
+@import "../../common.blocks/UIkit/color-block/__name/color-block__name.scss";
+@import "../../common.blocks/UIkit/color-block/__color/_dark_5/color-block__color_dark_5.scss";
+@import "../../common.blocks/UIkit/color-block/__color/_dark_25/color-block__color_dark_25.scss";
+@import "../../common.blocks/UIkit/color-block/__color/_dark_50/color-block__color_dark_50.scss";
+@import "../../common.blocks/UIkit/color-block/__color/_dark_75/color-block__color_dark_75.scss";
+@import "../../common.blocks/UIkit/color-block/__color/_dark_100/color-block__color_dark_100.scss";
+@import "../../common.blocks/UIkit/color-block/__color/_green/color-block__color_green.scss";
+@import "../../common.blocks/UIkit/color-block/__color/_purple/color-block__color_purple.scss";
+// Type-block
+@import "../../common.blocks/UIkit/types/__item/types__item.scss";
+@import "../../common.blocks/UIkit/types/__item/_shift/types__item_shift.scss";
+@import "../../common.blocks/UIkit/type-block/__name/type-block__name.scss";
+@import "../../common.blocks/UIkit/type-block/__name/_fsize_12/type-block__name_fsize_12.scss";
+@import "../../common.blocks/UIkit/type-block/__name/_fsize_14/type-block__name_fsize_14.scss";
+@import "../../common.blocks/UIkit/type-block/__name/_fsize_19/type-block__name_fsize_19.scss";
+@import "../../common.blocks/UIkit/type-block/__name/_fsize_24/type-block__name_fsize_24.scss";
+@import "../../common.blocks/UIkit/type-block/__name/_line-height_24/type-block__name_line-height_24.scss";
+@import "../../common.blocks/UIkit/type-block/__description/_font-body/type-block__description_font-body.scss";
+@import "../../common.blocks/UIkit/type-block/__description/_h1/type-block__description_h1.scss";
+@import "../../common.blocks/UIkit/type-block/__description/_h2/type-block__description_h2.scss";
+@import "../../common.blocks/UIkit/type-block/__description/_h3/type-block__description_h3.scss";
+
+
+
+
+
+
+

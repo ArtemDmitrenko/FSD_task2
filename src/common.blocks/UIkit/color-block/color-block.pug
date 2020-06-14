@@ -1,0 +1,9 @@
+mixin color-block(options)
+    -   
+        var modificator = options.modificator
+
+    .color-block.colors__item
+        div(class = "color-block__color" class = modificator)
+        .color-block__description
+            p.color-block__name= options.name
+            p.color-block__hex= options.hex

@@ -1,0 +1,9 @@
+.colors__item {
+    display: flex;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.colors__item:nth-last-child(1) {
+    margin-bottom: 0px;
+}

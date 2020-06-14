@@ -1,0 +1,61 @@
+doctype html
+html(lang="en")
+    head
+        title Colors&type
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="main.scss")
+        link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Quicksand:wght@700&display=swap")
+    body
+        include ../../common.blocks/UIkit-header/UIkit-header.pug
+        section(class="content")
+            .colors-types.content__item
+                .colors
+                    .color-block.colors__item
+                        .color-block__color.color-block__color_dark_100
+                        .color-block__description
+                            .color-block__name Dark Shade 100%
+                            .color-block__hex #1F2041
+                    .color-block.colors__item
+                        .color-block__color.color-block__color_dark_75
+                        .color-block__description
+                            .color-block__name Dark Shade 75%
+                            .color-block__hex #1F2041
+                    .color-block.colors__item
+                        .color-block__color.color-block__color_dark_50
+                        .color-block__description
+                            .color-block__name Dark Shade 50%
+                            .color-block__hex #1F2041
+                    .color-block.colors__item
+                        .color-block__color.color-block__color_dark_25
+                        .color-block__description
+                            .color-block__name Dark Shade 25%
+                            .color-block__hex #1F2041
+                    .color-block.colors__item
+                        .color-block__color.color-block__color_dark_5
+                        .color-block__description
+                            .color-block__name Dark Shade 5%
+                            .color-block__hex #1F2041
+                    .color-block.colors__item
+                        .color-block__color.color-block__color_purple
+                        .color-block__description
+                            .color-block__name Purple
+                            .color-block__hex #BC9CFF
+                    .color-block.colors__item
+                        .color-block__color.color-block__color_green
+                        .color-block__description
+                            .color-block__name Green
+                            .color-block__hex #6FCF97
+                .types
+                    .type-block.types__item
+                        .type-block__name.type-block__name_fsize_24 H1
+                        .type-block__description.type-block__description_h1 This one is the sub-section or<br>widget title
+                    .type-block.types__item
+                        .type-block__name.type-block__name_fsize_19 H2
+                        .type-block__description.type-block__description_h2 Next one is the item title inside<br>widgets
+                    .type-block_shift.types__item
+                        .type-block__name.type-block__name_fsize_12 H3
+                        .type-block__description.type-block__description_h3 This is a label or CTA text
+                    .type-block.types__item
+                        .type-block__name.type-block__name_line-height_24.type-block__name_fsize_14 Body
+                        .type-block__description.type-block__description_font-body This is the body text which is used for most<br>of the design, like paragraphs, lists, etc.
