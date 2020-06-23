@@ -1,5 +1,5 @@
 @mixin color ($color, $opacity) {
-    background-color: $color;
+    color: $color;
     opacity: $opacity;
 }
 

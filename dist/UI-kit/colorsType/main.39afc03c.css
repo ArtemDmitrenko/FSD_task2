@@ -98,15 +98,23 @@ body, p, h1, h2, h3, h4, h5, h6 {
   padding: 0;
 }
 
+.theme_dark {
+  background-color: #F4F4F6;
+}
+
+.theme_white {
+  background-color: #FFFFFF;
+}
+
 .header__logo {
   padding: 30px 0 67px 30px;
   display: block;
 }
 
-.content__item {
+.colors-types__item {
   display: flex;
   justify-content: space-between;
-  margin: 0 191px 145px 150px;
+  padding: 0 191px 145px 150px;
 }
 
 .colors__item {

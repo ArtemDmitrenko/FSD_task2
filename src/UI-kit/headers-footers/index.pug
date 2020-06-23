@@ -1,0 +1,24 @@
+extends ../../templates/UIkit_template.pug
+//- include ../../common.blocks/UIkit/color-block/color-block.pug
+//- include ../../common.blocks/UIkit/type-block/type-block.pug
+
+block title
+    title Headers-footers
+
+block content
+    .theme_white
+        include /../../common.blocks/UIkit/header/__logo/header__logo.pug
+        section.headers-footers
+            .headers-footers__headerNotRegistered
+                .header.header_notRegistered
+                    button.btn.btn_violet click me
+                    br
+                    div.btn_white
+                        button.btn.btn__padding click me
+                    button.btn.btn_iconLinkViolent click me
+                    br
+                    button.btn.btn_iconLinkBlack click me
+
+                    //- +color-block({modificator: "color-block__color_green", name: "Green", hex: "#6FCF97"})
+                //- .types
+                    //- +type-block({modificatorFontsize: "type-block__name_line-height_24", modificatorDescription: "type-block__description_font-body", name: "Body", description: "This is the body text which is used for most of the design, like paragraphs, lists, etc."})
