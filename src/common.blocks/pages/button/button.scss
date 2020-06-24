@@ -1,48 +1,106 @@
-$width: 99px;
-$height: 44px;
+// Dimensions for short buttons
+$width-s: 99px;
+$height-s: 44px;
+// Dimensions for long buttons
+$width-l: 320px;
+$height-l: 44px;
+// Dimensions for empty buttons
+$width-e: auto;
+$height-e: auto;
 .btn {
     @extend %h3;
-    border-radius: 22px;
     cursor: pointer;
     box-sizing: border-box;
-    width: $width;
-    height: $height;
     border: none;
     display: block;
     background: none;
-    color: #BC9CFF;
     letter-spacing: -.01em;
-    &__padding {
-        padding: 0 5px 5px 0;
-    }
-    &_violet {
-        background-image: linear-gradient(to bottom, #BC9CFF, #8BA4F9);
+    &_gradient {
+        background-image: linear-gradient(to bottom, $purple, #8BA4F9);
         color: #ffffff;
+        width: $width-s;
+        height: $height-s;
+        border-radius: 22px;
         &:hover {
             opacity: 0.5;
         }
+        &Header {
+            width: 196px;
+            height: 34px;
+        }
     }
-    &_white {
-        width: $width - 4px;
-        height: $height - 4px;
+    &_border {
+        width: $width-s - 4px;
+        height: $height-s - 4px;
         border: double 2px transparent;
         border-radius: 26px;
-        background-image: linear-gradient(white, white), linear-gradient(to bottom, #BC9CFF, #8BA4F9);
+        background-image: linear-gradient(white, white), linear-gradient(to bottom, $purple, #8BA4F9);
         background-origin: border-box;
         background-clip: content-box, border-box;
-        vertical-align: middle;
         &:hover {
             opacity: 0.5;
+        }
+        &Header {
+            width: calc(87px - 4px);
+            height: calc(34px - 4px);
+        }
+    }
+    &__text {
+        color: $purple;
+        margin: 0 auto;
+        line-height: $height-s - 4px;
+        &_header {
+            line-height: 30px;
         }
     }
     &_iconLinkViolent {
         width: auto;
         height: auto;
+        color: $purple;
     }
     &_iconLinkBlack {
         width: auto;
         height: auto;
-        color: #1F2041;
+        color: $dark;
         opacity: 0.5;
+    }
+    &_longWithArrow {
+        width: $width-l;
+        height: $height-l;
+        border-radius: 22px;
+        background-image: linear-gradient(to bottom, $purple, #8BA4F9);
+        color: #ffffff;
+        &:hover {
+            opacity: 0.5;
+        }
+    }
+    &__arrow {
+        position: relative;
+        top: -7px;
+        width: 15px;
+        height: 2px;
+        background-color: #ffffff;
+        left: 282px;
+        display: block;
+        &::after {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 2px;
+            top: -3px;
+            right: -3px;
+            background-color: #ffffff;
+            transform: rotate(45deg);
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 2px;
+            top: 3px;
+            right: -3px;
+            background-color: #ffffff;
+            transform: rotate(-45deg);
+        }
     }
 }

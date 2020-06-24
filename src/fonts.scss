@@ -1,54 +1,78 @@
 $adress: '../../fonts';
-
 @mixin font-face ($name, $adress) {
-	font-family: 'Conv_#{$name}';
-	src: url('#{$adress}/#{$name}.eot');
-	src: local('☺'), url('#{$adress}/#{$name}.woff') format('woff'), url('#{$adress}/#{$name}.ttf') format('truetype'), url('#{$adress}/#{$name}.svg') format('svg');
-	font-weight: normal;
-	font-style: normal;
+    font-family: 'Conv_#{$name}';
+    src: url('#{$adress}/#{$name}.eot');
+    src: local('☺'),
+    url('#{$adress}/#{$name}.woff') format('woff'),
+    url('#{$adress}/#{$name}.ttf') format('truetype'),
+    url('#{$adress}/#{$name}.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
+
 
 /* Font Quicksand-Bold CSS */
+
 @font-face {
-	@include font-face ('Quicksand-Bold', $adress);
+    @include font-face ('Quicksand-Bold',
+    $adress);
 }
+
 
 /* Font Conv_Quicksand-Regular CSS */
+
 @font-face {
-	@include font-face ('Quicksand-Regular', $adress);
+    @include font-face ('Quicksand-Regular',
+    $adress);
 }
+
 
 /* Font Montserrat-Bold CSS */
+
 @font-face {
-	@include font-face ('Montserrat-Bold', $adress);
+    @include font-face ('Montserrat-Bold',
+    $adress);
 }
+
 
 /* Font Montserrat-Regular CSS */
+
 @font-face {
-	@include font-face ('Montserrat-Regular', $adress);
+    @include font-face ('Montserrat-Regular',
+    $adress);
 }
 
-@mixin font ($f-family, $f-size, $color) {
+@mixin font ($f-family,
+$f-size,
+$color) {
     font-family: $f-family;
     font-size: $f-size;
     color: $color;
 }
 
 %h1 {
-    @include font ('Conv_Quicksand-Bold', 24px, #1F2041);
+    @include font ('Conv_Quicksand-Bold',
+    24px,
+    #1F2041);
 }
 
 %h2 {
-    @include font ('Conv_Quicksand-Bold', 19px, #1F2041);
+    @include font ('Conv_Quicksand-Bold',
+    19px,
+    #1F2041);
 }
 
 %h3 {
-    @include font ('Conv_Montserrat-Bold', 12px, #1F2041);
+    @include font ('Conv_Montserrat-Bold',
+    12px,
+    #1F2041);
     text-transform: uppercase;
 }
 
 %font-body {
-    @include font ('Conv_Montserrat-Regular', 14px, #1F2041);
+    @include font ('Conv_Montserrat-Regular',
+    14px,
+    #1F2041);
     line-height: 24px;
     opacity: 75%;
 }
