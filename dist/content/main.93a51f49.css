@@ -1,39 +1,4 @@
 @charset "UTF-8";
-.color-block__color_dark_100 {
-  background-color: #1F2041;
-  opacity: 100%;
-}
-
-.color-block__color_dark_75 {
-  background-color: #1F2041;
-  opacity: 75%;
-}
-
-.color-block__color_dark_50 {
-  background-color: #1F2041;
-  opacity: 50%;
-}
-
-.color-block__color_dark_25 {
-  background-color: #1F2041;
-  opacity: 25%;
-}
-
-.color-block__color_dark_5 {
-  background-color: #1F2041;
-  opacity: 5%;
-}
-
-.color-block__color_purple {
-  background-color: #BC9CFF;
-  opacity: 100%;
-}
-
-.color-block__color_green {
-  background-color: #6FCF97;
-  opacity: 100%;
-}
-
 /* Font Quicksand-Bold CSS */
 @font-face {
   font-family: "Conv_Quicksand-Bold";
@@ -89,7 +54,6 @@
   font-family: "Conv_Montserrat-Regular";
   font-size: 14px;
   color: #1F2041;
-  line-height: 24px;
   opacity: 75%;
 }
 
@@ -105,6 +69,20 @@ h6 {
   padding: 0;
 }
 
+ul {
+  list-style: none;
+  /*убираем маркеры списка*/
+  margin: 0;
+  /*убираем верхнее и нижнее поле, равное 1em*/
+  padding-left: 0;
+  /*убираем левый отступ, равный 40px*/
+}
+
+a {
+  text-decoration: none;
+  /*убираем подчеркивание текста ссылок*/
+}
+
 .theme_dark {
   background-color: #F4F4F6;
 }
@@ -113,15 +91,15 @@ h6 {
   background-color: none;
 }
 
-.header__logo {
-  padding: 30px 0 67px 30px;
+.logo-UIkit {
+  padding: 30px 0 0 30px;
   display: block;
 }
 
 .colors-types__item {
   display: flex;
   justify-content: space-between;
-  padding: 0 191px 145px 150px;
+  padding: 67px 191px 145px 150px;
 }
 
 .colors__item {
@@ -152,6 +130,34 @@ h6 {
 
 .color-block__name {
   margin-bottom: 6px;
+}
+
+.color-block__color_dark_5 {
+  background-color: rgba(31, 32, 65, 0.05);
+}
+
+.color-block__color_dark_25 {
+  background-color: rgba(31, 32, 65, 0.25);
+}
+
+.color-block__color_dark_50 {
+  background-color: rgba(31, 32, 65, 0.5);
+}
+
+.color-block__color_dark_75 {
+  background-color: rgba(31, 32, 65, 0.75);
+}
+
+.color-block__color_dark_100 {
+  background-color: #1F2041;
+}
+
+.color-block__color_green {
+  background-color: #6FCF97;
+}
+
+.color-block__color_purple {
+  background-color: #BC9CFF;
 }
 
 .types__item {

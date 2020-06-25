@@ -1,0 +1,36 @@
+.menu {
+    &__list {
+        display: flex;
+    }
+    &__item {
+        margin-right: 20px;
+    }
+    &__link {
+        &_common {
+            @extend %font-body;
+            opacity: 0.5;
+        }
+        &_active {
+            @extend %h3;
+            font-size: 14px;
+            text-transform: none;
+            opacity: 0.75;
+        }
+    }
+    &__dropdown {
+        position: relative;
+        margin-right: 17px;
+        &_arrow {
+            background: none;
+            border: solid;
+            color: $dark50;
+            border-width: 0 2px 2px 0;
+            display: inline-block;
+            padding: 3px;
+            transform: rotate(45deg);
+            position: relative;
+            left: 9px;
+            bottom: 7px;
+        }
+    }
+}

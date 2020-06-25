@@ -1,0 +1,11 @@
+mixin headerNotRegistered()
+    header.header.headerNotRegistrated
+        +logo()
+        .header__navMenuButtons
+            +navMenu()
+            .header__button
+                +btn({modificator: "btn_borderHeader", text: "войти"})
+            +btn({modificator: "btn_gradientHeader", text: "зарегистрироваться"})
+
+
+

@@ -7,9 +7,10 @@
 // Theme
 @import "../../common.blocks/UIkit/theme/theme_dark.scss";
 @import "../../common.blocks/UIkit/theme/theme_white.scss";
-// Header
-@import "../../common.blocks/UIkit/header/__logo/header__logo.scss";
+// Logo
+@import "../../common.blocks/UIkit/logo/logo.scss";
 // Content
-// @import "../../common.blocks/UIkit/colors-types/__item/colors-types__item.scss";
-// Header
+@import "../../common.blocks/UIkit/headers/headers.scss";
+@import "../../common.blocks/pages/header/header.scss";
 @import "../../common.blocks/pages/button/button.scss";
+@import "../../common.blocks/pages/navMenu/navMenu.scss";

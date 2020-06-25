@@ -1,35 +1,7 @@
-$dark: #1F2041;
+$dark100: #1F2041;
+$dark75: rgba(31, 32, 65, 0.75);
+$dark50: rgba(31, 32, 65, 0.50);
+$dark25: rgba(31, 32, 65, 0.25);
+$dark5: rgba(31, 32, 65, 0.05);
 $purple: #BC9CFF;
 $green: #6FCF97;
-@mixin color ($color, $opacity) {
-    background-color: $color;
-    opacity: $opacity;
-}
-
-%color-dark100 {
-    @include color ($dark, 100%);
-}
-
-%color-dark75 {
-    @include color ($dark, 75%);
-}
-
-%color-dark50 {
-    @include color ($dark, 50%);
-}
-
-%color-dark25 {
-    @include color ($dark, 25%);
-}
-
-%color-dark5 {
-    @include color ($dark, 5%);
-}
-
-%color-purple {
-    @include color ($purple, 100%);
-}
-
-%color-green {
-    @include color ($green, 100%);
-}
