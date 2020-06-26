@@ -1,0 +1,11 @@
+.headers-footers {
+    background-color: #F4F4F6;
+    &__headerNotRegistered {
+        margin-top: 62px;
+        background-color: white;
+    }
+    &__headerRegistered {
+        margin-top: 40px;
+        background-color: white;
+    }
+}

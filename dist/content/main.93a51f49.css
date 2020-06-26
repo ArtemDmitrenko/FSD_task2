@@ -83,14 +83,6 @@ a {
   /*убираем подчеркивание текста ссылок*/
 }
 
-.theme_dark {
-  background-color: #F4F4F6;
-}
-
-.theme_white {
-  background-color: none;
-}
-
 .logo-UIkit {
   padding: 30px 0 0 30px;
   display: block;

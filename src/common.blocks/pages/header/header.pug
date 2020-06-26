@@ -1,11 +1,19 @@
-mixin headerNotRegistered()
-    header.header.headerNotRegistrated
-        +logo()
-        .header__navMenuButtons
-            +navMenu()
-            .header__button
-                +btn({modificator: "btn_borderHeader", text: "войти"})
-            +btn({modificator: "btn_gradientHeader", text: "зарегистрироваться"})
+//- if user is registered, enter in mixins argument "Registered"
 
+mixin header(options)
+    -   
+        var modificator = options.modificator
 
-
+    header.header
+        .container
+            .header__content
+                +logo()
+                .header__navMenuButtons
+                    +navMenu()
+                    if modificator == "Registered"
+                        .header__line
+                        .header__userName Юлий Цезарь
+                    else
+                        .header__button
+                            +btn({modificator: "btn_borderHeader", text: "войти"})
+                        +btn({modificator: "btn_gradientHeader", text: "зарегистрироваться"})

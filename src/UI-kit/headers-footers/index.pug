@@ -1,23 +1,22 @@
 extends ../../templates/UIkit_template.pug
+include ../../common.blocks/UIkit/logo/logo.pug
+include /../../common.blocks/pages/header/header.pug
 include ../../common.blocks/pages/button/button.pug
 include /../../common.blocks/pages/logo/logo.pug
 include /../../common.blocks/pages/navMenu/navMenu.pug
-include /../../common.blocks/pages/header/header.pug
 
 
 block title
     title Headers-footers
 
 block content
-    .theme_dark
-        include ../../common.blocks/UIkit/logo/logo.pug
-        .headers
-            .headers__notRegistered
-                +headerNotRegistered()
-            .headers__notRegistered
-                +headerNotRegistered()
-                    
-                    
+    .headers-footers
+        +logoUIkit()
+        .headers-footers__headerNotRegistered
+            +header({modificator: "NotRegistered"})
+        .headers-footers__headerRegistered
+            +header({modificator: "Registered"})
+        .swd swcw                   
                     
                     
                     

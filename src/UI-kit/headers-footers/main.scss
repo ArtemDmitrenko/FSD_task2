@@ -4,13 +4,13 @@
 @import "../../fonts.scss";
 // Подключение nullstyle
 @import "../../nullstyle.scss";
-// Theme
-@import "../../common.blocks/UIkit/theme/theme_dark.scss";
-@import "../../common.blocks/UIkit/theme/theme_white.scss";
+// Headers-footers
+@import "../../common.blocks/UIkit/headers-footers/headers-footers.scss";
 // Logo
 @import "../../common.blocks/UIkit/logo/logo.scss";
 // Content
-@import "../../common.blocks/UIkit/headers/headers.scss";
 @import "../../common.blocks/pages/header/header.scss";
+@import "../../common.blocks/pages/logo/logo.scss";
+@import "../../common.blocks/pages/container/container.scss";
 @import "../../common.blocks/pages/button/button.scss";
 @import "../../common.blocks/pages/navMenu/navMenu.scss";

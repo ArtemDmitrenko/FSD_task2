@@ -1,14 +1,26 @@
 .header {
-    background: #ffffff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 140px;
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0;
+    }
     &__navMenuButtons {
         display: flex;
         align-items: center;
     }
     &__button {
         margin-right: 20px;
+    }
+    &__line {
+        border-left: 1px solid;
+        border-color: $dark100;
+        opacity: 0.1;
+        height: 30px;
+        margin-right: 20px;
+    }
+    &__userName {
+        @extend %font-body;
+        opacity: 0.5;
     }
 }

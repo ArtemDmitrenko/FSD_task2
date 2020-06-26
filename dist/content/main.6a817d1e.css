@@ -38,7 +38,7 @@
   text-transform: uppercase;
 }
 
-.menu__link_common {
+.menu__link_common, .header__userName {
   font-family: "Conv_Montserrat-Regular";
   font-size: 14px;
   color: #1F2041;
@@ -71,12 +71,16 @@ a {
   /*убираем подчеркивание текста ссылок*/
 }
 
-.theme_dark {
+.headers-footers {
   background-color: #F4F4F6;
 }
-
-.theme_white {
-  background-color: none;
+.headers-footers__headerNotRegistered {
+  margin-top: 62px;
+  background-color: white;
+}
+.headers-footers__headerRegistered {
+  margin-top: 40px;
+  background-color: white;
 }
 
 .logo-UIkit {
@@ -84,16 +88,11 @@ a {
   display: block;
 }
 
-.headers__notRegistered {
-  padding-top: 62px;
-}
-
-.header {
-  background: #ffffff;
+.header__content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 140px;
+  padding: 15px 0;
 }
 .header__navMenuButtons {
   display: flex;
@@ -101,6 +100,25 @@ a {
 }
 .header__button {
   margin-right: 20px;
+}
+.header__line {
+  border-left: 1px solid;
+  border-color: #1F2041;
+  opacity: 0.1;
+  height: 30px;
+  margin-right: 20px;
+}
+.header__userName {
+  opacity: 0.5;
+}
+
+.logo {
+  height: 40px;
+}
+
+.container {
+  max-width: 1160px;
+  margin: 0 auto;
 }
 
 .btn {

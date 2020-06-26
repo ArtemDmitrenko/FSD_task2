@@ -117,7 +117,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"../../../../../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+})({"../../../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {
@@ -149,7 +149,7 @@ function getBaseURL(url) {
 
 exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
-},{}],"../../../../../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
+},{}],"../../../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
 var bundle = require('./bundle-url');
 
 function updateLink(link) {
@@ -184,12 +184,12 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":"../../../../../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"UI-kit/colors-type/main.scss":[function(require,module,exports) {
+},{"./bundle-url":"../../../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"UI-kit/colors-type/main.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./../../fonts/Quicksand-Bold.eot":[["Quicksand-Bold.a0ba9881.eot","../../fonts/Quicksand-Bold.eot"],"../../fonts/Quicksand-Bold.eot"],"./../../fonts/Quicksand-Bold.woff":[["Quicksand-Bold.9d6d9460.woff","../../fonts/Quicksand-Bold.woff"],"../../fonts/Quicksand-Bold.woff"],"./../../fonts/Quicksand-Bold.ttf":[["Quicksand-Bold.e8196955.ttf","../../fonts/Quicksand-Bold.ttf"],"../../fonts/Quicksand-Bold.ttf"],"./../../fonts/Quicksand-Bold.svg":[["Quicksand-Bold.e7597636.svg","../../fonts/Quicksand-Bold.svg"],"../../fonts/Quicksand-Bold.svg"],"./../../fonts/Quicksand-Regular.eot":[["Quicksand-Regular.0cfee767.eot","../../fonts/Quicksand-Regular.eot"],"../../fonts/Quicksand-Regular.eot"],"./../../fonts/Quicksand-Regular.woff":[["Quicksand-Regular.802b5f30.woff","../../fonts/Quicksand-Regular.woff"],"../../fonts/Quicksand-Regular.woff"],"./../../fonts/Quicksand-Regular.ttf":[["Quicksand-Regular.8a0a465b.ttf","../../fonts/Quicksand-Regular.ttf"],"../../fonts/Quicksand-Regular.ttf"],"./../../fonts/Quicksand-Regular.svg":[["Quicksand-Regular.d6fe3367.svg","../../fonts/Quicksand-Regular.svg"],"../../fonts/Quicksand-Regular.svg"],"./../../fonts/Montserrat-Bold.eot":[["Montserrat-Bold.70d570c7.eot","../../fonts/Montserrat-Bold.eot"],"../../fonts/Montserrat-Bold.eot"],"./../../fonts/Montserrat-Bold.woff":[["Montserrat-Bold.73e94c2c.woff","../../fonts/Montserrat-Bold.woff"],"../../fonts/Montserrat-Bold.woff"],"./../../fonts/Montserrat-Bold.ttf":[["Montserrat-Bold.f3410305.ttf","../../fonts/Montserrat-Bold.ttf"],"../../fonts/Montserrat-Bold.ttf"],"./../../fonts/Montserrat-Bold.svg":[["Montserrat-Bold.0fff2121.svg","../../fonts/Montserrat-Bold.svg"],"../../fonts/Montserrat-Bold.svg"],"./../../fonts/Montserrat-Regular.eot":[["Montserrat-Regular.21b801b8.eot","../../fonts/Montserrat-Regular.eot"],"../../fonts/Montserrat-Regular.eot"],"./../../fonts/Montserrat-Regular.woff":[["Montserrat-Regular.1b35f2ae.woff","../../fonts/Montserrat-Regular.woff"],"../../fonts/Montserrat-Regular.woff"],"./../../fonts/Montserrat-Regular.ttf":[["Montserrat-Regular.44e710c1.ttf","../../fonts/Montserrat-Regular.ttf"],"../../fonts/Montserrat-Regular.ttf"],"./../../fonts/Montserrat-Regular.svg":[["Montserrat-Regular.6f6bdac5.svg","../../fonts/Montserrat-Regular.svg"],"../../fonts/Montserrat-Regular.svg"],"_css_loader":"../../../../../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../../../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./../../fonts/Quicksand-Bold.eot":[["Quicksand-Bold.a0ba9881.eot","fonts/Quicksand-Bold.eot"],"fonts/Quicksand-Bold.eot"],"./../../fonts/Quicksand-Bold.woff":[["Quicksand-Bold.9d6d9460.woff","fonts/Quicksand-Bold.woff"],"fonts/Quicksand-Bold.woff"],"./../../fonts/Quicksand-Bold.ttf":[["Quicksand-Bold.e8196955.ttf","fonts/Quicksand-Bold.ttf"],"fonts/Quicksand-Bold.ttf"],"./../../fonts/Quicksand-Bold.svg":[["Quicksand-Bold.e7597636.svg","fonts/Quicksand-Bold.svg"],"fonts/Quicksand-Bold.svg"],"./../../fonts/Quicksand-Regular.eot":[["Quicksand-Regular.0cfee767.eot","fonts/Quicksand-Regular.eot"],"fonts/Quicksand-Regular.eot"],"./../../fonts/Quicksand-Regular.woff":[["Quicksand-Regular.802b5f30.woff","fonts/Quicksand-Regular.woff"],"fonts/Quicksand-Regular.woff"],"./../../fonts/Quicksand-Regular.ttf":[["Quicksand-Regular.8a0a465b.ttf","fonts/Quicksand-Regular.ttf"],"fonts/Quicksand-Regular.ttf"],"./../../fonts/Quicksand-Regular.svg":[["Quicksand-Regular.d6fe3367.svg","fonts/Quicksand-Regular.svg"],"fonts/Quicksand-Regular.svg"],"./../../fonts/Montserrat-Bold.eot":[["Montserrat-Bold.70d570c7.eot","fonts/Montserrat-Bold.eot"],"fonts/Montserrat-Bold.eot"],"./../../fonts/Montserrat-Bold.woff":[["Montserrat-Bold.73e94c2c.woff","fonts/Montserrat-Bold.woff"],"fonts/Montserrat-Bold.woff"],"./../../fonts/Montserrat-Bold.ttf":[["Montserrat-Bold.f3410305.ttf","fonts/Montserrat-Bold.ttf"],"fonts/Montserrat-Bold.ttf"],"./../../fonts/Montserrat-Bold.svg":[["Montserrat-Bold.0fff2121.svg","fonts/Montserrat-Bold.svg"],"fonts/Montserrat-Bold.svg"],"./../../fonts/Montserrat-Regular.eot":[["Montserrat-Regular.21b801b8.eot","fonts/Montserrat-Regular.eot"],"fonts/Montserrat-Regular.eot"],"./../../fonts/Montserrat-Regular.woff":[["Montserrat-Regular.1b35f2ae.woff","fonts/Montserrat-Regular.woff"],"fonts/Montserrat-Regular.woff"],"./../../fonts/Montserrat-Regular.ttf":[["Montserrat-Regular.44e710c1.ttf","fonts/Montserrat-Regular.ttf"],"fonts/Montserrat-Regular.ttf"],"./../../fonts/Montserrat-Regular.svg":[["Montserrat-Regular.6f6bdac5.svg","fonts/Montserrat-Regular.svg"],"fonts/Montserrat-Regular.svg"],"_css_loader":"../../../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../../../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -217,7 +217,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62682" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64548" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
