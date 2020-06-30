@@ -1,9 +1,8 @@
 extends ../../templates/UIkit_template.pug
-include ../../common.blocks/UIkit/logo/logo.pug
-include /../../common.blocks/pages/header/header.pug
-include ../../common.blocks/pages/button/button.pug
-include /../../common.blocks/pages/logo/logo.pug
-include /../../common.blocks/pages/navMenu/navMenu.pug
+include ../../common.blocks/UIkit/logoUIkit/logoUIkit.pug
+include ../../common.blocks/pages/header/header.pug
+include ../../common.blocks/pages/footer/footer.pug
+include ../../common.blocks/pages/footerTab/footerTab.pug
 
 
 block title
@@ -11,22 +10,14 @@ block title
 
 block content
     .headers-footers
-        +logoUIkit()
+        .headers-footers__logoUIkit
+            +logoUIkit()
         .headers-footers__headerNotRegistered
             +header({modificator: "NotRegistered"})
         .headers-footers__headerRegistered
             +header({modificator: "Registered"})
-        .swd swcw                   
-                    
-                    
-                    
-                    
-                    //- +btn({modificator: "btn_border", text: "click me"})
-                    //- +btn({modificator: "btn_longWithArrow", text: "перейти к оплате"})  
-                    //- +btn({modificator: "btn_gradient", text: "click me"})
-                    //- +btn({modificator: "btn_iconLinkViolent", text: "click me"})
-                    //- +btn({modificator: "btn_iconLinkBlack", text: "click me"})
-                    //- +btn({modificator: "btn_gradientHeader", text: "зарегистрироваться"})
-                    //- +btn({modificator: "btn_borderHeader", text: "войти"})
-                    //- +logo()
-                    //- +navMenu()
+        .headers-footers__footerWide
+            +footer()
+        .headers-footers__footerTab
+            +footerTab()
+        +btn({modificator: "btn_longWithArrow", text: "Зарегистрируйся"})

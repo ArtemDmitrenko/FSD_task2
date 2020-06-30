@@ -1,4 +1,4 @@
-$adress: '../../fonts';
+$adress: "/fonts";
 @mixin font-face ($name, $adress) {
     font-family: 'Conv_#{$name}';
     src: url('#{$adress}/#{$name}.eot');
@@ -74,5 +74,5 @@ $color) {
     14px,
     #1F2041);
     // line-height: 24px;
-    opacity: 75%;
+    // opacity: 75%;
 }

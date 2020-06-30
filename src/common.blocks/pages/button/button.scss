@@ -15,6 +15,7 @@ $height-e: auto;
     display: block;
     background: none;
     letter-spacing: -.01em;
+    outline: none;
     &_gradient {
         background-image: linear-gradient(to bottom, $purple, #8BA4F9);
         color: #ffffff;

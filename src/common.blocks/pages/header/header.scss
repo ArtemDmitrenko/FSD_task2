@@ -1,4 +1,5 @@
 .header {
+    box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
     &__content {
         display: flex;
         justify-content: space-between;
@@ -22,5 +23,8 @@
     &__userName {
         @extend %font-body;
         opacity: 0.5;
+    }
+    @media screen and (max-width: 950px) {
+        background-color: yellow;
     }
 }

@@ -6,11 +6,14 @@
 @import "../../nullstyle.scss";
 // Headers-footers
 @import "../../common.blocks/UIkit/headers-footers/headers-footers.scss";
-// Logo
-@import "../../common.blocks/UIkit/logo/logo.scss";
+// LogoUIkit
+@import "../../common.blocks/UIkit/logoUIkit/logoUIkit.scss";
 // Content
 @import "../../common.blocks/pages/header/header.scss";
 @import "../../common.blocks/pages/logo/logo.scss";
 @import "../../common.blocks/pages/container/container.scss";
 @import "../../common.blocks/pages/button/button.scss";
 @import "../../common.blocks/pages/navMenu/navMenu.scss";
+@import "../../common.blocks/pages/footer/footer.scss";
+@import "../../common.blocks/pages/footerTab/footerTab.scss";
+@import "../../common.blocks/pages/socialNets/socialNets.scss";
