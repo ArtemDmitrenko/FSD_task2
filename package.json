@@ -20,9 +20,14 @@
     },
     "homepage": "https://github.com/ArtemDmitrenko/FSD_task2#readme",
     "devDependencies": {
+        "jquery": "^3.5.1",
+        "jquery-ui": "^1.12.1",
+        "jquery.maskedinput": "^1.4.1",
         "parcel-bundler": "^1.12.4",
         "pug": "^3.0.0",
         "sass": "^1.26.8"
     },
-    "dependencies": {}
+    "dependencies": {
+        "jquery-ui-dist": "^1.12.1"
+    }
 }

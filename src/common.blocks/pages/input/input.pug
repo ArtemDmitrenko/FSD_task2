@@ -1,0 +1,38 @@
+//-
+  options.isMasked - masked input
+  options.name - form element name
+  options.type - input type
+  options.value - input value
+  options.placeholder - input placeholder
+  options.pattern - input pattern
+  options.dateMask - masked text field
+  options.tabindex - input tabindex
+  options.required - input required
+  options.label - подпись к checkbox и radio
+  options.dropdown - if it is a dropdown
+
+include ../checkmark/checkmark.pug
+
+
+//- For text field and masked inputs
+mixin input(options)
+    if !options
+        - options = {}
+
+    .input
+
+
+        input.input__element(
+            class = options.class
+            name = options.name 
+            type = options.type 
+            value = options.value 
+            placeholder = options.placeholder
+            required = options.required)
+        if options.dropdown
+            .input__checkmark
+                +checkmark()
+        if options.dateMask
+            script(src='../../scripts/jquery/jquery-in-parcel.js')
+            script(src="../../common.blocks/pages/input/input.js")
+            

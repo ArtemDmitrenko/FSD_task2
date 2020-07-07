@@ -4,12 +4,12 @@
     }
     &__item {
         margin-right: 20px;
+        position: relative;
     }
     &__link {
-        &_common {
-            @extend %font-body;
-            opacity: 0.5;
-        }
+        @extend %font-body;
+        opacity: 0.5;
+        cursor: pointer;
         &_active {
             @extend %h3;
             font-size: 14px;
@@ -17,20 +17,22 @@
             opacity: 0.75;
         }
     }
-    &__dropdown {
-        position: relative;
-        margin-right: 17px;
-        &_arrow {
-            background: none;
-            border: solid;
-            color: $dark50;
-            border-width: 0 2px 2px 0;
-            display: inline-block;
-            padding: 3px;
-            transform: rotate(45deg);
-            position: relative;
-            left: 9px;
-            bottom: 7px;
-        }
+    &__sub-list {
+        position: absolute;
+        left: 0;
+        background-color: white;
+        display: none;
+        min-width: 100%;
     }
+    &__sub-link {
+        @extend %font-body;
+        opacity: 0.5;
+    }
+    &__sub-item {
+        padding-top: 10px;
+    }
+}
+
+.show {
+    display: block;
 }

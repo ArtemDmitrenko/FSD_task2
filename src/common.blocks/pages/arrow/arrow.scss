@@ -1,0 +1,47 @@
+.arrow {
+    position: relative;
+    // top: -7px;
+    width: 15px;
+    height: 2px;
+    // background-image: linear-gradient(to bottom, $purple, #8BA4F9);
+    // left: 282px;
+    display: block;
+    &::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 2px;
+        top: -3px;
+        right: -3px;
+        // background-image: linear-gradient(to bottom, $purple, #8BA4F9);
+        transform: rotate(45deg);
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 2px;
+        top: 3px;
+        right: -3px;
+        // background-image: linear-gradient(to bottom, $purple, #8BA4F9);
+        transform: rotate(-45deg);
+    }
+    &_purple {
+        background-image: linear-gradient(to bottom, $purple, #8BA4F9);
+        &::after {
+            background-image: linear-gradient(to bottom, $purple, #8BA4F9);
+        }
+        &::before {
+            background-image: linear-gradient(to bottom, $purple, #8BA4F9);
+        }
+    }
+    &_white {
+        background-color: white;
+        &::after {
+            background-color: white;
+        }
+        &::before {
+            background-color: white;
+        }
+    }
+}

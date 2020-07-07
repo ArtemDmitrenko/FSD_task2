@@ -1,0 +1,20 @@
+// Подключение базы данных цветов
+@import "../../colors.scss";
+// Подключение базы данных шрифтов
+@import "../../fonts.scss";
+// Подключение nullstyle
+@import "../../nullstyle.scss";
+// Headers-footers
+@import "../../common.blocks/UIkit/formElements/formElements.scss";
+// LogoUIkit
+@import "../../common.blocks/UIkit/logoUIkit/logoUIkit.scss";
+// input
+@import "../../common.blocks/pages/input/input.scss";
+// checkmark
+@import "../../common.blocks/pages/checkmark/checkmark.scss";
+// dropdown
+@import "../../common.blocks/pages/dropdown/dropdown.scss";
+// buttons
+@import "../../common.blocks/pages/button/button.scss";
+// counter
+@import "../../common.blocks/pages/counter/counter.scss";

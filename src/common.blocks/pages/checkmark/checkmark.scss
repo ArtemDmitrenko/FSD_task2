@@ -1,0 +1,21 @@
+.checkmark {
+    background: none;
+    border: solid;
+    color: $dark50;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    &__down {
+        transform: rotate(45deg);
+        margin-right: 7px;
+        margin-left: 9.5px;
+        margin-bottom: 2px;
+    }
+    &__up {
+        transform: rotate(225deg);
+        margin-right: 7px;
+        margin-left: 9.5px;
+        margin-bottom: -3px;
+    }
+}

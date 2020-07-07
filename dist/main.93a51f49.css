@@ -31,15 +31,9 @@
   font-weight: normal;
   font-style: normal;
 }
-.type-block__description_h1 {
-  font-family: "Conv_Quicksand-Bold";
-  font-size: 24px;
-  color: #1F2041;
-}
-
-.type-block__description_h2, .color-block__name {
-  font-family: "Conv_Quicksand-Bold";
-  font-size: 19px;
+.type-block__description_font-body, .type-block__name {
+  font-family: "Conv_Montserrat-Regular";
+  font-size: 14px;
   color: #1F2041;
 }
 
@@ -50,9 +44,15 @@
   text-transform: uppercase;
 }
 
-.type-block__description_font-body, .type-block__name {
-  font-family: "Conv_Montserrat-Regular";
-  font-size: 14px;
+.type-block__description_h2, .color-block__name {
+  font-family: "Conv_Quicksand-Bold";
+  font-size: 19px;
+  color: #1F2041;
+}
+
+.type-block__description_h1 {
+  font-family: "Conv_Quicksand-Bold";
+  font-size: 24px;
   color: #1F2041;
 }
 
@@ -66,6 +66,7 @@ h5,
 h6 {
   margin: 0;
   padding: 0;
+  font-size: unset;
 }
 
 ul {

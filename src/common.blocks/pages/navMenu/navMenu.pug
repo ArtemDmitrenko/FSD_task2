@@ -1,26 +1,64 @@
+include ../checkmark/checkmark.pug
+
+//-
+  menuItems - массив с элементами меню
+  menuItems[0].name - имя элемента меню
+  menuItems[0].href - ссылка элемента меню
+  menuItems[0].subname[0].name - имя элемента подменю
+  menuItems[0].subname[0].href - ссылка элемента подменю
+  
+  Нужно доделать, чтобы активной странице добавлялся класс menu__link_active:
+        a.menu__link.menu__link_active(href='#') О нас     
+
 mixin navMenu()
+    -
+        let menuItems = [
+            {
+            name: 'О нас',
+            href: '#'
+            }, {
+            name: 'Услуги',
+            href: '#',
+            submenu: [
+                        {subname: 'Услуга 1',
+                        subhref: '#'
+                        }, {
+                        subname: 'Услуга 2',
+                        subhref: '#'
+                        }
+                    ]
+            }, {
+            name: 'Вакансии',
+            href: '#'
+            }, {
+            name: 'Новости',
+            href: '#'
+            }, {
+            name: 'Соглашения',
+            href: '#',
+            submenu: [
+                        {subname: 'Соглашение 1',
+                        subhref: '#'
+                        }, {
+                        subname: 'Соглашение 2',
+                        subhref: '#'
+                        }
+                    ]
+            }
+        ];
+  
     nav.menu
         ul.menu__list
-            li.menu__item
-                a.menu__link.menu__link_active(href='#') О нас
-            li.menu__item
-                .menu__dropdown
-                    a.menu__link.menu__link_common(href='#') Услуги
-                    button.menu__dropdown_arrow
-            li.menu__item
-                a.menu__link.menu__link_common(href='#') Вакансии
-            li.menu__item
-                a.menu__link.menu__link_common(href='#') Новости
-            li.menu__item
-                .menu__dropdown
-                    a.menu__link.menu__link_common(href='#') Соглашения
-                    button.menu__dropdown_arrow
-
-
-
-//- mixin menu()
-//-     each tag in [{name: 'О нас', href: '#'}, {name: 'Услуги', href: '#'}, {name: 'Вакансии', href: '#'}, {name: 'Новости', href: '#'}, {name: 'Соглашения', href: '#'}]
-//-         nav.menu
-//-             a.menu__item(href = tag.href)= tag.name
-
-
+            - for (let i = 0; i < menuItems.length; i ++)
+                if !menuItems[i].submenu
+                    li.menu__item    
+                        a.menu__link(href = menuItems[i].href)= menuItems[i].name
+                else
+                    li.menu__item.menu__item_dropdown 
+                        a.menu__link(href = menuItems[i].href)= menuItems[i].name
+                            +checkmark()
+                        ul.menu__sub-list
+                            - for (let j = 0; j < menuItems[i].submenu.length; j ++) 
+                                li.menu__sub-item
+                                    a.menu__sub-link(href = menuItems[i].submenu[j].subhref)= menuItems[i].submenu[j].subname 
+        script(src="../../common.blocks/pages/navMenu/navMenu.js" type="text/javascript")         

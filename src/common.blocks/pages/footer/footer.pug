@@ -1,5 +1,7 @@
 include ../logo/logo.pug
 include ../socialNets/socialNets.pug
+include ../arrow/arrow.pug
+
 
 
 mixin footer()
@@ -49,6 +51,15 @@ mixin footer()
                             li.footer__item
                                 form.footer__form(action="#")
                                     input.footer__input(type="email" placeholder="Email" required)
+                                    span.footer__arrow
+                                        button(type="submit").footer__defaultButton
+                                            span.arrow.arrow_purple                      
+                                    //- <span class="input-group-btn">
+                                    //-     <button type="submit" class="btn btn-default">
+                                    //-         <span>→</span>
+                                    //-     </button>
+                                    //- </span>
+                                        
         .footer__half2
             .container
                 .footer__bottom

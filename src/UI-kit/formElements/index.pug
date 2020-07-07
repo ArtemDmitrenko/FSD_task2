@@ -1,0 +1,24 @@
+extends ../../templates/UIkit_template.pug
+include ../../common.blocks/UIkit/logoUIkit/logoUIkit.pug
+include ../../common.blocks/pages/input/input.pug
+include ../../common.blocks/pages/dropdown/dropdown.pug
+
+
+
+
+
+block title
+    title Form elements
+
+block content
+    .formElements
+        .formElements__logoUIkit
+            +logoUIkit()
+        .formElements__textField
+            +input({class: 'input__textField', name: 'email', type: 'email', placeholder: 'Email', required: true})
+        br
+        .formElements__maskedInput
+            +input({class: 'input__masked', name: 'date', type: 'text', placeholder: 'ДД.ММ.ГГГГ', required: true, dateMask: true})
+        br
+        .formElements__dropdown   
+            +dropdown-guests()

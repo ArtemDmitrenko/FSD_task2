@@ -1,0 +1,27 @@
+.counter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &__meaning {
+        margin-bottom: 2px;
+        width: 32px;
+        text-align: center;
+    }
+    &__btn {
+        border-color: $dark25;
+        border-width: 1px;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        color: $dark50;
+        outline-style: none;
+        cursor: pointer;
+    }
+    &__btn_plus {
+        font-size: unset;
+        line-height: 1px;
+    }
+    &__meaning {
+        @extend %h3;
+    }
+}

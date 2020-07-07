@@ -1,0 +1,11 @@
+.formElements {
+    &__logoUIkit {
+        padding: 30px 0 0 30px;
+    }
+    &__textField,
+    &__dropdown,
+    &__maskedInput {
+        width: 22.2%;
+        margin: 20px 0 0 50px;
+    }
+}

@@ -1,0 +1,63 @@
+.input {
+    position: relative;
+    display: flex;
+    // align-items: stretch;
+    // & [type="email"] {
+    //     opacity: 0.1;
+    // }
+    &__element {
+        position: relative;
+        color: $dark75;
+        flex-grow: 1;
+        @extend %font-body;
+        line-height: 24px;
+        width: 10rem;
+        height: 44px;
+        border-color: $dark25;
+        border-width: 1px;
+        padding-left: 15px;
+        box-sizing: border-box;
+        border-radius: 4px;
+        outline: none;
+        &:focus,
+        &:hover {
+            border-color: $dark50;
+        }
+        &::placeholder {
+            opacity: 0.25;
+        }
+        &:hover::placeholder,
+        &:focus::placeholder {
+            opacity: 0.75;
+        }
+    }
+    &__checkmark {
+        position: absolute;
+        right: 11px;
+        top: 12px;
+    }
+}
+
+// &__element {
+//     flex-grow: 1;
+//     width: 10rem;
+//     padding: 0.43rem 1rem;
+//     color: #888;
+//     border: none;
+//     border-radius: 4px;
+//     background-color: #e5e5e5;
+//     font-family: SourceSansProRegular, sans-serif;
+//     font-size: 1.2rem;
+//     &:focus {
+//         outline: 0.3rem auto #bbb;
+//     }
+//     &[type='checkbox'],
+//     &[type='radio'] {
+//         position: absolute;
+//         left: 1rem;
+//         width: 1px;
+//         height: 1px;
+//         @include firefox-only() {
+//             visibility: hidden;
+//         }
+//     }
