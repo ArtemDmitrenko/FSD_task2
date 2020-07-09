@@ -21,7 +21,15 @@
         font-size: unset;
         line-height: 1px;
     }
+    &__btn_minus {
+        font-size: unset;
+        line-height: 1px;
+    }
+    &__btn_opacity_38 {
+        opacity: 0.38;
+    }
     &__meaning {
         @extend %h3;
+        border: none;
     }
 }

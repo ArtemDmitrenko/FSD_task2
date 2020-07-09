@@ -6,9 +6,6 @@ include ../../common.blocks/pages/footerTab/footerTab.pug
 include ../../common.blocks/pages/arrow/arrow.pug
 include ../../common.blocks/pages/navMenu/navMenu.pug
 
-
-
-
 block title
     title Headers-footers
 
@@ -24,3 +21,6 @@ block content
             +footer()
         .headers-footers__footerTab
             +footerTab()
+
+block script
+    script(src="main.js")

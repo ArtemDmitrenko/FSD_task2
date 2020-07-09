@@ -20,19 +20,17 @@ mixin input(options)
         - options = {}
 
     .input
-
-
         input.input__element(
             class = options.class
-            name = options.name 
-            type = options.type 
-            value = options.value 
+            name = options.name
+            type = options.type
+            value = options.value
             placeholder = options.placeholder
             required = options.required)
         if options.dropdown
             .input__checkmark
                 +checkmark()
-        if options.dateMask
-            script(src='../../scripts/jquery/jquery-in-parcel.js')
-            script(src="../../common.blocks/pages/input/input.js")
+        //- if options.dateMask
+        //-     script(src='../../scripts/parcel.js')
+        //-     script(src="../../common.blocks/pages/input/input.js")
             

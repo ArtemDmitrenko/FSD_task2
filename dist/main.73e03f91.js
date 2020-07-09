@@ -117,38 +117,40 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"common.blocks/pages/counter/counter.js":[function(require,module,exports) {
-var meaning = document.querySelectorAll('.counter__meaning');
-var plus = document.querySelectorAll('.counter__btn_plus');
-var minus = document.querySelectorAll('.counter__btn_minus');
+})({"common.blocks/pages/navMenu/navMenu.js":[function(require,module,exports) {
+var dropdownButtons = document.querySelectorAll(".menu__item_dropdown");
+var subLists = document.querySelectorAll(".menu__sub-list");
+var checkmarks = document.querySelectorAll(".checkmark"); // Dropdown appears when you click the button
 
 var _loop = function _loop(i) {
-  plus[i].onclick = function () {
-    return meaning[i].value = (meaning[i].value | 0) + 1;
+  dropdownButtons[i].onclick = function () {
+    subLists[i].classList.toggle("show");
+    checkmarks[i].classList.toggle("checkmark__down");
+    checkmarks[i].classList.toggle("checkmark__up");
   };
-
-  minus[i].onclick = function () {
-    meaning[i].value = (meaning[i].value | 0) - 1;
-
-    if (meaning[i].value < 0) {
-      meaning[i].value = 0;
-    }
-  }; // console.log(meaning[i].value);
-
 };
 
-for (var i = 0; i < meaning.length; i++) {
+for (var i = 0; i < dropdownButtons.length; i++) {
   _loop(i);
-}
+} // Close the dropdown if the user clicks outside of it
 
-for (var _i = 0; _i < document.querySelector('.counter').childNodes.length; _i++) {
-  alert(document.querySelector('.counter').childNodes[_i]); // Text, DIV, Text, UL, ..., SCRIPT
-} // console.log(document.querySelector('.counter').childNodes)
-// console.log(meaning[0])
-// meaning[0].oninput = function() {
-//     console.log('Hi');
-// }
-},{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+
+window.onclick = function (event) {
+  for (var _i = 0; _i < dropdownButtons.length; _i++) {
+    if (!document.getElementsByClassName('menu__item_dropdown')[_i].contains(event.target)) {
+      if (subLists[_i].classList.contains('show')) {
+        subLists[_i].classList.remove('show');
+
+        checkmarks[_i].classList.toggle("checkmark__down");
+
+        checkmarks[_i].classList.toggle("checkmark__up");
+      }
+    }
+  }
+};
+},{}],"UI-kit/headers-footers/main.js":[function(require,module,exports) {
+require("../../common.blocks/pages/navMenu/navMenu.js");
+},{"../../common.blocks/pages/navMenu/navMenu.js":"common.blocks/pages/navMenu/navMenu.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -352,5 +354,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","common.blocks/pages/counter/counter.js"], null)
-//# sourceMappingURL=/counter.237e732e.js.map
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","UI-kit/headers-footers/main.js"], null)
+//# sourceMappingURL=/main.73e03f91.js.map

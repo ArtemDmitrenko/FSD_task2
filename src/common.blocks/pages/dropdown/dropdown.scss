@@ -7,6 +7,13 @@
         width: -webkit-fill-available;
         border-bottom-left-radius: 4px;
         border-bottom-right-radius: 4px;
+        box-shadow: 0 10px 20px $dark5;
+        display: none;
+        &_show {
+            display: block;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
     }
     &__row-names {
         display: flex;
