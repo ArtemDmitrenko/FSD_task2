@@ -2,10 +2,22 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    &__meaning {
-        margin-bottom: 2px;
-        width: 32px;
+    margin-bottom: 7px;
+    &__name {
+        @extend %h3;
+    }
+    &__enter {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__value {
+        width: 20px;
         text-align: center;
+        @extend %h3;
+        border: none;
+        outline: none;
+        padding-left: 10px;
     }
     &__btn {
         border-color: $dark25;
@@ -16,20 +28,16 @@
         color: $dark50;
         outline-style: none;
         cursor: pointer;
-    }
-    &__btn_plus {
-        font-size: unset;
-        line-height: 1px;
-    }
-    &__btn_minus {
-        font-size: unset;
-        line-height: 1px;
-    }
-    &__btn_opacity_38 {
-        opacity: 0.38;
-    }
-    &__meaning {
-        @extend %h3;
-        border: none;
+        &_plus {
+            font-size: unset;
+            line-height: 1px;
+        }
+        &_minus {
+            font-size: unset;
+            line-height: 1px;
+            &:disabled {
+                opacity: 0.38;
+            }
+        }
     }
 }

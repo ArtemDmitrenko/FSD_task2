@@ -1,6 +1,15 @@
-mixin counter()
+mixin counter(options = [])
+    - const [title, name, defaultValue='0'] = options
     .counter
-        button.counter__btn.counter__btn_minus.counter__btn_opacity_38(disabled) -
-        input.counter__meaning(type='text' value='0')
-        button.counter__btn.counter__btn_plus +
-    //- script(src="../../common.blocks/pages/counter/counter.js")
+        p.counter__name= title
+        .counter__enter
+            button.counter__btn.counter__btn_minus -
+            input.counter__value(name=name type='number' value=defaultValue readonly)
+            button.counter__btn.counter__btn_plus +
+
+
+//- mixin counter()
+//-     .counter
+//-         button.counter__btn.counter__btn_minus -
+//-         input.counter__meaning(name='' type='text' value='0')
+//-         button.counter__btn.counter__btn_plus +

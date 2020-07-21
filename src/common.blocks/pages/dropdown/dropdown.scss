@@ -1,4 +1,4 @@
-.dropdown-guests {
+.dropdown {
     position: relative;
     &__list {
         position: absolute;
@@ -9,25 +9,19 @@
         border-bottom-right-radius: 4px;
         box-shadow: 0 10px 20px $dark5;
         display: none;
+        z-index: 1;
+        background-color: white;
         &_show {
             display: block;
-            border-bottom-left-radius: 0;
-            border-bottom-right-radius: 0;
         }
     }
-    &__row-names {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin: 5px 6px 6px 13px;
-    }
-    &__row-btn {
+    &__btn {
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin: 22px 0px 9px 6px;
     }
-    &__text {
-        @extend %h3;
+    &__counter {
+        margin: 4px 6px 21px 14px;
     }
 }

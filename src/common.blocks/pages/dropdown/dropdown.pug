@@ -2,26 +2,41 @@ include ../input/input.pug
 include ../button/button.pug
 include ../counter/counter.pug
 
-mixin dropdown-guests()
-    .dropdown-guests
-        .dropdown-guests__input
-            +input({class: 'dropdown-guests__meaning', name: 'guests', type: 'text', value: 'Сколько гостей', required: true, dropdown: true})
-        .dropdown-guests__list
-            .dropdown-guests__row-names
-                h3.dropdown-guests__text Взрослые
-                .dropdown-guests__counter
-                    +counter()
-            .dropdown-guests__row-names
-                h3.dropdown-guests__text Дети
-                .dropdown-guests__counter
-                    +counter()
-            .dropdown-guests__row-names
-                h3.dropdown-guests__text Младенцы
-                .dropdown-guests__counter
-                    +counter()
-            .dropdown-guests__row-btn
+
+mixin dropdown()
+    .dropdown
+        .dropdown__input
+            +input({name: 'guests', type: 'text', value: 'Сколько гостей', required: true, dropdown: true, readonly: true})
+        .dropdown__list
+            .dropdown__counter
+                +counter(["Взрослые", "Adults"])
+                +counter(["Дети", "Children"])
+                +counter(["Младенцы", "Infants"])
+            .dropdown__btn
                 .dropdown-guests__btn-clear
-                    +btn({modificator: 'btn_iconLinkBlack', text: 'Очистить'})
+                    +btn({modificator: 'btn_iconLinkBlack', text: 'Очистить', name: 'clear'})
                 .dropdown-guests__btn-apply
-                    +btn({modificator: 'btn_iconLinkViolent', text: 'Применить'})
-    //- script(type='module' src="../../common.blocks/pages/dropdown/dropdown.js")
+                    +btn({modificator: 'btn_iconLinkViolent', text: 'Применить', name: 'apply'})
+
+//- mixin dropdown-guests()
+//-     .dropdown-guests
+//-         .dropdown-guests__input
+//-             +input({name: 'guests', type: 'text', value: 'Сколько гостей', required: true, dropdown: true})
+//-         .dropdown-guests__list
+//-             .dropdown-guests__row-names
+//-                 p.dropdown-guests__text Взрослые
+//-                 .dropdown-guests__counter
+//-                     +counter()
+//-             .dropdown-guests__row-names
+//-                 p.dropdown-guests__text Дети
+//-                 .dropdown-guests__counter
+//-                     +counter()
+//-             .dropdown-guests__row-names
+//-                 p.dropdown-guests__text Младенцы
+//-                 .dropdown-guests__counter
+//-                     +counter()
+//-             .dropdown-guests__row-btn
+//-                 .dropdown-guests__btn-clear
+//-                     +btn({modificator: 'btn_iconLinkBlack', text: 'Очистить'})
+//-                 .dropdown-guests__btn-apply
+//-                     +btn({modificator: 'btn_iconLinkViolent', text: 'Применить'})

@@ -20,6 +20,8 @@
     },
     "homepage": "https://github.com/ArtemDmitrenko/FSD_task2#readme",
     "devDependencies": {
+        "eslint": "^7.4.0",
+        "eslint-plugin-fsd": "^1.0.1",
         "jquery": "^3.5.1",
         "jquery-ui": "^1.12.1",
         "jquery.maskedinput": "^1.4.1",

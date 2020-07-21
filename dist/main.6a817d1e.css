@@ -236,6 +236,9 @@ a {
   background-color: #ffffff;
   transform: rotate(-45deg);
 }
+.btn_hidden {
+  display: none;
+}
 
 .menu__list {
   display: flex;

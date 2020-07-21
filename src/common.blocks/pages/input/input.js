@@ -1,3 +1,3 @@
-$(".input__masked").mask("99.99.9999", {
+$('[name|="date"]').mask("99.99.9999", {
     autoclear: false
 });

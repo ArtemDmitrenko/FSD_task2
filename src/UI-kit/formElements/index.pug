@@ -15,12 +15,15 @@ block content
         .formElements__logoUIkit
             +logoUIkit()
         .formElements__textField
-            +input({class: 'input__textField', name: 'email', type: 'email', placeholder: 'Email', required: true})
+            +input({name: 'email', type: 'email', placeholder: 'Email', required: true})
         br
         .formElements__maskedInput
-            +input({class: 'input__masked', name: 'date', type: 'text', placeholder: 'ДД.ММ.ГГГГ', required: true, dateMask: true})
+            +input({name: 'date', type: 'text', placeholder: 'ДД.ММ.ГГГГ', required: true, dateMask: true})
         br
         .formElements__dropdown   
-            +dropdown-guests()
+            +dropdown()
+        br
+        .formElements__dropdown   
+            +dropdown()
 block script
     script(src="main.js")         

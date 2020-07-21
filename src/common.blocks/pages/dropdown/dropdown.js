@@ -1,57 +1,115 @@
-let meaning = document.querySelectorAll('.counter__meaning');
-let plus = document.querySelectorAll('.counter__btn_plus');
-let minus = document.querySelectorAll('.counter__btn_minus');
-let allGuests = document.querySelector('.dropdown-guests__meaning');
-let dropdown = document.querySelector('.dropdown-guests__list');
+// Dropdown appears when click and dissapear when click outside or btn "apply"
+let dropdownOpen = (event) => {
+        let { target } = event;
+        let dropdown = target.closest('.dropdown');
+        if (dropdown) {
+            let input = dropdown.querySelector('.input__element');
+            let dropdownList = dropdown.querySelector('.dropdown__list');
+            let dropdownInput = target.closest('.dropdown__input');
 
-// Dropdown appears when click
-document.querySelector('.dropdown-guests__input').onclick = function() {
-    dropdown.classList.toggle("dropdown-guests__list_show");
-    allGuests.classList.toggle("input__element_border-radius_0");
-}
+            if (dropdownInput) {
+                input.classList.toggle("input__element_border-radius_0");
+                input.classList.add("input__element_brightBorder");
+                dropdownList.classList.toggle("dropdown__list_show");
 
-// Show the whole number of guests
-function summary() {
-    let sum = 0;
-    for (let i = 0; i < meaning.length; i++) {
-        sum = (meaning[i].value | 0) + sum;
-    }
-    if (sum > 10 && sum < 15) {
-        allGuests.value = sum + ' гостей';
-    } else if (sum % 10 === 1) {
-        allGuests.value = sum + ' гость';
-    } else if (sum % 10 === 2 || sum % 10 === 3 || sum % 10 === 4) {
-        allGuests.value = sum + ' гостя';
-    } else {
-        allGuests.value = sum + ' гостей';
-    }
-    if (sum === 0) {
-        allGuests.value = 'Сколько гостей';
-    }
-}
+            }
+            if (target === dropdownList.querySelector('button[name = "apply"]')) {
+                input.classList.remove("input__element_border-radius_0");
+                input.classList.remove("input__element_brightBorder");
+                dropdownList.classList.remove("dropdown__list_show");
+            }
+        }
+        if (!dropdown) {
+            let dropdownInputArr = document.querySelectorAll('input[name = "guests"]');
+            let dropdownListArr = document.querySelectorAll('.dropdown__list');
 
-// Counter of guests with properties of disabled button '-' when meaning is '0'
-for (let i = 0; i < meaning.length; i++) {
-    plus[i].onclick = () => {
-        meaning[i].value = (meaning[i].value | 0) + 1;
-        summary();
-        if (Number(meaning[i].value) > 0) {
-            meaning[i].previousSibling.removeAttribute('disabled', 'disabled');
-            meaning[i].previousSibling.classList.remove("counter__btn_opacity_38");
+            dropdownInputArr.forEach((item) => {
+                item.classList.remove("input__element_border-radius_0");
+                item.classList.remove("input__element_brightBorder");
+            });
+            dropdownListArr.forEach((item) => {
+                item.classList.remove("dropdown__list_show");
+            });
         }
     }
-    minus[i].onclick = () => {
-        meaning[i].value = (meaning[i].value | 0) - 1;
-        if (meaning[i].value < 0) {
-            meaning[i].value = 0;
+    // Function counter
+let counter = (event) => {
+        let { target } = event;
+        let dropdown = target.closest('.dropdown');
+        if (dropdown) {
+            let counterValueArr = dropdown.querySelectorAll('.counter__value');
+            counterValueArr.forEach((item) => {
+                if (Number(item.value) === 0) { item.previousSibling.setAttribute("disabled", "disabled") }
+            });
+
+            let counter = target.closest('.counter__enter');
+            if (counter) {
+                let minus = counter.querySelector('.counter__btn_minus');
+                let plus = counter.querySelector('.counter__btn_plus');
+                let counterValue = counter.querySelector('.counter__value');
+
+                if (target === plus) {
+                    counterValue.value = Number(counterValue.value) + 1;
+                    minus.removeAttribute("disabled", "disabled");
+                }
+                if (target === minus) {
+                    counterValue.value = Number(counterValue.value) - 1;
+                    if (Number(counterValue.value) === 0) {
+                        minus.setAttribute("disabled", "disabled");
+                    }
+                }
+            }
         }
-        summary();
-        if (Number(meaning[i].value) > 0) {
-            meaning[i].previousSibling.removeAttribute('disabled', 'disabled');
-            meaning[i].previousSibling.classList.remove("counter__btn_opacity_38");
+    }
+    // Update of input field, where we can see total number of guests
+let changeover = (event) => {
+    let { target } = event;
+    let dropdown = target.closest('.dropdown');
+    if (dropdown) {
+        let infants = Number(dropdown.querySelector('input[name = "Infants"]').value);
+        let counterValueArr = dropdown.querySelectorAll(".counter__value");
+        let allGuests = dropdown.querySelector('input[name = "guests"]');
+        let sum = 0;
+        counterValueArr.forEach((item) => {
+            sum += Number(item.value);
+        })
+        let remainderSum = (sum % 10 === 2 || sum % 10 === 3 || sum % 10 === 4);
+        if (sum > 10 && sum < 15) {
+            allGuests.value = sum + ' гостей';
+        } else if (sum % 10 === 1) {
+            allGuests.value = sum + ' гость';
+        } else if (remainderSum) {
+            allGuests.value = sum + ' гостя';
         } else {
-            meaning[i].previousSibling.setAttribute('disabled', 'disabled');
-            meaning[i].previousSibling.classList.add("counter__btn_opacity_38");
+            allGuests.value = sum + ' гостей';
+        }
+        let remainderInfants = (infants % 10 === 2 || infants % 10 === 3 || infants % 10 === 4);
+        if (infants > 10 && infants < 15) {
+            allGuests.value = allGuests.value + ', ' + infants + ' младенцев';
+        } else if (infants % 10 === 1) {
+            allGuests.value = allGuests.value + ', ' + infants + ' младенец';
+        } else if (remainderInfants) {
+            allGuests.value = allGuests.value + ', ' + infants + ' младенца';
+        } else if (infants) {
+            allGuests.value = allGuests.value + ', ' + infants + ' младенцев';
+        }
+
+        let btnClear = dropdown.querySelector('button[name = "clear"]');
+        if (sum === 0) {
+            allGuests.value = 'Сколько гостей';
+            btnClear.classList.add('btn_hidden');
+        } else {
+            btnClear.classList.remove('btn_hidden');
+            if (target === btnClear) {
+                allGuests.value = 'Сколько гостей';
+                counterValueArr.forEach((item) => {
+                    item.value = 0;
+                })
+            }
         }
     }
 }
+
+document.addEventListener("click", dropdownOpen);
+document.addEventListener("click", counter);
+document.addEventListener("click", changeover);

@@ -34,6 +34,9 @@
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
         }
+        &_brightBorder {
+            border-color: rgba(31, 32, 65, 0.5);
+        }
     }
     &__checkmark {
         position: absolute;

@@ -104,4 +104,7 @@ $height-e: auto;
             transform: rotate(-45deg);
         }
     }
+    &_hidden {
+        display: none;
+    }
 }

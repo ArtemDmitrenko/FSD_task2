@@ -30363,78 +30363,142 @@ $.fn.extend({
 }));
 
 },{"jquery":"../node_modules/jquery/dist/jquery.js"}],"common.blocks/pages/input/input.js":[function(require,module,exports) {
-$(".input__masked").mask("99.99.9999", {
+$('[name|="date"]').mask("99.99.9999", {
   autoclear: false
 });
 },{}],"common.blocks/pages/dropdown/dropdown.js":[function(require,module,exports) {
-var meaning = document.querySelectorAll('.counter__meaning');
-var plus = document.querySelectorAll('.counter__btn_plus');
-var minus = document.querySelectorAll('.counter__btn_minus');
-var allGuests = document.querySelector('.dropdown-guests__meaning');
-var dropdown = document.querySelector('.dropdown-guests__list'); // Dropdown appears when click
+// Dropdown appears when click and dissapear when click outside or btn "apply"
+var dropdownOpen = function dropdownOpen(event) {
+  var target = event.target;
+  var dropdown = target.closest('.dropdown');
 
-document.querySelector('.dropdown-guests__input').onclick = function () {
-  dropdown.classList.toggle("dropdown-guests__list_show");
-  allGuests.classList.toggle("input__element_border-radius_0");
-}; // Show the whole number of guests
+  if (dropdown) {
+    var input = dropdown.querySelector('.input__element');
+    var dropdownList = dropdown.querySelector('.dropdown__list');
+    var dropdownInput = target.closest('.dropdown__input');
 
-
-function summary() {
-  var sum = 0;
-
-  for (var i = 0; i < meaning.length; i++) {
-    sum = (meaning[i].value | 0) + sum;
-  }
-
-  if (sum > 10 && sum < 15) {
-    allGuests.value = sum + ' гостей';
-  } else if (sum % 10 === 1) {
-    allGuests.value = sum + ' гость';
-  } else if (sum % 10 === 2 || sum % 10 === 3 || sum % 10 === 4) {
-    allGuests.value = sum + ' гостя';
-  } else {
-    allGuests.value = sum + ' гостей';
-  }
-
-  if (sum === 0) {
-    allGuests.value = 'Сколько гостей';
-  }
-} // Counter of guests with properties of disabled button '-' when meaning is '0'
-
-
-var _loop = function _loop(i) {
-  plus[i].onclick = function () {
-    meaning[i].value = (meaning[i].value | 0) + 1;
-    summary();
-
-    if (Number(meaning[i].value) > 0) {
-      meaning[i].previousSibling.removeAttribute('disabled', 'disabled');
-      meaning[i].previousSibling.classList.remove("counter__btn_opacity_38");
-    }
-  };
-
-  minus[i].onclick = function () {
-    meaning[i].value = (meaning[i].value | 0) - 1;
-
-    if (meaning[i].value < 0) {
-      meaning[i].value = 0;
+    if (dropdownInput) {
+      input.classList.toggle("input__element_border-radius_0");
+      input.classList.add("input__element_brightBorder");
+      dropdownList.classList.toggle("dropdown__list_show");
     }
 
-    summary();
+    if (target === dropdownList.querySelector('button[name = "apply"]')) {
+      input.classList.remove("input__element_border-radius_0");
+      input.classList.remove("input__element_brightBorder");
+      dropdownList.classList.remove("dropdown__list_show");
+    }
+  }
 
-    if (Number(meaning[i].value) > 0) {
-      meaning[i].previousSibling.removeAttribute('disabled', 'disabled');
-      meaning[i].previousSibling.classList.remove("counter__btn_opacity_38");
+  if (!dropdown) {
+    var dropdownInputArr = document.querySelectorAll('input[name = "guests"]');
+    var dropdownListArr = document.querySelectorAll('.dropdown__list');
+    dropdownInputArr.forEach(function (item) {
+      item.classList.remove("input__element_border-radius_0");
+      item.classList.remove("input__element_brightBorder");
+    });
+    dropdownListArr.forEach(function (item) {
+      item.classList.remove("dropdown__list_show");
+    });
+  }
+}; // Function counter
+
+
+var counter = function counter(event) {
+  var target = event.target;
+  var dropdown = target.closest('.dropdown');
+
+  if (dropdown) {
+    var counterValueArr = dropdown.querySelectorAll('.counter__value');
+    counterValueArr.forEach(function (item) {
+      if (Number(item.value) === 0) {
+        item.previousSibling.setAttribute("disabled", "disabled");
+      }
+    });
+
+    var _counter = target.closest('.counter__enter');
+
+    if (_counter) {
+      var minus = _counter.querySelector('.counter__btn_minus');
+
+      var plus = _counter.querySelector('.counter__btn_plus');
+
+      var counterValue = _counter.querySelector('.counter__value');
+
+      if (target === plus) {
+        counterValue.value = Number(counterValue.value) + 1;
+        minus.removeAttribute("disabled", "disabled");
+      }
+
+      if (target === minus) {
+        counterValue.value = Number(counterValue.value) - 1;
+
+        if (Number(counterValue.value) === 0) {
+          minus.setAttribute("disabled", "disabled");
+        }
+      }
+    }
+  }
+}; // Update of input field, where we can see total number of guests
+
+
+var changeover = function changeover(event) {
+  var target = event.target;
+  var dropdown = target.closest('.dropdown');
+
+  if (dropdown) {
+    var infants = Number(dropdown.querySelector('input[name = "Infants"]').value);
+    var counterValueArr = dropdown.querySelectorAll(".counter__value");
+    var allGuests = dropdown.querySelector('input[name = "guests"]');
+    var sum = 0;
+    counterValueArr.forEach(function (item) {
+      sum += Number(item.value);
+    });
+    var remainderSum = sum % 10 === 2 || sum % 10 === 3 || sum % 10 === 4;
+
+    if (sum > 10 && sum < 15) {
+      allGuests.value = sum + ' гостей';
+    } else if (sum % 10 === 1) {
+      allGuests.value = sum + ' гость';
+    } else if (remainderSum) {
+      allGuests.value = sum + ' гостя';
     } else {
-      meaning[i].previousSibling.setAttribute('disabled', 'disabled');
-      meaning[i].previousSibling.classList.add("counter__btn_opacity_38");
+      allGuests.value = sum + ' гостей';
     }
-  };
+
+    var remainderInfants = infants % 10 === 2 || infants % 10 === 3 || infants % 10 === 4;
+
+    if (infants > 10 && infants < 15) {
+      allGuests.value = allGuests.value + ', ' + infants + ' младенцев';
+    } else if (infants % 10 === 1) {
+      allGuests.value = allGuests.value + ', ' + infants + ' младенец';
+    } else if (remainderInfants) {
+      allGuests.value = allGuests.value + ', ' + infants + ' младенца';
+    } else if (infants) {
+      allGuests.value = allGuests.value + ', ' + infants + ' младенцев';
+    }
+
+    var btnClear = dropdown.querySelector('button[name = "clear"]');
+
+    if (sum === 0) {
+      allGuests.value = 'Сколько гостей';
+      btnClear.classList.add('btn_hidden');
+    } else {
+      btnClear.classList.remove('btn_hidden');
+
+      if (target === btnClear) {
+        allGuests.value = 'Сколько гостей';
+        counterValueArr.forEach(function (item) {
+          item.value = 0;
+        });
+      }
+    }
+  }
 };
 
-for (var i = 0; i < meaning.length; i++) {
-  _loop(i);
-}
+document.addEventListener("click", dropdownOpen);
+document.addEventListener("click", counter);
+document.addEventListener("click", changeover);
 },{}],"UI-kit/formElements/main.js":[function(require,module,exports) {
 var jquery = require("jquery");
 
@@ -30475,7 +30539,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55312" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54508" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
