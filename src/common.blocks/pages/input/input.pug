@@ -10,15 +10,22 @@
   options.required - input required
   options.label - подпись к checkbox и radio
   options.dropdown - if it is a dropdown
+  options.subscription - if it is a subscription text field with arrow
 
 include ../checkmark/checkmark.pug
+include ../arrow/arrow.pug
+
 
 
 //- For text field and masked inputs
 mixin input(options = {})
-    - const {name, type, value, placeholder, required, dropdown, readonly} = options
+    - const {name, type, value, placeholder, required, dropdown, readonly, subscription} = options
     .input
-        input.input__element(name = name type = type value = value placeholder = placeholder required = required dropdown = dropdown readonly = readonly)
+        input.input__element(name = name type = type value = value placeholder = placeholder required = required dropdown = dropdown readonly = readonly subscription = subscription)
         if dropdown
             .input__checkmark
                 +checkmark()  
+        if subscription
+            .input__subscription
+                button(type="submit").input__defaultButton
+                    +arrow({color:'purple'})

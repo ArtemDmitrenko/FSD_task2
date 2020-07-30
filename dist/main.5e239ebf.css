@@ -74,7 +74,7 @@ a {
 .formElements__logoUIkit {
   padding: 30px 0 0 30px;
 }
-.formElements__textField, .formElements__dropdown, .formElements__maskedInput {
+.formElements__textField, .formElements__dropdown, .formElements__maskedInput, .formElements__subscriptionInput {
   width: 22.2%;
   margin: 20px 0 0 50px;
 }
@@ -122,6 +122,20 @@ a {
   right: 11px;
   top: 12px;
 }
+.input__subscription {
+  position: absolute;
+  top: 12px;
+  right: 0;
+}
+.input__defaultButton {
+  position: absolute;
+  left: -38px;
+  top: 8px;
+  background: #fff;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
 
 .checkmark {
   background: none;
@@ -143,6 +157,49 @@ a {
   margin-right: 7px;
   margin-left: 9.5px;
   margin-bottom: -3px;
+}
+
+.arrow {
+  position: relative;
+  width: 15px;
+  height: 2px;
+  display: block;
+}
+.arrow::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 2px;
+  top: -3px;
+  right: -3px;
+  transform: rotate(45deg);
+}
+.arrow::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 2px;
+  top: 3px;
+  right: -3px;
+  transform: rotate(-45deg);
+}
+.arrow_purple {
+  background-image: linear-gradient(to bottom, #BC9CFF, #8BA4F9);
+}
+.arrow_purple::after {
+  background-image: linear-gradient(to bottom, #BC9CFF, #8BA4F9);
+}
+.arrow_purple::before {
+  background-image: linear-gradient(to bottom, #BC9CFF, #8BA4F9);
+}
+.arrow_white {
+  background-color: white;
+}
+.arrow_white::after {
+  background-color: white;
+}
+.arrow_white::before {
+  background-color: white;
 }
 
 .dropdown {

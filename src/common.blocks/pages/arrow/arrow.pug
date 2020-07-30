@@ -1,2 +1,12 @@
-mixin arrow()
-    span.arrow
+//- 
+    options.purple - color of arrow is purple gradient
+    options.white - color of arrow is white
+
+mixin arrow(options = {})
+    - let {color} = options;
+    case color
+        when 'purple'
+            span.arrow.arrow_purple
+        when 'white'
+            span.arrow.arrow_purple
+

@@ -21,6 +21,10 @@ block content
         br
         .formElements__dropdown  
             +dropdown({dropdownType:'roomsBeds'})
+        br
+        .formElements__subscriptionInput  
+            +input({name: 'email', type: 'email', placeholder: 'Email', required: true, subscription: true})
+
 
 block script
     script(src="main.js")         

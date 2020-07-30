@@ -43,28 +43,19 @@
         right: 11px;
         top: 12px;
     }
+    &__subscription {
+        position: absolute;
+        top: 12px;
+        right: 0;
+    }
+    &__defaultButton {
+        position: absolute;
+        left: -38px;
+        top: 8px;
+        background: #fff;
+        border: none;
+        cursor: pointer;
+        outline: none;
+    }
 }
 
-// &__element {
-//     flex-grow: 1;
-//     width: 10rem;
-//     padding: 0.43rem 1rem;
-//     color: #888;
-//     border: none;
-//     border-radius: 4px;
-//     background-color: #e5e5e5;
-//     font-family: SourceSansProRegular, sans-serif;
-//     font-size: 1.2rem;
-//     &:focus {
-//         outline: 0.3rem auto #bbb;
-//     }
-//     &[type='checkbox'],
-//     &[type='radio'] {
-//         position: absolute;
-//         left: 1rem;
-//         width: 1px;
-//         height: 1px;
-//         @include firefox-only() {
-//             visibility: hidden;
-//         }
-//     }
