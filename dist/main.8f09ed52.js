@@ -30444,9 +30444,9 @@ var counter = function counter(event) {
 
 var changeover = function changeover(event) {
   var target = event.target;
-  var dropdown = target.closest('.dropdown');
+  var dropdown = target.closest('.dropdown'); // Dropdown for guests
 
-  if (dropdown) {
+  if (dropdown && dropdown.querySelector('input[name = "guests"]')) {
     var infants = Number(dropdown.querySelector('input[name = "Infants"]').value);
     var counterValueArr = dropdown.querySelectorAll(".counter__value");
     var allGuests = dropdown.querySelector('input[name = "guests"]');
@@ -30492,6 +30492,70 @@ var changeover = function changeover(event) {
           item.value = 0;
         });
       }
+    }
+  } // Dropdown for rooms and beds
+
+
+  if (dropdown && dropdown.querySelector('input[name = "roomsBeds"]')) {
+    var bedrooms = Number(dropdown.querySelector('input[name = "Bedrooms"]').value);
+    var beds = Number(dropdown.querySelector('input[name = "Beds"]').value);
+    var bathrooms = Number(dropdown.querySelector('input[name = "Bathrooms"]').value);
+    var allRoomsBeds = dropdown.querySelector('input[name = "roomsBeds"]');
+
+    var _counterValueArr = dropdown.querySelectorAll(".counter__value");
+
+    var _sum = 0;
+
+    _counterValueArr.forEach(function (item) {
+      _sum += Number(item.value);
+    });
+
+    var bedroomsDeclination = function bedroomsDeclination() {
+      var bedroomsSum = bedrooms % 10 === 2 || bedrooms % 10 === 3 || bedrooms % 10 === 4;
+
+      if (bedrooms > 10 && bedrooms < 15) {
+        allRoomsBeds.value = bedrooms + ' спален';
+      } else if (bedrooms % 10 === 1) {
+        allRoomsBeds.value = bedrooms + ' спальня';
+      } else if (bedroomsSum) {
+        allRoomsBeds.value = bedrooms + ' спальни';
+      } else {
+        allRoomsBeds.value = bedrooms + ' спален';
+      }
+    };
+
+    var bedsAmount = 0;
+
+    var bedsDeclination = function bedsDeclination() {
+      var bedsSum = beds % 10 === 2 || beds % 10 === 3 || beds % 10 === 4;
+
+      if (beds > 10 && beds < 15) {
+        bedsAmount = beds + ' кроватей';
+      } else if (beds % 10 === 1) {
+        bedsAmount = beds + ' кровать';
+      } else if (bedsSum) {
+        bedsAmount = beds + ' кровати';
+      } else {
+        bedsAmount = beds + ' кроватей';
+      }
+    };
+
+    if (_sum !== 0) {
+      if (bedrooms !== 0) {
+        bedroomsDeclination();
+
+        if (beds !== 0) {
+          bedsDeclination();
+          allRoomsBeds.value = allRoomsBeds.value + ', ' + bedsAmount + '...';
+        }
+      } else {
+        if (beds !== 0) {
+          bedsDeclination();
+          allRoomsBeds.value = bedsAmount;
+        }
+      }
+    } else {
+      allRoomsBeds.value = '';
     }
   }
 };
@@ -30539,7 +30603,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54508" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50505" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

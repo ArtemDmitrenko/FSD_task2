@@ -65,7 +65,8 @@ let counter = (event) => {
 let changeover = (event) => {
     let { target } = event;
     let dropdown = target.closest('.dropdown');
-    if (dropdown) {
+    // Dropdown for guests
+    if (dropdown && dropdown.querySelector('input[name = "guests"]')) {
         let infants = Number(dropdown.querySelector('input[name = "Infants"]').value);
         let counterValueArr = dropdown.querySelectorAll(".counter__value");
         let allGuests = dropdown.querySelector('input[name = "guests"]');
@@ -106,6 +107,63 @@ let changeover = (event) => {
                     item.value = 0;
                 })
             }
+        }
+    }
+    // Dropdown for rooms and beds
+    if (dropdown && dropdown.querySelector('input[name = "roomsBeds"]')) {
+        let bedrooms = Number(dropdown.querySelector('input[name = "Bedrooms"]').value);
+        let beds = Number(dropdown.querySelector('input[name = "Beds"]').value);
+        let bathrooms = Number(dropdown.querySelector('input[name = "Bathrooms"]').value);
+        let allRoomsBeds = dropdown.querySelector('input[name = "roomsBeds"]');
+
+        let counterValueArr = dropdown.querySelectorAll(".counter__value");
+        let sum = 0;
+        counterValueArr.forEach((item) => {
+            sum += Number(item.value);
+        })
+
+        let bedroomsDeclination = () => {
+            let bedroomsSum = (bedrooms % 10 === 2 || bedrooms % 10 === 3 || bedrooms % 10 === 4);
+            if (bedrooms > 10 && bedrooms < 15) {
+                allRoomsBeds.value = bedrooms + ' спален';
+            } else if (bedrooms % 10 === 1) {
+                allRoomsBeds.value = bedrooms + ' спальня';
+            } else if (bedroomsSum) {
+                allRoomsBeds.value = bedrooms + ' спальни';
+            } else {
+                allRoomsBeds.value = bedrooms + ' спален';
+            }
+        }
+
+        let bedsAmount = 0;
+        let bedsDeclination = () => {
+            let bedsSum = ( beds % 10 === 2 ||  beds % 10 === 3 ||  beds % 10 === 4);
+            if (beds > 10 && beds < 15) {
+                bedsAmount = beds + ' кроватей';
+            } else if (beds % 10 === 1) {
+                bedsAmount = beds + ' кровать';
+            } else if (bedsSum) {
+                bedsAmount = beds + ' кровати';
+            } else {
+                bedsAmount = beds + ' кроватей';
+            }
+        }
+
+        if (sum !== 0) {
+            if (bedrooms !== 0) {
+                bedroomsDeclination();
+                if (beds !== 0) {
+                    bedsDeclination();
+                    allRoomsBeds.value = allRoomsBeds.value + ', ' + bedsAmount + '...';
+                }
+            } else {
+                if (beds !== 0) {
+                    bedsDeclination();
+                    allRoomsBeds.value = bedsAmount;
+                }
+            }
+        } else {
+            allRoomsBeds.value = '';
         }
     }
 }

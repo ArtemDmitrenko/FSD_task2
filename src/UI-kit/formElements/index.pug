@@ -3,10 +3,6 @@ include ../../common.blocks/UIkit/logoUIkit/logoUIkit.pug
 include ../../common.blocks/pages/input/input.pug
 include ../../common.blocks/pages/dropdown/dropdown.pug
 
-
-
-
-
 block title
     title Form elements
 
@@ -20,10 +16,11 @@ block content
         .formElements__maskedInput
             +input({name: 'date', type: 'text', placeholder: 'ДД.ММ.ГГГГ', required: true, dateMask: true})
         br
-        .formElements__dropdown   
-            +dropdown()
+        .formElements__dropdown  
+            +dropdown({ dropdownType: 'guests' })
         br
-        .formElements__dropdown   
-            +dropdown()
+        .formElements__dropdown  
+            +dropdown({dropdownType:'roomsBeds'})
+
 block script
     script(src="main.js")         
