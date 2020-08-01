@@ -2,6 +2,8 @@ extends ../../templates/UIkit_template.pug
 include ../../common.blocks/UIkit/logoUIkit/logoUIkit.pug
 include ../../common.blocks/pages/input/input.pug
 include ../../common.blocks/pages/dropdown/dropdown.pug
+include ../../common.blocks/pages/dateDropdown/dateDropdown.pug
+
 
 block title
     title Form elements
@@ -24,7 +26,10 @@ block content
         br
         .formElements__subscriptionInput  
             +input({name: 'email', type: 'email', placeholder: 'Email', required: true, subscription: true})
+        br
+        .formElements__datepicker
+            +dateDropdown()
 
 
 block script
-    script(src="main.js")         
+    script(src="main.js")

@@ -15,17 +15,20 @@
 include ../checkmark/checkmark.pug
 include ../arrow/arrow.pug
 
-
-
-//- For text field and masked inputs
 mixin input(options = {})
-    - const {name, type, value, placeholder, required, dropdown, readonly, subscription} = options
-    .input
-        input.input__element(name = name type = type value = value placeholder = placeholder required = required dropdown = dropdown readonly = readonly subscription = subscription)
-        if dropdown
+    - const {name, type, value, placeholder, required, dropdown, readonly, subscription, dateDropdown} = options
+    if dateDropdown
+        .input
+            input.input__element.input__dateDropdown(name = name type = type value = value placeholder = placeholder required = required readonly = readonly dateDropdown = dateDropdown)
             .input__checkmark
-                +checkmark()  
-        if subscription
-            .input__subscription
-                button(type="submit").input__defaultButton
-                    +arrow({color:'purple'})
+                +checkmark()
+    else
+        .input
+            input.input__element(name = name type = type value = value placeholder = placeholder required = required dropdown = dropdown readonly = readonly subscription = subscription dateDropdown = dateDropdown)
+            if dropdown
+                .input__checkmark
+                    +checkmark()
+            if subscription
+                .input__subscription
+                    button(type="submit").input__defaultButton
+                        +arrow({color:'purple'})

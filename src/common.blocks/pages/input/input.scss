@@ -38,6 +38,12 @@
             border-color: rgba(31, 32, 65, 0.5);
         }
     }
+    &__dateDropdown {
+        &::placeholder {
+            opacity: 0.75;
+            color: #1F2041;
+        }
+    }
     &__checkmark {
         position: absolute;
         right: 11px;

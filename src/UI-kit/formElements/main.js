@@ -4,3 +4,5 @@ require("jquery-ui-dist/jquery-ui.js");
 require("jquery.maskedinput/src/jquery.maskedinput.js");
 require("../../common.blocks/pages/input/input.js");
 require("../../common.blocks/pages/dropdown/dropdown.js");
+require("../../common.blocks/pages/dateDropdown/dateDropdown.js");
+// require("air-datepicker/dist/js/datepicker.min.js");
