@@ -37,7 +37,7 @@
   color: #1F2041;
 }
 
-.datepicker--day-name, .counter__value, .counter__name, .btn {
+.datepicker--button, .datepicker--day-name, .counter__value, .counter__name, .btn {
   font-family: "Conv_Montserrat-Bold";
   font-size: 12px;
   color: #1F2041;
@@ -790,7 +790,6 @@ a {
 
 .datepicker--buttons,
 .datepicker--time {
-  border-top: 1px solid #efefef;
   padding: 4px;
   flex-direction: row-reverse;
 }
@@ -809,10 +808,15 @@ a {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  justify-content: space-between;
+  margin-top: 2px;
+  margin-bottom: 7px;
 }
 
 .datepicker--button {
-  color: #4eb5e6;
+  letter-spacing: -0.01em;
+  opacity: 0.5;
+  max-width: 100px;
   cursor: pointer;
   border-radius: 4px;
   -webkit-flex: 1;
@@ -828,6 +832,15 @@ a {
   -ms-flex-align: center;
   align-items: center;
   height: 32px;
+}
+.datepicker--button:nth-child(2) {
+  color: #1F2041;
+  opacity: 0.5;
+}
+.datepicker--button:nth-child(1) {
+  color: #BC9CFF;
+  opacity: 1;
+  margin-right: 8px;
 }
 
 .datepicker--button:hover {

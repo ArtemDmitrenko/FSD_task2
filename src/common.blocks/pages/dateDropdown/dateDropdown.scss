@@ -344,7 +344,7 @@
 }
 .datepicker--buttons,
 .datepicker--time {
-  border-top: 1px solid #efefef;
+  // border-top: 1px solid #efefef;
   padding: 4px;
   flex-direction: row-reverse;
 }
@@ -361,9 +361,19 @@
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  justify-content: space-between;
+  margin-top: 2px;
+  margin-bottom: 7px;
 }
+
 .datepicker--button {
-  color: #4eb5e6;
+  @extend %h3;
+  letter-spacing: -.01em;
+  // color: $dark100;
+  opacity: 0.5;
+  max-width: 100px;
+
+  // color: #4eb5e6;
   cursor: pointer;
   border-radius: 4px;
   -webkit-flex: 1;
@@ -379,6 +389,15 @@
   -ms-flex-align: center;
   align-items: center;
   height: 32px;
+  &:nth-child(2) {
+    color: $dark100;
+    opacity: 0.5;
+  }
+  &:nth-child(1) {
+    color: $purple;
+    opacity: 1;
+    margin-right: 8px;
+  }
 }
 .datepicker--button:hover {
   color: #4a4a4a;
