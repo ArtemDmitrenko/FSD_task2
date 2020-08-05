@@ -30575,7 +30575,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         o = "datepicker",
         r = ".input__dateDropdown",
         c = !1,
-        d = '<div class="datepicker"><i class="datepicker--pointer"></i><nav class="datepicker--nav"></nav><div class="datepicker--content"></div></div>',
+        d = '<div class="datepicker"><nav class="datepicker--nav"></nav><div class="datepicker--content"></div></div>',
         l = {
       classes: "",
       inline: !1,
@@ -30609,10 +30609,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       showEvent: "focus",
       autoClose: !1,
       monthsField: "monthsShort",
-      prevHtml: '<svg><path d="M 17,12 l -5,5 l 5,5"></path></svg>',
-      nextHtml: '<svg><path d="M 14,12 l 5,5 l -5,5"></path></svg>',
+      prevHtml: '<span class="arrow_left arrow_purple"></span>',
+      nextHtml: '<span class="arrow_right arrow_purple"></span>',
       navTitles: {
-        days: "MM, <i>yyyy</i>",
+        days: "MM <i>yyyy</i>",
         months: "yyyy",
         years: "yyyy1 - yyyy2"
       },
@@ -31325,7 +31325,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         daysMin: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
         months: ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"],
         monthsShort: ["Янв", "Фев", "Мар", "Апр", "Май", "Июн", "Июл", "Авг", "Сен", "Окт", "Ноя", "Дек"],
-        today: "Сегодня",
+        today: "Применить",
         clear: "Очистить",
         dateFormat: "dd.mm.yyyy",
         timeFormat: "hh:ii",
@@ -31694,6 +31694,12 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     };
   }();
 }(window, jQuery);
+$('.input__dateDropdown').datepicker({
+  // inline: true,
+  clearButton: true,
+  todayButton: true // classes: "yeees"
+
+});
 },{}],"UI-kit/formElements/main.js":[function(require,module,exports) {
 var jquery = require("jquery");
 
@@ -31736,7 +31742,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56678" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53338" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -1,38 +1,78 @@
 .arrow {
-    position: relative;
-    // top: -7px;
-    width: 15px;
-    height: 2px;
-    // background-image: linear-gradient(to bottom, $purple, #8BA4F9);
-    // left: 282px;
-    display: block;
-    &::after {
-        content: "";
-        position: absolute;
-        width: 10px;
+    &_right {
+        position: relative;
+        // top: -7px;
+        width: 15px;
         height: 2px;
-        top: -3px;
-        right: -3px;
         // background-image: linear-gradient(to bottom, $purple, #8BA4F9);
-        transform: rotate(45deg);
+        // left: 282px;
+        display: block;
+        &::after {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 2px;
+            top: -3px;
+            right: -3px;
+            // background-image: linear-gradient(to bottom, $purple, #8BA4F9);
+            transform: rotate(45deg);
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 2px;
+            top: 3px;
+            right: -3px;
+            // background-image: linear-gradient(to bottom, $purple, #8BA4F9);
+            transform: rotate(-45deg);
+        }
     }
-    &::before {
-        content: "";
-        position: absolute;
-        width: 10px;
+    &_left {
+        position: relative;
+        // top: -7px;
+        width: 15px;
         height: 2px;
-        top: 3px;
-        right: -3px;
         // background-image: linear-gradient(to bottom, $purple, #8BA4F9);
-        transform: rotate(-45deg);
+        // left: 282px;
+        display: block;
+        &::after {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 2px;
+            top: 3px;
+            right: 7px;
+            // background-image: linear-gradient(to bottom, $purple, #8BA4F9);
+            transform: rotate(45deg);
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 2px;
+            top: -3px;
+            right: 7px;
+            // background-image: linear-gradient(to bottom, $purple, #8BA4F9);
+            transform: rotate(-45deg);
+        }
     }
-    &_purple {
+    &_purple-gradient {
         background-image: linear-gradient(to bottom, $purple, #8BA4F9);
         &::after {
             background-image: linear-gradient(to bottom, $purple, #8BA4F9);
         }
         &::before {
             background-image: linear-gradient(to bottom, $purple, #8BA4F9);
+        }
+    }
+    &_purple {
+        background-color: #BC9CFF;
+        &::after {
+            background-color: #BC9CFF;
+        }
+        &::before {
+            background-color: #BC9CFF;
         }
     }
     &_white {
@@ -44,4 +84,37 @@
             background-color: white;
         }
     }
-}
+} 
+
+
+//     &_left {
+//         position: relative;
+//         // top: -7px;
+//         width: 15px;
+//         height: 2px;
+//         // background-image: linear-gradient(to bottom, $purple, #8BA4F9);
+//         // left: 282px;
+//         display: block;
+//         &::after {
+//             content: "";
+//             position: absolute;
+//             width: 10px;
+//             height: 2px;
+//             top: -3px;
+//             right: -3px;
+//             // background-image: linear-gradient(to bottom, $purple, #8BA4F9);
+//             transform: rotate(45deg);
+//         }
+//         &::before {
+//             content: "";
+//             position: absolute;
+//             width: 10px;
+//             height: 2px;
+//             top: 3px;
+//             right: -3px;
+//             // background-image: linear-gradient(to bottom, $purple, #8BA4F9);
+//             transform: rotate(-45deg);
+//         }
+    
+//     }
+// }

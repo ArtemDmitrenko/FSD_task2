@@ -395,13 +395,13 @@ a {
   padding-left: 22px;
 }
 
-.arrow {
+.arrow_right {
   position: relative;
   width: 15px;
   height: 2px;
   display: block;
 }
-.arrow::after {
+.arrow_right::after {
   content: "";
   position: absolute;
   width: 10px;
@@ -410,7 +410,7 @@ a {
   right: -3px;
   transform: rotate(45deg);
 }
-.arrow::before {
+.arrow_right::before {
   content: "";
   position: absolute;
   width: 10px;
@@ -419,14 +419,47 @@ a {
   right: -3px;
   transform: rotate(-45deg);
 }
-.arrow_purple {
+.arrow_left {
+  position: relative;
+  width: 15px;
+  height: 2px;
+  display: block;
+}
+.arrow_left::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 2px;
+  top: 3px;
+  right: 7px;
+  transform: rotate(45deg);
+}
+.arrow_left::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 2px;
+  top: -3px;
+  right: 7px;
+  transform: rotate(-45deg);
+}
+.arrow_purple-gradient {
   background-image: linear-gradient(to bottom, #BC9CFF, #8BA4F9);
+}
+.arrow_purple-gradient::after {
+  background-image: linear-gradient(to bottom, #BC9CFF, #8BA4F9);
+}
+.arrow_purple-gradient::before {
+  background-image: linear-gradient(to bottom, #BC9CFF, #8BA4F9);
+}
+.arrow_purple {
+  background-color: #BC9CFF;
 }
 .arrow_purple::after {
-  background-image: linear-gradient(to bottom, #BC9CFF, #8BA4F9);
+  background-color: #BC9CFF;
 }
 .arrow_purple::before {
-  background-image: linear-gradient(to bottom, #BC9CFF, #8BA4F9);
+  background-color: #BC9CFF;
 }
 .arrow_white {
   background-color: white;
