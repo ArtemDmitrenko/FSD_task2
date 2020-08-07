@@ -31697,9 +31697,31 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 $('.input__dateDropdown').datepicker({
   // inline: true,
   clearButton: true,
-  todayButton: true // classes: "yeees"
+  todayButton: true // classes: "yeees",
 
 });
+},{}],"common.blocks/pages/checkbox-btn/checkbox-btn.js":[function(require,module,exports) {
+var ecbOpen = function ecbOpen(event) {
+  var target = event.target;
+  var cb = target.closest('.checkbox-btn');
+
+  if (cb) {
+    var checkmark = cb.querySelector(".checkmark");
+
+    if (checkmark) {
+      var cbTitle = cb.querySelector(".checkbox-btn__expandableName");
+      var cbList = cb.querySelector(".checkbox-btn__expandableForm");
+
+      if (cbTitle) {
+        cbList.classList.toggle("checkbox-btn__expandableForm_show");
+        checkmark.classList.toggle("checkmark__down");
+        checkmark.classList.toggle("checkmark__up");
+      }
+    }
+  }
+};
+
+document.addEventListener("click", ecbOpen);
 },{}],"UI-kit/formElements/main.js":[function(require,module,exports) {
 var jquery = require("jquery");
 
@@ -31713,8 +31735,10 @@ require("../../common.blocks/pages/input/input.js");
 
 require("../../common.blocks/pages/dropdown/dropdown.js");
 
-require("../../common.blocks/pages/dateDropdown/dateDropdown.js"); // require("air-datepicker/dist/js/datepicker.min.js");
-},{"jquery":"../node_modules/jquery/dist/jquery.js","jquery-ui-dist/jquery-ui.js":"../node_modules/jquery-ui-dist/jquery-ui.js","jquery.maskedinput/src/jquery.maskedinput.js":"../node_modules/jquery.maskedinput/src/jquery.maskedinput.js","../../common.blocks/pages/input/input.js":"common.blocks/pages/input/input.js","../../common.blocks/pages/dropdown/dropdown.js":"common.blocks/pages/dropdown/dropdown.js","../../common.blocks/pages/dateDropdown/dateDropdown.js":"common.blocks/pages/dateDropdown/dateDropdown.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+require("../../common.blocks/pages/dateDropdown/dateDropdown.js");
+
+require("../../common.blocks/pages/checkbox-btn/checkbox-btn.js"); // require("air-datepicker/dist/js/datepicker.min.js");
+},{"jquery":"../node_modules/jquery/dist/jquery.js","jquery-ui-dist/jquery-ui.js":"../node_modules/jquery-ui-dist/jquery-ui.js","jquery.maskedinput/src/jquery.maskedinput.js":"../node_modules/jquery.maskedinput/src/jquery.maskedinput.js","../../common.blocks/pages/input/input.js":"common.blocks/pages/input/input.js","../../common.blocks/pages/dropdown/dropdown.js":"common.blocks/pages/dropdown/dropdown.js","../../common.blocks/pages/dateDropdown/dateDropdown.js":"common.blocks/pages/dateDropdown/dateDropdown.js","../../common.blocks/pages/checkbox-btn/checkbox-btn.js":"common.blocks/pages/checkbox-btn/checkbox-btn.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -31742,7 +31766,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49831" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57353" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

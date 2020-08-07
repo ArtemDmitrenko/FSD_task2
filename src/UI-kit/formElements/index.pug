@@ -3,6 +3,8 @@ include ../../common.blocks/UIkit/logoUIkit/logoUIkit.pug
 include ../../common.blocks/pages/input/input.pug
 include ../../common.blocks/pages/dropdown/dropdown.pug
 include ../../common.blocks/pages/dateDropdown/dateDropdown.pug
+include ../../common.blocks/pages/checkbox-btn/checkbox-btn.pug
+
 
 
 block title
@@ -29,6 +31,12 @@ block content
         br
         .formElements__datepicker
             +dateDropdown()
+        br
+        .formElements__checkbox-btn
+            +checkbox-btn({expandable: false, name: 'Checkbox buttons', list: ['Можно курить', 'Можно с питомцами', 'Можно пригласить гостей (до 10 человек)']})
+        br
+        .formElements__checkbox-btn
+            +checkbox-btn({expandable: true, name: 'Expandable checkbox list', list: ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь']})
 
 
 block script

@@ -1,0 +1,87 @@
+.checkbox-btn {
+    max-width: 222px;
+    &__name, &__expandableName {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 17px;
+        width: 256px;
+    }
+    &__expandableName {
+        cursor: pointer;
+    }
+    &__title {
+        @extend %h3;
+    }
+    &__item {
+        margin-top: 12px;
+    }
+    &__expandableForm {
+        display: none;
+        &_show {
+            display: block;
+        }
+    }
+    &__input {
+        position: absolute;
+        left: -9999px;
+        & + label {
+            display: inline-block;
+            position: relative;
+            padding-left: 30px;
+            line-height: 18px;
+            cursor: pointer;
+            @extend %font-body;
+            color: rgba(31, 32, 65, 0.5);
+            text-transform: initial;
+            &:before {
+                content: "";
+                position: absolute;
+                left: 0px;
+                top: 0px;
+                width: 20px;
+                height: 20px;
+                border: 1px solid;
+                border-color: rgb(31, 32, 65, 0.25);;
+                background-color: #ffffff;
+                border-radius: 4px;
+                box-sizing: border-box;
+            } 
+            &:after {
+                content: "";
+                position: absolute;
+                -webkit-transition: all 0.2s ease;
+                -moz-transition: all 0.2s ease;
+                -o-transition: all 0.2s ease;
+                transition: all 0.2s ease;
+                left: 6px;
+                top: 6px;
+                width: 8px;
+                height: 6px;
+                border-radius: 1px;
+                -webkit-transform: rotate(-45deg);
+                -moz-transform: rotate(-45deg);
+                -o-transform: rotate(-45deg);
+                -ms-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+                border-image: linear-gradient(-45deg, #BC9CFF, #8BA4F9);
+                border-left: 2px solid;
+                border-bottom: 2px solid;
+                box-sizing: border-box;
+                border-image-slice: 1;    
+        
+            }     
+        }
+        &:not(:checked) + label:after {
+            opacity: 0;
+        }
+        &:checked + label {
+            &:before {
+                border-color: $purple;
+            }
+            &:after {
+                opacity: 1;
+            }
+
+        }
+    }
+}

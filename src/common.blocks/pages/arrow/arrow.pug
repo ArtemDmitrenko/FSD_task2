@@ -3,10 +3,15 @@
     options.white - color of arrow is white
 
 mixin arrow(options = {})
-    - let {color} = options;
+    - let {color, direction} = options;
     case color
         when 'purple'
-            span.arrow.arrow_purple
+            if direction === 'right'
+                span.arrow_right.arrow_purple
+            else
+                span.arrow_left.arrow_purple
         when 'white'
-            span.arrow.arrow_white
-
+            if direction === 'right'
+                span.arrow_right.arrow_white
+            else
+                span.arrow_left.arrow_white
