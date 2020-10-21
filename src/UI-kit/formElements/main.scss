@@ -4,7 +4,7 @@
 @import "../../fonts.scss";
 // Подключение nullstyle
 @import "../../nullstyle.scss";
-// Headers-footers
+// formElements
 @import "../../common.blocks/UIkit/formElements/formElements.scss";
 // LogoUIkit
 @import "../../common.blocks/UIkit/logoUIkit/logoUIkit.scss";
@@ -24,3 +24,7 @@
 @import "../../common.blocks/pages/dateDropdown/dateDropdown.scss";
 // checkbox-btn
 @import "../../common.blocks/pages/checkbox-btn/checkbox-btn.scss";
+// room-details
+@import "../../common.blocks/pages/room-details/room-details.scss";
+// radio-buttons
+@import "../../common.blocks/pages/radio-buttons/radio-buttons.scss";

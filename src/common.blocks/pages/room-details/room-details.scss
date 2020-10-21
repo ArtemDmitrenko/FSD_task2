@@ -1,0 +1,60 @@
+.room-details {
+    width: 291px;
+    &__line {
+        border: none;
+        background-color: rgba(31, 32, 65, 0.05);; /* Цвет линии */
+        color: rgba(31, 32, 65, 0.05);; /* Цвет линии для IE6-7 */
+        height: 1px;
+        margin: 20px 0 20px 0;
+    }
+    &__title {
+        @extend %h2;
+    }
+    &__all {
+        display: flex;
+    }
+    &__text {
+        margin: 3px 0 0 10px;    
+    }
+    &__image {
+        font-family: 'Conv_MaterialIcons-Regular';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 48px;  /* Preferred icon size */
+        display: inline-block;
+        line-height: 1;
+        text-transform: none;
+        letter-spacing: normal;
+        word-wrap: normal;
+        white-space: nowrap;
+        direction: ltr;
+        color: #BC9CFF;
+
+        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      
+        /* Support for all WebKit browsers. */
+        -webkit-font-smoothing: antialiased;
+        /* Support for Safari and Chrome. */
+        text-rendering: optimizeLegibility;
+      
+        /* Support for Firefox. */
+        -moz-osx-font-smoothing: grayscale;
+      
+        /* Support for IE. */
+        font-feature-settings: 'liga';
+    }
+    &__name {
+        @extend %h3;
+        font-size: 14px;
+        text-transform: initial;
+        color: $dark75;
+        margin-bottom: 6px;
+    }
+    &__description {
+        @extend %font-body;
+        color: $dark75;
+        // margin-top: 6px;
+    }
+}

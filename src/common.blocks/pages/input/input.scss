@@ -5,6 +5,21 @@
     // & [type="email"] {
     //     opacity: 0.1;
     // }
+    &__heading {
+        position: absolute;
+        top: -20px;
+        left: 1px;        
+        @extend %h3;
+    }
+    &__description {
+        position: absolute;
+        top: -23px;
+        right: 0;       
+        @extend %font-body;
+        font-size: 12px;
+        text-transform: uppercase;
+        color: $dark50;
+    }
     &__element {
         position: relative;
         color: $dark75;

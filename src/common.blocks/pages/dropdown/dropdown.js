@@ -11,7 +11,6 @@ let dropdownOpen = (event) => {
                 input.classList.toggle("input__element_border-radius_0");
                 input.classList.add("input__element_brightBorder");
                 dropdownList.classList.toggle("dropdown__list_show");
-
             }
             if (target === dropdownList.querySelector('button[name = "apply"]')) {
                 input.classList.remove("input__element_border-radius_0");
@@ -105,6 +104,10 @@ let changeover = (event) => {
                 allGuests.value = 'Сколько гостей';
                 counterValueArr.forEach((item) => {
                     item.value = 0;
+                });
+                let minusArr = dropdown.querySelectorAll('.counter__btn_minus');
+                minusArr.forEach((item) => {
+                    item.setAttribute("disabled", "disabled")
                 })
             }
         }

@@ -1,0 +1,18 @@
+//-
+  options.title - main title
+  options.name - name of item
+  options.description - description of item
+  options.image - image of item
+
+mixin room-details(options)
+    - const {title, name, description, image} = options
+    .room-details
+        if title
+            h2.room-details__title= title
+        - for (let i = 0; i < name.length; i ++)
+            .room-details__all
+                .room-details__image= image[i]
+                .room-details__text
+                    h3.room-details__name= name[i]
+                    p.room-details__description= description[i]
+            hr.room-details__line

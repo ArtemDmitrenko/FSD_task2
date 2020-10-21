@@ -17,7 +17,8 @@
         @extend %h3;
         border: none;
         outline: none;
-        padding-left: 10px;
+        padding-left: 5px;
+        padding-right: 7px;
     }
     &__btn {
         border-color: $dark25;

@@ -4,6 +4,10 @@ include ../../common.blocks/pages/input/input.pug
 include ../../common.blocks/pages/dropdown/dropdown.pug
 include ../../common.blocks/pages/dateDropdown/dateDropdown.pug
 include ../../common.blocks/pages/checkbox-btn/checkbox-btn.pug
+include ../../common.blocks/pages/room-details/room-details.pug
+include ../../common.blocks/pages/radio-buttons/radio-buttons.pug
+
+
 
 
 
@@ -14,29 +18,38 @@ block content
     .formElements
         .formElements__logoUIkit
             +logoUIkit()
-        .formElements__textField
-            +input({name: 'email', type: 'email', placeholder: 'Email', required: true})
-        br
-        .formElements__maskedInput
-            +input({name: 'date', type: 'text', placeholder: 'ДД.ММ.ГГГГ', required: true, dateMask: true})
-        br
-        .formElements__dropdown  
-            +dropdown({ dropdownType: 'guests' })
-        br
-        .formElements__dropdown  
-            +dropdown({dropdownType:'roomsBeds'})
-        br
-        .formElements__subscriptionInput  
-            +input({name: 'email', type: 'email', placeholder: 'Email', required: true, subscription: true})
-        br
-        .formElements__datepicker
-            +dateDropdown()
-        br
-        .formElements__checkbox-btn
-            +checkbox-btn({expandable: false, name: 'Checkbox buttons', list: ['Можно курить', 'Можно с питомцами', 'Можно пригласить гостей (до 10 человек)']})
-        br
-        .formElements__checkbox-btn
-            +checkbox-btn({expandable: true, name: 'Expandable checkbox list', list: ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь']})
+        .formElements__allItems
+            .formElements__textField
+                +input({heading: 'text field', description: 'default', name: 'email', type: 'email', placeholder: 'Email', required: true})
+            br
+            .formElements__maskedInput
+                +input({heading: 'masked text field', description: 'Hover / Focus', name: 'date', type: 'text', placeholder: 'ДД.ММ.ГГГГ', required: true, dateMask: true})
+            br
+            .formElements__dropdown  
+                +dropdown({dropdownType: 'guests'})
+            br
+            .formElements__dropdown  
+                +dropdown({dropdownType:'roomsBeds'})
+            br
+            .formElements__subscriptionInput  
+                +input({heading: 'subscription text field', name: 'email', type: 'email', placeholder: 'Email', required: true, subscription: true})
+            br
+            .formElements__datepicker
+                +dateDropdown()
+            br
+            .formElements__checkbox-btn
+                +checkbox-btn({expandable: false, name: 'Checkbox buttons', list: ['Можно курить', 'Можно с питомцами', 'Можно пригласить гостей (до 10 человек)']})
+            br
+            .formElements__checkbox-btn
+                +checkbox-btn({expandable: true, name: 'Expandable checkbox list', list: ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь']})
+            br
+            .formElements__room-details
+                +room-details({title: '', name: ['Комфорт', 'Удобство'], description: ['Шумопоглощающие стены', 'Окно в каждой из спален'], image: ['insert_emoticon', 'location_city']})
+            br
+            .formElements__radio-buttons
+                +radio-buttons({name: 'Radio Buttons', list: ['Мужчина', 'Женщина']})
+
+
 
 
 block script

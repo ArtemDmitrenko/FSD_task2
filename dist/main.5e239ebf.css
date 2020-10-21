@@ -31,19 +31,32 @@
   font-weight: normal;
   font-style: normal;
 }
-.checkbox-btn__input + label, .datepicker--cells, .input__element {
-  font-family: "Conv_Montserrat-Regular";
+.radio-buttons__label, .room-details__description, .checkbox-btn__input + label, .datepicker--cells, .input__element, .input__description {
+  font-family: "Conv_Montserrat-Regular", "";
   font-size: 14px;
   color: #1F2041;
 }
 
-.checkbox-btn__title, .datepicker--button, .datepicker--day-name, .counter__value, .counter__name, .btn {
-  font-family: "Conv_Montserrat-Bold";
+.radio-buttons__name, .room-details__name, .checkbox-btn__title, .datepicker--button, .datepicker--day-name, .counter__value, .counter__name, .btn, .input__heading {
+  font-family: "Conv_Montserrat-Bold", "";
   font-size: 12px;
   color: #1F2041;
   text-transform: uppercase;
 }
 
+.room-details__title {
+  font-family: "Conv_Quicksand-Bold", "Open Sans";
+  font-size: 19px;
+  color: #1F2041;
+}
+
+@font-face {
+  font-family: "Conv_MaterialIcons-Regular";
+  src: url("/MaterialIcons-Regular.c22fa69d.eot");
+  src: local("☺"), url("/MaterialIcons-Regular.81a7c3fd.woff") format("woff"), url("/MaterialIcons-Regular.3d0d44f1.ttf") format("truetype"), url("/MaterialIcons-Regular.4d1ae1e7.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
 body,
 p,
 h1,
@@ -74,8 +87,11 @@ a {
 .formElements__logoUIkit {
   padding: 30px 0 0 30px;
 }
+.formElements__allItems {
+  margin: 85px 0 0 90px;
+}
 .formElements__textField, .formElements__dropdown, .formElements__maskedInput, .formElements__subscriptionInput, .formElements__datepicker {
-  width: 22.2%;
+  width: 17.5%;
   margin: 20px 0 0 50px;
 }
 
@@ -86,6 +102,19 @@ a {
 .input {
   position: relative;
   display: flex;
+}
+.input__heading {
+  position: absolute;
+  top: -20px;
+  left: 1px;
+}
+.input__description {
+  position: absolute;
+  top: -23px;
+  right: 0;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: rgba(31, 32, 65, 0.5);
 }
 .input__element {
   position: relative;
@@ -385,7 +414,8 @@ a {
   text-align: center;
   border: none;
   outline: none;
-  padding-left: 10px;
+  padding-left: 5px;
+  padding-right: 7px;
 }
 .counter__btn {
   border-color: rgba(31, 32, 65, 0.25);
@@ -1231,6 +1261,119 @@ a {
 }
 .checkbox-btn__input:checked + label:after {
   opacity: 1;
+}
+
+.room-details {
+  width: 291px;
+}
+.room-details__line {
+  border: none;
+  background-color: rgba(31, 32, 65, 0.05);
+  /* Цвет линии */
+  color: rgba(31, 32, 65, 0.05);
+  /* Цвет линии для IE6-7 */
+  height: 1px;
+  margin: 20px 0 20px 0;
+}
+.room-details__all {
+  display: flex;
+}
+.room-details__text {
+  margin: 3px 0 0 10px;
+}
+.room-details__image {
+  font-family: "Conv_MaterialIcons-Regular";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 48px;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  color: #BC9CFF;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: "liga";
+}
+.room-details__name {
+  font-size: 14px;
+  text-transform: initial;
+  color: rgba(31, 32, 65, 0.75);
+  margin-bottom: 6px;
+}
+.room-details__description {
+  color: rgba(31, 32, 65, 0.75);
+}
+
+.radio-buttons__item {
+  display: inline;
+  cursor: pointer;
+  margin-right: 21px;
+}
+.radio-buttons__name {
+  margin-bottom: 17px;
+}
+.radio-buttons__input {
+  cursor: pointer;
+  vertical-align: middle;
+  margin: 0;
+}
+.radio-buttons__input:before {
+  width: 18px;
+  height: 18px;
+  border-radius: 18px;
+  top: -5px;
+  left: -1px;
+  position: relative;
+  background-color: white;
+  content: "";
+  display: inline-block;
+  visibility: visible;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+}
+.radio-buttons__input:checked:before {
+  width: 18px;
+  height: 18px;
+  border-radius: 18px;
+  top: -5px;
+  left: -1px;
+  position: relative;
+  content: "";
+  display: inline-block;
+  visibility: visible;
+  border: 1px solid #BC9CFF;
+}
+.radio-buttons__input:checked:after {
+  width: 12px;
+  height: 12px;
+  border-radius: 12px;
+  top: -24px;
+  left: 3px;
+  position: relative;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  content: "";
+  display: inline-block;
+  visibility: visible;
+}
+.radio-buttons__input:checked + label {
+  color: rgba(31, 32, 65, 0.75);
+}
+.radio-buttons__label {
+  color: rgba(31, 32, 65, 0.5);
+  cursor: pointer;
+  margin-left: 16px;
 }
 
 /*# sourceMappingURL=/main.5e239ebf.css.map */

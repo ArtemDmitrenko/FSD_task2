@@ -30491,6 +30491,10 @@ var changeover = function changeover(event) {
         counterValueArr.forEach(function (item) {
           item.value = 0;
         });
+        var minusArr = dropdown.querySelectorAll('.counter__btn_minus');
+        minusArr.forEach(function (item) {
+          item.setAttribute("disabled", "disabled");
+        });
       }
     }
   } // Dropdown for rooms and beds
