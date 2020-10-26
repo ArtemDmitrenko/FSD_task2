@@ -1,0 +1,13 @@
+//-
+  options.name - title of list
+  options.value - value of rate
+
+mixin rate-button(options)
+    - const {name, value} = options
+    .rate-button
+        if name
+            h3.rate-button__name= name
+        - for (let i = 0; i < value; i ++)
+            .rate-button__stars star
+        - for (let i = 0; i < (5 - value); i ++)
+            .rate-button__stars star_border
