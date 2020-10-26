@@ -6,7 +6,8 @@ include ../../common.blocks/pages/dateDropdown/dateDropdown.pug
 include ../../common.blocks/pages/checkbox-btn/checkbox-btn.pug
 include ../../common.blocks/pages/room-details/room-details.pug
 include ../../common.blocks/pages/radio-buttons/radio-buttons.pug
-
+include ../../common.blocks/pages/toggle/toggle.pug
+include ../../common.blocks/pages/like-button/like-button.pug
 
 
 
@@ -48,6 +49,13 @@ block content
             br
             .formElements__radio-buttons
                 +radio-buttons({name: 'Radio Buttons', list: ['Мужчина', 'Женщина']})
+            br
+            .formElements__toggle
+                +toggle({name: 'Toggle', label: 'Получать спецпредложения'})
+            br
+            .formElements__like-button
+                +like-button({name: 'Like button'})
+            
 
 
 

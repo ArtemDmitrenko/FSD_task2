@@ -31726,6 +31726,67 @@ var ecbOpen = function ecbOpen(event) {
 };
 
 document.addEventListener("click", ecbOpen);
+},{}],"common.blocks/pages/like-button/like-button.js":[function(require,module,exports) {
+// Dropdown appears when click and dissapear when click outside or btn "apply"
+var likeButtonClicked = function likeButtonClicked(event) {
+  var target = event.target;
+  var likeButton = target.closest('.like-button__button');
+
+  if (likeButton) {
+    var heart = likeButton.querySelector('.like-button__image'); // Function 'plus' of counter
+
+    var plus = function plus() {
+      var numberOfLikes = likeButton.querySelector('.like-button__counter');
+      var counter = Number(numberOfLikes.innerHTML);
+      numberOfLikes.innerHTML = counter += 1;
+      numberOfLikes.classList.add('like-button__counter_active');
+    }; // Function 'minus' of counter
+
+
+    var minus = function minus() {
+      var numberOfLikes = likeButton.querySelector('.like-button__counter');
+      var counter = Number(numberOfLikes.innerHTML);
+      numberOfLikes.innerHTML = counter -= 1;
+      numberOfLikes.classList.remove('like-button__counter_active');
+    };
+
+    if (heart.innerHTML === 'favorite_border') {
+      heart.innerHTML = 'favorite';
+      heart.classList.add('like-button__image_active');
+      plus();
+      likeButton.classList.add('like-button__button_active');
+    } else {
+      heart.innerHTML = 'favorite_border';
+      heart.classList.remove('like-button__image_active');
+      minus();
+      likeButton.classList.remove('like-button__button_active');
+    }
+  }
+};
+
+document.addEventListener("click", likeButtonClicked); //         if (dropdownInput) {
+//             input.classList.toggle("input__element_border-radius_0");
+//             input.classList.add("input__element_brightBorder");
+//             dropdownList.classList.toggle("dropdown__list_show");
+//         }
+//         if (target === dropdownList.querySelector('button[name = "apply"]')) {
+//             input.classList.remove("input__element_border-radius_0");
+//             input.classList.remove("input__element_brightBorder");
+//             dropdownList.classList.remove("dropdown__list_show");
+//         }
+//     }
+//     if (!dropdown) {
+//         let dropdownInputArr = document.querySelectorAll('input[name = "guests"]');
+//         let dropdownListArr = document.querySelectorAll('.dropdown__list');
+//         dropdownInputArr.forEach((item) => {
+//             item.classList.remove("input__element_border-radius_0");
+//             item.classList.remove("input__element_brightBorder");
+//         });
+//         dropdownListArr.forEach((item) => {
+//             item.classList.remove("dropdown__list_show");
+//         });
+//     }
+// }
 },{}],"UI-kit/formElements/main.js":[function(require,module,exports) {
 var jquery = require("jquery");
 
@@ -31741,8 +31802,10 @@ require("../../common.blocks/pages/dropdown/dropdown.js");
 
 require("../../common.blocks/pages/dateDropdown/dateDropdown.js");
 
-require("../../common.blocks/pages/checkbox-btn/checkbox-btn.js"); // require("air-datepicker/dist/js/datepicker.min.js");
-},{"jquery":"../node_modules/jquery/dist/jquery.js","jquery-ui-dist/jquery-ui.js":"../node_modules/jquery-ui-dist/jquery-ui.js","jquery.maskedinput/src/jquery.maskedinput.js":"../node_modules/jquery.maskedinput/src/jquery.maskedinput.js","../../common.blocks/pages/input/input.js":"common.blocks/pages/input/input.js","../../common.blocks/pages/dropdown/dropdown.js":"common.blocks/pages/dropdown/dropdown.js","../../common.blocks/pages/dateDropdown/dateDropdown.js":"common.blocks/pages/dateDropdown/dateDropdown.js","../../common.blocks/pages/checkbox-btn/checkbox-btn.js":"common.blocks/pages/checkbox-btn/checkbox-btn.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+require("../../common.blocks/pages/checkbox-btn/checkbox-btn.js");
+
+require("../../common.blocks/pages/like-button/like-button.js"); // require("air-datepicker/dist/js/datepicker.min.js");
+},{"jquery":"../node_modules/jquery/dist/jquery.js","jquery-ui-dist/jquery-ui.js":"../node_modules/jquery-ui-dist/jquery-ui.js","jquery.maskedinput/src/jquery.maskedinput.js":"../node_modules/jquery.maskedinput/src/jquery.maskedinput.js","../../common.blocks/pages/input/input.js":"common.blocks/pages/input/input.js","../../common.blocks/pages/dropdown/dropdown.js":"common.blocks/pages/dropdown/dropdown.js","../../common.blocks/pages/dateDropdown/dateDropdown.js":"common.blocks/pages/dateDropdown/dateDropdown.js","../../common.blocks/pages/checkbox-btn/checkbox-btn.js":"common.blocks/pages/checkbox-btn/checkbox-btn.js","../../common.blocks/pages/like-button/like-button.js":"common.blocks/pages/like-button/like-button.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;

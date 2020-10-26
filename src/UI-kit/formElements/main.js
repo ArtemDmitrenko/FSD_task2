@@ -6,5 +6,7 @@ require("../../common.blocks/pages/input/input.js");
 require("../../common.blocks/pages/dropdown/dropdown.js");
 require("../../common.blocks/pages/dateDropdown/dateDropdown.js");
 require("../../common.blocks/pages/checkbox-btn/checkbox-btn.js");
+require("../../common.blocks/pages/like-button/like-button.js");
+
 
 // require("air-datepicker/dist/js/datepicker.min.js");

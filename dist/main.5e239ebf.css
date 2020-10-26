@@ -31,13 +31,13 @@
   font-weight: normal;
   font-style: normal;
 }
-.radio-buttons__label, .room-details__description, .checkbox-btn__input + label, .datepicker--cells, .input__element, .input__description {
+.like-button__counter, .toggle__label, .radio-buttons__label, .room-details__description, .checkbox-btn__input + label, .datepicker--cells, .input__element, .input__description {
   font-family: "Conv_Montserrat-Regular", "";
   font-size: 14px;
   color: #1F2041;
 }
 
-.radio-buttons__name, .room-details__name, .checkbox-btn__title, .datepicker--button, .datepicker--day-name, .counter__value, .counter__name, .btn, .input__heading {
+.like-button__name, .toggle__name, .radio-buttons__name, .room-details__name, .checkbox-btn__title, .datepicker--button, .datepicker--day-name, .counter__value, .counter__name, .btn, .input__heading {
   font-family: "Conv_Montserrat-Bold", "";
   font-size: 12px;
   color: #1F2041;
@@ -1321,6 +1321,7 @@ a {
   display: inline;
   cursor: pointer;
   margin-right: 21px;
+  padding-bottom: 5px;
 }
 .radio-buttons__name {
   margin-bottom: 17px;
@@ -1374,6 +1375,125 @@ a {
   color: rgba(31, 32, 65, 0.5);
   cursor: pointer;
   margin-left: 16px;
+}
+
+.toggle {
+  padding-bottom: 10px;
+}
+.toggle__name {
+  margin-bottom: 15px;
+}
+.toggle__input {
+  width: 0;
+  margin: 0;
+  position: relative;
+  cursor: pointer;
+}
+.toggle__input:before {
+  content: "";
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  border: solid 1px rgba(31, 32, 65, 0.25);
+  border-radius: 10px;
+  margin: 0;
+  box-sizing: border-box;
+}
+.toggle__input:after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: rgba(31, 32, 65, 0.25);
+  border-radius: 10px;
+  top: 4px;
+  left: 5px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.toggle__input:checked:before {
+  border-color: #BC9CFF;
+}
+.toggle__input:checked:after {
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  transform: translateX(18px);
+  -webkit-transform: translateX(18px);
+  -ms-transform: translateX(18px);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.toggle__label {
+  display: inline-block;
+  margin-left: 51px;
+  cursor: pointer;
+  color: rgba(31, 32, 65, 0.75);
+}
+
+.like-button__name {
+  margin-bottom: 15px;
+}
+.like-button__button {
+  width: 40px;
+  height: 20px;
+  box-sizing: border-box;
+  border: solid 1px rgba(31, 32, 65, 0.25);
+  border-radius: 10px;
+  background-color: #fff;
+  outline: none;
+  cursor: pointer;
+}
+.like-button__button_active {
+  position: relative;
+  border: none;
+}
+.like-button__button_active:before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  bottom: -1px;
+  left: -1px;
+  right: -1px;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  border-radius: 11px;
+  z-index: -1;
+}
+.like-button__counter {
+  font-size: 10px;
+  color: rgba(31, 32, 65, 0.25);
+  display: inline-block;
+  vertical-align: text-top;
+  margin-left: 7px;
+}
+.like-button__counter_active {
+  color: #BC9CFF;
+}
+.like-button__image {
+  font-family: "Conv_MaterialIcons-Regular";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 10px;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  background-color: rgba(31, 32, 65, 0.25);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: "liga";
+  margin-left: -7px;
+}
+.like-button__image_active {
+  background-color: #BC9CFF;
 }
 
 /*# sourceMappingURL=/main.5e239ebf.css.map */

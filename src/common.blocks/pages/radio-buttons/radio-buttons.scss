@@ -3,6 +3,7 @@
         display: inline;
         cursor: pointer;
         margin-right: 21px;
+        padding-bottom: 5px;
     }
     &__name {
         @extend %h3;
