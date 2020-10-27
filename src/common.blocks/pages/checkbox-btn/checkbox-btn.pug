@@ -1,5 +1,7 @@
 //- 
     options.name - title of buttons list
+    options.expandable - if list is expandable
+    options.richCheckbox - if list is rich checkbox buttons
     options.list[0...i] - name of buttons
 
 include ../checkmark/checkmark.pug
@@ -15,12 +17,21 @@ mixin checkbox-btn(options = {})
                 each nameOfBtn in options.list
                     .checkbox-btn__item
                         input.checkbox-btn__input(type="checkbox", id="ecb" + options.list.indexOf(nameOfBtn))
-                        label(for="ecb" + options.list.indexOf(nameOfBtn))= nameOfBtn    
+                        label.checkbox-btn__label(for="ecb" + options.list.indexOf(nameOfBtn))= nameOfBtn    
         else 
             .checkbox-btn__name
                 .checkbox-btn__title= options.name
-            form.checkbox-btn__form(name="checkbox-btn" method="get")
-                each nameOfBtn in options.list
-                    .checkbox-btn__item
-                        input.checkbox-btn__input(type="checkbox", id="cb" + options.list.indexOf(nameOfBtn))
-                        label(for="cb" + options.list.indexOf(nameOfBtn))= nameOfBtn
+            if options.richCheckbox
+                form.checkbox-btn__form(name="richCheckbox-btn" method="get")
+                    each nameOfBtn in options.list
+                        .checkbox-btn__item
+                            input.checkbox-btn__input(type="checkbox", id="rcb" + options.list.indexOf(nameOfBtn))
+                            label.checkbox-btn__label.checkbox-btn__label_rich(for="rcb" + options.list.indexOf(nameOfBtn))= nameOfBtn
+                            p.checkbox-btn__sublabel= options.sublist[options.list.indexOf(nameOfBtn)]
+            else
+                form.checkbox-btn__form(name="checkbox-btn" method="get")
+                    each nameOfBtn in options.list
+                        .checkbox-btn__item
+                            input.checkbox-btn__input(type="checkbox", id="cb" + options.list.indexOf(nameOfBtn))
+                            label.checkbox-btn__label(for="cb" + options.list.indexOf(nameOfBtn))= nameOfBtn
+                            

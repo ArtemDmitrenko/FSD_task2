@@ -9,6 +9,8 @@ include ../../common.blocks/pages/radio-buttons/radio-buttons.pug
 include ../../common.blocks/pages/toggle/toggle.pug
 include ../../common.blocks/pages/like-button/like-button.pug
 include ../../common.blocks/pages/rate-button/rate-button.pug
+include ../../common.blocks/pages/bullet-list/bullet-list.pug
+include ../../common.blocks/pages/review/review.pug
 
 
 
@@ -55,12 +57,19 @@ block content
                 +toggle({name: 'Toggle', label: 'Получать спецпредложения'})
             br
             .formElements__like-button
-                +like-button({name: 'Like button'})
+                +like-button({name: 'Like button', numberOfLikes: '2'})
             br
             .formElements__rate-button
                 +rate-button({name: 'Rate button', value: '4'})
-            
-
+            br
+            .formElements__checkbox-btn
+                +checkbox-btn({expandable: false, richCheckbox: 'true', name: 'Rich checkbox buttons', list: ['Широкий коридор', 'Помощник для инвалидов'], sublist: ['Ширина коридоров в номере не менее 91 см.', 'На 1 этаже вас встретит специалист  и проводит до номера.']})
+            br
+            .formElements__bullet-list
+                +bullet-list({name: 'Bullet list', list: ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00']})
+            br
+            .formElements__review
+                +review()
 
 
 

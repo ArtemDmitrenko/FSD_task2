@@ -1,0 +1,19 @@
+include ../like-button/like-button.pug
+
+
+//-
+  options.name - title of list
+  options.list - list of items
+
+mixin review(options)
+    //- - const {name, list} = options
+    .review
+        .review__part1
+            img.review__image(src="../../common.blocks/pages/review/Sarafanov.png" alt="Photo of Sarafanov")
+            .review__description
+                h3.review__name Мурад Сарафанов
+                p.review__date 5 дней назад
+        .review__part2
+            .review__like-button
+                +like-button({numberOfLikes: '11'})
+            p.review__text Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.

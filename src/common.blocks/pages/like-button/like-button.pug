@@ -2,11 +2,11 @@
   options.name - title of list
 
 mixin like-button(options)
-    - const {name} = options
+    - const {name, numberOfLikes} = options
     .like-button
         if name
             h3.like-button__name= name
         button.like-button__button(type='button')
             span.like-button__image favorite_border
-            .like-button__counter 2
+            .like-button__counter= numberOfLikes
         
