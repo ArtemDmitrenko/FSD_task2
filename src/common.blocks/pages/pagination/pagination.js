@@ -20,11 +20,18 @@ $('#pagination-container').pagination({
     autoHidePrevious: true,
     autoHideNext: true,
     pageRange: 1,
+    // showNavigator: true,
+    // formatNavigator: Number(<%= currentPage %>),
+    // formatNavigator: function() {
+    //     let firstNumber = $('.active a').html();
+    //     console.log(firstNumber);
+    //     return('Page number - ' + firstNumber);
+    // },
+
     callback: function(data, pagination) {
         // template method of yourself
         var html = simpleTemplating(data);
         $('#data-container').html(html);
-        // var firstNumber = $('.active').attr('data-num');
     },
 })
 

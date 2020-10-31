@@ -9,6 +9,8 @@ require("../../common.blocks/pages/checkbox-btn/checkbox-btn.js");
 require("../../common.blocks/pages/like-button/like-button.js");
 require("paginationjs/src/pagination.js");
 require("../../common.blocks/pages/pagination/pagination.js");
+require("ion-rangeslider/js/ion.rangeSlider.js");
+require("../../common.blocks/pages/range-slider/range-slider.js");
 
 
 // require("air-datepicker/dist/js/datepicker.min.js");
