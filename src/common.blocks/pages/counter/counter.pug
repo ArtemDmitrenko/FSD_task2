@@ -3,9 +3,9 @@ mixin counter(options = [])
     .counter
         p.counter__name= title
         .counter__enter
-            button.counter__btn.counter__btn_minus -
-            input.counter__value(name=name type='text' value=defaultValue readonly)
-            button.counter__btn.counter__btn_plus +
+            button(type='button').counter__btn.counter__btn_minus -
+            input(name=name type='text' value=defaultValue readonly).counter__value
+            button(type='button').counter__btn.counter__btn_plus +
 
 
 //- mixin counter()

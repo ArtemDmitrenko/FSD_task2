@@ -10,22 +10,17 @@
 
 
 mixin btn(options)
-    -   
-        let modificator = options.modificator
-        let text = options.text
-        let type = options.type
-        let name = options.name
-
+    - const {modificator, text, type, name} = options
 
     if modificator == "btn_border"
         .btn_border
-            button.btn.btn__text #{text}
+            button(type = type).btn.btn__text #{text}
     else if modificator == "btn_longWithArrow"
-        button.btn.btn_longWithArrow #{text} <span class='btn__arrow'></span>
+        button(type = type).btn.btn_longWithArrow #{text} <span class='btn__arrow'></span>
     else if modificator == "btn_gradientHeader"
-        button.btn.btn_gradient.btn_gradientHeader #{text}
+        button(type = type).btn.btn_gradient.btn_gradientHeader #{text}
     else if modificator == "btn_borderHeader"
         .btn_border.btn_borderHeader
-            button.btn.btn__text.btn__text_header #{text}    
+            button(type = type).btn.btn__text.btn__text_header #{text}    
     else
-        button(class = "btn" class = modificator name = name) #{text}
+        button(type = type class = "btn" class = modificator name = name) #{text}

@@ -3,12 +3,12 @@ include ../button/button.pug
 include ../counter/counter.pug
 
 mixin dropdown(options = {})
-    - let {dropdownType} = options;
+    - let {dropdownType, heading} = options;
     case dropdownType
         when 'guests'
             .dropdown
                 .dropdown__input
-                    +input({heading: 'dropdown', name: 'guests', type: 'text', value: 'Сколько гостей', required: true, dropdown: true, readonly: true})
+                    +input({heading: heading, name: 'guests', type: 'text', value: 'Сколько гостей', dropdown: true, readonly: true})
                 .dropdown__list
                     .dropdown__counter
                         +counter(["Взрослые", "Adults"])
@@ -16,13 +16,13 @@ mixin dropdown(options = {})
                         +counter(["Младенцы", "Infants"])
                     .dropdown__btn
                         .dropdown-guests__btn-clear
-                            +btn({modificator: 'btn_iconLinkBlack', text: 'Очистить', name: 'clear'})
+                            +btn({modificator: 'btn_iconLinkBlack', text: 'Очистить', type: 'button', name: 'clear'})
                         .dropdown-guests__btn-apply
-                            +btn({modificator: 'btn_iconLinkViolent', text: 'Применить', name: 'apply'})
+                            +btn({modificator: 'btn_iconLinkViolent', text: 'Применить', type: 'button', name: 'apply'})
         when 'roomsBeds'
             .dropdown
                 .dropdown__input
-                    +input({heading: 'dropdown', description: 'default', name: 'roomsBeds', type: 'text', value: '', required: true, dropdown: true, readonly: true})
+                    +input({heading: heading, description: 'default', name: 'roomsBeds', type: 'text', value: '', dropdown: true, readonly: true})
                 .dropdown__list
                     .dropdown__counter
                         +counter(["Спальни", "Bedrooms"])

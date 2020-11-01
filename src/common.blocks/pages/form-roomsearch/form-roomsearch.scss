@@ -1,0 +1,23 @@
+.form-roomsearch {
+    background-color: #fff;
+    padding: 5%;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+
+    &__title {
+        margin-bottom: 40px;
+        @extend %h1;
+    }
+    &__dates {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 50px;
+    }
+    &__check-in, &__check-out {
+        width: 47%;
+    }
+    &__submit {
+        margin-top: 31px;
+    }
+}

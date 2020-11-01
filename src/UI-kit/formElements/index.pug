@@ -31,17 +31,17 @@ block content
             .formElements__maskedInput
                 +input({heading: 'masked text field', description: 'Hover / Focus', name: 'date', type: 'text', placeholder: 'ДД.ММ.ГГГГ', required: true, dateMask: true})
             br
-            .formElements__dropdown  
-                +dropdown({dropdownType: 'guests'})
+            .formElements__dropdown 
+                +dropdown({dropdownType: 'guests', heading: 'dropdown'})
             br
             .formElements__dropdown  
-                +dropdown({dropdownType:'roomsBeds'})
+                +dropdown({dropdownType:'roomsBeds', heading: 'dropdown'})
             br
             .formElements__subscriptionInput  
                 +input({heading: 'subscription text field', name: 'email', type: 'email', placeholder: 'Email', required: true, subscription: true})
             br
             .formElements__datepicker
-                +dateDropdown()
+                +dateDropdown({heading: 'date Dropdown', name: 'dateDropdown'})
             br
             .formElements__checkbox-btn
                 +checkbox-btn({expandable: false, name: 'Checkbox buttons', list: ['Можно курить', 'Можно с питомцами', 'Можно пригласить гостей (до 10 человек)']})
