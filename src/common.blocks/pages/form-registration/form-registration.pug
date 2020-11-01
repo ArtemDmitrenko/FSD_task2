@@ -1,0 +1,30 @@
+include ../input/input.pug
+include ../radio-buttons/radio-buttons.pug
+include ../toggle/toggle.pug
+include ../button/button.pug
+
+mixin form-registration()
+    form(action="#" method="get").form-registration
+        h1.form-registration__title Регистрация аккаунта
+        .form-registration__name
+            +input({name: 'Name', type: 'text', placeholder: 'Имя'})
+        .form-registration__surname
+            +input({name: 'Surname', type: 'text', placeholder: 'Фамилия'})
+        .form-registration__gender
+            +radio-buttons({list: ['Мужчина', 'Женщина']})
+        .form-registration__birthday
+            +input({heading: 'Дата рождения', name: 'birthday', type: 'text', placeholder: 'ДД.ММ.ГГГГ'})
+        .form-registration__enter
+            .form-registration__email
+                +input({heading: 'Данные для входа в сервис', name: 'E-mail', type: 'email', placeholder: 'Email'})
+            .form-registration__password
+                +input({name: 'Password', type: 'text', placeholder: 'Пароль'})
+        .form-registration__offers
+            +toggle({label: 'Получать спецпредложения'})    
+        .form-registration__submit
+            +btn({modificator: 'btn_longWithArrow', text: 'Перейти к оплате', type: 'submit'})
+        .form-registration__registered
+            .form-registration__registered-on-Toxin
+                p.form-registration__text Уже есть аккаунт на Toxin
+            .form-registration__btn
+                +btn({modificator: 'btn_border', text: 'Войти', type: 'submit'})

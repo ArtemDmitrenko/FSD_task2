@@ -20,4 +20,14 @@
     &__submit {
         margin-top: 31px;
     }
+    &__price {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+    // &__text {
+    //     display: flex;
+    //     justify-content: space-between;
+    //     align-items: baseline;
+    // }
 }

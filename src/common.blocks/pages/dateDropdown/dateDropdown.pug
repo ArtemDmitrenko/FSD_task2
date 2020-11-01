@@ -1,6 +1,6 @@
 include ../input/input.pug
 
 mixin dateDropdown(options)
-    - const {heading, name} = options
+    - const {heading, name, value} = options
     .dateDropdown
-        +input({heading: heading, name: name, type: 'text', placeholder: 'ДД.ММ.ГГГГ', dateDropdown: true})
+        +input({heading: heading, name: name, value: value, type: 'text', placeholder: 'ДД.ММ.ГГГГ', dateDropdown: true})

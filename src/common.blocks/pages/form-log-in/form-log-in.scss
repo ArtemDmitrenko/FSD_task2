@@ -1,0 +1,27 @@
+.form-log-in {
+    background-color: #fff;
+    padding: 5%;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+    &__title {
+        margin-bottom: 20px;
+        @extend %h1;
+    }
+    &__email {
+        margin-bottom: 10px;
+    }
+    &__submit {
+        margin-bottom: 30px;
+        margin-top: 20px;
+    }
+    &__registered {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__text {
+        @extend %font-body;
+        color: #000000;
+    }
+}

@@ -1,0 +1,107 @@
+.form-confirmation {
+    background-color: #fff;
+    padding: 5%;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+    &__room-description {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 40px;
+    }
+    &__room-number {
+        @extend %h1;
+        display: inline-block;
+        & span {
+            font-size: 14px;
+        }
+    }
+    &__room-type {
+        @extend %h3;
+        color: $purple;
+        display: inline-block;
+        margin-left: 7px;
+    }
+    &__price {
+        @extend %h3;
+        font-size: 14px;
+        color: $dark50;
+        & span {
+            @extend %font-body;
+            font-size: 12px;
+            color: $dark50;
+            text-transform: none;
+        }
+    }
+    &__dates {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 40px;
+    }
+    &__check-in, &__check-out {
+        width: 47%;
+    }
+    &__part {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 10px;
+    }
+    &__text {
+        display: inline-block;
+        @extend %font-body;
+        line-height: 18px;
+        color: $dark75;
+        max-width: 214px;
+    }
+    &__sum {
+        display: inline-block;
+        @extend %font-body;
+        line-height: 18px;
+        color: $dark75;
+    }
+    &__total {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-top: 30px;
+    }
+    &__final {
+        @extend %h2;
+    }
+    &__rubles {
+        @extend %h2;
+    }
+    &__ellipsis {
+        border: 1px dashed rgba(31, 32, 65, 0.25);
+        box-sizing: border-box;
+        width: 57%;
+        height: 1px;
+    }
+    &__guests {
+        margin-bottom: 20px;
+    }
+    &__submit {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    &__info {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        width: 20px;
+        height: 20px;
+        border: 1px solid $dark25;
+        border-radius: 50%;
+        margin-left: 10px;
+    }
+    &__letter {
+        @extend %h3;
+        color: $dark25;
+        text-transform: none;
+    }
+    &__text-info {
+        display: flex;
+    }
+}

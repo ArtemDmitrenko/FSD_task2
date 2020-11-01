@@ -29,10 +29,10 @@ block content
                 +input({heading: 'text field', description: 'default', name: 'email', type: 'email', placeholder: 'Email', required: true})
             br
             .formElements__maskedInput
-                +input({heading: 'masked text field', description: 'Hover / Focus', name: 'date', type: 'text', placeholder: 'ДД.ММ.ГГГГ', required: true, dateMask: true})
+                +input({heading: 'masked text field', description: 'Hover / Focus', name: 'birthday', type: 'text', placeholder: 'ДД.ММ.ГГГГ', required: true})
             br
             .formElements__dropdown 
-                +dropdown({dropdownType: 'guests', heading: 'dropdown'})
+                +dropdown({dropdownType: 'guests', heading: 'dropdown', value: 'Сколько гостей'})
             br
             .formElements__dropdown  
                 +dropdown({dropdownType:'roomsBeds', heading: 'dropdown'})

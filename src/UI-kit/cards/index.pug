@@ -1,6 +1,9 @@
 extends ../../templates/UIkit_template.pug
 include ../../common.blocks/UIkit/logoUIkit/logoUIkit.pug
 include ../../common.blocks/pages/form-roomsearch/form-roomsearch.pug
+include ../../common.blocks/pages/form-registration/form-registration.pug
+include ../../common.blocks/pages/form-confirmation/form-confirmation.pug
+include ../../common.blocks/pages/form-log-in/form-log-in.pug
 
 
 
@@ -14,8 +17,12 @@ block content
         .cards__allItems
             .cards__room-search
                 +form-roomsearch()
-            //- .cards__room-registration
-            //-     +form-roomsearch()
+            .cards__registration
+                +form-registration()
+            .cards__confirmation
+                +form-confirmation()
+            .cards__log-in
+                +form-log-in()
 
 
 block script
