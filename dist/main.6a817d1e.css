@@ -216,11 +216,11 @@ a {
 }
 .btn__arrow {
   position: relative;
-  top: -7px;
+  top: -9px;
   width: 15px;
   height: 2px;
   background-color: #ffffff;
-  left: 282px;
+  left: 92%;
   display: block;
 }
 .btn__arrow::after {

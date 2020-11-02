@@ -1,12 +1,15 @@
 .form-registration {
     background-color: #fff;
-    padding: 5%;
+    padding: 30px;
     border: 1px solid rgba(0, 0, 0, 0.12);
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.12);
     border-radius: 4px;
-
+    max-width: 380px;
+    box-sizing: border-box;
     &__title {
-        margin-bottom: 20px;
+        margin-bottom: 19px;
+        margin-top: 8px;
+
         @extend %h1;
     }
     &__name {
@@ -16,18 +19,23 @@
         margin-bottom: 10px;
     }
     &__gender {
-        margin-bottom: 40px;
+        margin-bottom: 45px;
     }
     &__email {
         margin-bottom: 10px;
         margin-top: 40px;
     }
     &__offers {
-        margin-bottom: 20px;
+        margin-bottom: 17px;
         margin-top: 10px;
+        & .toggle__input {
+            @media screen and (max-width: 330px) {
+                vertical-align: top;
+            }
+        }
     }
     &__submit {
-        margin-bottom: 30px;
+        margin-bottom: 29px;
     }
     &__registered {
         display: flex;
@@ -38,5 +46,4 @@
         @extend %font-body;
         color: #000000;
     }
-
 }

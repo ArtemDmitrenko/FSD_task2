@@ -666,3 +666,11 @@
   background: 0 0;
   border: none;
 }
+
+.dateDropdown .input__checkmark {
+  @media screen and (max-width: 360px) {
+    display: none;          
+}
+
+}
+

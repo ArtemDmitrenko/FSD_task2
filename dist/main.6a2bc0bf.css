@@ -97,26 +97,22 @@ a {
   padding: 30px 0 0 30px;
 }
 .cards__allItems {
-  margin: 85px 0 0 90px;
+  margin: 85px 0 0 0px;
 }
 .cards__room-search {
-  margin: 72px 0 40px 140px;
-  width: 20%;
-  padding-bottom: 50px;
+  margin: 72px 0 40px 50px;
 }
 .cards__registration {
-  margin-left: 140px;
-  width: 20%;
+  margin-left: 50px;
   padding-bottom: 50px;
 }
 .cards__confirmation {
-  margin-left: 140px;
-  width: 20%;
-  padding-bottom: 50px;
+  margin-left: 50px;
+  margin-top: 72px;
+  margin-bottom: 40px;
 }
 .cards__log-in {
-  margin-left: 140px;
-  width: 20%;
+  margin-left: 50px;
   padding-bottom: 50px;
 }
 
@@ -868,6 +864,12 @@ a {
   border: none;
 }
 
+@media screen and (max-width: 360px) {
+  .dateDropdown .input__checkmark {
+    display: none;
+  }
+}
+
 .input {
   position: relative;
   display: flex;
@@ -1040,29 +1042,28 @@ a {
 
 .form-roomsearch {
   background-color: #fff;
-  padding: 5%;
+  padding: 30px;
   border: 1px solid rgba(0, 0, 0, 0.12);
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
+  max-width: 380px;
+  box-sizing: border-box;
 }
 .form-roomsearch__title {
-  margin-bottom: 40px;
+  margin-bottom: 38px;
+  margin-top: 9px;
+  line-height: 132%;
 }
 .form-roomsearch__dates {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 50px;
+  margin-bottom: 41px;
 }
 .form-roomsearch__check-in, .form-roomsearch__check-out {
   width: 47%;
 }
 .form-roomsearch__submit {
-  margin-top: 31px;
-}
-.form-roomsearch__price {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
+  margin-top: 32px;
 }
 
 .dropdown {
@@ -1163,11 +1164,11 @@ a {
 }
 .btn__arrow {
   position: relative;
-  top: -7px;
+  top: -9px;
   width: 15px;
   height: 2px;
   background-color: #ffffff;
-  left: 282px;
+  left: 92%;
   display: block;
 }
 .btn__arrow::after {
@@ -1237,13 +1238,16 @@ a {
 
 .form-registration {
   background-color: #fff;
-  padding: 5%;
+  padding: 30px;
   border: 1px solid rgba(0, 0, 0, 0.12);
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
+  max-width: 380px;
+  box-sizing: border-box;
 }
 .form-registration__title {
-  margin-bottom: 20px;
+  margin-bottom: 19px;
+  margin-top: 8px;
 }
 .form-registration__name {
   margin-bottom: 10px;
@@ -1252,18 +1256,23 @@ a {
   margin-bottom: 10px;
 }
 .form-registration__gender {
-  margin-bottom: 40px;
+  margin-bottom: 45px;
 }
 .form-registration__email {
   margin-bottom: 10px;
   margin-top: 40px;
 }
 .form-registration__offers {
-  margin-bottom: 20px;
+  margin-bottom: 17px;
   margin-top: 10px;
 }
+@media screen and (max-width: 330px) {
+  .form-registration__offers .toggle__input {
+    vertical-align: top;
+  }
+}
 .form-registration__submit {
-  margin-bottom: 30px;
+  margin-bottom: 29px;
 }
 .form-registration__registered {
   display: flex;
@@ -1388,16 +1397,19 @@ a {
 
 .form-confirmation {
   background-color: #fff;
-  padding: 5%;
+  padding: 30px 30px 30px 28px;
   border: 1px solid rgba(0, 0, 0, 0.12);
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
+  max-width: 380px;
+  box-sizing: border-box;
 }
 .form-confirmation__room-description {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   margin-bottom: 40px;
+  margin-top: 10px;
 }
 .form-confirmation__room-number {
   display: inline-block;
@@ -1408,7 +1420,7 @@ a {
 .form-confirmation__room-type {
   color: #BC9CFF;
   display: inline-block;
-  margin-left: 7px;
+  margin-left: 5px;
 }
 .form-confirmation__price {
   font-size: 14px;
@@ -1431,7 +1443,8 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  margin-left: 3px;
 }
 .form-confirmation__text {
   display: inline-block;
@@ -1448,7 +1461,8 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin-top: 30px;
+  margin-top: 29px;
+  margin-left: 3px;
 }
 .form-confirmation__ellipsis {
   border: 1px dashed rgba(31, 32, 65, 0.25);
@@ -1456,12 +1470,16 @@ a {
   width: 57%;
   height: 1px;
 }
+@media screen and (max-width: 370px) {
+  .form-confirmation__ellipsis {
+    width: 48%;
+  }
+}
 .form-confirmation__guests {
-  margin-bottom: 20px;
+  margin-bottom: 21px;
 }
 .form-confirmation__submit {
-  margin-top: 20px;
-  margin-bottom: 10px;
+  margin-top: 17px;
 }
 .form-confirmation__info {
   justify-content: center;
@@ -1471,7 +1489,13 @@ a {
   height: 20px;
   border: 1px solid rgba(31, 32, 65, 0.25);
   border-radius: 50%;
-  margin-left: 10px;
+  margin-left: 5px;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 360px) {
+  .form-confirmation__info {
+    display: none;
+  }
 }
 .form-confirmation__letter {
   color: rgba(31, 32, 65, 0.25);
@@ -1483,20 +1507,23 @@ a {
 
 .form-log-in {
   background-color: #fff;
-  padding: 5%;
+  padding: 30px;
   border: 1px solid rgba(0, 0, 0, 0.12);
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
+  max-width: 380px;
+  box-sizing: border-box;
 }
 .form-log-in__title {
-  margin-bottom: 20px;
+  margin-bottom: 18px;
+  margin-top: 8px;
 }
 .form-log-in__email {
   margin-bottom: 10px;
 }
 .form-log-in__submit {
-  margin-bottom: 30px;
-  margin-top: 20px;
+  margin-bottom: 28px;
+  margin-top: 22px;
 }
 .form-log-in__registered {
   display: flex;

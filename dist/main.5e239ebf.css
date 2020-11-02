@@ -368,11 +368,11 @@ a {
 }
 .btn__arrow {
   position: relative;
-  top: -7px;
+  top: -9px;
   width: 15px;
   height: 2px;
   background-color: #ffffff;
-  left: 282px;
+  left: 92%;
   display: block;
 }
 .btn__arrow::after {
@@ -1182,6 +1182,12 @@ a {
 .datepicker--cell-year.-other-decade-:empty {
   background: 0 0;
   border: none;
+}
+
+@media screen and (max-width: 360px) {
+  .dateDropdown .input__checkmark {
+    display: none;
+  }
 }
 
 .checkbox-btn {

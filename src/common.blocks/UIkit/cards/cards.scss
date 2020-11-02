@@ -4,26 +4,26 @@
         padding: 30px 0 0 30px;
     }
     &__allItems {
-        margin: 85px 0 0 90px;
+        margin: 85px 0 0 0px;
+        // display: flex;
+        // flex-direction: column;
+        // flex-wrap: wrap;
+        // height: 1350px;
     }
     &__room-search {
-        margin: 72px 0 40px 140px;
-        width: 20%;
-        padding-bottom: 50px;
+        margin: 72px 0 40px 50px;
     }
     &__registration {
-        margin-left: 140px;
-        width: 20%;
+        margin-left: 50px;
         padding-bottom: 50px;
     }
     &__confirmation {
-        margin-left: 140px;
-        width: 20%;
-        padding-bottom: 50px;
+        margin-left: 50px;
+        margin-top: 72px;
+        margin-bottom: 40px;
     }
     &__log-in {
-        margin-left: 140px;
-        width: 20%;
+        margin-left: 50px;
         padding-bottom: 50px;
     }
 

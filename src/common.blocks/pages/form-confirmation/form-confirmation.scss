@@ -1,14 +1,17 @@
 .form-confirmation {
     background-color: #fff;
-    padding: 5%;
+    padding: 30px 30px 30px 28px;    
     border: 1px solid rgba(0, 0, 0, 0.12);
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.12);
     border-radius: 4px;
+    max-width: 380px;
+    box-sizing: border-box;
     &__room-description {
         display: flex;
         justify-content: space-between;
         align-items: baseline;
         margin-bottom: 40px;
+        margin-top: 10px;
     }
     &__room-number {
         @extend %h1;
@@ -21,7 +24,7 @@
         @extend %h3;
         color: $purple;
         display: inline-block;
-        margin-left: 7px;
+        margin-left: 5px;
     }
     &__price {
         @extend %h3;
@@ -46,7 +49,8 @@
         display: flex;
         justify-content: space-between;
         align-items: baseline;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
+        margin-left: 3px;
     }
     &__text {
         display: inline-block;
@@ -65,7 +69,8 @@
         display: flex;
         justify-content: space-between;
         align-items: baseline;
-        margin-top: 30px;
+        margin-top: 29px;
+        margin-left: 3px;
     }
     &__final {
         @extend %h2;
@@ -78,13 +83,16 @@
         box-sizing: border-box;
         width: 57%;
         height: 1px;
+        @media screen and (max-width: 370px) {
+            width: 48%;
+        }
+
     }
     &__guests {
-        margin-bottom: 20px;
+        margin-bottom: 21px;
     }
     &__submit {
-        margin-top: 20px;
-        margin-bottom: 10px;
+        margin-top: 17px;
     }
     &__info {
         justify-content: center;
@@ -94,7 +102,11 @@
         height: 20px;
         border: 1px solid $dark25;
         border-radius: 50%;
-        margin-left: 10px;
+        margin-left: 5px;
+        box-sizing: border-box;
+        @media screen and (max-width: 360px) {
+            display: none;
+        }
     }
     &__letter {
         @extend %h3;
