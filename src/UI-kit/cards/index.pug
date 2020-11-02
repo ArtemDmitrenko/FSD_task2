@@ -4,6 +4,7 @@ include ../../common.blocks/pages/form-roomsearch/form-roomsearch.pug
 include ../../common.blocks/pages/form-registration/form-registration.pug
 include ../../common.blocks/pages/form-confirmation/form-confirmation.pug
 include ../../common.blocks/pages/form-log-in/form-log-in.pug
+include ../../common.blocks/pages/room/room.pug
 
 
 
@@ -23,6 +24,8 @@ block content
                 +form-confirmation()
             .cards__log-in
                 +form-log-in()
+            .cards__room
+                +room()
 
 
 block script
