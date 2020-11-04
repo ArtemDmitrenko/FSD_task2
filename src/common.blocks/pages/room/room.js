@@ -4,7 +4,10 @@
 //     });
 // });
 
-$('.room').slick();
+$('.room__card').slick({
+    dots: true
+    // dotsClass: 'slick-dots-mine'
+});
 
 
 // $('.room').slick({

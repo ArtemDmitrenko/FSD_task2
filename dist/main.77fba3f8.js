@@ -31714,7 +31714,10 @@ var define;
 //         setting-name: setting-value
 //     });
 // });
-$('.room').slick(); // $('.room').slick({
+$('.room__card').slick({
+  dots: true // dotsClass: 'slick-dots-mine'
+
+}); // $('.room').slick({
 //     infinite: true,
 //     dots: true,
 //     slidesToShow: 3,
@@ -31772,7 +31775,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53551" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50221" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
