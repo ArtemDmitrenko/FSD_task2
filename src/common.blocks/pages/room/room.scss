@@ -4,6 +4,13 @@
 .slick-slider {
     margin: auto;
 }
+.slick-slide {
+    width: 270px;
+    object-fit: cover;
+}
+.slick-track {
+    height: 151.38px;
+}
 .slick-prev, .slick-next {
     z-index: 1;
     width: 42px;
@@ -58,7 +65,6 @@
 
 .slick-list {
     border-radius: 4px 4px 0 0;
-    height: inherit;
 }
 
 .slick-dots li {
@@ -89,7 +95,7 @@
 
 .slick-dots {
     bottom: 2px;
-    margin-left: 96px;
+    padding-left: 36;
     z-index: 1;
 }
 .slick-dots li.slick-active button:before {
@@ -104,7 +110,6 @@
     background-color: #fff;
     box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
     border-radius: 0 0 4px 4px;
-    margin-bottom: 20px;
     &__card {
         // width: 270px;
         height: 151.38px;
