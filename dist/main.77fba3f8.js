@@ -31717,12 +31717,7 @@ var define;
 $('.room__card').slick({
   dots: true // dotsClass: 'slick-dots-mine'
 
-}); // $('.room').slick({
-//     infinite: true,
-//     dots: true,
-//     slidesToShow: 3,
-//     slidesToScroll: 1
-//   });
+});
 },{}],"UI-kit/cards/main.js":[function(require,module,exports) {
 var jquery = require("jquery");
 
@@ -31775,7 +31770,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50221" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60233" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

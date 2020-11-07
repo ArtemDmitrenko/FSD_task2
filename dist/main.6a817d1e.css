@@ -31,13 +31,13 @@
   font-weight: normal;
   font-style: normal;
 }
-.footerTab__text, .footer__input, .footer__copyright, .footer__link, .footer__item_line-height_24, .footer__text, .menu__sub-link, .menu__link, .header__userName {
+.input__element, .input__description, .footerTab__text, .footer__input, .footer__copyright, .footer__link, .footer__item_line-height_24, .footer__text, .menu__sub-link, .menu__link, .header__userName {
   font-family: "Conv_Montserrat-Regular", "";
   font-size: 14px;
   color: #1F2041;
 }
 
-.footer__title, .menu__link_active, .btn {
+.input__heading, .footer__title, .menu__link_active, .btn {
   font-family: "Conv_Montserrat-Bold", "";
   font-size: 12px;
   color: #1F2041;
@@ -83,11 +83,9 @@ a {
 }
 .headers-footers__headerNotRegistered {
   margin-top: 62px;
-  background-color: white;
 }
 .headers-footers__headerRegistered {
   margin-top: 40px;
-  background-color: white;
 }
 .headers-footers__logoUIkit {
   padding: 30px 0 0 30px;
@@ -106,6 +104,7 @@ a {
 
 .header {
   box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
+  background-color: white;
 }
 .header__content {
   display: flex;
@@ -364,20 +363,6 @@ a {
   border-radius: 4px;
 }
 
-.footer__arrow {
-  position: relative;
-}
-
-.footer__defaultButton {
-  position: absolute;
-  left: -38px;
-  top: 8px;
-  background: #fff;
-  border: none;
-  cursor: pointer;
-  outline: none;
-}
-
 .footerTab {
   box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
   max-width: 768px;
@@ -400,6 +385,77 @@ a {
 
 .socialNets__link {
   padding-left: 22px;
+}
+
+.input {
+  position: relative;
+  display: flex;
+}
+.input__heading {
+  position: absolute;
+  top: -20px;
+  left: 1px;
+}
+.input__description {
+  position: absolute;
+  top: -23px;
+  right: 0;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: rgba(31, 32, 65, 0.5);
+}
+.input__element {
+  position: relative;
+  color: rgba(31, 32, 65, 0.75);
+  flex-grow: 1;
+  line-height: 24px;
+  width: 100%;
+  height: 44px;
+  border-color: rgba(31, 32, 65, 0.25);
+  border-width: 1px;
+  padding-left: 15px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  outline: none;
+}
+.input__element:focus, .input__element:hover {
+  border-color: rgba(31, 32, 65, 0.5);
+}
+.input__element::placeholder {
+  opacity: 0.25;
+}
+.input__element:hover::placeholder, .input__element:focus::placeholder {
+  opacity: 0.75;
+}
+.input__element_border-radius_0 {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.input__element_brightBorder {
+  border-color: rgba(31, 32, 65, 0.5);
+}
+.input__dateDropdown::placeholder {
+  opacity: 0.75;
+  color: #1F2041;
+}
+.input__checkmark {
+  position: absolute;
+  right: 11px;
+  top: 12px;
+}
+.input__subscription {
+  position: absolute;
+  top: 12px;
+  right: 0;
+}
+.input__defaultButton {
+  position: absolute;
+  left: -38px;
+  top: 8px;
+  background: #fff;
+  border: none;
+  cursor: pointer;
+  outline: none;
 }
 
 .arrow_right {

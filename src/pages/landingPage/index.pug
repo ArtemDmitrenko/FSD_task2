@@ -1,0 +1,22 @@
+extends ../../templates/UIkit_template.pug
+include ../../common.blocks/pages/header/header.pug
+include ../../common.blocks/pages/form-roomsearch/form-roomsearch.pug
+include ../../common.blocks/pages/footer/footer.pug
+
+block title
+    title Landing page
+
+block content
+    .landingPage
+        .landingPage__header
+            +header({modificator: "NotRegistered"})
+        .landingPage__main
+            img(src="landingPage.png", alt="background").landingPage__image
+            .landingPage__form
+                +form-roomsearch()
+            p.landingPage__text Лучшие номера для вашей работы, отдыха и просто вдохновения
+        .landingPage__footer
+            +footer()
+
+block script
+    script(src="main.js")
