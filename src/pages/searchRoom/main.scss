@@ -1,0 +1,74 @@
+// Подключение базы данных цветов
+@import "../../colors.scss";
+// Подключение базы данных шрифтов
+@import "../../fonts.scss";
+// Подключение nullstyle
+@import "../../nullstyle.scss";
+// Content
+@import "../../common.blocks/pages/header/header.scss";
+@import "../../common.blocks/pages/logo/logo.scss";
+@import "../../common.blocks/pages/container/container.scss";
+@import "../../common.blocks/pages/button/button.scss";
+@import "../../common.blocks/pages/navMenu/navMenu.scss";
+@import "../../common.blocks/pages/footer/footer.scss";
+@import "../../common.blocks/pages/socialNets/socialNets.scss";
+@import "../../common.blocks/pages/arrow/arrow.scss";
+@import "../../common.blocks/pages/checkmark/checkmark.scss";
+@import "../../common.blocks/pages/dateDropdown/dateDropdown.scss";
+@import "../../common.blocks/pages/dropdown/dropdown.scss";
+@import "../../common.blocks/pages/input/input.scss";
+@import "../../common.blocks/pages/button/button.scss";
+@import "../../common.blocks/pages/counter/counter.scss";
+@import "../../common.blocks/pages/footerTab/footerTab.scss";
+@import "../../common.blocks/pages/range-slider/range-slider.scss";
+@import "../../common.blocks/pages/checkbox-btn/checkbox-btn.scss";
+@import "../../common.blocks/pages/room/room.scss";
+@import "../../common.blocks/pages/rate-button/rate-button.scss";
+@import "../../common.blocks/pages/pagination/pagination.scss";
+
+.searchRoom {
+    &__main {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__sidebar {
+        flex-shrink: 0;
+        flex-basis: 266px;
+        margin-right: 5.1%;
+    }
+    &__filterDateDropdown {
+        width: 100%;
+        margin-top: 50px;
+    }
+    &__dropdown-guests {
+        margin-top: 41px;
+        margin-bottom: 29px;
+    }
+    &__checkbox-btn {
+        margin-top: 47px;
+        margin-bottom: 31px;
+    }
+    &__dropdown-rooms {
+        margin-top: 47px;
+        margin-bottom: 30px;
+    }
+    &__rooms {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    &__title {
+        @extend %h1;
+        margin-top: 28px;
+        margin-bottom: 19px;
+    }
+    &__pagination {
+        margin-left: auto;
+        margin-right: auto;
+        width: 16em;
+        margin-top: 19px;
+    }
+    &__card {
+        margin-bottom: 21px;
+    }
+}

@@ -31,7 +31,7 @@
   font-weight: normal;
   font-style: normal;
 }
-.landingPage__text, .input__element, .input__description, .datepicker--cells, .footer__input, .footer__copyright, .footer__link, .footer__item_line-height_24, .footer__text, .menu__sub-link, .menu__link, .header__userName {
+.landingPage__text, .footerTab__text, .input__element, .input__description, .datepicker--cells, .footer__input, .footer__copyright, .footer__link, .footer__item_line-height_24, .footer__text, .menu__sub-link, .menu__link, .header__userName {
   font-family: "Conv_Montserrat-Regular", "";
   font-size: 14px;
   color: #1F2041;
@@ -264,6 +264,12 @@ a {
 
 .footer {
   box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
+  display: block;
+}
+@media screen and (max-width: 768px) {
+  .footer {
+    display: none;
+  }
 }
 .footer__top {
   background-color: white;
@@ -472,6 +478,13 @@ a {
 }
 .form-roomsearch__submit {
   margin-top: 32px;
+}
+
+.dateDropdown {
+  cursor: pointer;
+}
+.dateDropdown input {
+  cursor: pointer;
 }
 
 .datepicker--cells {
@@ -1226,6 +1239,13 @@ a {
 
 .dropdown {
   position: relative;
+  cursor: pointer;
+}
+.dropdown input {
+  cursor: pointer;
+}
+.dropdown .checkmark {
+  z-index: -99;
 }
 .dropdown__list {
   position: absolute;
@@ -1465,6 +1485,33 @@ a {
   opacity: 0.38;
 }
 
+.footerTab {
+  box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
+  max-width: 768px;
+  height: 367px;
+  margin: auto;
+  background-color: #fff;
+  display: flex;
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .footerTab {
+    display: block;
+  }
+}
+.footerTab__content {
+  margin: auto;
+  text-align: center;
+  padding-top: 120px;
+}
+.footerTab__text {
+  opacity: 0.75;
+  padding: 20px 0 24px;
+}
+.footerTab__socialNets {
+  padding-right: 22px;
+}
+
 .landingPage {
   background-color: #F4F4F6;
 }
@@ -1480,13 +1527,13 @@ a {
 }
 .landingPage__form {
   position: absolute;
-  left: 15%;
-  top: 10%;
+  left: 9.7%;
+  top: 8.4%;
 }
 .landingPage__text {
   position: absolute;
-  right: 10%;
-  bottom: 3%;
+  right: 9.3%;
+  bottom: 2.5%;
   line-height: 24px;
   width: 260px;
   text-align: end;

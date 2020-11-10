@@ -1,7 +1,8 @@
-extends ../../templates/UIkit_template.pug
+extends ../../templates/template.pug
 include ../../common.blocks/pages/header/header.pug
 include ../../common.blocks/pages/form-roomsearch/form-roomsearch.pug
 include ../../common.blocks/pages/footer/footer.pug
+include ../../common.blocks/pages/footerTab/footerTab.pug
 
 block title
     title Landing page
@@ -15,8 +16,10 @@ block content
             .landingPage__form
                 +form-roomsearch()
             p.landingPage__text Лучшие номера для вашей работы, отдыха и просто вдохновения
-        .landingPage__footer
+        .landingPage__footer_wide
             +footer()
+        .landingPage__footer_tab
+            +footerTab()
 
 block script
     script(src="main.js")

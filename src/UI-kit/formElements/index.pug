@@ -1,4 +1,4 @@
-extends ../../templates/UIkit_template.pug
+extends ../../templates/template.pug
 include ../../common.blocks/UIkit/logoUIkit/logoUIkit.pug
 include ../../common.blocks/pages/input/input.pug
 include ../../common.blocks/pages/dropdown/dropdown.pug
@@ -35,7 +35,7 @@ block content
                 +dropdown({dropdownType: 'guests', heading: 'dropdown', value: 'Сколько гостей'})
             br
             .formElements__dropdown  
-                +dropdown({dropdownType:'roomsBeds', heading: 'dropdown'})
+                +dropdown({dropdownType:'roomsBeds', heading: 'dropdown', description: 'default'})
             br
             .formElements__subscriptionInput  
                 +input({heading: 'subscription text field', name: 'email', type: 'email', placeholder: 'Email', required: true, subscription: true})

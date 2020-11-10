@@ -7,7 +7,8 @@
 include ../checkmark/checkmark.pug
 
 
-mixin checkbox-btn(options = {})
+mixin checkbox-btn(options)
+    - const {name, expandable, richCheckbox, list} = options
     .checkbox-btn
         if options.expandable
             .checkbox-btn__expandableName

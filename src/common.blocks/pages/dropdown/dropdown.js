@@ -19,10 +19,15 @@ let dropdownOpen = (event) => {
             }
         }
         if (!dropdown) {
-            let dropdownInputArr = document.querySelectorAll('input[name = "guests"]');
+            let dropdownInputGuestsArr = document.querySelectorAll('input[name = "guests"]');
+            let dropdownInputRoomsBedsArr = document.querySelectorAll('input[name = "roomsBeds"]');
             let dropdownListArr = document.querySelectorAll('.dropdown__list');
 
-            dropdownInputArr.forEach((item) => {
+            dropdownInputGuestsArr.forEach((item) => {
+                item.classList.remove("input__element_border-radius_0");
+                item.classList.remove("input__element_brightBorder");
+            });
+            dropdownInputRoomsBedsArr.forEach((item) => {
                 item.classList.remove("input__element_border-radius_0");
                 item.classList.remove("input__element_brightBorder");
             });

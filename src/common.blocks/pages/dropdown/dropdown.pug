@@ -3,7 +3,7 @@ include ../button/button.pug
 include ../counter/counter.pug
 
 mixin dropdown(options = {})
-    - let {dropdownType, heading, value} = options;
+    - const {dropdownType, heading, value, description} = options;
     case dropdownType
         when 'guests'
             .dropdown
@@ -22,7 +22,7 @@ mixin dropdown(options = {})
         when 'roomsBeds'
             .dropdown
                 .dropdown__input
-                    +input({heading: heading, description: 'default', name: 'roomsBeds', type: 'text', value: value, dropdown: true, readonly: true})
+                    +input({heading: heading, description: description, name: 'roomsBeds', type: 'text', value: value, dropdown: true, readonly: true})
                 .dropdown__list
                     .dropdown__counter
                         +counter(["Спальни", "Bedrooms"])

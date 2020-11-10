@@ -20,6 +20,7 @@
 @import "../../common.blocks/pages/input/input.scss";
 @import "../../common.blocks/pages/button/button.scss";
 @import "../../common.blocks/pages/counter/counter.scss";
+@import "../../common.blocks/pages/footerTab/footerTab.scss";
 
 .landingPage {
     background-color: #F4F4F6;
@@ -35,13 +36,13 @@
     }
     &__form {
         position: absolute;
-        left: 15%;
-        top: 10%;
+        left: 9.7%;
+        top: 8.4%;    
     }
     &__text {
         position: absolute;
-        right: 10%;
-        bottom: 3%;
+        right: 9.3%;
+        bottom: 2.5%;
         @extend %font-body;
         line-height: 24px;
         width: 260px;

@@ -10,7 +10,7 @@ mixin room(options)
         .room__room-description
             .room__room-block
                 h1.room__room-number <span>№</span> #{roomNumber}
-                if lux                
+                if lux
                     h3.room__room-type Люкс
             h3.room__price #{price} <span>в сутки</span>
         .room__line
@@ -18,6 +18,3 @@ mixin room(options)
             .room__rate-button
                 +rate-button({value: rate})
             .room__review #{numberOfReviews} <span>Отзывов</span>
-
-
-

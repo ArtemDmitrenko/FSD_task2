@@ -272,6 +272,13 @@ a {
 
 .dropdown {
   position: relative;
+  cursor: pointer;
+}
+.dropdown input {
+  cursor: pointer;
+}
+.dropdown .checkmark {
+  z-index: -99;
 }
 .dropdown__list {
   position: absolute;
@@ -438,6 +445,13 @@ a {
 }
 .counter__btn_minus:disabled {
   opacity: 0.38;
+}
+
+.dateDropdown {
+  cursor: pointer;
+}
+.dateDropdown input {
+  cursor: pointer;
 }
 
 .datepicker--cells {
@@ -1205,6 +1219,9 @@ a {
 .checkbox-btn__item {
   margin-top: 12px;
 }
+.checkbox-btn__item:last-child .checkbox-btn__sublabel {
+  width: 102%;
+}
 .checkbox-btn__expandableForm {
   display: none;
 }
@@ -1271,6 +1288,7 @@ a {
   font-size: 14px;
   color: rgba(31, 32, 65, 0.75);
   text-transform: none;
+  width: 101%;
 }
 .checkbox-btn__input:not(:checked) + .checkbox-btn__label:after {
   opacity: 0;

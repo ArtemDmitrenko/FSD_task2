@@ -449,6 +449,13 @@ a {
   display: block;
 }
 
+.dateDropdown {
+  cursor: pointer;
+}
+.dateDropdown input {
+  cursor: pointer;
+}
+
 .datepicker--cells {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1397,6 +1404,13 @@ a {
 
 .dropdown {
   position: relative;
+  cursor: pointer;
+}
+.dropdown input {
+  cursor: pointer;
+}
+.dropdown .checkmark {
+  z-index: -99;
 }
 .dropdown__list {
   position: absolute;

@@ -5,9 +5,14 @@
     margin: auto;
     background-color: #fff;
     display: flex;
+    display: none;
+    @media screen and (max-width: 768px) {
+        display: block;
+    }
     &__content {
         margin: auto;
         text-align: center;
+        padding-top: 120px;
     }
     &__text {
         @extend %font-body;

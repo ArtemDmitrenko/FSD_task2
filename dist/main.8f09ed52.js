@@ -30391,9 +30391,14 @@ var dropdownOpen = function dropdownOpen(event) {
   }
 
   if (!dropdown) {
-    var dropdownInputArr = document.querySelectorAll('input[name = "guests"]');
+    var dropdownInputGuestsArr = document.querySelectorAll('input[name = "guests"]');
+    var dropdownInputRoomsBedsArr = document.querySelectorAll('input[name = "roomsBeds"]');
     var dropdownListArr = document.querySelectorAll('.dropdown__list');
-    dropdownInputArr.forEach(function (item) {
+    dropdownInputGuestsArr.forEach(function (item) {
+      item.classList.remove("input__element_border-radius_0");
+      item.classList.remove("input__element_brightBorder");
+    });
+    dropdownInputRoomsBedsArr.forEach(function (item) {
       item.classList.remove("input__element_border-radius_0");
       item.classList.remove("input__element_brightBorder");
     });
@@ -35478,7 +35483,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60233" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61551" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

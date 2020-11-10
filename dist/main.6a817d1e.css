@@ -282,6 +282,12 @@ a {
 
 .footer {
   box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
+  display: block;
+}
+@media screen and (max-width: 768px) {
+  .footer {
+    display: none;
+  }
 }
 .footer__top {
   background-color: white;
@@ -370,10 +376,17 @@ a {
   margin: auto;
   background-color: #fff;
   display: flex;
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .footerTab {
+    display: block;
+  }
 }
 .footerTab__content {
   margin: auto;
   text-align: center;
+  padding-top: 120px;
 }
 .footerTab__text {
   opacity: 0.75;

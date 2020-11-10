@@ -1,5 +1,12 @@
 .dropdown {
     position: relative;
+    cursor: pointer;
+    & input {
+        cursor: pointer;
+    }
+    & .checkmark {
+        z-index: -99;
+    }
     &__list {
         position: absolute;
         border: 1px solid $dark50;

@@ -1,3 +1,9 @@
+.dateDropdown {
+  cursor: pointer;
+  & input {
+    cursor: pointer;
+  }
+}
 .datepicker--cells {
   display: -webkit-flex;
   display: -ms-flexbox;

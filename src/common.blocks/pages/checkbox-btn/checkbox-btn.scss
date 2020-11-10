@@ -14,6 +14,9 @@
     }
     &__item {
         margin-top: 12px;
+        &:last-child .checkbox-btn__sublabel {
+            width: 102%;
+        }
     }
     &__expandableForm {
         display: none;
@@ -82,7 +85,8 @@
                 @extend %h3;
                 font-size: 14px;
                 color: $dark75;
-                text-transform: none;             
+                text-transform: none; 
+                width: 101%;            
             }    
         }
         &:not(:checked) + .checkbox-btn__label:after {

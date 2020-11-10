@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "dev": "parcel src/content.pug --out-dir dist",
+        "dev": "parcel src/content.pug --out-dir dist --open",
         "build": "parcel build src/content.pug"
     },
     "repository": {
