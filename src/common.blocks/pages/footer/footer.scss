@@ -1,6 +1,7 @@
 .footer {
     box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
     display: block;
+    background-color: #F4F4F6;
     @media screen and (max-width: 768px) {
         display: none;
     }
@@ -90,17 +91,3 @@
         border-radius: 4px;
     }
 }
-
-// .footer__arrow {
-//     position: relative;
-// }
-
-// .footer__defaultButton {
-//     position: absolute;
-//     left: -38px;
-//     top: 8px;
-//     background: #fff;
-//     border: none;
-//     cursor: pointer;
-//     outline: none;
-// }

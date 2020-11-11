@@ -1,0 +1,41 @@
+// Подключение базы данных цветов
+@import "../../colors.scss";
+// Подключение базы данных шрифтов
+@import "../../fonts.scss";
+// Подключение nullstyle
+@import "../../nullstyle.scss";
+// Content
+@import "../../common.blocks/pages/header/header.scss";
+@import "../../common.blocks/pages/logo/logo.scss";
+@import "../../common.blocks/pages/container/container.scss";
+@import "../../common.blocks/pages/button/button.scss";
+@import "../../common.blocks/pages/navMenu/navMenu.scss";
+@import "../../common.blocks/pages/footer/footer.scss";
+@import "../../common.blocks/pages/socialNets/socialNets.scss";
+@import "../../common.blocks/pages/arrow/arrow.scss";
+@import "../../common.blocks/pages/checkmark/checkmark.scss";
+@import "../../common.blocks/pages/form-log-in/form-log-in.scss";
+@import "../../common.blocks/pages/input/input.scss";
+@import "../../common.blocks/pages/footerTab/footerTab.scss";
+@import "../../common.blocks/pages/radio-buttons/radio-buttons.scss";
+@import "../../common.blocks/pages/toggle/toggle.scss";
+
+.signIn {
+    &__main {
+        height: 702px;
+        position: relative;
+    }
+    &__image {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+    &__form {
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        margin-top: -180px;
+        left: 50%;
+        margin-left: -190px;
+    }
+}

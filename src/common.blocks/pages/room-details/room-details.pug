@@ -15,4 +15,5 @@ mixin room-details(options)
                 .room-details__text
                     h3.room-details__name= name[i]
                     p.room-details__description= description[i]
-            hr.room-details__line
+            if i !== 2
+                hr.room-details__line

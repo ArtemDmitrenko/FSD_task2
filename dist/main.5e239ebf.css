@@ -1312,6 +1312,9 @@ a {
   height: 1px;
   margin: 20px 0 20px 0;
 }
+.room-details__title {
+  margin-bottom: 19px;
+}
 .room-details__all {
   display: flex;
 }

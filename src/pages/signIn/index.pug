@@ -1,0 +1,24 @@
+extends ../../templates/template.pug
+include ../../common.blocks/pages/header/header.pug
+include ../../common.blocks/pages/form-log-in/form-log-in.pug
+include ../../common.blocks/pages/footer/footer.pug
+include ../../common.blocks/pages/footerTab/footerTab.pug
+
+block title
+    title Registration
+
+block content
+    .signIn
+        .signIn__header
+            +header({modificator: "NotRegistered"})
+        .signIn__main
+            img(src="registration.png", alt="registration").signIn__image
+            .signIn__form
+                +form-log-in()
+        .signIn__footer_wide
+            +footer()
+        .signIn__footer_tab
+            +footerTab()
+
+block script
+    script(src="main.js")

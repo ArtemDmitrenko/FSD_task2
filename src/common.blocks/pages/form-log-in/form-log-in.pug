@@ -2,7 +2,7 @@ include ../input/input.pug
 include ../button/button.pug
 
 mixin form-log-in()
-    form(action="#" method="get").form-roomsearch
+    form(action="#" method="get").form-log-in
         h1.form-log-in__title Войти
         .form-log-in__email
             +input({name: 'E-mail', type: 'email', placeholder: 'Email'})

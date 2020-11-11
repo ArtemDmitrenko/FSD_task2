@@ -23,6 +23,7 @@
         background-color: white;
         display: none;
         min-width: 100%;
+        z-index: 1;
     }
     &__sub-link {
         @extend %font-body;

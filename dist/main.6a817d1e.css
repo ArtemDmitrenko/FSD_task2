@@ -268,6 +268,7 @@ a {
   background-color: white;
   display: none;
   min-width: 100%;
+  z-index: 1;
 }
 .menu__sub-link {
   opacity: 0.5;
@@ -283,6 +284,7 @@ a {
 .footer {
   box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
   display: block;
+  background-color: #F4F4F6;
 }
 @media screen and (max-width: 768px) {
   .footer {
