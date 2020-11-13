@@ -31740,13 +31740,7 @@ require("../../common.blocks/pages/dateDropdown/dateDropdown.js");
 
 require("slick-carousel/slick/slick.min.js");
 
-require("../../common.blocks/pages/room/room.js"); // require("../../common.blocks/pages/checkbox-btn/checkbox-btn.js");
-// require("../../common.blocks/pages/like-button/like-button.js");
-// require("paginationjs/src/pagination.js");
-// require("../../common.blocks/pages/pagination/pagination.js");
-// require("ion-rangeslider/js/ion.rangeSlider.js");
-// require("../../common.blocks/pages/range-slider/range-slider.js");
-// require("air-datepicker/dist/js/datepicker.min.js");
+require("../../common.blocks/pages/room/room.js");
 },{"jquery":"../node_modules/jquery/dist/jquery.js","jquery-ui-dist/jquery-ui.js":"../node_modules/jquery-ui-dist/jquery-ui.js","jquery.maskedinput/src/jquery.maskedinput.js":"../node_modules/jquery.maskedinput/src/jquery.maskedinput.js","../../common.blocks/pages/input/input.js":"common.blocks/pages/input/input.js","../../common.blocks/pages/dropdown/dropdown.js":"common.blocks/pages/dropdown/dropdown.js","../../common.blocks/pages/dateDropdown/dateDropdown.js":"common.blocks/pages/dateDropdown/dateDropdown.js","slick-carousel/slick/slick.min.js":"../node_modules/slick-carousel/slick/slick.min.js","../../common.blocks/pages/room/room.js":"common.blocks/pages/room/room.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';

@@ -21,6 +21,10 @@
 @import "../../common.blocks/pages/like-button/like-button.scss";
 @import "../../common.blocks/pages/bullet-list/bullet-list.scss";
 @import "../../common.blocks/pages/diagram/diagram.scss";
+@import "../../common.blocks/pages/form-confirmation/form-confirmation.scss";
+@import "../../common.blocks/pages/dateDropdown/dateDropdown.scss";
+@import "../../common.blocks/pages/dropdown/dropdown.scss";
+@import "../../common.blocks/pages/counter/counter.scss";
 
 .roomDetails {
     &__foto {
@@ -56,16 +60,19 @@
     }
     &__total {
         display: flex;
+        justify-content: space-between;
     }
-    &__column1 {
-        display: flex;
-        flex-wrap: wrap;
+    &__column2 {
+        margin-top: 70px;
     }
     &__impression {
-        width: 311px;
+        width: 315px;
+        @extend %h2;
+        margin-left: 70px;
     }
     &__review {
         max-width: 712px;
+        margin-top: 32px;
     }
     &__reviewTitle {
         display: flex;
@@ -79,6 +86,7 @@
     &__reviewNumberOfReviews {
         @extend %font-body;
         color: $dark50;
+        margin-right: 2px;
     }
     &__reviewBlockItem {
         margin-bottom: 23px;
@@ -93,6 +101,7 @@
     }
     &__cancel {
         max-width: 342px;
+        margin-left: 69px;
     }
     &__cancelTitle {
         @extend %h2;
@@ -102,5 +111,22 @@
         @extend %font-body;
         color: $dark75;
         line-height: 24px;
+    }
+    &__line1 {
+        display: flex;
+        margin-top: 69px;
+    }
+    &__line2 {
+        display: flex;
+        margin-top: 32px;
+        margin-bottom: 62px;
+    }
+    &__diagram {
+        margin-top: 20px;
+    }
+    &__grey-line {
+        height: 1px;
+        width: 100%;
+        background-color: #F4F4F6;
     }
 }
