@@ -5,3 +5,4 @@ require("jquery.maskedinput/src/jquery.maskedinput.js");
 require("../../common.blocks/pages/navMenu/navMenu.js");
 require("../../common.blocks/pages/input/input.js");
 require("../../common.blocks/pages/like-button/like-button.js");
+require("../../common.blocks/pages/diagram/diagram.js");

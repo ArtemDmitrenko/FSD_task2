@@ -30458,6 +30458,53 @@ document.addEventListener("click", likeButtonClicked); //         if (dropdownIn
 //         });
 //     }
 // }
+},{}],"common.blocks/pages/diagram/diagram.js":[function(require,module,exports) {
+var $diagram = document.querySelector('.diagram'); // console.log(diagram)
+// Getting data atrs from diagram in Number type
+
+var good = Number($diagram.dataset.good);
+var amazing = Number($diagram.dataset.amazing);
+var notbad = Number($diagram.dataset.notbad);
+var bad = Number($diagram.dataset.bad); // Creating object with data
+
+var model = {
+  good: good,
+  amazing: amazing,
+  notbad: notbad,
+  bad: bad
+}; // Creating array from number of reviews and calculating sum of them:
+
+var sum = Object.values(model).reduce(function (previousValue, currentValue) {
+  return previousValue + currentValue;
+});
+var $svg = document.querySelector('.diagram__chart'); // Constant length of circle
+
+var lengthOfCircle = 364.424672; // Proportion length due to total sum of reviews
+
+var goodInPixels = lengthOfCircle * good / sum;
+var amazingInPixels = lengthOfCircle * amazing / sum;
+var notbadInPixels = lengthOfCircle * notbad / sum;
+var badInPixels = lengthOfCircle * bad / sum;
+
+if (model.good) {
+  $svg.insertAdjacentHTML('beforeend', "\n    <circle class='diagram__unit diagram__unit_good' r='58' cx='50%' cy=\"50%\" stroke=\"url(#linear-gradient-green)\" style=\"stroke-dasharray: ".concat(goodInPixels - 2, " ").concat(lengthOfCircle, "; stroke-dashoffset: -1\">\n    "));
+}
+
+if (model.amazing) {
+  $svg.insertAdjacentHTML('beforeend', "\n    <circle class='diagram__unit diagram__unit_good' r='58' cx='50%' cy=\"50%\" stroke=\"url(#linear-gradient-yellow)\" style=\"stroke-dasharray: ".concat(amazingInPixels - 2, " ").concat(lengthOfCircle, "; stroke-dashoffset: ").concat(-(goodInPixels + 1), "\">\n    "));
+}
+
+if (model.notbad) {
+  $svg.insertAdjacentHTML('beforeend', "\n    <circle class='diagram__unit diagram__unit_good' r='58' cx='50%' cy=\"50%\" stroke=\"url(#linear-gradient-purple)\" style=\"stroke-dasharray: ".concat(notbadInPixels - 2, " ").concat(lengthOfCircle, "; stroke-dashoffset: ").concat(-(amazingInPixels + goodInPixels + 1), "\">\n    "));
+}
+
+if (model.bad) {
+  $svg.insertAdjacentHTML('beforeend', "\n    <circle class='diagram__unit diagram__unit_good' r='58' cx='50%' cy=\"50%\" stroke=\"url(#linear-gradient-black)\" style=\"stroke-dasharray: ".concat(badInPixels - 2, " ").concat(lengthOfCircle, "; stroke-dashoffset: ").concat(-(notbadInPixels + amazingInPixels + goodInPixels + 1), "\">\n    "));
+} // Printing the total number of reviews on the page
+
+
+var wholeNumberOfReviews = document.querySelector('.diagram__total');
+wholeNumberOfReviews.innerHTML = "".concat(sum, "<br><span>\u0433\u043E\u043B\u043E\u0441\u043E\u0432</span>");
 },{}],"pages/roomDetails/main.js":[function(require,module,exports) {
 var jquery = require("jquery");
 
@@ -30472,7 +30519,9 @@ require("../../common.blocks/pages/navMenu/navMenu.js");
 require("../../common.blocks/pages/input/input.js");
 
 require("../../common.blocks/pages/like-button/like-button.js");
-},{"jquery":"../node_modules/jquery/dist/jquery.js","jquery-ui-dist/jquery-ui.js":"../node_modules/jquery-ui-dist/jquery-ui.js","jquery.maskedinput/src/jquery.maskedinput.js":"../node_modules/jquery.maskedinput/src/jquery.maskedinput.js","../../common.blocks/pages/navMenu/navMenu.js":"common.blocks/pages/navMenu/navMenu.js","../../common.blocks/pages/input/input.js":"common.blocks/pages/input/input.js","../../common.blocks/pages/like-button/like-button.js":"common.blocks/pages/like-button/like-button.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+
+require("../../common.blocks/pages/diagram/diagram.js");
+},{"jquery":"../node_modules/jquery/dist/jquery.js","jquery-ui-dist/jquery-ui.js":"../node_modules/jquery-ui-dist/jquery-ui.js","jquery.maskedinput/src/jquery.maskedinput.js":"../node_modules/jquery.maskedinput/src/jquery.maskedinput.js","../../common.blocks/pages/navMenu/navMenu.js":"common.blocks/pages/navMenu/navMenu.js","../../common.blocks/pages/input/input.js":"common.blocks/pages/input/input.js","../../common.blocks/pages/like-button/like-button.js":"common.blocks/pages/like-button/like-button.js","../../common.blocks/pages/diagram/diagram.js":"common.blocks/pages/diagram/diagram.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;

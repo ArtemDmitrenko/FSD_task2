@@ -5,6 +5,7 @@ include ../../common.blocks/pages/footerTab/footerTab.pug
 include ../../common.blocks/pages/room-details/room-details.pug
 include ../../common.blocks/pages/review/review.pug
 include ../../common.blocks/pages/bullet-list/bullet-list.pug
+include ../../common.blocks/pages/diagram/diagram.pug
 
 block title
     title Room Details
@@ -26,7 +27,7 @@ block content
                 .roomDetails__column1
                     .roomDetails__info
                         +room-details({title: 'Сведения о номере', name: ['Комфорт', 'Удобство', 'Уют'], description: ['Шумопоглощающие стены', 'Окно в каждой из спален', 'Номер оснащён камином'], image: ['insert_emoticon', 'location_city', 'whatshot']})
-                    h1.roomDetails__impression Впечатления от номера
+                    h1.roomDetails__impression Впечатления от номера                    
                     .roomDetails__review
                         .roomDetails__reviewTitle
                             h2.roomDetails__reviewText Отзывы посетителей номера
@@ -47,7 +48,11 @@ block content
 
                 .roomDetails__column2
                     .roomDetails__form-confirmation
-                
+
+
+        .roomDetails__diagram
+            +diagram({good: "50", amazing: "50", notbad: "50", bad: "50"})
+
         .roomDetails__footer_wide
             +footer()
         .roomDetails__footer_tab
