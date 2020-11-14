@@ -5,8 +5,8 @@
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "dev": "parcel src/content.pug --out-dir dist --open",
-        "build": "parcel build src/content.pug --public-url /FSD_task2 --out-dir docs --no-content-hash"
+        "dev": "parcel src/index.pug --out-dir dist --open",
+        "build": "parcel build src/index.pug --public-url /FSD_task2 --out-dir docs --no-content-hash"
     },
     "repository": {
         "type": "git",
