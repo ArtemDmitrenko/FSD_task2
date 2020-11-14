@@ -39,7 +39,7 @@
   color: #FFFFFF;
   border-radius: 50%;
   background-image: linear-gradient(to bottom, #6FCF97, #66D2EA);
-  opacity: 100%;
+  opacity: 1;
 }
 .datepicker--cell.-current-.-focus- {
   color: #4a4a4a;
@@ -83,7 +83,7 @@
   color: #fff;
   // background: #5cc4ef;
   // border-radius: 50%;
-  opacity: 100%;
+  opacity: 1;
   background-image: linear-gradient(to bottom, #BC9CFF, #8BA4F9);
 }
 .datepicker--cell.-range-from-.-range-to- {
@@ -136,7 +136,7 @@
 }
 .datepicker--cell-day {
   width: 14.28571%;
-  opacity: 50%;
+  opacity: 0.5;
 }
 .datepicker--cells-months {
   height: 170px;
@@ -639,7 +639,7 @@
 .datepicker--cell-day.-other-month-,
 .datepicker--cell-year.-other-decade- {
   // color: #dedede;
-  opacity: 25%;
+  opacity: 0.25;
 }
 .datepicker--cell-day.-other-month-:hover,
 .datepicker--cell-year.-other-decade-:hover {
