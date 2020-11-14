@@ -19,4 +19,4 @@ $('[name|="birthday"]').mask("99.99.9999",{autoclear:!1});
 },{}],"UwHI":[function(require,module,exports) {
 var e=require("jquery");window.$=window.jQuery=e,require("jquery-ui-dist/jquery-ui.js"),require("jquery.maskedinput/src/jquery.maskedinput.js"),require("../../common.blocks/pages/navMenu/navMenu.js"),require("../../common.blocks/pages/input/input.js");
 },{"jquery":"juYr","jquery-ui-dist/jquery-ui.js":"PYKa","jquery.maskedinput/src/jquery.maskedinput.js":"ZujO","../../common.blocks/pages/navMenu/navMenu.js":"fnlo","../../common.blocks/pages/input/input.js":"BzHd"}]},{},["UwHI"], null)
-//# sourceMappingURL=main.00420a0d.js.map
+//# sourceMappingURL=/FSD_task2/main.00420a0d.js.map
