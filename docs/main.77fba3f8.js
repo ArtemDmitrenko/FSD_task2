@@ -26,4 +26,4 @@ $(".room__card").slick({dots:!0});
 },{}],"P4xg":[function(require,module,exports) {
 var e=require("jquery");window.$=window.jQuery=e,require("jquery-ui-dist/jquery-ui.js"),require("jquery.maskedinput/src/jquery.maskedinput.js"),require("../../common.blocks/pages/input/input.js"),require("../../common.blocks/pages/dropdown/dropdown.js"),require("../../common.blocks/pages/dateDropdown/dateDropdown.js"),require("slick-carousel/slick/slick.min.js"),require("../../common.blocks/pages/room/room.js");
 },{"jquery":"juYr","jquery-ui-dist/jquery-ui.js":"PYKa","jquery.maskedinput/src/jquery.maskedinput.js":"ZujO","../../common.blocks/pages/input/input.js":"BzHd","../../common.blocks/pages/dropdown/dropdown.js":"rlK4","../../common.blocks/pages/dateDropdown/dateDropdown.js":"kWVF","slick-carousel/slick/slick.min.js":"YK3c","../../common.blocks/pages/room/room.js":"y22p"}]},{},["P4xg"], null)
-//# sourceMappingURL=/FSD_task2/main.77fba3f8.js.map
+//# sourceMappingURL=main.77fba3f8.js.map

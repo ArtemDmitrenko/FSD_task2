@@ -3,4 +3,4 @@ for(var e=document.querySelectorAll(".menu__item_dropdown"),c=document.querySele
 },{}],"IWWb":[function(require,module,exports) {
 require("../../common.blocks/pages/navMenu/navMenu.js");
 },{"../../common.blocks/pages/navMenu/navMenu.js":"fnlo"}]},{},["IWWb"], null)
-//# sourceMappingURL=/FSD_task2/main.73e03f91.js.map
+//# sourceMappingURL=main.73e03f91.js.map
