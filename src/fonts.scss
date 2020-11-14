@@ -51,7 +51,7 @@ $color) {
 }
 
 %font-body {
-    @include font ('Conv_Montserrat-Regular', '', 
+    @include font ('Conv_Montserrat-Regular', 'Open Sans', 
     14px,
     #1F2041);
     // line-height: 24px;
@@ -59,7 +59,7 @@ $color) {
 }
 
 %h3 {
-    @include font ('Conv_Montserrat-Bold', '', 
+    @include font ('Conv_Montserrat-Bold', 'Open Sans', 
     12px,
     #1F2041);
     text-transform: uppercase;
