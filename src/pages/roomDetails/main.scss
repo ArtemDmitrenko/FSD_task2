@@ -43,6 +43,10 @@
         flex-shrink: 2.14;
         display: flex;
         flex-direction: column;
+        @media screen and (max-width: 576px) {
+            display: none;
+        }
+
     }
     &__foto-part2-el1 {
         height: 50%;
@@ -61,14 +65,33 @@
     &__total {
         display: flex;
         justify-content: space-between;
+        @media screen and (max-width: 960px) {
+            flex-direction: column-reverse;
+            align-items: center;
+        }
     }
     &__column2 {
         margin-top: 70px;
+        margin-left: 20px;
+        min-width: 360px;
+        @media screen and (max-width: 960px) {
+            margin-left: 0;
+        }
+        @media screen and (max-width: 576px) {
+            min-width: 0;
+        }
+
     }
     &__impression {
-        width: 315px;
         @extend %h2;
-        margin-left: 70px;
+        margin-top: 30px;
+    }
+    &__info {
+        margin-right: 70px;
+        @media screen and (max-width: 576px) {
+            margin-right: 0;
+        }
+
     }
     &__review {
         max-width: 712px;
@@ -87,21 +110,32 @@
         @extend %font-body;
         color: $dark50;
         margin-right: 2px;
+        @media screen and (max-width: 576px) {
+            display: none;
+        }
     }
     &__reviewBlockItem {
         margin-bottom: 23px;
     }
     &__rulesList {
-        max-width: 292px;
+        width: 292px;
     }
     &__rulesTitle {
         @extend %h2;
         margin-left: 21px;
         margin-bottom: 16px;
+        @media screen and (max-width: 576px) {
+            margin-left: 0;
+        }
+
     }
     &__cancel {
         max-width: 342px;
         margin-left: 69px;
+        @media screen and (max-width: 576px) {
+            margin-left: 0;
+            margin-top: 20px;      
+        }
     }
     &__cancelTitle {
         @extend %h2;
@@ -115,11 +149,16 @@
     &__line1 {
         display: flex;
         margin-top: 69px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
     &__line2 {
         display: flex;
         margin-top: 32px;
         margin-bottom: 62px;
+        @media screen and (max-width: 576px) {
+            flex-wrap: wrap;
+        }
     }
     &__diagram {
         margin-top: 20px;

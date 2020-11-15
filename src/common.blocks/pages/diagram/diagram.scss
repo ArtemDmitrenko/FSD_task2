@@ -9,6 +9,9 @@
 
 .diagram {
     display: flex;
+    @media screen and (max-width: 376px) {
+        display: block;
+    }
     &__block {
         position: relative;
     }
@@ -51,9 +54,16 @@
             color: $purple;
 
         }
+        @media screen and (max-width: 376px) {
+            left: 11%;
+        } 
     }
     &__legend {
         margin-left: 30px;
         margin-top: 29px;
+        min-width: 162px;
+        @media screen and (max-width: 376px) {
+            margin-left: 0;
+        }
     }
 }

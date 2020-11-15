@@ -64,6 +64,7 @@
         @extend %font-body;
         line-height: 18px;
         color: $dark75;
+        margin-left: 5px;
     }
     &__total {
         display: flex;
@@ -84,7 +85,7 @@
         width: 57%;
         height: 1px;
         @media screen and (max-width: 370px) {
-            width: 48%;
+            width: 40%;
         }
 
     }
