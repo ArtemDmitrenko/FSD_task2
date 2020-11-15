@@ -16,7 +16,9 @@ var e;!function(t){"function"==typeof e&&e.amd?e(["jquery"],t):"object"==typeof 
 for(var e=document.querySelectorAll(".menu__item_dropdown"),c=document.querySelectorAll(".menu__sub-list"),t=document.querySelectorAll(".checkmark"),o=function(o){e[o].onclick=function(){c[o].classList.toggle("show"),t[o].classList.toggle("checkmark__down"),t[o].classList.toggle("checkmark__up")}},s=0;s<e.length;s++)o(s);window.onclick=function(o){for(var s=0;s<e.length;s++)document.getElementsByClassName("menu__item_dropdown")[s].contains(o.target)||c[s].classList.contains("show")&&(c[s].classList.remove("show"),t[s].classList.toggle("checkmark__down"),t[s].classList.toggle("checkmark__up"))};
 },{}],"BzHd":[function(require,module,exports) {
 $('[name|="birthday"]').mask("99.99.9999",{autoclear:!1});
+},{}],"GoSi":[function(require,module,exports) {
+$(document).ready(function(){$(".header__burger").click(function(){$(".header__burger").toggleClass("header__openedBurger"),$(".header__navMenuButtons").toggleClass("header__openedMenu"),$("body").toggleClass("fixed-page")})});
 },{}],"k946":[function(require,module,exports) {
-var e=require("jquery");window.$=window.jQuery=e,require("jquery-ui-dist/jquery-ui.js"),require("jquery.maskedinput/src/jquery.maskedinput.js"),require("../../common.blocks/pages/navMenu/navMenu.js"),require("../../common.blocks/pages/input/input.js");
-},{"jquery":"juYr","jquery-ui-dist/jquery-ui.js":"PYKa","jquery.maskedinput/src/jquery.maskedinput.js":"ZujO","../../common.blocks/pages/navMenu/navMenu.js":"fnlo","../../common.blocks/pages/input/input.js":"BzHd"}]},{},["k946"], null)
+var e=require("jquery");window.$=window.jQuery=e,require("jquery-ui-dist/jquery-ui.js"),require("jquery.maskedinput/src/jquery.maskedinput.js"),require("../../common.blocks/pages/navMenu/navMenu.js"),require("../../common.blocks/pages/input/input.js"),require("../../common.blocks/pages/header/header.js");
+},{"jquery":"juYr","jquery-ui-dist/jquery-ui.js":"PYKa","jquery.maskedinput/src/jquery.maskedinput.js":"ZujO","../../common.blocks/pages/navMenu/navMenu.js":"fnlo","../../common.blocks/pages/input/input.js":"BzHd","../../common.blocks/pages/header/header.js":"GoSi"}]},{},["k946"], null)
 //# sourceMappingURL=/FSD_task2/main.33c81d13.js.map

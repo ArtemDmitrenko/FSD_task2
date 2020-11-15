@@ -6,13 +6,41 @@
         justify-content: space-between;
         align-items: center;
         padding: 15px 0;
+        position: relative;
     }
     &__navMenuButtons {
         display: flex;
         align-items: center;
+        @media screen and (max-width: 992px){
+            display: block;
+            position: absolute;
+            width: 100%;
+            top: 90px;
+            // right: 0;
+            background: rgb(245, 246, 246);
+            box-shadow: #ccc;
+            box-shadow: 0 4px 2px -2px rgba(36, 36, 36, 0.17);
+            right: -110%;
+            transition: all 0.4s ease;
+            overflow: auto;
+            z-index: 3;
+        }
+    }
+    &__openedMenu {
+        @media screen and (max-width: 992px){
+            right: 0;
+        }
     }
     &__button {
         margin-right: 20px;
+        @media screen and (max-width: 992px){
+            display: none;
+        }
+    }
+    &__button-sign {
+        @media screen and (max-width: 992px){
+            display: none;
+        }
     }
     &__line {
         border-left: 1px solid;
@@ -20,12 +48,82 @@
         opacity: 0.1;
         height: 30px;
         margin-right: 20px;
+        @media screen and (max-width: 992px){
+            display: none;
+        }
     }
     &__userName {
         @extend %font-body;
         opacity: 0.5;
+        @media screen and (max-width: 992px){
+            display: none;
+        }
     }
-    @media screen and (max-width: 950px) {
-        background-color: yellow;
+    &__burger {
+        display: none;
+        @media screen and (max-width: 992px){
+            position: relative;
+            width: 40px;
+            height: 35px;
+            display: block;
+            & span, &:after, &:before {
+                height: 3px;
+                width: 100%;
+                position: absolute;
+                background: #515758;
+                margin: 0 auto;        
+            }
+            & span {
+                top: 16px;
+            }
+            &:after, &:before {
+                content: '';
+            }
+            &:after {
+                bottom: 5px;
+            }
+            &:before {
+                top: 5px;
+            }
+        }
     }
+    &__openedBurger {
+        @media screen and (max-width: 992px) {
+            & span {
+                opacity: 0; 
+                transition: 0.5s;
+            }
+            &:before {
+                transform: rotate(38deg);
+                top: 16px;
+                transition: 0.4s;
+            }
+            &:after {
+                transform: rotate(-38deg);
+                bottom: 16px;
+                transition: 0.4s;
+            }
+        }            
+    }
+    & .checkmark, & .menu__sub-list {
+        @media screen and (max-width: 992px){
+            display: none;
+        }
+    }
+    & .menu__list {
+        @media screen and (max-width: 992px){
+            display: block;
+            text-align: right;
+        }
+    }
+    & .menu__list li {
+        @media screen and (max-width: 992px){
+            margin: 40px 15px 40px 0px;
+            // font-size: 14px;        
+        }
+    }
+}
+
+.fixed-page {
+    overflow: hidden; /*запрещаем прокручивание страницы при открытом меню*/
 }

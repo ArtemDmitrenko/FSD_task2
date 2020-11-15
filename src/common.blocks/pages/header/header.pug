@@ -19,4 +19,7 @@ mixin header(options)
                     else
                         .header__button
                             +btn({modificator: "btn_borderHeader", text: "войти"})
-                        +btn({modificator: "btn_gradientHeader", text: "зарегистрироваться"})
+                        .header__button-sign
+                            +btn({modificator: "btn_gradientHeader", text: "зарегистрироваться"})
+                .header__burger
+                    span
