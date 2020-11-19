@@ -31708,7 +31708,19 @@ $('.input__dateDropdown').datepicker({
   clearButton: true,
   todayButton: true // classes: "yeees",
 
-});
+}); // Простая хрень, закрывающая окно datepicker, но инпут остается активным!!!Косяк!
+
+var dateApply = function dateApply(event) {
+  var target = event.target;
+  var btnApply = document.querySelector('span[data-action="today"]');
+
+  if (target === btnApply) {
+    var datepickerWindow = document.querySelector('.datepicker');
+    datepickerWindow.classList.remove('active');
+  }
+};
+
+document.addEventListener("click", dateApply);
 },{}],"common.blocks/pages/checkbox-btn/checkbox-btn.js":[function(require,module,exports) {
 var ecbOpen = function ecbOpen(event) {
   var target = event.target;
@@ -35483,7 +35495,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63670" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60685" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

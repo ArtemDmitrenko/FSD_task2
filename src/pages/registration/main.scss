@@ -32,9 +32,14 @@
     }
     &__form {
         position: absolute;
-        width: 100%;
         top: 2.8%;
         left: 50%;
-        margin-left: -188px;
+        transform: translate(-50%, 0);
+        padding-left: 8px;
+        padding-right: 8px;        
+        width: 380px;
+        @media screen and (max-width: 420px) {
+            width: fit-content;
+        }
     }
 }

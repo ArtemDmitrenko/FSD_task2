@@ -30,6 +30,9 @@
     &__main {
         display: flex;
         justify-content: space-between;
+        @media screen and (max-width: 600px) {
+            display: block;
+        }
     }
     &__sidebar {
         flex-shrink: 0;
@@ -55,7 +58,7 @@
     &__rooms {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        margin: 0 -6px;
     }
     &__title {
         @extend %h1;
@@ -70,5 +73,7 @@
     }
     &__card {
         margin-bottom: 21px;
+        margin-left: 6px;
+        margin-right: 6px;
     }
 }

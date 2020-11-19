@@ -31739,7 +31739,19 @@ $('.input__dateDropdown').datepicker({
   clearButton: true,
   todayButton: true // classes: "yeees",
 
-});
+}); // Простая хрень, закрывающая окно datepicker, но инпут остается активным!!!Косяк!
+
+var dateApply = function dateApply(event) {
+  var target = event.target;
+  var btnApply = document.querySelector('span[data-action="today"]');
+
+  if (target === btnApply) {
+    var datepickerWindow = document.querySelector('.datepicker');
+    datepickerWindow.classList.remove('active');
+  }
+};
+
+document.addEventListener("click", dateApply);
 },{}],"common.blocks/pages/checkbox-btn/checkbox-btn.js":[function(require,module,exports) {
 var ecbOpen = function ecbOpen(event) {
   var target = event.target;
@@ -35474,6 +35486,14 @@ $(".js-range-slider").ionRangeSlider({
   hide_from_to: false,
   skin: "big"
 });
+},{}],"common.blocks/pages/header/header.js":[function(require,module,exports) {
+$(document).ready(function () {
+  $('.header__burger').click(function () {
+    $('.header__burger').toggleClass('header__openedBurger');
+    $('.header__navMenuButtons').toggleClass('header__openedMenu');
+    $('body').toggleClass('fixed-page');
+  });
+});
 },{}],"pages/searchRoom/main.js":[function(require,module,exports) {
 var jquery = require("jquery");
 
@@ -35497,8 +35517,7 @@ require("slick-carousel/slick/slick.min.js");
 
 require("../../common.blocks/pages/like-button/like-button.js");
 
-require("../../common.blocks/pages/room/room.js"); // require("../../common.blocks/pages/like-button/like-button.js");
-
+require("../../common.blocks/pages/room/room.js");
 
 require("paginationjs/src/pagination.js");
 
@@ -35507,7 +35526,9 @@ require("../../common.blocks/pages/pagination/pagination.js");
 require("ion-rangeslider/js/ion.rangeSlider.js");
 
 require("../../common.blocks/pages/range-slider/range-slider.js");
-},{"jquery":"../node_modules/jquery/dist/jquery.js","jquery-ui-dist/jquery-ui.js":"../node_modules/jquery-ui-dist/jquery-ui.js","jquery.maskedinput/src/jquery.maskedinput.js":"../node_modules/jquery.maskedinput/src/jquery.maskedinput.js","../../common.blocks/pages/navMenu/navMenu.js":"common.blocks/pages/navMenu/navMenu.js","../../common.blocks/pages/input/input.js":"common.blocks/pages/input/input.js","../../common.blocks/pages/dropdown/dropdown.js":"common.blocks/pages/dropdown/dropdown.js","../../common.blocks/pages/dateDropdown/dateDropdown.js":"common.blocks/pages/dateDropdown/dateDropdown.js","../../common.blocks/pages/checkbox-btn/checkbox-btn.js":"common.blocks/pages/checkbox-btn/checkbox-btn.js","slick-carousel/slick/slick.min.js":"../node_modules/slick-carousel/slick/slick.min.js","../../common.blocks/pages/like-button/like-button.js":"common.blocks/pages/like-button/like-button.js","../../common.blocks/pages/room/room.js":"common.blocks/pages/room/room.js","paginationjs/src/pagination.js":"../node_modules/paginationjs/src/pagination.js","../../common.blocks/pages/pagination/pagination.js":"common.blocks/pages/pagination/pagination.js","ion-rangeslider/js/ion.rangeSlider.js":"../node_modules/ion-rangeslider/js/ion.rangeSlider.js","../../common.blocks/pages/range-slider/range-slider.js":"common.blocks/pages/range-slider/range-slider.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+
+require("../../common.blocks/pages/header/header.js");
+},{"jquery":"../node_modules/jquery/dist/jquery.js","jquery-ui-dist/jquery-ui.js":"../node_modules/jquery-ui-dist/jquery-ui.js","jquery.maskedinput/src/jquery.maskedinput.js":"../node_modules/jquery.maskedinput/src/jquery.maskedinput.js","../../common.blocks/pages/navMenu/navMenu.js":"common.blocks/pages/navMenu/navMenu.js","../../common.blocks/pages/input/input.js":"common.blocks/pages/input/input.js","../../common.blocks/pages/dropdown/dropdown.js":"common.blocks/pages/dropdown/dropdown.js","../../common.blocks/pages/dateDropdown/dateDropdown.js":"common.blocks/pages/dateDropdown/dateDropdown.js","../../common.blocks/pages/checkbox-btn/checkbox-btn.js":"common.blocks/pages/checkbox-btn/checkbox-btn.js","slick-carousel/slick/slick.min.js":"../node_modules/slick-carousel/slick/slick.min.js","../../common.blocks/pages/like-button/like-button.js":"common.blocks/pages/like-button/like-button.js","../../common.blocks/pages/room/room.js":"common.blocks/pages/room/room.js","paginationjs/src/pagination.js":"../node_modules/paginationjs/src/pagination.js","../../common.blocks/pages/pagination/pagination.js":"common.blocks/pages/pagination/pagination.js","ion-rangeslider/js/ion.rangeSlider.js":"../node_modules/ion-rangeslider/js/ion.rangeSlider.js","../../common.blocks/pages/range-slider/range-slider.js":"common.blocks/pages/range-slider/range-slider.js","../../common.blocks/pages/header/header.js":"common.blocks/pages/header/header.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -35535,7 +35556,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63670" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60685" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

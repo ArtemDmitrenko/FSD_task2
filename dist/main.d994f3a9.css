@@ -32,13 +32,13 @@
   font-style: normal;
 }
 .roomDetails__cancelText, .roomDetails__reviewNumberOfReviews, .datepicker--cells, .form-confirmation__sum, .form-confirmation__text, .form-confirmation__price span, .diagram__list-item, .bullet-list__item, .like-button__counter, .review__text, .review__date, .room-details__description, .footerTab__text, .input__element, .input__description, .footer__input, .footer__copyright, .footer__link, .footer__item_line-height_24, .footer__text, .menu__sub-link, .menu__link, .header__userName {
-  font-family: "Conv_Montserrat-Regular", "";
+  font-family: "Conv_Montserrat-Regular", "Open Sans";
   font-size: 14px;
   color: #1F2041;
 }
 
 .counter__value, .counter__name, .datepicker--button, .datepicker--day-name, .form-confirmation__letter, .form-confirmation__price, .form-confirmation__room-type, .diagram__total span, .bullet-list__name, .like-button__name, .review__name, .room-details__name, .input__heading, .footer__title, .menu__link_active, .btn {
-  font-family: "Conv_Montserrat-Bold", "";
+  font-family: "Conv_Montserrat-Bold", "Open Sans";
   font-size: 12px;
   color: #1F2041;
   text-transform: uppercase;
@@ -99,13 +99,45 @@ a {
   justify-content: space-between;
   align-items: center;
   padding: 15px 0;
+  position: relative;
 }
 .header__navMenuButtons {
   display: flex;
   align-items: center;
 }
+@media screen and (max-width: 992px) {
+  .header__navMenuButtons {
+    display: none;
+    position: absolute;
+    width: 100%;
+    top: 90px;
+    background: #f5f6f6;
+    box-shadow: #ccc;
+    box-shadow: 0 4px 2px -2px rgba(36, 36, 36, 0.17);
+    right: -110%;
+    transition: all 0.4s ease;
+    overflow: auto;
+    z-index: 3;
+  }
+}
+@media screen and (max-width: 992px) {
+  .header__openedMenu {
+    right: 0;
+    display: block;
+  }
+}
 .header__button {
   margin-right: 20px;
+}
+@media screen and (max-width: 992px) {
+  .header__button {
+    display: none;
+  }
+}
+@media screen and (max-width: 992px) {
+  .header__button-sign {
+    display: none;
+  }
 }
 .header__line {
   border-left: 1px solid;
@@ -114,13 +146,85 @@ a {
   height: 30px;
   margin-right: 20px;
 }
+@media screen and (max-width: 992px) {
+  .header__line {
+    display: none;
+  }
+}
 .header__userName {
   opacity: 0.5;
 }
-@media screen and (max-width: 950px) {
-  .header {
-    background-color: yellow;
+@media screen and (max-width: 992px) {
+  .header__userName {
+    display: none;
   }
+}
+.header__burger {
+  display: none;
+}
+@media screen and (max-width: 992px) {
+  .header__burger {
+    position: relative;
+    width: 40px;
+    height: 35px;
+    display: block;
+  }
+  .header__burger span, .header__burger:after, .header__burger:before {
+    height: 3px;
+    width: 100%;
+    position: absolute;
+    background: #515758;
+    margin: 0 auto;
+  }
+  .header__burger span {
+    top: 16px;
+  }
+  .header__burger:after, .header__burger:before {
+    content: "";
+  }
+  .header__burger:after {
+    bottom: 5px;
+  }
+  .header__burger:before {
+    top: 5px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .header__openedBurger span {
+    opacity: 0;
+    transition: 0.5s;
+  }
+  .header__openedBurger:before {
+    transform: rotate(38deg);
+    top: 16px;
+    transition: 0.4s;
+  }
+  .header__openedBurger:after {
+    transform: rotate(-38deg);
+    bottom: 16px;
+    transition: 0.4s;
+  }
+}
+@media screen and (max-width: 992px) {
+  .header .checkmark, .header .menu__sub-list {
+    display: none;
+  }
+}
+@media screen and (max-width: 992px) {
+  .header .menu__list {
+    display: block;
+    text-align: right;
+  }
+}
+@media screen and (max-width: 992px) {
+  .header .menu__list li {
+    margin: 40px 15px 40px 0px;
+  }
+}
+
+.fixed-page {
+  overflow: hidden;
+  /*запрещаем прокручивание страницы при открытом меню*/
 }
 
 .logo {
@@ -560,9 +664,6 @@ a {
   padding-right: 22px;
 }
 
-.room-details {
-  width: 291px;
-}
 .room-details__line {
   border: none;
   background-color: rgba(31, 32, 65, 0.05);
@@ -752,6 +853,11 @@ a {
 .diagram {
   display: flex;
 }
+@media screen and (max-width: 376px) {
+  .diagram {
+    display: block;
+  }
+}
 .diagram__block {
   position: relative;
 }
@@ -787,9 +893,20 @@ a {
 .diagram__total span {
   color: #BC9CFF;
 }
+@media screen and (max-width: 376px) {
+  .diagram__total {
+    left: 11%;
+  }
+}
 .diagram__legend {
   margin-left: 30px;
   margin-top: 29px;
+  min-width: 162px;
+}
+@media screen and (max-width: 376px) {
+  .diagram__legend {
+    margin-left: 0;
+  }
 }
 
 .form-confirmation {
@@ -853,6 +970,7 @@ a {
   display: inline-block;
   line-height: 18px;
   color: rgba(31, 32, 65, 0.75);
+  margin-left: 5px;
 }
 .form-confirmation__total {
   display: flex;
@@ -869,7 +987,7 @@ a {
 }
 @media screen and (max-width: 370px) {
   .form-confirmation__ellipsis {
-    width: 48%;
+    width: 40%;
   }
 }
 .form-confirmation__guests {
@@ -945,7 +1063,7 @@ a {
   color: #FFFFFF;
   border-radius: 50%;
   background-image: linear-gradient(to bottom, #6FCF97, #66D2EA);
-  opacity: 100%;
+  opacity: 1;
 }
 
 .datepicker--cell.-current-.-focus- {
@@ -998,7 +1116,7 @@ a {
 .datepicker--cell.-selected-,
 .datepicker--cell.-selected-.-current- {
   color: #fff;
-  opacity: 100%;
+  opacity: 1;
   background-image: linear-gradient(to bottom, #BC9CFF, #8BA4F9);
 }
 
@@ -1050,7 +1168,7 @@ a {
 
 .datepicker--cell-day {
   width: 14.28571%;
-  opacity: 50%;
+  opacity: 0.5;
 }
 
 .datepicker--cells-months {
@@ -1098,6 +1216,11 @@ a {
   transition: opacity 0.3s ease, transform 0.3s ease, left 0s 0.3s;
   transition: opacity 0.3s ease, transform 0.3s ease, left 0s 0.3s, -webkit-transform 0.3s ease;
   z-index: 100;
+}
+@media screen and (max-width: 360px) {
+  .datepicker {
+    width: 260px;
+  }
 }
 
 .datepicker.-from-top- {
@@ -1612,7 +1735,7 @@ a {
 
 .datepicker--cell-day.-other-month-,
 .datepicker--cell-year.-other-decade- {
-  opacity: 25%;
+  opacity: 0.25;
 }
 
 .datepicker--cell-day.-other-month-:hover,
@@ -1653,9 +1776,15 @@ a {
   border: none;
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 390px) {
   .dateDropdown .input__checkmark {
     display: none;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .dateDropdown .input__dateDropdown {
+    padding-left: 5px;
   }
 }
 
@@ -1752,6 +1881,11 @@ a {
   display: flex;
   flex-direction: column;
 }
+@media screen and (max-width: 576px) {
+  .roomDetails__foto-part2 {
+    display: none;
+  }
+}
 .roomDetails__foto-part2-el1 {
   height: 50%;
 }
@@ -1770,12 +1904,37 @@ a {
   display: flex;
   justify-content: space-between;
 }
+@media screen and (max-width: 960px) {
+  .roomDetails__total {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+}
 .roomDetails__column2 {
   margin-top: 70px;
+  margin-left: 20px;
+  min-width: 360px;
+}
+@media screen and (max-width: 960px) {
+  .roomDetails__column2 {
+    margin-left: 0;
+  }
+}
+@media screen and (max-width: 576px) {
+  .roomDetails__column2 {
+    min-width: 0;
+  }
 }
 .roomDetails__impression {
-  width: 315px;
-  margin-left: 70px;
+  margin-top: 30px;
+}
+.roomDetails__info {
+  margin-right: 70px;
+}
+@media screen and (max-width: 576px) {
+  .roomDetails__info {
+    margin-right: 0;
+  }
 }
 .roomDetails__review {
   max-width: 712px;
@@ -1791,19 +1950,35 @@ a {
   color: rgba(31, 32, 65, 0.5);
   margin-right: 2px;
 }
+@media screen and (max-width: 576px) {
+  .roomDetails__reviewNumberOfReviews {
+    display: none;
+  }
+}
 .roomDetails__reviewBlockItem {
   margin-bottom: 23px;
 }
 .roomDetails__rulesList {
-  max-width: 292px;
+  width: 292px;
 }
 .roomDetails__rulesTitle {
   margin-left: 21px;
   margin-bottom: 16px;
 }
+@media screen and (max-width: 576px) {
+  .roomDetails__rulesTitle {
+    margin-left: 0;
+  }
+}
 .roomDetails__cancel {
   max-width: 342px;
   margin-left: 69px;
+}
+@media screen and (max-width: 576px) {
+  .roomDetails__cancel {
+    margin-left: 0;
+    margin-top: 20px;
+  }
 }
 .roomDetails__cancelTitle {
   margin-bottom: 16px;
@@ -1815,11 +1990,18 @@ a {
 .roomDetails__line1 {
   display: flex;
   margin-top: 69px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .roomDetails__line2 {
   display: flex;
   margin-top: 32px;
   margin-bottom: 62px;
+}
+@media screen and (max-width: 576px) {
+  .roomDetails__line2 {
+    flex-wrap: wrap;
+  }
 }
 .roomDetails__diagram {
   margin-top: 20px;

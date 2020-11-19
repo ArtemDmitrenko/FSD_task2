@@ -31641,7 +31641,19 @@ $('.input__dateDropdown').datepicker({
   clearButton: true,
   todayButton: true // classes: "yeees",
 
-});
+}); // Простая хрень, закрывающая окно datepicker, но инпут остается активным!!!Косяк!
+
+var dateApply = function dateApply(event) {
+  var target = event.target;
+  var btnApply = document.querySelector('span[data-action="today"]');
+
+  if (target === btnApply) {
+    var datepickerWindow = document.querySelector('.datepicker');
+    datepickerWindow.classList.remove('active');
+  }
+};
+
+document.addEventListener("click", dateApply);
 },{}],"common.blocks/pages/dropdown/dropdown.js":[function(require,module,exports) {
 // Dropdown appears when click and dissapear when click outside or btn "apply"
 var dropdownOpen = function dropdownOpen(event) {
@@ -31848,6 +31860,14 @@ var changeover = function changeover(event) {
 document.addEventListener("click", dropdownOpen);
 document.addEventListener("click", counter);
 document.addEventListener("click", changeover);
+},{}],"common.blocks/pages/header/header.js":[function(require,module,exports) {
+$(document).ready(function () {
+  $('.header__burger').click(function () {
+    $('.header__burger').toggleClass('header__openedBurger');
+    $('.header__navMenuButtons').toggleClass('header__openedMenu');
+    $('body').toggleClass('fixed-page');
+  });
+});
 },{}],"pages/roomDetails/main.js":[function(require,module,exports) {
 var jquery = require("jquery");
 
@@ -31868,7 +31888,9 @@ require("../../common.blocks/pages/diagram/diagram.js");
 require("../../common.blocks/pages/dateDropdown/dateDropdown.js");
 
 require("../../common.blocks/pages/dropdown/dropdown.js");
-},{"jquery":"../node_modules/jquery/dist/jquery.js","jquery-ui-dist/jquery-ui.js":"../node_modules/jquery-ui-dist/jquery-ui.js","jquery.maskedinput/src/jquery.maskedinput.js":"../node_modules/jquery.maskedinput/src/jquery.maskedinput.js","../../common.blocks/pages/navMenu/navMenu.js":"common.blocks/pages/navMenu/navMenu.js","../../common.blocks/pages/input/input.js":"common.blocks/pages/input/input.js","../../common.blocks/pages/like-button/like-button.js":"common.blocks/pages/like-button/like-button.js","../../common.blocks/pages/diagram/diagram.js":"common.blocks/pages/diagram/diagram.js","../../common.blocks/pages/dateDropdown/dateDropdown.js":"common.blocks/pages/dateDropdown/dateDropdown.js","../../common.blocks/pages/dropdown/dropdown.js":"common.blocks/pages/dropdown/dropdown.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+
+require("../../common.blocks/pages/header/header.js");
+},{"jquery":"../node_modules/jquery/dist/jquery.js","jquery-ui-dist/jquery-ui.js":"../node_modules/jquery-ui-dist/jquery-ui.js","jquery.maskedinput/src/jquery.maskedinput.js":"../node_modules/jquery.maskedinput/src/jquery.maskedinput.js","../../common.blocks/pages/navMenu/navMenu.js":"common.blocks/pages/navMenu/navMenu.js","../../common.blocks/pages/input/input.js":"common.blocks/pages/input/input.js","../../common.blocks/pages/like-button/like-button.js":"common.blocks/pages/like-button/like-button.js","../../common.blocks/pages/diagram/diagram.js":"common.blocks/pages/diagram/diagram.js","../../common.blocks/pages/dateDropdown/dateDropdown.js":"common.blocks/pages/dateDropdown/dateDropdown.js","../../common.blocks/pages/dropdown/dropdown.js":"common.blocks/pages/dropdown/dropdown.js","../../common.blocks/pages/header/header.js":"common.blocks/pages/header/header.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -31896,7 +31918,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63670" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60685" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

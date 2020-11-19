@@ -33,13 +33,13 @@
   font-style: normal;
 }
 .paginationjs__legend, .paginationjs-ellipsis > a, .paginationjs-page > a, .review__text, .review__date, .bullet-list__item, .like-button__counter, .toggle__label, .radio-buttons__label, .room-details__description, .checkbox-btn__input + .checkbox-btn__label, .checkbox-btn__sublabel, .datepicker--cells, .input__element, .input__description {
-  font-family: "Conv_Montserrat-Regular", "";
+  font-family: "Conv_Montserrat-Regular", "Open Sans";
   font-size: 14px;
   color: #1F2041;
 }
 
 .review__name, .bullet-list__name, .rate-button__name, .like-button__name, .toggle__name, .radio-buttons__name, .room-details__name, .checkbox-btn__input + .checkbox-btn__label.checkbox-btn__label_rich, .checkbox-btn__title, .datepicker--button, .datepicker--day-name, .counter__value, .counter__name, .btn, .input__heading {
-  font-family: "Conv_Montserrat-Bold", "";
+  font-family: "Conv_Montserrat-Bold", "Open Sans";
   font-size: 12px;
   color: #1F2041;
   text-transform: uppercase;
@@ -490,7 +490,7 @@ a {
   color: #FFFFFF;
   border-radius: 50%;
   background-image: linear-gradient(to bottom, #6FCF97, #66D2EA);
-  opacity: 100%;
+  opacity: 1;
 }
 
 .datepicker--cell.-current-.-focus- {
@@ -543,7 +543,7 @@ a {
 .datepicker--cell.-selected-,
 .datepicker--cell.-selected-.-current- {
   color: #fff;
-  opacity: 100%;
+  opacity: 1;
   background-image: linear-gradient(to bottom, #BC9CFF, #8BA4F9);
 }
 
@@ -595,7 +595,7 @@ a {
 
 .datepicker--cell-day {
   width: 14.28571%;
-  opacity: 50%;
+  opacity: 0.5;
 }
 
 .datepicker--cells-months {
@@ -643,6 +643,11 @@ a {
   transition: opacity 0.3s ease, transform 0.3s ease, left 0s 0.3s;
   transition: opacity 0.3s ease, transform 0.3s ease, left 0s 0.3s, -webkit-transform 0.3s ease;
   z-index: 100;
+}
+@media screen and (max-width: 360px) {
+  .datepicker {
+    width: 260px;
+  }
 }
 
 .datepicker.-from-top- {
@@ -1157,7 +1162,7 @@ a {
 
 .datepicker--cell-day.-other-month-,
 .datepicker--cell-year.-other-decade- {
-  opacity: 25%;
+  opacity: 0.25;
 }
 
 .datepicker--cell-day.-other-month-:hover,
@@ -1198,9 +1203,15 @@ a {
   border: none;
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 390px) {
   .dateDropdown .input__checkmark {
     display: none;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .dateDropdown .input__dateDropdown {
+    padding-left: 5px;
   }
 }
 
@@ -1300,9 +1311,6 @@ a {
   opacity: 1;
 }
 
-.room-details {
-  width: 291px;
-}
 .room-details__line {
   border: none;
   background-color: rgba(31, 32, 65, 0.05);
