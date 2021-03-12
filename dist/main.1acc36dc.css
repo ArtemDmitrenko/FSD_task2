@@ -128,10 +128,24 @@ a {
     display: none;
   }
 }
+.header__button .btn_border {
+  width: 83px;
+  height: 29px;
+}
+.header__button .btn__text {
+  line-height: 20px;
+}
+.header__button-sign {
+  width: 196px;
+}
 @media screen and (max-width: 992px) {
   .header__button-sign {
     display: none;
   }
+}
+.header__button-sign .btn_gradient {
+  width: 100%;
+  height: 34px;
 }
 .header__line {
   border-left: 1px solid;
@@ -241,7 +255,7 @@ a {
   outline: none;
 }
 .btn_gradient {
-  background-image: linear-gradient(to bottom, #BC9CFF, #8BA4F9);
+  background-image: linear-gradient(to bottom, #BC9CFF, #8ba4f9);
   color: #ffffff;
   width: 99px;
   height: 44px;
@@ -259,7 +273,7 @@ a {
   height: 40px;
   border: double 2px transparent;
   border-radius: 26px;
-  background-image: linear-gradient(white, white), linear-gradient(to bottom, #BC9CFF, #8BA4F9);
+  background-image: linear-gradient(white, white), linear-gradient(to bottom, #BC9CFF, #8ba4f9);
   background-origin: border-box;
   background-clip: content-box, border-box;
 }
@@ -277,6 +291,7 @@ a {
 }
 .btn__text_header {
   line-height: 30px;
+  margin-top: 5px;
 }
 .btn_iconLinkViolent {
   width: auto;
@@ -293,7 +308,7 @@ a {
   width: 100%;
   height: 44px;
   border-radius: 22px;
-  background-image: linear-gradient(to bottom, #BC9CFF, #8BA4F9);
+  background-image: linear-gradient(to bottom, #BC9CFF, #8ba4f9);
   color: #ffffff;
 }
 .btn_longWithArrow:hover {
@@ -654,9 +669,15 @@ a {
 .input__element_brightBorder {
   border-color: rgba(31, 32, 65, 0.5);
 }
+.input__element_hover {
+  border-color: rgba(31, 32, 65, 0.5);
+}
+.input__element_hover::placeholder {
+  opacity: 0.75;
+}
 .input__dateDropdown::placeholder {
   opacity: 0.75;
-  color: #1F2041;
+  color: #1f2041;
 }
 .input__checkmark {
   position: absolute;
@@ -690,12 +711,12 @@ a {
 @media screen and (max-width: 768px) {
   .footerTab {
     display: block;
+    padding-top: 120px;
   }
 }
 .footerTab__content {
   margin: auto;
   text-align: center;
-  padding-top: 120px;
 }
 .footerTab__text {
   opacity: 0.75;

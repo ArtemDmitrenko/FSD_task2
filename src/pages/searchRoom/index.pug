@@ -21,7 +21,7 @@ block content
             .searchRoom__main
                 .searchRoom__sidebar
                     .searchRoom__filterDateDropdown
-                        +dateDropdown({heading: 'Даты пребывания в отеле'})
+                        +dateDropdown({heading: 'Даты пребывания в отеле', className: 'input__dateDropdown_range'})
                     .searchRoom__dropdown-guests
                         +dropdown({dropdownType: 'guests', heading: 'Гости'})
                     .searchRoom__range-slider

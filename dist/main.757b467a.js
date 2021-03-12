@@ -30613,7 +30613,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         n,
         h = "2.2.3",
         o = "datepicker",
-        r = ".input__dateDropdown",
+        r = ".input__dateDropdown_from, .input__dateDropdown_range",
         c = !1,
         d = '<div class="datepicker"><nav class="datepicker--nav"></nav><div class="datepicker--content"></div></div>',
         l = {
@@ -31734,24 +31734,65 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     };
   }();
 }(window, jQuery);
-$('.input__dateDropdown').datepicker({
+$('.input__dateDropdown_from').datepicker({
   // inline: true,
   clearButton: true,
-  todayButton: true // classes: "yeees",
-
-}); // Простая хрень, закрывающая окно datepicker, но инпут остается активным!!!Косяк!
-
-var dateApply = function dateApply(event) {
-  var target = event.target;
-  var btnApply = document.querySelector('span[data-action="today"]');
-
-  if (target === btnApply) {
-    var datepickerWindow = document.querySelector('.datepicker');
-    datepickerWindow.classList.remove('active');
+  todayButton: true,
+  range: true,
+  // multipleDates: true,
+  // classes: "yeees",
+  onSelect: function onSelect(fd, d, picker) {
+    $('.input__dateDropdown_from').val(fd.split(",")[0]);
+    $('.input__dateDropdown_to').val(fd.split(",")[1]);
   }
-};
+});
+$('.input__dateDropdown_range').datepicker({
+  clearButton: true,
+  todayButton: true,
+  range: true,
+  multipleDatesSeparator: ' - ',
+  dateFormat: 'dd M'
+});
+var myDatapicker = $('.input__dateDropdown_from').datepicker().data('datepicker');
+var myDatapickerRange = $('.input__dateDropdown_range').datepicker().data('datepicker');
 
-document.addEventListener("click", dateApply);
+if (myDatapicker) {
+  // Подключаем кнопку 'Применить' в datepicker
+  var dateApply = function dateApply(event) {
+    var target = event.target;
+    var btnApply = document.querySelector('span[data-action="today"]');
+
+    if (target === btnApply) {
+      myDatapicker.hide();
+    }
+  };
+
+  var inputTo = document.querySelector('.input__dateDropdown_to');
+
+  var showDatapicker = function showDatapicker() {
+    myDatapicker.show();
+  };
+
+  if (inputTo) {
+    inputTo.addEventListener("click", showDatapicker);
+  }
+
+  document.addEventListener("click", dateApply);
+}
+
+if (myDatapickerRange) {
+  // Подключаем кнопку 'Применить' в datepickerRange
+  var dateApplyRange = function dateApplyRange(event) {
+    var target = event.target;
+    var btnApply = document.querySelector('span[data-action="today"]');
+
+    if (target === btnApply) {
+      myDatapickerRange.hide();
+    }
+  };
+
+  document.addEventListener("click", dateApplyRange);
+}
 },{}],"common.blocks/pages/checkbox-btn/checkbox-btn.js":[function(require,module,exports) {
 var ecbOpen = function ecbOpen(event) {
   var target = event.target;
@@ -35483,9 +35524,57 @@ $(".js-range-slider").ionRangeSlider({
   values_separator: " - ",
   decorate_both: true,
   hide_min_max: true,
-  hide_from_to: false,
-  skin: "big"
+  hide_from_to: true,
+  skin: "big",
+  extra_classes: "admitrenko"
+}); // Show sign with values from and to
+
+var sign = document.createElement('div');
+sign.classList.add('sign');
+var slider = document.querySelector('.admitrenko');
+slider.append(sign);
+var from = $(".js-range-slider").data('from');
+var to = $(".js-range-slider").data('to');
+updateSign(from, to);
+$(".js-range-slider").on('change', function () {
+  var from = $(this).data('from');
+  var to = $(this).data('to');
+  updateSign(from, to);
 });
+
+function updateSign(from, to) {
+  var prettyFrom = prettify(from);
+  var prettyTo = prettify(to);
+  sign.textContent = "".concat(prettyFrom, "\u20BD - ").concat(prettyTo, "\u20BD");
+}
+
+function prettify(num) {
+  var n = num.toString();
+  var separator = " ";
+  return n.replace(/(\d{1,3}(?=(?:\d\d\d)+(?!\d)))/g, "$1" + separator);
+} // Show title of slider
+
+
+var title = document.createElement('div');
+title.classList.add('title');
+slider.append(title);
+
+if (document.querySelector('.formElements__range-slider')) {
+  title.textContent = 'Range slider';
+} else {
+  title.textContent = 'Диапазон цены';
+} // Show description
+
+
+var description = document.createElement('div');
+description.classList.add('description');
+slider.append(description);
+
+if (document.querySelector('.formElements__range-slider')) {
+  description.textContent = '';
+} else {
+  description.textContent = 'Стоимость за сутки пребывания в номере';
+}
 },{}],"common.blocks/pages/header/header.js":[function(require,module,exports) {
 $(document).ready(function () {
   $('.header__burger').click(function () {
@@ -35556,7 +35645,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60685" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65124" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

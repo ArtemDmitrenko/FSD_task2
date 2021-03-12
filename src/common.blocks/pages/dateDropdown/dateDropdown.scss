@@ -1,4 +1,5 @@
 .dateDropdown {
+  width: 100%;
   cursor: pointer;
   & input {
     cursor: pointer;
@@ -36,9 +37,9 @@
   background: #f0f0f0;
 }
 .datepicker--cell.-current- {
-  color: #FFFFFF;
+  color: #ffffff;
   border-radius: 50%;
-  background-image: linear-gradient(to bottom, #6FCF97, #66D2EA);
+  background-image: linear-gradient(to bottom, #6fcf97, #66d2ea);
   opacity: 1;
 }
 .datepicker--cell.-current-.-focus- {
@@ -48,10 +49,24 @@
   color: #4eb5e6;
 }
 .datepicker--cell.-in-range- {
+  // background: rgba(92, 196, 239, 0.1);
+  // color: #4a4a4a;
+  // border-radius: 0;
+
   background: rgba(92, 196, 239, 0.1);
-  color: #4a4a4a;
+  /* color: #4a4a4a; */
   border-radius: 0;
+  /* background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%); */
+  /* opacity: 0.25; */
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(rgba(188, 156, 255, 0.25)),
+    to(rgba(139, 164, 249, 0.25))
+  );
 }
+
 .datepicker--cell.-in-range-.-focus- {
   background-color: rgba(92, 196, 239, 0.2);
 }
@@ -69,14 +84,51 @@
   color: #aeaeae;
 }
 .datepicker--cell.-range-from- {
-  border: 1px solid rgba(92, 196, 239, 0.5);
-  background-color: rgba(92, 196, 239, 0.1);
-  border-radius: 4px 0 0 4px;
+  // border: 1px solid rgba(92, 196, 239, 0.5);
+  // background-color: rgba(92, 196, 239, 0.1);
+  // border-radius: 4px 0 0 4px;
+  color: #ffffff;
+  border-radius: 50%;
+  background-image: linear-gradient(to bottom, #6fcf97, #66d2ea);
+  opacity: 1;
+  position: relative;
+  &::before {
+    content: "";
+    background-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(188, 156, 255, 0.15)),
+      to(rgba(139, 164, 249, 0.15))
+    );
+    width: 20px;
+    height: 40px;
+    position: absolute;
+    right: 0;
+  }
 }
 .datepicker--cell.-range-to- {
-  border: 1px solid rgba(92, 196, 239, 0.5);
-  background-color: rgba(92, 196, 239, 0.1);
-  border-radius: 0 4px 4px 0;
+  // border: 1px solid rgba(92, 196, 239, 0.5);
+  // background-color: rgba(92, 196, 239, 0.1);
+  // border-radius: 0 4px 4px 0;
+  color: #fff;
+  opacity: 1;
+  background-image: linear-gradient(to bottom, #bc9cff, #8ba4f9);
+  position: relative;
+  &::before {
+    content: "";
+    background-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(188, 156, 255, 0.15)),
+      to(rgba(139, 164, 249, 0.15))
+    );
+    width: 20px;
+    height: 40px;
+    position: absolute;
+    left: 0;
+  }
 }
 .datepicker--cell.-selected-,
 .datepicker--cell.-selected-.-current- {
@@ -84,18 +136,21 @@
   // background: #5cc4ef;
   // border-radius: 50%;
   opacity: 1;
-  background-image: linear-gradient(to bottom, #BC9CFF, #8BA4F9);
+  background-image: linear-gradient(to bottom, #bc9cff, #8ba4f9);
 }
 .datepicker--cell.-range-from-.-range-to- {
-  border-radius: 4px;
+  // border-radius: 4px;
+  // color: #ffffff;
+  // border-radius: 50%;
+  // background-image: linear-gradient(to bottom, #6fcf97, #66d2ea);
+  // opacity: 1;
 }
 .datepicker--cell.-selected- {
   border: none;
 }
 .datepicker--cell.-selected-.-focus- {
   // background: #45bced;
-    // background-image: linear-gradient(to bottom, #6FCF97, #66D2EA);
-
+  // background-image: linear-gradient(to bottom, #6FCF97, #66D2EA);
 }
 .datepicker--cell:empty {
   cursor: default;
@@ -110,8 +165,7 @@
   margin: 8px 15px 3px;
 }
 .datepicker--day-name {
-
-  color: #BC9CFF;
+  color: #bc9cff;
   @extend %h3;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -182,10 +236,9 @@
   transition: opacity 0.3s ease, transform 0.3s ease, left 0s 0.3s,
     -webkit-transform 0.3s ease;
   z-index: 100;
-  @media screen and (max-width: 360px){
+  @media screen and (max-width: 360px) {
     width: 260px;
-}
-
+  }
 }
 .datepicker.-from-top- {
   -webkit-transform: translateY(-8px);
@@ -348,7 +401,7 @@
   padding: 0 8px;
   font-family: "Open Sans";
   font-size: 19px;
-  color: #1F2041;
+  color: #1f2041;
   font-weight: 700;
   margin-left: 6px;
 }
@@ -378,7 +431,7 @@
 
 .datepicker--button {
   @extend %h3;
-  letter-spacing: -.01em;
+  letter-spacing: -0.01em;
   // color: $dark100;
   opacity: 0.5;
   max-width: 100px;
@@ -679,12 +732,11 @@
 
 .dateDropdown .input__checkmark {
   @media screen and (max-width: 390px) {
-    display: none;          
+    display: none;
   }
 }
 .dateDropdown .input__dateDropdown {
   @media screen and (max-width: 390px) {
-    padding-left: 5px;          
+    padding-left: 5px;
   }
 }
-

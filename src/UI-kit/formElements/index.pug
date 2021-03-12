@@ -13,6 +13,7 @@ include ../../common.blocks/pages/bullet-list/bullet-list.pug
 include ../../common.blocks/pages/review/review.pug
 include ../../common.blocks/pages/pagination/pagination.pug
 include ../../common.blocks/pages/range-slider/range-slider.pug
+include ../../common.blocks/pages/button/button.pug
 
 
 
@@ -25,59 +26,77 @@ block content
         .formElements__logoUIkit
             +logoUIkit()
         .formElements__allItems
-            .formElements__textField
-                +input({heading: 'text field', description: 'default', name: 'email', type: 'email', placeholder: 'Email', required: true})
-            br
-            .formElements__maskedInput
-                +input({heading: 'masked text field', description: 'Hover / Focus', name: 'birthday', type: 'text', placeholder: 'ДД.ММ.ГГГГ', required: true})
-            br
-            .formElements__dropdown 
-                +dropdown({dropdownType: 'guests', heading: 'dropdown', value: 'Сколько гостей'})
-            br
-            .formElements__dropdown  
-                +dropdown({dropdownType:'roomsBeds', heading: 'dropdown', description: 'default'})
-            br
-            .formElements__subscriptionInput  
-                +input({heading: 'subscription text field', name: 'email', type: 'email', placeholder: 'Email', required: true, subscription: true})
-            br
-            .formElements__datepicker
-                +dateDropdown({heading: 'date Dropdown', name: 'dateDropdown'})
-            br
-            .formElements__checkbox-btn
-                +checkbox-btn({expandable: false, name: 'Checkbox buttons', list: ['Можно курить', 'Можно с питомцами', 'Можно пригласить гостей (до 10 человек)']})
-            br
-            .formElements__checkbox-btn
-                +checkbox-btn({expandable: true, name: 'Expandable checkbox list', list: ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь']})
-            br
-            .formElements__room-details
-                +room-details({title: '', name: ['Комфорт', 'Удобство'], description: ['Шумопоглощающие стены', 'Окно в каждой из спален'], image: ['insert_emoticon', 'location_city']})
-            br
-            .formElements__radio-buttons
-                +radio-buttons({name: 'Radio Buttons', list: ['Мужчина', 'Женщина']})
-            br
-            .formElements__toggle
-                +toggle({name: 'Toggle', label: 'Получать спецпредложения'})
-            br
-            .formElements__like-button
-                +like-button({name: 'Like button', numberOfLikes: '2'})
-            br
-            .formElements__rate-button
-                +rate-button({name: 'Rate button', value: '4'})
-            br
-            .formElements__checkbox-btn
-                +checkbox-btn({expandable: false, richCheckbox: 'true', name: 'Rich checkbox buttons', list: ['Широкий коридор', 'Помощник для инвалидов'], sublist: ['Ширина коридоров в номере не менее 91 см.', 'На 1 этаже вас встретит специалист  и проводит до номера.']})
-            br
-            .formElements__bullet-list
-                +bullet-list({name: 'Bullet list', list: ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00']})
-            br
-            .formElements__review
-                +review({nameOfFile: '../../common.blocks/pages/review/Sarafanov.png', name: 'Мурад Сарафанов', date: '5 дней назад', numberOfLikes: '11', textOfReview: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'})
-            br
-            .formElements__pagination
-                +pagination()
-            br
-            .formElements__range-slider
-                +range-slider()
+            .formElements__globalRow1
+                .formElements__textField.formElements__element
+                    +input({heading: 'text field', description: 'default', name: 'email', type: 'email', placeholder: 'Email', required: true})
+                .formElements__textField.formElements__element
+                    +input({heading: 'text field', description: 'Hover / Focus', name: 'Text', type: 'email', placeholder: 'This is pretty awesome', required: true})
+                .formElements__dropdown.formElements__element 
+                    +dropdown({dropdownType: 'guests', heading: 'dropdown', value: 'Сколько гостей'})
+                .formElements__maskedInput.formElements__element
+                    +input({heading: 'masked text field', name: 'birthday', type: 'text', placeholder: 'ДД.ММ.ГГГГ', required: true})
+                .formElements__datepicker.formElements__datepicker_rangeInTwo.formElements__element
+                    +dateDropdown({heading: 'date Dropdown', name: 'dateDropdown', className: 'input__dateDropdown_from'})
+                    +dateDropdown({heading: 'date Dropdown', name: 'dateDropdownWithDate', className: 'input__dateDropdown_from'})
+                .formElements__datepicker.formElements__datepicker_rangeInOne.formElements__element
+                    +dateDropdown({heading: 'filter date dropdown', name: 'dateDropdownWithRange', className: 'input__dateDropdown_from'})
+                .formElements__subscriptionInput.formElements__element 
+                    +input({heading: 'subscription text field', name: 'email', type: 'email', placeholder: 'Email', required: true, subscription: true})
+                .formElements__dropdown.formElements__element.formElements__element_notexpanded
+                    +dropdown({dropdownType:'roomsBeds', heading: 'dropdown', description: 'default'})
+                .formElements__dropdown.formElements__element.formElements__element_expanded
+                    +dropdown({dropdownType:'roomsBeds', heading: 'dropdown', description: 'expanded'})
+                .formElements__checkbox-btn.formElements__element.formElements__checkbox-btn_notExpandable
+                    +checkbox-btn({expandable: true, name: 'Expandable checkbox list', list: ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь'], forLabel: '1'})
+                .formElements__checkbox-btn.formElements__element
+                    +checkbox-btn({expandable: true, name: 'Expandable checkbox list', list: ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь'], forLabel: '2'})
+                .formElements__room-details.formElements__element
+                    +room-details({title: '', name: ['Комфорт', 'Удобство'], description: ['Шумопоглощающие стены', 'Окно в каждой из спален'], image: ['insert_emoticon', 'location_city']})
+            .formElements__globalRow2
+                .formElements__subRow
+                    .formElements__subRow1
+                        .formElements__checkbox-btn.formElements__element
+                            +checkbox-btn({expandable: false, name: 'Checkbox buttons', list: ['Можно курить', 'Можно с питомцами', 'Можно пригласить гостей (до 10 человек)']})
+                        .formElements__radio-buttons.formElements__element
+                            +radio-buttons({name: 'Radio Buttons', list: ['Мужчина', 'Женщина']})
+                        .formElements__toggle.formElements__element
+                            +toggle({name: 'Toggle', label: 'Получать спецпредложения'})
+                            +toggle({label: 'Получать спецпредложения'})
+                        .formElements__like-button.formElements__element
+                            +like-button({name: 'Like button', numberOfLikes: '2'})
+                            +like-button({numberOfLikes: '11'})
+                        .formElements__rate-button.formElements__element
+                            +rate-button({name: 'Rate button', value: '4'})
+                            +rate-button({value: '5'})
+                        .formElements__dropdown.formElements__dropdown_guests.formElements__element 
+                            +dropdown({dropdownType: 'guests', heading: 'dropdown', value: 'Сколько гостей'})
+                        .formElements__checkbox-btn.formElements__element
+                            +checkbox-btn({expandable: false, richCheckbox: 'true', name: 'Rich checkbox buttons', list: ['Широкий коридор', 'Помощник для инвалидов'], sublist: ['Ширина коридоров в номере не менее 91 см.', 'На 1 этаже вас встретит специалист  и проводит до номера.']})
+                    .formElements__subRow2
+                        .formElements__range-slider.formElements__element
+                            +range-slider()
+                        .formElements__btn.formElements__element
+                            .formElements__btnTitle Buttons
+                                .formElements__btnRow1
+                                    +btn({modificator: 'btn_gradientHeader', text: 'click me'})
+                                    +btn({modificator: 'btn_gradientHeader', text: 'click me'})
+                                .formElements__btnRow2
+                                    +btn({modificator: 'btn_borderHeader', text: 'click me'})
+                                    +btn({modificator: 'btn_borderHeader', text: 'click me'})
+                                .formElements__btnRow3
+                                    +btn({  modificator: 'btn_iconLinkViolent', text: 'click me'})
+                                    +btn({ modificator: 'btn_iconLinkBlack', text: 'click me'})
+                                .formElements__btnRow4
+                                    +btn({modificator: 'btn_longWithArrow', text: 'перейти к оплате'})
+                        .formElements__pagination.formElements__element
+                            .formElements__paginationTitle Pagination
+                                +pagination()
+                        .formElements__dropdown.formElements__dropdown_guests.formElements__element.formElements__dropdown_expandedGuests
+                            +dropdown({dropdownType: 'guests', heading: 'dropdown', value: 'Сколько гостей'})
+                        .formElements__bullet-list.formElements__element
+                            +bullet-list({name: 'Bullet list', list: ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00']})
+                .formElements__review.formElements__element
+                    +review({nameOfFile: '../../common.blocks/pages/review/Sarafanov.png', name: 'Мурад Сарафанов', date: '5 дней назад', numberOfLikes: '11', textOfReview: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'})
 
 
 

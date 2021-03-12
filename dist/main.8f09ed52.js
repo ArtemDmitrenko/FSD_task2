@@ -30582,7 +30582,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         n,
         h = "2.2.3",
         o = "datepicker",
-        r = ".input__dateDropdown",
+        r = ".input__dateDropdown_from, .input__dateDropdown_range",
         c = !1,
         d = '<div class="datepicker"><nav class="datepicker--nav"></nav><div class="datepicker--content"></div></div>',
         l = {
@@ -31703,24 +31703,65 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     };
   }();
 }(window, jQuery);
-$('.input__dateDropdown').datepicker({
+$('.input__dateDropdown_from').datepicker({
   // inline: true,
   clearButton: true,
-  todayButton: true // classes: "yeees",
-
-}); // Простая хрень, закрывающая окно datepicker, но инпут остается активным!!!Косяк!
-
-var dateApply = function dateApply(event) {
-  var target = event.target;
-  var btnApply = document.querySelector('span[data-action="today"]');
-
-  if (target === btnApply) {
-    var datepickerWindow = document.querySelector('.datepicker');
-    datepickerWindow.classList.remove('active');
+  todayButton: true,
+  range: true,
+  // multipleDates: true,
+  // classes: "yeees",
+  onSelect: function onSelect(fd, d, picker) {
+    $('.input__dateDropdown_from').val(fd.split(",")[0]);
+    $('.input__dateDropdown_to').val(fd.split(",")[1]);
   }
-};
+});
+$('.input__dateDropdown_range').datepicker({
+  clearButton: true,
+  todayButton: true,
+  range: true,
+  multipleDatesSeparator: ' - ',
+  dateFormat: 'dd M'
+});
+var myDatapicker = $('.input__dateDropdown_from').datepicker().data('datepicker');
+var myDatapickerRange = $('.input__dateDropdown_range').datepicker().data('datepicker');
 
-document.addEventListener("click", dateApply);
+if (myDatapicker) {
+  // Подключаем кнопку 'Применить' в datepicker
+  var dateApply = function dateApply(event) {
+    var target = event.target;
+    var btnApply = document.querySelector('span[data-action="today"]');
+
+    if (target === btnApply) {
+      myDatapicker.hide();
+    }
+  };
+
+  var inputTo = document.querySelector('.input__dateDropdown_to');
+
+  var showDatapicker = function showDatapicker() {
+    myDatapicker.show();
+  };
+
+  if (inputTo) {
+    inputTo.addEventListener("click", showDatapicker);
+  }
+
+  document.addEventListener("click", dateApply);
+}
+
+if (myDatapickerRange) {
+  // Подключаем кнопку 'Применить' в datepickerRange
+  var dateApplyRange = function dateApplyRange(event) {
+    var target = event.target;
+    var btnApply = document.querySelector('span[data-action="today"]');
+
+    if (target === btnApply) {
+      myDatapickerRange.hide();
+    }
+  };
+
+  document.addEventListener("click", dateApplyRange);
+}
 },{}],"common.blocks/pages/checkbox-btn/checkbox-btn.js":[function(require,module,exports) {
 var ecbOpen = function ecbOpen(event) {
   var target = event.target;
@@ -35438,9 +35479,57 @@ $(".js-range-slider").ionRangeSlider({
   values_separator: " - ",
   decorate_both: true,
   hide_min_max: true,
-  hide_from_to: false,
-  skin: "big"
+  hide_from_to: true,
+  skin: "big",
+  extra_classes: "admitrenko"
+}); // Show sign with values from and to
+
+var sign = document.createElement('div');
+sign.classList.add('sign');
+var slider = document.querySelector('.admitrenko');
+slider.append(sign);
+var from = $(".js-range-slider").data('from');
+var to = $(".js-range-slider").data('to');
+updateSign(from, to);
+$(".js-range-slider").on('change', function () {
+  var from = $(this).data('from');
+  var to = $(this).data('to');
+  updateSign(from, to);
 });
+
+function updateSign(from, to) {
+  var prettyFrom = prettify(from);
+  var prettyTo = prettify(to);
+  sign.textContent = "".concat(prettyFrom, "\u20BD - ").concat(prettyTo, "\u20BD");
+}
+
+function prettify(num) {
+  var n = num.toString();
+  var separator = " ";
+  return n.replace(/(\d{1,3}(?=(?:\d\d\d)+(?!\d)))/g, "$1" + separator);
+} // Show title of slider
+
+
+var title = document.createElement('div');
+title.classList.add('title');
+slider.append(title);
+
+if (document.querySelector('.formElements__range-slider')) {
+  title.textContent = 'Range slider';
+} else {
+  title.textContent = 'Диапазон цены';
+} // Show description
+
+
+var description = document.createElement('div');
+description.classList.add('description');
+slider.append(description);
+
+if (document.querySelector('.formElements__range-slider')) {
+  description.textContent = '';
+} else {
+  description.textContent = 'Стоимость за сутки пребывания в номере';
+}
 },{}],"UI-kit/formElements/main.js":[function(require,module,exports) {
 var jquery = require("jquery");
 
@@ -35466,7 +35555,108 @@ require("../../common.blocks/pages/pagination/pagination.js");
 
 require("ion-rangeslider/js/ion.rangeSlider.js");
 
-require("../../common.blocks/pages/range-slider/range-slider.js"); // require("air-datepicker/dist/js/datepicker.min.js");
+require("../../common.blocks/pages/range-slider/range-slider.js"); // Hovered input
+
+
+var inputWithHover = document.querySelector('[name="Text"]');
+inputWithHover.classList.add('input__element_hover'); // Datapicker
+
+var func1 = function func1() {
+  var datapickerWithData = document.querySelector('[name="dateDropdownWithDate"]');
+  datapickerWithData.value = '19.08.2019';
+};
+
+setTimeout(func1, 15); // Datapicker with range
+
+var func2 = function func2() {
+  var datapickerWithRange = document.querySelector('[name="dateDropdownWithRange"]');
+  datapickerWithRange.value = '19 авг - 23 авг';
+};
+
+setTimeout(func2, 10); // DropdownBeds
+
+var func3 = function func3() {
+  var dropdownDefault = document.querySelectorAll('[name="roomsBeds"]')[0];
+  dropdownDefault.value = '2 спальни, 2 кровати...';
+};
+
+setTimeout(func3, 10); // DropdownBeds
+
+var inputOfdropdownExpanded = document.querySelectorAll('[name="roomsBeds"]')[1];
+var dropdownExpanded = document.querySelector('.formElements__element_expanded');
+var btnPlusBedrooms = dropdownExpanded.querySelectorAll('.counter__btn_plus')[0];
+var btnPlusBeds = dropdownExpanded.querySelectorAll('.counter__btn_plus')[1];
+setTimeout(function () {
+  $(inputOfdropdownExpanded).trigger('click');
+  $(btnPlusBedrooms).trigger('click');
+  $(btnPlusBedrooms).trigger('click');
+  $(btnPlusBeds).trigger('click');
+  $(btnPlusBeds).trigger('click');
+}, 30); // Checkbox
+
+var checkbox = document.querySelectorAll('.checkbox-btn')[1];
+var btnTable = checkbox.querySelectorAll('.checkbox-btn__label')[1];
+var btnChair = checkbox.querySelectorAll('.checkbox-btn__label')[2];
+var btnBed = checkbox.querySelectorAll('.checkbox-btn__label')[3];
+setTimeout(function () {
+  $(checkbox).trigger('click');
+  $(btnTable).trigger('click');
+  $(btnChair).trigger('click');
+  $(btnBed).trigger('click');
+}, 10); // Checkbox buttons
+
+var checkbox1 = document.querySelectorAll('.formElements__checkbox-btn')[2];
+var checkboxbtnAnimals = checkbox1.querySelectorAll('.checkbox-btn__label')[1];
+var checkboxbtnGuests = checkbox1.querySelectorAll('.checkbox-btn__label')[2];
+setTimeout(function () {
+  $(checkboxbtnAnimals).trigger('click');
+  $(checkboxbtnGuests).trigger('click');
+}, 10); // Radio buttons
+
+var radioBtn = document.querySelectorAll('.radio-buttons__label')[0];
+setTimeout(function () {
+  $(radioBtn).trigger('click');
+}, 10); // Toggle label
+
+var toggleBtn = document.querySelectorAll('.toggle__label')[0];
+setTimeout(function () {
+  $(toggleBtn).trigger('click');
+}, 10); // Like btn
+
+var likeBtn = document.querySelectorAll('.like-button__button')[1];
+setTimeout(function () {
+  $(likeBtn).trigger('click');
+}, 10); // DropdownGuests
+
+var dropdowmGuests = document.querySelectorAll('.formElements__dropdown')[3];
+var dropdownGuestsBtn = dropdowmGuests.querySelector('.input__element');
+setTimeout(function () {
+  $(dropdownGuestsBtn).trigger('click');
+}, 30); // Buttons
+
+var btnRow1 = document.querySelector('.formElements__btnRow1');
+var hoveredBtnInRow1 = btnRow1.querySelectorAll('.btn')[1];
+hoveredBtnInRow1.classList.add('formElements__btn_hovered');
+var btnRow2 = document.querySelector('.formElements__btnRow2');
+var hoveredBtnInRow2 = btnRow2.querySelectorAll('.btn_border')[1];
+hoveredBtnInRow2.classList.add('formElements__btn_hovered'); // DropdownGuests
+
+var inputOfdropdownGuestsExpanded = document.querySelectorAll('[name="guests"]')[2];
+var dropdownGuestsExpanded = document.querySelector('.formElements__dropdown_expandedGuests');
+var btnPlusAdults = dropdownGuestsExpanded.querySelectorAll('.counter__btn_plus')[0];
+var btnPlusChildren = dropdownGuestsExpanded.querySelectorAll('.counter__btn_plus')[1];
+setTimeout(function () {
+  $(inputOfdropdownGuestsExpanded).trigger('click');
+  $(btnPlusAdults).trigger('click');
+  $(btnPlusAdults).trigger('click');
+  $(btnPlusChildren).trigger('click');
+}, 30); // Like btn in Review
+
+var review = document.querySelector('.review__like-button');
+var reviewLikeBtn = review.querySelector('.like-button__button');
+setTimeout(function () {
+  $(reviewLikeBtn).trigger('click');
+}, 15);
 },{"jquery":"../node_modules/jquery/dist/jquery.js","jquery-ui-dist/jquery-ui.js":"../node_modules/jquery-ui-dist/jquery-ui.js","jquery.maskedinput/src/jquery.maskedinput.js":"../node_modules/jquery.maskedinput/src/jquery.maskedinput.js","../../common.blocks/pages/input/input.js":"common.blocks/pages/input/input.js","../../common.blocks/pages/dropdown/dropdown.js":"common.blocks/pages/dropdown/dropdown.js","../../common.blocks/pages/dateDropdown/dateDropdown.js":"common.blocks/pages/dateDropdown/dateDropdown.js","../../common.blocks/pages/checkbox-btn/checkbox-btn.js":"common.blocks/pages/checkbox-btn/checkbox-btn.js","../../common.blocks/pages/like-button/like-button.js":"common.blocks/pages/like-button/like-button.js","paginationjs/src/pagination.js":"../node_modules/paginationjs/src/pagination.js","../../common.blocks/pages/pagination/pagination.js":"common.blocks/pages/pagination/pagination.js","ion-rangeslider/js/ion.rangeSlider.js":"../node_modules/ion-rangeslider/js/ion.rangeSlider.js","../../common.blocks/pages/range-slider/range-slider.js":"common.blocks/pages/range-slider/range-slider.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -35495,7 +35685,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60685" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65124" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

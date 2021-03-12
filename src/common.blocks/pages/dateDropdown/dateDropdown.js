@@ -2,7 +2,7 @@
   ! function() {
     var s, a, n, h = "2.2.3",
       o = "datepicker",
-      r = ".input__dateDropdown",
+      r = ".input__dateDropdown_from, .input__dateDropdown_range",
       c = !1,
       d = '<div class="datepicker"><nav class="datepicker--nav"></nav><div class="datepicker--content"></div></div>',
       l = { classes: "", inline: !1, language: "ru", startDate: new Date, firstDay: "", weekends: [6, 0], dateFormat: "", altField: "", altFieldDateFormat: "@", toggleSelected: !0, keyboardNav: !0, position: "bottom left", offset: 12, view: "days", minView: "days", showOtherMonths: !0, selectOtherMonths: !0, moveToOtherMonthsOnSelect: !0, showOtherYears: !0, selectOtherYears: !0, moveToOtherYearsOnSelect: !0, minDate: "", maxDate: "", disableNavWhenOutOfRange: !0, multipleDates: !1, multipleDatesSeparator: ",", range: !1, todayButton: !1, clearButton: !1, showEvent: "focus", autoClose: !1, monthsField: "monthsShort", prevHtml: '<span class="arrow_left arrow_purple"></span>', nextHtml: '<span class="arrow_right arrow_purple"></span>', navTitles: { days: "MM <i>yyyy</i>", months: "yyyy", years: "yyyy1 - yyyy2" }, timepicker: !1, onlyTimepicker: !1, dateTimeSeparator: " ", timeFormat: "", minHours: 0, maxHours: 24, minMinutes: 0, maxMinutes: 59, hoursStep: 1, minutesStep: 1, onSelect: "", onShow: "", onHide: "", onChangeMonth: "", onChangeYear: "", onChangeDecade: "", onChangeView: "", onRenderCell: "" },
@@ -659,23 +659,58 @@
 }(window, jQuery);
 
 
-$('.input__dateDropdown').datepicker({
+
+$('.input__dateDropdown_from').datepicker({
   // inline: true,
   clearButton: true,
   todayButton: true,
+  range: true,
+  // multipleDates: true,
   // classes: "yeees",
-
-})
-
-
-// Простая хрень, закрывающая окно datepicker, но инпут остается активным!!!Косяк!
-const dateApply = event => {
-  const { target } = event;
-  const btnApply = document.querySelector('span[data-action="today"]');
-  if (target === btnApply) {
-    const datepickerWindow = document.querySelector('.datepicker');
-    datepickerWindow.classList.remove('active')
+  onSelect: function(fd, d, picker) {
+    $('.input__dateDropdown_from').val(fd.split(",")[0]);
+    $('.input__dateDropdown_to').val(fd.split(",")[1]);
   }
-}
-document.addEventListener("click", dateApply);
+});
 
+$('.input__dateDropdown_range').datepicker({
+  clearButton: true,
+  todayButton: true,
+  range: true,
+  multipleDatesSeparator: ' - ',
+  dateFormat: 'dd M'
+});
+
+let myDatapicker = $('.input__dateDropdown_from').datepicker().data('datepicker');
+let myDatapickerRange = $('.input__dateDropdown_range').datepicker().data('datepicker');
+
+if (myDatapicker) {
+  // Подключаем кнопку 'Применить' в datepicker
+  const dateApply = event => {
+    const { target } = event;
+    const btnApply = document.querySelector('span[data-action="today"]');
+    if (target === btnApply) {
+      myDatapicker.hide();
+    }
+  };
+  const inputTo = document.querySelector('.input__dateDropdown_to');
+  const showDatapicker = () => {
+    myDatapicker.show();
+  };
+  if (inputTo) {
+    inputTo.addEventListener("click", showDatapicker);
+  }
+  document.addEventListener("click", dateApply);
+}
+
+if (myDatapickerRange) {
+  // Подключаем кнопку 'Применить' в datepickerRange
+  const dateApplyRange = event => {
+    const { target } = event;
+    const btnApply = document.querySelector('span[data-action="today"]');
+    if (target === btnApply) {
+      myDatapickerRange.hide();
+    }
+  };
+  document.addEventListener("click", dateApplyRange);
+}

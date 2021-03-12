@@ -134,10 +134,24 @@ a {
     display: none;
   }
 }
+.header__button .btn_border {
+  width: 83px;
+  height: 29px;
+}
+.header__button .btn__text {
+  line-height: 20px;
+}
+.header__button-sign {
+  width: 196px;
+}
 @media screen and (max-width: 992px) {
   .header__button-sign {
     display: none;
   }
+}
+.header__button-sign .btn_gradient {
+  width: 100%;
+  height: 34px;
 }
 .header__line {
   border-left: 1px solid;
@@ -247,7 +261,7 @@ a {
   outline: none;
 }
 .btn_gradient {
-  background-image: linear-gradient(to bottom, #BC9CFF, #8BA4F9);
+  background-image: linear-gradient(to bottom, #BC9CFF, #8ba4f9);
   color: #ffffff;
   width: 99px;
   height: 44px;
@@ -265,7 +279,7 @@ a {
   height: 40px;
   border: double 2px transparent;
   border-radius: 26px;
-  background-image: linear-gradient(white, white), linear-gradient(to bottom, #BC9CFF, #8BA4F9);
+  background-image: linear-gradient(white, white), linear-gradient(to bottom, #BC9CFF, #8ba4f9);
   background-origin: border-box;
   background-clip: content-box, border-box;
 }
@@ -283,6 +297,7 @@ a {
 }
 .btn__text_header {
   line-height: 30px;
+  margin-top: 5px;
 }
 .btn_iconLinkViolent {
   width: auto;
@@ -299,7 +314,7 @@ a {
   width: 100%;
   height: 44px;
   border-radius: 22px;
-  background-image: linear-gradient(to bottom, #BC9CFF, #8BA4F9);
+  background-image: linear-gradient(to bottom, #BC9CFF, #8ba4f9);
   color: #ffffff;
 }
 .btn_longWithArrow:hover {
@@ -613,9 +628,15 @@ a {
 .input__element_brightBorder {
   border-color: rgba(31, 32, 65, 0.5);
 }
+.input__element_hover {
+  border-color: rgba(31, 32, 65, 0.5);
+}
+.input__element_hover::placeholder {
+  opacity: 0.75;
+}
 .input__dateDropdown::placeholder {
   opacity: 0.75;
-  color: #1F2041;
+  color: #1f2041;
 }
 .input__checkmark {
   position: absolute;
@@ -649,12 +670,12 @@ a {
 @media screen and (max-width: 768px) {
   .footerTab {
     display: block;
+    padding-top: 120px;
   }
 }
 .footerTab__content {
   margin: auto;
   text-align: center;
-  padding-top: 120px;
 }
 .footerTab__text {
   opacity: 0.75;
@@ -695,8 +716,8 @@ a {
   word-wrap: normal;
   white-space: nowrap;
   direction: ltr;
-  color: #BC9CFF;
-  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  color: #bc9cff;
+  background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   /* Support for all WebKit browsers. */
@@ -1021,6 +1042,7 @@ a {
 }
 
 .dateDropdown {
+  width: 100%;
   cursor: pointer;
 }
 .dateDropdown input {
@@ -1060,9 +1082,9 @@ a {
 }
 
 .datepicker--cell.-current- {
-  color: #FFFFFF;
+  color: #ffffff;
   border-radius: 50%;
-  background-image: linear-gradient(to bottom, #6FCF97, #66D2EA);
+  background-image: linear-gradient(to bottom, #6fcf97, #66d2ea);
   opacity: 1;
 }
 
@@ -1076,8 +1098,11 @@ a {
 
 .datepicker--cell.-in-range- {
   background: rgba(92, 196, 239, 0.1);
-  color: #4a4a4a;
+  /* color: #4a4a4a; */
   border-radius: 0;
+  /* background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%); */
+  /* opacity: 0.25; */
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(188, 156, 255, 0.25)), to(rgba(139, 164, 249, 0.25)));
 }
 
 .datepicker--cell.-in-range-.-focus- {
@@ -1102,26 +1127,41 @@ a {
 }
 
 .datepicker--cell.-range-from- {
-  border: 1px solid rgba(92, 196, 239, 0.5);
-  background-color: rgba(92, 196, 239, 0.1);
-  border-radius: 4px 0 0 4px;
+  color: #ffffff;
+  border-radius: 50%;
+  background-image: linear-gradient(to bottom, #6fcf97, #66d2ea);
+  opacity: 1;
+  position: relative;
+}
+.datepicker--cell.-range-from-::before {
+  content: "";
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(188, 156, 255, 0.15)), to(rgba(139, 164, 249, 0.15)));
+  width: 20px;
+  height: 40px;
+  position: absolute;
+  right: 0;
 }
 
 .datepicker--cell.-range-to- {
-  border: 1px solid rgba(92, 196, 239, 0.5);
-  background-color: rgba(92, 196, 239, 0.1);
-  border-radius: 0 4px 4px 0;
+  color: #fff;
+  opacity: 1;
+  background-image: linear-gradient(to bottom, #bc9cff, #8ba4f9);
+  position: relative;
+}
+.datepicker--cell.-range-to-::before {
+  content: "";
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(188, 156, 255, 0.15)), to(rgba(139, 164, 249, 0.15)));
+  width: 20px;
+  height: 40px;
+  position: absolute;
+  left: 0;
 }
 
 .datepicker--cell.-selected-,
 .datepicker--cell.-selected-.-current- {
   color: #fff;
   opacity: 1;
-  background-image: linear-gradient(to bottom, #BC9CFF, #8BA4F9);
-}
-
-.datepicker--cell.-range-from-.-range-to- {
-  border-radius: 4px;
+  background-image: linear-gradient(to bottom, #bc9cff, #8ba4f9);
 }
 
 .datepicker--cell.-selected- {
@@ -1143,7 +1183,7 @@ a {
 }
 
 .datepicker--day-name {
-  color: #BC9CFF;
+  color: #bc9cff;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -1407,7 +1447,7 @@ a {
   padding: 0 8px;
   font-family: "Open Sans";
   font-size: 19px;
-  color: #1F2041;
+  color: #1f2041;
   font-weight: 700;
   margin-left: 6px;
 }
@@ -1807,7 +1847,7 @@ a {
   border-bottom-right-radius: 4px;
   box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
   display: none;
-  z-index: 1;
+  z-index: 10;
   background-color: white;
 }
 .dropdown__list_show {
@@ -1820,7 +1860,7 @@ a {
   margin: 22px 0px 9px 6px;
 }
 .dropdown__counter {
-  margin: 4px 6px 21px 14px;
+  margin: 4px 6px 8px 14px;
 }
 
 .counter {
@@ -1851,6 +1891,7 @@ a {
   color: rgba(31, 32, 65, 0.5);
   outline-style: none;
   cursor: pointer;
+  background-color: #fff;
 }
 .counter__btn_plus {
   font-size: unset;
@@ -2009,7 +2050,10 @@ a {
 .roomDetails__grey-line {
   height: 1px;
   width: 100%;
-  background-color: #F4F4F6;
+  background-color: #f4f4f6;
+}
+.roomDetails__footer_wide {
+  border-top: 1px solid rgba(31, 32, 65, 0.25);
 }
 
 /*# sourceMappingURL=/main.d994f3a9.css.map */

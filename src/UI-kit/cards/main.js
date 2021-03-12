@@ -7,3 +7,4 @@ require("../../common.blocks/pages/dropdown/dropdown.js");
 require("../../common.blocks/pages/dateDropdown/dateDropdown.js");
 require("slick-carousel/slick/slick.min.js");
 require("../../common.blocks/pages/room/room.js");
+require("../../common.blocks/UIkit/cards/cards.js");

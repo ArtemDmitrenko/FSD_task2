@@ -32,13 +32,13 @@
   font-weight: normal;
   font-style: normal;
 }
-.paginationjs__legend, .paginationjs-ellipsis > a, .paginationjs-page > a, .review__text, .review__date, .bullet-list__item, .like-button__counter, .toggle__label, .radio-buttons__label, .room-details__description, .checkbox-btn__input + .checkbox-btn__label, .checkbox-btn__sublabel, .datepicker--cells, .input__element, .input__description {
+.admitrenko .description, .admitrenko .sign, #pagination-container .paginationjs__legend, .paginationjs-ellipsis > a, .paginationjs-page > a, .review__text, .review__date, .bullet-list__item, .like-button__counter, .toggle__label, .radio-buttons__label, .room-details__description, .checkbox-btn__input + .checkbox-btn__label, .checkbox-btn__sublabel, .datepicker--cells, .input__element, .input__description {
   font-family: "Conv_Montserrat-Regular", "Open Sans";
   font-size: 14px;
   color: #1F2041;
 }
 
-.review__name, .bullet-list__name, .rate-button__name, .like-button__name, .toggle__name, .radio-buttons__name, .room-details__name, .checkbox-btn__input + .checkbox-btn__label.checkbox-btn__label_rich, .checkbox-btn__title, .datepicker--button, .datepicker--day-name, .counter__value, .counter__name, .btn, .input__heading {
+.admitrenko .title, .review__name, .bullet-list__name, .rate-button__name, .like-button__name, .toggle__name, .radio-buttons__name, .room-details__name, .checkbox-btn__input + .checkbox-btn__label.checkbox-btn__label_rich, .checkbox-btn__title, .datepicker--button, .datepicker--day-name, .counter__value, .counter__name, .btn, .input__heading, .formElements__btnTitle, .formElements__paginationTitle {
   font-family: "Conv_Montserrat-Bold", "Open Sans";
   font-size: 12px;
   color: #1F2041;
@@ -89,11 +89,127 @@ a {
   padding: 30px 0 0 30px;
 }
 .formElements__allItems {
-  margin: 85px 0 0 90px;
+  margin: 85px 0 90px 141px;
+  display: flex;
 }
-.formElements__textField, .formElements__dropdown, .formElements__maskedInput, .formElements__subscriptionInput, .formElements__datepicker {
-  width: 17.5%;
-  margin: 20px 0 0 50px;
+.formElements__globalRow2 {
+  margin-top: -20px;
+}
+.formElements__globalRow1 {
+  margin-right: 126px;
+}
+.formElements__subRow {
+  display: flex;
+}
+.formElements__subRow1, .formElements__subRow2, .formElements__globalRow1 {
+  width: 320px;
+}
+.formElements__subRow2 {
+  margin-left: 71px;
+}
+.formElements__element {
+  margin-bottom: 41px;
+}
+.formElements__element_expanded {
+  margin-bottom: 172px;
+  width: 266px;
+}
+.formElements__element_notexpanded {
+  margin-bottom: 40px;
+  margin-top: 120px;
+  width: 266px;
+}
+.formElements__datepicker {
+  display: flex;
+  margin-top: 60px;
+}
+.formElements__datepicker_rangeInTwo .dateDropdown:first-child {
+  margin-right: 20px;
+}
+.formElements__datepicker_rangeInOne {
+  width: 266px;
+  margin-bottom: 62px;
+}
+.formElements__like-button {
+  display: flex;
+  position: relative;
+}
+.formElements__like-button .like-button:nth-child(2) {
+  position: absolute;
+  left: 50px;
+  bottom: 0px;
+}
+.formElements__rate-button {
+  display: flex;
+  position: relative;
+  margin-bottom: 212px;
+}
+.formElements__rate-button .rate-button:nth-child(2) {
+  position: absolute;
+  left: 140px;
+  bottom: 0px;
+}
+.formElements__dropdown_guests {
+  margin-bottom: 255px;
+}
+.formElements__btnRow1 {
+  display: flex;
+  margin-top: 15px;
+  margin-bottom: 31px;
+}
+.formElements__btnRow1 .btn_gradient:first-child {
+  margin-right: 20px;
+}
+.formElements__btnRow2 {
+  display: flex;
+}
+.formElements__btnRow2 .btn_border:first-child {
+  margin-right: 20px;
+}
+.formElements__btnRow3 {
+  display: flex;
+  margin-top: 30px;
+  margin-bottom: 29px;
+  margin-left: -3px;
+}
+.formElements__btnRow3 .btn:first-child {
+  margin-right: 9px;
+}
+.formElements__btn_hovered {
+  opacity: 0.5;
+}
+.formElements__subscriptionInput {
+  width: 266px;
+}
+.formElements__checkbox-btn_notExpandable {
+  margin-bottom: 50px;
+}
+.formElements__room-details {
+  margin-top: 103px;
+}
+.formElements__toggle {
+  margin-bottom: 38px;
+}
+.formElements__toggle .toggle {
+  margin-bottom: 8px;
+}
+.formElements__review {
+  margin-top: 189px;
+  width: 710px;
+}
+.formElements__range-slider {
+  margin-top: 8px;
+  margin-bottom: 25px;
+}
+.formElements__btn {
+  margin-bottom: 40px;
+}
+.formElements__pagination {
+  margin-bottom: 257px;
+}
+.formElements__pagination #pagination-container {
+  margin-top: 16px;
+  margin-left: 2px;
 }
 
 .logoUIkit {
@@ -147,9 +263,15 @@ a {
 .input__element_brightBorder {
   border-color: rgba(31, 32, 65, 0.5);
 }
+.input__element_hover {
+  border-color: rgba(31, 32, 65, 0.5);
+}
+.input__element_hover::placeholder {
+  opacity: 0.75;
+}
 .input__dateDropdown::placeholder {
   opacity: 0.75;
-  color: #1F2041;
+  color: #1f2041;
 }
 .input__checkmark {
   position: absolute;
@@ -289,7 +411,7 @@ a {
   border-bottom-right-radius: 4px;
   box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
   display: none;
-  z-index: 1;
+  z-index: 10;
   background-color: white;
 }
 .dropdown__list_show {
@@ -302,7 +424,7 @@ a {
   margin: 22px 0px 9px 6px;
 }
 .dropdown__counter {
-  margin: 4px 6px 21px 14px;
+  margin: 4px 6px 8px 14px;
 }
 
 .btn {
@@ -315,7 +437,7 @@ a {
   outline: none;
 }
 .btn_gradient {
-  background-image: linear-gradient(to bottom, #BC9CFF, #8BA4F9);
+  background-image: linear-gradient(to bottom, #BC9CFF, #8ba4f9);
   color: #ffffff;
   width: 99px;
   height: 44px;
@@ -333,7 +455,7 @@ a {
   height: 40px;
   border: double 2px transparent;
   border-radius: 26px;
-  background-image: linear-gradient(white, white), linear-gradient(to bottom, #BC9CFF, #8BA4F9);
+  background-image: linear-gradient(white, white), linear-gradient(to bottom, #BC9CFF, #8ba4f9);
   background-origin: border-box;
   background-clip: content-box, border-box;
 }
@@ -351,6 +473,7 @@ a {
 }
 .btn__text_header {
   line-height: 30px;
+  margin-top: 5px;
 }
 .btn_iconLinkViolent {
   width: auto;
@@ -367,7 +490,7 @@ a {
   width: 100%;
   height: 44px;
   border-radius: 22px;
-  background-image: linear-gradient(to bottom, #BC9CFF, #8BA4F9);
+  background-image: linear-gradient(to bottom, #BC9CFF, #8ba4f9);
   color: #ffffff;
 }
 .btn_longWithArrow:hover {
@@ -434,6 +557,7 @@ a {
   color: rgba(31, 32, 65, 0.5);
   outline-style: none;
   cursor: pointer;
+  background-color: #fff;
 }
 .counter__btn_plus {
   font-size: unset;
@@ -448,6 +572,7 @@ a {
 }
 
 .dateDropdown {
+  width: 100%;
   cursor: pointer;
 }
 .dateDropdown input {
@@ -487,9 +612,9 @@ a {
 }
 
 .datepicker--cell.-current- {
-  color: #FFFFFF;
+  color: #ffffff;
   border-radius: 50%;
-  background-image: linear-gradient(to bottom, #6FCF97, #66D2EA);
+  background-image: linear-gradient(to bottom, #6fcf97, #66d2ea);
   opacity: 1;
 }
 
@@ -503,8 +628,11 @@ a {
 
 .datepicker--cell.-in-range- {
   background: rgba(92, 196, 239, 0.1);
-  color: #4a4a4a;
+  /* color: #4a4a4a; */
   border-radius: 0;
+  /* background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%); */
+  /* opacity: 0.25; */
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(188, 156, 255, 0.25)), to(rgba(139, 164, 249, 0.25)));
 }
 
 .datepicker--cell.-in-range-.-focus- {
@@ -529,26 +657,41 @@ a {
 }
 
 .datepicker--cell.-range-from- {
-  border: 1px solid rgba(92, 196, 239, 0.5);
-  background-color: rgba(92, 196, 239, 0.1);
-  border-radius: 4px 0 0 4px;
+  color: #ffffff;
+  border-radius: 50%;
+  background-image: linear-gradient(to bottom, #6fcf97, #66d2ea);
+  opacity: 1;
+  position: relative;
+}
+.datepicker--cell.-range-from-::before {
+  content: "";
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(188, 156, 255, 0.15)), to(rgba(139, 164, 249, 0.15)));
+  width: 20px;
+  height: 40px;
+  position: absolute;
+  right: 0;
 }
 
 .datepicker--cell.-range-to- {
-  border: 1px solid rgba(92, 196, 239, 0.5);
-  background-color: rgba(92, 196, 239, 0.1);
-  border-radius: 0 4px 4px 0;
+  color: #fff;
+  opacity: 1;
+  background-image: linear-gradient(to bottom, #bc9cff, #8ba4f9);
+  position: relative;
+}
+.datepicker--cell.-range-to-::before {
+  content: "";
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(188, 156, 255, 0.15)), to(rgba(139, 164, 249, 0.15)));
+  width: 20px;
+  height: 40px;
+  position: absolute;
+  left: 0;
 }
 
 .datepicker--cell.-selected-,
 .datepicker--cell.-selected-.-current- {
   color: #fff;
   opacity: 1;
-  background-image: linear-gradient(to bottom, #BC9CFF, #8BA4F9);
-}
-
-.datepicker--cell.-range-from-.-range-to- {
-  border-radius: 4px;
+  background-image: linear-gradient(to bottom, #bc9cff, #8ba4f9);
 }
 
 .datepicker--cell.-selected- {
@@ -570,7 +713,7 @@ a {
 }
 
 .datepicker--day-name {
-  color: #BC9CFF;
+  color: #bc9cff;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -834,7 +977,7 @@ a {
   padding: 0 8px;
   font-family: "Open Sans";
   font-size: 19px;
-  color: #1F2041;
+  color: #1f2041;
   font-weight: 700;
   margin-left: 6px;
 }
@@ -1342,8 +1485,8 @@ a {
   word-wrap: normal;
   white-space: nowrap;
   direction: ltr;
-  color: #BC9CFF;
-  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  color: #bc9cff;
+  background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   /* Support for all WebKit browsers. */
@@ -1650,7 +1793,7 @@ a {
 }
 .paginationjs-page.active {
   border-radius: 20px;
-  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
 }
 .paginationjs-page.active > a {
   color: white;
@@ -1662,7 +1805,7 @@ a {
   width: 40px;
   height: 40px;
   border-radius: 20px;
-  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+  background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
 }
 .paginationjs-prev > a {
   font-family: "Conv_MaterialIcons-Regular";
@@ -1676,7 +1819,7 @@ a {
   word-wrap: normal;
   white-space: nowrap;
   direction: ltr;
-  background-color: #FFF;
+  background-color: #fff;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   /* Support for all WebKit browsers. */
@@ -1706,7 +1849,7 @@ a {
   width: 40px;
   height: 40px;
   border-radius: 20px;
-  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+  background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
 }
 .paginationjs-next > a {
   font-family: "Conv_MaterialIcons-Regular";
@@ -1720,7 +1863,7 @@ a {
   word-wrap: normal;
   white-space: nowrap;
   direction: ltr;
-  background-color: #FFF;
+  background-color: #fff;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   /* Support for all WebKit browsers. */
@@ -1732,8 +1875,57 @@ a {
   /* Support for IE. */
   font-feature-settings: "liga";
 }
-.paginationjs__legend {
+
+#pagination-container .paginationjs__legend {
   color: rgba(31, 32, 65, 0.75);
   margin-top: 10px;
+  text-transform: none;
+  margin-left: 5px;
+}
+
+.admitrenko {
+  width: 266px;
+}
+.admitrenko .irs-handle {
+  width: 16px;
+  height: 16px;
+  background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  box-shadow: none;
+  cursor: pointer;
+}
+.admitrenko .irs-line {
+  top: 30px;
+  height: 6px;
+  background: #ffffff;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  box-sizing: border-box;
+  border-radius: 3px;
+}
+.admitrenko .irs-bar {
+  top: 30px;
+  height: 6px;
+  background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+  border-radius: 3px;
+  border: none;
+  box-shadow: none;
+}
+.admitrenko .sign {
+  position: absolute;
+  color: rgba(31, 32, 65, 0.5);
+  font-size: 12px;
+  right: 0;
+  bottom: 49px;
+}
+.admitrenko .title {
+  position: absolute;
+  bottom: 48px;
+}
+.admitrenko .description {
+  position: absolute;
+  color: rgba(31, 32, 65, 0.5);
+  font-size: 12px;
+  bottom: -9px;
 }
 /*# sourceMappingURL=/main.5e239ebf.css.map */

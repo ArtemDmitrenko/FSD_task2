@@ -1,0 +1,123 @@
+.calendar {
+  width: 320px;
+  height: 369px;
+  border: solid 1px $dark25;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 0 20px ($dark5);
+  &__row1 {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 18px;
+    margin-bottom: 41px;
+    & .arrow_left {
+      margin-left: 26px;
+      margin-top: 12px;
+    }
+    & .arrow_right {
+      margin-right: 26px;
+      margin-top: 12px;
+    }
+  }
+  &__row2 {
+    width: 256px;
+    margin-left: 33px;
+  }
+  &__row3 {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 32px;
+    width: 291px;
+    margin-left: 15px;
+  }
+  &__month {
+    @extend %h2;
+  }
+  &__allDays {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+
+    @extend %h3;
+    color: $purple;
+    text-transform: none;
+  }
+  &__number {
+    @extend %font-body;
+    font-size: 12px;
+    color: $dark50;
+    text-transform: none;
+    width: 5%;
+    text-align: center;
+  }
+  &__numberLine1,
+  &__numberLine2,
+  &__numberLine3,
+  &__numberLine4,
+  &__numberLine5 {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+    margin-left: 2px;
+    margin-right: 2px;
+  }
+  &__numberLine1 &__number:nth-child(1),
+  &__numberLine1 &__number:nth-child(2),
+  &__numberLine1 &__number:nth-child(3),
+  &__numberLine5 &__number:nth-child(7) {
+    color: $dark25;
+  }
+  &__numberLine2 &__number:nth-child(4) {
+    @extend %h3;
+    color: white;
+    z-index: 1;
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      left: -14px;
+      bottom: -13px;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+      z-index: -1;
+      left: 10;
+    }
+  }
+  &__numberLine4 &__number:nth-child(1),
+  &__numberLine4 &__number:nth-child(5) {
+    @extend %h3;
+    color: white;
+    z-index: 1;
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      left: -14px;
+      bottom: -13px;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+      z-index: -1;
+      left: 10;
+    }
+  }
+  &__numberLine4 {
+    z-index: 1;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 5px;
+      bottom: -13px;
+      width: 162px;
+      height: 40px;
+      z-index: -1;
+      background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+      opacity: 0.25;
+    }
+  }
+}

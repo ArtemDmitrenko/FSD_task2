@@ -8,7 +8,7 @@ mixin dropdown(options = {})
         when 'guests'
             .dropdown
                 .dropdown__input
-                    +input({heading: heading, name: 'guests', type: 'text', value: value, dropdown: true, readonly: true})
+                    +input({heading: heading, description: description, name: 'guests', type: 'text', value: value, dropdown: true, readonly: true})
                 .dropdown__list
                     .dropdown__counter
                         +counter(["Взрослые", "Adults"])
@@ -16,7 +16,7 @@ mixin dropdown(options = {})
                         +counter(["Младенцы", "Infants"])
                     .dropdown__btn
                         .dropdown-guests__btn-clear
-                            +btn({modificator: 'btn_iconLinkBlack', text: 'Очистить', type: 'button', name: 'clear'})
+                            +btn({modificator: 'btn_iconLinkViolent', text: 'Очистить', type: 'button', name: 'clear'})
                         .dropdown-guests__btn-apply
                             +btn({modificator: 'btn_iconLinkViolent', text: 'Применить', type: 'button', name: 'apply'})
         when 'roomsBeds'
