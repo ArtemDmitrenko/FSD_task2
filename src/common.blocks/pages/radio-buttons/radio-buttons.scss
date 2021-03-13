@@ -1,63 +1,63 @@
 .radio-buttons {
-    &__item {
-        display: inline;
-        cursor: pointer;
-        margin-right: 21px;
-        padding-bottom: 5px;
+  &__item {
+    display: inline;
+    cursor: pointer;
+    margin-right: 21px;
+    padding-bottom: 5px;
+  }
+  &__name {
+    @extend %h3;
+    margin-bottom: 17px;
+  }
+  &__input {
+    cursor: pointer;
+    vertical-align: middle;
+    margin: 0;
+    &:before {
+      width: 18px;
+      height: 18px;
+      border-radius: 18px;
+      top: -5px;
+      left: -1px;
+      position: relative;
+      background-color: white;
+      content: "";
+      display: inline-block;
+      visibility: visible;
+      border: 1px solid $dark25;
     }
-    &__name {
-        @extend %h3;
-        margin-bottom: 17px;
+    &:checked:before {
+      width: 18px;
+      height: 18px;
+      border-radius: 18px;
+      top: -5px;
+      left: -1px;
+      position: relative;
+      content: "";
+      display: inline-block;
+      visibility: visible;
+      border: 1px solid $purple;
     }
-    &__input {
-        cursor: pointer;
-        vertical-align: middle;
-        margin: 0;
-        &:before {
-            width: 18px;
-            height: 18px;
-            border-radius: 18px;
-            top: -5px;
-            left: -1px;
-            position: relative;
-            background-color: white;
-            content: '';
-            display: inline-block;
-            visibility: visible;
-            border: 1px solid $dark25;
-        }
-        &:checked:before {
-            width: 18px;
-            height: 18px;
-            border-radius: 18px;
-            top: -5px;
-            left: -1px;
-            position: relative;
-            content: '';
-            display: inline-block;
-            visibility: visible;
-            border: 1px solid $purple;
-        }
-        &:checked:after {
-            width: 12px;
-            height: 12px;
-            border-radius: 12px;
-            top: -24px;
-            left: 3px;
-            position: relative;
-            background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-            content: '';
-            display: inline-block;
-            visibility: visible;
-        }
-        &:checked + label {
-            color: $dark75;
-        }
+    &:checked:after {
+      width: 12px;
+      height: 12px;
+      border-radius: 12px;
+      top: -24px;
+      left: 3px;
+      position: relative;
+      background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+      content: "";
+      display: inline-block;
+      visibility: visible;
     }
-    &__label {
-        @extend %font-body;
-        color: $dark50;
-        cursor: pointer;
-        margin-left: 16px;
+    &:checked + label {
+      color: $dark75;
     }
+  }
+  &__label {
+    @extend %font-body;
+    color: $dark50;
+    cursor: pointer;
+    margin-left: 16px;
+  }
 }

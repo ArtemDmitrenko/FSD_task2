@@ -1,69 +1,68 @@
 %legend {
-    content: '';
-    display: inline-block;
-    width: 10.43px;
-    height: 10px;
-    border-radius: 5px;
-    margin-right: 5px;
+  content: "";
+  display: inline-block;
+  width: 10.43px;
+  height: 10px;
+  border-radius: 5px;
+  margin-right: 5px;
 }
 
 .diagram {
-    display: flex;
+  display: flex;
+  @media screen and (max-width: 376px) {
+    display: block;
+  }
+  &__block {
+    position: relative;
+  }
+  &__unit {
+    fill: none;
+    stroke-width: 4;
+  }
+  &__list-item {
+    @extend %font-body;
+    color: $dark75;
+    margin-bottom: 6px;
+    &_amazing:before {
+      @extend %legend;
+      background: linear-gradient(180deg, #ffe39c 0%, #ffba9c 100%);
+    }
+    &_good:before {
+      @extend %legend;
+      background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+    }
+    &_notBad:before {
+      @extend %legend;
+      background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+    }
+    &_bad:before {
+      @extend %legend;
+      background: linear-gradient(180deg, #909090 0%, #3d4975 100%);
+    }
+  }
+  &__total {
+    position: absolute;
+    left: 21%;
+    top: 33%;
+    line-height: 19px;
+    width: 70px;
+    @extend %h1;
+    color: $purple;
+    text-align: center;
+    & span {
+      @extend %h3;
+      color: $purple;
+    }
     @media screen and (max-width: 376px) {
-        display: block;
+      left: 11%;
     }
-    &__block {
-        position: relative;
+  }
+  &__legend {
+    margin-left: 30px;
+    margin-top: 29px;
+    min-width: 162px;
+    @media screen and (max-width: 376px) {
+      margin-left: 0;
     }
-    &__unit {
-        fill: none;
-        stroke-width: 4;
-    }
-    &__list-item { 
-        @extend %font-body;
-        color: $dark75;
-        margin-bottom: 6px;
-        &_amazing:before {
-            @extend %legend;
-            background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
-        }
-        &_good:before {
-            @extend %legend;
-            background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-        }
-        &_notBad:before {
-            @extend %legend;
-            background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-        }
-        &_bad:before {
-            @extend %legend;
-            background: linear-gradient(180deg, #909090 0%, #3D4975 100%);
-        }
-    }
-    &__total {
-        position: absolute;
-        left: 21%;
-        top: 33%;
-        line-height: 19px;
-        width: 70px;
-        @extend %h1;
-        color: $purple;
-        text-align: center;
-        & span {
-            @extend %h3;
-            color: $purple;
-
-        }
-        @media screen and (max-width: 376px) {
-            left: 11%;
-        } 
-    }
-    &__legend {
-        margin-left: 30px;
-        margin-top: 29px;
-        min-width: 162px;
-        @media screen and (max-width: 376px) {
-            margin-left: 0;
-        }
-    }
+  }
 }

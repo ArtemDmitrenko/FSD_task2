@@ -6,21 +6,17 @@ h3,
 h4,
 h5,
 h6 {
-    margin: 0;
-    padding: 0;
-    font-size: unset;
+  margin: 0;
+  padding: 0;
+  font-size: unset;
 }
 
 ul {
-    list-style: none;
-    /*убираем маркеры списка*/
-    margin: 0;
-    /*убираем верхнее и нижнее поле, равное 1em*/
-    padding-left: 0;
-    /*убираем левый отступ, равный 40px*/
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
 }
 
 a {
-    text-decoration: none;
-    /*убираем подчеркивание текста ссылок*/
+  text-decoration: none;
 }

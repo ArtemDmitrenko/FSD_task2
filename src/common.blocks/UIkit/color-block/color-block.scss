@@ -1,40 +1,40 @@
 .color-block {
-    &__name {
-        @extend %h2;
-        margin-bottom: 6px;
-    }
-    &__hex {
-        font-family: 'Conv_Quicksand-Regular', Sans-Serif;
-        color: $dark100;
-        font-size: 19px;
-    }
-    &__description {
-        margin-left: 40px;
-    }
-    &__color {
-        border-radius: 6px;
-        height: 70px;
-        width: 70px;
-    }
-    &__color_dark_5 {
-        background-color: $dark5;
-    }
-    &__color_dark_25 {
-        background-color: $dark25;
-    }
-    &__color_dark_50 {
-        background-color: $dark50;
-    }
-    &__color_dark_75 {
-        background-color: $dark75;
-    }
-    &__color_dark_100 {
-        background-color: $dark100;
-    }
-    &__color_green {
-        background-color: $green;
-    }
-    &__color_purple {
-        background-color: $purple;
-    }
+  &__name {
+    @extend %h2;
+    margin-bottom: 6px;
+  }
+  &__hex {
+    font-family: "Conv_Quicksand-Regular", Sans-Serif;
+    color: $dark100;
+    font-size: 19px;
+  }
+  &__description {
+    margin-left: 40px;
+  }
+  &__color {
+    border-radius: 6px;
+    height: 70px;
+    width: 70px;
+  }
+  &__color_dark_5 {
+    background-color: $dark5;
+  }
+  &__color_dark_25 {
+    background-color: $dark25;
+  }
+  &__color_dark_50 {
+    background-color: $dark50;
+  }
+  &__color_dark_75 {
+    background-color: $dark75;
+  }
+  &__color_dark_100 {
+    background-color: $dark100;
+  }
+  &__color_green {
+    background-color: $green;
+  }
+  &__color_purple {
+    background-color: $purple;
+  }
 }

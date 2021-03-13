@@ -1,42 +1,42 @@
 .review {
-    &__part1 {
-        display: flex;
-    }
-    &__part2 {
-        display: flex;
-    }
-    &__image {
-        width: 48px;
-        height: auto;
-        border-radius: 24px;
-        box-sizing: border-box;
-        border: 2px solid #FFF;
-        box-shadow: (0px 10px 20px rgba(31, 32, 65, 0.1));
-        margin-bottom: 10px;
-    }
-    &__name {
-        @extend %h3;
-        font-size: 14px;
-        color: $dark75;
-        text-transform: none;
-        margin-bottom: 6px;
-    }
-    &__date {
-        @extend %font-body;
-        color: $dark75;
-    }
-    &__text {
-        @extend %font-body;
-        color: $dark75;
-        line-height: 24px;
-        margin-left: 14px;
-    }
-    &__description {
-        margin-left: 8px;
-        margin-top: 3px;
-    }
-    &__like-button {
-        margin-left: 3px;
-        margin-top: 1px;
-    }
+  &__part1 {
+    display: flex;
+  }
+  &__part2 {
+    display: flex;
+  }
+  &__image {
+    width: 48px;
+    height: auto;
+    border-radius: 24px;
+    box-sizing: border-box;
+    border: 2px solid #fff;
+    box-shadow: (0px 10px 20px rgba(31, 32, 65, 0.1));
+    margin-bottom: 10px;
+  }
+  &__name {
+    @extend %h3;
+    font-size: 14px;
+    color: $dark75;
+    text-transform: none;
+    margin-bottom: 6px;
+  }
+  &__date {
+    @extend %font-body;
+    color: $dark75;
+  }
+  &__text {
+    @extend %font-body;
+    color: $dark75;
+    line-height: 24px;
+    margin-left: 14px;
+  }
+  &__description {
+    margin-left: 8px;
+    margin-top: 3px;
+  }
+  &__like-button {
+    margin-left: 3px;
+    margin-top: 1px;
+  }
 }

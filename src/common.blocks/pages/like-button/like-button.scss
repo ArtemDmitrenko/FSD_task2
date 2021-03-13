@@ -1,77 +1,76 @@
 .like-button {
-    &__name {
-        @extend %h3;
-        margin-bottom: 15px;
+  &__name {
+    @extend %h3;
+    margin-bottom: 15px;
+  }
+  &__button {
+    width: 40px;
+    height: 20px;
+    box-sizing: border-box;
+    border: solid 1px $dark25;
+    border-radius: 10px;
+    background-color: #fff;
+    outline: none;
+    cursor: pointer;
+    &_active {
+      position: relative;
+      border: none;
+      &:before {
+        content: "";
+        position: absolute;
+        top: -1px;
+        bottom: -1px;
+        left: -1px;
+        right: -1px;
+        background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+        border-radius: 11px;
+        z-index: -1;
+      }
     }
-    &__button {
-        width: 40px;
-        height: 20px;
-        box-sizing: border-box;
-        border: solid 1px $dark25;
-        border-radius: 10px;
-        background-color: #fff;
-        outline: none;
-        cursor: pointer;
-        &_active {
-            position: relative;
-            border: none;
-            &:before {
-                content: "";
-                position: absolute;
-                top: -1px;
-                bottom: -1px;
-                left: -1px;
-                right: -1px;
-                background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-                border-radius: 11px;
-                z-index: -1;
-            }
-        }
+  }
+  &__counter {
+    @extend %font-body;
+    font-size: 10px;
+    color: $dark25;
+    display: inline-block;
+    vertical-align: text-top;
+    margin-left: 7px;
+    &_active {
+      color: $purple;
     }
-    &__counter {
-        @extend %font-body;
-        font-size: 10px;
-        color: $dark25;
-        display: inline-block;
-        vertical-align: text-top;
-        margin-left: 7px;
-        &_active {
-            color: $purple;
-        }
+  }
+  &__image {
+    font-family: "Conv_MaterialIcons-Regular";
+    font-weight: normal;
+    font-style: normal;
+    font-size: 10px;
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+
+    background-color: $dark25;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Support for IE. */
+    font-feature-settings: "liga";
+
+    margin-left: -7px;
+
+    &_active {
+      background-color: $purple;
     }
-    &__image {
-        font-family: 'Conv_MaterialIcons-Regular';
-        font-weight: normal;
-        font-style: normal;
-        font-size: 10px;
-        display: inline-block;
-        line-height: 1;
-        text-transform: none;
-        letter-spacing: normal;
-        word-wrap: normal;
-        white-space: nowrap;
-        direction: ltr;
-
-        background-color: $dark25;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      
-        /* Support for all WebKit browsers. */
-        -webkit-font-smoothing: antialiased;
-        /* Support for Safari and Chrome. */
-        text-rendering: optimizeLegibility;
-      
-        /* Support for Firefox. */
-        -moz-osx-font-smoothing: grayscale;
-      
-        /* Support for IE. */
-        font-feature-settings: 'liga';
-
-        margin-left: -7px;
-
-        &_active {
-            background-color: $purple;
-        }
-    }
-
+  }
 }

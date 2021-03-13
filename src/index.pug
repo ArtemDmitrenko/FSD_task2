@@ -3,26 +3,20 @@ html(lang="en")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Document
+        title Content of project
     body
-        h1 Content of project
-        h3 UI-kit
-        a(href="./UI-kit/colors-type/index.pug") Colors-type
-        br
-        a(href="./UI-kit/formElements/index.pug") Form elements
-        br
-        a(href="./UI-kit/cards/index.pug") Cards
-        br
-        a(href="./UI-kit/headers-footers/index.pug") Headers-footers
-
-        h3 Pages
-        a(href="./pages/landingPage/index.pug") Landing page
-        br
-        a(href="./pages/searchRoom/index.pug") Search room
-        br
-        a(href="./pages/roomDetails/index.pug") Room details
-        br
-        a(href="./pages/registration/index.pug") Registration
-        br
-        a(href="./pages/signIn/index.pug") Sign in
-
+        .content
+            h1.content__mainTitle Content of project
+            .content__UIKit(style="display: flex; flex-direction: column")
+                h3.content__title UI-kit
+                a.content__item(href="./UI-kit/colors-type/index.pug") Colors-type
+                a.content__item(href="./UI-kit/formElements/index.pug" ) Form elements
+                a.content__item(href="./UI-kit/cards/index.pug") Cards
+                a.content__item(href="./UI-kit/headers-footers/index.pug") Headers-footers
+            .content__pages(style="display: flex; flex-direction: column")
+                h3.content__title Pages
+                a.content__item(href="./pages/landingPage/index.pug") Landing page
+                a.content__item(href="./pages/searchRoom/index.pug") Search room
+                a.content__item(href="./pages/roomDetails/index.pug") Room details
+                a.content__item(href="./pages/registration/index.pug") Registration
+                a.content__item(href="./pages/signIn/index.pug") Sign in

@@ -51,7 +51,6 @@ if (document.querySelector('.formElements__range-slider')) {
   title.textContent = 'Диапазон цены'
 }
 
-
 // Show description
 const description = document.createElement('div');
 description.classList.add('description');

@@ -8,45 +8,44 @@ include ../checkmark/checkmark.pug
   menuItems[0].subname[0].href - ссылка элемента подменю
   
   Нужно доделать, чтобы активной странице добавлялся класс menu__link_active:
-        a.menu__link.menu__link_active(href='#') О нас     
+        a.menu__link.menu__link_active(href='https://www.google.com/') О нас     
 
 mixin navMenu()
     -
         let menuItems = [
             {
             name: 'О нас',
-            href: '#'
+            href: 'https://www.google.com/'
             }, {
             name: 'Услуги',
-            href: '#',
+            href: 'https://www.google.com/',
             submenu: [
                         {subname: 'Услуга 1',
-                        subhref: '#'
+                        subhref: 'https://www.google.com/'
                         }, {
                         subname: 'Услуга 2',
-                        subhref: '#'
+                        subhref: 'https://www.google.com/'
                         }
                     ]
             }, {
             name: 'Вакансии',
-            href: '#'
+            href: 'https://www.google.com/'
             }, {
             name: 'Новости',
-            href: '#'
+            href: 'https://www.google.com/'
             }, {
             name: 'Соглашения',
-            href: '#',
+            href: 'https://www.google.com/',
             submenu: [
                         {subname: 'Соглашение 1',
-                        subhref: '#'
+                        subhref: 'https://www.google.com/'
                         }, {
                         subname: 'Соглашение 2',
-                        subhref: '#'
+                        subhref: 'https://www.google.com/'
                         }
                     ]
             }
         ];
-  
     nav.menu
         ul.menu__list
             - for (let i = 0; i < menuItems.length; i ++)

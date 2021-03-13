@@ -1,42 +1,42 @@
 .type-block {
-    &__name {
-        @extend %font-body;
-        opacity: 0.25;
-        margin-right: 30px;
-        width: 40px;
-        text-align: right;
-        line-height: normal;
-        &_fsize_12 {
-            font-size: 12px;
-        }
-        &_fsize_14 {
-            font-size: 14px;
-        }
-        &_fsize_19 {
-            font-size: 19px;
-        }
-        &_fsize_24 {
-            font-size: 24px;
-        }
-        &_line-height_24 {
-            line-height: 24px;
-        }
+  &__name {
+    @extend %font-body;
+    opacity: 0.25;
+    margin-right: 30px;
+    width: 40px;
+    text-align: right;
+    line-height: normal;
+    &_fsize_12 {
+      font-size: 12px;
     }
-    &__description {
-        &_font-body {
-            @extend %font-body;
-            width: 308px;
-        }
-        &_h1 {
-            @extend %h1;
-            width: 336px;
-        }
-        &_h2 {
-            @extend %h2;
-            width: 282px;
-        }
-        &_h3 {
-            @extend %h3;
-        }
+    &_fsize_14 {
+      font-size: 14px;
     }
+    &_fsize_19 {
+      font-size: 19px;
+    }
+    &_fsize_24 {
+      font-size: 24px;
+    }
+    &_line-height_24 {
+      line-height: 24px;
+    }
+  }
+  &__description {
+    &_font-body {
+      @extend %font-body;
+      width: 308px;
+    }
+    &_h1 {
+      @extend %h1;
+      width: 336px;
+    }
+    &_h2 {
+      @extend %h2;
+      width: 282px;
+    }
+    &_h3 {
+      @extend %h3;
+    }
+  }
 }
