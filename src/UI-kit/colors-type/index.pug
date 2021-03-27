@@ -1,7 +1,7 @@
 extends ../../templates/template.pug
-include ../../common.blocks/UIkit/logoUIkit/logoUIkit.pug
-include ../../common.blocks/UIkit/color-block/color-block.pug
-include ../../common.blocks/UIkit/type-block/type-block.pug
+include ../../components/UIkit/logo-UIkit/logo-UIkit.pug
+include ../../components/UIkit/color-block/color-block.pug
+include ../../components/UIkit/type-block/type-block.pug
 
 block title
     title Colors&type
@@ -9,18 +9,18 @@ block title
 block content
     .colors-types
         .colors-types__logo
-            +logoUIkit()
+            +logo-UIkit()
         .colors-types__item
             .colors
-                +color-block({modificator: "color-block__color_dark_100", name: "Dark Shade 100%", hex: "#1F2041"})
-                +color-block({modificator: "color-block__color_dark_75", name: "Dark Shade 75%", hex: "#1F2041"})
-                +color-block({modificator: "color-block__color_dark_50", name: "Dark Shade 50%", hex: "#1F2041"})
-                +color-block({modificator: "color-block__color_dark_25", name: "Dark Shade 25%", hex: "#1F2041"})
-                +color-block({modificator: "color-block__color_dark_5", name: "Dark Shade 5%", hex: "#1F2041"})
-                +color-block({modificator: "color-block__color_purple", name: "Purple", hex: "#BC9CFF"})
-                +color-block({modificator: "color-block__color_green", name: "Green", hex: "#6FCF97"})
+                +color-block({name: "Dark Shade 100%", hex: "#1F2041"})
+                +color-block({name: "Dark Shade 75%", hex: "#1F2041"})
+                +color-block({name: "Dark Shade 50%", hex: "#1F2041"})
+                +color-block({name: "Dark Shade 25%", hex: "#1F2041"})
+                +color-block({name: "Dark Shade 5%", hex: "#1F2041"})
+                +color-block({name: "Purple", hex: "#BC9CFF"})
+                +color-block({name: "Green", hex: "#6FCF97"})
             .types
-                +type-block({modificatorFontsize: "type-block__name_fsize_24", modificatorDescription: "type-block__description_h1", name: "H1", description: "This one is the sub-section or widget title"})
-                +type-block({modificatorFontsize: "type-block__name_fsize_19", modificatorDescription: "type-block__description_h2", name: "H2", description: "Next one is the item title inside widgets"})
-                +type-block({modificatorFontsize: "type-block__name_fsize_12", modificatorDescription: "type-block__description_h3", name: "H3", description: "This is a label or CTA text", shiftedMargin: true})
-                +type-block({modificatorFontsize: "type-block__name_line-height_24", modificatorDescription: "type-block__description_font-body", name: "Body", description: "This is the body text which is used for most of the design, like paragraphs, lists, etc."})
+                +type-block({name: "H1", text: "This one is the sub-section or widget title"})
+                +type-block({name: "H2", text: "Next one is the item title inside widgets"})
+                +type-block({name: "H3", text: "This is a label or CTA text"})
+                +type-block({name: "Body", text: "This is the body text which is used for most of the design, like paragraphs, lists, etc."})

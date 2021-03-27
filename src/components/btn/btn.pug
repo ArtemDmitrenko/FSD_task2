@@ -1,0 +1,28 @@
+//- Modificators for buttons (types of buttons in project):
+//-     btn_gradient
+//-     btn_border
+//-     btn_iconLinkViolent
+//-     btn_iconLinkBlack
+//-     btn_longWithArrow
+//- Buttons for header (smaller):
+//-     btn_gradientHeader
+//-     btn_borderHeader
+
+mixin btn(options)
+    - const {modificator, text, type, name} = options
+
+    case modificator
+      when "btn_border"
+        .btn_border
+            button(type = type).btn.btn__text #{text}
+      when "btn_longWithArrow"
+        button(type = type).btn.btn_longWithArrow #{text} <span class='btn__arrow'></span>
+      when "btn_gradientHeader"
+        button(type = type).btn.btn_gradient #{text}
+      when "btn_borderHeader"
+        .btn_border
+            button(type = type).btn.btn__text.btn__text_header #{text}
+      when "btn_iconLinkViolent"
+        button(type = type class = "btn" class = "btn_iconLinkViolent" name = name) #{text}
+      when "btn_iconLinkBlack"
+        button(type = type class = "btn" class = "btn_iconLinkBlack" name = name) #{text}

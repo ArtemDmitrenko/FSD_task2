@@ -1,0 +1,6 @@
+include ../input/input.pug
+
+mixin date-dropdown(options)
+    - const {heading, name, value, range} = options
+    .date-dropdown
+        +input({heading: heading, name: name, value: value, range: range, type: 'text', placeholder: 'ДД.ММ.ГГГГ', dateDropdown: true})

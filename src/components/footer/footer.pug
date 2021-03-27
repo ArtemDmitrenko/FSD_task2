@@ -1,0 +1,57 @@
+include ../logo/logo.pug
+include ../social-nets/social-nets.pug
+include ../input/input.pug
+
+mixin footer()
+    footer.footer
+        .footer__half1
+            .container
+                .footer__top
+                    .footer__column1
+                        .footer__logo
+                            +logo()
+                        p.footer__text Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
+                    .footer__column2
+                        ul.footer__navigation
+                            li.footer__title Навигация
+                            li.footer__item
+                                a.footer__link(href='https://www.google.com/') О нас
+                            li.footer__item
+                                a.footer__link(href='https://www.google.com/') Новости
+                            li.footer__item
+                                a.footer__link(href='https://www.google.com/') Служба поддержки
+                            li.footer__item
+                                a.footer__link(href='https://www.google.com/') Услуги
+                    .footer__column3
+                        ul.footer__about
+                            li.footer__title О нас
+                            li.footer__item
+                                a.footer__link(href='https://www.google.com/') О сервисе
+                            li.footer__item
+                                a.footer__link(href='https://www.google.com/') Наша команда
+                            li.footer__item
+                                a.footer__link(href='https://www.google.com/') Вакансии
+                            li.footer__item
+                                a.footer__link(href='https://www.google.com/') Инвесторы
+                    .footer__column4
+                        ul.footer__support
+                            li.footer__title Служба поддержки
+                            li.footer__item
+                                a.footer__link(href='https://www.google.com/') Соглашения
+                            li.footer__item
+                                a.footer__link(href='https://www.google.com/') Сообщества
+                            li.footer__item
+                                a.footer__link(href='https://www.google.com/') Связь с нами
+                    .footer__column5
+                        ul.footer__subscription
+                            li.footer__title.footer__title_line-height_24 Подписка
+                            li.footer__item_line-height_24 Получайте специальные предложения и новости сервиса
+                            li.footer__item
+                                form.footer__form(action="https://www.google.com/")
+                                    +input({name: 'email', type: 'email', placeholder: 'Email', required: true, subscription: true})                                        
+        .footer__half2
+            .container
+                .footer__bottom
+                    p.footer__copyright Copyright © 2018 Toxin отель. Все права зачищены.
+                    .footer__social
+                        +social-nets()

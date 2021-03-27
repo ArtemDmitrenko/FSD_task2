@@ -1,11 +1,11 @@
 extends ../../templates/template.pug
-include ../../common.blocks/UIkit/logoUIkit/logoUIkit.pug
-include ../../common.blocks/pages/form-roomsearch/form-roomsearch.pug
-include ../../common.blocks/pages/form-registration/form-registration.pug
-include ../../common.blocks/pages/form-confirmation/form-confirmation.pug
-include ../../common.blocks/pages/form-log-in/form-log-in.pug
-include ../../common.blocks/pages/room/room.pug
-include ../../common.blocks/UIkit/calendar/calendar.pug
+include ../../components/UIkit/logo-UIkit/logo-UIkit.pug
+include ../../components/form-roomsearch/form-roomsearch.pug
+include ../../components/form-registration/form-registration.pug
+include ../../components/form-confirmation/form-confirmation.pug
+include ../../components/form-log-in/form-log-in.pug
+include ../../components/room/room.pug
+include ../../components/UIkit/calendar/calendar.pug
 
 
 block title
@@ -13,9 +13,9 @@ block title
 
 block content
     .cards
-        .cards__logoUIkit
-            +logoUIkit()
-        .cards__allItems
+        .cards__logo-UIkit
+            +logo-UIkit()
+        .cards__all-items
             .cards__room-search
                 +form-roomsearch()
             .cards__registration
@@ -27,9 +27,9 @@ block content
             .cards__datepicker
                 +calendar()
             .cards__room
-                +room({adressOfRoom: '../../common.blocks/pages/room/room1/', numberOfImage: ["image1.png", "image2.png", "image3.png", "image4.png"], roomNumber: '888', lux: true, price: '9 990₽', rate: '5', numberOfReviews: '145'})
+                +room({adressOfRoom: '../../components/room/room1/', numberOfImage: ["image1.png", "image2.png", "image3.png", "image4.png"], roomNumber: '888', lux: true, price: '9 990₽', rate: '5', numberOfReviews: '145'})
             .cards__room
-                +room({adressOfRoom: '../../common.blocks/pages/room/room2/', numberOfImage: ["image1.png", "image2.png", "image3.png", "image4.png"], roomNumber: '840', price: '9 990₽', rate: '4', numberOfReviews: '65'})
+                +room({adressOfRoom: '../../components/room/room2/', numberOfImage: ["image1.png", "image2.png", "image3.png", "image4.png"], roomNumber: '840', price: '9 990₽', rate: '4', numberOfReviews: '65'})
 
 block script
     script(src="main.js")

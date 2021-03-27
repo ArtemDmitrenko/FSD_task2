@@ -1,0 +1,16 @@
+include ../date-dropdown/date-dropdown.pug
+include ../dropdown/dropdown.pug
+include ../btn/btn.pug
+
+mixin form-roomsearch()
+    form(action="#" method="get").form-roomsearch
+        h1.form-roomsearch__title Найдём номера под ваши пожелания
+        .form-roomsearch__dates
+            .form-roomsearch__check-in
+                +date-dropdown({heading: 'Прибытие', name: 'Check-in date'})
+            .form-roomsearch__check-out
+                +date-dropdown({heading: 'Выезд', name: 'Check-out date'})
+        .form-roomsearch__guests
+            +dropdown({dropdownType: 'guests', heading: 'гости', value: 'Сколько гостей'})
+        .form-roomsearch__submit
+            +btn({modificator: 'btn_longWithArrow', text: 'Подобрать номер', type: 'submit'})

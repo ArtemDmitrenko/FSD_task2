@@ -1,0 +1,87 @@
+// Подключение базы данных цветов
+@import "../../colors.scss";
+// Подключение базы данных шрифтов
+@import "../../fonts.scss";
+// Подключение nullstyle
+@import "../../nullstyle.scss";
+// Content
+@import "../../components/header/header.scss";
+@import "../../components/logo/logo.scss";
+@import "../../components/container/container.scss";
+@import "../../components/btn/btn.scss";
+@import "../../components/nav-menu/nav-menu.scss";
+@import "../../components/footer/footer.scss";
+@import "../../components/social-nets/social-nets.scss";
+@import "../../components/arrow/arrow.scss";
+@import "../../components/checkmark/checkmark.scss";
+@import "../../components/date-dropdown/date-dropdown.scss";
+@import "../../components/dropdown/dropdown.scss";
+@import "../../components/input/input.scss";
+@import "../../components/counter/counter.scss";
+@import "../../components/footer-tab/footer-tab.scss";
+@import "../../components/range-slider/range-slider.scss";
+@import "../../components/checkbox-btn/checkbox-btn.scss";
+@import "../../components/room/room.scss";
+@import "../../components/rate-button/rate-button.scss";
+@import "../../components/pagination/pagination.scss";
+
+.search-room {
+  &__main {
+    display: flex;
+    justify-content: space-between;
+    @media screen and (max-width: 600px) {
+      display: block;
+    }
+  }
+  &__sidebar {
+    flex-shrink: 0;
+    flex-basis: 266px;
+    margin-right: 5.1%;
+  }
+  &__filterDateDropdown {
+    width: 100%;
+    margin-top: 50px;
+  }
+  &__dropdown-guests {
+    margin-top: 41px;
+    margin-bottom: 29px;
+  }
+  &__checkbox-btn {
+    margin-top: 38px;
+    margin-bottom: 31px;
+  }
+  &__dropdown-rooms {
+    margin-top: 47px;
+    margin-bottom: 30px;
+  }
+  &__rooms {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -6px;
+  }
+  &__title {
+    @extend %h1;
+    margin-top: 28px;
+    margin-bottom: 19px;
+  }
+  &__pagination {
+    margin-left: auto;
+    margin-right: auto;
+    width: 16em;
+    margin-top: 19px;
+  }
+  &__card {
+    margin-bottom: 21px;
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+  &__footer {
+    &_wide {
+      border-top: 1px solid $dark25;
+      margin-top: 75px;
+    }
+  }
+  &__range-slider {
+    padding-top: 9px;
+  }
+}

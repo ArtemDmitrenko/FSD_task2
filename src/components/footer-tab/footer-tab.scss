@@ -1,0 +1,25 @@
+.footer-tab {
+  box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
+  max-width: 768px;
+  height: 367px;
+  margin: auto;
+  background-color: #fff;
+  display: flex;
+  display: none;
+  @media screen and (max-width: 768px) {
+    display: block;
+    padding-top: 120px;
+  }
+  &__content {
+    margin: auto;
+    text-align: center;
+  }
+  &__text {
+    @extend %font-body;
+    opacity: 0.75;
+    padding: 20px 0 24px;
+  }
+  &__social-nets {
+    padding-right: 22px;
+  }
+}

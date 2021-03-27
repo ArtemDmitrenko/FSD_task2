@@ -1,0 +1,30 @@
+include ../input/input.pug
+include ../btn/btn.pug
+include ../counter/counter.pug
+
+mixin dropdown(options = {})
+    - const {dropdownType, heading, value, description} = options;
+    case dropdownType
+        when 'guests'
+            .dropdown
+                .dropdown__input
+                    +input({heading: heading, description: description, name: 'guests', type: 'text', value: value, dropdown: true, readonly: true})
+                .dropdown__list
+                    .dropdown__counter
+                        +counter(["Взрослые", "Adults"])
+                        +counter(["Дети", "Children"])
+                        +counter(["Младенцы", "Infants"])
+                    .dropdown__btn
+                        .dropdown-guests__btn-clear
+                            +btn({modificator: 'btn_iconLinkViolent', text: 'Очистить', type: 'button', name: 'clear'})
+                        .dropdown-guests__btn-apply
+                            +btn({modificator: 'btn_iconLinkViolent', text: 'Применить', type: 'button', name: 'apply'})
+        when 'roomsBeds'
+            .dropdown
+                .dropdown__input
+                    +input({heading: heading, description: description, name: 'roomsBeds', type: 'text', value: value, dropdown: true, readonly: true})
+                .dropdown__list
+                    .dropdown__counter
+                        +counter(["Спальни", "Bedrooms"])
+                        +counter(["Кровати", "Beds"])
+                        +counter(["Ванные комнаты", "Bathrooms"])

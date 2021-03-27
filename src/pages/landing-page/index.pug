@@ -1,0 +1,25 @@
+extends ../../templates/template.pug
+include ../../components/header/header.pug
+include ../../components/form-roomsearch/form-roomsearch.pug
+include ../../components/footer/footer.pug
+include ../../components/footer-tab/footer-tab.pug
+
+block title
+    title Landing page
+
+block content
+    .landing-page
+        .landing-page__header
+            +header({modificator: "NotRegistered"})
+        .landing-page__main
+            img(src="landing-page.png", alt="background").landing-page__image
+            .landing-page__form
+                +form-roomsearch()
+            p.landing-page__text Лучшие номера для вашей работы, отдыха и просто вдохновения
+        .landing-page__footer_wide
+            +footer()
+        .landing-page__footer_tab
+            +footer-tab()
+
+block script
+    script(src="main.js")

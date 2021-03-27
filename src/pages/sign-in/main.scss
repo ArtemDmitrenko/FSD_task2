@@ -4,10 +4,6 @@
 @import "../../fonts.scss";
 // Подключение nullstyle
 @import "../../nullstyle.scss";
-// Headers-footers
-@import "../../components/UIkit/headers-footers/headers-footers.scss";
-// logo-UIkit
-@import "../../components/UIkit/logo-UIkit/logo-UIkit.scss";
 // Content
 @import "../../components/header/header.scss";
 @import "../../components/logo/logo.scss";
@@ -15,8 +11,36 @@
 @import "../../components/btn/btn.scss";
 @import "../../components/nav-menu/nav-menu.scss";
 @import "../../components/footer/footer.scss";
-@import "../../components/footer-tab/footer-tab.scss";
 @import "../../components/social-nets/social-nets.scss";
-@import "../../components/input/input.scss";
 @import "../../components/arrow/arrow.scss";
 @import "../../components/checkmark/checkmark.scss";
+@import "../../components/form-log-in/form-log-in.scss";
+@import "../../components/input/input.scss";
+@import "../../components/footer-tab/footer-tab.scss";
+@import "../../components/radio-buttons/radio-buttons.scss";
+@import "../../components/toggle/toggle.scss";
+
+.sign-in {
+  &__main {
+    height: 702px;
+    position: relative;
+  }
+  &__image {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  &__form {
+    position: absolute;
+    width: 380px;
+    top: 50%;
+    margin-top: -180px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding-left: 20px;
+    padding-right: 20px;
+    @media screen and (max-width: 420px) {
+      width: fit-content;
+    }
+  }
+}
