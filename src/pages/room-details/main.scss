@@ -27,6 +27,11 @@
 @import "../../components/counter/counter.scss";
 
 .room-details {
+  &__content {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
   &__foto {
     height: 485px;
     width: 100%;
@@ -82,7 +87,6 @@
   }
   &__impression {
     @extend %h2;
-    margin-top: 30px;
   }
   &__info {
     margin-right: 70px;

@@ -13,10 +13,10 @@ block title
 
 block content
     .room-details
-        .room-details__header
+        header.room-details__header
             +header({modificator: "NotRegistered"})
-        .room-details__main
-            .room-details__foto
+        main.room-details__main
+            section.room-details__foto
                 .room-details__foto-part1
                     img(src="img/img1.png", alt="img1").room-details__image
                 .room-details__foto-part2
@@ -24,7 +24,7 @@ block content
                         img(src="img/img2.png", alt="img2").room-details__image
                     .room-details__foto-part2-el2
                         img(src="img/img3.png", alt="img3").room-details__image
-            .container
+            section.room-details__content
                 .room-details__total
                     .room-details__column1
                         .room-details__line1
@@ -54,10 +54,11 @@ block content
                         .room-details__form-confirmation
                             +form-confirmation()
             .room-details__grey-line
-        .room-details__footer_wide
-            +footer()
-        .room-details__footer_tab
-            +footer-tab()
+        footer.room-details__footer
+            .room-details__footer_wide
+                +footer()
+            .room-details__footer_tab
+                +footer-tab()
 
 block script
     script(src="main.js")

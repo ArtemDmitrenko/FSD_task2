@@ -9,16 +9,17 @@ block title
 
 block content
     .sign-in
-        .sign-in__header
+        header.sign-in__header
             +header({modificator: "NotRegistered"})
-        .sign-in__main
+        main.sign-in__main
             img(src="registration.png", alt="registration").sign-in__image
             .sign-in__form
                 +form-log-in()
-        .sign-in__footer_wide
-            +footer()
-        .sign-in__footer_tab
-            +footer-tab()
+        footer.sign-in__footer
+            .sign-in__footer_wide
+                +footer()
+            .sign-in__footer_tab
+                +footer-tab()
 
 block script
     script(src="main.js")

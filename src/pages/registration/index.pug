@@ -9,16 +9,17 @@ block title
 
 block content
     .registration
-        .registration__header
+        header.registration__header
             +header({modificator: "NotRegistered"})
-        .registration__main
+        main.registration__main
             img(src="registration.png", alt="registration").registration__image
             .registration__form
                 +form-registration()
-        .registration__footer_wide
-            +footer()
-        .registration__footer_tab
-            +footer-tab()
+        footer.registration__footer
+            .registration__footer_wide
+                +footer()
+            .registration__footer_tab
+                +footer-tab()
 
 block script
     script(src="main.js")

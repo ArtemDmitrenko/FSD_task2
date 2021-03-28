@@ -5,8 +5,8 @@ include ../nav-menu/nav-menu.pug
 //- if user is registered, enter in mixins argument "Registered"
 mixin header(options)
     -   const {modificator} = options
-    header.header
-        .container
+    .header
+        .header__container
             .header__content
                 +logo()
                 .header__navMenuButtons

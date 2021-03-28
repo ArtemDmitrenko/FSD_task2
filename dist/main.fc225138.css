@@ -410,6 +410,11 @@ a {
           box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
   background-color: white;
 }
+.header__container {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
 .header__content {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -751,6 +756,11 @@ a {
   .footer {
     display: none;
   }
+}
+.footer__container {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 .footer__top {
   background-color: white;
@@ -2577,6 +2587,9 @@ a {
 }
 
 .search-room__main {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

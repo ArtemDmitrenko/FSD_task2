@@ -1,6 +1,11 @@
 .header {
   box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
   background-color: white;
+  &__container {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
   &__content {
     display: flex;
     justify-content: space-between;

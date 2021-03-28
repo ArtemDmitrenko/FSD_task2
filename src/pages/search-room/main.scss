@@ -27,6 +27,9 @@
 
 .search-room {
   &__main {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 20px;
     display: flex;
     justify-content: space-between;
     @media screen and (max-width: 600px) {

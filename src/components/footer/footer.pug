@@ -3,9 +3,9 @@ include ../social-nets/social-nets.pug
 include ../input/input.pug
 
 mixin footer()
-    footer.footer
+    .footer
         .footer__half1
-            .container
+            .footer__container
                 .footer__top
                     .footer__column1
                         .footer__logo
@@ -50,7 +50,7 @@ mixin footer()
                                 form.footer__form(action="https://www.google.com/")
                                     +input({name: 'email', type: 'email', placeholder: 'Email', required: true, subscription: true})                                        
         .footer__half2
-            .container
+            .footer__container
                 .footer__bottom
                     p.footer__copyright Copyright © 2018 Toxin отель. Все права зачищены.
                     .footer__social

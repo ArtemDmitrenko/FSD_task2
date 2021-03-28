@@ -91,6 +91,11 @@ a {
           box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
   background-color: white;
 }
+.header__container {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
 .header__content {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -432,6 +437,11 @@ a {
   .footer {
     display: none;
   }
+}
+.footer__container {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 .footer__top {
   background-color: white;
@@ -2136,6 +2146,11 @@ a {
   opacity: 0.38;
 }
 
+.room-details__content {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
 .room-details__foto {
   height: 485px;
   width: 100%;
@@ -2217,9 +2232,6 @@ a {
   .room-details__column2 {
     min-width: 0;
   }
-}
-.room-details__impression {
-  margin-top: 30px;
 }
 .room-details__info {
   margin-right: 70px;

@@ -15,58 +15,58 @@ block title
 
 block content
     .search-room
-        .search-room__header
+        header.search-room__header
             +header({modificator: "NotRegistered"})
-        .container
-            .search-room__main
-                .search-room__sidebar
-                    .search-room__filterDateDropdown
-                        +date-dropdown({heading: 'Даты пребывания в отеле', className: 'input__dateDropdown_range'})
-                    .search-room__dropdown-guests
-                        +dropdown({dropdownType: 'guests', heading: 'Гости', value: 'Сколько гостей'})
-                    .search-room__range-slider
-                        +range-slider()
-                    .search-room__checkbox-btn
-                        +checkbox-btn({name: 'Правила дома', expandable: false, list: ['Можно курить', 'Можно с питомцами', 'Можно пригласить гостей (до 10 человек)']})
-                    .search-room__richCheckbox
-                        +checkbox-btn({expandable: false, richCheckbox: 'true', name: 'Доступность', list: ['Широкий коридор', 'Помощник для инвалидов'], sublist: ['Ширина коридоров в номере не менее 91 см.', 'На 1 этаже вас встретит специалист  и проводит до номера.']})
-                    .search-room__dropdown-rooms
-                        +dropdown({dropdownType: 'roomsBeds', heading: 'Удобства номера'})
-                    .search-room__expandable-checkbox
-                        +checkbox-btn({expandable: true, name: 'Дополнительные удобства', list: ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь']})
-                .search-room__content
-                    h1.search-room__title Номера, которые мы для вас подобрали
-                    .search-room__rooms
-                        .search-room__card
-                            +room({adressOfRoom: '../../components/room/room1/', numberOfImage: ["image1.png", "image2.png", "image3.png", "image4.png"], roomNumber: '888', lux: true, price: '9 990₽', rate: '5', numberOfReviews: '145'})
-                        .search-room__card
-                            +room({adressOfRoom: '../../components/room/room2/', numberOfImage: ["image1.png", "image2.png", "image3.png", "image4.png"], roomNumber: '840', lux: false, price: '9 990₽', rate: '4', numberOfReviews: '65'})
-                        .search-room__card
-                            +room({adressOfRoom: '../../components/room/room3/', numberOfImage: ["image1.png", "image2.png", "image3.png", "image4.png"], roomNumber: '980', lux: true, price: '8 500₽', rate: '3', numberOfReviews: '35'})
-                        .search-room__card
-                            +room({adressOfRoom: '../../components/room/room4/', numberOfImage: ["image1.png", "image2.png", "image3.png", "image4.png"], roomNumber: '856', lux: false, price: '7 300₽', rate: '5', numberOfReviews: '19'})
-                        .search-room__card
-                            +room({adressOfRoom: '../../components/room/room5/', numberOfImage: ["image1.png", "image2.png", "image3.png", "image4.png"], roomNumber: '740', lux: false, price: '6 000₽', rate: '4', numberOfReviews: '44'})
-                        .search-room__card
-                            +room({adressOfRoom: '../../components/room/room6/', numberOfImage: ["image1.png", "image2.png", "image3.png", "image4.png"], roomNumber: '982', lux: false, price: '5 800₽', rate: '3', numberOfReviews: '56'})
-                        .search-room__card
-                            +room({adressOfRoom: '../../components/room/room7/', numberOfImage: ["image1.png", "image2.png", "image3.png", "image4.png"], roomNumber: '678', lux: false, price: '5 500₽', rate: '5', numberOfReviews: '45'})
-                        .search-room__card
-                            +room({adressOfRoom: '../../components/room/room8/', numberOfImage: ["image1.png", "image2.png", "image3.png", "image4.png"], roomNumber: '450', lux: false, price: '5 300₽', rate: '4', numberOfReviews: '39'})
-                        .search-room__card
-                            +room({adressOfRoom: '../../components/room/room9/', numberOfImage: ["image1.png", "image2.png", "image3.png", "image4.png"], roomNumber: '350', lux: false, price: '5 000₽', rate: '3', numberOfReviews: '77'})
-                        .search-room__card
-                            +room({adressOfRoom: '../../components/room/room10/', numberOfImage: ["image1.png", "image2.png", "image3.png", "image4.png"], roomNumber: '666', lux: false, price: '5 000₽', rate: '5', numberOfReviews: '25'})
-                        .search-room__card
-                            +room({adressOfRoom: '../../components/room/room11/', numberOfImage: ["image1.png", "image2.png", "image3.png", "image4.png"], roomNumber: '444', lux: false, price: '5 000₽', rate: '3', numberOfReviews: '15'})
-                        .search-room__card
-                            +room({adressOfRoom: '../../components/room/room12/', numberOfImage: ["image1.png", "image2.png", "image3.png", "image4.png"], roomNumber: '352', lux: false, price: '5 000₽', rate: '3', numberOfReviews: '55'})
-                    .search-room__pagination
-                        +pagination()
-        .search-room__footer_wide
-            +footer()
-        .search-room__footer_tab
-            +footer-tab()
+        main.search-room__main
+            section.search-room__sidebar
+                .search-room__filterDateDropdown
+                    +date-dropdown({heading: 'Даты пребывания в отеле', className: 'input__dateDropdown_range'})
+                .search-room__dropdown-guests
+                    +dropdown({dropdownType: 'guests', heading: 'Гости', value: 'Сколько гостей'})
+                .search-room__range-slider
+                    +range-slider()
+                .search-room__checkbox-btn
+                    +checkbox-btn({name: 'Правила дома', expandable: false, list: ['Можно курить', 'Можно с питомцами', 'Можно пригласить гостей (до 10 человек)']})
+                .search-room__richCheckbox
+                    +checkbox-btn({expandable: false, richCheckbox: 'true', name: 'Доступность', list: ['Широкий коридор', 'Помощник для инвалидов'], sublist: ['Ширина коридоров в номере не менее 91 см.', 'На 1 этаже вас встретит специалист  и проводит до номера.']})
+                .search-room__dropdown-rooms
+                    +dropdown({dropdownType: 'roomsBeds', heading: 'Удобства номера'})
+                .search-room__expandable-checkbox
+                    +checkbox-btn({expandable: true, name: 'Дополнительные удобства', list: ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь']})
+            section.search-room__content
+                h1.search-room__title Номера, которые мы для вас подобрали
+                .search-room__rooms
+                    .search-room__card
+                        +room({adressOfRoom: '../../components/room/room1/', numberOfImage: ["image1.png", "image2.png", "image3.png", "image4.png"], roomNumber: '888', lux: true, price: '9 990₽', rate: '5', numberOfReviews: '145'})
+                    .search-room__card
+                        +room({adressOfRoom: '../../components/room/room2/', numberOfImage: ["image1.png", "image2.png", "image3.png", "image4.png"], roomNumber: '840', lux: false, price: '9 990₽', rate: '4', numberOfReviews: '65'})
+                    .search-room__card
+                        +room({adressOfRoom: '../../components/room/room3/', numberOfImage: ["image1.png", "image2.png", "image3.png", "image4.png"], roomNumber: '980', lux: true, price: '8 500₽', rate: '3', numberOfReviews: '35'})
+                    .search-room__card
+                        +room({adressOfRoom: '../../components/room/room4/', numberOfImage: ["image1.png", "image2.png", "image3.png", "image4.png"], roomNumber: '856', lux: false, price: '7 300₽', rate: '5', numberOfReviews: '19'})
+                    .search-room__card
+                        +room({adressOfRoom: '../../components/room/room5/', numberOfImage: ["image1.png", "image2.png", "image3.png", "image4.png"], roomNumber: '740', lux: false, price: '6 000₽', rate: '4', numberOfReviews: '44'})
+                    .search-room__card
+                        +room({adressOfRoom: '../../components/room/room6/', numberOfImage: ["image1.png", "image2.png", "image3.png", "image4.png"], roomNumber: '982', lux: false, price: '5 800₽', rate: '3', numberOfReviews: '56'})
+                    .search-room__card
+                        +room({adressOfRoom: '../../components/room/room7/', numberOfImage: ["image1.png", "image2.png", "image3.png", "image4.png"], roomNumber: '678', lux: false, price: '5 500₽', rate: '5', numberOfReviews: '45'})
+                    .search-room__card
+                        +room({adressOfRoom: '../../components/room/room8/', numberOfImage: ["image1.png", "image2.png", "image3.png", "image4.png"], roomNumber: '450', lux: false, price: '5 300₽', rate: '4', numberOfReviews: '39'})
+                    .search-room__card
+                        +room({adressOfRoom: '../../components/room/room9/', numberOfImage: ["image1.png", "image2.png", "image3.png", "image4.png"], roomNumber: '350', lux: false, price: '5 000₽', rate: '3', numberOfReviews: '77'})
+                    .search-room__card
+                        +room({adressOfRoom: '../../components/room/room10/', numberOfImage: ["image1.png", "image2.png", "image3.png", "image4.png"], roomNumber: '666', lux: false, price: '5 000₽', rate: '5', numberOfReviews: '25'})
+                    .search-room__card
+                        +room({adressOfRoom: '../../components/room/room11/', numberOfImage: ["image1.png", "image2.png", "image3.png", "image4.png"], roomNumber: '444', lux: false, price: '5 000₽', rate: '3', numberOfReviews: '15'})
+                    .search-room__card
+                        +room({adressOfRoom: '../../components/room/room12/', numberOfImage: ["image1.png", "image2.png", "image3.png", "image4.png"], roomNumber: '352', lux: false, price: '5 000₽', rate: '3', numberOfReviews: '55'})
+                .search-room__pagination
+                    +pagination()
+        footer.search-room__footer
+            .search-room__footer_wide
+                +footer()
+            .search-room__footer_tab
+                +footer-tab()
 
 block script
     script(src="main.js")
