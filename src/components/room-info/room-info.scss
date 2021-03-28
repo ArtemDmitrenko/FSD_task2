@@ -1,18 +1,13 @@
 .room-info {
-  // width: 291px;
-  &__line {
-    border: none;
-    background-color: rgba(31, 32, 65, 0.05); /* Цвет линии */
-    color: rgba(31, 32, 65, 0.05); /* Цвет линии для IE6-7 */
-    height: 1px;
-    margin: 20px 0 20px 0;
-  }
   &__title {
     @extend %h2;
     margin-bottom: 19px;
   }
   &__all {
     display: flex;
+    border-bottom: solid 1px rgba(31, 32, 65, 0.05);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
   }
   &__text {
     margin: 3px 0 0 10px;
@@ -56,6 +51,5 @@
   &__description {
     @extend %font-body;
     color: $dark75;
-    // margin-top: 6px;
   }
 }
