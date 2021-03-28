@@ -1,17 +1,17 @@
-var jquery = require("jquery");
-window.$ = window.jQuery = jquery; // notice the definition of global variables here
-require("jquery-ui-dist/jquery-ui.js");
-require("jquery.maskedinput/src/jquery.maskedinput.js");
-require("../../components/nav-menu/nav-menu.js");
-require("../../components/input/input.js");
-require("../../components/dropdown/dropdown.js");
-require("../../components/date-dropdown/date-dropdown.js");
-require("../../components/checkbox-btn/checkbox-btn.js");
-require("slick-carousel/slick/slick.min.js");
-require("../../components/like-button/like-button.js");
-require("../../components/room/room.js");
-require("paginationjs/src/pagination.js");
-require("../../components/pagination/pagination.js");
-require("ion-rangeslider/js/ion.rangeSlider.js");
-require("../../components/range-slider/range-slider.js");
-require("../../components/header/header.js");
+import "./../../import-jquery";
+
+import "jquery-ui-dist/jquery-ui.js";
+import "jquery.maskedinput/src/jquery.maskedinput.js";
+import "../../components/nav-menu/nav-menu.js";
+import "../../components/input/input.js";
+import "../../components/dropdown/dropdown.js";
+import "../../components/date-dropdown/date-dropdown.js";
+import "../../components/checkbox-btn/checkbox-btn.js";
+import "slick-carousel/slick/slick.min.js";
+import "../../components/like-button/like-button.js";
+import "../../components/room/room.js";
+import "paginationjs/src/pagination.js";
+import "../../components/pagination/pagination.js";
+import "ion-rangeslider/js/ion.rangeSlider.js";
+import "../../components/range-slider/range-slider.js";
+import "../../components/header/header.js";

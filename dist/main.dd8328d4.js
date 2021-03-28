@@ -11203,7 +11203,22 @@ if ( typeof noGlobal === "undefined" ) {
 return jQuery;
 } );
 
-},{"process":"../../../../../.config/yarn/global/node_modules/process/browser.js"}],"../node_modules/jquery-ui-dist/jquery-ui.js":[function(require,module,exports) {
+},{"process":"../../../../../.config/yarn/global/node_modules/process/browser.js"}],"import-jquery.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _jquery = _interopRequireDefault(require("jquery"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var _default = window.$ = window.jQuery = _jquery.default;
+
+exports.default = _default;
+},{"jquery":"../node_modules/jquery/dist/jquery.js"}],"../node_modules/jquery-ui-dist/jquery-ui.js":[function(require,module,exports) {
 var define;
 /*! jQuery UI - v1.12.1 - 2016-09-14
 * http://jqueryui.com
@@ -30365,10 +30380,7 @@ $.fn.extend({
 },{"jquery":"../node_modules/jquery/dist/jquery.js"}],"components/nav-menu/nav-menu.js":[function(require,module,exports) {
 var dropdownButtons = document.querySelectorAll(".nav-menu__item_dropdown");
 var subLists = document.querySelectorAll(".nav-menu__sub-list");
-var checkmarks = document.querySelectorAll(".checkmark");
-console.log(dropdownButtons);
-console.log(subLists);
-console.log(checkmarks); // Dropdown appears when you click the button
+var checkmarks = document.querySelectorAll(".checkmark"); // Dropdown appears when you click the button
 
 var _loop = function _loop(i) {
   dropdownButtons[i].onclick = function () {
@@ -31890,9 +31902,9 @@ $(document).ready(function () {
   });
 });
 },{}],"pages/room-details/main.js":[function(require,module,exports) {
-var jquery = require("jquery");
+"use strict";
 
-window.$ = window.jQuery = jquery; // notice the definition of global variables here
+require("./../../import-jquery");
 
 require("jquery-ui-dist/jquery-ui.js");
 
@@ -31911,7 +31923,7 @@ require("../../components/date-dropdown/date-dropdown.js");
 require("../../components/dropdown/dropdown.js");
 
 require("../../components/header/header.js");
-},{"jquery":"../node_modules/jquery/dist/jquery.js","jquery-ui-dist/jquery-ui.js":"../node_modules/jquery-ui-dist/jquery-ui.js","jquery.maskedinput/src/jquery.maskedinput.js":"../node_modules/jquery.maskedinput/src/jquery.maskedinput.js","../../components/nav-menu/nav-menu.js":"components/nav-menu/nav-menu.js","../../components/input/input.js":"components/input/input.js","../../components/like-button/like-button.js":"components/like-button/like-button.js","../../components/diagram/diagram.js":"components/diagram/diagram.js","../../components/date-dropdown/date-dropdown.js":"components/date-dropdown/date-dropdown.js","../../components/dropdown/dropdown.js":"components/dropdown/dropdown.js","../../components/header/header.js":"components/header/header.js"}],"../../../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./../../import-jquery":"import-jquery.js","jquery-ui-dist/jquery-ui.js":"../node_modules/jquery-ui-dist/jquery-ui.js","jquery.maskedinput/src/jquery.maskedinput.js":"../node_modules/jquery.maskedinput/src/jquery.maskedinput.js","../../components/nav-menu/nav-menu.js":"components/nav-menu/nav-menu.js","../../components/input/input.js":"components/input/input.js","../../components/like-button/like-button.js":"components/like-button/like-button.js","../../components/diagram/diagram.js":"components/diagram/diagram.js","../../components/date-dropdown/date-dropdown.js":"components/date-dropdown/date-dropdown.js","../../components/dropdown/dropdown.js":"components/dropdown/dropdown.js","../../components/header/header.js":"components/header/header.js"}],"../../../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -31939,7 +31951,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57696" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52173" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

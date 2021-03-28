@@ -1,10 +1,10 @@
-var jquery = require("jquery");
-window.$ = window.jQuery = jquery; // notice the definition of global variables here
-require("jquery-ui-dist/jquery-ui.js");
-require("jquery.maskedinput/src/jquery.maskedinput.js");
-require("../../components/input/input.js");
-require("../../components/dropdown/dropdown.js");
-require("../../components/date-dropdown/date-dropdown.js");
-require("slick-carousel/slick/slick.min.js");
-require("../../components/room/room.js");
-require("../../components/UIkit/cards/cards.js");
+import "./../../import-jquery";
+
+import "jquery-ui-dist/jquery-ui.js";
+import "jquery.maskedinput/src/jquery.maskedinput.js";
+import "../../components/input/input.js";
+import "../../components/dropdown/dropdown.js";
+import "../../components/date-dropdown/date-dropdown.js";
+import "slick-carousel/slick/slick.min.js";
+import "../../components/room/room.js";
+import "../../components/UIkit/cards/cards.js";

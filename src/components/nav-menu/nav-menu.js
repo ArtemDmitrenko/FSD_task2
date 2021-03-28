@@ -1,9 +1,6 @@
 let dropdownButtons = document.querySelectorAll(".nav-menu__item_dropdown");
 let subLists = document.querySelectorAll(".nav-menu__sub-list");
 let checkmarks = document.querySelectorAll(".checkmark");
-console.log(dropdownButtons)
-console.log(subLists)
-console.log(checkmarks)
 
 // Dropdown appears when you click the button
 for (let i = 0; i < dropdownButtons.length; i++) {

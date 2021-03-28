@@ -11203,7 +11203,22 @@ if ( typeof noGlobal === "undefined" ) {
 return jQuery;
 } );
 
-},{"process":"../../../../../.config/yarn/global/node_modules/process/browser.js"}],"../node_modules/jquery-ui-dist/jquery-ui.js":[function(require,module,exports) {
+},{"process":"../../../../../.config/yarn/global/node_modules/process/browser.js"}],"import-jquery.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _jquery = _interopRequireDefault(require("jquery"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var _default = window.$ = window.jQuery = _jquery.default;
+
+exports.default = _default;
+},{"jquery":"../node_modules/jquery/dist/jquery.js"}],"../node_modules/jquery-ui-dist/jquery-ui.js":[function(require,module,exports) {
 var define;
 /*! jQuery UI - v1.12.1 - 2016-09-14
 * http://jqueryui.com
@@ -35501,9 +35516,9 @@ if (document.querySelector('.form-elements__range-slider')) {
   description.textContent = 'Стоимость за сутки пребывания в номере';
 }
 },{}],"UI-kit/form-elements/main.js":[function(require,module,exports) {
-var jquery = require("jquery");
+"use strict";
 
-window.$ = window.jQuery = jquery; // notice the definition of global variables here
+require("./../../import-jquery");
 
 require("jquery-ui-dist/jquery-ui.js");
 
@@ -35525,9 +35540,9 @@ require("../../components/pagination/pagination.js");
 
 require("ion-rangeslider/js/ion.rangeSlider.js");
 
-require("../../components/range-slider/range-slider.js"); // Hovered input
+require("../../components/range-slider/range-slider.js");
 
-
+// Hovered input
 var inputWithHover = document.querySelector('[name="Text"]');
 inputWithHover.classList.add('input__element_hover'); // Datapicker
 
@@ -35627,7 +35642,7 @@ var reviewLikeBtn = review.querySelector('.like-button__button');
 setTimeout(function () {
   $(reviewLikeBtn).trigger('click');
 }, 15);
-},{"jquery":"../node_modules/jquery/dist/jquery.js","jquery-ui-dist/jquery-ui.js":"../node_modules/jquery-ui-dist/jquery-ui.js","jquery.maskedinput/src/jquery.maskedinput.js":"../node_modules/jquery.maskedinput/src/jquery.maskedinput.js","../../components/input/input.js":"components/input/input.js","../../components/dropdown/dropdown.js":"components/dropdown/dropdown.js","../../components/date-dropdown/date-dropdown.js":"components/date-dropdown/date-dropdown.js","../../components/checkbox-btn/checkbox-btn.js":"components/checkbox-btn/checkbox-btn.js","../../components/like-button/like-button.js":"components/like-button/like-button.js","paginationjs/src/pagination.js":"../node_modules/paginationjs/src/pagination.js","../../components/pagination/pagination.js":"components/pagination/pagination.js","ion-rangeslider/js/ion.rangeSlider.js":"../node_modules/ion-rangeslider/js/ion.rangeSlider.js","../../components/range-slider/range-slider.js":"components/range-slider/range-slider.js"}],"../../../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./../../import-jquery":"import-jquery.js","jquery-ui-dist/jquery-ui.js":"../node_modules/jquery-ui-dist/jquery-ui.js","jquery.maskedinput/src/jquery.maskedinput.js":"../node_modules/jquery.maskedinput/src/jquery.maskedinput.js","../../components/input/input.js":"components/input/input.js","../../components/dropdown/dropdown.js":"components/dropdown/dropdown.js","../../components/date-dropdown/date-dropdown.js":"components/date-dropdown/date-dropdown.js","../../components/checkbox-btn/checkbox-btn.js":"components/checkbox-btn/checkbox-btn.js","../../components/like-button/like-button.js":"components/like-button/like-button.js","paginationjs/src/pagination.js":"../node_modules/paginationjs/src/pagination.js","../../components/pagination/pagination.js":"components/pagination/pagination.js","ion-rangeslider/js/ion.rangeSlider.js":"../node_modules/ion-rangeslider/js/ion.rangeSlider.js","../../components/range-slider/range-slider.js":"components/range-slider/range-slider.js"}],"../../../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -35655,7 +35670,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57696" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52173" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
