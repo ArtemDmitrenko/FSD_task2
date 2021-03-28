@@ -20,12 +20,15 @@
     },
     "homepage": "https://github.com/ArtemDmitrenko/FSD_task2#readme",
     "devDependencies": {
+        "autoprefixer": "^9.8.6",
         "eslint": "^7.4.0",
         "eslint-plugin-fsd": "^1.0.1",
         "jquery": "^3.5.1",
         "jquery-ui": "^1.12.1",
         "jquery.maskedinput": "^1.4.1",
         "parcel-bundler": "^1.12.4",
+        "postcss": "^8.2.8",
+        "postcss-modules": "^4.0.0",
         "pug": "^3.0.0",
         "sass": "^1.26.8"
     },
@@ -36,5 +39,17 @@
         "paginationjs": "^2.1.5",
         "slick": "^1.12.2",
         "slick-carousel": "^1.8.1"
+    },
+    "postcss": {
+        "plugins": {
+            "autoprefixer": {
+              "overrideBrowserslist": [
+                ">1%",
+                "last 4 versions",
+                "Firefox ESR",
+                "ie >= 9"
+              ]
+            }
+        }
     }
 }

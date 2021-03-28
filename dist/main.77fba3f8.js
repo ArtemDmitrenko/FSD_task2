@@ -117,7 +117,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"../node_modules/process/browser.js":[function(require,module,exports) {
+})({"../../../../../.config/yarn/global/node_modules/process/browser.js":[function(require,module,exports) {
 
 // shim for using process in browser
 var process = module.exports = {}; // cached from whatever global is present so that test runners that stub it
@@ -11203,7 +11203,7 @@ if ( typeof noGlobal === "undefined" ) {
 return jQuery;
 } );
 
-},{"process":"../node_modules/process/browser.js"}],"../node_modules/jquery-ui-dist/jquery-ui.js":[function(require,module,exports) {
+},{"process":"../../../../../.config/yarn/global/node_modules/process/browser.js"}],"../node_modules/jquery-ui-dist/jquery-ui.js":[function(require,module,exports) {
 var define;
 /*! jQuery UI - v1.12.1 - 2016-09-14
 * http://jqueryui.com
@@ -31796,7 +31796,7 @@ require("slick-carousel/slick/slick.min.js");
 require("../../components/room/room.js");
 
 require("../../components/UIkit/cards/cards.js");
-},{"jquery":"../node_modules/jquery/dist/jquery.js","jquery-ui-dist/jquery-ui.js":"../node_modules/jquery-ui-dist/jquery-ui.js","jquery.maskedinput/src/jquery.maskedinput.js":"../node_modules/jquery.maskedinput/src/jquery.maskedinput.js","../../components/input/input.js":"components/input/input.js","../../components/dropdown/dropdown.js":"components/dropdown/dropdown.js","../../components/date-dropdown/date-dropdown.js":"components/date-dropdown/date-dropdown.js","slick-carousel/slick/slick.min.js":"../node_modules/slick-carousel/slick/slick.min.js","../../components/room/room.js":"components/room/room.js","../../components/UIkit/cards/cards.js":"components/UIkit/cards/cards.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"jquery":"../node_modules/jquery/dist/jquery.js","jquery-ui-dist/jquery-ui.js":"../node_modules/jquery-ui-dist/jquery-ui.js","jquery.maskedinput/src/jquery.maskedinput.js":"../node_modules/jquery.maskedinput/src/jquery.maskedinput.js","../../components/input/input.js":"components/input/input.js","../../components/dropdown/dropdown.js":"components/dropdown/dropdown.js","../../components/date-dropdown/date-dropdown.js":"components/date-dropdown/date-dropdown.js","slick-carousel/slick/slick.min.js":"../node_modules/slick-carousel/slick/slick.min.js","../../components/room/room.js":"components/room/room.js","../../components/UIkit/cards/cards.js":"components/UIkit/cards/cards.js"}],"../../../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -31824,7 +31824,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50703" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57696" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -32000,5 +32000,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","UI-kit/cards/main.js"], null)
+},{}]},{},["../../../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","UI-kit/cards/main.js"], null)
 //# sourceMappingURL=/main.77fba3f8.js.map

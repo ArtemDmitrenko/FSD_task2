@@ -117,7 +117,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"../node_modules/process/browser.js":[function(require,module,exports) {
+})({"../../../../../.config/yarn/global/node_modules/process/browser.js":[function(require,module,exports) {
 
 // shim for using process in browser
 var process = module.exports = {}; // cached from whatever global is present so that test runners that stub it
@@ -11203,7 +11203,7 @@ if ( typeof noGlobal === "undefined" ) {
 return jQuery;
 } );
 
-},{"process":"../node_modules/process/browser.js"}],"components/nav-menu/nav-menu.js":[function(require,module,exports) {
+},{"process":"../../../../../.config/yarn/global/node_modules/process/browser.js"}],"components/nav-menu/nav-menu.js":[function(require,module,exports) {
 var dropdownButtons = document.querySelectorAll(".nav-menu__item_dropdown");
 var subLists = document.querySelectorAll(".nav-menu__sub-list");
 var checkmarks = document.querySelectorAll(".checkmark");
@@ -11253,7 +11253,7 @@ window.$ = window.jQuery = jquery; // notice the definition of global variables 
 require("../../components/nav-menu/nav-menu.js");
 
 require("../../components/header/header.js");
-},{"jquery":"../node_modules/jquery/dist/jquery.js","../../components/nav-menu/nav-menu.js":"components/nav-menu/nav-menu.js","../../components/header/header.js":"components/header/header.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"jquery":"../node_modules/jquery/dist/jquery.js","../../components/nav-menu/nav-menu.js":"components/nav-menu/nav-menu.js","../../components/header/header.js":"components/header/header.js"}],"../../../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -11281,7 +11281,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50703" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57696" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -11457,5 +11457,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","UI-kit/headers-footers/main.js"], null)
+},{}]},{},["../../../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","UI-kit/headers-footers/main.js"], null)
 //# sourceMappingURL=/main.73e03f91.js.map
