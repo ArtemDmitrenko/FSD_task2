@@ -1,12 +1,12 @@
-let ecbOpen = (event) => {
-  let { target } = event;
-  let cb = target.closest('.checkbox-btn');
+const ecbOpen = (event) => {
+  const { target } = event;
+  const cb = target.closest('.js-checkbox-btn');
 
   if (cb) {
-    let checkmark = cb.querySelector(".checkmark");
+    const checkmark = cb.querySelector(".js-checkmark");
     if (checkmark) {
-      let cbTitle = cb.querySelector(".checkbox-btn__expandableName");
-      let cbList = cb.querySelector(".checkbox-btn__expandableForm");
+      const cbTitle = cb.querySelector(".js-checkbox-btn__expandableName");
+      const cbList = cb.querySelector(".js-checkbox-btn__expandableForm");
       if (cbTitle) {
         cbList.classList.toggle("checkbox-btn__expandableForm_show");
         checkmark.classList.toggle("checkmark__down");

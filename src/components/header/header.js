@@ -1,7 +1,7 @@
 $(document).ready(function() {
-  $('.header__burger').click(function() {
-    $('.header__burger').toggleClass('header__openedBurger');
-    $('.header__navMenuButtons').toggleClass('header__openedMenu');
+  $('.js-header__burger').click(function() {
+    $('.js-header__burger').toggleClass('header__openedBurger');
+    $('.js-header__navMenuButtons').toggleClass('header__openedMenu');
     $('body').toggleClass('fixed-page');
   });
 });

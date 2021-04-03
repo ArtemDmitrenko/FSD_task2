@@ -1,13 +1,13 @@
 // Dropdown appears when click and dissapear when click outside or btn "apply"
 let likeButtonClicked = (event) => {
   let { target } = event;
-  let likeButton = target.closest('.like-button__button');
+  let likeButton = target.closest('.js-like-button__button');
   if (likeButton) {
-    let heart = likeButton.querySelector('.like-button__image');
+    let heart = likeButton.querySelector('.js-like-button__image');
 
     // Function 'plus' of counter
     let plus = function() {
-      let numberOfLikes = likeButton.querySelector('.like-button__counter');
+      let numberOfLikes = likeButton.querySelector('.js-like-button__counter');
       let counter = Number(numberOfLikes.innerHTML);
       numberOfLikes.innerHTML = counter += 1;
       numberOfLikes.classList.add('like-button__counter_active');
@@ -15,7 +15,7 @@ let likeButtonClicked = (event) => {
 
     // Function 'minus' of counter
     let minus = function() {
-      let numberOfLikes = likeButton.querySelector('.like-button__counter');
+      let numberOfLikes = likeButton.querySelector('.js-like-button__counter');
       let counter = Number(numberOfLikes.innerHTML);
       numberOfLikes.innerHTML = counter -= 1;
       numberOfLikes.classList.remove('like-button__counter_active');

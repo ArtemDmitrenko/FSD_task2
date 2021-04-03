@@ -8,12 +8,12 @@ include ../checkmark/checkmark.pug
 
 mixin checkbox-btn(options)
     - const {name, expandable, richCheckbox, list, forLabel} = options
-    .checkbox-btn
+    .checkbox-btn.js-checkbox-btn
         if options.expandable
-            .checkbox-btn__expandableName
+            .checkbox-btn__expandableName.js-checkbox-btn__expandableName
                 .checkbox-btn__title= options.name
                 +checkmark()
-            form.checkbox-btn__expandableForm(name="checkbox-btn" method="get")
+            form.checkbox-btn__expandableForm.js-checkbox-btn__expandableForm(name="checkbox-btn" method="get")
                 each nameOfBtn in options.list
                     .checkbox-btn__item
                         input.checkbox-btn__input(type="checkbox", id="ecb" + forLabel + options.list.indexOf(nameOfBtn))

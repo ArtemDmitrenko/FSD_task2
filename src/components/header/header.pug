@@ -9,7 +9,7 @@ mixin header(options)
         .header__container
             .header__content
                 +logo()
-                .header__navMenuButtons
+                .header__navMenuButtons.js-header__navMenuButtons
                     +nav-menu()
                     if modificator == "Registered"
                         .header__line
@@ -19,5 +19,5 @@ mixin header(options)
                             +btn({modificator: "btn_borderHeader", text: "войти"})
                         .header__button-sign
                             +btn({modificator: "btn_gradientHeader", text: "зарегистрироваться"})
-                .header__burger
+                .header__burger.js-header__burger
                     span

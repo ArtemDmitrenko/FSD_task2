@@ -32,13 +32,13 @@
   font-weight: normal;
   font-style: normal;
 }
-.range-slider .description, .range-slider .sign, #pagination-container .paginationjs__legend, .paginationjs-ellipsis > a, .paginationjs-page > a, .review__text, .review__date, .bullet-list__item, .like-button__counter, .toggle__label, .radio-buttons__label, .room-info__description, .checkbox-btn__input + .checkbox-btn__label, .checkbox-btn__sublabel, .datepicker--cells, .input__element, .input__description {
+.irs .description, .irs .sign, .pagination__container .paginationjs__legend, .paginationjs-ellipsis > a, .paginationjs-page > a, .review__text, .review__date, .bullet-list__item, .like-button__counter, .toggle__label, .radio-buttons__label, .room-info__description, .checkbox-btn__input + .checkbox-btn__label, .checkbox-btn__sublabel, .datepicker--cells, .input__element, .input__description {
   font-family: "Conv_Montserrat-Regular", "Open Sans";
   font-size: 14px;
   color: #1f2041;
 }
 
-.range-slider .title, .review__name, .bullet-list__name, .rate-button__name, .like-button__name, .toggle__name, .radio-buttons__name, .room-info__name, .checkbox-btn__input + .checkbox-btn__label.checkbox-btn__label_rich, .checkbox-btn__title, .datepicker--button, .datepicker--day-name, .counter__value, .counter__name, .btn, .input__heading, .form-elements__btnTitle, .form-elements__paginationTitle {
+.irs .title, .review__name, .bullet-list__name, .rate-button__name, .like-button__name, .toggle__name, .radio-buttons__name, .room-info__name, .checkbox-btn__input + .checkbox-btn__label.checkbox-btn__label_rich, .checkbox-btn__title, .datepicker--button, .datepicker--day-name, .counter__value, .counter__name, .btn, .input__heading, .form-elements__btnTitle, .form-elements__paginationTitle {
   font-family: "Conv_Montserrat-Bold", "Open Sans";
   font-size: 12px;
   color: #1f2041;
@@ -1319,7 +1319,7 @@ a {
   margin-top: 1px;
 }
 
-#data-container {
+.pagination__data {
   display: none;
 }
 
@@ -1458,17 +1458,17 @@ a {
           font-feature-settings: "liga";
 }
 
-#pagination-container .paginationjs__legend {
+.pagination__container .paginationjs__legend {
   color: rgba(31, 32, 65, 0.75);
   margin-top: 10px;
   text-transform: none;
   margin-left: 5px;
 }
 
-.range-slider {
+.irs {
   width: 266px;
 }
-.range-slider .irs-handle {
+.irs .irs-handle {
   width: 16px;
   height: 16px;
   background: -webkit-gradient(linear, left top, left bottom, from(#6fcf97), to(#66d2ea));
@@ -1480,7 +1480,7 @@ a {
           box-shadow: none;
   cursor: pointer;
 }
-.range-slider .irs-line {
+.irs .irs-line {
   top: 30px;
   height: 6px;
   background: #ffffff;
@@ -1489,7 +1489,7 @@ a {
           box-sizing: border-box;
   border-radius: 3px;
 }
-.range-slider .irs-bar {
+.irs .irs-bar {
   top: 30px;
   height: 6px;
   background: -webkit-gradient(linear, left top, left bottom, from(#6fcf97), to(#66d2ea));
@@ -1500,18 +1500,18 @@ a {
   -webkit-box-shadow: none;
           box-shadow: none;
 }
-.range-slider .sign {
+.irs .sign {
   position: absolute;
   color: rgba(31, 32, 65, 0.5);
   font-size: 12px;
   right: 0;
   bottom: 49px;
 }
-.range-slider .title {
+.irs .title {
   position: absolute;
   bottom: 48px;
 }
-.range-slider .description {
+.irs .description {
   position: absolute;
   color: rgba(31, 32, 65, 0.5);
   font-size: 12px;

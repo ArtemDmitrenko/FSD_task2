@@ -6,9 +6,9 @@
 
 mixin diagram(options)
     - const {good, amazing, notbad, bad} = options
-    .diagram(data-good=good data-amazing=amazing data-notbad=notbad data-bad=bad)
+    .diagram.js-diagram(data-good=good data-amazing=amazing data-notbad=notbad data-bad=bad)
         .diagram__block
-            svg.diagram__chart(width="120" height="120" viewBox="0 0 120 120")
+            svg.diagram__chart.js-diagram__chart(width="120" height="120" viewBox="0 0 120 120")
                 linearGradient(id="linear-gradient-yellow" x1="0" x2="0" y1="0" y2="1")
                     stop(offset="0%" stop-color="#FFE39C")
                     stop(offset="100%" stop-color="#FFBA9C")
@@ -21,7 +21,7 @@ mixin diagram(options)
                 linearGradient(id="linear-gradient-black" x1="0" x2="0" y1="0" y2="1")
                     stop(offset="0%" stop-color="#909090")
                     stop(offset="100%" stop-color="#3D4975")
-            h1.diagram__total 260<br><span>голосов</span>
+            h1.diagram__total.js-diagram__total 260<br><span>голосов</span>
         .diagram__legend
             ul.diagram__list
                 li.diagram__list-item.diagram__list-item_amazing Великолепно

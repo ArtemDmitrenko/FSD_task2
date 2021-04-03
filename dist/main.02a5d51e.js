@@ -30378,9 +30378,9 @@ $.fn.extend({
 }));
 
 },{"jquery":"../node_modules/jquery/dist/jquery.js"}],"components/nav-menu/nav-menu.js":[function(require,module,exports) {
-var dropdownButtons = document.querySelectorAll(".nav-menu__item_dropdown");
-var subLists = document.querySelectorAll(".nav-menu__sub-list");
-var checkmarks = document.querySelectorAll(".checkmark"); // Dropdown appears when you click the button
+var dropdownButtons = document.querySelectorAll(".js-nav-menu__item_dropdown");
+var subLists = document.querySelectorAll(".js-nav-menu__sub-list");
+var checkmarks = document.querySelectorAll(".js-checkmark"); // Dropdown appears when you click the button
 
 var _loop = function _loop(i) {
   dropdownButtons[i].onclick = function () {
@@ -30414,9 +30414,9 @@ $('[name|="birthday"]').mask("99.99.9999", {
 });
 },{}],"components/header/header.js":[function(require,module,exports) {
 $(document).ready(function () {
-  $('.header__burger').click(function () {
-    $('.header__burger').toggleClass('header__openedBurger');
-    $('.header__navMenuButtons').toggleClass('header__openedMenu');
+  $('.js-header__burger').click(function () {
+    $('.js-header__burger').toggleClass('header__openedBurger');
+    $('.js-header__navMenuButtons').toggleClass('header__openedMenu');
     $('body').toggleClass('fixed-page');
   });
 });
@@ -30462,7 +30462,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51183" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60474" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

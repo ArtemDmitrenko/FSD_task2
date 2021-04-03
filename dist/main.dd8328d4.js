@@ -30378,9 +30378,9 @@ $.fn.extend({
 }));
 
 },{"jquery":"../node_modules/jquery/dist/jquery.js"}],"components/nav-menu/nav-menu.js":[function(require,module,exports) {
-var dropdownButtons = document.querySelectorAll(".nav-menu__item_dropdown");
-var subLists = document.querySelectorAll(".nav-menu__sub-list");
-var checkmarks = document.querySelectorAll(".checkmark"); // Dropdown appears when you click the button
+var dropdownButtons = document.querySelectorAll(".js-nav-menu__item_dropdown");
+var subLists = document.querySelectorAll(".js-nav-menu__sub-list");
+var checkmarks = document.querySelectorAll(".js-checkmark"); // Dropdown appears when you click the button
 
 var _loop = function _loop(i) {
   dropdownButtons[i].onclick = function () {
@@ -30416,13 +30416,13 @@ $('[name|="birthday"]').mask("99.99.9999", {
 // Dropdown appears when click and dissapear when click outside or btn "apply"
 var likeButtonClicked = function likeButtonClicked(event) {
   var target = event.target;
-  var likeButton = target.closest('.like-button__button');
+  var likeButton = target.closest('.js-like-button__button');
 
   if (likeButton) {
-    var heart = likeButton.querySelector('.like-button__image'); // Function 'plus' of counter
+    var heart = likeButton.querySelector('.js-like-button__image'); // Function 'plus' of counter
 
     var plus = function plus() {
-      var numberOfLikes = likeButton.querySelector('.like-button__counter');
+      var numberOfLikes = likeButton.querySelector('.js-like-button__counter');
       var counter = Number(numberOfLikes.innerHTML);
       numberOfLikes.innerHTML = counter += 1;
       numberOfLikes.classList.add('like-button__counter_active');
@@ -30430,7 +30430,7 @@ var likeButtonClicked = function likeButtonClicked(event) {
 
 
     var minus = function minus() {
-      var numberOfLikes = likeButton.querySelector('.like-button__counter');
+      var numberOfLikes = likeButton.querySelector('.js-like-button__counter');
       var counter = Number(numberOfLikes.innerHTML);
       numberOfLikes.innerHTML = counter -= 1;
       numberOfLikes.classList.remove('like-button__counter_active');
@@ -30452,7 +30452,7 @@ var likeButtonClicked = function likeButtonClicked(event) {
 
 document.addEventListener("click", likeButtonClicked);
 },{}],"components/diagram/diagram.js":[function(require,module,exports) {
-var $diagram = document.querySelector('.diagram'); // Getting data atrs from diagram in Number type
+var $diagram = document.querySelector('.js-diagram'); // Getting data atrs from diagram in Number type
 
 var good = Number($diagram.dataset.good);
 var amazing = Number($diagram.dataset.amazing);
@@ -30469,7 +30469,7 @@ var model = {
 var sum = Object.values(model).reduce(function (previousValue, currentValue) {
   return previousValue + currentValue;
 });
-var $svg = document.querySelector('.diagram__chart'); // Constant length of circle
+var $svg = document.querySelector('.js-diagram__chart'); // Constant length of circle
 
 var lengthOfCircle = 364.424672; // Proportion length due to total sum of reviews
 
@@ -30495,27 +30495,27 @@ if (model.bad) {
 } // Printing the total number of reviews on the page
 
 
-var wholeNumberOfReviews = document.querySelector('.diagram__total');
+var wholeNumberOfReviews = document.querySelector('.js-diagram__total');
 wholeNumberOfReviews.innerHTML = "".concat(sum, "<br><span>\u0433\u043E\u043B\u043E\u0441\u043E\u0432</span>");
 },{}],"components/date-dropdown/date-dropdown.js":[function(require,module,exports) {
-$('.input__dateDropdown_from').datepicker({
+$('.js-input__dateDropdown_from').datepicker({
   clearButton: true,
   todayButton: true,
   range: true,
   onSelect: function onSelect(fd, d, picker) {
-    $('.input__dateDropdown_from').val(fd.split(",")[0]);
-    $('.input__dateDropdown_to').val(fd.split(",")[1]);
+    $('.js-input__dateDropdown_from').val(fd.split(",")[0]);
+    $('.js-input__dateDropdown_to').val(fd.split(",")[1]);
   }
 });
-$('.input__dateDropdown_range').datepicker({
+$('.js-input__dateDropdown_range').datepicker({
   clearButton: true,
   todayButton: true,
   range: true,
   multipleDatesSeparator: ' - ',
   dateFormat: 'dd M'
 });
-var myDatapicker = $('.input__dateDropdown_from').datepicker().data('datepicker');
-var myDatapickerRange = $('.input__dateDropdown_range').datepicker().data('datepicker');
+var myDatapicker = $('.js-input__dateDropdown_from').datepicker().data('datepicker');
+var myDatapickerRange = $('.js-input__dateDropdown_range').datepicker().data('datepicker');
 
 if (myDatapicker) {
   // Подключаем кнопку 'Применить' в datepicker
@@ -30528,7 +30528,7 @@ if (myDatapicker) {
     }
   };
 
-  var inputTo = document.querySelector('.input__dateDropdown_to');
+  var inputTo = document.querySelector('.js-input__dateDropdown_to');
 
   var showDatapicker = function showDatapicker() {
     myDatapicker.show();
@@ -30558,12 +30558,12 @@ if (myDatapickerRange) {
 // Dropdown appears when click and dissapear when click outside or btn "apply"
 var dropdownOpen = function dropdownOpen(event) {
   var target = event.target;
-  var dropdown = target.closest('.dropdown');
+  var dropdown = target.closest('.js-dropdown');
 
   if (dropdown) {
-    var input = dropdown.querySelector('.input__element');
-    var dropdownList = dropdown.querySelector('.dropdown__list');
-    var dropdownInput = target.closest('.dropdown__input');
+    var input = dropdown.querySelector('.js-input__element');
+    var dropdownList = dropdown.querySelector('.js-dropdown__list');
+    var dropdownInput = target.closest('.js-dropdown__input');
 
     if (dropdownInput) {
       input.classList.toggle("input__element_border-radius_0");
@@ -30581,7 +30581,7 @@ var dropdownOpen = function dropdownOpen(event) {
   if (!dropdown) {
     var dropdownInputGuestsArr = document.querySelectorAll('input[name = "guests"]');
     var dropdownInputRoomsBedsArr = document.querySelectorAll('input[name = "roomsBeds"]');
-    var dropdownListArr = document.querySelectorAll('.dropdown__list');
+    var dropdownListArr = document.querySelectorAll('.js-dropdown__list');
     dropdownInputGuestsArr.forEach(function (item) {
       item.classList.remove("input__element_border-radius_0");
       item.classList.remove("input__element_brightBorder");
@@ -30599,24 +30599,24 @@ var dropdownOpen = function dropdownOpen(event) {
 
 var counter = function counter(event) {
   var target = event.target;
-  var dropdown = target.closest('.dropdown');
+  var dropdown = target.closest('.js-dropdown');
 
   if (dropdown) {
-    var counterValueArr = dropdown.querySelectorAll('.counter__value');
+    var counterValueArr = dropdown.querySelectorAll('.js-counter__value');
     counterValueArr.forEach(function (item) {
       if (Number(item.value) === 0) {
         item.previousSibling.setAttribute("disabled", "disabled");
       }
     });
 
-    var _counter = target.closest('.counter__enter');
+    var _counter = target.closest('.js-counter__enter');
 
     if (_counter) {
-      var minus = _counter.querySelector('.counter__btn_minus');
+      var minus = _counter.querySelector('.js-counter__btn_minus');
 
-      var plus = _counter.querySelector('.counter__btn_plus');
+      var plus = _counter.querySelector('.js-counter__btn_plus');
 
-      var counterValue = _counter.querySelector('.counter__value');
+      var counterValue = _counter.querySelector('.js-counter__value');
 
       if (target === plus) {
         counterValue.value = Number(counterValue.value) + 1;
@@ -30637,11 +30637,11 @@ var counter = function counter(event) {
 
 var changeover = function changeover(event) {
   var target = event.target;
-  var dropdown = target.closest('.dropdown'); // Dropdown for guests
+  var dropdown = target.closest('.js-dropdown'); // Dropdown for guests
 
   if (dropdown && dropdown.querySelector('input[name = "guests"]')) {
     var infants = Number(dropdown.querySelector('input[name = "Infants"]').value);
-    var counterValueArr = dropdown.querySelectorAll(".counter__value");
+    var counterValueArr = dropdown.querySelectorAll('.js-counter__value');
     var allGuests = dropdown.querySelector('input[name = "guests"]');
     var sum = 0;
     counterValueArr.forEach(function (item) {
@@ -30684,7 +30684,7 @@ var changeover = function changeover(event) {
         counterValueArr.forEach(function (item) {
           item.value = 0;
         });
-        var minusArr = dropdown.querySelectorAll('.counter__btn_minus');
+        var minusArr = dropdown.querySelectorAll('.js-counter__btn_minus');
         minusArr.forEach(function (item) {
           item.setAttribute("disabled", "disabled");
         });
@@ -30699,7 +30699,7 @@ var changeover = function changeover(event) {
     var bathrooms = Number(dropdown.querySelector('input[name = "Bathrooms"]').value);
     var allRoomsBeds = dropdown.querySelector('input[name = "roomsBeds"]');
 
-    var _counterValueArr = dropdown.querySelectorAll(".counter__value");
+    var _counterValueArr = dropdown.querySelectorAll(".js-counter__value");
 
     var _sum = 0;
 
@@ -30762,9 +30762,9 @@ document.addEventListener("click", counter);
 document.addEventListener("click", changeover);
 },{}],"components/header/header.js":[function(require,module,exports) {
 $(document).ready(function () {
-  $('.header__burger').click(function () {
-    $('.header__burger').toggleClass('header__openedBurger');
-    $('.header__navMenuButtons').toggleClass('header__openedMenu');
+  $('.js-header__burger').click(function () {
+    $('.js-header__burger').toggleClass('header__openedBurger');
+    $('.js-header__navMenuButtons').toggleClass('header__openedMenu');
     $('body').toggleClass('fixed-page');
   });
 });
@@ -30818,7 +30818,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51183" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60474" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

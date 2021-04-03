@@ -11,13 +11,13 @@ $(".js-range-slider").ionRangeSlider({
   hide_min_max: true,
   hide_from_to: true,
   skin: "big",
-  extra_classes: "range-slider",
+  extra_classes: "js-irs__scale",
 });
 
 // Show sign with values from and to
 const sign = document.createElement('div');
 sign.classList.add('sign');
-const slider = document.querySelector('.range-slider');
+const slider = document.querySelector('.js-irs__scale');
 slider.append(sign);
 const from = $(".js-range-slider").data('from');
 const to = $(".js-range-slider").data('to');
@@ -45,7 +45,7 @@ function prettify(num) {
 const title = document.createElement('div');
 title.classList.add('title');
 slider.append(title);
-if (document.querySelector('.form-elements__range-slider')) {
+if (document.querySelector('.js-form-elements__range-slider')) {
   title.textContent = 'Range slider'
 } else {
   title.textContent = 'Диапазон цены'
@@ -55,7 +55,7 @@ if (document.querySelector('.form-elements__range-slider')) {
 const description = document.createElement('div');
 description.classList.add('description');
 slider.append(description);
-if (document.querySelector('.form-elements__range-slider')) {
+if (document.querySelector('.js-form-elements__range-slider')) {
   description.textContent = ''
 } else {
   description.textContent = 'Стоимость за сутки пребывания в номере';

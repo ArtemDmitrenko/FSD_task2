@@ -4,7 +4,7 @@ mixin room(options)
     - const {adressOfRoom, numberOfImage, roomNumber, lux, price, rate, numberOfReviews} = options
 
     .room
-        .room__card.slider
+        .room__card.js-room__card.slider
             - for (let i = 0; i < numberOfImage.length; i++)
                 img(src=adressOfRoom+numberOfImage[i], alt="Photo").foto
         .room__room-description

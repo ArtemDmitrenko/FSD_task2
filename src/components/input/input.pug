@@ -23,11 +23,11 @@ mixin input(options = {})
                 .input__heading= heading
             case name
                 when 'Check-in date'
-                    input.input__element.input__dateDropdown.input__dateDropdown_from(value = value heading = heading name = name type = type range = range placeholder = placeholder readonly = readonly dateDropdown = dateDropdown)
+                    input.input__element.js-input__element.input__dateDropdown.input__dateDropdown_from.js-input__dateDropdown_from(value = value heading = heading name = name type = type range = range placeholder = placeholder readonly = readonly dateDropdown = dateDropdown)
                     .input__checkmark
                         +checkmark()
                 when 'Check-out date'
-                    input.input__element.input__dateDropdown.input__dateDropdown_to(value = value heading = heading name = name type = type range = range placeholder = placeholder readonly = readonly dateDropdown = dateDropdown)
+                    input.input__element.js-input__element.input__dateDropdown.input__dateDropdown_to.js-input__dateDropdown_to(value = value heading = heading name = name type = type range = range placeholder = placeholder readonly = readonly dateDropdown = dateDropdown)
                     .input__checkmark
                         +checkmark()
     else
@@ -36,7 +36,7 @@ mixin input(options = {})
                 .input__heading= heading
             if description
                 .input__description= description
-            input.input__element(name = name type = type value = value placeholder = placeholder dropdown = dropdown readonly = readonly subscription = subscription dateDropdown = dateDropdown)
+            input.input__element.js-input__element(name = name type = type value = value placeholder = placeholder dropdown = dropdown readonly = readonly subscription = subscription dateDropdown = dateDropdown)
             if dropdown
                 .input__checkmark
                     +checkmark()

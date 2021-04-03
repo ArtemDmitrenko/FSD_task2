@@ -30385,12 +30385,12 @@ $('[name|="birthday"]').mask("99.99.9999", {
 // Dropdown appears when click and dissapear when click outside or btn "apply"
 var dropdownOpen = function dropdownOpen(event) {
   var target = event.target;
-  var dropdown = target.closest('.dropdown');
+  var dropdown = target.closest('.js-dropdown');
 
   if (dropdown) {
-    var input = dropdown.querySelector('.input__element');
-    var dropdownList = dropdown.querySelector('.dropdown__list');
-    var dropdownInput = target.closest('.dropdown__input');
+    var input = dropdown.querySelector('.js-input__element');
+    var dropdownList = dropdown.querySelector('.js-dropdown__list');
+    var dropdownInput = target.closest('.js-dropdown__input');
 
     if (dropdownInput) {
       input.classList.toggle("input__element_border-radius_0");
@@ -30408,7 +30408,7 @@ var dropdownOpen = function dropdownOpen(event) {
   if (!dropdown) {
     var dropdownInputGuestsArr = document.querySelectorAll('input[name = "guests"]');
     var dropdownInputRoomsBedsArr = document.querySelectorAll('input[name = "roomsBeds"]');
-    var dropdownListArr = document.querySelectorAll('.dropdown__list');
+    var dropdownListArr = document.querySelectorAll('.js-dropdown__list');
     dropdownInputGuestsArr.forEach(function (item) {
       item.classList.remove("input__element_border-radius_0");
       item.classList.remove("input__element_brightBorder");
@@ -30426,24 +30426,24 @@ var dropdownOpen = function dropdownOpen(event) {
 
 var counter = function counter(event) {
   var target = event.target;
-  var dropdown = target.closest('.dropdown');
+  var dropdown = target.closest('.js-dropdown');
 
   if (dropdown) {
-    var counterValueArr = dropdown.querySelectorAll('.counter__value');
+    var counterValueArr = dropdown.querySelectorAll('.js-counter__value');
     counterValueArr.forEach(function (item) {
       if (Number(item.value) === 0) {
         item.previousSibling.setAttribute("disabled", "disabled");
       }
     });
 
-    var _counter = target.closest('.counter__enter');
+    var _counter = target.closest('.js-counter__enter');
 
     if (_counter) {
-      var minus = _counter.querySelector('.counter__btn_minus');
+      var minus = _counter.querySelector('.js-counter__btn_minus');
 
-      var plus = _counter.querySelector('.counter__btn_plus');
+      var plus = _counter.querySelector('.js-counter__btn_plus');
 
-      var counterValue = _counter.querySelector('.counter__value');
+      var counterValue = _counter.querySelector('.js-counter__value');
 
       if (target === plus) {
         counterValue.value = Number(counterValue.value) + 1;
@@ -30464,11 +30464,11 @@ var counter = function counter(event) {
 
 var changeover = function changeover(event) {
   var target = event.target;
-  var dropdown = target.closest('.dropdown'); // Dropdown for guests
+  var dropdown = target.closest('.js-dropdown'); // Dropdown for guests
 
   if (dropdown && dropdown.querySelector('input[name = "guests"]')) {
     var infants = Number(dropdown.querySelector('input[name = "Infants"]').value);
-    var counterValueArr = dropdown.querySelectorAll(".counter__value");
+    var counterValueArr = dropdown.querySelectorAll('.js-counter__value');
     var allGuests = dropdown.querySelector('input[name = "guests"]');
     var sum = 0;
     counterValueArr.forEach(function (item) {
@@ -30511,7 +30511,7 @@ var changeover = function changeover(event) {
         counterValueArr.forEach(function (item) {
           item.value = 0;
         });
-        var minusArr = dropdown.querySelectorAll('.counter__btn_minus');
+        var minusArr = dropdown.querySelectorAll('.js-counter__btn_minus');
         minusArr.forEach(function (item) {
           item.setAttribute("disabled", "disabled");
         });
@@ -30526,7 +30526,7 @@ var changeover = function changeover(event) {
     var bathrooms = Number(dropdown.querySelector('input[name = "Bathrooms"]').value);
     var allRoomsBeds = dropdown.querySelector('input[name = "roomsBeds"]');
 
-    var _counterValueArr = dropdown.querySelectorAll(".counter__value");
+    var _counterValueArr = dropdown.querySelectorAll(".js-counter__value");
 
     var _sum = 0;
 
@@ -30588,24 +30588,24 @@ document.addEventListener("click", dropdownOpen);
 document.addEventListener("click", counter);
 document.addEventListener("click", changeover);
 },{}],"components/date-dropdown/date-dropdown.js":[function(require,module,exports) {
-$('.input__dateDropdown_from').datepicker({
+$('.js-input__dateDropdown_from').datepicker({
   clearButton: true,
   todayButton: true,
   range: true,
   onSelect: function onSelect(fd, d, picker) {
-    $('.input__dateDropdown_from').val(fd.split(",")[0]);
-    $('.input__dateDropdown_to').val(fd.split(",")[1]);
+    $('.js-input__dateDropdown_from').val(fd.split(",")[0]);
+    $('.js-input__dateDropdown_to').val(fd.split(",")[1]);
   }
 });
-$('.input__dateDropdown_range').datepicker({
+$('.js-input__dateDropdown_range').datepicker({
   clearButton: true,
   todayButton: true,
   range: true,
   multipleDatesSeparator: ' - ',
   dateFormat: 'dd M'
 });
-var myDatapicker = $('.input__dateDropdown_from').datepicker().data('datepicker');
-var myDatapickerRange = $('.input__dateDropdown_range').datepicker().data('datepicker');
+var myDatapicker = $('.js-input__dateDropdown_from').datepicker().data('datepicker');
+var myDatapickerRange = $('.js-input__dateDropdown_range').datepicker().data('datepicker');
 
 if (myDatapicker) {
   // Подключаем кнопку 'Применить' в datepicker
@@ -30618,7 +30618,7 @@ if (myDatapicker) {
     }
   };
 
-  var inputTo = document.querySelector('.input__dateDropdown_to');
+  var inputTo = document.querySelector('.js-input__dateDropdown_to');
 
   var showDatapicker = function showDatapicker() {
     myDatapicker.show();
@@ -30706,7 +30706,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51183" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60474" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

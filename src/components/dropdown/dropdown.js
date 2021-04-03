@@ -1,11 +1,11 @@
 // Dropdown appears when click and dissapear when click outside or btn "apply"
 let dropdownOpen = (event) => {
     let { target } = event;
-    let dropdown = target.closest('.dropdown');
+    let dropdown = target.closest('.js-dropdown');
     if (dropdown) {
-      let input = dropdown.querySelector('.input__element');
-      let dropdownList = dropdown.querySelector('.dropdown__list');
-      let dropdownInput = target.closest('.dropdown__input');
+      let input = dropdown.querySelector('.js-input__element');
+      let dropdownList = dropdown.querySelector('.js-dropdown__list');
+      let dropdownInput = target.closest('.js-dropdown__input');
 
       if (dropdownInput) {
         input.classList.toggle("input__element_border-radius_0");
@@ -21,7 +21,7 @@ let dropdownOpen = (event) => {
     if (!dropdown) {
       let dropdownInputGuestsArr = document.querySelectorAll('input[name = "guests"]');
       let dropdownInputRoomsBedsArr = document.querySelectorAll('input[name = "roomsBeds"]');
-      let dropdownListArr = document.querySelectorAll('.dropdown__list');
+      let dropdownListArr = document.querySelectorAll('.js-dropdown__list');
 
       dropdownInputGuestsArr.forEach((item) => {
         item.classList.remove("input__element_border-radius_0");
@@ -39,18 +39,18 @@ let dropdownOpen = (event) => {
   // Function counter
 let counter = (event) => {
     let { target } = event;
-    let dropdown = target.closest('.dropdown');
+    let dropdown = target.closest('.js-dropdown');
     if (dropdown) {
-      let counterValueArr = dropdown.querySelectorAll('.counter__value');
+      let counterValueArr = dropdown.querySelectorAll('.js-counter__value');
       counterValueArr.forEach((item) => {
         if (Number(item.value) === 0) { item.previousSibling.setAttribute("disabled", "disabled") }
       });
 
-      let counter = target.closest('.counter__enter');
+      let counter = target.closest('.js-counter__enter');
       if (counter) {
-        let minus = counter.querySelector('.counter__btn_minus');
-        let plus = counter.querySelector('.counter__btn_plus');
-        let counterValue = counter.querySelector('.counter__value');
+        let minus = counter.querySelector('.js-counter__btn_minus');
+        let plus = counter.querySelector('.js-counter__btn_plus');
+        let counterValue = counter.querySelector('.js-counter__value');
 
         if (target === plus) {
           counterValue.value = Number(counterValue.value) + 1;
@@ -68,11 +68,11 @@ let counter = (event) => {
   // Update of input field, where we can see total number of guests
 let changeover = (event) => {
   let { target } = event;
-  let dropdown = target.closest('.dropdown');
+  let dropdown = target.closest('.js-dropdown');
   // Dropdown for guests
   if (dropdown && dropdown.querySelector('input[name = "guests"]')) {
     let infants = Number(dropdown.querySelector('input[name = "Infants"]').value);
-    let counterValueArr = dropdown.querySelectorAll(".counter__value");
+    let counterValueArr = dropdown.querySelectorAll('.js-counter__value');
     let allGuests = dropdown.querySelector('input[name = "guests"]');
     let sum = 0;
     counterValueArr.forEach((item) => {
@@ -110,7 +110,7 @@ let changeover = (event) => {
         counterValueArr.forEach((item) => {
           item.value = 0;
         });
-        let minusArr = dropdown.querySelectorAll('.counter__btn_minus');
+        let minusArr = dropdown.querySelectorAll('.js-counter__btn_minus');
         minusArr.forEach((item) => {
           item.setAttribute("disabled", "disabled")
         })
@@ -124,7 +124,7 @@ let changeover = (event) => {
     let bathrooms = Number(dropdown.querySelector('input[name = "Bathrooms"]').value);
     let allRoomsBeds = dropdown.querySelector('input[name = "roomsBeds"]');
 
-    let counterValueArr = dropdown.querySelectorAll(".counter__value");
+    let counterValueArr = dropdown.querySelectorAll(".js-counter__value");
     let sum = 0;
     counterValueArr.forEach((item) => {
       sum += Number(item.value);

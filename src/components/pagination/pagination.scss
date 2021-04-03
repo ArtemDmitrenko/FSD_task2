@@ -1,4 +1,8 @@
-#data-container {
+// #data-container {
+//   display: none;
+// }
+
+.pagination__data {
   display: none;
 }
 
@@ -118,7 +122,7 @@
   }
 }
 
-#pagination-container .paginationjs__legend {
+.pagination__container .paginationjs__legend {
   @extend %font-body;
   color: $dark75;
   margin-top: 10px;

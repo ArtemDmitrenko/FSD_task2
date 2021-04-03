@@ -1,4 +1,4 @@
-const $diagram = document.querySelector('.diagram')
+const $diagram = document.querySelector('.js-diagram')
 
 // Getting data atrs from diagram in Number type
 const good = Number($diagram.dataset.good)
@@ -11,7 +11,7 @@ const model = { good, amazing, notbad, bad }
 
 // Creating array from number of reviews and calculating sum of them:
 const sum = Object.values(model).reduce((previousValue, currentValue) => previousValue + currentValue)
-const $svg = document.querySelector('.diagram__chart')
+const $svg = document.querySelector('.js-diagram__chart')
 
 // Constant length of circle
 const lengthOfCircle = 364.424672
@@ -48,5 +48,5 @@ if (model.bad) {
 }
 
 // Printing the total number of reviews on the page
-const wholeNumberOfReviews = document.querySelector('.diagram__total')
+const wholeNumberOfReviews = document.querySelector('.js-diagram__total')
 wholeNumberOfReviews.innerHTML = `${sum}<br><span>голосов</span>`

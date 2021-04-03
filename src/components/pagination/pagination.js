@@ -7,7 +7,7 @@ function simpleTemplating(data) {
   return html;
 }
 
-$('#pagination-container').pagination({
+$('.js-pagination__container').pagination({
   dataSource: function(done) {
     var result = [];
     for (var i = 1; i < 170; i++) {
@@ -21,7 +21,7 @@ $('#pagination-container').pagination({
   pageRange: 1,
   callback: function(data, pagination) {
     var html = simpleTemplating(data);
-    $('#data-container').html(html);
+    $('.js-pagination__data').html(html);
   },
 })
 

@@ -6,10 +6,10 @@ mixin dropdown(options = {})
     - const {dropdownType, heading, value, description} = options;
     case dropdownType
         when 'guests'
-            .dropdown
-                .dropdown__input
+            .dropdown.js-dropdown
+                .dropdown__input.js-dropdown__input
                     +input({heading: heading, description: description, name: 'guests', type: 'text', value: value, dropdown: true, readonly: true})
-                .dropdown__list
+                .dropdown__list.js-dropdown__list
                     .dropdown__counter
                         +counter(["Взрослые", "Adults"])
                         +counter(["Дети", "Children"])
@@ -20,10 +20,10 @@ mixin dropdown(options = {})
                         .dropdown-guests__btn-apply
                             +btn({modificator: 'btn_iconLinkViolent', text: 'Применить', type: 'button', name: 'apply'})
         when 'roomsBeds'
-            .dropdown
-                .dropdown__input
+            .dropdown.js-dropdown
+                .dropdown__input.js-dropdown__input
                     +input({heading: heading, description: description, name: 'roomsBeds', type: 'text', value: value, dropdown: true, readonly: true})
-                .dropdown__list
+                .dropdown__list.js-dropdown__list
                     .dropdown__counter
                         +counter(["Спальни", "Bedrooms"])
                         +counter(["Кровати", "Beds"])
