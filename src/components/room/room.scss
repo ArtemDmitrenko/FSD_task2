@@ -1,6 +1,73 @@
 @import "../../../node_modules/slick-carousel/slick/slick.css";
 @import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 
+.room {
+  max-width: 270px;
+  background-color: #fff;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  border-radius: 0 0 4px 4px;
+  &__card {
+    // width: 270px;
+    height: 151.38px;
+    width: 100%;
+  }
+  &__room-description {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 21px 17px 10px 19px;
+  }
+  &__room-number {
+    @extend %h1;
+    font-size: 19px;
+    display: inline-block;
+    & span {
+      font-size: 14px;
+    }
+  }
+  &__room-type {
+    @extend %h3;
+    color: $purple;
+    display: inline-block;
+    margin-left: 5px;
+  }
+  &__price {
+    @extend %h3;
+    font-size: 14px;
+    color: $dark50;
+    & span {
+      @extend %font-body;
+      font-size: 12px;
+      color: $dark50;
+      text-transform: none;
+    }
+  }
+  &__review {
+    @extend %h3;
+    font-size: 14px;
+    color: $dark50;
+    margin-bottom: 2px;
+    & span {
+      @extend %font-body;
+      font-size: 14px;
+      color: $dark50;
+      text-transform: none;
+    }
+  }
+  &__line {
+    height: 1px;
+    background: rgba(31, 32, 65, 0.1);
+    margin: 0 20px 8px 20px;
+  }
+  &__rate {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 20px 0 20px;
+    padding-bottom: 14px;
+  }
+}
+
 .slick-slider {
   margin: auto;
 }
@@ -117,71 +184,4 @@
 }
 .slick-dotted.slick-slider {
   margin-bottom: 0px;
-}
-
-.room {
-  max-width: 270px;
-  background-color: #fff;
-  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-  border-radius: 0 0 4px 4px;
-  &__card {
-    // width: 270px;
-    height: 151.38px;
-    width: 100%;
-  }
-  &__room-description {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin: 21px 17px 10px 19px;
-  }
-  &__room-number {
-    @extend %h1;
-    font-size: 19px;
-    display: inline-block;
-    & span {
-      font-size: 14px;
-    }
-  }
-  &__room-type {
-    @extend %h3;
-    color: $purple;
-    display: inline-block;
-    margin-left: 5px;
-  }
-  &__price {
-    @extend %h3;
-    font-size: 14px;
-    color: $dark50;
-    & span {
-      @extend %font-body;
-      font-size: 12px;
-      color: $dark50;
-      text-transform: none;
-    }
-  }
-  &__review {
-    @extend %h3;
-    font-size: 14px;
-    color: $dark50;
-    margin-bottom: 2px;
-    & span {
-      @extend %font-body;
-      font-size: 14px;
-      color: $dark50;
-      text-transform: none;
-    }
-  }
-  &__line {
-    height: 1px;
-    background: rgba(31, 32, 65, 0.1);
-    margin: 0 20px 8px 20px;
-  }
-  &__rate {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 20px 0 20px;
-    padding-bottom: 14px;
-  }
 }

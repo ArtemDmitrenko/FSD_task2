@@ -11,13 +11,13 @@ $(".js-range-slider").ionRangeSlider({
   hide_min_max: true,
   hide_from_to: true,
   skin: "big",
-  extra_classes: "admitrenko",
+  extra_classes: "range-slider",
 });
 
 // Show sign with values from and to
 const sign = document.createElement('div');
 sign.classList.add('sign');
-const slider = document.querySelector('.admitrenko');
+const slider = document.querySelector('.range-slider');
 slider.append(sign);
 const from = $(".js-range-slider").data('from');
 const to = $(".js-range-slider").data('to');
