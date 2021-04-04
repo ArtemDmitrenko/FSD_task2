@@ -117,7 +117,156 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"../../../../../.config/yarn/global/node_modules/process/browser.js":[function(require,module,exports) {
+})({"components/date-dropdown/date-dropdown.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var DateDropdown = /*#__PURE__*/function () {
+  function DateDropdown(item, index) {
+    _classCallCheck(this, DateDropdown);
+
+    this.item = item;
+    this.index = index;
+    this.init();
+  }
+
+  _createClass(DateDropdown, [{
+    key: "init",
+    value: function init() {
+      if (this.isRange()) {
+        this.addDateDropdownForRangeInOneInput(this.index);
+      } else {
+        this.addDateDropdownForTwoInputs(this.index);
+      }
+
+      this.addEventListenerToBtnApply();
+    }
+  }, {
+    key: "isRange",
+    value: function isRange() {
+      this.rangeDropdown = this.item.querySelector('.js-input__dateDropdown_range');
+
+      if (this.rangeDropdown) {
+        return true;
+      }
+
+      return false;
+    }
+  }, {
+    key: "addDateDropdownForRangeInOneInput",
+    value: function addDateDropdownForRangeInOneInput(index) {
+      var options = {
+        clearButton: true,
+        todayButton: true,
+        range: true,
+        multipleDatesSeparator: ' - ',
+        dateFormat: 'dd M',
+        classes: "datepicker".concat(index)
+      };
+      this.myDatapicker = $(this.rangeDropdown).datepicker(options).data('datepicker');
+    }
+  }, {
+    key: "addDateDropdownForTwoInputs",
+    value: function addDateDropdownForTwoInputs(index) {
+      this.inputFrom = this.item.querySelector('.js-input__dateDropdown_from');
+      this.inputTo = this.item.querySelector('.js-input__dateDropdown_to');
+      var options = {
+        clearButton: true,
+        todayButton: true,
+        range: true,
+        classes: "datepicker".concat(index),
+        bindedinputFrom: this.inputFrom,
+        bindedinputTo: this.inputTo,
+        onSelect: function onSelect(fd, d, picker) {
+          $(this.bindedinputFrom).val(fd.split(",")[0]);
+          $(this.bindedinputTo).val(fd.split(",")[1]);
+        }
+      };
+      this.myDatapicker = $(this.inputFrom).datepicker(options).data('datepicker');
+      this.addEventListenerToSecondInput(this.inputTo);
+    }
+  }, {
+    key: "addEventListenerToBtnApply",
+    value: function addEventListenerToBtnApply() {
+      var datepickerContainer = document.querySelector(".datepicker".concat(this.index));
+      var btnApply = datepickerContainer.querySelector('span[data-action="today"]');
+      btnApply.textContent = 'Применить';
+      btnApply.addEventListener('click', this.dateApply.bind(this));
+    }
+  }, {
+    key: "addEventListenerToSecondInput",
+    value: function addEventListenerToSecondInput(inputTo) {
+      inputTo.addEventListener('click', this.showDatepicker.bind(this));
+    }
+  }, {
+    key: "dateApply",
+    value: function dateApply() {
+      this.myDatapicker.hide();
+    }
+  }, {
+    key: "showDatepicker",
+    value: function showDatepicker() {
+      this.myDatapicker.show();
+    }
+  }]);
+
+  return DateDropdown;
+}();
+
+exports.default = DateDropdown;
+},{}],"components/header/header.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var Header = /*#__PURE__*/function () {
+  function Header(item) {
+    _classCallCheck(this, Header);
+
+    this.item = item;
+    this.init();
+  }
+
+  _createClass(Header, [{
+    key: "init",
+    value: function init() {
+      this.burger = this.item.querySelector('.js-header__burger');
+      $(this.burger).on('click', this.toggleMenu.bind(this));
+    }
+  }, {
+    key: "toggleMenu",
+    value: function toggleMenu() {
+      var navMenuButtons = this.item.querySelector('.js-header__navMenuButtons');
+      $(this.burger).toggleClass('header__openedBurger');
+      $(navMenuButtons).toggleClass('header__openedMenu');
+      $('body').toggleClass('fixed-page');
+    }
+  }]);
+
+  return Header;
+}();
+
+exports.default = Header;
+},{}],"../../../../../.config/yarn/global/node_modules/process/browser.js":[function(require,module,exports) {
 
 // shim for using process in browser
 var process = module.exports = {}; // cached from whatever global is present so that test runners that stub it
@@ -32855,73 +33004,12 @@ var changeover = function changeover(event) {
 document.addEventListener("click", dropdownOpen);
 document.addEventListener("click", counter);
 document.addEventListener("click", changeover);
-},{}],"components/date-dropdown/date-dropdown.js":[function(require,module,exports) {
-$('.js-input__dateDropdown_from').datepicker({
-  clearButton: true,
-  todayButton: true,
-  range: true,
-  onSelect: function onSelect(fd, d, picker) {
-    $('.js-input__dateDropdown_from').val(fd.split(",")[0]);
-    $('.js-input__dateDropdown_to').val(fd.split(",")[1]);
-  }
-});
-$('.js-input__dateDropdown_range').datepicker({
-  clearButton: true,
-  todayButton: true,
-  range: true,
-  multipleDatesSeparator: ' - ',
-  dateFormat: 'dd M'
-});
-var myDatapicker = $('.js-input__dateDropdown_from').datepicker().data('datepicker');
-var myDatapickerRange = $('.js-input__dateDropdown_range').datepicker().data('datepicker');
-
-if (myDatapicker) {
-  // Подключаем кнопку 'Применить' в datepicker
-  var dateApply = function dateApply(event) {
-    var target = event.target;
-    var btnApply = document.querySelector('span[data-action="today"]');
-
-    if (target === btnApply) {
-      myDatapicker.hide();
-    }
-  };
-
-  var inputTo = document.querySelector('.js-input__dateDropdown_to');
-
-  var showDatapicker = function showDatapicker() {
-    myDatapicker.show();
-  };
-
-  if (inputTo) {
-    inputTo.addEventListener("click", showDatapicker);
-  }
-
-  document.addEventListener("click", dateApply);
-}
-
-if (myDatapickerRange) {
-  // Подключаем кнопку 'Применить' в datepickerRange
-  var dateApplyRange = function dateApplyRange(event) {
-    var target = event.target;
-    var btnApply = document.querySelector('span[data-action="today"]');
-
-    if (target === btnApply) {
-      myDatapickerRange.hide();
-    }
-  };
-
-  document.addEventListener("click", dateApplyRange);
-}
-},{}],"components/header/header.js":[function(require,module,exports) {
-$(document).ready(function () {
-  $('.js-header__burger').click(function () {
-    $('.js-header__burger').toggleClass('header__openedBurger');
-    $('.js-header__navMenuButtons').toggleClass('header__openedMenu');
-    $('body').toggleClass('fixed-page');
-  });
-});
 },{}],"pages/landing-page/main.js":[function(require,module,exports) {
 "use strict";
+
+var _dateDropdown = _interopRequireDefault(require("../../components/date-dropdown/date-dropdown"));
+
+var _header = _interopRequireDefault(require("../../components/header/header"));
 
 require("./../../import-jquery");
 
@@ -32937,10 +33025,15 @@ require("../../components/input/input.js");
 
 require("../../components/dropdown/dropdown.js");
 
-require("../../components/date-dropdown/date-dropdown.js");
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-require("../../components/header/header.js");
-},{"./../../import-jquery":"import-jquery.js","jquery-ui-dist/jquery-ui.js":"../node_modules/jquery-ui-dist/jquery-ui.js","jquery.maskedinput/src/jquery.maskedinput.js":"../node_modules/jquery.maskedinput/src/jquery.maskedinput.js","air-datepicker/dist/js/datepicker.js":"../node_modules/air-datepicker/dist/js/datepicker.js","../../components/nav-menu/nav-menu.js":"components/nav-menu/nav-menu.js","../../components/input/input.js":"components/input/input.js","../../components/dropdown/dropdown.js":"components/dropdown/dropdown.js","../../components/date-dropdown/date-dropdown.js":"components/date-dropdown/date-dropdown.js","../../components/header/header.js":"components/header/header.js"}],"../../../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+var dateDropdowns = document.querySelectorAll('.js-date-dropdown');
+dateDropdowns.forEach(function (dateDropdown, index) {
+  new _dateDropdown.default(dateDropdown, index);
+});
+var header = document.querySelector('.js-header');
+new _header.default(header);
+},{"../../components/date-dropdown/date-dropdown":"components/date-dropdown/date-dropdown.js","../../components/header/header":"components/header/header.js","./../../import-jquery":"import-jquery.js","jquery-ui-dist/jquery-ui.js":"../node_modules/jquery-ui-dist/jquery-ui.js","jquery.maskedinput/src/jquery.maskedinput.js":"../node_modules/jquery.maskedinput/src/jquery.maskedinput.js","air-datepicker/dist/js/datepicker.js":"../node_modules/air-datepicker/dist/js/datepicker.js","../../components/nav-menu/nav-menu.js":"components/nav-menu/nav-menu.js","../../components/input/input.js":"components/input/input.js","../../components/dropdown/dropdown.js":"components/dropdown/dropdown.js"}],"../../../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -32968,7 +33061,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60474" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64701" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

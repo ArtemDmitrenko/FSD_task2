@@ -1,6 +1,12 @@
 include ../input/input.pug
 
 mixin date-dropdown(options)
-    - const {heading, name, value, range} = options
-    .date-dropdown
-        +input({heading: heading, name: name, value: value, range: range, type: 'text', placeholder: 'ДД.ММ.ГГГГ', dateDropdown: true})
+    - const {heading, heading1, heading2, name, value, value1, value2} = options
+    .date-dropdown.js-date-dropdown
+        if name == 'Dates in 1 input'
+            .date-dropdown__inOneInput
+                +input({heading: heading, name: name, value: value, type: 'text', placeholder: 'ДД.ММ.ГГГГ', dateDropdown: true})
+        else 
+            .date-dropdown__inTwoInputs
+                +input({heading: heading1, name: name, value: value1, type: 'text', placeholder: 'ДД.ММ.ГГГГ', dateDropdown: true, fromOrTo: 'from'})
+                +input({heading: heading2, name: name, value: value2, type: 'text', placeholder: 'ДД.ММ.ГГГГ', dateDropdown: true, fromOrTo: 'to'})

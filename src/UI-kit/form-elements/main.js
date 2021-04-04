@@ -1,3 +1,17 @@
+import CheckboxBtn from '../../components/checkbox-btn/checkbox-btn';
+import DateDropdown from '../../components/date-dropdown/date-dropdown';
+
+const checkboxLists = document.querySelectorAll('.js-checkbox-btn');
+checkboxLists.forEach((checkboxList) => {
+  new CheckboxBtn(checkboxList);
+});
+
+const dateDropdowns = document.querySelectorAll('.js-date-dropdown');
+dateDropdowns.forEach((dateDropdown, index) => {
+  new DateDropdown(dateDropdown, index);
+});
+
+
 import "./../../import-jquery";
 
 import "jquery-ui-dist/jquery-ui.js";
@@ -5,8 +19,6 @@ import "jquery.maskedinput/src/jquery.maskedinput.js";
 import "air-datepicker/dist/js/datepicker.js";
 import "../../components/input/input.js";
 import "../../components/dropdown/dropdown.js";
-import "../../components/date-dropdown/date-dropdown.js";
-import "../../components/checkbox-btn/checkbox-btn.js";
 import "../../components/like-button/like-button.js";
 import "paginationjs/src/pagination.js";
 import "../../components/pagination/pagination.js";
@@ -19,14 +31,14 @@ inputWithHover.classList.add('input__element_hover')
 
 // Datapicker
 const func1 = () => {
-  const datapickerWithData = document.querySelector('[name="Check-in date"]');
+  const datapickerWithData = document.querySelector('.js-input__dateDropdown_to');
   datapickerWithData.value = '19.08.2019';
 };
 setTimeout(func1, 15);
 
 // Datapicker with range
 const func2 = () => {
-  const datapickerWithRange = document.querySelector('[range="true"]');
+  const datapickerWithRange = document.querySelector('.js-input__dateDropdown_range');
   datapickerWithRange.value = '19 авг - 23 авг';
 }
 setTimeout(func2, 20);

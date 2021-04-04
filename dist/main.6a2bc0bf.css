@@ -458,6 +458,17 @@ a {
   width: 100%;
   cursor: pointer;
 }
+.date-dropdown__inTwoInputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.date-dropdown__inTwoInputs > .input {
+  width: 47%;
+}
 .date-dropdown input {
   cursor: pointer;
 }
@@ -925,9 +936,6 @@ a {
           justify-content: space-between;
   margin-bottom: 41px;
 }
-.form-roomsearch__check-in, .form-roomsearch__check-out {
-  width: 47%;
-}
 .form-roomsearch__submit {
   margin-top: 32px;
 }
@@ -1367,9 +1375,6 @@ a {
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin-bottom: 40px;
-}
-.form-confirmation__check-in, .form-confirmation__check-out {
-  width: 47%;
 }
 .form-confirmation__part {
   display: -webkit-box;

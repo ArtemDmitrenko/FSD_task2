@@ -1,3 +1,3 @@
-$('.room__card').slick({
+$('.js-room__card').slick({
   dots: true
 });

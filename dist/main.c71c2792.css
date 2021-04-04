@@ -125,9 +125,6 @@ a {
   display: flex;
   margin-top: 60px;
 }
-.form-elements__datepicker_rangeInTwo .date-dropdown:first-child {
-  margin-right: 20px;
-}
 .form-elements__datepicker_rangeInOne {
   width: 266px;
   margin-bottom: 62px;
@@ -691,6 +688,17 @@ a {
 .date-dropdown {
   width: 100%;
   cursor: pointer;
+}
+.date-dropdown__inTwoInputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.date-dropdown__inTwoInputs > .input {
+  width: 47%;
 }
 .date-dropdown input {
   cursor: pointer;

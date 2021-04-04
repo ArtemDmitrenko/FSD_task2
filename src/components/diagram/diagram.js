@@ -1,52 +1,76 @@
-const $diagram = document.querySelector('.js-diagram')
+export default class Diagram {
+  constructor(item) {
+    this.item = item;
+    this.lengthOfCircle = 364.424672;
+    this.init();
+  }
 
-// Getting data atrs from diagram in Number type
-const good = Number($diagram.dataset.good)
-const amazing = Number($diagram.dataset.amazing)
-const notbad = Number($diagram.dataset.notbad)
-const bad = Number($diagram.dataset.bad)
+  init() {
+    this.getAttributes();
+    this.calcSumOfReviews();
+    this.calcLengthsOfAllReviews();
+    this.drawElementsOfDiagram();
+    this.printAllNumberOfReviews();
+  }
 
-// Creating object with data
-const model = { good, amazing, notbad, bad }
+  getAttributeInNumber(review) {
+    const numberOfReviews = Number(this.item.dataset[review]);
+    return numberOfReviews;
+  }
 
-// Creating array from number of reviews and calculating sum of them:
-const sum = Object.values(model).reduce((previousValue, currentValue) => previousValue + currentValue)
-const $svg = document.querySelector('.js-diagram__chart')
+  getAttributes() {
+    this.model = { good: 0, amazing: 0, notbad: 0, bad: 0 };
+    for (let review in this.model) {
+      this.model[review] = this.getAttributeInNumber(review)
+    }
+  }
 
-// Constant length of circle
-const lengthOfCircle = 364.424672
+  calcSumOfReviews() {
+    this.sum = Object.values(this.model).reduce((previousValue, currentValue) => previousValue + currentValue);
+  }
 
-// Proportion length due to total sum of reviews
-const goodInPixels = (lengthOfCircle * good) / sum;
-const amazingInPixels = (lengthOfCircle * amazing) / sum;
-const notbadInPixels = (lengthOfCircle * notbad) / sum;
-const badInPixels = (lengthOfCircle * bad) / sum;
+  calcLengthOfOneReview(numberOfReview) {
+    const lengthOfReviewInPixels = (this.lengthOfCircle * numberOfReview) / this.sum;
+    return lengthOfReviewInPixels;
+  }
 
-if (model.good) {
-  $svg.insertAdjacentHTML('beforeend',
-    `
-    <circle class='diagram__unit diagram__unit_good' r='58' cx='50%' cy="50%" stroke="url(#linear-gradient-green)" style="stroke-dasharray: ${goodInPixels - 2} ${lengthOfCircle}; stroke-dashoffset: -1">
-    `)
+  calcLengthsOfAllReviews() {
+    this.goodInPixels = this.calcLengthOfOneReview(this.model.good);
+    this.amazingInPixels = this.calcLengthOfOneReview(this.model.amazing);
+    this.notbadInPixels = this.calcLengthOfOneReview(this.model.notbad);
+    this.badInPixels = this.calcLengthOfOneReview(this.model.bad);
+  }
+
+  drawElementsOfDiagram() {
+    const $svg = this.item.querySelector('.js-diagram__chart')
+    if (this.model.good) {
+      $svg.insertAdjacentHTML('beforeend',
+        `
+        <circle class='diagram__unit diagram__unit_good' r='58' cx='50%' cy="50%" stroke="url(#linear-gradient-green)" style="stroke-dasharray: ${this.goodInPixels - 2} ${this.lengthOfCircle}; stroke-dashoffset: -1">
+        `)
+    }
+    if (this.model.amazing) {
+      $svg.insertAdjacentHTML('beforeend',
+        `
+        <circle class='diagram__unit diagram__unit_good' r='58' cx='50%' cy="50%" stroke="url(#linear-gradient-yellow)" style="stroke-dasharray: ${this.amazingInPixels - 2} ${this.lengthOfCircle}; stroke-dashoffset: ${-(this.goodInPixels + 1)}">
+        `)
+    }
+    if (this.model.notbad) {
+      $svg.insertAdjacentHTML('beforeend',
+        `
+        <circle class='diagram__unit diagram__unit_good' r='58' cx='50%' cy="50%" stroke="url(#linear-gradient-purple)" style="stroke-dasharray: ${this.notbadInPixels - 2} ${this.lengthOfCircle}; stroke-dashoffset: ${-(this.amazingInPixels + this.goodInPixels +1)}">
+        `)
+    }
+    if (this.model.bad) {
+      $svg.insertAdjacentHTML('beforeend',
+        `
+        <circle class='diagram__unit diagram__unit_good' r='58' cx='50%' cy="50%" stroke="url(#linear-gradient-black)" style="stroke-dasharray: ${this.badInPixels - 2} ${this.lengthOfCircle}; stroke-dashoffset: ${-(this.notbadInPixels + this.amazingInPixels + this.goodInPixels +1)}">
+        `)
+    }
+  }
+
+  printAllNumberOfReviews() {
+    const wholeNumberOfReviews = this.item.querySelector('.js-diagram__total');
+    wholeNumberOfReviews.innerHTML = `${this.sum}<br><span>голосов</span>`;
+  }
 }
-if (model.amazing) {
-  $svg.insertAdjacentHTML('beforeend',
-    `
-    <circle class='diagram__unit diagram__unit_good' r='58' cx='50%' cy="50%" stroke="url(#linear-gradient-yellow)" style="stroke-dasharray: ${amazingInPixels - 2} ${lengthOfCircle}; stroke-dashoffset: ${-(goodInPixels + 1)}">
-    `)
-}
-if (model.notbad) {
-  $svg.insertAdjacentHTML('beforeend',
-    `
-    <circle class='diagram__unit diagram__unit_good' r='58' cx='50%' cy="50%" stroke="url(#linear-gradient-purple)" style="stroke-dasharray: ${notbadInPixels - 2} ${lengthOfCircle}; stroke-dashoffset: ${-(amazingInPixels + goodInPixels +1)}">
-    `)
-}
-if (model.bad) {
-  $svg.insertAdjacentHTML('beforeend',
-    `
-    <circle class='diagram__unit diagram__unit_good' r='58' cx='50%' cy="50%" stroke="url(#linear-gradient-black)" style="stroke-dasharray: ${badInPixels - 2} ${lengthOfCircle}; stroke-dashoffset: ${-(notbadInPixels + amazingInPixels + goodInPixels +1)}">
-    `)
-}
-
-// Printing the total number of reviews on the page
-const wholeNumberOfReviews = document.querySelector('.js-diagram__total')
-wholeNumberOfReviews.innerHTML = `${sum}<br><span>голосов</span>`

@@ -1,19 +1,27 @@
-const ecbOpen = (event) => {
-  const { target } = event;
-  const cb = target.closest('.js-checkbox-btn');
+export default class CheckboxBtn {
+  constructor(checkboxList) {
+    this.checkboxList = checkboxList;
+    this.init();
+  }
 
-  if (cb) {
-    const checkmark = cb.querySelector(".js-checkmark");
-    if (checkmark) {
-      const cbTitle = cb.querySelector(".js-checkbox-btn__expandableName");
-      const cbList = cb.querySelector(".js-checkbox-btn__expandableForm");
-      if (cbTitle) {
-        cbList.classList.toggle("checkbox-btn__expandableForm_show");
-        checkmark.classList.toggle("checkmark__down");
-        checkmark.classList.toggle("checkmark__up");
-      }
+  init() {
+    this.checkboxList.addEventListener('click', this.checkboxHandler.bind(this));
+  }
+
+  checkboxHandler() {
+    if (this.isExpanded()) {
+      const cbList = this.checkboxList.querySelector('.js-checkbox-btn__expandableForm');
+      const checkmark = this.checkboxList.querySelector('.js-checkmark');
+      cbList.classList.toggle('checkbox-btn__expandableForm_show');
+      checkmark.classList.toggle('checkmark__down');
+      checkmark.classList.toggle('checkmark__up');
     }
   }
-}
 
-document.addEventListener("click", ecbOpen);
+  isExpanded() {
+    if (this.checkboxList.firstElementChild.classList.contains('js-checkbox-btn__expandableName')) {
+      return true;
+    }
+    return false;
+  }
+}

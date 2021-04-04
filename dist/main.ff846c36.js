@@ -117,7 +117,167 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"../../../../../.config/yarn/global/node_modules/process/browser.js":[function(require,module,exports) {
+})({"components/checkbox-btn/checkbox-btn.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var CheckboxBtn = /*#__PURE__*/function () {
+  function CheckboxBtn(checkboxList) {
+    _classCallCheck(this, CheckboxBtn);
+
+    this.checkboxList = checkboxList;
+    this.init();
+  }
+
+  _createClass(CheckboxBtn, [{
+    key: "init",
+    value: function init() {
+      this.checkboxList.addEventListener('click', this.checkboxHandler.bind(this));
+    }
+  }, {
+    key: "checkboxHandler",
+    value: function checkboxHandler() {
+      if (this.isExpanded()) {
+        var cbList = this.checkboxList.querySelector('.js-checkbox-btn__expandableForm');
+        var checkmark = this.checkboxList.querySelector('.js-checkmark');
+        cbList.classList.toggle('checkbox-btn__expandableForm_show');
+        checkmark.classList.toggle('checkmark__down');
+        checkmark.classList.toggle('checkmark__up');
+      }
+    }
+  }, {
+    key: "isExpanded",
+    value: function isExpanded() {
+      if (this.checkboxList.firstElementChild.classList.contains('js-checkbox-btn__expandableName')) {
+        return true;
+      }
+
+      return false;
+    }
+  }]);
+
+  return CheckboxBtn;
+}();
+
+exports.default = CheckboxBtn;
+},{}],"components/date-dropdown/date-dropdown.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var DateDropdown = /*#__PURE__*/function () {
+  function DateDropdown(item, index) {
+    _classCallCheck(this, DateDropdown);
+
+    this.item = item;
+    this.index = index;
+    this.init();
+  }
+
+  _createClass(DateDropdown, [{
+    key: "init",
+    value: function init() {
+      if (this.isRange()) {
+        this.addDateDropdownForRangeInOneInput(this.index);
+      } else {
+        this.addDateDropdownForTwoInputs(this.index);
+      }
+
+      this.addEventListenerToBtnApply();
+    }
+  }, {
+    key: "isRange",
+    value: function isRange() {
+      this.rangeDropdown = this.item.querySelector('.js-input__dateDropdown_range');
+
+      if (this.rangeDropdown) {
+        return true;
+      }
+
+      return false;
+    }
+  }, {
+    key: "addDateDropdownForRangeInOneInput",
+    value: function addDateDropdownForRangeInOneInput(index) {
+      var options = {
+        clearButton: true,
+        todayButton: true,
+        range: true,
+        multipleDatesSeparator: ' - ',
+        dateFormat: 'dd M',
+        classes: "datepicker".concat(index)
+      };
+      this.myDatapicker = $(this.rangeDropdown).datepicker(options).data('datepicker');
+    }
+  }, {
+    key: "addDateDropdownForTwoInputs",
+    value: function addDateDropdownForTwoInputs(index) {
+      this.inputFrom = this.item.querySelector('.js-input__dateDropdown_from');
+      this.inputTo = this.item.querySelector('.js-input__dateDropdown_to');
+      var options = {
+        clearButton: true,
+        todayButton: true,
+        range: true,
+        classes: "datepicker".concat(index),
+        bindedinputFrom: this.inputFrom,
+        bindedinputTo: this.inputTo,
+        onSelect: function onSelect(fd, d, picker) {
+          $(this.bindedinputFrom).val(fd.split(",")[0]);
+          $(this.bindedinputTo).val(fd.split(",")[1]);
+        }
+      };
+      this.myDatapicker = $(this.inputFrom).datepicker(options).data('datepicker');
+      this.addEventListenerToSecondInput(this.inputTo);
+    }
+  }, {
+    key: "addEventListenerToBtnApply",
+    value: function addEventListenerToBtnApply() {
+      var datepickerContainer = document.querySelector(".datepicker".concat(this.index));
+      var btnApply = datepickerContainer.querySelector('span[data-action="today"]');
+      btnApply.textContent = 'Применить';
+      btnApply.addEventListener('click', this.dateApply.bind(this));
+    }
+  }, {
+    key: "addEventListenerToSecondInput",
+    value: function addEventListenerToSecondInput(inputTo) {
+      inputTo.addEventListener('click', this.showDatepicker.bind(this));
+    }
+  }, {
+    key: "dateApply",
+    value: function dateApply() {
+      this.myDatapicker.hide();
+    }
+  }, {
+    key: "showDatepicker",
+    value: function showDatepicker() {
+      this.myDatapicker.show();
+    }
+  }]);
+
+  return DateDropdown;
+}();
+
+exports.default = DateDropdown;
+},{}],"../../../../../.config/yarn/global/node_modules/process/browser.js":[function(require,module,exports) {
 
 // shim for using process in browser
 var process = module.exports = {}; // cached from whatever global is present so that test runners that stub it
@@ -32824,85 +32984,6 @@ var changeover = function changeover(event) {
 document.addEventListener("click", dropdownOpen);
 document.addEventListener("click", counter);
 document.addEventListener("click", changeover);
-},{}],"components/date-dropdown/date-dropdown.js":[function(require,module,exports) {
-$('.js-input__dateDropdown_from').datepicker({
-  clearButton: true,
-  todayButton: true,
-  range: true,
-  onSelect: function onSelect(fd, d, picker) {
-    $('.js-input__dateDropdown_from').val(fd.split(",")[0]);
-    $('.js-input__dateDropdown_to').val(fd.split(",")[1]);
-  }
-});
-$('.js-input__dateDropdown_range').datepicker({
-  clearButton: true,
-  todayButton: true,
-  range: true,
-  multipleDatesSeparator: ' - ',
-  dateFormat: 'dd M'
-});
-var myDatapicker = $('.js-input__dateDropdown_from').datepicker().data('datepicker');
-var myDatapickerRange = $('.js-input__dateDropdown_range').datepicker().data('datepicker');
-
-if (myDatapicker) {
-  // Подключаем кнопку 'Применить' в datepicker
-  var dateApply = function dateApply(event) {
-    var target = event.target;
-    var btnApply = document.querySelector('span[data-action="today"]');
-
-    if (target === btnApply) {
-      myDatapicker.hide();
-    }
-  };
-
-  var inputTo = document.querySelector('.js-input__dateDropdown_to');
-
-  var showDatapicker = function showDatapicker() {
-    myDatapicker.show();
-  };
-
-  if (inputTo) {
-    inputTo.addEventListener("click", showDatapicker);
-  }
-
-  document.addEventListener("click", dateApply);
-}
-
-if (myDatapickerRange) {
-  // Подключаем кнопку 'Применить' в datepickerRange
-  var dateApplyRange = function dateApplyRange(event) {
-    var target = event.target;
-    var btnApply = document.querySelector('span[data-action="today"]');
-
-    if (target === btnApply) {
-      myDatapickerRange.hide();
-    }
-  };
-
-  document.addEventListener("click", dateApplyRange);
-}
-},{}],"components/checkbox-btn/checkbox-btn.js":[function(require,module,exports) {
-var ecbOpen = function ecbOpen(event) {
-  var target = event.target;
-  var cb = target.closest('.js-checkbox-btn');
-
-  if (cb) {
-    var checkmark = cb.querySelector(".js-checkmark");
-
-    if (checkmark) {
-      var cbTitle = cb.querySelector(".js-checkbox-btn__expandableName");
-      var cbList = cb.querySelector(".js-checkbox-btn__expandableForm");
-
-      if (cbTitle) {
-        cbList.classList.toggle("checkbox-btn__expandableForm_show");
-        checkmark.classList.toggle("checkmark__down");
-        checkmark.classList.toggle("checkmark__up");
-      }
-    }
-  }
-};
-
-document.addEventListener("click", ecbOpen);
 },{}],"components/like-button/like-button.js":[function(require,module,exports) {
 // Dropdown appears when click and dissapear when click outside or btn "apply"
 var likeButtonClicked = function likeButtonClicked(event) {
@@ -36622,6 +36703,10 @@ if (document.querySelector('.js-form-elements__range-slider')) {
 },{}],"UI-kit/form-elements/main.js":[function(require,module,exports) {
 "use strict";
 
+var _checkboxBtn = _interopRequireDefault(require("../../components/checkbox-btn/checkbox-btn"));
+
+var _dateDropdown = _interopRequireDefault(require("../../components/date-dropdown/date-dropdown"));
+
 require("./../../import-jquery");
 
 require("jquery-ui-dist/jquery-ui.js");
@@ -36634,10 +36719,6 @@ require("../../components/input/input.js");
 
 require("../../components/dropdown/dropdown.js");
 
-require("../../components/date-dropdown/date-dropdown.js");
-
-require("../../components/checkbox-btn/checkbox-btn.js");
-
 require("../../components/like-button/like-button.js");
 
 require("paginationjs/src/pagination.js");
@@ -36648,19 +36729,29 @@ require("ion-rangeslider/js/ion.rangeSlider.js");
 
 require("../../components/range-slider/range-slider.js");
 
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var checkboxLists = document.querySelectorAll('.js-checkbox-btn');
+checkboxLists.forEach(function (checkboxList) {
+  new _checkboxBtn.default(checkboxList);
+});
+var dateDropdowns = document.querySelectorAll('.js-date-dropdown');
+dateDropdowns.forEach(function (dateDropdown, index) {
+  new _dateDropdown.default(dateDropdown, index);
+});
 // Hovered input
 var inputWithHover = document.querySelector('[name="Text"]');
 inputWithHover.classList.add('input__element_hover'); // Datapicker
 
 var func1 = function func1() {
-  var datapickerWithData = document.querySelector('[name="Check-in date"]');
+  var datapickerWithData = document.querySelector('.js-input__dateDropdown_to');
   datapickerWithData.value = '19.08.2019';
 };
 
 setTimeout(func1, 15); // Datapicker with range
 
 var func2 = function func2() {
-  var datapickerWithRange = document.querySelector('[range="true"]');
+  var datapickerWithRange = document.querySelector('.js-input__dateDropdown_range');
   datapickerWithRange.value = '19 авг - 23 авг';
 };
 
@@ -36748,7 +36839,7 @@ var reviewLikeBtn = review.querySelector('.like-button__button');
 setTimeout(function () {
   $(reviewLikeBtn).trigger('click');
 }, 15);
-},{"./../../import-jquery":"import-jquery.js","jquery-ui-dist/jquery-ui.js":"../node_modules/jquery-ui-dist/jquery-ui.js","jquery.maskedinput/src/jquery.maskedinput.js":"../node_modules/jquery.maskedinput/src/jquery.maskedinput.js","air-datepicker/dist/js/datepicker.js":"../node_modules/air-datepicker/dist/js/datepicker.js","../../components/input/input.js":"components/input/input.js","../../components/dropdown/dropdown.js":"components/dropdown/dropdown.js","../../components/date-dropdown/date-dropdown.js":"components/date-dropdown/date-dropdown.js","../../components/checkbox-btn/checkbox-btn.js":"components/checkbox-btn/checkbox-btn.js","../../components/like-button/like-button.js":"components/like-button/like-button.js","paginationjs/src/pagination.js":"../node_modules/paginationjs/src/pagination.js","../../components/pagination/pagination.js":"components/pagination/pagination.js","ion-rangeslider/js/ion.rangeSlider.js":"../node_modules/ion-rangeslider/js/ion.rangeSlider.js","../../components/range-slider/range-slider.js":"components/range-slider/range-slider.js"}],"../../../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"../../components/checkbox-btn/checkbox-btn":"components/checkbox-btn/checkbox-btn.js","../../components/date-dropdown/date-dropdown":"components/date-dropdown/date-dropdown.js","./../../import-jquery":"import-jquery.js","jquery-ui-dist/jquery-ui.js":"../node_modules/jquery-ui-dist/jquery-ui.js","jquery.maskedinput/src/jquery.maskedinput.js":"../node_modules/jquery.maskedinput/src/jquery.maskedinput.js","air-datepicker/dist/js/datepicker.js":"../node_modules/air-datepicker/dist/js/datepicker.js","../../components/input/input.js":"components/input/input.js","../../components/dropdown/dropdown.js":"components/dropdown/dropdown.js","../../components/like-button/like-button.js":"components/like-button/like-button.js","paginationjs/src/pagination.js":"../node_modules/paginationjs/src/pagination.js","../../components/pagination/pagination.js":"components/pagination/pagination.js","ion-rangeslider/js/ion.rangeSlider.js":"../node_modules/ion-rangeslider/js/ion.rangeSlider.js","../../components/range-slider/range-slider.js":"components/range-slider/range-slider.js"}],"../../../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -36776,7 +36867,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60474" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64701" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

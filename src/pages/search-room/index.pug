@@ -20,7 +20,7 @@ block content
         main.search-room__main
             section.search-room__sidebar
                 .search-room__filterDateDropdown
-                    +date-dropdown({heading: 'Даты пребывания в отеле', className: 'input__dateDropdown_range'})
+                    +date-dropdown({heading: 'Даты пребывания в отеле', name: 'Dates in 1 input'})
                 .search-room__dropdown-guests
                     +dropdown({dropdownType: 'guests', heading: 'Гости', value: 'Сколько гостей'})
                 .search-room__range-slider

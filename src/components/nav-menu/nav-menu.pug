@@ -51,10 +51,10 @@ mixin nav-menu()
                     li.nav-menu__item    
                         a.nav-menu__link(href = menuItems[i].href)= menuItems[i].name
                 else
-                    li.nav-menu__item.nav-menu__item_dropdown 
+                    li.nav-menu__item.nav-menu__item_dropdown.js-nav-menu__item_dropdown 
                         a.nav-menu__link(href = menuItems[i].href)= menuItems[i].name
                             +checkmark()
-                        ul.nav-menu__sub-list
+                        ul.nav-menu__sub-list.js-nav-menu__sub-list
                             - for (let j = 0; j < menuItems[i].submenu.length; j ++) 
                                 li.nav-menu__sub-item
                                     a.nav-menu__sub-link(href = menuItems[i].submenu[j].subhref)= menuItems[i].submenu[j].subname 

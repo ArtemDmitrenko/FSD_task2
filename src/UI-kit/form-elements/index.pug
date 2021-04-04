@@ -36,10 +36,9 @@ block content
                 .form-elements__maskedInput.form-elements__element
                     +input({heading: 'masked text field', name: 'birthday', type: 'text', placeholder: 'ДД.ММ.ГГГГ', required: true})
                 .form-elements__datepicker.form-elements__datepicker_rangeInTwo.form-elements__element
-                    +date-dropdown({heading: 'date Dropdown', name: 'Check-in date'})
-                    +date-dropdown({heading: 'date Dropdown', name: 'Check-in date'})
+                    +date-dropdown({heading1: 'date Dropdown', heading2: 'date Dropdown', name: 'Dates in 2 inputs'})
                 .form-elements__datepicker.form-elements__datepicker_rangeInOne.form-elements__element
-                    +date-dropdown({heading: 'filter date dropdown', name: 'Check-in date', range: 'true'})
+                    +date-dropdown({heading: 'filter date dropdown', name: 'Dates in 1 input'})
                 .form-elements__subscriptionInput.form-elements__element 
                     +input({heading: 'subscription text field', name: 'email', type: 'email', placeholder: 'Email', required: true, subscription: true})
                 .form-elements__dropdown.form-elements__element.form-elements__element_notexpanded

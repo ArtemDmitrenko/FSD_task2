@@ -38,11 +38,6 @@
   &__datepicker {
     display: flex;
     margin-top: 60px;
-    &_rangeInTwo {
-      & .date-dropdown:first-child {
-        margin-right: 20px;
-      }
-    }
     &_rangeInOne {
       width: 266px;
       margin-bottom: 62px;

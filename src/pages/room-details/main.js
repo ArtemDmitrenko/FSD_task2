@@ -1,11 +1,27 @@
-import "./../../import-jquery";
+import DateDropdown from '../../components/date-dropdown/date-dropdown';
+import Diagram from '../../components/diagram/diagram';
+import Header from '../../components/header/header';
 
+
+
+import "./../../import-jquery";
 import "jquery-ui-dist/jquery-ui.js";
 import "jquery.maskedinput/src/jquery.maskedinput.js";
+import "air-datepicker/dist/js/datepicker.js";
 import "../../components/nav-menu/nav-menu.js";
 import "../../components/input/input.js";
 import "../../components/like-button/like-button.js";
-import "../../components/diagram/diagram.js";
-import "../../components/date-dropdown/date-dropdown.js";
 import "../../components/dropdown/dropdown.js";
-import "../../components/header/header.js";
+
+
+
+const dateDropdowns = document.querySelectorAll('.js-date-dropdown');
+dateDropdowns.forEach((dateDropdown, index) => {
+  new DateDropdown(dateDropdown, index);
+});
+
+const diagram = document.querySelector('.js-diagram');
+new Diagram(diagram);
+
+const header = document.querySelector('.js-header');
+new Header(header);

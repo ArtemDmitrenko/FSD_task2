@@ -16,18 +16,21 @@ include ../checkmark/checkmark.pug
 include ../arrow/arrow.pug
 
 mixin input(options = {})
-    - const {heading, description, name, value, range, placeholder, dropdown, readonly, subscription, dateDropdown, type} = options
+    - const {heading, description, name, value, placeholder, dropdown, readonly, subscription, dateDropdown, type, fromOrTo} = options
     if dateDropdown
         .input
             if heading
                 .input__heading= heading
             case name
-                when 'Check-in date'
-                    input.input__element.js-input__element.input__dateDropdown.input__dateDropdown_from.js-input__dateDropdown_from(value = value heading = heading name = name type = type range = range placeholder = placeholder readonly = readonly dateDropdown = dateDropdown)
+                when 'Dates in 2 inputs'
+                    if fromOrTo == 'from'
+                        input.input__element.js-input__element.input__dateDropdown.input__dateDropdown_from.js-input__dateDropdown_from(value = value heading = heading name = name type = type placeholder = placeholder readonly = readonly dateDropdown = dateDropdown)
+                    else 
+                        input.input__element.js-input__element.input__dateDropdown.input__dateDropdown_to.js-input__dateDropdown_to(value = value heading = heading name = name type = type placeholder = placeholder readonly = readonly dateDropdown = dateDropdown)
                     .input__checkmark
                         +checkmark()
-                when 'Check-out date'
-                    input.input__element.js-input__element.input__dateDropdown.input__dateDropdown_to.js-input__dateDropdown_to(value = value heading = heading name = name type = type range = range placeholder = placeholder readonly = readonly dateDropdown = dateDropdown)
+                when 'Dates in 1 input'
+                    input.input__element.js-input__element.input__dateDropdown.input__dateDropdown_range.js-input__dateDropdown_range(value = value heading = heading name = name type = type placeholder = placeholder readonly = readonly dateDropdown = dateDropdown)
                     .input__checkmark
                         +checkmark()
     else

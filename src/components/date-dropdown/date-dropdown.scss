@@ -3,6 +3,13 @@
 .date-dropdown {
   width: 100%;
   cursor: pointer;
+  &__inTwoInputs {
+    display: flex;
+    justify-content: space-between;
+    & > .input {
+      width: 47%;
+    }
+  }
   & input {
     cursor: pointer;
   }
