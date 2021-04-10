@@ -277,6 +277,479 @@ var DateDropdown = /*#__PURE__*/function () {
 }();
 
 exports.default = DateDropdown;
+},{}],"components/input/input.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var Input = /*#__PURE__*/function () {
+  function Input(item) {
+    _classCallCheck(this, Input);
+
+    this.item = item;
+    this.init();
+  }
+
+  _createClass(Input, [{
+    key: "init",
+    value: function init() {
+      $(this.item).mask('99.99.9999', {
+        autoclear: false
+      });
+    }
+  }]);
+
+  return Input;
+}();
+
+exports.default = Input;
+},{}],"components/like-button/like-button.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var LikeButton = /*#__PURE__*/function () {
+  function LikeButton(item) {
+    _classCallCheck(this, LikeButton);
+
+    this.item = item;
+    this.init();
+  }
+
+  _createClass(LikeButton, [{
+    key: "init",
+    value: function init() {
+      this.item.addEventListener('click', this.clickOnLikeButton.bind(this));
+    }
+  }, {
+    key: "isLiked",
+    value: function isLiked() {
+      var heart = this.item.querySelector('.js-like-button__image');
+
+      if (heart.innerHTML === 'favorite_border') {
+        return false;
+      }
+
+      return true;
+    }
+  }, {
+    key: "plusLike",
+    value: function plusLike() {
+      var numberOfLikes = this.item.querySelector('.js-like-button__counter');
+      var counter = Number(numberOfLikes.innerHTML);
+      numberOfLikes.innerHTML = counter += 1;
+      numberOfLikes.classList.add('like-button__counter_active');
+    }
+  }, {
+    key: "minusLike",
+    value: function minusLike() {
+      var numberOfLikes = this.item.querySelector('.js-like-button__counter');
+      var counter = Number(numberOfLikes.innerHTML);
+      numberOfLikes.innerHTML = counter -= 1;
+      numberOfLikes.classList.remove('like-button__counter_active');
+    }
+  }, {
+    key: "clickOnLikeButton",
+    value: function clickOnLikeButton() {
+      var heart = this.item.querySelector('.js-like-button__image');
+
+      if (this.isLiked()) {
+        heart.innerHTML = 'favorite_border';
+        heart.classList.remove('like-button__image_active');
+        this.item.classList.remove('like-button__button_active');
+        this.minusLike();
+      } else {
+        heart.innerHTML = 'favorite';
+        heart.classList.add('like-button__image_active');
+        this.item.classList.add('like-button__button_active');
+        this.plusLike();
+      }
+    }
+  }]);
+
+  return LikeButton;
+}();
+
+exports.default = LikeButton;
+},{}],"components/range-slider/range-slider.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var RangeSlider = /*#__PURE__*/function () {
+  function RangeSlider(item) {
+    _classCallCheck(this, RangeSlider);
+
+    this.item = item;
+    this.init();
+  }
+
+  _createClass(RangeSlider, [{
+    key: "init",
+    value: function init() {
+      this.showRangeSlider();
+      this.showSighWithValues();
+      this.showTitleOfSlider();
+      this.showDescription();
+    }
+  }, {
+    key: "showRangeSlider",
+    value: function showRangeSlider() {
+      var options = {
+        type: "double",
+        min: 0,
+        max: 15000,
+        from: 5000,
+        to: 10000,
+        postfix: "₽",
+        values_separator: " - ",
+        decorate_both: true,
+        hide_min_max: true,
+        hide_from_to: true,
+        skin: "big",
+        extra_classes: "js-irs__scale"
+      };
+      $(this.item).ionRangeSlider(options);
+    }
+  }, {
+    key: "showSighWithValues",
+    value: function showSighWithValues() {
+      this.sign = document.createElement('div');
+      this.sign.classList.add('sign');
+      this.slider = this.item.previousElementSibling;
+      this.slider.append(this.sign);
+      var from = $(".js-range-slider").data('from');
+      var to = $(".js-range-slider").data('to');
+      this.updateSign(from, to);
+    }
+  }, {
+    key: "updateSign",
+    value: function updateSign(from, to) {
+      var prettyFrom = this.prettify(from);
+      var prettyTo = this.prettify(to);
+      this.sign.textContent = "".concat(prettyFrom, "\u20BD - ").concat(prettyTo, "\u20BD");
+    }
+  }, {
+    key: "prettify",
+    value: function prettify(num) {
+      var n = num.toString();
+      var separator = " ";
+      return n.replace(/(\d{1,3}(?=(?:\d\d\d)+(?!\d)))/g, "$1" + separator);
+    }
+  }, {
+    key: "showTitleOfSlider",
+    value: function showTitleOfSlider() {
+      var title = document.createElement('div');
+      title.classList.add('title');
+      this.slider.append(title);
+      var parentElement = this.item.parentElement;
+
+      if (parentElement.classList.contains('js-form-elements__range-slider')) {
+        title.textContent = 'Range slider';
+      } else {
+        title.textContent = 'Диапазон цены';
+      }
+    }
+  }, {
+    key: "showDescription",
+    value: function showDescription() {
+      var description = document.createElement('div');
+      description.classList.add('description');
+      this.slider.append(description);
+      var parentElement = this.item.parentElement;
+
+      if (parentElement.classList.contains('js-form-elements__range-slider')) {
+        description.textContent = '';
+      } else {
+        description.textContent = 'Стоимость за сутки пребывания в номере';
+      }
+    }
+  }]);
+
+  return RangeSlider;
+}();
+
+exports.default = RangeSlider;
+},{}],"components/dropdown/dropdown.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var Dropdown = /*#__PURE__*/function () {
+  function Dropdown(item) {
+    _classCallCheck(this, Dropdown);
+
+    this.item = item;
+    this.init();
+  }
+
+  _createClass(Dropdown, [{
+    key: "init",
+    value: function init() {
+      this.findElements();
+      this.dropdownInput.addEventListener('click', this.toggleDropdown.bind(this));
+      document.addEventListener('click', this.closeDropdown.bind(this));
+      this.dropdownList.addEventListener('click', this.counter.bind(this));
+      this.item.addEventListener('click', this.changeover.bind(this));
+    }
+  }, {
+    key: "findElements",
+    value: function findElements() {
+      this.dropdownList = this.item.querySelector('.js-dropdown__list');
+      this.input = this.item.querySelector('.js-input__element');
+      this.dropdownInput = this.item.querySelector('.js-dropdown__input');
+    }
+  }, {
+    key: "isDroprownOpened",
+    value: function isDroprownOpened() {
+      if (this.input.classList.contains('input__element_border-radius_0')) {
+        return true;
+      }
+
+      return false;
+    }
+  }, {
+    key: "isGuestsDropdown",
+    value: function isGuestsDropdown() {
+      if (this.input.getAttribute('name') === 'guests') {
+        this.btnApply = this.dropdownList.querySelector('button[name = "apply"]');
+        this.btnClear = this.dropdownList.querySelector('button[name = "clear"]');
+        return true;
+      }
+
+      return false;
+    }
+  }, {
+    key: "toggleDropdown",
+    value: function toggleDropdown() {
+      this.input.classList.toggle("input__element_border-radius_0");
+      this.input.classList.add("input__element_brightBorder");
+      this.dropdownList.classList.toggle("dropdown__list_show");
+      this.disableBtn();
+    }
+  }, {
+    key: "hideBtnClear",
+    value: function hideBtnClear() {
+      var btnClear = this.item.querySelector('button[name = "clear"]');
+      btnClear.classList.add('btn_hidden');
+    }
+  }, {
+    key: "hideDropdown",
+    value: function hideDropdown() {
+      this.input.classList.remove("input__element_border-radius_0");
+      this.input.classList.remove("input__element_brightBorder");
+      this.dropdownList.classList.remove("dropdown__list_show");
+    }
+  }, {
+    key: "closeDropdown",
+    value: function closeDropdown(e) {
+      var target = e.target;
+      var closestDropdown = target.closest('.js-dropdown');
+      var conditionForClosingDropdown1 = this.isDroprownOpened() && !closestDropdown;
+      var conditionForClosingDropdown2 = this.isDroprownOpened() && this.isGuestsDropdown() && target == this.btnApply;
+
+      if (conditionForClosingDropdown1 || conditionForClosingDropdown2) {
+        this.hideDropdown();
+      }
+    }
+  }, {
+    key: "disableBtn",
+    value: function disableBtn() {
+      var counterValueArr = this.dropdownList.querySelectorAll('.js-counter__value');
+      counterValueArr.forEach(function (item) {
+        if (Number(item.value) === 0) {
+          item.previousSibling.setAttribute("disabled", "disabled");
+        }
+      });
+    }
+  }, {
+    key: "counter",
+    value: function counter(e) {
+      var target = e.target;
+      var counter = target.closest('.js-counter__enter');
+
+      if (counter) {
+        var minus = counter.querySelector('.js-counter__btn_minus');
+        var plus = counter.querySelector('.js-counter__btn_plus');
+        var counterValue = counter.querySelector('.js-counter__value');
+
+        if (target === plus) {
+          counterValue.value = Number(counterValue.value) + 1;
+          minus.removeAttribute("disabled", "disabled");
+        }
+
+        if (target === minus) {
+          counterValue.value = Number(counterValue.value) - 1;
+
+          if (Number(counterValue.value) === 0) {
+            minus.setAttribute("disabled", "disabled");
+          }
+        }
+      }
+    }
+  }, {
+    key: "changeover",
+    value: function changeover(e) {
+      var target = e.target;
+
+      if (this.isGuestsDropdown()) {
+        var infants = Number(this.item.querySelector('input[name = "Infants"]').value);
+        var counterValueArr = this.item.querySelectorAll('.js-counter__value');
+        var allGuests = this.item.querySelector('input[name = "guests"]');
+        var sum = 0;
+        counterValueArr.forEach(function (item) {
+          sum += Number(item.value);
+        });
+        var remainderSum = sum % 10 === 2 || sum % 10 === 3 || sum % 10 === 4;
+
+        if (sum > 10 && sum < 15) {
+          allGuests.value = sum + ' гостей';
+        } else if (sum % 10 === 1) {
+          allGuests.value = sum + ' гость';
+        } else if (remainderSum) {
+          allGuests.value = sum + ' гостя';
+        } else {
+          allGuests.value = sum + ' гостей';
+        }
+
+        var remainderInfants = infants % 10 === 2 || infants % 10 === 3 || infants % 10 === 4;
+
+        if (infants > 10 && infants < 15) {
+          allGuests.value = allGuests.value + ', ' + infants + ' младенцев';
+        } else if (infants % 10 === 1) {
+          allGuests.value = allGuests.value + ', ' + infants + ' младенец';
+        } else if (remainderInfants) {
+          allGuests.value = allGuests.value + ', ' + infants + ' младенца';
+        } else if (infants) {
+          allGuests.value = allGuests.value + ', ' + infants + ' младенцев';
+        }
+
+        var btnClear = this.item.querySelector('button[name = "clear"]');
+
+        if (sum === 0) {
+          allGuests.value = 'Сколько гостей';
+          this.hideBtnClear();
+        } else {
+          btnClear.classList.remove('btn_hidden');
+
+          if (target === btnClear) {
+            allGuests.value = 'Сколько гостей';
+            counterValueArr.forEach(function (item) {
+              item.value = 0;
+            });
+            this.disableBtn();
+            this.hideBtnClear();
+          }
+        }
+      } else {
+        this.bedrooms = Number(this.item.querySelector('input[name = "Bedrooms"]').value);
+        this.beds = Number(this.item.querySelector('input[name = "Beds"]').value);
+        this.bathrooms = Number(this.item.querySelector('input[name = "Bathrooms"]').value);
+        this.allRoomsBeds = this.item.querySelector('input[name = "roomsBeds"]');
+
+        var _counterValueArr = this.item.querySelectorAll(".js-counter__value");
+
+        var _sum = 0;
+
+        _counterValueArr.forEach(function (item) {
+          _sum += Number(item.value);
+        });
+
+        this.bedroomsDeclination();
+        this.bedsAmount = 0;
+        this.bedsDeclination();
+
+        if (_sum !== 0) {
+          if (this.bedrooms !== 0) {
+            this.bedroomsDeclination();
+
+            if (this.beds !== 0) {
+              this.bedsDeclination();
+              this.allRoomsBeds.value = this.allRoomsBeds.value + ', ' + this.bedsAmount + '...';
+            }
+          } else {
+            if (this.beds !== 0) {
+              this.bedsDeclination();
+              this.allRoomsBeds.value = this.bedsAmount;
+            }
+          }
+        } else {
+          this.allRoomsBeds.value = '';
+        }
+      }
+    }
+  }, {
+    key: "bedroomsDeclination",
+    value: function bedroomsDeclination() {
+      this.bedroomsSum = this.bedrooms % 10 === 2 || this.bedrooms % 10 === 3 || this.bedrooms % 10 === 4;
+
+      if (this.bedrooms > 10 && this.bedrooms < 15) {
+        this.allRoomsBeds.value = this.bedrooms + ' спален';
+      } else if (this.bedrooms % 10 === 1) {
+        this.allRoomsBeds.value = this.bedrooms + ' спальня';
+      } else if (this.bedroomsSum) {
+        this.allRoomsBeds.value = this.bedrooms + ' спальни';
+      } else {
+        this.allRoomsBeds.value = this.bedrooms + ' спален';
+      }
+    }
+  }, {
+    key: "bedsDeclination",
+    value: function bedsDeclination() {
+      this.bedsSum = this.beds % 10 === 2 || this.beds % 10 === 3 || this.beds % 10 === 4;
+
+      if (this.beds > 10 && this.beds < 15) {
+        this.bedsAmount = this.beds + ' кроватей';
+      } else if (this.beds % 10 === 1) {
+        this.bedsAmount = this.beds + ' кровать';
+      } else if (this.bedsSum) {
+        this.bedsAmount = this.beds + ' кровати';
+      } else {
+        this.bedsAmount = this.beds + ' кроватей';
+      }
+    }
+  }]);
+
+  return Dropdown;
+}();
+
+exports.default = Dropdown;
 },{}],"../../../../../.config/yarn/global/node_modules/process/browser.js":[function(require,module,exports) {
 
 // shim for using process in browser
@@ -32774,255 +33247,6 @@ $.fn.extend({
     };
 })();
  })(window, jQuery);
-},{}],"components/input/input.js":[function(require,module,exports) {
-$('[name|="birthday"]').mask("99.99.9999", {
-  autoclear: false
-});
-},{}],"components/dropdown/dropdown.js":[function(require,module,exports) {
-// Dropdown appears when click and dissapear when click outside or btn "apply"
-var dropdownOpen = function dropdownOpen(event) {
-  var target = event.target;
-  var dropdown = target.closest('.js-dropdown');
-
-  if (dropdown) {
-    var input = dropdown.querySelector('.js-input__element');
-    var dropdownList = dropdown.querySelector('.js-dropdown__list');
-    var dropdownInput = target.closest('.js-dropdown__input');
-
-    if (dropdownInput) {
-      input.classList.toggle("input__element_border-radius_0");
-      input.classList.add("input__element_brightBorder");
-      dropdownList.classList.toggle("dropdown__list_show");
-    }
-
-    if (target === dropdownList.querySelector('button[name = "apply"]')) {
-      input.classList.remove("input__element_border-radius_0");
-      input.classList.remove("input__element_brightBorder");
-      dropdownList.classList.remove("dropdown__list_show");
-    }
-  }
-
-  if (!dropdown) {
-    var dropdownInputGuestsArr = document.querySelectorAll('input[name = "guests"]');
-    var dropdownInputRoomsBedsArr = document.querySelectorAll('input[name = "roomsBeds"]');
-    var dropdownListArr = document.querySelectorAll('.js-dropdown__list');
-    dropdownInputGuestsArr.forEach(function (item) {
-      item.classList.remove("input__element_border-radius_0");
-      item.classList.remove("input__element_brightBorder");
-    });
-    dropdownInputRoomsBedsArr.forEach(function (item) {
-      item.classList.remove("input__element_border-radius_0");
-      item.classList.remove("input__element_brightBorder");
-    });
-    dropdownListArr.forEach(function (item) {
-      item.classList.remove("dropdown__list_show");
-    });
-  }
-}; // Function counter
-
-
-var counter = function counter(event) {
-  var target = event.target;
-  var dropdown = target.closest('.js-dropdown');
-
-  if (dropdown) {
-    var counterValueArr = dropdown.querySelectorAll('.js-counter__value');
-    counterValueArr.forEach(function (item) {
-      if (Number(item.value) === 0) {
-        item.previousSibling.setAttribute("disabled", "disabled");
-      }
-    });
-
-    var _counter = target.closest('.js-counter__enter');
-
-    if (_counter) {
-      var minus = _counter.querySelector('.js-counter__btn_minus');
-
-      var plus = _counter.querySelector('.js-counter__btn_plus');
-
-      var counterValue = _counter.querySelector('.js-counter__value');
-
-      if (target === plus) {
-        counterValue.value = Number(counterValue.value) + 1;
-        minus.removeAttribute("disabled", "disabled");
-      }
-
-      if (target === minus) {
-        counterValue.value = Number(counterValue.value) - 1;
-
-        if (Number(counterValue.value) === 0) {
-          minus.setAttribute("disabled", "disabled");
-        }
-      }
-    }
-  }
-}; // Update of input field, where we can see total number of guests
-
-
-var changeover = function changeover(event) {
-  var target = event.target;
-  var dropdown = target.closest('.js-dropdown'); // Dropdown for guests
-
-  if (dropdown && dropdown.querySelector('input[name = "guests"]')) {
-    var infants = Number(dropdown.querySelector('input[name = "Infants"]').value);
-    var counterValueArr = dropdown.querySelectorAll('.js-counter__value');
-    var allGuests = dropdown.querySelector('input[name = "guests"]');
-    var sum = 0;
-    counterValueArr.forEach(function (item) {
-      sum += Number(item.value);
-    });
-    var remainderSum = sum % 10 === 2 || sum % 10 === 3 || sum % 10 === 4;
-
-    if (sum > 10 && sum < 15) {
-      allGuests.value = sum + ' гостей';
-    } else if (sum % 10 === 1) {
-      allGuests.value = sum + ' гость';
-    } else if (remainderSum) {
-      allGuests.value = sum + ' гостя';
-    } else {
-      allGuests.value = sum + ' гостей';
-    }
-
-    var remainderInfants = infants % 10 === 2 || infants % 10 === 3 || infants % 10 === 4;
-
-    if (infants > 10 && infants < 15) {
-      allGuests.value = allGuests.value + ', ' + infants + ' младенцев';
-    } else if (infants % 10 === 1) {
-      allGuests.value = allGuests.value + ', ' + infants + ' младенец';
-    } else if (remainderInfants) {
-      allGuests.value = allGuests.value + ', ' + infants + ' младенца';
-    } else if (infants) {
-      allGuests.value = allGuests.value + ', ' + infants + ' младенцев';
-    }
-
-    var btnClear = dropdown.querySelector('button[name = "clear"]');
-
-    if (sum === 0) {
-      allGuests.value = 'Сколько гостей';
-      btnClear.classList.add('btn_hidden');
-    } else {
-      btnClear.classList.remove('btn_hidden');
-
-      if (target === btnClear) {
-        allGuests.value = 'Сколько гостей';
-        counterValueArr.forEach(function (item) {
-          item.value = 0;
-        });
-        var minusArr = dropdown.querySelectorAll('.js-counter__btn_minus');
-        minusArr.forEach(function (item) {
-          item.setAttribute("disabled", "disabled");
-        });
-      }
-    }
-  } // Dropdown for rooms and beds
-
-
-  if (dropdown && dropdown.querySelector('input[name = "roomsBeds"]')) {
-    var bedrooms = Number(dropdown.querySelector('input[name = "Bedrooms"]').value);
-    var beds = Number(dropdown.querySelector('input[name = "Beds"]').value);
-    var bathrooms = Number(dropdown.querySelector('input[name = "Bathrooms"]').value);
-    var allRoomsBeds = dropdown.querySelector('input[name = "roomsBeds"]');
-
-    var _counterValueArr = dropdown.querySelectorAll(".js-counter__value");
-
-    var _sum = 0;
-
-    _counterValueArr.forEach(function (item) {
-      _sum += Number(item.value);
-    });
-
-    var bedroomsDeclination = function bedroomsDeclination() {
-      var bedroomsSum = bedrooms % 10 === 2 || bedrooms % 10 === 3 || bedrooms % 10 === 4;
-
-      if (bedrooms > 10 && bedrooms < 15) {
-        allRoomsBeds.value = bedrooms + ' спален';
-      } else if (bedrooms % 10 === 1) {
-        allRoomsBeds.value = bedrooms + ' спальня';
-      } else if (bedroomsSum) {
-        allRoomsBeds.value = bedrooms + ' спальни';
-      } else {
-        allRoomsBeds.value = bedrooms + ' спален';
-      }
-    };
-
-    var bedsAmount = 0;
-
-    var bedsDeclination = function bedsDeclination() {
-      var bedsSum = beds % 10 === 2 || beds % 10 === 3 || beds % 10 === 4;
-
-      if (beds > 10 && beds < 15) {
-        bedsAmount = beds + ' кроватей';
-      } else if (beds % 10 === 1) {
-        bedsAmount = beds + ' кровать';
-      } else if (bedsSum) {
-        bedsAmount = beds + ' кровати';
-      } else {
-        bedsAmount = beds + ' кроватей';
-      }
-    };
-
-    if (_sum !== 0) {
-      if (bedrooms !== 0) {
-        bedroomsDeclination();
-
-        if (beds !== 0) {
-          bedsDeclination();
-          allRoomsBeds.value = allRoomsBeds.value + ', ' + bedsAmount + '...';
-        }
-      } else {
-        if (beds !== 0) {
-          bedsDeclination();
-          allRoomsBeds.value = bedsAmount;
-        }
-      }
-    } else {
-      allRoomsBeds.value = '';
-    }
-  }
-};
-
-document.addEventListener("click", dropdownOpen);
-document.addEventListener("click", counter);
-document.addEventListener("click", changeover);
-},{}],"components/like-button/like-button.js":[function(require,module,exports) {
-// Dropdown appears when click and dissapear when click outside or btn "apply"
-var likeButtonClicked = function likeButtonClicked(event) {
-  var target = event.target;
-  var likeButton = target.closest('.js-like-button__button');
-
-  if (likeButton) {
-    var heart = likeButton.querySelector('.js-like-button__image'); // Function 'plus' of counter
-
-    var plus = function plus() {
-      var numberOfLikes = likeButton.querySelector('.js-like-button__counter');
-      var counter = Number(numberOfLikes.innerHTML);
-      numberOfLikes.innerHTML = counter += 1;
-      numberOfLikes.classList.add('like-button__counter_active');
-    }; // Function 'minus' of counter
-
-
-    var minus = function minus() {
-      var numberOfLikes = likeButton.querySelector('.js-like-button__counter');
-      var counter = Number(numberOfLikes.innerHTML);
-      numberOfLikes.innerHTML = counter -= 1;
-      numberOfLikes.classList.remove('like-button__counter_active');
-    };
-
-    if (heart.innerHTML === 'favorite_border') {
-      heart.innerHTML = 'favorite';
-      heart.classList.add('like-button__image_active');
-      plus();
-      likeButton.classList.add('like-button__button_active');
-    } else {
-      heart.innerHTML = 'favorite_border';
-      heart.classList.remove('like-button__image_active');
-      minus();
-      likeButton.classList.remove('like-button__button_active');
-    }
-  }
-};
-
-document.addEventListener("click", likeButtonClicked);
 },{}],"../node_modules/paginationjs/src/pagination.js":[function(require,module,exports) {
 var global = arguments[3];
 var define;
@@ -34151,40 +34375,85 @@ var define;
 })(this, window.jQuery);
 
 },{}],"components/pagination/pagination.js":[function(require,module,exports) {
-function simpleTemplating(data) {
-  var html = '<ul>';
-  $.each(data, function (index, item) {
-    html += '<li>' + item + '</li>';
-  });
-  html += '</ul>';
-  return html;
-}
+"use strict";
 
-$('.js-pagination__container').pagination({
-  dataSource: function dataSource(done) {
-    var result = [];
-
-    for (var i = 1; i < 170; i++) {
-      result.push(i);
-    }
-
-    done(result);
-  },
-  pageSize: 12,
-  autoHidePrevious: true,
-  autoHideNext: true,
-  pageRange: 1,
-  callback: function callback(data, pagination) {
-    var html = simpleTemplating(data);
-    $('.js-pagination__data').html(html);
-  }
+Object.defineProperty(exports, "__esModule", {
+  value: true
 });
-var a = 1;
-var b = 12;
-$('.paginationjs').after($('<div>', {
-  class: 'paginationjs__legend',
-  text: a + ' – ' + b + ' из 100+ вариантов аренды'
-}));
+exports.default = void 0;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var Pagination = /*#__PURE__*/function () {
+  function Pagination(item) {
+    _classCallCheck(this, Pagination);
+
+    this.item = item;
+    this.init();
+  }
+
+  _createClass(Pagination, [{
+    key: "init",
+    value: function init() {
+      this.callPluginPagination();
+      this.createSign(1, 12);
+    }
+  }, {
+    key: "simpleTemplating",
+    value: function simpleTemplating(data) {
+      var html = '<ul>';
+      $.each(data, function (index, item) {
+        html += '<li>' + item + '</li>';
+      });
+      html += '</ul>';
+      return html;
+    }
+  }, {
+    key: "callPluginPagination",
+    value: function callPluginPagination() {
+      var paginationContainer = this.item.querySelector('.js-pagination__container');
+      var paginationData = this.item.querySelector('.js-pagination__data');
+      var options = {
+        dataSource: function dataSource(done) {
+          var result = [];
+
+          for (var i = 1; i < 170; i++) {
+            result.push(i);
+          }
+
+          done(result);
+        },
+        pageSize: 12,
+        autoHidePrevious: true,
+        autoHideNext: true,
+        pageRange: 1,
+        bindedSimpleTemplating: this.simpleTemplating,
+        callback: function callback(data, pagination) {
+          var html = this.bindedSimpleTemplating(data);
+          $(paginationData).html(html);
+        }
+      };
+      $(paginationContainer).pagination(options);
+    }
+  }, {
+    key: "createSign",
+    value: function createSign(from, to) {
+      var paginationContainer = this.item.querySelector('.paginationjs');
+      $(paginationContainer).after($('<div>', {
+        class: 'paginationjs__legend',
+        text: from + ' – ' + to + ' из 100+ вариантов аренды'
+      }));
+    }
+  }]);
+
+  return Pagination;
+}();
+
+exports.default = Pagination;
 },{}],"../node_modules/ion-rangeslider/js/ion.rangeSlider.js":[function(require,module,exports) {
 var define;
 // Ion.RangeSlider
@@ -36637,75 +36906,20 @@ var define;
 
 }));
 
-},{"jquery":"../node_modules/jquery/dist/jquery.js"}],"components/range-slider/range-slider.js":[function(require,module,exports) {
-$(".js-range-slider").ionRangeSlider({
-  type: "double",
-  min: 0,
-  max: 15000,
-  from: 5000,
-  to: 10000,
-  // grid: true,
-  postfix: "₽",
-  values_separator: " - ",
-  decorate_both: true,
-  hide_min_max: true,
-  hide_from_to: true,
-  skin: "big",
-  extra_classes: "js-irs__scale"
-}); // Show sign with values from and to
-
-var sign = document.createElement('div');
-sign.classList.add('sign');
-var slider = document.querySelector('.js-irs__scale');
-slider.append(sign);
-var from = $(".js-range-slider").data('from');
-var to = $(".js-range-slider").data('to');
-updateSign(from, to);
-$(".js-range-slider").on('change', function () {
-  var from = $(this).data('from');
-  var to = $(this).data('to');
-  updateSign(from, to);
-});
-
-function updateSign(from, to) {
-  var prettyFrom = prettify(from);
-  var prettyTo = prettify(to);
-  sign.textContent = "".concat(prettyFrom, "\u20BD - ").concat(prettyTo, "\u20BD");
-}
-
-function prettify(num) {
-  var n = num.toString();
-  var separator = " ";
-  return n.replace(/(\d{1,3}(?=(?:\d\d\d)+(?!\d)))/g, "$1" + separator);
-} // Show title of slider
-
-
-var title = document.createElement('div');
-title.classList.add('title');
-slider.append(title);
-
-if (document.querySelector('.js-form-elements__range-slider')) {
-  title.textContent = 'Range slider';
-} else {
-  title.textContent = 'Диапазон цены';
-} // Show description
-
-
-var description = document.createElement('div');
-description.classList.add('description');
-slider.append(description);
-
-if (document.querySelector('.js-form-elements__range-slider')) {
-  description.textContent = '';
-} else {
-  description.textContent = 'Стоимость за сутки пребывания в номере';
-}
-},{}],"UI-kit/form-elements/main.js":[function(require,module,exports) {
+},{"jquery":"../node_modules/jquery/dist/jquery.js"}],"UI-kit/form-elements/main.js":[function(require,module,exports) {
 "use strict";
 
 var _checkboxBtn = _interopRequireDefault(require("../../components/checkbox-btn/checkbox-btn"));
 
 var _dateDropdown = _interopRequireDefault(require("../../components/date-dropdown/date-dropdown"));
+
+var _input = _interopRequireDefault(require("../../components/input/input"));
+
+var _likeButton = _interopRequireDefault(require("../../components/like-button/like-button"));
+
+var _rangeSlider = _interopRequireDefault(require("../../components/range-slider/range-slider"));
+
+var _dropdown = _interopRequireDefault(require("../../components/dropdown/dropdown"));
 
 require("./../../import-jquery");
 
@@ -36715,19 +36929,11 @@ require("jquery.maskedinput/src/jquery.maskedinput.js");
 
 require("air-datepicker/dist/js/datepicker.js");
 
-require("../../components/input/input.js");
-
-require("../../components/dropdown/dropdown.js");
-
-require("../../components/like-button/like-button.js");
-
 require("paginationjs/src/pagination.js");
 
 require("../../components/pagination/pagination.js");
 
 require("ion-rangeslider/js/ion.rangeSlider.js");
-
-require("../../components/range-slider/range-slider.js");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -36738,6 +36944,18 @@ checkboxLists.forEach(function (checkboxList) {
 var dateDropdowns = document.querySelectorAll('.js-date-dropdown');
 dateDropdowns.forEach(function (dateDropdown, index) {
   new _dateDropdown.default(dateDropdown, index);
+});
+var maskedInput = document.querySelector('[name|="birthday"]');
+new _input.default(maskedInput);
+var likeButtons = document.querySelectorAll('.js-like-button__button');
+likeButtons.forEach(function (likeButton) {
+  new _likeButton.default(likeButton);
+});
+var rangeSlider = document.querySelector('.js-range-slider');
+new _rangeSlider.default(rangeSlider);
+var dropdowns = document.querySelectorAll('.js-dropdown');
+dropdowns.forEach(function (dropdown) {
+  new _dropdown.default(dropdown);
 });
 // Hovered input
 var inputWithHover = document.querySelector('[name="Text"]');
@@ -36839,7 +37057,7 @@ var reviewLikeBtn = review.querySelector('.like-button__button');
 setTimeout(function () {
   $(reviewLikeBtn).trigger('click');
 }, 15);
-},{"../../components/checkbox-btn/checkbox-btn":"components/checkbox-btn/checkbox-btn.js","../../components/date-dropdown/date-dropdown":"components/date-dropdown/date-dropdown.js","./../../import-jquery":"import-jquery.js","jquery-ui-dist/jquery-ui.js":"../node_modules/jquery-ui-dist/jquery-ui.js","jquery.maskedinput/src/jquery.maskedinput.js":"../node_modules/jquery.maskedinput/src/jquery.maskedinput.js","air-datepicker/dist/js/datepicker.js":"../node_modules/air-datepicker/dist/js/datepicker.js","../../components/input/input.js":"components/input/input.js","../../components/dropdown/dropdown.js":"components/dropdown/dropdown.js","../../components/like-button/like-button.js":"components/like-button/like-button.js","paginationjs/src/pagination.js":"../node_modules/paginationjs/src/pagination.js","../../components/pagination/pagination.js":"components/pagination/pagination.js","ion-rangeslider/js/ion.rangeSlider.js":"../node_modules/ion-rangeslider/js/ion.rangeSlider.js","../../components/range-slider/range-slider.js":"components/range-slider/range-slider.js"}],"../../../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"../../components/checkbox-btn/checkbox-btn":"components/checkbox-btn/checkbox-btn.js","../../components/date-dropdown/date-dropdown":"components/date-dropdown/date-dropdown.js","../../components/input/input":"components/input/input.js","../../components/like-button/like-button":"components/like-button/like-button.js","../../components/range-slider/range-slider":"components/range-slider/range-slider.js","../../components/dropdown/dropdown":"components/dropdown/dropdown.js","./../../import-jquery":"import-jquery.js","jquery-ui-dist/jquery-ui.js":"../node_modules/jquery-ui-dist/jquery-ui.js","jquery.maskedinput/src/jquery.maskedinput.js":"../node_modules/jquery.maskedinput/src/jquery.maskedinput.js","air-datepicker/dist/js/datepicker.js":"../node_modules/air-datepicker/dist/js/datepicker.js","paginationjs/src/pagination.js":"../node_modules/paginationjs/src/pagination.js","../../components/pagination/pagination.js":"components/pagination/pagination.js","ion-rangeslider/js/ion.rangeSlider.js":"../node_modules/ion-rangeslider/js/ion.rangeSlider.js"}],"../../../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -36867,7 +37085,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64701" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57980" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

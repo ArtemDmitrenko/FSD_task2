@@ -1,25 +1,46 @@
-let dropdownButtons = document.querySelectorAll(".js-nav-menu__item_dropdown");
-let subLists = document.querySelectorAll(".js-nav-menu__sub-list");
-let checkmarks = document.querySelectorAll(".js-checkmark");
+export default class NavMenu {
+  constructor(item) {
+    this.item = item;
+    this.init();
+  }
 
-// Dropdown appears when you click the button
-for (let i = 0; i < dropdownButtons.length; i++) {
-  dropdownButtons[i].onclick = function() {
-    subLists[i].classList.toggle("show");
-    checkmarks[i].classList.toggle("checkmark__down");
-    checkmarks[i].classList.toggle("checkmark__up");
-  };
-}
+  init() {
+    this.findAllElements();
+    this.openMenuDropdown();
+    this.closeMenuDropdown();
+  }
 
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-  for (let i = 0; i < dropdownButtons.length; i++) {
-    if (!document.getElementsByClassName('nav-menu__item_dropdown')[i].contains(event.target)) {
-      if (subLists[i].classList.contains('show')) {
-        subLists[i].classList.remove('show');
-        checkmarks[i].classList.toggle("checkmark__down");
-        checkmarks[i].classList.toggle("checkmark__up");
+  findAllElements() {
+    this.dropdownButtons = this.item.querySelectorAll(".js-nav-menu__item_dropdown");
+    this.subLists = this.item.querySelectorAll(".js-nav-menu__sub-list");
+    this.checkmarks = this.item.querySelectorAll(".js-checkmark");
+  }
+
+  openMenuDropdown() {
+    for (let i = 0; i < this.dropdownButtons.length; i++) {
+      this.dropdownButtons[i].addEventListener('click', this.openMenu.bind(this, i));
+    }
+  }
+
+  openMenu(i) {
+    this.subLists[i].classList.toggle("show");
+    this.checkmarks[i].classList.toggle("checkmark__down");
+    this.checkmarks[i].classList.toggle("checkmark__up");
+  }
+
+  closeMenuDropdown() {
+    document.addEventListener('click', this.closeMenu.bind(this));
+  }
+
+  closeMenu(event) {
+    for (let i = 0; i < this.dropdownButtons.length; i++) {
+      if (!document.getElementsByClassName('nav-menu__item_dropdown')[i].contains(event.target)) {
+        if (this.subLists[i].classList.contains('show')) {
+          this.subLists[i].classList.remove('show');
+          this.checkmarks[i].classList.toggle("checkmark__down");
+          this.checkmarks[i].classList.toggle("checkmark__up");
+        }
       }
     }
   }
-};
+}

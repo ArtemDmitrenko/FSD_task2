@@ -1,5 +1,10 @@
 import CheckboxBtn from '../../components/checkbox-btn/checkbox-btn';
 import DateDropdown from '../../components/date-dropdown/date-dropdown';
+import Input from '../../components/input/input';
+import LikeButton from '../../components/like-button/like-button';
+import RangeSlider from '../../components/range-slider/range-slider';
+import Dropdown from '../../components/dropdown/dropdown';
+
 
 const checkboxLists = document.querySelectorAll('.js-checkbox-btn');
 checkboxLists.forEach((checkboxList) => {
@@ -11,19 +16,33 @@ dateDropdowns.forEach((dateDropdown, index) => {
   new DateDropdown(dateDropdown, index);
 });
 
+const maskedInput = document.querySelector('[name|="birthday"]');
+new Input(maskedInput);
+
+const likeButtons = document.querySelectorAll('.js-like-button__button');
+likeButtons.forEach((likeButton) => {
+  new LikeButton(likeButton);
+});
+
+const rangeSlider = document.querySelector('.js-range-slider');
+new RangeSlider(rangeSlider);
+
+
+const dropdowns = document.querySelectorAll('.js-dropdown');
+dropdowns.forEach((dropdown) => {
+  new Dropdown(dropdown);
+});
+
 
 import "./../../import-jquery";
 
 import "jquery-ui-dist/jquery-ui.js";
 import "jquery.maskedinput/src/jquery.maskedinput.js";
 import "air-datepicker/dist/js/datepicker.js";
-import "../../components/input/input.js";
-import "../../components/dropdown/dropdown.js";
-import "../../components/like-button/like-button.js";
+// import "../../components/dropdown/dropdown.js";
 import "paginationjs/src/pagination.js";
 import "../../components/pagination/pagination.js";
 import "ion-rangeslider/js/ion.rangeSlider.js";
-import "../../components/range-slider/range-slider.js";
 
 // Hovered input
 const inputWithHover = document.querySelector('[name="Text"]');

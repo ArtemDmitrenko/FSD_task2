@@ -159,6 +159,80 @@ var Header = /*#__PURE__*/function () {
 }();
 
 exports.default = Header;
+},{}],"components/nav-menu/nav-menu.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var NavMenu = /*#__PURE__*/function () {
+  function NavMenu(item) {
+    _classCallCheck(this, NavMenu);
+
+    this.item = item;
+    this.init();
+  }
+
+  _createClass(NavMenu, [{
+    key: "init",
+    value: function init() {
+      this.findAllElements();
+      this.openMenuDropdown();
+      this.closeMenuDropdown();
+    }
+  }, {
+    key: "findAllElements",
+    value: function findAllElements() {
+      this.dropdownButtons = this.item.querySelectorAll(".js-nav-menu__item_dropdown");
+      this.subLists = this.item.querySelectorAll(".js-nav-menu__sub-list");
+      this.checkmarks = this.item.querySelectorAll(".js-checkmark");
+    }
+  }, {
+    key: "openMenuDropdown",
+    value: function openMenuDropdown() {
+      for (var i = 0; i < this.dropdownButtons.length; i++) {
+        this.dropdownButtons[i].addEventListener('click', this.openMenu.bind(this, i));
+      }
+    }
+  }, {
+    key: "openMenu",
+    value: function openMenu(i) {
+      this.subLists[i].classList.toggle("show");
+      this.checkmarks[i].classList.toggle("checkmark__down");
+      this.checkmarks[i].classList.toggle("checkmark__up");
+    }
+  }, {
+    key: "closeMenuDropdown",
+    value: function closeMenuDropdown() {
+      document.addEventListener('click', this.closeMenu.bind(this));
+    }
+  }, {
+    key: "closeMenu",
+    value: function closeMenu(event) {
+      for (var i = 0; i < this.dropdownButtons.length; i++) {
+        if (!document.getElementsByClassName('nav-menu__item_dropdown')[i].contains(event.target)) {
+          if (this.subLists[i].classList.contains('show')) {
+            this.subLists[i].classList.remove('show');
+            this.checkmarks[i].classList.toggle("checkmark__down");
+            this.checkmarks[i].classList.toggle("checkmark__up");
+          }
+        }
+      }
+    }
+  }]);
+
+  return NavMenu;
+}();
+
+exports.default = NavMenu;
 },{}],"../../../../../.config/yarn/global/node_modules/process/browser.js":[function(require,module,exports) {
 
 // shim for using process in browser
@@ -11260,51 +11334,22 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var _default = window.$ = window.jQuery = _jquery.default;
 
 exports.default = _default;
-},{"jquery":"../node_modules/jquery/dist/jquery.js"}],"components/nav-menu/nav-menu.js":[function(require,module,exports) {
-var dropdownButtons = document.querySelectorAll(".js-nav-menu__item_dropdown");
-var subLists = document.querySelectorAll(".js-nav-menu__sub-list");
-var checkmarks = document.querySelectorAll(".js-checkmark"); // Dropdown appears when you click the button
-
-var _loop = function _loop(i) {
-  dropdownButtons[i].onclick = function () {
-    subLists[i].classList.toggle("show");
-    checkmarks[i].classList.toggle("checkmark__down");
-    checkmarks[i].classList.toggle("checkmark__up");
-  };
-};
-
-for (var i = 0; i < dropdownButtons.length; i++) {
-  _loop(i);
-} // Close the dropdown if the user clicks outside of it
-
-
-window.onclick = function (event) {
-  for (var _i = 0; _i < dropdownButtons.length; _i++) {
-    if (!document.getElementsByClassName('nav-menu__item_dropdown')[_i].contains(event.target)) {
-      if (subLists[_i].classList.contains('show')) {
-        subLists[_i].classList.remove('show');
-
-        checkmarks[_i].classList.toggle("checkmark__down");
-
-        checkmarks[_i].classList.toggle("checkmark__up");
-      }
-    }
-  }
-};
-},{}],"UI-kit/headers-footers/main.js":[function(require,module,exports) {
+},{"jquery":"../node_modules/jquery/dist/jquery.js"}],"UI-kit/headers-footers/main.js":[function(require,module,exports) {
 "use strict";
 
 var _header = _interopRequireDefault(require("../../components/header/header"));
 
-require("./../../import-jquery");
+var _navMenu = _interopRequireDefault(require("../../components/nav-menu/nav-menu"));
 
-require("../../components/nav-menu/nav-menu.js");
+require("./../../import-jquery");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var header = document.querySelector('.js-header');
 new _header.default(header);
-},{"../../components/header/header":"components/header/header.js","./../../import-jquery":"import-jquery.js","../../components/nav-menu/nav-menu.js":"components/nav-menu/nav-menu.js"}],"../../../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+var navMenu = document.querySelector('.js-nav-menu');
+new _navMenu.default(navMenu);
+},{"../../components/header/header":"components/header/header.js","../../components/nav-menu/nav-menu":"components/nav-menu/nav-menu.js","./../../import-jquery":"import-jquery.js"}],"../../../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -11332,7 +11377,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64701" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57980" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

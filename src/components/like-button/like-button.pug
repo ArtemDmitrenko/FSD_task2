@@ -3,7 +3,7 @@
 
 mixin like-button(options)
     - const {name, numberOfLikes} = options
-    .like-button
+    .like-button.js-like-button
         if name
             h3.like-button__name= name
         button.like-button__button.js-like-button__button(type='button')

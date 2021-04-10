@@ -1,39 +1,47 @@
-// Dropdown appears when click and dissapear when click outside or btn "apply"
-let likeButtonClicked = (event) => {
-  let { target } = event;
-  let likeButton = target.closest('.js-like-button__button');
-  if (likeButton) {
-    let heart = likeButton.querySelector('.js-like-button__image');
+export default class LikeButton {
+  constructor(item) {
+    this.item = item;
+    this.init();
+  }
 
-    // Function 'plus' of counter
-    let plus = function() {
-      let numberOfLikes = likeButton.querySelector('.js-like-button__counter');
-      let counter = Number(numberOfLikes.innerHTML);
-      numberOfLikes.innerHTML = counter += 1;
-      numberOfLikes.classList.add('like-button__counter_active');
-    }
+  init() {
+    this.item.addEventListener('click', this.clickOnLikeButton.bind(this));
+  }
 
-    // Function 'minus' of counter
-    let minus = function() {
-      let numberOfLikes = likeButton.querySelector('.js-like-button__counter');
-      let counter = Number(numberOfLikes.innerHTML);
-      numberOfLikes.innerHTML = counter -= 1;
-      numberOfLikes.classList.remove('like-button__counter_active');
-    }
-
+  isLiked() {
+    const heart = this.item.querySelector('.js-like-button__image');
     if (heart.innerHTML === 'favorite_border') {
-      heart.innerHTML = 'favorite';
-      heart.classList.add('like-button__image_active');
-      plus();
-      likeButton.classList.add('like-button__button_active');
+      return false;
+    }
+    return true;
+  }
 
-    } else {
+  plusLike() {
+    const numberOfLikes = this.item.querySelector('.js-like-button__counter');
+    let counter = Number(numberOfLikes.innerHTML);
+    numberOfLikes.innerHTML = counter += 1;
+    numberOfLikes.classList.add('like-button__counter_active');
+  }
+
+  minusLike() {
+    const numberOfLikes = this.item.querySelector('.js-like-button__counter');
+    let counter = Number(numberOfLikes.innerHTML);
+    numberOfLikes.innerHTML = counter -= 1;
+    numberOfLikes.classList.remove('like-button__counter_active');
+  }
+
+  clickOnLikeButton() {
+    const heart = this.item.querySelector('.js-like-button__image');
+    if (this.isLiked()) {
       heart.innerHTML = 'favorite_border';
       heart.classList.remove('like-button__image_active');
-      minus();
-      likeButton.classList.remove('like-button__button_active');
+      this.item.classList.remove('like-button__button_active');
+      this.minusLike();
+    } else {
+      heart.innerHTML = 'favorite';
+      heart.classList.add('like-button__image_active');
+      this.item.classList.add('like-button__button_active');
+      this.plusLike();
     }
   }
 }
-
-document.addEventListener("click", likeButtonClicked);
