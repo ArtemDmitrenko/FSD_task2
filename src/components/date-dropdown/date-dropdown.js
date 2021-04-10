@@ -1,3 +1,7 @@
+import './../../import-jquery';
+import 'air-datepicker/dist/js/datepicker.js';
+
+
 export default class DateDropdown {
   constructor(item, index) {
     this.item = item;

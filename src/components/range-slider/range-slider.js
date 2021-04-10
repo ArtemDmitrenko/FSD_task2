@@ -1,3 +1,6 @@
+import "./../../import-jquery";
+import "ion-rangeslider/js/ion.rangeSlider.js";
+
 export default class RangeSlider {
   constructor(item) {
     this.item = item;

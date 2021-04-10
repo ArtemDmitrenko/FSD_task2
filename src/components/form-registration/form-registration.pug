@@ -4,7 +4,7 @@ include ../toggle/toggle.pug
 include ../btn/btn.pug
 
 mixin form-registration()
-    form(action="#" method="get").form-registration
+    form(action="#" method="get").form-registration.js-form-registration
         h1.form-registration__title Регистрация аккаунта
         .form-registration__name
             +input({name: 'Name', type: 'text', placeholder: 'Имя'})

@@ -1,3 +1,7 @@
+import "./../../import-jquery";
+import "paginationjs/src/pagination.js";
+
+
 export default class Pagination {
   constructor(item) {
     this.item = item;

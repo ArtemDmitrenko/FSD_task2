@@ -1,16 +1,5 @@
-import Header from '../../components/header/header';
-import NavMenu from '../../components/nav-menu/nav-menu';
+import HeadersFooters from './headers-footers';
 
-
-
-
-
-import "./../../import-jquery";
-
-
-
-const header = document.querySelector('.js-header');
-new Header(header);
-
-const navMenu = document.querySelector('.js-nav-menu');
-new NavMenu(navMenu);
+document.addEventListener('DOMContentLoaded', () => {
+  new HeadersFooters();
+})
