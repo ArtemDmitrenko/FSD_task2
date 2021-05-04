@@ -13,17 +13,21 @@ const isDev = process.env.NODE_ENV === 'development';
 const isProd = !isDev;
 
 function filename(name, ext) {
+  if (ext === 'html') {
+    return `${name}.${ext}`
+  }
+
   if (name) {
     if (isDev) {
-      return `${name}/${name}.${ext}`
+      return `${ext}/${name}.${ext}`
     } else {
-      return `${name}/${name}.[hash].${ext}`
+      return `${ext}/${name}.[hash].${ext}`
     }
   } else {
     if (isDev) {
-      return `[name]/[name].${ext}`
+      return `${ext}/[name].${ext}`
     } else {
-      return `[name]/[name].[hash].${ext}`
+      return `${ext}/[name].[hash].${ext}`
     }
     // isDev ? `[name].${ext}` : `[name].[contenthash].${ext}`
   }
@@ -98,9 +102,9 @@ module.exports = {
     // overlay: true,
     port: 4200,
     hot: isDev,
-    openPage: 'dist/content/content.html',
-    publicPath: "/dist/", // here's the change
-    contentBase: path.join(__dirname, '/src')
+    // openPage: 'dist/index.html',
+    // publicPath: "/dist/", // here's the change
+    // contentBase: path.join(__dirname, '/src')
   },
   module: {
     rules: [{
@@ -115,7 +119,7 @@ module.exports = {
         use: {
           loader: 'file-loader',
           options: {
-            publicPath: '../../dist/assets/images',
+            publicPath: './assets/images',
             name: '[name].[ext]',
             outputPath: 'assets/images/',
           },
@@ -130,7 +134,7 @@ module.exports = {
         use: {
           loader: 'file-loader',
           options: {
-            publicPath: '../../dist/assets/fonts',
+            publicPath: '../assets/fonts',
             name: '[name].[ext]',
             outputPath: 'assets/fonts/',
           },

@@ -8,7 +8,8 @@ export default class Pagination {
 
   init() {
     this.callPluginPagination();
-    this.createSign(1, 12)
+    this.createSign(1, 12);
+    this.changeArrow();
   }
 
   simpleTemplating(data) {
@@ -50,5 +51,11 @@ export default class Pagination {
       class: 'paginationjs__legend',
       text: from + ' – ' + to + ' из 100+ вариантов аренды'
     }))
+  }
+
+  changeArrow() {
+    const arrowContainer = this.item.querySelector('.J-paginationjs-next');
+    const arrow = arrowContainer.querySelector('a');
+    arrow.innerHTML = 'arrow_forward'
   }
 }
