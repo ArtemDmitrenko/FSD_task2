@@ -1,5 +1,4 @@
-import "./../../import-jquery";
-import "ion-rangeslider/js/ion.rangeSlider.js";
+import 'ion-rangeslider';
 
 export default class RangeSlider {
   constructor(item) {
@@ -30,6 +29,7 @@ export default class RangeSlider {
       extra_classes: "js-irs__scale",
     }
     $(this.item).ionRangeSlider(options);
+    $(this.item).on('change', this.getFromAndTo.bind(this))
   }
 
   showSighWithValues() {
@@ -39,6 +39,12 @@ export default class RangeSlider {
     this.slider.append(this.sign);
     const from = $(".js-range-slider").data('from');
     const to = $(".js-range-slider").data('to');
+    this.updateSign(from, to);
+  }
+
+  getFromAndTo() {
+    const from = $(this.item).data('from');
+    const to = $(this.item).data('to');
     this.updateSign(from, to);
   }
 
@@ -60,7 +66,6 @@ export default class RangeSlider {
     this.slider.append(title);
     const parentElement = this.item.parentElement;
     if (parentElement.classList.contains('js-form-elements__range-slider')) {
-
       title.textContent = 'Range slider'
     } else {
       title.textContent = 'Диапазон цены'

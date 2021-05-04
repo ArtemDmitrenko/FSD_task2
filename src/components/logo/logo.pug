@@ -1,3 +1,4 @@
 mixin logo()
     .logo
-        img(src="../../components/logo/Logo.svg", alt="logo").logo__img
+        img.logo__img(src=require("../../../src/components/logo/Logo.svg").default, alt="logo")
+

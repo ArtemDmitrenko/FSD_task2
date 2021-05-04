@@ -1,4 +1,4 @@
-$adress: "/fonts";
+$adress: "../../fonts";
 @mixin font-face($name, $adress) {
   font-family: "Conv_#{$name}";
   src: url("#{$adress}/#{$name}.eot");

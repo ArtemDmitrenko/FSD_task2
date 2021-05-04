@@ -5,8 +5,8 @@ mixin room(options)
 
     .room
         .room__card.js-room__card.slider
-            - for (let i = 0; i < numberOfImage.length; i++)
-                img(src=adressOfRoom+numberOfImage[i], alt="Photo").foto
+            each image in numberOfImage
+                img(src=require(`../../components/room/${adressOfRoom}/${image}.png`).default, alt="Photo").foto
         .room__room-description
             .room__room-block
                 h1.room__room-number <span>№</span> #{roomNumber}

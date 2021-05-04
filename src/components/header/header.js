@@ -1,4 +1,3 @@
-import "./../../import-jquery";
 import NavMenu from '../nav-menu/nav-menu';
 
 export default class Header {

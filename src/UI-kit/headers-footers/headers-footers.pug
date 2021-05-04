@@ -1,0 +1,21 @@
+extends ../../templates/template.pug
+include ../../components/UIkit/logo-UIkit/logo-UIkit.pug
+include ../../components/header/header.pug
+include ../../components/footer/footer.pug
+include ../../components/footer-tab/footer-tab.pug
+
+block title
+    title Headers-footers
+
+block content
+    .headers-footers
+        .headers-footers__logo-UIkit
+            +logo-UIkit()
+        .headers-footers__headerNotRegistered
+            +header({modificator: "NotRegistered"})
+        .headers-footers__headerRegistered
+            +header({modificator: "Registered"})
+        .headers-footers__footerWide
+            +footer()
+        .headers-footers__footerTab
+            +footer-tab()

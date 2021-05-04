@@ -8,7 +8,7 @@ mixin review(options)
     - const {nameOfFile, name, date, numberOfLikes, textOfReview} = options;
     .review
         .review__part1
-            img.review__image(src=nameOfFile alt=name)
+            img.review__image(src=require(`../../../src/components/review/${nameOfFile}.png`).default, alt=`${name}`)
             .review__description
                 h3.review__name= name
                 p.review__date= date

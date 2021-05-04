@@ -1,0 +1,98 @@
+extends ../../templates/template.pug
+include ../../components/UIkit/logo-UIkit/logo-UIkit.pug
+include ../../components/input/input.pug
+include ../../components/dropdown/dropdown.pug
+include ../../components/date-dropdown/date-dropdown.pug
+include ../../components/checkbox-btn/checkbox-btn.pug
+include ../../components/room-info/room-info.pug
+include ../../components/radio-buttons/radio-buttons.pug
+include ../../components/toggle/toggle.pug
+include ../../components/like-button/like-button.pug
+include ../../components/rate-button/rate-button.pug
+include ../../components/bullet-list/bullet-list.pug
+include ../../components/review/review.pug
+include ../../components/pagination/pagination.pug
+include ../../components/range-slider/range-slider.pug
+include ../../components/btn/btn.pug
+
+
+
+
+block title
+    title Form elements
+
+block content
+    .form-elements
+        .form-elements__logo-UIkit
+            +logo-UIkit()
+        .form-elements__all-items
+            .form-elements__globalRow1
+                .form-elements__textField.form-elements__element
+                    +input({heading: 'text field', description: 'default', name: 'email', type: 'email', placeholder: 'Email', required: true})
+                .form-elements__textField.form-elements__element
+                    +input({heading: 'text field', description: 'Hover / Focus', name: 'Text', type: 'email', placeholder: 'This is pretty awesome', required: true})
+                .form-elements__dropdown.form-elements__element 
+                    +dropdown({dropdownType: 'guests', heading: 'dropdown', value: 'Сколько гостей'})
+                .form-elements__maskedInput.form-elements__element
+                    +input({heading: 'masked text field', name: 'birthday', type: 'text', placeholder: 'ДД.ММ.ГГГГ', required: true})
+                .form-elements__datepicker.form-elements__datepicker_rangeInTwo.form-elements__element
+                    +date-dropdown({heading1: 'date Dropdown', heading2: 'date Dropdown', name: 'Dates in 2 inputs'})
+                .form-elements__datepicker.form-elements__datepicker_rangeInOne.form-elements__element
+                    +date-dropdown({heading: 'filter date dropdown', name: 'Dates in 1 input'})
+                .form-elements__subscriptionInput.form-elements__element 
+                    +input({heading: 'subscription text field', name: 'email', type: 'email', placeholder: 'Email', required: true, subscription: true})
+                .form-elements__dropdown.form-elements__element.form-elements__element_notexpanded
+                    +dropdown({dropdownType:'roomsBeds', heading: 'dropdown', description: 'default'})
+                .form-elements__dropdown.form-elements__element.form-elements__element_expanded
+                    +dropdown({dropdownType:'roomsBeds', heading: 'dropdown', description: 'expanded'})
+                .form-elements__checkbox-btn.form-elements__element.form-elements__checkbox-btn_notExpandable
+                    +checkbox-btn({expandable: true, name: 'Expandable checkbox list', list: ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь'], forLabel: '1'})
+                .form-elements__checkbox-btn.form-elements__element
+                    +checkbox-btn({expandable: true, name: 'Expandable checkbox list', list: ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь'], forLabel: '2'})
+                .form-elements__room-details.form-elements__element
+                    +room-info({title: '', name: ['Комфорт', 'Удобство'], description: ['Шумопоглощающие стены', 'Окно в каждой из спален'], image: ['insert_emoticon', 'location_city']})
+            .form-elements__globalRow2
+                .form-elements__subRow
+                    .form-elements__subRow1
+                        .form-elements__checkbox-btn.form-elements__element
+                            +checkbox-btn({expandable: false, name: 'Checkbox buttons', list: ['Можно курить', 'Можно с питомцами', 'Можно пригласить гостей (до 10 человек)']})
+                        .form-elements__radio-buttons.form-elements__element
+                            +radio-buttons({name: 'Radio Buttons', list: ['Мужчина', 'Женщина']})
+                        .form-elements__toggle.form-elements__element
+                            +toggle({name: 'Toggle', label: 'Получать спецпредложения'})
+                            +toggle({label: 'Получать спецпредложения'})
+                        .form-elements__like-button.form-elements__element
+                            +like-button({name: 'Like button', numberOfLikes: '2'})
+                            +like-button({numberOfLikes: '11'})
+                        .form-elements__rate-button.form-elements__element
+                            +rate-button({name: 'Rate button', value: '4'})
+                            +rate-button({value: '5'})
+                        .form-elements__dropdown.form-elements__dropdown_guests.form-elements__element 
+                            +dropdown({dropdownType: 'guests', heading: 'dropdown', value: 'Сколько гостей'})
+                        .form-elements__checkbox-btn.form-elements__element
+                            +checkbox-btn({expandable: false, richCheckbox: 'true', name: 'Rich checkbox buttons', list: ['Широкий коридор', 'Помощник для инвалидов'], sublist: ['Ширина коридоров в номере не менее 91 см.', 'На 1 этаже вас встретит специалист  и проводит до номера.']})
+                    .form-elements__subRow2
+                        .form-elements__range-slider.js-form-elements__range-slider.form-elements__element
+                            +range-slider()
+                        .form-elements__btn.form-elements__element
+                            .form-elements__btnTitle Buttons
+                                .form-elements__btnRow1
+                                    +btn({modificator: 'btn_gradientHeader', text: 'click me'})
+                                    +btn({modificator: 'btn_gradientHeader', text: 'click me'})
+                                .form-elements__btnRow2
+                                    +btn({modificator: 'btn_borderHeader', text: 'click me'})
+                                    +btn({modificator: 'btn_borderHeader', text: 'click me'})
+                                .form-elements__btnRow3
+                                    +btn({  modificator: 'btn_iconLinkViolent', text: 'click me'})
+                                    +btn({ modificator: 'btn_iconLinkBlack', text: 'click me'})
+                                .form-elements__btnRow4
+                                    +btn({modificator: 'btn_longWithArrow', text: 'перейти к оплате'})
+                        .form-elements__pagination.form-elements__element
+                            .form-elements__paginationTitle Pagination
+                                +pagination()
+                        .form-elements__dropdown.form-elements__dropdown_guests.form-elements__element.form-elements__dropdown_expandedGuests
+                            +dropdown({dropdownType: 'guests', heading: 'dropdown', value: 'Сколько гостей'})
+                        .form-elements__bullet-list.form-elements__element
+                            +bullet-list({name: 'Bullet list', list: ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00']})
+                .form-elements__review.form-elements__element
+                    +review({nameOfFile: 'Sarafanov', name: 'Мурад Сарафанов', date: '5 дней назад', numberOfLikes: '11', textOfReview: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'})

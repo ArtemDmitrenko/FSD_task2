@@ -1,6 +1,4 @@
-import "./../../import-jquery";
-import "jquery.maskedinput/src/jquery.maskedinput.js";
-
+import '../../../node_modules/jquery.maskedinput/src/jquery.maskedinput';
 
 export default class Input {
   constructor(item) {

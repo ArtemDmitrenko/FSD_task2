@@ -1,6 +1,4 @@
-import "./../../import-jquery";
-import "paginationjs/src/pagination.js";
-
+import 'paginationjs';
 
 export default class Pagination {
   constructor(item) {
