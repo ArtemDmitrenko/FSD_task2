@@ -1,3 +1,6 @@
+@import "../../fonts.scss";
+@import "../../colors.scss";
+
 .content {
-  background-color: red;
+  @extend %font-body;
 }

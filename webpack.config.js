@@ -4,9 +4,6 @@ const path = require('path');
 const fs = require('fs');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-// const OptimizeCssAssetWebpackPlugin = require('optimize-css-assets-webpack-plugin');
-// const TerserWebpackPlugin = require('terser-webpack-plugin');
-
 
 
 const isDev = process.env.NODE_ENV === 'development';
@@ -16,7 +13,6 @@ function filename(name, ext) {
   if (ext === 'html') {
     return `${name}.${ext}`
   }
-
   if (name) {
     if (isDev) {
       return `${ext}/${name}.${ext}`
@@ -29,7 +25,6 @@ function filename(name, ext) {
     } else {
       return `${ext}/[name].[hash].${ext}`
     }
-    // isDev ? `[name].${ext}` : `[name].[contenthash].${ext}`
   }
 }
 
@@ -39,7 +34,6 @@ const createEntryPoints = () => {
   const entryPoints = {};
   const uiKitPath = path.resolve(__dirname, 'src/UI-kit');
   const uiKitPagesName = fs.readdirSync(uiKitPath);
-
   uiKitPagesName.forEach((pageName, index, obj) => {
     if (pageName === '.DS_Store') {
       obj.splice(index, 1);
@@ -70,41 +64,16 @@ const createEntryPoints = () => {
   return entryPoints;
 };
 
-const optimization = () => {
-  const config = {
-    splitChunks: {
-      chunks: 'all'
-    }
-  };
-  // if (isProd) {
-  //   config.minimizer = [
-  //     new OptimizeCssAssetWebpackPlugin(),
-  //     new TerserWebpackPlugin(),
-  //   ];
-  // };
-  return config;
-};
-
-
 module.exports = {
   entry: createEntryPoints(),
-  // entry: {
-  //   'room-details': path.resolve(__dirname, 'src/pages/room-details/main.js')
-  // },
   output: {
     filename: filename(false, 'js'),
     path: path.resolve(__dirname, 'dist'),
-    // publicPath: 'dist',
   },
   devtool: isDev ? 'source-map' : '',
-  // optimization: optimization(),
   devServer: {
-    // overlay: true,
     port: 4200,
     hot: isDev,
-    // openPage: 'dist/index.html',
-    // publicPath: "/dist/", // here's the change
-    // contentBase: path.join(__dirname, '/src')
   },
   module: {
     rules: [{
@@ -126,7 +95,7 @@ module.exports = {
         },
       },
       {
-        test: /\.(woff|woff2|ttf|eot|gif|svg)$/,
+        test: /\.(woff|woff2|ttf|eot|svg)$/,
         include: [
           path.resolve(__dirname, 'src/fonts'),
           path.resolve(__dirname, 'node_modules/slick-carousel/slick/fonts')
@@ -154,12 +123,7 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [{
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              // publicPath: "../",
-              // hmr: isDev,
-              // reloadAll: true
-            },
+            loader: MiniCssExtractPlugin.loader
           },
           'css-loader',
           {
@@ -177,33 +141,17 @@ module.exports = {
               },
             },
           },
-          // {
-          //   loader: 'resolve-url-loader',
-          // },
           {
-            loader: 'sass-loader'
+            loader: 'sass-loader',
           },
         ],
       }
     ]
   },
-
   plugins: [
     new MiniCssExtractPlugin({
       filename: filename(false, 'css')
     }),
-
-    // new HTMLWebpackPlugin({
-    //   filename: filename('room-details', 'html'),
-    //   // filename: `${pageName}.html`,
-    //   template: path.resolve(__dirname, `src/pages/room-details/room-details.pug`),
-    //   chunks: ['room-details'],
-    //   minify: {
-    //     collapseWhitespace: isProd
-    //   }
-    // }),
-
-
     ...PAGES_NAME.map((pageName, i) => new HTMLWebpackPlugin({
       filename: filename(pageName, 'html'),
       template: `${PAGES_DIR[i]}/${pageName}.pug`,
@@ -212,9 +160,7 @@ module.exports = {
         collapseWhitespace: isProd
       }
     })),
-
     new CleanWebpackPlugin(),
-
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
