@@ -17,7 +17,11 @@
 @import "../../components/footer-tab/footer-tab.scss";
 
 .landing-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
   &__main {
+    flex: 1 0 auto;
     width: 100%;
     height: 830px;
     position: relative;
@@ -49,9 +53,7 @@
     text-align: end;
     color: $dark75;
   }
-  // &__footer {
-  //   max-width: 1160px;
-  //   margin: 0 auto;
-  //   padding: 0 20px;
-  // }
+  &__footer {
+    flex: 0 0 auto;
+  }
 }

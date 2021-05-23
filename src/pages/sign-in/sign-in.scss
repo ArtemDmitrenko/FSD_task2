@@ -16,7 +16,11 @@
 @import "../../components/toggle/toggle.scss";
 
 .sign-in {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
   &__main {
+    flex: 1 0 auto;
     height: 702px;
     position: relative;
   }
@@ -37,5 +41,8 @@
     @media screen and (max-width: 420px) {
       width: fit-content;
     }
+  }
+  &__footer {
+    flex: 0 0 auto;
   }
 }

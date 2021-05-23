@@ -22,6 +22,12 @@
 @import "../../components/counter/counter.scss";
 
 .room-details {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  &__main {
+    flex: 1 0 auto;
+  }
   &__content {
     max-width: 1160px;
     margin: 0 auto;
@@ -164,6 +170,7 @@
     background-color: #f4f4f6;
   }
   &__footer {
+    flex: 0 0 auto;
     &_wide {
       border-top: 1px solid $dark25;
     }

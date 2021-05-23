@@ -21,7 +21,11 @@
 @import '../../components/pagination/pagination.scss';
 
 .search-room {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
   &__main {
+    flex: 1 0 auto;
     max-width: 1160px;
     margin: 0 auto;
     padding: 0 20px;
@@ -74,6 +78,7 @@
     margin-right: 6px;
   }
   &__footer {
+    flex: 0 0 auto;
     &_wide {
       border-top: 1px solid $dark25;
       margin-top: 75px;
