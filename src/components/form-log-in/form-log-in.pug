@@ -14,4 +14,5 @@ mixin form-log-in()
             .form-log-in__registered-on-Toxin
                 p.form-log-in__text Нет аккаунта на Toxin?
             .form-log-in__btn
-                +btn({modificator: 'btn_border', text: 'Создать', type: 'submit'})        //-     .form-roomsearch__check-in
+                a.form-log-in__link(href="./registration.html") 
+                    +btn({modificator: 'btn_border', text: 'Создать', type: 'button'})        

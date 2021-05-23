@@ -8,7 +8,8 @@ mixin header(options)
     .header.js-header
         .header__container
             .header__content
-                +logo()
+                a.header__link(href="./landing-page.html") 
+                    +logo()
                 .header__navMenuButtons.js-header__navMenuButtons
                     +nav-menu()
                     if modificator == "Registered"
@@ -16,8 +17,10 @@ mixin header(options)
                         .header__userName Юлий Цезарь
                     else
                         .header__button
-                            +btn({modificator: "btn_borderHeader", text: "войти"})
+                            a.header__link(href="./sign-in.html") 
+                                +btn({modificator: "btn_borderHeader", text: "войти"})
                         .header__button-sign
-                            +btn({modificator: "btn_gradientHeader", text: "зарегистрироваться"})
+                            a.header__link(href="./registration.html") 
+                                +btn({modificator: "btn_gradientHeader", text: "зарегистрироваться"})
                 .header__burger.js-header__burger
                     span
