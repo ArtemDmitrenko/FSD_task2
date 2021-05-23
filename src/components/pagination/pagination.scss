@@ -18,7 +18,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
+    min-width: 40px;
     height: 40px;
     & > a {
       @extend %font-body;
@@ -37,7 +37,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
+    min-width: 40px;
     height: 40px;
     border-radius: 20px;
     background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
@@ -86,7 +86,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
+    min-width: 40px;
     height: 40px;
     border-radius: 20px;
     background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
