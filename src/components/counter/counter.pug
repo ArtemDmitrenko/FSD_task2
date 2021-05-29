@@ -1,8 +1,8 @@
 mixin counter(options = [])
-    - const [title, name, defaultValue='0'] = options
+    - const [title, name, defaultValue="0"] = options
     .counter
         p.counter__name= title
         .counter__enter.js-counter__enter
-            button(type='button').counter__btn.counter__btn_minus.js-counter__btn_minus -
-            input(name=name type='text' value=defaultValue readonly).counter__value.js-counter__value
-            button(type='button').counter__btn.counter__btn_plus.js-counter__btn_plus +
+            button(type="button").counter__btn.counter__btn_minus.js-counter__btn_minus -
+            input(name=name type="text" value=defaultValue readonly).counter__value.js-counter__value
+            button(type="button").counter__btn.counter__btn_plus.js-counter__btn_plus +

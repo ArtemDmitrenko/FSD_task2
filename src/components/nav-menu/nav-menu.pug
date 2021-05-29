@@ -8,38 +8,38 @@ include ../checkmark/checkmark.pug
   menuItems[0].subname[0].href - ссылка элемента подменю
   
   Нужно доделать, чтобы активной странице добавлялся класс menu__link_active:
-        a.menu__link.menu__link_active(href='https://www.google.com/') О нас     
+        a.menu__link.menu__link_active(href="https://www.mock-link.com/") О нас     
 
 mixin nav-menu()
     -
         let menuItems = [
             {
-            name: 'О нас',
-            href: 'https://www.google.com/'
+            name: "О нас",
+            href: "https://www.mock-link.com/"
             }, {
-            name: 'Услуги',
+            name: "Услуги",
             submenu: [
-                        {subname: 'Услуга 1',
-                        subhref: 'https://www.google.com/'
+                        {subname: "Услуга 1",
+                        subhref: "https://www.mock-link.com/"
                         }, {
-                        subname: 'Услуга 2',
-                        subhref: 'https://www.google.com/'
+                        subname: "Услуга 2",
+                        subhref: "https://www.mock-link.com/"
                         }
                     ]
             }, {
-            name: 'Вакансии',
-            href: 'https://www.google.com/'
+            name: "Вакансии",
+            href: "https://www.mock-link.com/"
             }, {
-            name: 'Новости',
-            href: 'https://www.google.com/'
+            name: "Новости",
+            href: "https://www.mock-link.com/"
             }, {
-            name: 'Соглашения',
+            name: "Соглашения",
             submenu: [
-                        {subname: 'Соглашение 1',
-                        subhref: 'https://www.google.com/'
+                        {subname: "Соглашение 1",
+                        subhref: "https://www.mock-link.com/"
                         }, {
-                        subname: 'Соглашение 2',
-                        subhref: 'https://www.google.com/'
+                        subname: "Соглашение 2",
+                        subhref: "https://www.mock-link.com/"
                         }
                     ]
             }
