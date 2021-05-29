@@ -15,11 +15,14 @@
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
     box-shadow: 0 10px 20px $dark5;
-    display: none;
-    z-index: 10;
+    opacity: 0;
+    transition: opacity .4s ease;
     background-color: white;
+    z-index: -1;
     &_show {
-      display: block;
+      z-index: 10;
+      opacity: 1;
+      transition: opacity .4s ease;  
     }
   }
   &__btn {

@@ -22,8 +22,10 @@ $height-e: auto;
     width: $width-s;
     height: $height-s;
     border-radius: 22px;
+    transition: opacity .4s ease;
     &:hover {
       opacity: 0.5;
+      transition: opacity .4s ease;
     }
     &Header {
       width: 196px;
@@ -39,8 +41,10 @@ $height-e: auto;
       linear-gradient(to bottom, $purple, #8ba4f9);
     background-origin: border-box;
     background-clip: content-box, border-box;
+    transition: opacity .4s ease;
     &:hover {
       opacity: 0.5;
+      transition: opacity .4s ease;
     }
     &Header {
       width: calc(87px - 4px);
@@ -73,8 +77,10 @@ $height-e: auto;
     border-radius: 22px;
     background-image: linear-gradient(to bottom, $purple, #8ba4f9);
     color: #ffffff;
+    transition: opacity .4s ease;
     &:hover {
       opacity: 0.5;
+      transition: opacity .4s ease;
     }
   }
   &__arrow {
