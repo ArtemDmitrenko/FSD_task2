@@ -2,12 +2,12 @@ include ../input/input.pug
 include ../btn/btn.pug
 
 mixin form-log-in()
-    form(action="#" method="get").form-log-in
+    form(action="#").form-log-in
         h1.form-log-in__title Войти
         .form-log-in__email
-            +input({name: 'E-mail', type: 'email', placeholder: 'Email'})
+            +input({name: 'E-mail', type: 'email', placeholder: 'Email', required: 'required'})
         .form-log-in__password
-            +input({name: 'Password', type: 'text', placeholder: 'Пароль'})
+            +input({name: 'Password', type: 'text', placeholder: 'Пароль', required: 'required'})
         .form-log-in__submit
             +btn({modificator: 'btn_longWithArrow', text: 'Войти', type: 'submit'})
         .form-log-in__registered

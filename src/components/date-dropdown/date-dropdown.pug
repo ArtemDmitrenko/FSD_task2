@@ -5,8 +5,8 @@ mixin date-dropdown(options)
     .date-dropdown.js-date-dropdown
         if name == "Dates in 1 input"
             .date-dropdown__inOneInput
-                +input({heading: heading, name: name, value: value, type: "text", placeholder: "ДД.ММ.ГГГГ", dateDropdown: true})
+                +input({heading: heading, name: name, value: value, type: "text", placeholder: "ДД.ММ.ГГГГ", dateDropdown: true, required: 'required', readonly: readonly})
         else 
             .date-dropdown__inTwoInputs
-                +input({heading: heading1, name: name, value: value1, type: "text", placeholder: "ДД.ММ.ГГГГ", dateDropdown: true, fromOrTo: "from"})
-                +input({heading: heading2, name: name, value: value2, type: "text", placeholder: "ДД.ММ.ГГГГ", dateDropdown: true, fromOrTo: "to"})
+                +input({heading: heading1, name: name, value: value1, type: "text", placeholder: "ДД.ММ.ГГГГ", dateDropdown: true, fromOrTo: "from", required: 'required'})
+                +input({heading: heading2, name: name, value: value2, type: "text", placeholder: "ДД.ММ.ГГГГ", dateDropdown: true, fromOrTo: "to", required: 'required'})

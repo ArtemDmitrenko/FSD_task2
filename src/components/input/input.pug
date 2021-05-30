@@ -16,7 +16,7 @@ include ../checkmark/checkmark.pug
 include ../arrow/arrow.pug
 
 mixin input(options = {})
-    - const {heading, description, name, value, placeholder, dropdown, readonly, subscription, dateDropdown, type, fromOrTo} = options
+    - const {heading, description, name, value, placeholder, dropdown, subscription, dateDropdown, type, fromOrTo, required} = options
     if dateDropdown
         .input
             if heading
@@ -24,13 +24,13 @@ mixin input(options = {})
             case name
                 when 'Dates in 2 inputs'
                     if fromOrTo == 'from'
-                        input.input__element.js-input__element.input__dateDropdown.input__dateDropdown_from.js-input__dateDropdown_from(value = value heading = heading name = name type = type placeholder = placeholder readonly = readonly dateDropdown = dateDropdown)
+                        input.input__element.js-input__element.input__dateDropdown.input__dateDropdown_from.js-input__dateDropdown_from(value = value heading = heading name = name type = type placeholder = placeholder readonly = 'readonly' dateDropdown = dateDropdown required = required)
                     else 
-                        input.input__element.js-input__element.input__dateDropdown.input__dateDropdown_to.js-input__dateDropdown_to(value = value heading = heading name = name type = type placeholder = placeholder readonly = readonly dateDropdown = dateDropdown)
+                        input.input__element.js-input__element.input__dateDropdown.input__dateDropdown_to.js-input__dateDropdown_to(value = value heading = heading name = name type = type placeholder = placeholder readonly = 'readonly' dateDropdown = dateDropdown required = required)
                     .input__checkmark
                         +checkmark()
                 when 'Dates in 1 input'
-                    input.input__element.js-input__element.input__dateDropdown.input__dateDropdown_range.js-input__dateDropdown_range(value = value heading = heading name = name type = type placeholder = placeholder readonly = readonly dateDropdown = dateDropdown)
+                    input.input__element.js-input__element.input__dateDropdown.input__dateDropdown_range.js-input__dateDropdown_range(value = value heading = heading name = name type = type placeholder = placeholder readonly = 'readonly' dateDropdown = dateDropdown required = required)
                     .input__checkmark
                         +checkmark()
     else
@@ -39,7 +39,7 @@ mixin input(options = {})
                 .input__heading= heading
             if description
                 .input__description= description
-            input.input__element.js-input__element(name = name type = type value = value placeholder = placeholder dropdown = dropdown readonly = readonly subscription = subscription dateDropdown = dateDropdown)
+            input.input__element.js-input__element(name = name type = type value = value placeholder = placeholder dropdown = dropdown readonly = readonly subscription = subscription dateDropdown = dateDropdown required = required)
             if dropdown
                 .input__checkmark
                     +checkmark()

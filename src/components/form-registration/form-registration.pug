@@ -4,21 +4,21 @@ include ../toggle/toggle.pug
 include ../btn/btn.pug
 
 mixin form-registration()
-    form(action="#" method="get").form-registration.js-form-registration
+    form(action="#").form-registration.js-form-registration
         h1.form-registration__title Регистрация аккаунта
         .form-registration__name
-            +input({name: 'Name', type: 'text', placeholder: 'Имя'})
+            +input({name: 'Name', type: 'text', placeholder: 'Имя', required: 'required'})
         .form-registration__surname
-            +input({name: 'Surname', type: 'text', placeholder: 'Фамилия'})
+            +input({name: 'Surname', type: 'text', placeholder: 'Фамилия', required: 'required'})
         .form-registration__gender
-            +radio-buttons({list: ['Мужчина', 'Женщина']})
+            +radio-buttons({list: ['Мужчина', 'Женщина'], required: 'required'})
         .form-registration__birthday
-            +input({heading: 'Дата рождения', name: 'birthday', type: 'text', placeholder: 'ДД.ММ.ГГГГ'})
+            +input({heading: 'Дата рождения', name: 'birthday', type: 'text', placeholder: 'ДД.ММ.ГГГГ', required: 'required'})
         .form-registration__enter
             .form-registration__email
-                +input({heading: 'Данные для входа в сервис', name: 'E-mail', type: 'email', placeholder: 'Email'})
+                +input({heading: 'Данные для входа в сервис', name: 'E-mail', type: 'email', placeholder: 'Email', required: 'required'})
             .form-registration__password
-                +input({name: 'Password', type: 'text', placeholder: 'Пароль'})
+                +input({name: 'Password', type: 'text', placeholder: 'Пароль', required: 'required'})
         .form-registration__offers
             +toggle({label: 'Получать спецпредложения'})    
         .form-registration__submit
