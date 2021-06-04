@@ -12,25 +12,25 @@ $adress: "../../fonts";
 /* Font Quicksand-Bold CSS */
 
 @font-face {
-  @include font-face("Quicksand-Bold", $adress);
+  @include font-face("quicksand-bold", $adress);
 }
 
 /* Font Conv_Quicksand-Regular CSS */
 
 @font-face {
-  @include font-face("Quicksand-Regular", $adress);
+  @include font-face("quicksand-regular", $adress);
 }
 
 /* Font Montserrat-Bold CSS */
 
 @font-face {
-  @include font-face("Montserrat-Bold", $adress);
+  @include font-face("montserrat-bold", $adress);
 }
 
 /* Font Montserrat-Regular CSS */
 
 @font-face {
-  @include font-face("Montserrat-Regular", $adress);
+  @include font-face("montserrat-regular", $adress);
 }
 
 @mixin font($f-family1, $f-family2, $f-size, $color) {
@@ -61,10 +61,10 @@ $adress: "../../fonts";
 // Шрифт MaterialIcons
 @font-face {
   font-family: "Conv_MaterialIcons-Regular";
-  src: url("../../fonts/MaterialIcons-Regular.eot");
-  src: local("☺"), url("../../fonts/MaterialIcons-Regular.woff") format("woff"),
-    url("../../fonts/MaterialIcons-Regular.ttf") format("truetype"),
-    url("../../fonts/MaterialIcons-Regular.svg") format("svg");
+  src: url("../../fonts/materialicons-regular.eot");
+  src: local("☺"), url("../../fonts/materialicons-regular.woff") format("woff"),
+    url("../../fonts/materialicons-regular.ttf") format("truetype"),
+    url("../../fonts/materialicons-regular.svg") format("svg");
   font-weight: normal;
   font-style: normal;
 }
