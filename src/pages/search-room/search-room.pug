@@ -19,7 +19,7 @@ block content
             +header({modifier: "NotRegistered"})
         main.search-room__main
             section.search-room__sidebar
-                .search-room__filterDateDropdown
+                .search-room__filter-date-dropdown
                     +date-dropdown({heading: 'Даты пребывания в отеле', name: 'Dates in 1 input'})
                 .search-room__dropdown-guests
                     +dropdown({dropdownType: 'guests', heading: 'Гости', value: 'Сколько гостей'})
@@ -27,7 +27,7 @@ block content
                     +range-slider()
                 .search-room__checkbox-btn
                     +checkbox-btn({name: 'Правила дома', expandable: false, list: ['Можно курить', 'Можно с питомцами', 'Можно пригласить гостей (до 10 человек)']})
-                .search-room__richCheckbox
+                .search-room__rich-checkbox
                     +checkbox-btn({expandable: false, richCheckbox: 'true', name: 'Доступность', list: ['Широкий коридор', 'Помощник для инвалидов'], sublist: ['Ширина коридоров в номере не менее 91 см.', 'На 1 этаже вас встретит специалист  и проводит до номера.']})
                 .search-room__dropdown-rooms
                     +dropdown({dropdownType: 'roomsBeds', heading: 'Удобства номера'})

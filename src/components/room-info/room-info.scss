@@ -1,4 +1,5 @@
 .room-info {
+  max-width: 260px;
   &__title {
     @extend %h2;
     margin-bottom: 19px;

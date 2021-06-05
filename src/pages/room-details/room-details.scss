@@ -87,6 +87,7 @@
     }
   }
   &__impression {
+    max-width: 320px;
     @extend %h2;
   }
   &__info {
@@ -99,16 +100,17 @@
     max-width: 712px;
     margin-top: 32px;
   }
-  &__reviewTitle {
+  &__review-title {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
     margin-bottom: 19px;
   }
-  &__reviewText {
+  &__review-text {
     @extend %h2;
+    max-width: 600px;
   }
-  &__reviewNumberOfReviews {
+  &__review-number-of-reviews {
     @extend %font-body;
     color: $dark50;
     margin-right: 2px;
@@ -116,13 +118,13 @@
       display: none;
     }
   }
-  &__reviewBlockItem {
+  &__review-block-item {
     margin-bottom: 23px;
   }
-  &__rulesList {
+  &__rules-list {
     width: 292px;
   }
-  &__rulesTitle {
+  &__rules-title {
     @extend %h2;
     margin-left: 21px;
     margin-bottom: 16px;
@@ -138,11 +140,11 @@
       margin-top: 20px;
     }
   }
-  &__cancelTitle {
+  &__cancel-title {
     @extend %h2;
     margin-bottom: 16px;
   }
-  &__cancelText {
+  &__cancel-text {
     @extend %font-body;
     color: $dark75;
     line-height: 24px;
