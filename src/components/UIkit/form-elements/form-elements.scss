@@ -6,21 +6,21 @@
     margin: 85px 0 90px 141px;
     display: flex;
   }
-  &__globalRow2 {
+  &__global-row2 {
     margin-top: -20px;
   }
-  &__globalRow1 {
+  &__global-row1 {
     margin-right: 126px;
   }
-  &__subRow {
+  &__sub-row {
     display: flex;
   }
-  &__subRow1,
-  &__subRow2,
-  &__globalRow1 {
+  &__sub-row1,
+  &__sub-row2,
+  &__global-row1 {
     width: 320px;
   }
-  &__subRow2 {
+  &__sub-row2 {
     margin-left: 71px;
   }
   &__element {
@@ -29,7 +29,7 @@
       margin-bottom: 172px;
       width: 266px;
     }
-    &_notexpanded {
+    &_not-expanded {
       margin-bottom: 40px;
       margin-top: 120px;
       width: 266px;
@@ -38,7 +38,7 @@
   &__datepicker {
     display: flex;
     margin-top: 60px;
-    &_rangeInOne {
+    &_range-in-one {
       width: 266px;
       margin-bottom: 62px;
     }
@@ -63,30 +63,30 @@
     }
   }
   &__dropdown {
-    &_guests {
+    &_with-guests {
       margin-bottom: 255px;
     }
   }
-  &__btnTitle,
-  &__paginationTitle {
+  &__btn-title,
+  &__pagination-title {
     @extend %h3;
   }
 
-  &__btnRow1 {
+  &__btn-row1 {
     display: flex;
     margin-top: 15px;
     margin-bottom: 31px;
-    & .btn_gradient:first-child {
+    & .btn_color_gradient:first-child {
       margin-right: 20px;
     }
   }
-  &__btnRow2 {
+  &__btn-row2 {
     display: flex;
-    & .btn_border:first-child {
+    & .btn_with-border:first-child {
       margin-right: 20px;
     }
   }
-  &__btnRow3 {
+  &__btn-row3 {
     display: flex;
     margin-top: 30px;
     margin-bottom: 29px;
@@ -98,11 +98,11 @@
   &__btn_hovered {
     opacity: 0.5;
   }
-  &__subscriptionInput {
+  &__subscription-input {
     width: 266px;
   }
   &__checkbox-btn {
-    &_notExpandable {
+    &_not-expandable {
       margin-bottom: 50px;
     }
   }

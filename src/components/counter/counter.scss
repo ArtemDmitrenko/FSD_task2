@@ -42,15 +42,17 @@
       // background: linear-gradient(top, hsl(0, 90%, 90%), hsl(0, 100%, 50%) 90%);
       background: -webkit-linear-gradient(top, hsl(0, 1%, 59%), hsl(0, 2%, 39%) 90%); /* Изменяем значения линейного градиента */
     }
-    &_plus {
-      font-size: unset;
-      line-height: 1px;
-    }
-    &_minus {
-      font-size: unset;
-      line-height: 1px;
-      &:disabled {
-        opacity: 0.38;
+    &_value {
+      &_plus {
+        font-size: unset;
+        line-height: 1px;
+        }
+      &_minus {
+        font-size: unset;
+        line-height: 1px;
+        &:disabled {
+          opacity: 0.38;
+        }
       }
     }
   }

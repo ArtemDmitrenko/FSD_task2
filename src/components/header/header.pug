@@ -4,23 +4,23 @@ include ../nav-menu/nav-menu.pug
 
 //- if user is registered, enter in mixins argument "Registered"
 mixin header(options)
-    -   const {modificator} = options
+    -   const {modifier} = options
     .header.js-header
         .header__container
             .header__content
                 a.header__link(href="./landing-page.html") 
                     +logo()
-                .header__navMenuButtons.js-header__navMenuButtons
+                .header__nav-menu-buttons.js-header__nav-menu-buttons
                     +nav-menu()
-                    if modificator == "Registered"
+                    if modifier == "Registered"
                         .header__line
-                        .header__userName Юлий Цезарь
+                        .header__user-name Юлий Цезарь
                     else
                         .header__button
                             a.header__link(href="./sign-in.html") 
-                                +btn({modificator: "btn_borderHeader", text: "войти"})
+                                +btn({modifier: "small-btn_with_border", text: "войти"})
                         .header__button-sign
                             a.header__link(href="./registration.html") 
-                                +btn({modificator: "btn_gradientHeader", text: "зарегистрироваться"})
+                                +btn({modifier: "small-btn_color_gradient", text: "зарегистрироваться"})
                 .header__burger.js-header__burger
                     span

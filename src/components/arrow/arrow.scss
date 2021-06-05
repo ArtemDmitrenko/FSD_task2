@@ -1,5 +1,5 @@
 .arrow {
-  &_right {
+  &_direction_right {
     position: relative;
     width: 15px;
     height: 2px;
@@ -23,7 +23,7 @@
       transform: rotate(-45deg);
     }
   }
-  &_left {
+  &_direction_left {
     position: relative;
     width: 15px;
     height: 2px;
@@ -47,16 +47,16 @@
       transform: rotate(-45deg);
     }
   }
-  &_purple-gradient {
-    background-image: linear-gradient(to bottom, $purple, #8ba4f9);
-    &::after {
-      background-image: linear-gradient(to bottom, $purple, #8ba4f9);
-    }
-    &::before {
-      background-image: linear-gradient(to bottom, $purple, #8ba4f9);
-    }
-  }
-  &_purple {
+  // &_purple-gradient {
+  //   background-image: linear-gradient(to bottom, $purple, #8ba4f9);
+  //   &::after {
+  //     background-image: linear-gradient(to bottom, $purple, #8ba4f9);
+  //   }
+  //   &::before {
+  //     background-image: linear-gradient(to bottom, $purple, #8ba4f9);
+  //   }
+  // }
+  &_color_purple {
     background-color: #bc9cff;
     &::after {
       background-color: #bc9cff;
@@ -65,7 +65,7 @@
       background-color: #bc9cff;
     }
   }
-  &_white {
+  &_color_white {
     background-color: white;
     &::after {
       background-color: white;

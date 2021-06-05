@@ -1,6 +1,6 @@
 import 'air-datepicker';
 
-export default class DateDropdown {
+export default class dateDropdown {
   constructor(item, index) {
     this.item = item;
     this.index = index;
@@ -17,7 +17,7 @@ export default class DateDropdown {
   }
 
   isRange() {
-    this.rangeDropdown = this.item.querySelector('.js-input__dateDropdown_range');
+    this.rangeDropdown = this.item.querySelector('.js-input__date-dropdown_with-range');
     if (this.rangeDropdown) {
       return true;
     }
@@ -32,13 +32,15 @@ export default class DateDropdown {
       multipleDatesSeparator: ' - ',
       dateFormat: 'dd M',
       classes: `datepicker${index}`,
+      prevHtml: `<span class="arrow_direction_left arrow_color_purple"></span>`,
+      nextHtml: `<span class="arrow_direction_right arrow_color_purple"></span>`
     };
     this.myDatapicker = $(this.rangeDropdown).datepicker(options).data('datepicker');
   }
 
   addDateDropdownForTwoInputs(index) {
-    this.inputFrom = this.item.querySelector('.js-input__dateDropdown_from');
-    this.inputTo = this.item.querySelector('.js-input__dateDropdown_to');
+    this.inputFrom = this.item.querySelector('.js-input__date-dropdown_value_from');
+    this.inputTo = this.item.querySelector('.js-input__date-dropdown_value_to');
     const options = {
       clearButton: true,
       todayButton: true,
@@ -46,6 +48,8 @@ export default class DateDropdown {
       classes: `datepicker${index}`,
       bindedinputFrom: this.inputFrom,
       bindedinputTo: this.inputTo,
+      prevHtml: `<span class="arrow_direction_left arrow_color_purple"></span>`,
+      nextHtml: `<span class="arrow_direction_right arrow_color_purple"></span>`,
       onSelect: function(fd, d, picker) {
         $(this.bindedinputFrom).val(fd.split(",")[0]);
         $(this.bindedinputTo).val(fd.split(",")[1]);

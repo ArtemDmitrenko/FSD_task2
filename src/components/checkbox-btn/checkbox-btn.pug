@@ -3,7 +3,6 @@
     options.expandable - if list is expandable
     options.richCheckbox - if list is rich checkbox buttons
     options.list[0...i] - name of buttons
-
 include ../checkmark/checkmark.pug
 
 mixin checkbox-btn(options)
@@ -34,4 +33,3 @@ mixin checkbox-btn(options)
                         .checkbox-btn__item
                             input.checkbox-btn__input(type="checkbox", id="cb" + options.list.indexOf(nameOfBtn))
                             label.checkbox-btn__label(for="cb" + options.list.indexOf(nameOfBtn))= nameOfBtn
-                            

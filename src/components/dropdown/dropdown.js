@@ -36,7 +36,7 @@ export default class Dropdown {
 
   toggleDropdown() {
     this.input.classList.toggle("input__element_border-radius_0");
-    this.input.classList.add("input__element_brightBorder");
+    this.input.classList.add("input__element_with-bright-border");
     this.dropdownList.classList.toggle("dropdown__list_show");
     this.disableBtn();
   }
@@ -48,7 +48,7 @@ export default class Dropdown {
 
   hideDropdown() {
     this.input.classList.remove("input__element_border-radius_0");
-    this.input.classList.remove("input__element_brightBorder");
+    this.input.classList.remove("input__element_with-bright-border");
     this.dropdownList.classList.remove("dropdown__list_show");
   }
 
@@ -75,8 +75,8 @@ export default class Dropdown {
     const { target } = e;
     const counter = target.closest('.js-counter__enter');
     if (counter) {
-      const minus = counter.querySelector('.js-counter__btn_minus');
-      const plus = counter.querySelector('.js-counter__btn_plus');
+      const minus = counter.querySelector('.js-counter__btn_value_minus');
+      const plus = counter.querySelector('.js-counter__btn_value_plus');
       const counterValue = counter.querySelector('.js-counter__value');
 
       if (target === plus) {

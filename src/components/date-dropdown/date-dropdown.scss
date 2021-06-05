@@ -3,7 +3,7 @@
 .date-dropdown {
   width: 100%;
   cursor: pointer;
-  &__inTwoInputs {
+  &_is-two-inputs {
     display: flex;
     justify-content: space-between;
     & > .input {

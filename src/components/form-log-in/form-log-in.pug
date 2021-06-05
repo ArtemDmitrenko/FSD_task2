@@ -9,10 +9,10 @@ mixin form-log-in()
         .form-log-in__password
             +input({name: 'Password', type: 'text', placeholder: 'Пароль', required: 'required'})
         .form-log-in__submit
-            +btn({modificator: 'btn_longWithArrow', text: 'Войти', type: 'submit'})
+            +btn({modifier: 'btn_size_long', text: 'Войти', type: 'submit'})
         .form-log-in__registered
             .form-log-in__registered-on-Toxin
                 p.form-log-in__text Нет аккаунта на Toxin?
             .form-log-in__btn
                 a.form-log-in__link(href="./registration.html") 
-                    +btn({modificator: 'btn_border', text: 'Создать', type: 'button'})        
+                    +btn({modifier: 'btn_with-border', text: 'Создать', type: 'button'})        

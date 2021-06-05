@@ -49,10 +49,10 @@
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
     }
-    &_brightBorder {
+    &_with-bright-border {
       border-color: rgba(31, 32, 65, 0.5);
     }
-    &_hover {
+    &_hovered {
       border-color: $dark50;
       &::placeholder {
         opacity: 0.75;
@@ -60,7 +60,7 @@
       }
     }
   }
-  &__dateDropdown {
+  &__date-dropdown {
     &::placeholder {
       opacity: 0.75;
       color: #1f2041;
@@ -77,7 +77,7 @@
     top: 12px;
     right: 0;
   }
-  &__defaultButton {
+  &__default-button {
     position: absolute;
     left: -38px;
     top: 8px;

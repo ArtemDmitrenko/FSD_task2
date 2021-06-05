@@ -40,18 +40,18 @@ export default class FormElements {
   makeLikeOnFigma() {
     // Hovered input
     const inputWithHover = document.querySelector('[name="Text"]');
-    inputWithHover.classList.add('input__element_hover')
+    inputWithHover.classList.add('input__element_hovered')
 
     // Datapicker
     const func1 = () => {
-      const datapickerWithData = document.querySelector('.js-input__dateDropdown_to');
+      const datapickerWithData = document.querySelector('.js-input__date-dropdown_value_to');
       datapickerWithData.value = '19.08.2019';
     };
     setTimeout(func1, 15);
 
     // Datapicker with range
     const func2 = () => {
-      const datapickerWithRange = document.querySelector('.js-input__dateDropdown_range');
+      const datapickerWithRange = document.querySelector('.js-input__date-dropdown_with-range');
       datapickerWithRange.value = '19 авг - 23 авг';
     }
     setTimeout(func2, 20);
@@ -66,8 +66,8 @@ export default class FormElements {
     // DropdownBeds
     const inputOfdropdownExpanded = document.querySelectorAll('[name="roomsBeds"]')[1];
     const dropdownExpanded = document.querySelector('.form-elements__element_expanded');
-    const btnPlusBedrooms = dropdownExpanded.querySelectorAll('.counter__btn_plus')[0];
-    const btnPlusBeds = dropdownExpanded.querySelectorAll('.counter__btn_plus')[1];
+    const btnPlusBedrooms = dropdownExpanded.querySelectorAll('.counter__btn_value_plus')[0];
+    const btnPlusBeds = dropdownExpanded.querySelectorAll('.counter__btn_value_plus')[1];
     setTimeout(function() {
       $(inputOfdropdownExpanded).trigger('click');
       $(btnPlusBedrooms).trigger('click');
@@ -124,18 +124,18 @@ export default class FormElements {
     }, 30);
 
     // Buttons
-    const btnRow1 = document.querySelector('.form-elements__btnRow1');
+    const btnRow1 = document.querySelector('.form-elements__btn-row1');
     const hoveredBtnInRow1 = btnRow1.querySelectorAll('.btn')[1];
-    hoveredBtnInRow1.classList.add('form-elements__btn_hovered');
-    const btnRow2 = document.querySelector('.form-elements__btnRow2');
-    const hoveredBtnInRow2 = btnRow2.querySelectorAll('.btn_border')[1];
-    hoveredBtnInRow2.classList.add('form-elements__btn_hovered');
+    hoveredBtnInRow1.classList.add('form-elements__btn_hovereded');
+    const btnRow2 = document.querySelector('.form-elements__btn-row2');
+    const hoveredBtnInRow2 = btnRow2.querySelectorAll('.btn_with-border')[1];
+    hoveredBtnInRow2.classList.add('form-elements__btn_hovereded');
 
     // DropdownGuests
     const inputOfdropdownGuestsExpanded = document.querySelectorAll('[name="guests"]')[2];
     const dropdownGuestsExpanded = document.querySelector('.form-elements__dropdown_expandedGuests');
-    const btnPlusAdults = dropdownGuestsExpanded.querySelectorAll('.counter__btn_plus')[0];
-    const btnPlusChildren = dropdownGuestsExpanded.querySelectorAll('.counter__btn_plus')[1];
+    const btnPlusAdults = dropdownGuestsExpanded.querySelectorAll('.counter__btn_value_plus')[0];
+    const btnPlusChildren = dropdownGuestsExpanded.querySelectorAll('.counter__btn_value_plus')[1];
     setTimeout(function() {
       $(inputOfdropdownGuestsExpanded).trigger('click');
       $(btnPlusAdults).trigger('click');

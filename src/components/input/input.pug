@@ -24,13 +24,13 @@ mixin input(options = {})
             case name
                 when 'Dates in 2 inputs'
                     if fromOrTo == 'from'
-                        input.input__element.js-input__element.input__dateDropdown.input__dateDropdown_from.js-input__dateDropdown_from(value = value heading = heading name = name type = type placeholder = placeholder readonly = 'readonly' dateDropdown = dateDropdown required = required)
+                        input.input__element.js-input__element.input__date-dropdown.js-input__date-dropdown_value_from(value = value heading = heading name = name type = type placeholder = placeholder readonly = 'readonly' dateDropdown = dateDropdown required = required)
                     else 
-                        input.input__element.js-input__element.input__dateDropdown.input__dateDropdown_to.js-input__dateDropdown_to(value = value heading = heading name = name type = type placeholder = placeholder readonly = 'readonly' dateDropdown = dateDropdown required = required)
+                        input.input__element.js-input__element.input__date-dropdown.js-input__date-dropdown_value_to(value = value heading = heading name = name type = type placeholder = placeholder readonly = 'readonly' dateDropdown = dateDropdown required = required)
                     .input__checkmark
                         +checkmark()
                 when 'Dates in 1 input'
-                    input.input__element.js-input__element.input__dateDropdown.input__dateDropdown_range.js-input__dateDropdown_range(value = value heading = heading name = name type = type placeholder = placeholder readonly = 'readonly' dateDropdown = dateDropdown required = required)
+                    input.input__element.js-input__element.input__date-dropdown.js-input__date-dropdown_with-range(value = value heading = heading name = name type = type placeholder = placeholder readonly = 'readonly' dateDropdown = dateDropdown required = required)
                     .input__checkmark
                         +checkmark()
     else
@@ -45,5 +45,5 @@ mixin input(options = {})
                     +checkmark()
             if subscription
                 .input__subscription
-                    button(type="submit").input__defaultButton
+                    button(type="submit").input__default-button
                         +arrow({color:'purple', direction:'right'})

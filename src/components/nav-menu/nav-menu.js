@@ -11,7 +11,7 @@ export default class NavMenu {
   }
 
   findAllElements() {
-    this.dropdownButtons = this.item.querySelectorAll(".js-nav-menu__item_dropdown");
+    this.dropdownButtons = this.item.querySelectorAll(".js-nav-menu__item_with-dropdown");
     this.subLists = this.item.querySelectorAll(".js-nav-menu__sub-list");
     this.checkmarks = this.item.querySelectorAll(".js-checkmark");
   }
@@ -24,8 +24,8 @@ export default class NavMenu {
 
   openMenu(i) {
     this.subLists[i].classList.toggle("show");
-    this.checkmarks[i].classList.toggle("checkmark__down");
-    this.checkmarks[i].classList.toggle("checkmark__up");
+    this.checkmarks[i].classList.toggle("checkmark_direction_down");
+    this.checkmarks[i].classList.toggle("checkmark_direction_up");
   }
 
   closeMenuDropdown() {
@@ -34,11 +34,11 @@ export default class NavMenu {
 
   closeMenu(event) {
     for (let i = 0; i < this.dropdownButtons.length; i++) {
-      if (!document.getElementsByClassName('nav-menu__item_dropdown')[i].contains(event.target)) {
+      if (!document.getElementsByClassName('js-nav-menu__item_with-dropdown')[i].contains(event.target)) {
         if (this.subLists[i].classList.contains('show')) {
           this.subLists[i].classList.remove('show');
-          this.checkmarks[i].classList.toggle("checkmark__down");
-          this.checkmarks[i].classList.toggle("checkmark__up");
+          this.checkmarks[i].classList.toggle("checkmark_direction_down");
+          this.checkmarks[i].classList.toggle("checkmark_direction_up");
         }
       }
     }

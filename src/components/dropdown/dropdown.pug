@@ -15,10 +15,11 @@ mixin dropdown(options = {})
                         +counter(["Дети", "Children"])
                         +counter(["Младенцы", "Infants"])
                     .dropdown__btn
-                        .dropdown-guests__btn-clear
-                            +btn({modificator: 'btn_iconLinkViolent', text: 'Очистить', type: 'button', name: 'clear'})
-                        .dropdown-guests__btn-apply
-                            +btn({modificator: 'btn_iconLinkViolent', text: 'Применить', type: 'button', name: 'apply'})
+                        //- .dropdown-guests__btn-clear
+                        .dropdown__btn_function_clear
+                            +btn({modifier: 'btn_color_violent', text: 'Очистить', type: 'button', name: 'clear'})
+                        .dropdown__btn_function_apply
+                            +btn({modifier: 'btn_color_violent', text: 'Применить', type: 'button', name: 'apply'})
         when 'roomsBeds'
             .dropdown.js-dropdown
                 .dropdown__input.js-dropdown__input

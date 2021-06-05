@@ -13,8 +13,8 @@ export default class CheckboxBtn {
       const cbList = this.checkboxList.querySelector('.js-checkbox-btn__expandableForm');
       const checkmark = this.checkboxList.querySelector('.js-checkmark');
       cbList.classList.toggle('checkbox-btn__expandableForm_show');
-      checkmark.classList.toggle('checkmark__down');
-      checkmark.classList.toggle('checkmark__up');
+      checkmark.classList.toggle('checkmark_direction_down');
+      checkmark.classList.toggle('checkmark_direction_up');
     }
   }
 

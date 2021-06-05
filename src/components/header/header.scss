@@ -13,7 +13,7 @@
     padding: 15px 0;
     position: relative;
   }
-  &__navMenuButtons {
+  &__nav-menu-buttons {
     display: flex;
     align-items: center;
     @media screen and (max-width: 992px) {
@@ -30,7 +30,7 @@
       z-index: 3;
     }
   }
-  &__openedMenu {
+  &_with-opened-menu {
     @media screen and (max-width: 992px) {
       right: 0;
       display: block;
@@ -41,7 +41,7 @@
     @media screen and (max-width: 992px) {
       display: none;
     }
-    & .btn_border {
+    & .btn_with-border {
       width: 83px;
       height: 29px;
     }
@@ -54,7 +54,7 @@
     @media screen and (max-width: 992px) {
       display: none;
     }
-    & .btn_gradient {
+    & .btn_color_gradient {
       width: 100%;
       height: 34px;
     }
@@ -69,7 +69,7 @@
       display: none;
     }
   }
-  &__userName {
+  &__user-name {
     @extend %font-body;
     opacity: 0.5;
     @media screen and (max-width: 992px) {
@@ -107,7 +107,7 @@
       }
     }
   }
-  &__openedBurger {
+  &_with-opened-burger {
     @media screen and (max-width: 992px) {
       & span {
         opacity: 0;

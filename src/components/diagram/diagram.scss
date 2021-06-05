@@ -23,21 +23,23 @@
     @extend %font-body;
     color: $dark75;
     margin-bottom: 6px;
-    &_amazing:before {
-      @extend %legend;
-      background: linear-gradient(180deg, #ffe39c 0%, #ffba9c 100%);
-    }
-    &_good:before {
-      @extend %legend;
-      background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
-    }
-    &_notBad:before {
-      @extend %legend;
-      background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
-    }
-    &_bad:before {
-      @extend %legend;
-      background: linear-gradient(180deg, #909090 0%, #3d4975 100%);
+    &_description {
+      &_amazing:before {
+        @extend %legend;
+        background: linear-gradient(180deg, #ffe39c 0%, #ffba9c 100%);
+      }
+      &_good:before {
+        @extend %legend;
+        background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+      }
+      &_notBad:before {
+        @extend %legend;
+        background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+      }
+      &_bad:before {
+        @extend %legend;
+        background: linear-gradient(180deg, #909090 0%, #3d4975 100%);
+      }
     }
   }
   &__total {

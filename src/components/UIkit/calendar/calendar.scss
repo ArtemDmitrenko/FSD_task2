@@ -10,11 +10,11 @@
     justify-content: space-between;
     margin-top: 18px;
     margin-bottom: 41px;
-    & .arrow_left {
+    & .arrow_direction_left {
       margin-left: 26px;
       margin-top: 12px;
     }
-    & .arrow_right {
+    & .arrow_direction_right {
       margin-right: 26px;
       margin-top: 12px;
     }
@@ -33,11 +33,10 @@
   &__month {
     @extend %h2;
   }
-  &__allDays {
+  &__all-days {
     display: flex;
     justify-content: space-between;
     margin-bottom: 25px;
-
     @extend %h3;
     color: $purple;
     text-transform: none;
@@ -50,11 +49,11 @@
     width: 5%;
     text-align: center;
   }
-  &__numberLine1,
-  &__numberLine2,
-  &__numberLine3,
-  &__numberLine4,
-  &__numberLine5 {
+  &__number-line1,
+  &__number-line2,
+  &__number-line3,
+  &__number-line4,
+  &__number-line5 {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -62,13 +61,13 @@
     margin-left: 2px;
     margin-right: 2px;
   }
-  &__numberLine1 &__number:nth-child(1),
-  &__numberLine1 &__number:nth-child(2),
-  &__numberLine1 &__number:nth-child(3),
-  &__numberLine5 &__number:nth-child(7) {
+  &__number-line1 &__number:nth-child(1),
+  &__number-line1 &__number:nth-child(2),
+  &__number-line1 &__number:nth-child(3),
+  &__number-line5 &__number:nth-child(7) {
     color: $dark25;
   }
-  &__numberLine2 &__number:nth-child(4) {
+  &__number-line2 &__number:nth-child(4) {
     @extend %h3;
     color: white;
     z-index: 1;
@@ -86,8 +85,8 @@
       left: 10;
     }
   }
-  &__numberLine4 &__number:nth-child(1),
-  &__numberLine4 &__number:nth-child(5) {
+  &__number-line4 &__number:nth-child(1),
+  &__number-line4 &__number:nth-child(5) {
     @extend %h3;
     color: white;
     z-index: 1;
@@ -105,7 +104,7 @@
       left: 10;
     }
   }
-  &__numberLine4 {
+  &__number-line4 {
     z-index: 1;
     position: relative;
     &::before {
