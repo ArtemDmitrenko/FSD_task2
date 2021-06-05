@@ -63,7 +63,6 @@
   }
 }
 .datepicker--cell.-range-to- {
-  // border: none;
   border-radius: 50%;
   background-color: none;
   color: #fff;
@@ -87,7 +86,6 @@
 }
 .datepicker--cell.-selected-,
 .datepicker--cell.-selected-.-current- {
-  // background: none;
   opacity: 1;
   background-image: linear-gradient(to bottom, #bc9cff, #8ba4f9);
 }
@@ -119,7 +117,6 @@
 }
 .datepicker {
   font-family: none;
-  font-size: none;
   width: 318px;
   @media screen and (max-width: 360px) {
     width: 260px;
@@ -128,7 +125,6 @@
 .datepicker--nav {
   padding: 15px 17px 25px 17px;
   border-bottom: none;
-  padding: none;
 }
 .datepicker--nav-title {
   border-radius: 4px;
@@ -184,4 +180,3 @@
     padding-left: 5px;
   }
 }
-// }
