@@ -1,10 +1,10 @@
-import CheckboxBtn from '../../components/checkbox-btn/checkbox-btn';
-import DateDropdown from '../../components/date-dropdown/date-dropdown';
-import Header from '../../components/header/header';
-import Pagination from '../../components/pagination/pagination';
-import RangeSlider from '../../components/range-slider/range-slider';
-import Carousel from '../../components/room/room';
-import Dropdown from '../../components/dropdown/dropdown';
+import CheckboxBtn from 'Components/checkbox-btn/checkbox-btn';
+import DateDropdown from 'Components/date-dropdown/date-dropdown';
+import Header from 'Components/header/header';
+import Pagination from 'Components/pagination/pagination';
+import RangeSlider from 'Components/range-slider/range-slider';
+import Carousel from 'Components/room/room';
+import Dropdown from 'Components/dropdown/dropdown';
 
 export default class SearchRoom {
   constructor() {

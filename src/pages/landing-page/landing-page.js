@@ -1,5 +1,5 @@
-import Header from '../../components/header/header';
-import FormRoomSearch from '../../components/form-roomsearch/form-roomsearch'
+import Header from 'Components/header/header';
+import FormRoomSearch from 'Components/form-roomsearch/form-roomsearch'
 
 export default class LandingPage {
   constructor() {

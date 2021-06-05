@@ -1,10 +1,10 @@
-import CheckboxBtn from '../../components/checkbox-btn/checkbox-btn';
-import DateDropdown from '../../components/date-dropdown/date-dropdown';
-import Input from '../../components/input/input';
-import LikeButton from '../../components/like-button/like-button';
-import RangeSlider from '../../components/range-slider/range-slider';
-import Dropdown from '../../components/dropdown/dropdown';
-import Pagination from '../../components/pagination/pagination';
+import CheckboxBtn from 'Components/checkbox-btn/checkbox-btn';
+import DateDropdown from 'Components/date-dropdown/date-dropdown';
+import Input from 'Components/input/input';
+import LikeButton from 'Components/like-button/like-button';
+import RangeSlider from 'Components/range-slider/range-slider';
+import Dropdown from 'Components/dropdown/dropdown';
+import Pagination from 'Components/pagination/pagination';
 
 export default class FormElements {
   constructor() {

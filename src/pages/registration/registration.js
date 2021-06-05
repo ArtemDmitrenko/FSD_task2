@@ -1,5 +1,5 @@
-import Header from '../../components/header/header';
-import FormRegistration from '../../components/form-registration/form-registration'
+import Header from 'Components/header/header';
+import FormRegistration from 'Components/form-registration/form-registration'
 
 export default class Registration {
   constructor() {

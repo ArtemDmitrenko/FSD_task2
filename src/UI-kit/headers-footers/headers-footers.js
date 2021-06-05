@@ -1,4 +1,4 @@
-import Header from '../../components/header/header';
+import Header from 'Components/header/header';
 
 export default class HeadersFooters {
   constructor() {

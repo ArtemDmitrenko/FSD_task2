@@ -1,4 +1,4 @@
-import NavMenu from '../nav-menu/nav-menu';
+import NavMenu from 'Components/nav-menu/nav-menu';
 
 export default class Header {
   constructor(item) {

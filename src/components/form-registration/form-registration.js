@@ -1,4 +1,4 @@
-import Input from '../../components/input/input';
+import Input from 'Components/input/input';
 
 export default class FormRegistration {
   constructor(form) {

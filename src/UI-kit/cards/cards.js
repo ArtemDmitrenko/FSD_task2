@@ -1,7 +1,7 @@
-import Carousel from '../../components/room/room';
-import FormConfirmation from '../../components/form-confirmation/form-confirmation'
-import FormRoomSearch from '../../components/form-roomsearch/form-roomsearch'
-import FormRegistration from '../../components/form-registration/form-registration'
+import Carousel from 'Components/room/room';
+import FormConfirmation from 'Components/form-confirmation/form-confirmation'
+import FormRoomSearch from 'Components/form-roomsearch/form-roomsearch'
+import FormRegistration from 'Components/form-registration/form-registration'
 
 
 export default class Cards {

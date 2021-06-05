@@ -1,5 +1,5 @@
-import DateDropdown from '../date-dropdown/date-dropdown';
-import Dropdown from '../dropdown/dropdown';
+import DateDropdown from 'Components/date-dropdown/date-dropdown';
+import Dropdown from 'Components/dropdown/dropdown';
 
 export default class FormRoomSearch {
   constructor(form) {

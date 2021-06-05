@@ -1,7 +1,7 @@
-import Diagram from '../../components/diagram/diagram';
-import Header from '../../components/header/header';
-import LikeButton from '../../components/like-button/like-button';
-import FormConfirmation from '../../components/form-confirmation/form-confirmation'
+import Diagram from 'Components/diagram/diagram';
+import Header from 'Components/header/header';
+import LikeButton from 'Components/like-button/like-button';
+import FormConfirmation from 'Components/form-confirmation/form-confirmation'
 
 export default class RoomDetails {
   constructor() {

@@ -70,6 +70,11 @@ module.exports = {
     filename: filename(false, 'js'),
     path: path.resolve(__dirname, 'dist'),
   },
+  resolve: {
+    alias: {
+      Components: path.resolve(__dirname, 'src/components/')
+    },
+  },
   devtool: isDev ? 'source-map' : '',
   devServer: {
     port: 4200,
