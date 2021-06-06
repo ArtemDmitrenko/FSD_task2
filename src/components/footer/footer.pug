@@ -2,7 +2,56 @@ include ../logo/logo.pug
 include ../social-nets/social-nets.pug
 include ../input/input.pug
 
+
+
 mixin footer()
+    -
+      const footerItems = [{
+        title: "Навигация",
+        items: [{
+          item: "О нас",
+          href: "https://www.mock-link.com/"
+        }, {
+          item: "Новости",
+          href: "https://www.mock-link.com/"
+        }, {
+          item: "Служба поддержки",
+          href: "https://www.mock-link.com/"
+        }, {
+          item: "Услуги",
+          href: "https://www.mock-link.com/"
+        }]
+      },
+      {
+        title: "О нас",
+        items: [{
+          item: "О сервисе",
+          href: "https://www.mock-link.com/"
+        }, {
+          item: "Наша команда",
+          href: "https://www.mock-link.com/"
+        }, {
+          item: "Вакансии",
+          href: "https://www.mock-link.com/"
+        }, {
+          item: "Инвесторы",
+          href: "https://www.mock-link.com/"
+        }]
+      }, {
+        title: "Служба поддержки",
+        items: [{
+          item: "Соглашения",
+          href: "https://www.mock-link.com/"
+        }, {
+          item: "Сообщества",
+          href: "https://www.mock-link.com/"
+        }, {
+          item: "Связь с нами",
+          href: "https://www.mock-link.com/"
+        }]
+      },
+      ];
+
     .footer
         .footer__half1
             .footer__container
@@ -11,37 +60,13 @@ mixin footer()
                         .footer__logo
                             +logo()
                         p.footer__text Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
-                    .footer__column2
-                        ul.footer__navigation
-                            li.footer__title Навигация
-                            li.footer__item
-                                a.footer__link(href="https://www.mock-link.com/") О нас
-                            li.footer__item
-                                a.footer__link(href="https://www.mock-link.com/") Новости
-                            li.footer__item
-                                a.footer__link(href="https://www.mock-link.com/") Служба поддержки
-                            li.footer__item
-                                a.footer__link(href="https://www.mock-link.com/") Услуги
-                    .footer__column3
-                        ul.footer__about
-                            li.footer__title О нас
-                            li.footer__item
-                                a.footer__link(href="https://www.mock-link.com/") О сервисе
-                            li.footer__item
-                                a.footer__link(href="https://www.mock-link.com/") Наша команда
-                            li.footer__item
-                                a.footer__link(href="https://www.mock-link.com/") Вакансии
-                            li.footer__item
-                                a.footer__link(href="https://www.mock-link.com/") Инвесторы
-                    .footer__column4
-                        ul.footer__support
-                            li.footer__title Служба поддержки
-                            li.footer__item
-                                a.footer__link(href="https://www.mock-link.com/") Соглашения
-                            li.footer__item
-                                a.footer__link(href="https://www.mock-link.com/") Сообщества
-                            li.footer__item
-                                a.footer__link(href="https://www.mock-link.com/") Связь с нами
+                    - for (let i = 0; i < footerItems.length; i ++)
+                        div(class="footer__column" + (i+2))
+                            ul.footer__navigation
+                                li.footer__title= footerItems[i].title
+                                - for (let y = 0; y < footerItems[i].items.length; y ++)
+                                    li.footer__item
+                                        a.footer__link(href=footerItems[i].items[y].href)=footerItems[i].items[y].item
                     .footer__column5
                         ul.footer__subscription
                             li.footer__title.footer__title_line-height_24 Подписка
