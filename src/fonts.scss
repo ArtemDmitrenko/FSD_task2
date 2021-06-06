@@ -1,66 +1,64 @@
 $adress: "../../fonts";
-@mixin font-face($name, $adress) {
-  font-family: "Conv_#{$name}";
-  src: url("#{$adress}/#{$name}.eot");
-  src: local("☺"), url("#{$adress}/#{$name}.woff") format("woff"),
-    url("#{$adress}/#{$name}.ttf") format("truetype"),
-    url("#{$adress}/#{$name}.svg") format("svg");
-  font-weight: normal;
-  font-style: normal;
+
+@mixin font-face($family-name, $file-name, $adress, $weight, $style) {
+  font-family: "#{$family-name}";
+  src: url("#{$adress}/#{$file-name}.eot");
+  src: local("☺"), url("#{$adress}/#{$file-name}.woff") format("woff"),
+    url("#{$adress}/#{$file-name}.ttf") format("truetype"),
+    url("#{$adress}/#{$file-name}.svg") format("svg");
+  font-weight: $weight;
+  font-style: $style;
 }
 
 /* Font Quicksand-Bold CSS */
-
 @font-face {
-  @include font-face("quicksand-bold", $adress);
+  @include font-face("Quicksand", "quicksand-bold", $adress, 700, "normal");
 }
 
 /* Font Conv_Quicksand-Regular CSS */
-
 @font-face {
-  @include font-face("quicksand-regular", $adress);
+  @include font-face("Quicksand", "quicksand-regular", $adress, 400, "normal");
 }
 
 /* Font Montserrat-Bold CSS */
-
 @font-face {
-  @include font-face("montserrat-bold", $adress);
+  @include font-face("Montserrat", "montserrat-bold", $adress, 700, "normal");
 }
 
 /* Font Montserrat-Regular CSS */
-
 @font-face {
-  @include font-face("montserrat-regular", $adress);
+  @include font-face("Montserrat", "montserrat-regular", $adress, 400, "normal");
 }
 
-@mixin font($f-family1, $f-family2, $f-size, $color) {
-  font-family: $f-family1, $f-family2;
+@mixin font($f-family1, $f-family2, $f-size, $color, $weight) {
+  font-family: $f-family1, $f-family2, sans-serif;
   font-size: $f-size;
   color: $color;
+  font-weight: $weight;
 }
 
 %font-body {
-  @include font("Conv_Montserrat-Regular", "Open Sans", 14px, #1f2041);
+  @include font("Montserrat", "Arial", 14px, #1f2041, 400);
   // line-height: 24px;
   // opacity: 75%;
 }
 
 %h3 {
-  @include font("Conv_Montserrat-Bold", "Open Sans", 12px, #1f2041);
+  @include font("Montserrat", "Arial", 12px, #1f2041, 700);
   text-transform: uppercase;
 }
 
 %h2 {
-  @include font("Conv_Quicksand-Bold", "Open Sans", 19px, #1f2041);
+  @include font("Quicksand", "Arial", 19px, #1f2041, 700);
 }
 
 %h1 {
-  @include font("Conv_Quicksand-Bold", "Open Sans", 24px, #1f2041);
+  @include font("Quicksand", "Arial", 24px, #1f2041, 700);
 }
 
 // Шрифт MaterialIcons
 @font-face {
-  font-family: "Conv_MaterialIcons-Regular";
+  font-family: "MaterialIcons-Regular";
   src: url("../../fonts/materialicons-regular.eot");
   src: local("☺"), url("../../fonts/materialicons-regular.woff") format("woff"),
     url("../../fonts/materialicons-regular.ttf") format("truetype"),
