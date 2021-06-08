@@ -7,43 +7,7 @@ include ../checkmark/checkmark.pug
   menuItems[0].subname[0].name - имя элемента подменю
   menuItems[0].subname[0].href - ссылка элемента подменю
   
-  Нужно доделать, чтобы активной странице добавлялся класс menu__link_active:
-        a.menu__link.menu__link_active(href="https://www.mock-link.com/") О нас     
-
-mixin nav-menu()
-    -
-        let menuItems = [
-            {
-            name: "О нас",
-            href: "https://www.mock-link.com/"
-            }, {
-            name: "Услуги",
-            submenu: [
-                        {subname: "Услуга 1",
-                        subhref: "https://www.mock-link.com/"
-                        }, {
-                        subname: "Услуга 2",
-                        subhref: "https://www.mock-link.com/"
-                        }
-                    ]
-            }, {
-            name: "Вакансии",
-            href: "https://www.mock-link.com/"
-            }, {
-            name: "Новости",
-            href: "https://www.mock-link.com/"
-            }, {
-            name: "Соглашения",
-            submenu: [
-                        {subname: "Соглашение 1",
-                        subhref: "https://www.mock-link.com/"
-                        }, {
-                        subname: "Соглашение 2",
-                        subhref: "https://www.mock-link.com/"
-                        }
-                    ]
-            }
-        ];
+mixin nav-menu(menuItems)
     nav.nav-menu.js-nav-menu
         ul.nav-menu__list
             - for (let i = 0; i < menuItems.length; i ++)

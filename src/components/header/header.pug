@@ -5,13 +5,14 @@ include ../nav-menu/nav-menu.pug
 //- if user is registered, enter in mixins argument "Registered"
 mixin header(options)
     -   const {modifier} = options
+    - const menuItems = require('../../templates/menu-items.json')
     .header.js-header
         .header__container
             .header__content
                 a.header__link(href="./landing-page.html") 
                     +logo()
                 .header__nav-menu-buttons.js-header__nav-menu-buttons
-                    +nav-menu()
+                    +nav-menu(menuItems)
                     if modifier == "Registered"
                         .header__line
                         .header__user-name Юлий Цезарь

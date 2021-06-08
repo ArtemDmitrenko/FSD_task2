@@ -2,7 +2,10 @@ include ../components/header/header.pug
 include ../components/footer/footer.pug
 include ../components/footer-tab/footer-tab.pug
 
-block data 
+block data
+
+block footerItems
+    - const footerItems = require('../../templates/footer-items.json')
 
 doctype html
 html(lang="en")
@@ -31,6 +34,6 @@ html(lang="en")
         block footer
             footer(class=pageName + "__footer")
                 div(class=pageName + "__footer" + "_wide")
-                    +footer()
+                    +footer(footerItems)
                 div(class=pageName + "__footer" + "_tab")
                     +footer-tab()

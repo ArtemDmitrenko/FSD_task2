@@ -4,6 +4,9 @@ include ../../components/header/header.pug
 include ../../components/footer/footer.pug
 include ../../components/footer-tab/footer-tab.pug
 
+block footerItems 
+    - const footerItems = require('../../templates/footer-items.json')
+
 block title
     title Headers-footers
 
@@ -16,6 +19,6 @@ block content
         .headers-footers__registered
             +header({modifier: "Registered"})
         .headers-footers__footer-wide
-            +footer()
+            +footer(footerItems)
         .headers-footers__footer-tab
             +footer-tab()

@@ -64,9 +64,7 @@ export default class Dropdown {
 
   disableBtn() {
     const counterValueArr = this.dropdownList.querySelectorAll('.js-counter__value');
-    console.log(counterValueArr)
     counterValueArr.forEach((item) => {
-      console.log(item.previousElementSibling)
       if (Number(item.value) === 0) { item.previousElementSibling.setAttribute("disabled", "disabled") }
     });
   }

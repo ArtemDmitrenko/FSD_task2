@@ -2,54 +2,7 @@ include ../logo/logo.pug
 include ../social-nets/social-nets.pug
 include ../input/input.pug
 
-mixin footer()
-    -
-      const footerItems = [{
-        title: "Навигация",
-        items: [{
-          item: "О нас",
-          href: "https://www.mock-link.com/"
-        }, {
-          item: "Новости",
-          href: "https://www.mock-link.com/"
-        }, {
-          item: "Служба поддержки",
-          href: "https://www.mock-link.com/"
-        }, {
-          item: "Услуги",
-          href: "https://www.mock-link.com/"
-        }]
-      },
-      {
-        title: "О нас",
-        items: [{
-          item: "О сервисе",
-          href: "https://www.mock-link.com/"
-        }, {
-          item: "Наша команда",
-          href: "https://www.mock-link.com/"
-        }, {
-          item: "Вакансии",
-          href: "https://www.mock-link.com/"
-        }, {
-          item: "Инвесторы",
-          href: "https://www.mock-link.com/"
-        }]
-      }, {
-        title: "Служба поддержки",
-        items: [{
-          item: "Соглашения",
-          href: "https://www.mock-link.com/"
-        }, {
-          item: "Сообщества",
-          href: "https://www.mock-link.com/"
-        }, {
-          item: "Связь с нами",
-          href: "https://www.mock-link.com/"
-        }]
-      },
-      ];
-
+mixin footer(footerItems)
     .footer
         .footer__half1
             .footer__container
