@@ -68,7 +68,7 @@ module.exports = {
   entry: createEntryPoints(),
   output: {
     filename: filename(false, 'js'),
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'dist')
   },
   resolve: {
     alias: {
@@ -79,6 +79,7 @@ module.exports = {
   devServer: {
     port: 4200,
     hot: isDev,
+    // contentBase: path.join(__dirname, './dist')
   },
   module: {
     rules: [{
@@ -93,9 +94,8 @@ module.exports = {
         use: {
           loader: 'file-loader',
           options: {
-            publicPath: '../assets/images',
             name: '[name].[ext]',
-            outputPath: 'assets/images/',
+            outputPath: 'assets/images',
           },
         },
       },
@@ -108,9 +108,8 @@ module.exports = {
         use: {
           loader: 'file-loader',
           options: {
-            publicPath: '../assets/fonts',
             name: '[name].[ext]',
-            outputPath: 'assets/fonts/',
+            outputPath: 'assets/fonts',
           },
         },
       },
@@ -128,7 +127,10 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [{
-            loader: MiniCssExtractPlugin.loader
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: '../',
+            },
           },
           'css-loader',
           {
