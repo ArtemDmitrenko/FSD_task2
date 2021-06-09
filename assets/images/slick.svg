@@ -1,1 +1,1 @@
-export default "/Users/dmitrenkoartem/Documents/Frontend/FSD/project/dist/assets/fonts/slick.svg";
+export default __webpack_public_path__ + "assets/fonts/slick.svg";
