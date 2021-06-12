@@ -35,15 +35,12 @@
     padding: 70px 0 21px;
   }
   &__form {
-    @media screen and (max-width: 576px) {
-      left: 50%;
-      transform: translate(-50%, 0);
-      width: fit-content;
-      padding-left: 20px;
-      padding-right: 20px;
-    }
+    padding-left: 20px;
+    padding-right: 20px;
   }
   &__text {
+    padding-left: 20px;
+    padding-right: 20px;
     align-self: flex-end;
     margin-top: 318px;
     @extend %font-body;
@@ -51,6 +48,10 @@
     width: 260px;
     text-align: end;
     color: $dark75;
+    @media screen and (max-width: 339px) {
+      margin-top: 278px;
+    }
+
   }
   &__footer {
     flex: 0 0 auto;
