@@ -43,5 +43,7 @@
   }
   &__footer {
     flex: 0 0 auto;
+    @media screen and (max-width: 340px) {
+      margin-top: 50px;    }
   }
 }
