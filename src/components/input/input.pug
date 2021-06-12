@@ -16,7 +16,7 @@ include ../checkmark/checkmark.pug
 include ../arrow/arrow.pug
 
 mixin input(options = {})
-    - const {heading, description, name, value, placeholder, dropdown, subscription, dateDropdown, type, fromOrTo, required} = options
+    - const {heading, description, name, value, placeholder, dropdown, subscription, dateDropdown, type, fromOrTo, required, readonly} = options
     if dateDropdown
         .input
             if heading

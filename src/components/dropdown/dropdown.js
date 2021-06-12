@@ -6,7 +6,7 @@ export default class Dropdown {
 
   init() {
     this.findElements();
-    this.dropdownInput.addEventListener('click', this.toggleDropdown.bind(this));
+    this.dropdownInput.addEventListener('click', this.showDropdown.bind(this));
     document.addEventListener('click', this.closeDropdown.bind(this));
     this.dropdownList.addEventListener('click', this.counter.bind(this));
     this.item.addEventListener('click', this.changeover.bind(this));
@@ -34,11 +34,13 @@ export default class Dropdown {
     return false;
   }
 
-  toggleDropdown() {
-    this.input.classList.toggle("input__element_border-radius_0");
-    this.input.classList.add("input__element_with-bright-border");
-    this.dropdownList.classList.toggle("dropdown__list_show");
-    this.disableBtn();
+  showDropdown() {
+    if (!this.dropdownList.classList.contains("dropdown__list_show")) {
+      this.input.classList.add("input__element_border-radius_0");
+      this.input.classList.add("input__element_with-bright-border");
+      this.dropdownList.classList.add("dropdown__list_show");
+      this.disableBtn();
+    }
   }
 
   hideBtnClear() {
@@ -57,7 +59,11 @@ export default class Dropdown {
     const closestDropdown = target.closest('.js-dropdown')
     const conditionForClosingDropdown1 = this.isDroprownOpened() && !closestDropdown;
     const conditionForClosingDropdown2 = this.isDroprownOpened() && this.isGuestsDropdown() && target == this.btnApply;
-    if (conditionForClosingDropdown1 || conditionForClosingDropdown2) {
+    if (conditionForClosingDropdown1) {
+      this.input.value = 'Сколько гостей';
+      this.hideDropdown();
+    }
+    if (conditionForClosingDropdown2) {
       this.hideDropdown();
     }
   }
