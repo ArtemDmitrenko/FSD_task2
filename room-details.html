@@ -41,12 +41,10 @@
                   </li>
                 </ul>
               </nav>
-              <div class="header__button"><a class="header__link" href="./sign-in.html"> 
-                  <div class="btn_with-border btn_size_low">
-                    <button class="btn btn__text btn__text_header">войти</button>
-                  </div></a></div>
-              <div class="header__button-sign"><a class="header__link" href="./registration.html"> 
-                  <button class="btn btn_color_gradient btn_color_size_small">зарегистрироваться</button></a></div>
+              <div class="header__link"><a class="link link_size_small" href="./sign-in.html">Войти</a>
+              </div>
+              <div class="header__link-sign"><a class="link link_color_purple" href="./registration.html">Зарегистрироваться</a>
+              </div>
             </div>
             <div class="header__burger js-header__burger"><span></span></div>
           </div>
@@ -196,7 +194,7 @@
           </div>
           <div class="room-details__column2">
             <div class="room-details__form-confirmation">
-              <form class="form-confirmation js-form-confirmation" action="#">
+              <form class="form-confirmation js-form-confirmation" action="#" method="post">
                 <div class="form-confirmation__room-description">
                   <div class="form-confirmation__room-block">
                     <h1 class="form-confirmation__room-number"><span>№</span> 888</h1>
@@ -229,7 +227,7 @@
                     <div class="dropdown__input js-dropdown__input">
                       <div class="input">
                         <div class="input__heading">гости</div>
-                        <input class="input__element js-input__element" name="guests" type="text" value="3 гостя" dropdown>
+                        <input class="input__element js-input__element" name="guests" type="text" value="3 гостя" dropdown readonly="readonly">
                         <div class="input__checkmark"><i class="checkmark checkmark_direction_down js-checkmark"></i>
                         </div>
                       </div>

@@ -21,7 +21,7 @@
       </div>
       <div class="cards__all-items">
         <div class="cards__room-search">
-          <form class="form-roomsearch js-form-roomsearch" action="#">
+          <form class="form-roomsearch js-form-roomsearch" action="#" method="post">
             <h1 class="form-roomsearch__title">Найдём номера под ваши пожелания</h1>
             <div class="form-roomsearch__dates">
               <div class="form-roomsearch__check-in">
@@ -48,7 +48,7 @@
                 <div class="dropdown__input js-dropdown__input">
                   <div class="input">
                     <div class="input__heading">гости</div>
-                    <input class="input__element js-input__element" name="guests" type="text" value="Сколько гостей" dropdown>
+                    <input class="input__element js-input__element" name="guests" type="text" value="Сколько гостей" dropdown readonly="readonly">
                     <div class="input__checkmark"><i class="checkmark checkmark_direction_down js-checkmark"></i>
                     </div>
                   </div>
@@ -97,7 +97,7 @@
           </form>
         </div>
         <div class="cards__registration">
-          <form class="form-registration js-form-registration" action="#">
+          <form class="form-registration js-form-registration" action="#" method="post">
             <h1 class="form-registration__title">Регистрация аккаунта</h1>
             <div class="form-registration__name">
               <div class="input">
@@ -155,16 +155,13 @@
               <div class="form-registration_is-registered_on-toxin">
                 <p class="form-registration__text">Уже есть аккаунт на Toxin</p>
               </div>
-              <div class="form-registration__btn">
-                <div class="btn_with-border">
-                  <button class="btn btn__text" type="submit">Войти</button>
-                </div>
+              <div class="form-registration__sign-in"><a class="link link_size_big" href="./sign-in.html">Войти</a>
               </div>
             </div>
           </form>
         </div>
         <div class="cards__confirmation">
-          <form class="form-confirmation js-form-confirmation" action="#">
+          <form class="form-confirmation js-form-confirmation" action="#" method="post">
             <div class="form-confirmation__room-description">
               <div class="form-confirmation__room-block">
                 <h1 class="form-confirmation__room-number"><span>№</span> 888</h1>
@@ -197,7 +194,7 @@
                 <div class="dropdown__input js-dropdown__input">
                   <div class="input">
                     <div class="input__heading">гости</div>
-                    <input class="input__element js-input__element" name="guests" type="text" value="3 гостя" dropdown>
+                    <input class="input__element js-input__element" name="guests" type="text" value="3 гостя" dropdown readonly="readonly">
                     <div class="input__checkmark"><i class="checkmark checkmark_direction_down js-checkmark"></i>
                     </div>
                   </div>
@@ -273,7 +270,7 @@
           </form>
         </div>
         <div class="cards__log-in">
-          <form class="form-log-in" action="#">
+          <form class="form-log-in" action="#" method="post">
             <h1 class="form-log-in__title">Войти</h1>
             <div class="form-log-in__email">
               <div class="input">
@@ -292,10 +289,8 @@
               <div class="form-log-in__registered-on-Toxin">
                 <p class="form-log-in__text">Нет аккаунта на Toxin?</p>
               </div>
-              <div class="form-log-in__btn"><a class="form-log-in__link" href="./registration.html"> 
-                  <div class="btn_with-border">
-                    <button class="btn btn__text" type="button">Создать</button>
-                  </div></a></div>
+              <div class="form-log-in__link"><a class="link link_size_big" href="./registration.html">Создать</a>
+              </div>
             </div>
           </form>
         </div>

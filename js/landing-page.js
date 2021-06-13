@@ -13582,7 +13582,7 @@ var Dropdown = /*#__PURE__*/function () {
     key: "init",
     value: function init() {
       this.findElements();
-      this.dropdownInput.addEventListener('click', this.toggleDropdown.bind(this));
+      this.dropdownInput.addEventListener('click', this.showDropdown.bind(this));
       document.addEventListener('click', this.closeDropdown.bind(this));
       this.dropdownList.addEventListener('click', this.counter.bind(this));
       this.item.addEventListener('click', this.changeover.bind(this));
@@ -13615,12 +13615,14 @@ var Dropdown = /*#__PURE__*/function () {
       return false;
     }
   }, {
-    key: "toggleDropdown",
-    value: function toggleDropdown() {
-      this.input.classList.toggle("input__element_border-radius_0");
-      this.input.classList.add("input__element_with-bright-border");
-      this.dropdownList.classList.toggle("dropdown__list_show");
-      this.disableBtn();
+    key: "showDropdown",
+    value: function showDropdown() {
+      if (!this.dropdownList.classList.contains("dropdown__list_show")) {
+        this.input.classList.add("input__element_border-radius_0");
+        this.input.classList.add("input__element_with-bright-border");
+        this.dropdownList.classList.add("dropdown__list_show");
+        this.disableBtn();
+      }
     }
   }, {
     key: "hideBtnClear",
@@ -13643,7 +13645,12 @@ var Dropdown = /*#__PURE__*/function () {
       var conditionForClosingDropdown1 = this.isDroprownOpened() && !closestDropdown;
       var conditionForClosingDropdown2 = this.isDroprownOpened() && this.isGuestsDropdown() && target == this.btnApply;
 
-      if (conditionForClosingDropdown1 || conditionForClosingDropdown2) {
+      if (conditionForClosingDropdown1) {
+        this.input.value = 'Сколько гостей';
+        this.hideDropdown();
+      }
+
+      if (conditionForClosingDropdown2) {
         this.hideDropdown();
       }
     }

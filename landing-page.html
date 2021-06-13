@@ -41,12 +41,10 @@
                   </li>
                 </ul>
               </nav>
-              <div class="header__button"><a class="header__link" href="./sign-in.html"> 
-                  <div class="btn_with-border btn_size_low">
-                    <button class="btn btn__text btn__text_header">войти</button>
-                  </div></a></div>
-              <div class="header__button-sign"><a class="header__link" href="./registration.html"> 
-                  <button class="btn btn_color_gradient btn_color_size_small">зарегистрироваться</button></a></div>
+              <div class="header__link"><a class="link link_size_small" href="./sign-in.html">Войти</a>
+              </div>
+              <div class="header__link-sign"><a class="link link_color_purple" href="./registration.html">Зарегистрироваться</a>
+              </div>
             </div>
             <div class="header__burger js-header__burger"><span></span></div>
           </div>
@@ -56,7 +54,7 @@
     <main class="landing-page__image">
       <div class="landing-page__wrapper">
         <div class="landing-page__form">
-          <form class="form-roomsearch js-form-roomsearch" action="#">
+          <form class="form-roomsearch js-form-roomsearch" action="#" method="post">
             <h1 class="form-roomsearch__title">Найдём номера под ваши пожелания</h1>
             <div class="form-roomsearch__dates">
               <div class="form-roomsearch__check-in">
@@ -83,7 +81,7 @@
                 <div class="dropdown__input js-dropdown__input">
                   <div class="input">
                     <div class="input__heading">гости</div>
-                    <input class="input__element js-input__element" name="guests" type="text" value="Сколько гостей" dropdown>
+                    <input class="input__element js-input__element" name="guests" type="text" value="Сколько гостей" dropdown readonly="readonly">
                     <div class="input__checkmark"><i class="checkmark checkmark_direction_down js-checkmark"></i>
                     </div>
                   </div>
