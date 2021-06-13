@@ -1,4 +1,4 @@
-import '../../../node_modules/jquery.maskedinput/src/jquery.maskedinput';
+import Inputmask from 'inputmask';
 
 export default class Input {
   constructor(item) {
@@ -7,8 +7,10 @@ export default class Input {
   }
 
   init() {
-    $(this.item).mask('99.99.9999', {
-      autoclear: false
-    });
+    Inputmask({
+      placeholder: "ДД.ММ.ГГГГ",
+      alias: "datetime",
+      inputFormat: "dd.mm.yyyy"
+    }).mask(this.item);
   }
 }
