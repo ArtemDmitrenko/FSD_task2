@@ -2,6 +2,7 @@ include ../input/input.pug
 include ../radio-buttons/radio-buttons.pug
 include ../toggle/toggle.pug
 include ../btn/btn.pug
+include ../link/link.pug
 
 mixin form-registration()
     form(action="#" method="post").form-registration.js-form-registration
@@ -26,5 +27,5 @@ mixin form-registration()
         .form-registration_is-registered
             .form-registration_is-registered_on-toxin
                 p.form-registration__text Уже есть аккаунт на Toxin
-            .form-registration__btn
-                +btn({modifier: 'btn_with-border', text: 'Войти', type: 'submit'})
+            .form-registration__sign-in
+                +link({link: './sign-in.html', text: 'Войти', type: 'big'})

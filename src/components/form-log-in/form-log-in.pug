@@ -1,5 +1,6 @@
 include ../input/input.pug
 include ../btn/btn.pug
+include ../link/link.pug
 
 mixin form-log-in()
     form(action="#" method="post").form-log-in
@@ -13,6 +14,6 @@ mixin form-log-in()
         .form-log-in__registered
             .form-log-in__registered-on-Toxin
                 p.form-log-in__text Нет аккаунта на Toxin?
-            .form-log-in__btn
-                a.form-log-in__link(href="./registration.html") 
-                    +btn({modifier: 'btn_with-border', text: 'Создать', type: 'button'})        
+            .form-log-in__link
+                +link({link: './registration.html', text: 'Создать', type: 'big'})
+

@@ -1,0 +1,10 @@
+mixin link(options)
+    - const {link, text, type} = options
+    case type
+      when "big"
+        a.link.link_size_big(href = link) #{text}
+      when "small"
+        a.link.link_size_small(href = link) #{text}
+      when "purple"
+        a.link.link_color_purple(href = link) #{text}
+

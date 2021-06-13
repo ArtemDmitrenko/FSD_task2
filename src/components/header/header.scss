@@ -36,7 +36,7 @@
       display: block;
     }
   }
-  &__button {
+  &__link {
     margin-right: 20px;
     @media screen and (max-width: 992px) {
       display: none;
@@ -49,7 +49,7 @@
       line-height: 20px;
     }
   }
-  &__button-sign {
+  &__link-sign {
     width: 196px;
     @media screen and (max-width: 992px) {
       display: none;
