@@ -10,22 +10,18 @@ $adress: "../../fonts";
   font-style: $style;
 }
 
-/* Font Quicksand-Bold CSS */
 @font-face {
   @include font-face("Quicksand", "quicksand-bold", $adress, 700, "normal");
 }
 
-/* Font Conv_Quicksand-Regular CSS */
 @font-face {
   @include font-face("Quicksand", "quicksand-regular", $adress, 400, "normal");
 }
 
-/* Font Montserrat-Bold CSS */
 @font-face {
   @include font-face("Montserrat", "montserrat-bold", $adress, 700, "normal");
 }
 
-/* Font Montserrat-Regular CSS */
 @font-face {
   @include font-face("Montserrat", "montserrat-regular", $adress, 400, "normal");
 }
@@ -39,8 +35,6 @@ $adress: "../../fonts";
 
 %font-body {
   @include font("Montserrat", "Arial", 14px, #1f2041, 400);
-  // line-height: 24px;
-  // opacity: 75%;
 }
 
 %h3 {
@@ -56,7 +50,6 @@ $adress: "../../fonts";
   @include font("Quicksand", "Arial", 24px, #1f2041, 700);
 }
 
-// Шрифт MaterialIcons
 @font-face {
   font-family: "MaterialIcons-Regular";
   src: url("../../fonts/materialicons-regular.eot");

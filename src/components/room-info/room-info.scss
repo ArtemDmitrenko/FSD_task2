@@ -17,7 +17,7 @@
     font-family: "MaterialIcons-Regular";
     font-weight: normal;
     font-style: normal;
-    font-size: 48px; /* Preferred icon size */
+    font-size: 48px;
     display: inline-block;
     line-height: 1;
     text-transform: none;
@@ -26,20 +26,12 @@
     white-space: nowrap;
     direction: ltr;
     color: #bc9cff;
-
     background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-
-    /* Support for all WebKit browsers. */
     -webkit-font-smoothing: antialiased;
-    /* Support for Safari and Chrome. */
     text-rendering: optimizeLegibility;
-
-    /* Support for Firefox. */
     -moz-osx-font-smoothing: grayscale;
-
-    /* Support for IE. */
     font-feature-settings: "liga";
   }
   &__name {

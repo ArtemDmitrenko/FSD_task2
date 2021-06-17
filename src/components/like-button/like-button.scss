@@ -51,24 +51,14 @@
     word-wrap: normal;
     white-space: nowrap;
     direction: ltr;
-
     background-color: $dark25;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-
-    /* Support for all WebKit browsers. */
     -webkit-font-smoothing: antialiased;
-    /* Support for Safari and Chrome. */
     text-rendering: optimizeLegibility;
-
-    /* Support for Firefox. */
     -moz-osx-font-smoothing: grayscale;
-
-    /* Support for IE. */
     font-feature-settings: "liga";
-
     margin-left: -7px;
-
     &_active {
       background-color: $purple;
     }

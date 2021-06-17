@@ -22,7 +22,6 @@
     position: absolute;
     left: -5px;
     background-color: white;
-    // display: none;
     min-width: 100%;
     opacity: 0;
     transition: opacity 0.4s ease;  
@@ -37,7 +36,6 @@
 }
 
 .show {
-  // display: block;
   opacity: 1;
   transition: opacity 0.4s ease;
   z-index: 1;

@@ -103,24 +103,6 @@
   height: 100%;
   border-radius: 5px;
 }
-.slick-prev {
-  // left: 0;
-  // background: linear-gradient(
-  //   90deg,
-  //   rgba(0, 0, 0, 0.5) 0%,
-  //   rgba(0, 0, 0, 0) 99.99%,
-  //   rgba(255, 255, 255, 0) 100%
-  // );
-}
-.slick-next {
-  // right: 0;
-  // background: linear-gradient(
-  //   -90deg,
-  //   rgba(0, 0, 0, 0.5) 0%,
-  //   rgba(0, 0, 0, 0) 99.99%,
-  //   rgba(255, 255, 255, 0) 100%
-  // );
-}
 .slick-prev:before {
   content: "expand_more";
   transform: rotate(90deg);
@@ -144,19 +126,11 @@
   direction: ltr;
   background-color: #fff;
   opacity: 1;
-
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-
-  /* Support for all WebKit browsers. */
   -webkit-font-smoothing: antialiased;
-  /* Support for Safari and Chrome. */
   text-rendering: optimizeLegibility;
-
-  /* Support for Firefox. */
   -moz-osx-font-smoothing: grayscale;
-
-  /* Support for IE. */
   font-feature-settings: "liga";
 }
 
