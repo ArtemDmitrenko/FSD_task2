@@ -1,45 +1,44 @@
-@import '../../colors.scss';
-@import '../../fonts.scss';
-@import '../../nullstyle.scss';
-@import 'Components/header/header.scss';
-@import 'Components/logo/logo.scss';
-@import 'Components/btn/btn.scss';
-@import 'Components/nav-menu/nav-menu.scss';
-@import 'Components/footer/footer.scss';
-@import 'Components/social-nets/social-nets.scss';
-@import 'Components/arrow/arrow.scss';
-@import 'Components/checkmark/checkmark.scss';
-@import 'Components/date-dropdown/date-dropdown.scss';
-@import 'Components/dropdown/dropdown.scss';
-@import 'Components/input/input.scss';
-@import 'Components/counter/counter.scss';
-@import 'Components/footer-tab/footer-tab.scss';
-@import 'Components/range-slider/range-slider.scss';
-@import 'Components/checkbox-btn/checkbox-btn.scss';
-@import 'Components/room/room.scss';
-@import 'Components/rate-button/rate-button.scss';
-@import 'Components/pagination/pagination.scss';
+@import "../../colors.scss";
+@import "../../fonts.scss";
+@import "../../nullstyle.scss";
+@import "Components/header/header.scss";
+@import "Components/logo/logo.scss";
+@import "Components/btn/btn.scss";
+@import "Components/nav-menu/nav-menu.scss";
+@import "Components/footer/footer.scss";
+@import "Components/social-nets/social-nets.scss";
+@import "Components/arrow/arrow.scss";
+@import "Components/checkmark/checkmark.scss";
+@import "Components/date-dropdown/date-dropdown.scss";
+@import "Components/dropdown/dropdown.scss";
+@import "Components/input/input.scss";
+@import "Components/counter/counter.scss";
+@import "Components/footer-tab/footer-tab.scss";
+@import "Components/range-slider/range-slider.scss";
+@import "Components/checkbox-btn/checkbox-btn.scss";
+@import "Components/room/room.scss";
+@import "Components/rate-button/rate-button.scss";
+@import "Components/pagination/pagination.scss";
 @import "Components/link/link.scss";
-
 
 .search-room {
   display: flex;
   flex-direction: column;
   min-height: 100%;
   &__main {
+    display: flex;
     flex: 1 0 auto;
+    justify-content: space-between;
     max-width: 1160px;
     margin: 0 auto;
     padding: 0 20px;
-    display: flex;
-    justify-content: space-between;
     @media screen and (max-width: 600px) {
       display: block;
     }
   }
   &__sidebar {
-    flex-shrink: 0;
     flex-basis: 266px;
+    flex-shrink: 0;
     margin-right: 5.1%;
   }
   &__filter-date-dropdown {
@@ -65,25 +64,26 @@
   }
   &__title {
     @extend %h1;
+
     margin-top: 28px;
     margin-bottom: 19px;
   }
   &__pagination {
-    margin-left: auto;
-    margin-right: auto;
     width: 16em;
     margin-top: 19px;
+    margin-right: auto;
+    margin-left: auto;
   }
   &__card {
+    margin-right: 6px;
     margin-bottom: 21px;
     margin-left: 6px;
-    margin-right: 6px;
   }
   &__footer {
     flex: 0 0 auto;
     &_wide {
-      border-top: 1px solid $dark25;
       margin-top: 75px;
+      border-top: 1px solid $dark25;
     }
   }
   &__range-slider {

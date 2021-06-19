@@ -9,23 +9,24 @@ $width-e: auto;
 $height-e: auto;
 .btn {
   @extend %h3;
-  cursor: pointer;
-  box-sizing: border-box;
-  border: none;
+
   display: block;
-  background: none;
+  box-sizing: border-box;
   letter-spacing: -0.01em;
+  background: none;
+  border: none;
   outline: none;
+  cursor: pointer;
   &_color_gradient {
-    background-image: linear-gradient(to bottom, $purple, #8ba4f9);
-    color: #ffffff;
     width: $width-s;
     height: $height-s;
+    color: #fff;
+    background-image: linear-gradient(to bottom, $purple, #8ba4f9);
     border-radius: 22px;
-    transition: opacity .4s ease;
+    transition: opacity 0.4s ease;
     &:hover {
       opacity: 0.5;
-      transition: opacity .4s ease;
+      transition: opacity 0.4s ease;
     }
   }
   &_size_small {
@@ -35,16 +36,16 @@ $height-e: auto;
   &_with-border {
     width: $width-s - 4px;
     height: $height-s - 4px;
-    border: double 2px transparent;
-    border-radius: 26px;
     background-image: linear-gradient(white, white),
       linear-gradient(to bottom, $purple, #8ba4f9);
-    background-origin: border-box;
     background-clip: content-box, border-box;
-    transition: opacity .4s ease;
+    background-origin: border-box;
+    border: double 2px transparent;
+    border-radius: 26px;
+    transition: opacity 0.4s ease;
     &:hover {
       opacity: 0.5;
-      transition: opacity .4s ease;
+      transition: opacity 0.4s ease;
     }
   }
   &_size_low {
@@ -52,12 +53,12 @@ $height-e: auto;
     height: calc(34px - 4px);
   }
   &__text {
-    color: $purple;
     margin: 0 auto;
+    color: $purple;
     line-height: $height-s - 4px;
     &_header {
-      line-height: 30px;
       margin-top: 5px;
+      line-height: 30px;
     }
   }
   &_color_violent {
@@ -74,42 +75,42 @@ $height-e: auto;
   &_size_long {
     width: $width-l;
     height: $height-l;
-    border-radius: 22px;
+    color: #fff;
     background-image: linear-gradient(to bottom, $purple, #8ba4f9);
-    color: #ffffff;
-    transition: opacity .4s ease;
+    border-radius: 22px;
+    transition: opacity 0.4s ease;
     &:hover {
       opacity: 0.5;
-      transition: opacity .4s ease;
+      transition: opacity 0.4s ease;
     }
   }
   &__arrow {
     position: relative;
     top: -9px;
-    width: 15px;
-    height: 2px;
-    background-color: #ffffff;
     left: 92%;
     display: block;
+    width: 15px;
+    height: 2px;
+    background-color: #fff;
     &::after {
-      content: "";
       position: absolute;
-      width: 10px;
-      height: 2px;
       top: -3px;
       right: -3px;
-      background-color: #ffffff;
-      transform: rotate(45deg);
-    }
-    &::before {
-      content: "";
-      position: absolute;
       width: 10px;
       height: 2px;
+      background-color: #fff;
+      transform: rotate(45deg);
+      content: "";
+    }
+    &::before {
+      position: absolute;
       top: 3px;
       right: -3px;
-      background-color: #ffffff;
+      width: 10px;
+      height: 2px;
+      background-color: #fff;
       transform: rotate(-45deg);
+      content: "";
     }
   }
   &_hidden {

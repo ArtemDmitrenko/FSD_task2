@@ -1,15 +1,15 @@
 .footer-tab {
-  box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
+  display: flex;
+  display: none;
   max-width: 768px;
   height: 367px;
   margin: auto;
   background-color: #fff;
-  display: flex;
-  display: none;
+  box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
   @media screen and (max-width: 768px) {
     display: block;
-    padding: 50px;
     height: auto;
+    padding: 50px;
   }
   &__content {
     margin: auto;
@@ -17,8 +17,9 @@
   }
   &__text {
     @extend %font-body;
-    opacity: 0.75;
+
     padding: 20px 0 24px;
+    opacity: 0.75;
   }
   &__social-nets {
     padding-right: 22px;

@@ -1,54 +1,55 @@
 .radio-buttons {
   &__item {
     display: inline;
-    cursor: pointer;
     margin-right: 11px;
     padding-bottom: 5px;
+    cursor: pointer;
   }
   &__name {
     @extend %h3;
+
     margin-bottom: 17px;
   }
   &__input {
-    cursor: pointer;
-    vertical-align: middle;
     margin: 0;
-    &:before {
-      width: 18px;
-      height: 18px;
-      border-radius: 18px;
+    vertical-align: middle;
+    cursor: pointer;
+    &::before {
+      position: relative;
       top: -5px;
       left: -1px;
-      position: relative;
+      display: inline-block;
+      width: 18px;
+      height: 18px;
       background-color: white;
-      content: "";
-      display: inline-block;
-      visibility: visible;
       border: 1px solid $dark25;
-    }
-    &:checked:before {
-      width: 18px;
-      height: 18px;
       border-radius: 18px;
+      visibility: visible;
+      content: "";
+    }
+    &:checked::before {
+      position: relative;
       top: -5px;
       left: -1px;
-      position: relative;
-      content: "";
       display: inline-block;
-      visibility: visible;
+      width: 18px;
+      height: 18px;
       border: 1px solid $purple;
+      border-radius: 18px;
+      visibility: visible;
+      content: "";
     }
-    &:checked:after {
-      width: 12px;
-      height: 12px;
-      border-radius: 12px;
+    &:checked::after {
+      position: relative;
       top: -24px;
       left: 3px;
-      position: relative;
-      background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
-      content: "";
       display: inline-block;
+      width: 12px;
+      height: 12px;
+      background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+      border-radius: 12px;
       visibility: visible;
+      content: "";
     }
     &:checked + label {
       color: $dark75;
@@ -56,8 +57,9 @@
   }
   &__label {
     @extend %font-body;
+
+    margin-left: 16px;
     color: $dark50;
     cursor: pointer;
-    margin-left: 16px;
   }
 }

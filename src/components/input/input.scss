@@ -11,44 +11,44 @@
     position: absolute;
     top: -23px;
     right: 0;
-    @extend %font-body;
+    color: $dark50;
     font-size: 12px;
     text-transform: uppercase;
-    color: $dark50;
+    @extend %font-body;
   }
   &__element {
     position: relative;
-    color: $dark75;
     flex-grow: 1;
-    @extend %font-body;
-    line-height: 24px;
+    box-sizing: border-box;
     width: 100%;
     height: 44px;
+    padding-right: 15px;
+    padding-left: 15px;
+    color: $dark75;
+    line-height: 24px;
     border-color: $dark25;
     border-width: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
-    box-sizing: border-box;
     border-radius: 4px;
     outline: none;
-    transition: all .4s ease;
+    transition: all 0.4s ease;
+    @extend %font-body;
     &:focus,
     &:hover {
       border-color: $dark50;
-      transition: border-color .4s ease;
+      transition: border-color 0.4s ease;
     }
     &::placeholder {
       opacity: 0.25;
-      transition: opacity .4s ease;
+      transition: opacity 0.4s ease;
     }
     &:hover::placeholder,
     &:focus::placeholder {
       opacity: 0.75;
-      transition: all .4s ease;
+      transition: all 0.4s ease;
     }
     &_border-radius_0 {
-      border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
     }
     &_with-bright-border {
       border-color: rgba(31, 32, 65, 0.5);
@@ -57,21 +57,21 @@
       border-color: $dark50;
       &::placeholder {
         opacity: 0.75;
-        transition: all .4s ease;
+        transition: all 0.4s ease;
       }
     }
   }
   &__date-dropdown {
     &::placeholder {
-      opacity: 0.75;
       color: #1f2041;
-      transition: all .4s ease;
+      opacity: 0.75;
+      transition: all 0.4s ease;
     }
   }
   &__checkmark {
     position: absolute;
-    right: 11px;
     top: 12px;
+    right: 11px;
   }
   &__subscription {
     position: absolute;
@@ -80,11 +80,11 @@
   }
   &__default-button {
     position: absolute;
-    left: -38px;
     top: 8px;
+    left: -38px;
     background: #fff;
     border: none;
-    cursor: pointer;
     outline: none;
+    cursor: pointer;
   }
 }

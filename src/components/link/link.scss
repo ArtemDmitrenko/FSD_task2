@@ -1,42 +1,42 @@
 .link {
-  text-align: center;
-  @extend %h3;
-  cursor: pointer;
-  box-sizing: border-box;
   display: block;
+  box-sizing: border-box;
   letter-spacing: -0.01em;
-  border: double 2px transparent;
-  background-origin: border-box;
+  text-align: center;
   background-clip: content-box, border-box;
-  transition: opacity .4s ease;
+  background-origin: border-box;
+  border: double 2px transparent;
+  cursor: pointer;
+  transition: opacity 0.4s ease;
+  @extend %h3;
   &:hover {
     opacity: 0.5;
-    transition: opacity .4s ease;
+    transition: opacity 0.4s ease;
   }
   &_size_big {
-    line-height: 40px;
-    height: 45px;
     width: 95px;
-    background-image: linear-gradient(white, white),
-    linear-gradient(to bottom, $purple, #8ba4f9);
+    height: 45px;
     color: $purple;
+    line-height: 40px;
+    background-image: linear-gradient(white, white),
+      linear-gradient(to bottom, $purple, #8ba4f9);
     border-radius: 26px;
   }
   &_size_small {
-    line-height: 32px;
-    height: 34px;
     width: 95px;
-    background-image: linear-gradient(white, white),
-    linear-gradient(to bottom, $purple, #8ba4f9);
+    height: 34px;
     color: $purple;
+    line-height: 32px;
+    background-image: linear-gradient(white, white),
+      linear-gradient(to bottom, $purple, #8ba4f9);
     border-radius: 26px;
   }
   &_color_purple {
-    line-height: 32px;
-    height: 36px;
     width: 196px;
+    height: 36px;
+    color: #fff;
+    line-height: 32px;
     background-image: linear-gradient(to bottom, $purple, #8ba4f9);
-    color: #ffffff;
     border-radius: 22px;
   }
 }

@@ -3,31 +3,34 @@
     display: flex;
   }
   &__item {
-    margin-right: 20px;
     position: relative;
+    margin-right: 20px;
   }
   &__link {
     @extend %font-body;
-    opacity: 0.5;
+
     cursor: pointer;
+    opacity: 0.5;
     &_active {
       @extend %h3;
+
       font-size: 14px;
       text-transform: none;
       opacity: 0.75;
     }
   }
   &__sub-list {
-    padding-left: 5px;
     position: absolute;
     left: -5px;
-    background-color: white;
     min-width: 100%;
+    padding-left: 5px;
+    background-color: white;
     opacity: 0;
-    transition: opacity 0.4s ease;  
+    transition: opacity 0.4s ease;
   }
   &__sub-link {
     @extend %font-body;
+
     opacity: 0.5;
   }
   &__sub-item {
@@ -36,7 +39,7 @@
 }
 
 .show {
+  z-index: 1;
   opacity: 1;
   transition: opacity 0.4s ease;
-  z-index: 1;
 }

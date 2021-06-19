@@ -4,29 +4,29 @@
     padding: 30px 0 0 30px;
   }
   &__all-items {
-    margin: 71px 140px 0 140px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     height: 1200px;
+    margin: 71px 140px 0 140px;
   }
   &__registration {
     margin-top: 37px;
   }
   &__confirmation {
-    margin-left: 20px;
     margin-bottom: 39px;
+    margin-left: 20px;
   }
   &__log-in {
     margin-left: 20px;
   }
   &__room {
-    margin-left: 20px;
     margin-bottom: 39px;
+    margin-left: 20px;
   }
   &__datepicker {
     width: 302px;
-    margin-left: 20px;
     margin-bottom: 38px;
+    margin-left: 20px;
   }
 }

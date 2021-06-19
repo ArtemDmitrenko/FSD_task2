@@ -1,10 +1,10 @@
 %legend {
-  content: "";
   display: inline-block;
   width: 10.43px;
   height: 10px;
-  border-radius: 5px;
   margin-right: 5px;
+  border-radius: 5px;
+  content: "";
 }
 
 .diagram {
@@ -22,38 +22,44 @@
   }
   &__list-item {
     @extend %font-body;
-    color: $dark75;
+
     margin-bottom: 6px;
+    color: $dark75;
     &_description {
-      &_amazing:before {
+      &_amazing::before {
         @extend %legend;
+
         background: linear-gradient(180deg, #ffe39c 0%, #ffba9c 100%);
       }
-      &_good:before {
+      &_good::before {
         @extend %legend;
+
         background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
       }
-      &_notBad:before {
+      &_notBad::before {
         @extend %legend;
+
         background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
       }
-      &_bad:before {
+      &_bad::before {
         @extend %legend;
+
         background: linear-gradient(180deg, #909090 0%, #3d4975 100%);
       }
     }
   }
   &__total {
     position: absolute;
-    left: 21%;
     top: 33%;
-    line-height: 19px;
+    left: 21%;
     width: 70px;
-    @extend %h1;
     color: $purple;
+    line-height: 19px;
     text-align: center;
+    @extend %h1;
     & span {
       @extend %h3;
+
       color: $purple;
     }
     @media screen and (max-width: 376px) {
@@ -61,9 +67,9 @@
     }
   }
   &__legend {
-    margin-left: 30px;
-    margin-top: 29px;
     min-width: 162px;
+    margin-top: 29px;
+    margin-left: 30px;
     @media screen and (max-width: 376px) {
       margin-left: 0;
     }

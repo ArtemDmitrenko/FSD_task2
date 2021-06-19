@@ -1,33 +1,33 @@
 .header {
-  box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
   background-color: white;
+  box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
   &__container {
     max-width: 1160px;
     margin: 0 auto;
     padding: 0 20px;
   }
   &__content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 0;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
   }
   &__nav-menu-buttons {
     display: flex;
     align-items: center;
     @media screen and (max-width: 992px) {
-      display: none;
       position: absolute;
-      width: 100%;
       top: 90px;
+      right: -110%;
+      z-index: 3;
+      display: none;
+      width: 100%;
+      overflow: auto;
       background: rgb(245, 246, 246);
       box-shadow: #ccc;
       box-shadow: 0 4px 2px -2px rgba(36, 36, 36, 0.17);
-      right: -110%;
       transition: all 0.4s ease;
-      overflow: auto;
-      z-index: 3;
     }
   }
   &_with-opened-menu {
@@ -60,17 +60,18 @@
     }
   }
   &__line {
-    border-left: 1px solid;
-    border-color: $dark100;
-    opacity: 0.1;
     height: 30px;
     margin-right: 20px;
+    border-color: $dark100;
+    border-left: 1px solid;
+    opacity: 0.1;
     @media screen and (max-width: 992px) {
       display: none;
     }
   }
   &__user-name {
     @extend %font-body;
+
     opacity: 0.5;
     @media screen and (max-width: 992px) {
       display: none;
@@ -80,29 +81,29 @@
     display: none;
     @media screen and (max-width: 992px) {
       position: relative;
+      display: block;
       width: 40px;
       height: 35px;
-      display: block;
       & span,
-      &:after,
-      &:before {
-        height: 3px;
-        width: 100%;
+      &::after,
+      &::before {
         position: absolute;
-        background: #515758;
+        width: 100%;
+        height: 3px;
         margin: 0 auto;
+        background: #515758;
       }
       & span {
         top: 16px;
       }
-      &:after,
-      &:before {
+      &::after,
+      &::before {
         content: "";
       }
-      &:after {
+      &::after {
         bottom: 5px;
       }
-      &:before {
+      &::before {
         top: 5px;
       }
     }
@@ -113,14 +114,14 @@
         opacity: 0;
         transition: 0.5s;
       }
-      &:before {
-        transform: rotate(38deg);
+      &::before {
         top: 16px;
+        transform: rotate(38deg);
         transition: 0.4s;
       }
-      &:after {
-        transform: rotate(-38deg);
+      &::after {
         bottom: 16px;
+        transform: rotate(-38deg);
         transition: 0.4s;
       }
     }
@@ -139,7 +140,7 @@
   }
   & .nav-menu__list li {
     @media screen and (max-width: 992px) {
-      margin: 40px 15px 40px 0px;
+      margin: 40px 15px 40px 0;
     }
   }
 }

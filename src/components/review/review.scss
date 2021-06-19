@@ -6,37 +6,40 @@
     display: flex;
   }
   &__image {
+    box-sizing: border-box;
     width: 48px;
     height: auto;
-    border-radius: 24px;
-    box-sizing: border-box;
-    border: 2px solid #fff;
-    box-shadow: (0px 10px 20px rgba(31, 32, 65, 0.1));
     margin-bottom: 10px;
+    border: 2px solid #fff;
+    border-radius: 24px;
+    box-shadow: (0 10px 20px rgba(31, 32, 65, 0.1));
   }
   &__name {
     @extend %h3;
-    font-size: 14px;
-    color: $dark75;
-    text-transform: none;
+
     margin-bottom: 6px;
+    color: $dark75;
+    font-size: 14px;
+    text-transform: none;
   }
   &__date {
     @extend %font-body;
+
     color: $dark75;
   }
   &__text {
     @extend %font-body;
+
+    margin-left: 14px;
     color: $dark75;
     line-height: 24px;
-    margin-left: 14px;
   }
   &__description {
-    margin-left: 8px;
     margin-top: 3px;
+    margin-left: 8px;
   }
   &__like-button {
-    margin-left: 3px;
     margin-top: 1px;
+    margin-left: 3px;
   }
 }

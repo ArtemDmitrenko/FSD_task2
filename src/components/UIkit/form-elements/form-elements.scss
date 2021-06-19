@@ -3,8 +3,8 @@
     padding: 30px 0 0 30px;
   }
   &__all-items {
-    margin: 85px 0 90px 141px;
     display: flex;
+    margin: 85px 0 90px 141px;
   }
   &__global-row2 {
     margin-top: -20px;
@@ -26,13 +26,13 @@
   &__element {
     margin-bottom: 41px;
     &_expanded {
-      margin-bottom: 172px;
       width: 266px;
+      margin-bottom: 172px;
     }
     &_not-expanded {
-      margin-bottom: 40px;
-      margin-top: 120px;
       width: 266px;
+      margin-top: 120px;
+      margin-bottom: 40px;
     }
   }
   &__datepicker {
@@ -44,22 +44,22 @@
     }
   }
   &__like-button {
-    display: flex;
     position: relative;
+    display: flex;
     & .like-button:nth-child(2) {
       position: absolute;
+      bottom: 0;
       left: 50px;
-      bottom: 0px;
     }
   }
   &__rate-button {
-    display: flex;
     position: relative;
+    display: flex;
     margin-bottom: 212px;
     & .rate-button:nth-child(2) {
       position: absolute;
+      bottom: 0;
       left: 140px;
-      bottom: 0px;
     }
   }
   &__dropdown {
@@ -117,8 +117,8 @@
     }
   }
   &__review {
-    margin-top: 189px;
     width: 710px;
+    margin-top: 189px;
   }
   &__range-slider {
     margin-top: 8px;

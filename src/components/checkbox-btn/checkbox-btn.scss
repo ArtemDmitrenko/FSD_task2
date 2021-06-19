@@ -4,8 +4,8 @@
   &__expandableName {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 17px;
     width: 256px;
+    margin-bottom: 17px;
   }
   &__expandableName {
     cursor: pointer;
@@ -22,84 +22,86 @@
   &__expandableForm {
     z-index: -1;
     display: none;
-    transition: opacity .4s ease;
+    transition: opacity 0.4s ease;
     &_show {
-      display: block;
       z-index: 10;
+      display: block;
     }
   }
   &__sublabel {
     @extend %font-body;
+
+    margin-top: 7px;
+    margin-left: 31px;
     color: $dark50;
     font-size: 12px;
     line-height: 14px;
-    margin-left: 31px;
-    margin-top: 7px;
   }
   &__input {
     position: absolute;
     left: -9999px;
     & + .checkbox-btn__label {
-      display: inline-block;
       position: relative;
+      display: inline-block;
       padding-left: 30px;
+      color: rgba(31, 32, 65, 0.5);
       line-height: 18px;
+      text-transform: initial;
       cursor: pointer;
       @extend %font-body;
-      color: rgba(31, 32, 65, 0.5);
-      text-transform: initial;
-      &:before {
-        content: "";
+      &::before {
         position: absolute;
-        left: 0px;
-        top: 0px;
+        top: 0;
+        left: 0;
+        box-sizing: border-box;
         width: 20px;
         height: 20px;
+        background-color: #fff;
         border: 1px solid;
         border-color: rgba(31, 32, 65, 0.25);
-        background-color: #ffffff;
         border-radius: 4px;
-        box-sizing: border-box;
-      }
-      &:after {
         content: "";
+      }
+      &::after {
         position: absolute;
-        -webkit-transition: all 0.2s ease;
-        -moz-transition: all 0.2s ease;
-        -o-transition: all 0.2s ease;
-        transition: all 0.2s ease;
-        left: 6px;
         top: 6px;
+        left: 6px;
+        box-sizing: border-box;
         width: 8px;
         height: 6px;
+        border-bottom: 2px solid;
+        border-left: 2px solid;
         border-radius: 1px;
+        border-image: linear-gradient(-45deg, #bc9cff, #8ba4f9);
+        border-image-slice: 1;
         -webkit-transform: rotate(-45deg);
         -moz-transform: rotate(-45deg);
         -o-transform: rotate(-45deg);
         -ms-transform: rotate(-45deg);
         transform: rotate(-45deg);
-        border-image: linear-gradient(-45deg, #bc9cff, #8ba4f9);
-        border-left: 2px solid;
-        border-bottom: 2px solid;
-        box-sizing: border-box;
-        border-image-slice: 1;
+        -webkit-transition: all 0.2s ease;
+        -moz-transition: all 0.2s ease;
+        -o-transition: all 0.2s ease;
+        transition: all 0.2s ease;
+        content: "";
       }
       &.checkbox-btn__label_rich {
         @extend %h3;
-        font-size: 14px;
-        color: $dark75;
-        text-transform: none;
+
         width: 101%;
+        color: $dark75;
+        font-size: 14px;
+        text-transform: none;
       }
     }
-    &:not(:checked) + .checkbox-btn__label:after {
+    &:not(:checked) + .checkbox-btn__label::after {
       opacity: 0;
     }
     &:checked + .checkbox-btn__label {
-      &:before {
+      &::before {
         border-color: $purple;
       }
-      &:after {
+      &::after {
         opacity: 1;
       }
     }

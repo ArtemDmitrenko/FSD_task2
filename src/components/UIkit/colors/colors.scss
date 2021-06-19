@@ -1,10 +1,10 @@
 .colors {
   &__item {
     display: flex;
-    margin-bottom: 20px;
     align-items: center;
+    margin-bottom: 20px;
   }
   &__item:nth-last-child(1) {
-    margin-bottom: 0px;
+    margin-bottom: 0;
   }
 }

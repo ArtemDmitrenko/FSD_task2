@@ -25,8 +25,8 @@
     flex: 1 0 auto;
     height: 830px;
     background: url("./landing-page.png") no-repeat;
-    background-size: cover;
     background-position: bottom;
+    background-size: cover;
   }
   &__wrapper {
     display: flex;
@@ -36,23 +36,22 @@
     padding: 70px 0 21px;
   }
   &__form {
-    padding-left: 20px;
     padding-right: 20px;
+    padding-left: 20px;
   }
   &__text {
-    padding-left: 20px;
-    padding-right: 20px;
     align-self: flex-end;
-    margin-top: 318px;
-    @extend %font-body;
-    line-height: 24px;
     width: 260px;
-    text-align: end;
+    margin-top: 318px;
+    padding-right: 20px;
+    padding-left: 20px;
     color: $dark75;
+    line-height: 24px;
+    text-align: end;
+    @extend %font-body;
     @media screen and (max-width: 339px) {
       margin-top: 278px;
     }
-
   }
   &__footer {
     flex: 0 0 auto;

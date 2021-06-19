@@ -1,20 +1,21 @@
 .form-confirmation {
-  background-color: #fff;
-  padding: 30px 30px 30px 28px;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.12);
-  border-radius: 4px;
-  max-width: 380px;
   box-sizing: border-box;
+  max-width: 380px;
+  padding: 30px 30px 30px 28px;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.12);
   &__room-description {
     display: flex;
-    justify-content: space-between;
     align-items: baseline;
-    margin-bottom: 40px;
+    justify-content: space-between;
     margin-top: 10px;
+    margin-bottom: 40px;
   }
   &__room-number {
     @extend %h1;
+
     display: inline-block;
     & span {
       font-size: 14px;
@@ -22,18 +23,21 @@
   }
   &__room-type {
     @extend %h3;
-    color: $purple;
+
     display: inline-block;
     margin-left: 5px;
+    color: $purple;
   }
   &__price {
     @extend %h3;
-    font-size: 14px;
+
     color: $dark50;
+    font-size: 14px;
     & span {
       @extend %font-body;
-      font-size: 12px;
+
       color: $dark50;
+      font-size: 12px;
       text-transform: none;
     }
   }
@@ -44,29 +48,29 @@
   }
   &__part {
     display: flex;
-    justify-content: space-between;
     align-items: baseline;
+    justify-content: space-between;
     margin-bottom: 15px;
     margin-left: 3px;
   }
   &__text {
     display: inline-block;
-    @extend %font-body;
-    line-height: 18px;
-    color: $dark75;
     max-width: 214px;
+    color: $dark75;
+    line-height: 18px;
+    @extend %font-body;
   }
   &__sum {
     display: inline-block;
-    @extend %font-body;
-    line-height: 18px;
-    color: $dark75;
     margin-left: 5px;
+    color: $dark75;
+    line-height: 18px;
+    @extend %font-body;
   }
   &__total {
     display: flex;
-    justify-content: space-between;
     align-items: baseline;
+    justify-content: space-between;
     margin-top: 29px;
     margin-left: 3px;
   }
@@ -77,10 +81,10 @@
     @extend %h2;
   }
   &__ellipsis {
-    border: 1px dashed rgba(31, 32, 65, 0.25);
     box-sizing: border-box;
     width: 57%;
     height: 1px;
+    border: 1px dashed rgba(31, 32, 65, 0.25);
     @media screen and (max-width: 386px) {
       width: 40%;
     }
@@ -92,21 +96,22 @@
     margin-top: 17px;
   }
   &__info {
-    justify-content: center;
-    align-items: center;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
     width: 20px;
     height: 20px;
+    margin-left: 5px;
     border: 1px solid $dark25;
     border-radius: 50%;
-    margin-left: 5px;
-    box-sizing: border-box;
     @media screen and (max-width: 360px) {
       display: none;
     }
   }
   &__letter {
     @extend %h3;
+
     color: $dark25;
     text-transform: none;
   }

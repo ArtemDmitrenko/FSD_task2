@@ -1,20 +1,21 @@
 .rate-button {
   &__name {
     @extend %h3;
+
     margin-bottom: 15px;
   }
   &__stars {
-    font-family: "MaterialIcons-Regular";
-    font-weight: normal;
-    font-style: normal;
-    font-size: 24px;
     display: inline-block;
+    font-weight: normal;
+    font-size: 24px;
+    font-family: "MaterialIcons-Regular";
+    font-style: normal;
     line-height: 1;
-    text-transform: none;
-    letter-spacing: normal;
-    word-wrap: normal;
-    white-space: nowrap;
     direction: ltr;
+    letter-spacing: normal;
+    white-space: nowrap;
+    text-transform: none;
+    word-wrap: normal;
     background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

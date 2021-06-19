@@ -8,42 +8,50 @@
   }
   &__enter {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
   }
   &__value {
     width: 20px;
+    padding-right: 7px;
+    padding-left: 5px;
     text-align: center;
-    @extend %h3;
     border: none;
     outline: none;
-    padding-left: 5px;
-    padding-right: 7px;
+    @extend %h3;
   }
   &__btn {
-    border-color: $dark25;
-    border-width: 1px;
-    border-radius: 50%;
     width: 30px;
     height: 30px;
     color: $dark50;
+    background-color: #fff;
+    border-color: $dark25;
+    border-width: 1px;
+    border-radius: 50%;
     outline-style: none;
     cursor: pointer;
-    background-color: #fff;
-    &:hover { 
-      background-image: radial-gradient(ellipse farthest-corner at 50% 50%, #e9e7e1,rgb(207, 204, 204));
+    &:hover {
+      background-image: radial-gradient(
+        ellipse farthest-corner at 50% 50%,
+        #e9e7e1,
+        rgb(207, 204, 204)
+      );
     }
-    &:active { 
+    &:active {
       width: 30px;
       height: 30px;
+      background: -webkit-linear-gradient(
+        top,
+        hsl(0, 1%, 59%),
+        hsl(0, 2%, 39%) 90%
+      );
       box-shadow: 0 0 hsl(5, 60%, 60%);
-      background: -webkit-linear-gradient(top, hsl(0, 1%, 59%), hsl(0, 2%, 39%) 90%);
     }
     &_value {
       &_plus {
         font-size: unset;
         line-height: 1px;
-        }
+      }
       &_minus {
         font-size: unset;
         line-height: 1px;
