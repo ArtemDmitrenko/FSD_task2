@@ -13,7 +13,7 @@ export default class Header {
   }
 
   toggleMenu() {
-    const navMenuButtons = this.item.querySelector('.js-header_with-nav-menu-buttons');
+    const navMenuButtons = this.item.querySelector('.js-header__with-nav-menu-buttons');
     $(this.burger).toggleClass('header_with-opened-burger');
     $(navMenuButtons).toggleClass('header__with-opened-menu');
     $('body').toggleClass('fixed-page');

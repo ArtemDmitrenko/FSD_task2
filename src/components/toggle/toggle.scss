@@ -9,6 +9,7 @@
     position: relative;
     width: 0;
     margin: 0;
+    vertical-align: top;
     cursor: pointer;
     &::before {
       display: inline-block;
@@ -50,5 +51,9 @@
     color: $dark75;
     cursor: pointer;
     @extend %font-body;
+    @media screen and (max-width: 420px) {
+      max-width: 150px;
+      margin-left: 50px;
+    }
   }
 }
