@@ -13915,7 +13915,7 @@ var Header = /*#__PURE__*/function () {
   }, {
     key: "toggleMenu",
     value: function toggleMenu() {
-      var navMenuButtons = this.item.querySelector('.js-header_with-nav-menu-buttons');
+      var navMenuButtons = this.item.querySelector('.js-header__with-nav-menu-buttons');
       $(this.burger).toggleClass('header_with-opened-burger');
       $(navMenuButtons).toggleClass('header__with-opened-menu');
       $('body').toggleClass('fixed-page');
