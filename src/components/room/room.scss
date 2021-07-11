@@ -8,7 +8,6 @@
   box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
   &__card {
     width: 100%;
-    // width: 270px;
     height: 151.38px;
     &:hover .slick-prev {
       left: 0;
@@ -148,6 +147,12 @@
   width: 1px;
 }
 
+.slick-active button::before {
+  box-sizing: border-box;
+  background-color: white;
+  opacity: 1;
+}
+
 .slick-dots li button::before {
   position: absolute;
   top: 0;
@@ -164,18 +169,12 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.slick-active button::before {
-  box-sizing: border-box;
-  background-color: white;
-  opacity: 1;
-}
 
 .slick-dots {
   bottom: 2px;
   z-index: 1;
   width: 30%;
   margin-left: 190px;
-  padding-left: 36;
 }
 .slick-dots li.slick-active button::before {
   opacity: 1;

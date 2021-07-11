@@ -13,10 +13,7 @@
     transform: rotate(45deg);
   }
   &_direction_up {
-    margin-top: 4px;
-    margin-right: 7px;
-    margin-bottom: -3px;
-    margin-left: 9.5px;
+    margin: 4px 7px -3px 9.5px;
     transform: rotate(225deg);
   }
 }

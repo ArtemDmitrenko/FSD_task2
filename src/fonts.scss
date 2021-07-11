@@ -1,32 +1,32 @@
-$adress: "../../fonts";
+$address: "../../fonts";
 
-@mixin font-face($family-name, $file-name, $adress, $weight, $style) {
+@mixin font-face($family-name, $file-name, $address, $weight, $style) {
   font-weight: $weight;
   font-family: "#{$family-name}";
   font-style: $style;
-  src: url("#{$adress}/#{$file-name}.eot");
-  src: local("☺"), url("#{$adress}/#{$file-name}.woff") format("woff"),
-    url("#{$adress}/#{$file-name}.ttf") format("truetype"),
-    url("#{$adress}/#{$file-name}.svg") format("svg");
+  src: url("#{$address}/#{$file-name}.eot");
+  src: local("☺"), url("#{$address}/#{$file-name}.woff") format("woff"),
+    url("#{$address}/#{$file-name}.ttf") format("truetype"),
+    url("#{$address}/#{$file-name}.svg") format("svg");
 }
 
 @font-face {
-  @include font-face("Quicksand", "quicksand-bold", $adress, 700, "normal");
+  @include font-face("Quicksand", "quicksand-bold", $address, 700, "normal");
 }
 
 @font-face {
-  @include font-face("Quicksand", "quicksand-regular", $adress, 400, "normal");
+  @include font-face("Quicksand", "quicksand-regular", $address, 400, "normal");
 }
 
 @font-face {
-  @include font-face("Montserrat", "montserrat-bold", $adress, 700, "normal");
+  @include font-face("Montserrat", "montserrat-bold", $address, 700, "normal");
 }
 
 @font-face {
   @include font-face(
     "Montserrat",
     "montserrat-regular",
-    $adress,
+    $address,
     400,
     "normal"
   );

@@ -1,5 +1,5 @@
-import DateDropdown from 'Components/date-dropdown/date-dropdown';
-import Dropdown from 'Components/dropdown/dropdown';
+import DateDropdown from "Components/date-dropdown/date-dropdown";
+import Dropdown from "Components/dropdown/dropdown";
 
 export default class FormConfirmation {
   constructor(form) {
@@ -8,19 +8,19 @@ export default class FormConfirmation {
   }
 
   init() {
-    this.findDatedropdown();
+    this.findDateDropdown();
     this.findDropdown();
   }
 
-  findDatedropdown() {
-    const dateDropdowns = this.form.querySelectorAll('.js-date-dropdown');
+  findDateDropdown() {
+    const dateDropdowns = this.form.querySelectorAll(".js-date-dropdown");
     dateDropdowns.forEach((dateDropdown, index) => {
       new DateDropdown(dateDropdown, index);
     });
   }
 
   findDropdown() {
-    const dropdown = this.form.querySelector('.js-dropdown');
+    const dropdown = this.form.querySelector(".js-dropdown");
     new Dropdown(dropdown);
   }
 }
