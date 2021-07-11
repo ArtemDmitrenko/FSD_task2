@@ -60,6 +60,10 @@
         transition: all 0.4s ease;
       }
     }
+    @media screen and (max-width: 390px) {
+      padding-right: 5px;
+      padding-left: 5px;
+    }
   }
   &__date-dropdown {
     &::placeholder {
