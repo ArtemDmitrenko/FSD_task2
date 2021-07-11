@@ -17,8 +17,6 @@ export default class Header {
     const menuLinks = navMenuButtons.querySelectorAll('.js-nav-menu__link');
     const headerContainer = this.item.querySelector('.js-header__container');
     const headerBurger = headerContainer.querySelector('.js-header__burger');
-    
-    
     $(this.burger).toggleClass('header_with-opened-burger');
     $(navMenuButtons).toggleClass('header__with-opened-menu');
     $('body').toggleClass('fixed-page');
