@@ -112,6 +112,9 @@ $height-e: auto;
       transform: rotate(-45deg);
       content: "";
     }
+    @media screen and (max-width: 420px) {
+      left: 90%;
+    }
   }
   &_hidden {
     display: none;
