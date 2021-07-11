@@ -18,6 +18,9 @@
       text-transform: none;
       opacity: 0.75;
     }
+    &_opened {
+      font-size: 18px;
+    }
   }
   &__sub-list {
     position: absolute;

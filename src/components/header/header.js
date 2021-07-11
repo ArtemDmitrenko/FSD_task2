@@ -14,9 +14,19 @@ export default class Header {
 
   toggleMenu() {
     const navMenuButtons = this.item.querySelector('.js-header__with-nav-menu-buttons');
+    const menuLinks = navMenuButtons.querySelectorAll('.js-nav-menu__link');
+    const headerContainer = this.item.querySelector('.js-header__container');
+    const headerBurger = headerContainer.querySelector('.js-header__burger');
+    
+    
     $(this.burger).toggleClass('header_with-opened-burger');
     $(navMenuButtons).toggleClass('header__with-opened-menu');
     $('body').toggleClass('fixed-page');
+    menuLinks.forEach(element => {
+      element.classList.toggle('nav-menu__link_opened')
+    });
+    $(headerContainer).toggleClass('header__container_opened');
+    $(headerBurger).toggleClass('header__burger_opened');
   }
 
   findNavMenu() {

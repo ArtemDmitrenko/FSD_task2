@@ -5,6 +5,9 @@
     max-width: 1160px;
     margin: 0 auto;
     padding: 0 20px;
+    &_opened {
+      padding: 0;
+    }
   }
   &__content {
     position: relative;
@@ -18,13 +21,13 @@
     align-items: center;
     @media screen and (max-width: 992px) {
       position: absolute;
-      top: 90px;
+      top: 65px;
       right: -110%;
       z-index: 3;
       display: none;
       width: 100%;
       overflow: auto;
-      background: rgb(245, 246, 246);
+      background: white;
       box-shadow: #ccc;
       box-shadow: 0 4px 2px -2px rgba(36, 36, 36, 0.17);
       transition: all 0.4s ease;
@@ -107,6 +110,9 @@
         top: 5px;
       }
     }
+    &_opened {
+      margin-left: 20px;
+    }
   }
   &_with-opened-burger {
     @media screen and (max-width: 992px) {
@@ -135,12 +141,12 @@
   & .nav-menu__list {
     @media screen and (max-width: 992px) {
       display: block;
-      text-align: right;
+      text-align: left;
     }
   }
   & .nav-menu__list li {
     @media screen and (max-width: 992px) {
-      margin: 40px 15px 40px 0;
+      margin: 40px 0 40px 20px;
     }
   }
 }

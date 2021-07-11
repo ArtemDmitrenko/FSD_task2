@@ -13,10 +13,10 @@ mixin nav-menu(menuItems)
             - for (let i = 0; i < menuItems.length; i ++)
                 if !menuItems[i].submenu
                     li.nav-menu__item    
-                        a.nav-menu__link(href = menuItems[i].href)= menuItems[i].name
+                        a.nav-menu__link.js-nav-menu__link(href = menuItems[i].href)= menuItems[i].name
                 else
                     li.nav-menu__item.js-nav-menu__item_with-dropdown 
-                        a.nav-menu__link(href = menuItems[i].href)= menuItems[i].name
+                        a.nav-menu__link.js-nav-menu__link(href = menuItems[i].href)= menuItems[i].name
                             +checkmark()
                         ul.nav-menu__sub-list.js-nav-menu__sub-list
                             - for (let j = 0; j < menuItems[i].submenu.length; j ++) 
