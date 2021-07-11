@@ -84,6 +84,8 @@ a {
     max-width: 1160px;
     margin: 0 auto;
     padding: 0 20px; }
+    .header__container_opened {
+      padding: 0; }
   .header__content {
     position: relative;
     display: flex;
@@ -96,13 +98,13 @@ a {
     @media screen and (max-width: 992px) {
       .header__with-nav-menu-buttons {
         position: absolute;
-        top: 90px;
+        top: 65px;
         right: -110%;
         z-index: 3;
         display: none;
         width: 100%;
         overflow: auto;
-        background: #f5f6f6;
+        background: white;
         box-shadow: #ccc;
         box-shadow: 0 4px 2px -2px rgba(36, 36, 36, 0.17);
         transition: all 0.4s ease; } }
@@ -164,6 +166,8 @@ a {
           bottom: 5px; }
         .header__burger::before {
           top: 5px; } }
+    .header__burger_opened {
+      margin-left: 20px; }
   @media screen and (max-width: 992px) {
     .header_with-opened-burger span {
       opacity: 0;
@@ -183,10 +187,10 @@ a {
   @media screen and (max-width: 992px) {
     .header .nav-menu__list {
       display: block;
-      text-align: right; } }
+      text-align: left; } }
   @media screen and (max-width: 992px) {
     .header .nav-menu__list li {
-      margin: 40px 15px 40px 0; } }
+      margin: 40px 0 40px 20px; } }
 
 .fixed-page {
   overflow: hidden; }
@@ -282,6 +286,9 @@ a {
       background-color: #fff;
       transform: rotate(-45deg);
       content: ""; }
+    @media screen and (max-width: 420px) {
+      .btn__arrow {
+        left: 90%; } }
   .btn_hidden {
     display: none; }
 
@@ -299,6 +306,8 @@ a {
     font-size: 14px;
     text-transform: none;
     opacity: 0.75; }
+  .nav-menu__link_opened {
+    font-size: 18px; }
 
 .nav-menu__sub-list {
   position: absolute;
@@ -577,6 +586,10 @@ a {
       .input__element_hovered::placeholder {
         opacity: 0.75;
         transition: all 0.4s ease; }
+    @media screen and (max-width: 390px) {
+      .input__element {
+        padding-right: 5px;
+        padding-left: 5px; } }
   .input__date-dropdown::-moz-placeholder {
     color: #1f2041;
     opacity: 0.75;
@@ -797,5 +810,3 @@ a {
       .registration__footer {
         margin-top: 50px; } }
 
-
-/*# sourceMappingURL=registration.css.map*/
