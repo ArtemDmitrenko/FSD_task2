@@ -1,14 +1,11 @@
 extends ../../templates/template.pug
 include ../../components/form-roomsearch/form-roomsearch.pug
 
-block data 
-    - const pageName = "landing-page"
-
 block title
     title Landing page
 
 block main
-    main.landing-page__image
+    main.landing-page
         .landing-page__wrapper
             .landing-page__form
                 +form-roomsearch()

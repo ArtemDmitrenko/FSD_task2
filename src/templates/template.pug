@@ -1,6 +1,5 @@
 include ../components/header/header.pug
 include ../components/footer/footer.pug
-include ../components/footer-tab/footer-tab.pug
 
 block data
 
@@ -24,16 +23,11 @@ html(lang="en")
         <meta name="theme-color" content="#ffffff">
         link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@700&family=Quicksand:wght@700&display=swap")
         block title
-    body(class= pageName)
+    body.page
         block header 
-            header(class=pageName + "__header")
-                +header({modifier: "NotRegistered"})
+            +header({modifier: "NotRegistered"})
 
         block main
 
         block footer
-            footer(class=pageName + "__footer")
-                div(class=pageName + "__footer-big")
-                    +footer(footerItems)
-                div(class=pageName + "__footer-small")
-                    +footer-tab()
+            +footer(footerItems)

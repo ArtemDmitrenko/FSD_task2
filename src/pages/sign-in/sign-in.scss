@@ -15,16 +15,12 @@
 @import "Components/radio-buttons/radio-buttons.scss";
 @import "Components/toggle/toggle.scss";
 @import "Components/link/link.scss";
+@import "Components/footer-big/footer-big.scss";
 
 .sign-in {
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
-  &__main {
-    position: relative;
-    flex: 1 0 auto;
-    height: 702px;
-  }
+  position: relative;
+  flex: 1 0 auto;
+  height: 702px;
   &__image {
     width: 100%;
     height: 100%;
@@ -42,8 +38,5 @@
     @media screen and (max-width: 420px) {
       width: fit-content;
     }
-  }
-  &__footer {
-    flex: 0 0 auto;
   }
 }

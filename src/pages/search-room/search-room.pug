@@ -7,14 +7,11 @@ include ../../components/room/room.pug
 include ../../components/rate-button/rate-button.pug
 include ../../components/pagination/pagination.pug
 
-block data 
-    - const pageName = "search-room"
-
 block title
     title Search room
 
 block main
-    main.search-room__main
+    main.search-room
         section.search-room__sidebar
             .search-room__filter-date-dropdown
                 +date-dropdown({heading: 'Даты пребывания в отеле', name: 'Dates in 1 input'})

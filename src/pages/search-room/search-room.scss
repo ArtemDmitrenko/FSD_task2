@@ -20,21 +20,17 @@
 @import "Components/rate-button/rate-button.scss";
 @import "Components/pagination/pagination.scss";
 @import "Components/link/link.scss";
+@import "Components/footer-big/footer-big.scss";
 
 .search-room {
   display: flex;
-  flex-direction: column;
-  min-height: 100%;
-  &__main {
-    display: flex;
-    flex: 1 0 auto;
-    justify-content: space-between;
-    max-width: 1160px;
-    margin: 0 auto;
-    padding: 0 20px;
-    @media screen and (max-width: 600px) {
-      display: block;
-    }
+  flex: 1 0 auto;
+  justify-content: space-between;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 20px;
+  @media screen and (max-width: 600px) {
+    display: block;
   }
   &__sidebar {
     flex-basis: 266px;
@@ -77,13 +73,6 @@
     margin-right: 6px;
     margin-bottom: 21px;
     margin-left: 6px;
-  }
-  &__footer {
-    flex: 0 0 auto;
-    &__footer-big {
-      margin-top: 75px;
-      border-top: 1px solid $dark25;
-    }
   }
   &__range-slider {
     padding-top: 9px;

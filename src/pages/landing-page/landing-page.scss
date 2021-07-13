@@ -15,19 +15,15 @@
 @import "Components/input/input.scss";
 @import "Components/counter/counter.scss";
 @import "Components/footer-tab/footer-tab.scss";
+@import "Components/footer-big/footer-big.scss";
 @import "Components/link/link.scss";
 
 .landing-page {
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
-  &__image {
-    flex: 1 0 auto;
-    height: 830px;
-    background: url("./landing-page.png") no-repeat;
-    background-position: bottom;
-    background-size: cover;
-  }
+  flex: 1 0 auto;
+  height: 830px;
+  background: url("./landing-page.png") no-repeat;
+  background-position: bottom;
+  background-size: cover;
   &__wrapper {
     display: flex;
     flex-direction: column;
@@ -52,8 +48,5 @@
     @media screen and (max-width: 339px) {
       margin-top: 278px;
     }
-  }
-  &__footer {
-    flex: 0 0 auto;
   }
 }

@@ -1,14 +1,11 @@
 extends ../../templates/template.pug
 include ../../components/form-registration/form-registration.pug
 
-block data 
-    - const pageName = "registration"
-
 block title
     title Registration
 
 block main
-    main.registration__main
+    main.registration
         img(src=require("./registration.png").default, alt="registration").registration__image
         .registration__form
             +form-registration()

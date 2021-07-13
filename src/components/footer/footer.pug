@@ -1,33 +1,7 @@
-include ../logo/logo.pug
-include ../social-nets/social-nets.pug
-include ../input/input.pug
+include ../footer-big/footer-big.pug
+include ../footer-tab/footer-tab.pug
 
 mixin footer(footerItems)
-    .footer
-        .footer__half1
-            .footer__container
-                .footer__top
-                    .footer__column1
-                        .footer__logo
-                            +logo()
-                        p.footer__text Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
-                    - for (let i = 0; i < footerItems.length; i ++)
-                        div(class="footer__column" + (i+2))
-                            ul.footer__navigation
-                                li.footer__title= footerItems[i].title
-                                - for (let y = 0; y < footerItems[i].items.length; y ++)
-                                    li.footer__item
-                                        a.footer__link(href=footerItems[i].items[y].href)=footerItems[i].items[y].item
-                    .footer__column5
-                        ul.footer__subscription
-                            li.footer__title.footer__title_line-height_24 Подписка
-                            li.footer__item_line-height_24 Получайте специальные предложения и новости сервиса
-                            li.footer__item
-                                form.footer__form(action="https://www.mock-link.com/")
-                                    +input({name: 'email', type: 'email', placeholder: 'Email', required: true, subscription: true})                                        
-        .footer__half2
-            .footer__container
-                .footer__bottom
-                    p.footer__copyright Copyright © 2018 Toxin отель. Все права зачищены.
-                    .footer__social
-                        +social-nets()
+    footer.footer
+        +footer-big(footerItems)
+        +footer-tab()

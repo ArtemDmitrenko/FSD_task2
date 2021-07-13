@@ -5,14 +5,11 @@ include ../../components/bullet-list/bullet-list.pug
 include ../../components/diagram/diagram.pug
 include ../../components/form-confirmation/form-confirmation.pug
 
-block data 
-    - const pageName = "room-details"
-
 block title
     title Room Details
 
 block main
-    main.room-details__main
+    main.room-details
         section.room-details__foto
             .room-details__foto-part1
                 img(src=require("./img/img1.png").default, alt="img1").room-details__image
