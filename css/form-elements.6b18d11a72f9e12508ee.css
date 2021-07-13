@@ -29,7 +29,7 @@
   src: url(../assets/fonts/montserrat-regular.eot);
   src: local("☺"), url(../assets/fonts/montserrat-regular.woff) format("woff"), url(../assets/fonts/montserrat-regular.ttf) format("truetype"), url(../assets/fonts/montserrat-regular.svg) format("svg"); }
 
-.input__description, .input__element, .datepicker--cells, .checkbox-btn__sublabel, .checkbox-btn__input + .checkbox-btn__label, .room-info__description, .radio-buttons__label, .toggle__label, .like-button__counter, .bullet-list__item, .review__date, .review__text, .paginationjs-page > a, .paginationjs-ellipsis > a, .pagination__container .paginationjs__legend, .irs .sign, .irs .description {
+.input__description, .input__element, .datepicker--cells, .checkbox-btn__sublabel, .checkbox-btn__input + .checkbox-btn__label, .room-info__description, .radio-buttons__label, .toggle__label, .like-button__counter, .bullet-list__item, .review__date, .review__text, .paginationjs-ellipsis > a, .paginationjs-page > a, .pagination__container .paginationjs__legend, .irs .sign, .irs .description {
   color: #1f2041;
   font-weight: 400;
   font-size: 14px;
@@ -57,7 +57,10 @@
 
 html,
 body {
-  height: 100%; }
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100%; }
 
 body,
 p,
@@ -316,10 +319,7 @@ a {
     margin-left: 9.5px;
     transform: rotate(45deg); }
   .checkmark_direction_up {
-    margin-top: 4px;
-    margin-right: 7px;
-    margin-bottom: -3px;
-    margin-left: 9.5px;
+    margin: 4px 7px -3px 9.5px;
     transform: rotate(225deg); }
 
 .arrow_direction_right {
@@ -648,7 +648,7 @@ a {
   color: #1f2041;
   font-weight: 700;
   font-size: 19px;
-  font-family: "Open Sans";
+  font-family: "Open Sans", sans-serif;
   border-radius: 4px; }
 
 .datepicker--buttons,
@@ -697,6 +697,12 @@ a {
     margin-bottom: 17px; }
   .checkbox-btn__expandableName {
     cursor: pointer; }
+  .checkbox-btn__sublabel {
+    margin-top: 7px;
+    margin-left: 31px;
+    color: rgba(31, 32, 65, 0.5);
+    font-size: 12px;
+    line-height: 14px; }
   .checkbox-btn__item {
     margin-top: 12px; }
     .checkbox-btn__item:last-child .checkbox-btn__sublabel {
@@ -708,12 +714,6 @@ a {
     .checkbox-btn__expandableForm_show {
       z-index: 10;
       display: block; }
-  .checkbox-btn__sublabel {
-    margin-top: 7px;
-    margin-left: 31px;
-    color: rgba(31, 32, 65, 0.5);
-    font-size: 12px;
-    line-height: 14px; }
   .checkbox-btn__input {
     position: absolute;
     left: -9999px; }
@@ -1045,21 +1045,6 @@ a {
   display: flex;
   min-width: 241px; }
 
-.paginationjs-page {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 40px;
-  height: 40px; }
-  .paginationjs-page > a {
-    color: rgba(31, 32, 65, 0.5);
-    font-size: 12px; }
-  .paginationjs-page.active {
-    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
-    border-radius: 20px; }
-    .paginationjs-page.active > a {
-      color: white; }
-
 .paginationjs-prev {
   display: flex;
   align-items: center;
@@ -1125,6 +1110,21 @@ a {
     text-rendering: optimizeLegibility;
     -moz-osx-font-smoothing: grayscale;
     font-feature-settings: "liga"; }
+
+.paginationjs-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px; }
+  .paginationjs-page > a {
+    color: rgba(31, 32, 65, 0.5);
+    font-size: 12px; }
+  .paginationjs-page.active {
+    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+    border-radius: 20px; }
+    .paginationjs-page.active > a {
+      color: white; }
 
 .pagination__container .paginationjs__legend {
   margin-top: 10px;

@@ -366,7 +366,10 @@
 
 html,
 body {
-  height: 100%; }
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100%; }
 
 body,
 p,
@@ -517,7 +520,7 @@ a {
   color: #1f2041;
   font-weight: 700;
   font-size: 19px;
-  font-family: "Open Sans";
+  font-family: "Open Sans", sans-serif;
   border-radius: 4px; }
 
 .datepicker--buttons,
@@ -678,10 +681,7 @@ a {
     margin-left: 9.5px;
     transform: rotate(45deg); }
   .checkmark_direction_up {
-    margin-top: 4px;
-    margin-right: 7px;
-    margin-bottom: -3px;
-    margin-left: 9.5px;
+    margin: 4px 7px -3px 9.5px;
     transform: rotate(225deg); }
 
 .arrow_direction_right {
@@ -1286,6 +1286,11 @@ a {
 .slick-dots li {
   width: 1px; }
 
+.slick-active button::before {
+  box-sizing: border-box;
+  background-color: white;
+  opacity: 1; }
+
 .slick-dots li button::before {
   position: absolute;
   top: 0;
@@ -1302,17 +1307,11 @@ a {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
-.slick-active button::before {
-  box-sizing: border-box;
-  background-color: white;
-  opacity: 1; }
-
 .slick-dots {
   bottom: 2px;
   z-index: 1;
   width: 30%;
-  margin-left: 190px;
-  padding-left: 36; }
+  margin-left: 190px; }
 
 .slick-dots li.slick-active button::before {
   opacity: 1; }
@@ -1402,7 +1401,6 @@ a {
       position: absolute;
       bottom: -13px;
       left: -14px;
-      left: 10;
       z-index: -1;
       width: 40px;
       height: 40px;
@@ -1419,7 +1417,6 @@ a {
       position: absolute;
       bottom: -13px;
       left: -14px;
-      left: 10;
       z-index: -1;
       width: 40px;
       height: 40px;
