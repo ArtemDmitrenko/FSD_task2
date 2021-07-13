@@ -15,7 +15,6 @@
   }
   &__room-number {
     @extend %h1;
-
     display: inline-block;
     & span {
       font-size: 14px;
@@ -23,19 +22,16 @@
   }
   &__room-type {
     @extend %h3;
-
     display: inline-block;
     margin-left: 5px;
     color: $purple;
   }
   &__price {
     @extend %h3;
-
     color: $dark50;
     font-size: 14px;
     & span {
       @extend %font-body;
-
       color: $dark50;
       font-size: 12px;
       text-transform: none;
@@ -111,7 +107,6 @@
   }
   &__letter {
     @extend %h3;
-
     color: $dark25;
     text-transform: none;
   }

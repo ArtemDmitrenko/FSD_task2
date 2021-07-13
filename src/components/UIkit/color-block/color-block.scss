@@ -1,7 +1,6 @@
 .color-block {
   &__name {
     @extend %h2;
-
     margin-bottom: 6px;
   }
   &__hex {

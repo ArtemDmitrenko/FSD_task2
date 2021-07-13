@@ -17,7 +17,6 @@
 
 .datepicker--cells {
   @extend %font-body;
-
   margin: 14px 15px 0 15px;
 }
 .datepicker--cell {
@@ -128,7 +127,7 @@
   color: #1f2041;
   font-weight: 700;
   font-size: 19px;
-  font-family: "Open Sans";
+  font-family: "Open Sans", sans-serif;
   border-radius: 4px;
 }
 .datepicker--buttons,
@@ -146,7 +145,6 @@
 }
 .datepicker--button {
   @extend %h3;
-
   max-width: 100px;
   letter-spacing: -0.01em;
   opacity: 0.5;

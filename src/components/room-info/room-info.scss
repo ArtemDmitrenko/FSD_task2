@@ -2,7 +2,6 @@
   max-width: 260px;
   &__title {
     @extend %h2;
-
     margin-bottom: 19px;
   }
   &__all {
@@ -37,7 +36,6 @@
   }
   &__name {
     @extend %h3;
-
     margin-bottom: 6px;
     color: $dark75;
     font-size: 14px;
@@ -45,7 +43,6 @@
   }
   &__description {
     @extend %font-body;
-
     color: $dark75;
   }
 }

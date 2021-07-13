@@ -64,7 +64,6 @@
   }
   &__title {
     @extend %h1;
-
     margin-top: 28px;
     margin-bottom: 19px;
   }
@@ -81,7 +80,7 @@
   }
   &__footer {
     flex: 0 0 auto;
-    &_wide {
+    &__footer-big {
       margin-top: 75px;
       border-top: 1px solid $dark25;
     }

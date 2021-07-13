@@ -112,12 +112,10 @@
   }
   &__review-text {
     @extend %h2;
-
     max-width: 600px;
   }
   &__review-number-of-reviews {
     @extend %font-body;
-
     margin-right: 2px;
     color: $dark50;
     @media screen and (max-width: 576px) {
@@ -132,7 +130,6 @@
   }
   &__rules-title {
     @extend %h2;
-
     margin-bottom: 16px;
     margin-left: 21px;
     @media screen and (max-width: 576px) {
@@ -149,12 +146,10 @@
   }
   &__cancel-title {
     @extend %h2;
-
     margin-bottom: 16px;
   }
   &__cancel-text {
     @extend %font-body;
-
     color: $dark75;
     line-height: 24px;
   }
@@ -182,8 +177,8 @@
   }
   &__footer {
     flex: 0 0 auto;
-    &_wide {
-      border-top: 1px solid $dark25;
-    }
+  }
+  &__footer-big {
+    border-top: 1px solid $dark25;
   }
 }

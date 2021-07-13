@@ -43,7 +43,6 @@
   }
   &__number {
     @extend %font-body;
-
     width: 5%;
     color: $dark50;
     font-size: 12px;
@@ -70,7 +69,6 @@
   }
   &__number-line2 &__number:nth-child(4) {
     @extend %h3;
-
     position: relative;
     z-index: 1;
     color: white;
@@ -89,7 +87,6 @@
   &__number-line4 &__number:nth-child(1),
   &__number-line4 &__number:nth-child(5) {
     @extend %h3;
-
     position: relative;
     z-index: 1;
     color: white;

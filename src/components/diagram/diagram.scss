@@ -22,28 +22,23 @@
   }
   &__list-item {
     @extend %font-body;
-
     margin-bottom: 6px;
     color: $dark75;
     &_description {
       &_amazing::before {
         @extend %legend;
-
         background: linear-gradient(180deg, #ffe39c 0%, #ffba9c 100%);
       }
       &_good::before {
         @extend %legend;
-
         background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
       }
       &_notBad::before {
         @extend %legend;
-
         background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
       }
       &_bad::before {
         @extend %legend;
-
         background: linear-gradient(180deg, #909090 0%, #3d4975 100%);
       }
     }
@@ -59,7 +54,6 @@
     @extend %h1;
     & span {
       @extend %h3;
-
       color: $purple;
     }
     @media screen and (max-width: 376px) {

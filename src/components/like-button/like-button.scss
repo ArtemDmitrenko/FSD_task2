@@ -1,7 +1,6 @@
 .like-button {
   &__name {
     @extend %h3;
-
     margin-bottom: 15px;
   }
   &__button {
@@ -31,7 +30,6 @@
   }
   &__counter {
     @extend %font-body;
-
     display: inline-block;
     margin-left: 7px;
     color: $dark25;

@@ -73,7 +73,6 @@
   }
   &__user-name {
     @extend %font-body;
-
     opacity: 0.5;
     @media screen and (max-width: 992px) {
       display: none;

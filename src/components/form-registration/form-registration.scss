@@ -44,7 +44,6 @@
   }
   &__text {
     @extend %font-body;
-
     color: #000;
     @media screen and (max-width: 420px) {
       max-width: 140px;

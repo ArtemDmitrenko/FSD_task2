@@ -13,6 +13,14 @@
   &__title {
     @extend %h3;
   }
+  &__sublabel {
+    @extend %font-body;
+    margin-top: 7px;
+    margin-left: 31px;
+    color: $dark50;
+    font-size: 12px;
+    line-height: 14px;
+  }
   &__item {
     margin-top: 12px;
     &:last-child .checkbox-btn__sublabel {
@@ -27,15 +35,6 @@
       z-index: 10;
       display: block;
     }
-  }
-  &__sublabel {
-    @extend %font-body;
-
-    margin-top: 7px;
-    margin-left: 31px;
-    color: $dark50;
-    font-size: 12px;
-    line-height: 14px;
   }
   &__input {
     position: absolute;
@@ -87,7 +86,6 @@
       }
       &.checkbox-btn__label_rich {
         @extend %h3;
-
         width: 101%;
         color: $dark75;
         font-size: 14px;

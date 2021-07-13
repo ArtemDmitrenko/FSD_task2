@@ -15,5 +15,6 @@ module.exports = {
     "scss/at-extend-no-missing-placeholder": true,
     "declaration-block-no-duplicate-properties": true,
     "declaration-block-no-shorthand-property-overrides": true,
+    "declaration-empty-line-before": "never",
   },
 };

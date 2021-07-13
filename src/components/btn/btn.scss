@@ -9,7 +9,6 @@ $width-e: auto;
 $height-e: auto;
 .btn {
   @extend %h3;
-
   display: block;
   box-sizing: border-box;
   letter-spacing: -0.01em;

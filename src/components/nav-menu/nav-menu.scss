@@ -8,12 +8,10 @@
   }
   &__link {
     @extend %font-body;
-
     cursor: pointer;
     opacity: 0.5;
     &_active {
       @extend %h3;
-
       font-size: 14px;
       text-transform: none;
       opacity: 0.75;
@@ -33,7 +31,6 @@
   }
   &__sub-link {
     @extend %font-body;
-
     opacity: 0.5;
   }
   &__sub-item {

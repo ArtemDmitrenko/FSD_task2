@@ -1,7 +1,6 @@
 .type-block {
   &__name {
     @extend %font-body;
-
     width: 40px;
     margin-right: 30px;
     line-height: normal;
@@ -26,17 +25,14 @@
   &__description {
     &_font-body {
       @extend %font-body;
-
       width: 308px;
     }
     &_h1 {
       @extend %h1;
-
       width: 336px;
     }
     &_h2 {
       @extend %h2;
-
       width: 282px;
     }
     &_h3 {
