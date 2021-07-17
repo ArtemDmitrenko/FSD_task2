@@ -1,4 +1,4 @@
-import 'ion-rangeslider';
+import "ion-rangeslider";
 
 export default class RangeSlider {
   constructor(item) {
@@ -27,31 +27,31 @@ export default class RangeSlider {
       hide_from_to: true,
       skin: "big",
       extra_classes: "js-irs__scale",
-    }
+    };
     $(this.item).ionRangeSlider(options);
-    $(this.item).on('change', this.getFromAndTo.bind(this))
+    $(this.item).on("change", this.getFromAndTo);
   }
 
   showSighWithValues() {
-    this.sign = document.createElement('div');
-    this.sign.classList.add('sign');
+    this.sign = document.createElement("div");
+    this.sign.classList.add("sign");
     this.slider = this.item.previousElementSibling;
     this.slider.append(this.sign);
-    const from = $(".js-range-slider").data('from');
-    const to = $(".js-range-slider").data('to');
+    const from = $(".js-range-slider").data("from");
+    const to = $(".js-range-slider").data("to");
     this.updateSign(from, to);
   }
 
-  getFromAndTo() {
-    const from = $(this.item).data('from');
-    const to = $(this.item).data('to');
+  getFromAndTo = () => {
+    const from = $(this.item).data("from");
+    const to = $(this.item).data("to");
     this.updateSign(from, to);
-  }
+  };
 
   updateSign(from, to) {
-    const prettyFrom = this.prettify(from)
-    const prettyTo = this.prettify(to)
-    this.sign.textContent = `${prettyFrom}₽ - ${prettyTo}₽`
+    const prettyFrom = this.prettify(from);
+    const prettyTo = this.prettify(to);
+    this.sign.textContent = `${prettyFrom}₽ - ${prettyTo}₽`;
   }
 
   prettify(num) {
@@ -61,26 +61,26 @@ export default class RangeSlider {
   }
 
   showTitleOfSlider() {
-    const title = document.createElement('div');
-    title.classList.add('title');
+    const title = document.createElement("div");
+    title.classList.add("title");
     this.slider.append(title);
     const parentElement = this.item.parentElement;
-    if (parentElement.classList.contains('js-form-elements__range-slider')) {
-      title.textContent = 'Range slider'
+    if (parentElement.classList.contains("js-form-elements__range-slider")) {
+      title.textContent = "Range slider";
     } else {
-      title.textContent = 'Диапазон цены'
+      title.textContent = "Диапазон цены";
     }
   }
 
   showDescription() {
-    const description = document.createElement('div');
-    description.classList.add('description');
+    const description = document.createElement("div");
+    description.classList.add("description");
     this.slider.append(description);
     const parentElement = this.item.parentElement;
-    if (parentElement.classList.contains('js-form-elements__range-slider')) {
-      description.textContent = ''
+    if (parentElement.classList.contains("js-form-elements__range-slider")) {
+      description.textContent = "";
     } else {
-      description.textContent = 'Стоимость за сутки пребывания в номере';
+      description.textContent = "Стоимость за сутки пребывания в номере";
     }
   }
 }

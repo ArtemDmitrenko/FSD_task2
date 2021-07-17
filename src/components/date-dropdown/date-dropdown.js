@@ -75,18 +75,18 @@ export default class dateDropdown {
       'span[data-action="today"]'
     );
     btnApply.textContent = "Применить";
-    btnApply.addEventListener("click", this.dateApply.bind(this));
+    btnApply.addEventListener("click", this.dateApply);
   }
 
   addEventListenerToSecondInput(inputTo) {
-    inputTo.addEventListener("click", this.showDatepicker.bind(this));
+    inputTo.addEventListener("click", this.showDatepicker);
   }
 
-  dateApply() {
+  dateApply = () => {
     this.myDatapicker.hide();
-  }
+  };
 
-  showDatepicker() {
+  showDatepicker = () => {
     this.myDatapicker.show();
-  }
+  };
 }

@@ -6,13 +6,10 @@ export default class Dropdown {
 
   init() {
     this.findElements();
-    this.dropdownInput.addEventListener(
-      "click",
-      this.toggleDropdown.bind(this)
-    );
-    document.addEventListener("click", this.closeDropdown.bind(this));
-    this.dropdownList.addEventListener("click", this.counter.bind(this));
-    this.item.addEventListener("click", this.changeover.bind(this));
+    this.dropdownInput.addEventListener("click", this.toggleDropdown);
+    document.addEventListener("click", this.closeDropdown);
+    this.dropdownList.addEventListener("click", this.counter);
+    this.item.addEventListener("click", this.changeover);
   }
 
   findElements() {
@@ -38,7 +35,7 @@ export default class Dropdown {
     return false;
   }
 
-  toggleDropdown() {
+  toggleDropdown = () => {
     if (!this.dropdownList.classList.contains("dropdown__list_show")) {
       this.input.classList.add("input__element_border-radius_0");
       this.input.classList.add("input__element_with-bright-border");
@@ -49,14 +46,14 @@ export default class Dropdown {
       this.input.classList.remove("input__element_with-bright-border");
       this.dropdownList.classList.remove("dropdown__list_show");
     }
-  }
+  };
 
   hideBtnClear() {
     const btnClear = this.item.querySelector('button[name = "clear"]');
     btnClear.classList.add("btn_hidden");
   }
 
-  closeDropdown(e) {
+  closeDropdown = (e) => {
     const { target } = e;
     const closestDropdown = target.closest(".js-dropdown");
     const conditionForClosingDropdown1 =
@@ -77,7 +74,7 @@ export default class Dropdown {
       this.isApplied = true;
       this.toggleDropdown();
     }
-  }
+  };
 
   disableBtn() {
     const counterValueArr =
@@ -89,7 +86,7 @@ export default class Dropdown {
     });
   }
 
-  counter(e) {
+  counter = (e) => {
     const { target } = e;
     const counter = target.closest(".js-counter__enter");
     if (counter) {
@@ -108,9 +105,9 @@ export default class Dropdown {
         }
       }
     }
-  }
+  };
 
-  changeover(e) {
+  changeover = (e) => {
     const { target } = e;
     if (this.isGuestsDropdown()) {
       let infants = Number(
@@ -194,7 +191,7 @@ export default class Dropdown {
         this.allRoomsBeds.value = "";
       }
     }
-  }
+  };
 
   bedroomsDeclination() {
     this.bedroomsSum =

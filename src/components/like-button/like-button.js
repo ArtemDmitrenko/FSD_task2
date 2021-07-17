@@ -5,43 +5,43 @@ export default class LikeButton {
   }
 
   init() {
-    this.item.addEventListener('click', this.clickOnLikeButton.bind(this));
+    this.item.addEventListener("click", this.clickOnLikeButton);
   }
 
   isLiked() {
-    const heart = this.item.querySelector('.js-like-button__image');
-    if (heart.innerHTML === 'favorite_border') {
+    const heart = this.item.querySelector(".js-like-button__image");
+    if (heart.innerHTML === "favorite_border") {
       return false;
     }
     return true;
   }
 
   plusLike() {
-    const numberOfLikes = this.item.querySelector('.js-like-button__counter');
+    const numberOfLikes = this.item.querySelector(".js-like-button__counter");
     let counter = Number(numberOfLikes.innerHTML);
     numberOfLikes.innerHTML = counter += 1;
-    numberOfLikes.classList.add('like-button__counter_active');
+    numberOfLikes.classList.add("like-button__counter_active");
   }
 
   minusLike() {
-    const numberOfLikes = this.item.querySelector('.js-like-button__counter');
+    const numberOfLikes = this.item.querySelector(".js-like-button__counter");
     let counter = Number(numberOfLikes.innerHTML);
     numberOfLikes.innerHTML = counter -= 1;
-    numberOfLikes.classList.remove('like-button__counter_active');
+    numberOfLikes.classList.remove("like-button__counter_active");
   }
 
-  clickOnLikeButton() {
-    const heart = this.item.querySelector('.js-like-button__image');
+  clickOnLikeButton = () => {
+    const heart = this.item.querySelector(".js-like-button__image");
     if (this.isLiked()) {
-      heart.innerHTML = 'favorite_border';
-      heart.classList.remove('like-button__image_active');
-      this.item.classList.remove('like-button__button_active');
+      heart.innerHTML = "favorite_border";
+      heart.classList.remove("like-button__image_active");
+      this.item.classList.remove("like-button__button_active");
       this.minusLike();
     } else {
-      heart.innerHTML = 'favorite';
-      heart.classList.add('like-button__image_active');
-      this.item.classList.add('like-button__button_active');
+      heart.innerHTML = "favorite";
+      heart.classList.add("like-button__image_active");
+      this.item.classList.add("like-button__button_active");
       this.plusLike();
     }
-  }
+  };
 }
