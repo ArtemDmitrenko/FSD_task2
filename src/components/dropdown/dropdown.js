@@ -17,19 +17,20 @@ export default class Dropdown {
     this.input = this.item.querySelector(".js-input__element");
     this.dropdownInput = this.item.querySelector(".js-dropdown__input");
     this.isApplied = false;
+    if (this.isGuestsDropdown()) {
+      this.btnApply = this.dropdownList.querySelector('button[name = "apply"]');
+      this.btnClear = this.dropdownList.querySelector('button[name = "clear"]');
+    }
   }
 
   isDropdownOpened() {
-    if (this.input.classList.contains("input__element_border-radius_0")) {
-      return true;
-    }
-    return false;
+    return this.input.classList.contains("input__element_border-radius_0")
+      ? true
+      : false;
   }
 
   isGuestsDropdown() {
     if (this.input.getAttribute("name") === "guests") {
-      this.btnApply = this.dropdownList.querySelector('button[name = "apply"]');
-      this.btnClear = this.dropdownList.querySelector('button[name = "clear"]');
       return true;
     }
     return false;
