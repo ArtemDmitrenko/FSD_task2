@@ -8,22 +8,28 @@ export default class dateDropdown {
   }
 
   init() {
-    if (this.isRange()) {
-      this.addDateDropdownForRangeInOneInput(this.index);
-    } else {
-      this.addDateDropdownForTwoInputs(this.index);
-    }
-    this.addEventListenerToBtnApply();
-  }
-
-  isRange() {
     this.rangeDropdown = this.item.querySelector(
       ".js-input__date-dropdown_with-range"
     );
     if (this.rangeDropdown) {
-      return true;
+      this.addDateDropdownForRangeInOneInput(this.index);
+    } else {
+      this.inputFrom = this.item.querySelector(
+        ".js-input__date-dropdown_value_from"
+      );
+      this.inputTo = this.item.querySelector(
+        ".js-input__date-dropdown_value_to"
+      );
+      this.addDateDropdownForTwoInputs(this.index);
     }
-    return false;
+    this.datepickerContainer = document.querySelector(
+      `.datepicker${this.index}`
+    );
+    this.btnApply = this.datepickerContainer.querySelector(
+      'span[data-action="today"]'
+    );
+
+    this.addEventListenerToBtnApply();
   }
 
   addDateDropdownForRangeInOneInput(index) {
@@ -43,10 +49,6 @@ export default class dateDropdown {
   }
 
   addDateDropdownForTwoInputs(index) {
-    this.inputFrom = this.item.querySelector(
-      ".js-input__date-dropdown_value_from"
-    );
-    this.inputTo = this.item.querySelector(".js-input__date-dropdown_value_to");
     const options = {
       clearButton: true,
       todayButton: true,
@@ -64,22 +66,16 @@ export default class dateDropdown {
     this.myDatapicker = $(this.inputFrom)
       .datepicker(options)
       .data("datepicker");
-    this.addEventListenerToSecondInput(this.inputTo);
+    this.addEventListenerToSecondInput();
   }
 
   addEventListenerToBtnApply() {
-    const datepickerContainer = document.querySelector(
-      `.datepicker${this.index}`
-    );
-    const btnApply = datepickerContainer.querySelector(
-      'span[data-action="today"]'
-    );
-    btnApply.textContent = "Применить";
-    btnApply.addEventListener("click", this.dateApply);
+    this.btnApply.textContent = "Применить";
+    this.btnApply.addEventListener("click", this.dateApply);
   }
 
-  addEventListenerToSecondInput(inputTo) {
-    inputTo.addEventListener("click", this.showDatepicker);
+  addEventListenerToSecondInput() {
+    this.inputTo.addEventListener("click", this.showDatepicker);
   }
 
   dateApply = () => {

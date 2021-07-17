@@ -1,4 +1,4 @@
-import Input from 'Components/input/input';
+import Input from "Components/input/input";
 
 export default class FormRegistration {
   constructor(form) {
@@ -7,11 +7,11 @@ export default class FormRegistration {
   }
 
   init() {
+    this.maskedInput = this.form.querySelector('[name|="birthday"]');
     this.findMaskedInput();
   }
 
   findMaskedInput() {
-    const maskedInput = this.form.querySelector('[name|="birthday"]');
-    new Input(maskedInput);
+    new Input(this.maskedInput);
   }
 }

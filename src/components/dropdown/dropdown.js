@@ -18,9 +18,22 @@ export default class Dropdown {
     this.input = this.item.querySelector(".js-input__element");
     this.dropdownInput = this.item.querySelector(".js-dropdown__input");
     this.isApplied = false;
+    this.counterValueArr =
+      this.dropdownList.querySelectorAll(".js-counter__value");
     if (this.isGuestsDropdown()) {
+      this.infants = this.item.querySelector('input[name = "Infants"]');
+      this.allGuests = this.item.querySelector('input[name = "guests"]');
+
       this.btnApply = this.dropdownList.querySelector('button[name = "apply"]');
       this.btnClear = this.dropdownList.querySelector('button[name = "clear"]');
+    } else {
+      this.bedroomsInput = this.item.querySelector('input[name = "Bedrooms"]');
+      this.bedsInput = this.item.querySelector('input[name = "Beds"]');
+      this.bathroomsInput = this.item.querySelector(
+        'input[name = "Bathrooms"]'
+      );
+      this.allRoomsBeds = this.item.querySelector('input[name = "roomsBeds"]');
+      this.counterValueArr = this.item.querySelectorAll(".js-counter__value");
     }
   }
 
@@ -44,8 +57,7 @@ export default class Dropdown {
   };
 
   hideBtnClear() {
-    const btnClear = this.item.querySelector('button[name = "clear"]');
-    btnClear.classList.add("btn_hidden");
+    this.btnClear.classList.add("btn_hidden");
   }
 
   closeDropdown = (e) => {
@@ -61,7 +73,9 @@ export default class Dropdown {
       if (this.isApplied) {
         this.toggleDropdown();
       } else {
-        this.input.value = "Сколько гостей";
+        if (this.isGuestsDropdown()) {
+          this.input.value = "Сколько гостей";
+        }
         this.toggleDropdown();
       }
     }
@@ -72,9 +86,7 @@ export default class Dropdown {
   };
 
   disableBtn() {
-    const counterValueArr =
-      this.dropdownList.querySelectorAll(".js-counter__value");
-    counterValueArr.forEach((item) => {
+    this.counterValueArr.forEach((item) => {
       if (Number(item.value) === 0) {
         item.previousElementSibling.setAttribute("disabled", "disabled");
       }
@@ -105,46 +117,45 @@ export default class Dropdown {
   changeover = (e) => {
     const { target } = e;
     if (this.isGuestsDropdown()) {
-      let infants = Number(
-        this.item.querySelector('input[name = "Infants"]').value
-      );
-      let counterValueArr = this.item.querySelectorAll(".js-counter__value");
-      let allGuests = this.item.querySelector('input[name = "guests"]');
+      let infants = Number(this.infants.value);
       let sum = 0;
-      counterValueArr.forEach((item) => {
+      this.counterValueArr.forEach((item) => {
         sum += Number(item.value);
       });
       let remainderSum = sum % 10 === 2 || sum % 10 === 3 || sum % 10 === 4;
       if (sum > 10 && sum < 15) {
-        allGuests.value = sum + " гостей";
+        this.allGuests.value = sum + " гостей";
       } else if (sum % 10 === 1) {
-        allGuests.value = sum + " гость";
+        this.allGuests.value = sum + " гость";
       } else if (remainderSum) {
-        allGuests.value = sum + " гостя";
+        this.allGuests.value = sum + " гостя";
       } else {
-        allGuests.value = sum + " гостей";
+        this.allGuests.value = sum + " гостей";
       }
       let remainderInfants =
         infants % 10 === 2 || infants % 10 === 3 || infants % 10 === 4;
       if (infants > 10 && infants < 15) {
-        allGuests.value = allGuests.value + ", " + infants + " младенцев";
+        this.allGuests.value =
+          this.allGuests.value + ", " + infants + " младенцев";
       } else if (infants % 10 === 1) {
-        allGuests.value = allGuests.value + ", " + infants + " младенец";
+        this.allGuests.value =
+          this.allGuests.value + ", " + infants + " младенец";
       } else if (remainderInfants) {
-        allGuests.value = allGuests.value + ", " + infants + " младенца";
+        this.allGuests.value =
+          this.allGuests.value + ", " + infants + " младенца";
       } else if (infants) {
-        allGuests.value = allGuests.value + ", " + infants + " младенцев";
+        this.allGuests.value =
+          this.allGuests.value + ", " + infants + " младенцев";
       }
 
-      let btnClear = this.item.querySelector('button[name = "clear"]');
       if (sum === 0) {
-        allGuests.value = "Сколько гостей";
+        this.allGuests.value = "Сколько гостей";
         this.hideBtnClear();
       } else {
-        btnClear.classList.remove("btn_hidden");
-        if (target === btnClear) {
-          allGuests.value = "Сколько гостей";
-          counterValueArr.forEach((item) => {
+        this.btnClear.classList.remove("btn_hidden");
+        if (target === this.btnClear) {
+          this.allGuests.value = "Сколько гостей";
+          this.counterValueArr.forEach((item) => {
             item.value = 0;
           });
           this.disableBtn();
@@ -152,17 +163,11 @@ export default class Dropdown {
         }
       }
     } else {
-      this.bedrooms = Number(
-        this.item.querySelector('input[name = "Bedrooms"]').value
-      );
-      this.beds = Number(this.item.querySelector('input[name = "Beds"]').value);
-      this.bathrooms = Number(
-        this.item.querySelector('input[name = "Bathrooms"]').value
-      );
-      this.allRoomsBeds = this.item.querySelector('input[name = "roomsBeds"]');
-      let counterValueArr = this.item.querySelectorAll(".js-counter__value");
+      this.bedrooms = Number(this.bedroomsInput.value);
+      this.beds = Number(this.bedsInput.value);
+      this.bathrooms = Number(this.bathroomsInput.value);
       let sum = 0;
-      counterValueArr.forEach((item) => {
+      this.counterValueArr.forEach((item) => {
         sum += Number(item.value);
       });
       this.bedroomsDeclination();

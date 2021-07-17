@@ -8,19 +8,19 @@ export default class FormConfirmation {
   }
 
   init() {
+    this.dateDropdowns = this.form.querySelectorAll(".js-date-dropdown");
+    this.dropdown = this.form.querySelector(".js-dropdown");
     this.findDateDropdown();
     this.findDropdown();
   }
 
   findDateDropdown() {
-    const dateDropdowns = this.form.querySelectorAll(".js-date-dropdown");
-    dateDropdowns.forEach((dateDropdown, index) => {
+    this.dateDropdowns.forEach((dateDropdown, index) => {
       new DateDropdown(dateDropdown, index);
     });
   }
 
   findDropdown() {
-    const dropdown = this.form.querySelector(".js-dropdown");
-    new Dropdown(dropdown);
+    new Dropdown(this.dropdown);
   }
 }

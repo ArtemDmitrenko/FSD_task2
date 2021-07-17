@@ -1,4 +1,4 @@
-import Header from 'Components/header/header';
+import Header from "Components/header/header";
 
 export default class HeadersFooters {
   constructor() {
@@ -6,9 +6,9 @@ export default class HeadersFooters {
   }
 
   init() {
-    const headers = document.querySelectorAll('.js-header');
+    const headers = document.querySelectorAll(".js-header");
     headers.forEach((header) => {
       new Header(header);
-    })
+    });
   }
 }

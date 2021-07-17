@@ -6,40 +6,39 @@ export default class LikeButton {
 
   init() {
     this.item.addEventListener("click", this.clickOnLikeButton);
+    this.heart = this.item.querySelector(".js-like-button__image");
+    this.numberOfLikes = this.item.querySelector(".js-like-button__counter");
+    this.heart = this.item.querySelector(".js-like-button__image");
   }
 
   isLiked() {
-    const heart = this.item.querySelector(".js-like-button__image");
-    if (heart.innerHTML === "favorite_border") {
+    if (this.heart.innerHTML === "favorite_border") {
       return false;
     }
     return true;
   }
 
   plusLike() {
-    const numberOfLikes = this.item.querySelector(".js-like-button__counter");
-    let counter = Number(numberOfLikes.innerHTML);
-    numberOfLikes.innerHTML = counter += 1;
-    numberOfLikes.classList.add("like-button__counter_active");
+    let counter = Number(this.numberOfLikes.innerHTML);
+    this.numberOfLikes.innerHTML = counter += 1;
+    this.numberOfLikes.classList.add("like-button__counter_active");
   }
 
   minusLike() {
-    const numberOfLikes = this.item.querySelector(".js-like-button__counter");
-    let counter = Number(numberOfLikes.innerHTML);
-    numberOfLikes.innerHTML = counter -= 1;
-    numberOfLikes.classList.remove("like-button__counter_active");
+    let counter = Number(this.numberOfLikes.innerHTML);
+    this.numberOfLikes.innerHTML = counter -= 1;
+    this.numberOfLikes.classList.remove("like-button__counter_active");
   }
 
   clickOnLikeButton = () => {
-    const heart = this.item.querySelector(".js-like-button__image");
     if (this.isLiked()) {
-      heart.innerHTML = "favorite_border";
-      heart.classList.remove("like-button__image_active");
+      this.heart.innerHTML = "favorite_border";
+      this.heart.classList.remove("like-button__image_active");
       this.item.classList.remove("like-button__button_active");
       this.minusLike();
     } else {
-      heart.innerHTML = "favorite";
-      heart.classList.add("like-button__image_active");
+      this.heart.innerHTML = "favorite";
+      this.heart.classList.add("like-button__image_active");
       this.item.classList.add("like-button__button_active");
       this.plusLike();
     }
