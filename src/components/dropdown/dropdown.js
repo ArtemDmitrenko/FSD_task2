@@ -10,6 +10,7 @@ export default class Dropdown {
     document.addEventListener("click", this.closeDropdown);
     this.dropdownList.addEventListener("click", this.counter);
     this.item.addEventListener("click", this.changeover);
+    this.disableBtn();
   }
 
   findElements() {
@@ -37,16 +38,9 @@ export default class Dropdown {
   }
 
   toggleDropdown = () => {
-    if (!this.dropdownList.classList.contains("dropdown__list_show")) {
-      this.input.classList.add("input__element_border-radius_0");
-      this.input.classList.add("input__element_with-bright-border");
-      this.dropdownList.classList.add("dropdown__list_show");
-      this.disableBtn();
-    } else {
-      this.input.classList.remove("input__element_border-radius_0");
-      this.input.classList.remove("input__element_with-bright-border");
-      this.dropdownList.classList.remove("dropdown__list_show");
-    }
+    this.input.classList.toggle("input__element_border-radius_0");
+    this.input.classList.toggle("input__element_with-bright-border");
+    this.dropdownList.classList.toggle("dropdown__list_show");
   };
 
   hideBtnClear() {
