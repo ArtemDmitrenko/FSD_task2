@@ -23,8 +23,6 @@ export default class CheckboxBtn {
   isExpanded() {
     return this.checkboxList.firstElementChild.classList.contains(
       "js-checkbox-btn__expandableName"
-    )
-      ? true
-      : false;
+    );
   }
 }

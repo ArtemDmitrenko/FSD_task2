@@ -38,16 +38,11 @@ export default class Dropdown {
   }
 
   isDropdownOpened() {
-    return this.input.classList.contains("input__element_border-radius_0")
-      ? true
-      : false;
+    return this.input.classList.contains("input__element_border-radius_0");
   }
 
   isGuestsDropdown() {
-    if (this.input.getAttribute("name") === "guests") {
-      return true;
-    }
-    return false;
+    return this.input.getAttribute("name") === "guests";
   }
 
   toggleDropdown = () => {
