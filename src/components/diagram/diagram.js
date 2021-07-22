@@ -1,13 +1,7 @@
 export default class Diagram {
   constructor(item) {
     this.item = item;
-    this.lengthOfCircle = 364.424672;
     this.init();
-  }
-
-  init() {
-    this.$svg = this.item.querySelector(".js-diagram__chart");
-    this.wholeNumberOfReviews = this.item.querySelector(".js-diagram__total");
     this.getAttributes();
     this.calcSumOfReviews();
     this.calcLengthsOfAllReviews();
@@ -15,9 +9,14 @@ export default class Diagram {
     this.printAllNumberOfReviews();
   }
 
+  init() {
+    this.lengthOfCircle = 364.424672;
+    this.$svg = this.item.querySelector(".js-diagram__chart");
+    this.wholeNumberOfReviews = this.item.querySelector(".js-diagram__total");
+  }
+
   getAttributeInNumber(review) {
-    const numberOfReviews = Number(this.item.dataset[review]);
-    return numberOfReviews;
+    return Number(this.item.dataset[review]);
   }
 
   getAttributes() {
@@ -34,9 +33,7 @@ export default class Diagram {
   }
 
   calcLengthOfOneReview(numberOfReview) {
-    const lengthOfReviewInPixels =
-      (this.lengthOfCircle * numberOfReview) / this.sum;
-    return lengthOfReviewInPixels;
+    return (this.lengthOfCircle * numberOfReview) / this.sum;
   }
 
   calcLengthsOfAllReviews() {

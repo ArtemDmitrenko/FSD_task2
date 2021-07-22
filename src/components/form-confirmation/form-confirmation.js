@@ -5,13 +5,13 @@ export default class FormConfirmation {
   constructor(form) {
     this.form = form;
     this.init();
+    this.findDateDropdown();
+    this.findDropdown();
   }
 
   init() {
     this.dateDropdowns = this.form.querySelectorAll(".js-date-dropdown");
     this.dropdown = this.form.querySelector(".js-dropdown");
-    this.findDateDropdown();
-    this.findDropdown();
   }
 
   findDateDropdown() {

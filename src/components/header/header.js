@@ -4,6 +4,8 @@ export default class Header {
   constructor(item) {
     this.item = item;
     this.init();
+    this.addEventListeners();
+    this.findNavMenu();
   }
 
   init() {
@@ -16,11 +18,13 @@ export default class Header {
     this.headerBurger =
       this.headerContainer.querySelector(".js-header__burger");
     this.navMenu = this.item.querySelector(".js-nav-menu");
-    $(this.burger).on("click", this.toggleMenu);
-    this.findNavMenu();
   }
 
-  toggleMenu = () => {
+  addEventListeners() {
+    this.burger.addEventListener("click", this.handleBurgerClick);
+  }
+
+  handleBurgerClick = () => {
     $(this.burger).toggleClass("header_with-opened-burger");
     $(this.navMenuButtons).toggleClass("header__with-opened-menu");
     $("body").toggleClass("fixed-page");

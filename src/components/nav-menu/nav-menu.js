@@ -2,15 +2,10 @@ export default class NavMenu {
   constructor(item) {
     this.item = item;
     this.init();
+    this.addEventListeners();
   }
 
   init() {
-    this.findAllElements();
-    this.openMenuDropdown();
-    this.closeMenuDropdown();
-  }
-
-  findAllElements() {
     this.dropdownButtons = this.item.querySelectorAll(
       ".js-nav-menu__item_with-dropdown"
     );
@@ -18,26 +13,23 @@ export default class NavMenu {
     this.checkmarks = this.item.querySelectorAll(".js-checkmark");
   }
 
-  openMenuDropdown() {
+  addEventListeners() {
+    document.addEventListener("click", this.handleDocumentClick);
     for (let i = 0; i < this.dropdownButtons.length; i++) {
       this.dropdownButtons[i].addEventListener(
         "click",
-        this.openMenu.bind(this, i)
+        this.handleMenuItemClick.bind(this, i)
       );
     }
   }
 
-  openMenu(i) {
+  handleMenuItemClick(i) {
     this.subLists[i].classList.toggle("show");
     this.checkmarks[i].classList.toggle("checkmark_direction_down");
     this.checkmarks[i].classList.toggle("checkmark_direction_up");
   }
 
-  closeMenuDropdown() {
-    document.addEventListener("click", this.closeMenu);
-  }
-
-  closeMenu = (event) => {
+  handleDocumentClick = (event) => {
     for (let i = 0; i < this.dropdownButtons.length; i++) {
       if (
         !document

@@ -4,6 +4,8 @@ export default class Pagination {
   constructor(item) {
     this.item = item;
     this.init();
+    this.callPluginPagination();
+    this.createSign(1, 12);
   }
 
   init() {
@@ -12,9 +14,6 @@ export default class Pagination {
     );
     this.paginationData = this.item.querySelector(".js-pagination__data");
     this.pagCon = this.item.querySelector(".paginationjs");
-
-    this.callPluginPagination();
-    this.createSign(1, 12);
   }
 
   simpleTemplating(data) {

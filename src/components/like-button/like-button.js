@@ -2,13 +2,17 @@ export default class LikeButton {
   constructor(item) {
     this.item = item;
     this.init();
+    this.addEventListeners();
   }
 
   init() {
-    this.item.addEventListener("click", this.clickOnLikeButton);
     this.heart = this.item.querySelector(".js-like-button__image");
     this.numberOfLikes = this.item.querySelector(".js-like-button__counter");
     this.heart = this.item.querySelector(".js-like-button__image");
+  }
+
+  addEventListeners() {
+    this.item.addEventListener("click", this.handleLikeBtnClick);
   }
 
   isLiked() {
@@ -30,7 +34,7 @@ export default class LikeButton {
     this.numberOfLikes.classList.remove("like-button__counter_active");
   }
 
-  clickOnLikeButton = () => {
+  handleLikeBtnClick = () => {
     if (this.isLiked()) {
       this.heart.innerHTML = "favorite_border";
       this.heart.classList.remove("like-button__image_active");

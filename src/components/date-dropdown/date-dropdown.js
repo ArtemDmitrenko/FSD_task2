@@ -5,6 +5,7 @@ export default class dateDropdown {
     this.item = item;
     this.index = index;
     this.init();
+    this.addEventListeners();
   }
 
   init() {
@@ -28,8 +29,14 @@ export default class dateDropdown {
     this.btnApply = this.datepickerContainer.querySelector(
       'span[data-action="today"]'
     );
+    this.btnApply.textContent = "Применить";
+  }
 
-    this.addEventListenerToBtnApply();
+  addEventListeners() {
+    this.btnApply.addEventListener("click", this.handleBtnApplyClick);
+    if (!this.rangeDropdown) {
+      this.inputTo.addEventListener("click", this.handleInputToClick);
+    }
   }
 
   addDateDropdownForRangeInOneInput(index) {
@@ -66,23 +73,13 @@ export default class dateDropdown {
     this.myDatapicker = $(this.inputFrom)
       .datepicker(options)
       .data("datepicker");
-    this.addEventListenerToSecondInput();
   }
 
-  addEventListenerToBtnApply() {
-    this.btnApply.textContent = "Применить";
-    this.btnApply.addEventListener("click", this.dateApply);
-  }
-
-  addEventListenerToSecondInput() {
-    this.inputTo.addEventListener("click", this.showDatepicker);
-  }
-
-  dateApply = () => {
+  handleBtnApplyClick = () => {
     this.myDatapicker.hide();
   };
 
-  showDatepicker = () => {
+  handleInputToClick = () => {
     this.myDatapicker.show();
   };
 }
