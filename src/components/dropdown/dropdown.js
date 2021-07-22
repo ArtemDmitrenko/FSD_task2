@@ -2,18 +2,11 @@ export default class Dropdown {
   constructor(item) {
     this.item = item;
     this.init();
+    this.addEventListeners();
+    this.disableMinusBtn();
   }
 
   init() {
-    this.findElements();
-    this.dropdownInput.addEventListener("click", this.toggleDropdown);
-    document.addEventListener("click", this.closeDropdown);
-    this.dropdownList.addEventListener("click", this.counter);
-    this.item.addEventListener("click", this.changeover);
-    this.disableBtn();
-  }
-
-  findElements() {
     this.dropdownList = this.item.querySelector(".js-dropdown__list");
     this.input = this.item.querySelector(".js-input__element");
     this.dropdownInput = this.item.querySelector(".js-dropdown__input");
@@ -23,7 +16,6 @@ export default class Dropdown {
     if (this.isGuestsDropdown()) {
       this.infants = this.item.querySelector('input[name = "Infants"]');
       this.allGuests = this.item.querySelector('input[name = "guests"]');
-
       this.btnApply = this.dropdownList.querySelector('button[name = "apply"]');
       this.btnClear = this.dropdownList.querySelector('button[name = "clear"]');
     } else {
@@ -37,25 +29,25 @@ export default class Dropdown {
     }
   }
 
-  isDropdownOpened() {
-    return this.input.classList.contains("input__element_border-radius_0");
+  addEventListeners() {
+    this.dropdownInput.addEventListener("click", this.handleDropdownClick);
+    document.addEventListener("click", this.handleDocumentClick);
+    this.dropdownList.addEventListener("click", this.handleMinusOrPlusClick);
+    if (this.isGuestsDropdown()) {
+      this.btnClear.addEventListener("click", this.handleBtnClearClick);
+    }
   }
 
-  isGuestsDropdown() {
-    return this.input.getAttribute("name") === "guests";
-  }
-
-  toggleDropdown = () => {
+  handleDropdownClick = () => {
     this.input.classList.toggle("input__element_border-radius_0");
     this.input.classList.toggle("input__element_with-bright-border");
     this.dropdownList.classList.toggle("dropdown__list_show");
+    if (this.isDropdownOpened()) {
+      this.updateInput();
+    }
   };
 
-  hideBtnClear() {
-    this.btnClear.classList.add("btn_hidden");
-  }
-
-  closeDropdown = (e) => {
+  handleDocumentClick = (e) => {
     const { target } = e;
     const closestDropdown = target.closest(".js-dropdown");
     const conditionForClosingDropdown1 =
@@ -63,39 +55,30 @@ export default class Dropdown {
     const conditionForClosingDropdown2 =
       this.isDropdownOpened() &&
       this.isGuestsDropdown() &&
-      target == this.btnApply;
+      target === this.btnApply;
     if (conditionForClosingDropdown1) {
       if (this.isApplied) {
-        this.toggleDropdown();
+        this.handleDropdownClick();
       } else {
         if (this.isGuestsDropdown()) {
           this.input.value = "Сколько гостей";
         }
-        this.toggleDropdown();
+        this.handleDropdownClick();
       }
     }
     if (conditionForClosingDropdown2) {
       this.isApplied = true;
-      this.toggleDropdown();
+      this.handleDropdownClick();
     }
   };
 
-  disableBtn() {
-    this.counterValueArr.forEach((item) => {
-      if (Number(item.value) === 0) {
-        item.previousElementSibling.setAttribute("disabled", "disabled");
-      }
-    });
-  }
-
-  counter = (e) => {
+  handleMinusOrPlusClick = (e) => {
     const { target } = e;
     const counter = target.closest(".js-counter__enter");
     if (counter) {
       const minus = counter.querySelector(".js-counter__btn_value_minus");
       const plus = counter.querySelector(".js-counter__btn_value_plus");
       const counterValue = counter.querySelector(".js-counter__value");
-
       if (target === plus) {
         counterValue.value = Number(counterValue.value) + 1;
         minus.removeAttribute("disabled", "disabled");
@@ -106,115 +89,123 @@ export default class Dropdown {
           minus.setAttribute("disabled", "disabled");
         }
       }
+      this.updateInput();
     }
   };
 
-  changeover = (e) => {
-    const { target } = e;
+  handleBtnClearClick = () => {
+    this.allGuests.value = "Сколько гостей";
+    this.counterValueArr.forEach((item) => {
+      item.value = 0;
+    });
+    this.disableMinusBtn();
+    this.hideBtnClear();
+  };
+
+  isDropdownOpened() {
+    return this.input.classList.contains("input__element_border-radius_0");
+  }
+
+  isGuestsDropdown() {
+    return this.input.getAttribute("name") === "guests";
+  }
+
+  hideBtnClear() {
+    this.btnClear.classList.add("btn_hidden");
+  }
+
+  disableMinusBtn() {
+    this.counterValueArr.forEach((item) => {
+      if (Number(item.value) === 0) {
+        item.previousElementSibling.setAttribute("disabled", "disabled");
+      }
+    });
+  }
+
+  updateInput() {
+    const guestsArr = ["гостей", "гость", "гостя"];
+    const infantsArr = ["младенцев", "младенец", "младенца"];
+    const bedroomsArr = ["спален", "спальня", "спальни"];
+    const bedsArr = ["кроватей", "кровать", "кровати"];
+    const bathroomsArr = ["ванных комнат", "ванная комната", "ванные комнаты"];
     if (this.isGuestsDropdown()) {
       let infants = Number(this.infants.value);
       let sum = 0;
       this.counterValueArr.forEach((item) => {
         sum += Number(item.value);
       });
-      let remainderSum = sum % 10 === 2 || sum % 10 === 3 || sum % 10 === 4;
-      if (sum > 10 && sum < 15) {
-        this.allGuests.value = sum + " гостей";
-      } else if (sum % 10 === 1) {
-        this.allGuests.value = sum + " гость";
-      } else if (remainderSum) {
-        this.allGuests.value = sum + " гостя";
+      const guestsText = this.declinate(guestsArr, sum);
+      const infantsText = this.declinate(infantsArr, infants);
+      if (infants === 0) {
+        this.allGuests.value = `${guestsText}`;
       } else {
-        this.allGuests.value = sum + " гостей";
+        this.allGuests.value = `${guestsText}, ${infantsText}`;
       }
-      let remainderInfants =
-        infants % 10 === 2 || infants % 10 === 3 || infants % 10 === 4;
-      if (infants > 10 && infants < 15) {
-        this.allGuests.value =
-          this.allGuests.value + ", " + infants + " младенцев";
-      } else if (infants % 10 === 1) {
-        this.allGuests.value =
-          this.allGuests.value + ", " + infants + " младенец";
-      } else if (remainderInfants) {
-        this.allGuests.value =
-          this.allGuests.value + ", " + infants + " младенца";
-      } else if (infants) {
-        this.allGuests.value =
-          this.allGuests.value + ", " + infants + " младенцев";
-      }
-
       if (sum === 0) {
         this.allGuests.value = "Сколько гостей";
         this.hideBtnClear();
       } else {
         this.btnClear.classList.remove("btn_hidden");
-        if (target === this.btnClear) {
-          this.allGuests.value = "Сколько гостей";
-          this.counterValueArr.forEach((item) => {
-            item.value = 0;
-          });
-          this.disableBtn();
-          this.hideBtnClear();
-        }
       }
     } else {
-      this.bedrooms = Number(this.bedroomsInput.value);
-      this.beds = Number(this.bedsInput.value);
-      this.bathrooms = Number(this.bathroomsInput.value);
+      const bedrooms = Number(this.bedroomsInput.value);
+      const beds = Number(this.bedsInput.value);
+      const bathrooms = Number(this.bathroomsInput.value);
       let sum = 0;
       this.counterValueArr.forEach((item) => {
         sum += Number(item.value);
       });
-      this.bedroomsDeclination();
-      this.bedsAmount = 0;
-      this.bedsDeclination();
-      if (sum !== 0) {
-        if (this.bedrooms !== 0) {
-          this.bedroomsDeclination();
-          if (this.beds !== 0) {
-            this.bedsDeclination();
-            this.allRoomsBeds.value =
-              this.allRoomsBeds.value + ", " + this.bedsAmount + "...";
-          }
-        } else {
-          if (this.beds !== 0) {
-            this.bedsDeclination();
-            this.allRoomsBeds.value = this.bedsAmount;
-          }
-        }
-      } else {
-        this.allRoomsBeds.value = "";
-      }
-    }
-  };
-
-  bedroomsDeclination() {
-    this.bedroomsSum =
-      this.bedrooms % 10 === 2 ||
-      this.bedrooms % 10 === 3 ||
-      this.bedrooms % 10 === 4;
-    if (this.bedrooms > 10 && this.bedrooms < 15) {
-      this.allRoomsBeds.value = this.bedrooms + " спален";
-    } else if (this.bedrooms % 10 === 1) {
-      this.allRoomsBeds.value = this.bedrooms + " спальня";
-    } else if (this.bedroomsSum) {
-      this.allRoomsBeds.value = this.bedrooms + " спальни";
-    } else {
-      this.allRoomsBeds.value = this.bedrooms + " спален";
+      const bedroomsText = this.declinate(bedroomsArr, bedrooms);
+      const bedsText = this.declinate(bedsArr, beds);
+      const bathroomsText = this.declinate(bathroomsArr, bathrooms);
+      const obj = {
+        sum,
+        bedrooms,
+        beds,
+        bathrooms,
+        bedroomsText,
+        bedsText,
+        bathroomsText,
+      };
+      this.allRoomsBeds.value = this.fillRoomsBedsInput(obj);
     }
   }
 
-  bedsDeclination() {
-    this.bedsSum =
-      this.beds % 10 === 2 || this.beds % 10 === 3 || this.beds % 10 === 4;
-    if (this.beds > 10 && this.beds < 15) {
-      this.bedsAmount = this.beds + " кроватей";
-    } else if (this.beds % 10 === 1) {
-      this.bedsAmount = this.beds + " кровать";
-    } else if (this.bedsSum) {
-      this.bedsAmount = this.beds + " кровати";
+  fillRoomsBedsInput(obj) {
+    if (obj.sum !== 0) {
+      switch (obj.sum) {
+        case obj.bedrooms:
+          return `${obj.bedroomsText}`;
+        case obj.beds:
+          return `${obj.bedsText}`;
+        case obj.bathrooms:
+          return `${obj.bathroomsText}`;
+        case obj.bedrooms + obj.beds:
+          return `${obj.bedroomsText}, ${obj.bedsText}`;
+        case obj.bedrooms + obj.bathrooms:
+          return `${obj.bedroomsText}, ${obj.bathroomsText}`;
+        case obj.beds + obj.bathrooms:
+          return `${obj.bedsText}, ${obj.bathroomsText}`;
+        case obj.bedrooms + obj.beds + obj.bathrooms:
+          return `${obj.bedroomsText}, ${obj.bedsText}...`;
+      }
     } else {
-      this.bedsAmount = this.beds + " кроватей";
+      return "";
     }
+  }
+
+  declinate(type, sum) {
+    const remain = sum % 10 === 2 || sum % 10 === 3 || sum % 10 === 4;
+    let result;
+    if (sum > 10 && sum < 15) {
+      result = `${sum} ${type[0]}`;
+    } else if (sum % 10 === 1) {
+      result = `${sum} ${type[1]}`;
+    } else if (remain) {
+      result = `${sum} ${type[2]}`;
+    } else {
+      result = `${sum} ${type[0]}`;
+    }
+    return result;
   }
 }
