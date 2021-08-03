@@ -4,38 +4,59 @@ include ../dropdown/dropdown.pug
 include ../btn/btn.pug
 
 mixin form-confirmation()
-    form(action="#" method="post").form-confirmation.js-form-confirmation
-        .form-confirmation__room-description
-            .form-confirmation__room-block
-                h1.form-confirmation__room-number <span>№</span> 888
-                h3.form-confirmation__room-type Люкс
-            h3.form-confirmation__price 9 990₽ <span>в сутки</span>
-        .form-confirmation__dates
-            .form-confirmation__check-in
-                +date-dropdown({heading1: 'Прибытие', heading2: 'Выезд', name: 'Dates in 2 inputs', value1: '19.08.2019', value2: '23.08.2019', required: 'required'})
-        .form-confirmation__guests
-            +dropdown({dropdownType: 'guests', heading: 'гости', value: '3 гостя'})
-        .form-confirmation__part
-            .form-confirmation__text 9 990₽ х 4 суток
-            .form-confirmation__sum 39 960₽
-        .form-confirmation__part
-            .form-confirmation__text-info
-                .form-confirmation__text Сбор за услуги: скидка&nbsp;2&nbsp;179₽
-                .form-confirmation__info
-                    .form-confirmation__letter i
-            .form-confirmation__sum 0₽
-        .form-confirmation__part
-            .form-confirmation__text-info
-                .form-confirmation__text Сбор за дополнительные услуги
-                .form-confirmation__info
-                    .form-confirmation__letter i
-            .form-confirmation__sum 300₽
-        .form-confirmation__total
-            h2.form-confirmation__final Итого
-            h2.form-confirmation__ellipsis
-            h2.form-confirmation__rubles 38 081₽
-        .form-confirmation__submit
-            +btn({modifier: 'btn_size_long', text: 'Забронировать', type: 'submit'})
+  form(action="#" method="post").form-confirmation.js-form-confirmation
+    .form-confirmation__room-description
+      .form-confirmation__room-block
+        h1.form-confirmation__room-number <span>№</span> 888
+        h3.form-confirmation__room-type Люкс
+      h3.form-confirmation__price 9 990₽ <span>в сутки</span>
+    .form-confirmation__dates
+      .form-confirmation__check-in
+        +date-dropdown({heading1: 'Прибытие', heading2: 'Выезд', name: 'Dates in 2 inputs', value1: '19.08.2019', value2: '23.08.2019', required: 'required'})
+    .form-confirmation__guests
+      +dropdown({
+        name: 'guests', 
+        dropdownType: 'withButtons', 
+        heading: 'гости', 
+        value: '3 гостя',
+        items: [
+          {
+            name: 'adults', 
+            sign: 'взрослые', 
+            declination: 'взрослый, взрослых, взрослых'
+          },{
+            name: 'children', 
+            sign: 'дети', 
+            declination: 'дети, детей, детей',
+          },{
+            name: 'infants', 
+            sign: 'младенцы', 
+            declination: 'младенец, младенца, младенцев'
+          },
+        ],
+        declination: 'гость, гостя, гостей',
+      })
+    .form-confirmation__part
+      .form-confirmation__text 9 990₽ х 4 суток
+      .form-confirmation__sum 39 960₽
+    .form-confirmation__part
+      .form-confirmation__text-info
+        .form-confirmation__text Сбор за услуги: скидка&nbsp;2&nbsp;179₽
+        .form-confirmation__info
+          .form-confirmation__letter i
+      .form-confirmation__sum 0₽
+    .form-confirmation__part
+      .form-confirmation__text-info
+        .form-confirmation__text Сбор за дополнительные услуги
+        .form-confirmation__info
+          .form-confirmation__letter i
+      .form-confirmation__sum 300₽
+    .form-confirmation__total
+      h2.form-confirmation__final Итого
+      h2.form-confirmation__ellipsis
+      h2.form-confirmation__rubles 38 081₽
+    .form-confirmation__submit
+      +btn({modifier: 'btn_size_long', text: 'Забронировать', type: 'submit'})
 
 
 

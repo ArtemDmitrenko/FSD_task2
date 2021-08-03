@@ -5,20 +5,20 @@ include ../../components/footer/footer.pug
 include ../../components/footer-tab/footer-tab.pug
 
 block footerItems 
-    - const footerItems = require('../../templates/footer-items.json')
+  - const footerItems = require('../../templates/footer-items.json')
 
 block title
-    title Headers-footers
+  title Headers-footers
 
 block content
-    .headers-footers
-        .headers-footers__logo-UIkit
-            +logo-UIkit()
-        .headers-footers__not-registered
-            +header({modifier: "NotRegistered"})
-        .headers-footers__registered
-            +header({modifier: "Registered"})
-        .headers-footers__footer-wide
-            +footer(footerItems)
-        .headers-footers__footer-tab
-            +footer-tab()
+  .headers-footers
+    .headers-footers__logo-UIkit
+      +logo-UIkit()
+    .headers-footers__not-registered
+      +header({modifier: "NotRegistered"})
+    .headers-footers__registered
+      +header({modifier: "Registered"})
+    .headers-footers__footer-wide
+      +footer(footerItems)
+    .headers-footers__footer-tab
+      +footer-tab()

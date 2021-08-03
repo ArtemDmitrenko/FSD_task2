@@ -11,21 +11,13 @@ export default class Dropdown {
     this.input = this.item.querySelector(".js-input__element");
     this.dropdownInput = this.item.querySelector(".js-dropdown__input");
     this.isApplied = false;
+    this.counterArr = this.dropdownList.querySelectorAll(".js-counter");
     this.counterValueArr =
       this.dropdownList.querySelectorAll(".js-counter__value");
-    if (this.isGuestsDropdown()) {
-      this.infants = this.item.querySelector('input[name = "Infants"]');
-      this.allGuests = this.item.querySelector('input[name = "guests"]');
+    if (this.isWithButtonsDropdown()) {
+      this.infants = this.item.querySelector('input[name = "infants"]');
       this.btnApply = this.dropdownList.querySelector('button[name = "apply"]');
       this.btnClear = this.dropdownList.querySelector('button[name = "clear"]');
-    } else {
-      this.bedroomsInput = this.item.querySelector('input[name = "Bedrooms"]');
-      this.bedsInput = this.item.querySelector('input[name = "Beds"]');
-      this.bathroomsInput = this.item.querySelector(
-        'input[name = "Bathrooms"]'
-      );
-      this.allRoomsBeds = this.item.querySelector('input[name = "roomsBeds"]');
-      this.counterValueArr = this.item.querySelectorAll(".js-counter__value");
     }
   }
 
@@ -33,7 +25,7 @@ export default class Dropdown {
     this.dropdownInput.addEventListener("click", this.handleDropdownClick);
     document.addEventListener("click", this.handleDocumentClick);
     this.dropdownList.addEventListener("click", this.handleMinusOrPlusClick);
-    if (this.isGuestsDropdown()) {
+    if (this.isWithButtonsDropdown()) {
       this.btnClear.addEventListener("click", this.handleBtnClearClick);
     }
   }
@@ -54,13 +46,13 @@ export default class Dropdown {
       this.isDropdownOpened() && !closestDropdown;
     const conditionForClosingDropdown2 =
       this.isDropdownOpened() &&
-      this.isGuestsDropdown() &&
+      this.isWithButtonsDropdown() &&
       target === this.btnApply;
     if (conditionForClosingDropdown1) {
       if (this.isApplied) {
         this.handleDropdownClick();
       } else {
-        if (this.isGuestsDropdown()) {
+        if (this.isWithButtonsDropdown()) {
           this.input.value = "Сколько гостей";
         }
         this.handleDropdownClick();
@@ -94,7 +86,7 @@ export default class Dropdown {
   };
 
   handleBtnClearClick = () => {
-    this.allGuests.value = "Сколько гостей";
+    this.input.value = "Сколько гостей";
     this.counterValueArr.forEach((item) => {
       item.value = 0;
     });
@@ -106,8 +98,8 @@ export default class Dropdown {
     return this.input.classList.contains("input__element_border-radius_0");
   }
 
-  isGuestsDropdown() {
-    return this.input.getAttribute("name") === "guests";
+  isWithButtonsDropdown() {
+    return this.input.getAttribute("dropdownType") === "withButtons";
   }
 
   hideBtnClear() {
@@ -123,74 +115,46 @@ export default class Dropdown {
   }
 
   updateInput() {
-    const guestsArr = ["гостей", "гость", "гостя"];
-    const infantsArr = ["младенцев", "младенец", "младенца"];
-    const bedroomsArr = ["спален", "спальня", "спальни"];
-    const bedsArr = ["кроватей", "кровать", "кровати"];
-    const bathroomsArr = ["ванных комнат", "ванная комната", "ванные комнаты"];
-    if (this.isGuestsDropdown()) {
+    if (this.isWithButtonsDropdown()) {
       let infants = Number(this.infants.value);
       let sum = 0;
       this.counterValueArr.forEach((item) => {
         sum += Number(item.value);
       });
-      const guestsText = this.declinate(guestsArr, sum);
-      const infantsText = this.declinate(infantsArr, infants);
+      const declinationArr = this.dropdownInput.dataset.declination.split(", ");
+      const infantsDeclinationArr =
+        this.infants.dataset.declination.split(", ");
+      const mainText = this.declinate(declinationArr, sum);
+      const infantsText = this.declinate(infantsDeclinationArr, infants);
       if (infants === 0) {
-        this.allGuests.value = `${guestsText}`;
+        this.input.value = `${mainText}`;
       } else {
-        this.allGuests.value = `${guestsText}, ${infantsText}`;
+        this.input.value = `${mainText}, ${infantsText}`;
       }
       if (sum === 0) {
-        this.allGuests.value = "Сколько гостей";
+        this.input.value = "Сколько гостей";
         this.hideBtnClear();
       } else {
         this.btnClear.classList.remove("btn_hidden");
       }
     } else {
-      const bedrooms = Number(this.bedroomsInput.value);
-      const beds = Number(this.bedsInput.value);
-      const bathrooms = Number(this.bathroomsInput.value);
-      let sum = 0;
+      const itemsText = [];
       this.counterValueArr.forEach((item) => {
-        sum += Number(item.value);
+        const numberItemValue = Number(item.value);
+        if (numberItemValue !== 0) {
+          const declinationArr = item.dataset.declination.split(", ");
+          itemsText.push(this.declinate(declinationArr, numberItemValue));
+        }
       });
-      const bedroomsText = this.declinate(bedroomsArr, bedrooms);
-      const bedsText = this.declinate(bedsArr, beds);
-      const bathroomsText = this.declinate(bathroomsArr, bathrooms);
-      const obj = {
-        sum,
-        bedrooms,
-        beds,
-        bathrooms,
-        bedroomsText,
-        bedsText,
-        bathroomsText,
-      };
-      this.allRoomsBeds.value = this.fillRoomsBedsInput(obj);
-    }
-  }
-
-  fillRoomsBedsInput(obj) {
-    if (obj.sum !== 0) {
-      switch (obj.sum) {
-        case obj.bedrooms:
-          return `${obj.bedroomsText}`;
-        case obj.beds:
-          return `${obj.bedsText}`;
-        case obj.bathrooms:
-          return `${obj.bathroomsText}`;
-        case obj.bedrooms + obj.beds:
-          return `${obj.bedroomsText}, ${obj.bedsText}`;
-        case obj.bedrooms + obj.bathrooms:
-          return `${obj.bedroomsText}, ${obj.bathroomsText}`;
-        case obj.beds + obj.bathrooms:
-          return `${obj.bedsText}, ${obj.bathroomsText}`;
-        case obj.bedrooms + obj.beds + obj.bathrooms:
-          return `${obj.bedroomsText}, ${obj.bedsText}...`;
+      if (itemsText.length === 1) {
+        this.input.value = itemsText[0];
+      } else if (itemsText.length === 2) {
+        this.input.value = `${itemsText[0]}, ${itemsText[1]}`;
+      } else if (itemsText.length >= 3) {
+        this.input.value = `${itemsText[0]}, ${itemsText[1]}...`;
+      } else {
+        this.input.value = "";
       }
-    } else {
-      return "";
     }
   }
 
@@ -198,13 +162,13 @@ export default class Dropdown {
     const remain = sum % 10 === 2 || sum % 10 === 3 || sum % 10 === 4;
     let result;
     if (sum > 10 && sum < 15) {
-      result = `${sum} ${type[0]}`;
-    } else if (sum % 10 === 1) {
-      result = `${sum} ${type[1]}`;
-    } else if (remain) {
       result = `${sum} ${type[2]}`;
-    } else {
+    } else if (sum % 10 === 1) {
       result = `${sum} ${type[0]}`;
+    } else if (remain) {
+      result = `${sum} ${type[1]}`;
+    } else {
+      result = `${sum} ${type[2]}`;
     }
     return result;
   }

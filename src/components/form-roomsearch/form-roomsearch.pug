@@ -2,13 +2,35 @@ include ../date-dropdown/date-dropdown.pug
 include ../dropdown/dropdown.pug
 include ../btn/btn.pug
 
+
 mixin form-roomsearch()
-    form(action="#" method="post").form-roomsearch.js-form-roomsearch
-        h1.form-roomsearch__title Найдём номера под ваши пожелания
-        .form-roomsearch__dates
-            .form-roomsearch__check-in
-                +date-dropdown({heading1: 'Прибытие', heading2: 'Выезд', name: 'Dates in 2 inputs'})
-        .form-roomsearch__guests
-            +dropdown({dropdownType: 'guests', heading: 'гости', value: 'Сколько гостей'})
-        .form-roomsearch__submission
-            +btn({modifier: 'btn_size_long', text: 'Подобрать номер', type: 'submit'})
+  form(action="#" method="post").form-roomsearch.js-form-roomsearch
+    h1.form-roomsearch__title Найдём номера под ваши пожелания
+    .form-roomsearch__dates
+      .form-roomsearch__check-in
+        +date-dropdown({heading1: 'Прибытие', heading2: 'Выезд', name: 'Dates in 2 inputs'})
+    .form-roomsearch__guests
+      +dropdown(({
+        name: 'guests', 
+        dropdownType: 'withButtons', 
+        heading: 'Гости', 
+        value: 'Сколько гостей',
+        items: [
+          {
+            name: 'adults', 
+            sign: 'взрослые', 
+            declination: 'взрослый, взрослых, взрослых'
+          },{
+            name: 'children', 
+            sign: 'дети', 
+            declination: 'дети, детей, детей',
+          },{
+            name: 'infants', 
+            sign: 'младенцы', 
+            declination: 'младенец, младенца, младенцев'
+          },
+        ],
+        declination: 'гость, гостя, гостей',
+      }))
+    .form-roomsearch__submission
+      +btn({modifier: 'btn_size_long', text: 'Подобрать номер', type: 'submit'})

@@ -16,34 +16,34 @@ include ../checkmark/checkmark.pug
 include ../arrow/arrow.pug
 
 mixin input(options = {})
-    - const {heading, description, name, value, placeholder, dropdown, subscription, dateDropdown, type, fromOrTo, required, readonly} = options
-    if dateDropdown
-        .input
-            if heading
-                .input__heading= heading
-            case name
-                when 'Dates in 2 inputs'
-                    if fromOrTo == 'from'
-                        input.input__element.js-input__element.input__date-dropdown.js-input__date-dropdown_value_from(value = value heading = heading name = name type = type placeholder = placeholder readonly = 'readonly' dateDropdown = dateDropdown required = required)
-                    else 
-                        input.input__element.js-input__element.input__date-dropdown.js-input__date-dropdown_value_to(value = value heading = heading name = name type = type placeholder = placeholder readonly = 'readonly' dateDropdown = dateDropdown required = required)
-                    .input__checkmark
-                        +checkmark()
-                when 'Dates in 1 input'
-                    input.input__element.js-input__element.input__date-dropdown.js-input__date-dropdown_with-range(value = value heading = heading name = name type = type placeholder = placeholder readonly = 'readonly' dateDropdown = dateDropdown required = required)
-                    .input__checkmark
-                        +checkmark()
-    else
-        .input
-            if heading
-                .input__heading= heading
-            if description
-                .input__description= description
-            input.input__element.js-input__element(name = name type = type value = value placeholder = placeholder dropdown = dropdown readonly = readonly subscription = subscription dateDropdown = dateDropdown required = required)
-            if dropdown
-                .input__checkmark
-                    +checkmark()
-            if subscription
-                .input__subscription
-                    button(type="submit").input__default-button
-                        +arrow({color:'purple', direction:'right'})
+  - const {heading, description, name, dropdownType, value, placeholder, dropdown, subscription, dateDropdown, type, fromOrTo, required, readonly} = options
+  if dateDropdown
+    .input
+      if heading
+        .input__heading= heading
+      case name
+        when 'Dates in 2 inputs'
+          if fromOrTo == 'from'
+            input.input__element.js-input__element.input__date-dropdown.js-input__date-dropdown_value_from(value = value heading = heading name = name type = type placeholder = placeholder readonly = 'readonly' dateDropdown = dateDropdown required = required)
+          else 
+            input.input__element.js-input__element.input__date-dropdown.js-input__date-dropdown_value_to(value = value heading = heading name = name type = type placeholder = placeholder readonly = 'readonly' dateDropdown = dateDropdown required = required)
+          .input__checkmark
+            +checkmark()
+        when 'Dates in 1 input'
+          input.input__element.js-input__element.input__date-dropdown.js-input__date-dropdown_with-range(value = value heading = heading name = name type = type placeholder = placeholder readonly = 'readonly' dateDropdown = dateDropdown required = required)
+          .input__checkmark
+            +checkmark()
+  else
+    .input
+      if heading
+        .input__heading= heading
+      if description
+        .input__description= description
+      input.input__element.js-input__element(name = name dropdownType = dropdownType type = type value = value placeholder = placeholder dropdown = dropdown readonly = readonly subscription = subscription dateDropdown = dateDropdown required = required)
+      if dropdown
+        .input__checkmark
+          +checkmark()
+      if subscription
+        .input__subscription
+          button(type="submit").input__default-button
+            +arrow({color:'purple', direction:'right'})
