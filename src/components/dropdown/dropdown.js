@@ -14,7 +14,7 @@ export default class Dropdown {
     this.counterArr = this.dropdownList.querySelectorAll(".js-counter");
     this.counterValueArr =
       this.dropdownList.querySelectorAll(".js-counter__value");
-    if (this.isWithButtonsDropdown()) {
+    if (this.isWithButtonsDropdown) {
       this.infants = this.item.querySelector('input[name = "infants"]');
       this.btnApply = this.dropdownList.querySelector('button[name = "apply"]');
       this.btnClear = this.dropdownList.querySelector('button[name = "clear"]');
@@ -25,7 +25,7 @@ export default class Dropdown {
     this.dropdownInput.addEventListener("click", this.handleDropdownClick);
     document.addEventListener("click", this.handleDocumentClick);
     this.dropdownList.addEventListener("click", this.handleMinusOrPlusClick);
-    if (this.isWithButtonsDropdown()) {
+    if (this.isWithButtonsDropdown) {
       this.btnClear.addEventListener("click", this.handleBtnClearClick);
     }
   }
@@ -46,13 +46,13 @@ export default class Dropdown {
       this.isDropdownOpened() && !closestDropdown;
     const conditionForClosingDropdown2 =
       this.isDropdownOpened() &&
-      this.isWithButtonsDropdown() &&
+      this.isWithButtonsDropdown &&
       target === this.btnApply;
     if (conditionForClosingDropdown1) {
       if (this.isApplied) {
         this.handleDropdownClick();
       } else {
-        if (this.isWithButtonsDropdown()) {
+        if (this.isWithButtonsDropdown) {
           this.input.value = "Сколько гостей";
         }
         this.handleDropdownClick();
@@ -98,7 +98,7 @@ export default class Dropdown {
     return this.input.classList.contains("input__element_border-radius_0");
   }
 
-  isWithButtonsDropdown() {
+  get isWithButtonsDropdown() {
     return this.input.getAttribute("dropdownType") === "withButtons";
   }
 
@@ -115,7 +115,7 @@ export default class Dropdown {
   }
 
   updateInput() {
-    if (this.isWithButtonsDropdown()) {
+    if (this.isWithButtonsDropdown) {
       let infants = Number(this.infants.value);
       let sum = 0;
       this.counterValueArr.forEach((item) => {
