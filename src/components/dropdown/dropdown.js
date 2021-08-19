@@ -22,7 +22,7 @@ export default class Dropdown {
   }
 
   addEventListeners() {
-    this.dropdownInput.addEventListener("click", this.handleDropdownClick);
+    this.dropdownInput.addEventListener("click", this.toggleDropdown);
     document.addEventListener("click", this.handleDocumentClick);
     this.dropdownList.addEventListener("click", this.handleMinusOrPlusClick);
     if (this.isWithButtonsDropdown) {
@@ -30,7 +30,7 @@ export default class Dropdown {
     }
   }
 
-  handleDropdownClick = () => {
+  toggleDropdown = () => {
     this.input.classList.toggle("input__element_border-radius_0");
     this.input.classList.toggle("input__element_with-bright-border");
     this.dropdownList.classList.toggle("dropdown__list_show");
@@ -49,20 +49,24 @@ export default class Dropdown {
       this.isWithButtonsDropdown &&
       target === this.btnApply;
     if (conditionForClosingDropdown1) {
-      if (this.isApplied) {
-        this.handleDropdownClick();
-      } else {
-        if (this.isWithButtonsDropdown) {
-          this.input.value = "Сколько гостей";
-        }
-        this.handleDropdownClick();
-      }
+      this.closeDropdown();
     }
     if (conditionForClosingDropdown2) {
       this.isApplied = true;
-      this.handleDropdownClick();
+      this.toggleDropdown();
     }
   };
+
+  closeDropdown() {
+    if (this.isApplied) {
+      this.toggleDropdown();
+    } else {
+      if (this.isWithButtonsDropdown) {
+        this.input.value = "Сколько гостей";
+      }
+      this.toggleDropdown();
+    }
+  }
 
   handleMinusOrPlusClick = (e) => {
     const { target } = e;
@@ -72,18 +76,26 @@ export default class Dropdown {
       const plus = counter.querySelector(".js-counter__btn_value_plus");
       const counterValue = counter.querySelector(".js-counter__value");
       if (target === plus) {
-        counterValue.value = Number(counterValue.value) + 1;
-        minus.removeAttribute("disabled", "disabled");
+        this.increment(counterValue, minus);
       }
       if (target === minus) {
-        counterValue.value = Number(counterValue.value) - 1;
-        if (Number(counterValue.value) === 0) {
-          minus.setAttribute("disabled", "disabled");
-        }
+        this.decrement(counterValue, minus);
       }
       this.updateInput();
     }
   };
+
+  increment(counterValue, minus) {
+    counterValue.value = Number(counterValue.value) + 1;
+    minus.removeAttribute("disabled", "disabled");
+  }
+
+  decrement(counterValue, minus) {
+    counterValue.value = Number(counterValue.value) - 1;
+    if (Number(counterValue.value) === 0) {
+      minus.setAttribute("disabled", "disabled");
+    }
+  }
 
   handleBtnClearClick = () => {
     this.input.value = "Сколько гостей";
