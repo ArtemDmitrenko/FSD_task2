@@ -18,6 +18,7 @@ export default class Dropdown {
       this.infants = this.item.querySelector('input[name = "infants"]');
       this.btnApply = this.dropdownList.querySelector('button[name = "apply"]');
       this.btnClear = this.dropdownList.querySelector('button[name = "clear"]');
+      this.defaultValue = this.dropdownInput.dataset.value;
     }
   }
 
@@ -62,7 +63,7 @@ export default class Dropdown {
       this.toggleDropdown();
     } else {
       if (this.isWithButtonsDropdown) {
-        this.input.value = "Сколько гостей";
+        this.input.value = this.defaultValue;
       }
       this.toggleDropdown();
     }
@@ -97,7 +98,7 @@ export default class Dropdown {
   }
 
   handleBtnClearClick = () => {
-    this.input.value = "Сколько гостей";
+    this.input.value = this.defaultValue;
     this.counterValueArr.forEach((item) => {
       item.value = 0;
     });
@@ -143,7 +144,7 @@ export default class Dropdown {
         this.input.value = `${mainText}, ${infantsText}`;
       }
       if (sum === 0) {
-        this.input.value = "Сколько гостей";
+        this.input.value = this.defaultValue;
         this.hideBtnClear();
       } else {
         this.btnClear.classList.remove("btn_hidden");

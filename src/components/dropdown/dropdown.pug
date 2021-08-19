@@ -7,7 +7,7 @@ mixin dropdown(options = {})
   case dropdownType
     when 'withButtons'
       .dropdown.js-dropdown
-        .dropdown__input.js-dropdown__input(data-declination=declination)
+        .dropdown__input.js-dropdown__input(data-declination=declination data-value=value)
           +input({heading: heading, description: description, name: name, dropdownType: dropdownType, type: 'text', value: value, dropdown: true, readonly: true})
         .dropdown__list.js-dropdown__list
           .dropdown__counter
