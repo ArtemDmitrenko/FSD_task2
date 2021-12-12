@@ -1,5 +1,5 @@
 extends ../../templates/template.pug
-include ../../components/form-log-in/form-log-in.pug
+include ../../components/log-in-form/log-in-form.pug
 
 block title
     title Sign-in
@@ -8,4 +8,4 @@ block main
     main.sign-in
         img(src=require("./registration.png").default, alt="registration").sign-in__image
         .sign-in__form
-            +form-log-in()
+            +log-in-form()

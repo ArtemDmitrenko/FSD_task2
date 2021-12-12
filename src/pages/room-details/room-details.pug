@@ -3,7 +3,7 @@ include ../../components/room-info/room-info.pug
 include ../../components/review/review.pug
 include ../../components/bullet-list/bullet-list.pug
 include ../../components/diagram/diagram.pug
-include ../../components/form-confirmation/form-confirmation.pug
+include ../../components/confirmation-form/confirmation-form.pug
 
 block title
     title Room Details
@@ -45,6 +45,6 @@ block main
                             h2.room-details__cancel-title Отмена
                             p.room-details__cancel-text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
                 .room-details__column2
-                    .room-details__form-confirmation
-                        +form-confirmation()
+                    .room-details__confirmation-form
+                        +confirmation-form()
         .room-details__grey-line

@@ -1,5 +1,5 @@
 import Header from 'Components/header/header';
-import FormRegistration from 'Components/form-registration/form-registration'
+import FormRegistration from 'Components/registration-form/registration-form'
 
 export default class Registration {
   constructor() {
@@ -8,7 +8,7 @@ export default class Registration {
 
   init() {
     const header = document.querySelector('.js-header');
-    const formRegistration = document.querySelector('.js-form-registration');
+    const formRegistration = document.querySelector('.js-registration-form');
     new Header(header);
     new FormRegistration(formRegistration);
   }

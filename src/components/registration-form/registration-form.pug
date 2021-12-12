@@ -4,28 +4,28 @@ include ../toggle/toggle.pug
 include ../button/button.pug
 include ../link/link.pug
 
-mixin form-registration()
-    form(action="#" method="post").form-registration.js-form-registration
-        h1.form-registration__title Регистрация аккаунта
-        .form-registration__name
+mixin registration-form()
+    form(action="#" method="post").registration-form.js-registration-form
+        h1.registration-form__title Регистрация аккаунта
+        .registration-form__name
             +input({name: 'Name', type: 'text', placeholder: 'Имя', required: 'required'})
-        .form-registration__surname
+        .registration-form__surname
             +input({name: 'Surname', type: 'text', placeholder: 'Фамилия', required: 'required'})
-        .form-registration__gender
+        .registration-form__gender
             +radio-buttons({list: ['Мужчина', 'Женщина'], required: 'required'})
-        .form-registration__birthday
+        .registration-form__birthday
             +input({heading: 'Дата рождения', name: 'birthday', type: 'text', placeholder: 'ДД.ММ.ГГГГ', required: 'required'})
-        .form-registration__enter
-            .form-registration__email
+        .registration-form__enter
+            .registration-form__email
                 +input({heading: 'Данные для входа в сервис', name: 'E-mail', type: 'email', placeholder: 'Email', required: 'required'})
-            .form-registration__password
+            .registration-form__password
                 +input({name: 'Password', type: 'text', placeholder: 'Пароль', required: 'required'})
-        .form-registration__offers
+        .registration-form__offers
             +toggle({label: 'Получать спецпредложения'})    
-        .form-registration__submit
+        .registration-form__submit
             +button({modifier: 'button_size_long', text: 'Перейти к оплате', type: 'submit'})
-        .form-registration_is-registered
-            .form-registration_is-registered_on-toxin
-                p.form-registration__text Уже есть аккаунт на Toxin
-            .form-registration__sign-in
+        .registration-form_is-registered
+            .registration-form_is-registered_on-toxin
+                p.registration-form__text Уже есть аккаунт на Toxin
+            .registration-form__sign-in
                 +link({link: './sign-in.html', text: 'Войти', type: 'big'})

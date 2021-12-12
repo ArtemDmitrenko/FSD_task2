@@ -1,5 +1,5 @@
 import Header from 'Components/header/header';
-import FormRoomSearch from 'Components/form-roomsearch/form-roomsearch'
+import FormRoomSearch from 'Components/room-search-form/room-search-form'
 
 export default class LandingPage {
   constructor() {
@@ -8,7 +8,7 @@ export default class LandingPage {
 
   init() {
     const header = document.querySelector('.js-header');
-    const formRoomSearch = document.querySelector('.js-form-roomsearch');
+    const formRoomSearch = document.querySelector('.js-room-search-form');
     new Header(header);
     new FormRoomSearch(formRoomSearch);
   }

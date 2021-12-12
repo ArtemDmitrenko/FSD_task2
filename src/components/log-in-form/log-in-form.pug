@@ -2,18 +2,18 @@ include ../input/input.pug
 include ../button/button.pug
 include ../link/link.pug
 
-mixin form-log-in()
-    form(action="#" method="post").form-log-in
-        h1.form-log-in__title Войти
-        .form-log-in__email
+mixin log-in-form()
+    form(action="#" method="post").log-in-form
+        h1.log-in-form__title Войти
+        .log-in-form__email
             +input({name: 'E-mail', type: 'email', placeholder: 'Email', required: 'required'})
-        .form-log-in__password
+        .log-in-form__password
             +input({name: 'Password', type: 'text', placeholder: 'Пароль', required: 'required'})
-        .form-log-in__submit
+        .log-in-form__submit
             +button({modifier: 'button_size_long', text: 'Войти', type: 'submit'})
-        .form-log-in__registered
-            .form-log-in__registered-on-Toxin
-                p.form-log-in__text Нет аккаунта на Toxin?
-            .form-log-in__link
+        .log-in-form__registered
+            .log-in-form__registered-on-Toxin
+                p.log-in-form__text Нет аккаунта на Toxin?
+            .log-in-form__link
                 +link({link: './registration.html', text: 'Создать', type: 'big'})
 

@@ -1,5 +1,5 @@
 extends ../../templates/template.pug
-include ../../components/form-registration/form-registration.pug
+include ../../components/registration-form/registration-form.pug
 
 block title
     title Registration
@@ -8,4 +8,4 @@ block main
     main.registration
         img(src=require("./registration.png").default, alt="registration").registration__image
         .registration__form
-            +form-registration()
+            +registration-form()

@@ -1,9 +1,9 @@
 extends ../../templates/template-UIKit.pug
 include ../../components/UIkit/logo-UIkit/logo-UIkit.pug
-include ../../components/form-roomsearch/form-roomsearch.pug
-include ../../components/form-registration/form-registration.pug
-include ../../components/form-confirmation/form-confirmation.pug
-include ../../components/form-log-in/form-log-in.pug
+include ../../components/room-search-form/room-search-form.pug
+include ../../components/registration-form/registration-form.pug
+include ../../components/confirmation-form/confirmation-form.pug
+include ../../components/log-in-form/log-in-form.pug
 include ../../components/room/room.pug
 include ../../components/UIkit/calendar/calendar.pug
 
@@ -17,13 +17,13 @@ block content
             +logo-UIkit()
         .cards__all-items
             .cards__room-search
-                +form-roomsearch()
+                +room-search-form()
             .cards__registration
-                +form-registration()
+                +registration-form()
             .cards__confirmation
-                +form-confirmation()
+                +confirmation-form()
             .cards__log-in
-                +form-log-in()
+                +log-in-form()
             .cards__datepicker
                 +calendar()
             .cards__room
