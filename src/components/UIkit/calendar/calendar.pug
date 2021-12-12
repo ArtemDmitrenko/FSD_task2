@@ -1,5 +1,5 @@
 include ../../arrow/arrow.pug
-include ../../btn/btn.pug
+include ../../button/button.pug
 
 mixin calendar()
   .calendar
@@ -38,10 +38,10 @@ mixin calendar()
             .calendar__number= n++
           .calendar__number 1
     .calendar__row3
-      .calendar__btn-clear
-        +btn({modifier: 'btn_color_violent', text: 'Очистить'})
-      .calendar__btn-apply
-        +btn({modifier: 'btn_color_violent', text: 'Применить'})
+      .calendar__button-clear
+        +button({modifier: 'button_color_violent', text: 'Очистить'})
+      .calendar__button-apply
+        +button({modifier: 'button_color_violent', text: 'Применить'})
 
 
 

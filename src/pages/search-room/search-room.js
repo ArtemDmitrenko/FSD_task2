@@ -1,4 +1,4 @@
-import CheckboxBtn from "Components/checkbox-btn/checkbox-btn";
+import CheckboxButton from "Components/checkbox-button/checkbox-button";
 import DateDropdown from "Components/date-dropdown/date-dropdown";
 import Header from "Components/header/header";
 import Pagination from "Components/pagination/pagination";
@@ -12,7 +12,7 @@ export default class SearchRoom {
   }
 
   init() {
-    const checkboxLists = document.querySelectorAll(".js-checkbox-btn");
+    const checkboxLists = document.querySelectorAll(".js-checkbox-button");
     const dateDropdowns = document.querySelectorAll(".js-date-dropdown");
     const header = document.querySelector(".js-header");
     const pagination = document.querySelector(".js-pagination");
@@ -20,7 +20,7 @@ export default class SearchRoom {
     const carousels = document.querySelectorAll(".js-room__card");
     const dropdowns = document.querySelectorAll(".js-dropdown");
     checkboxLists.forEach((checkboxList) => {
-      new CheckboxBtn(checkboxList);
+      new CheckboxButton(checkboxList);
     });
     dateDropdowns.forEach((dateDropdown, index) => {
       new DateDropdown(dateDropdown, index);

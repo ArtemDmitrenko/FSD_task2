@@ -1,5 +1,5 @@
 include ../input/input.pug
-include ../btn/btn.pug
+include ../button/button.pug
 include ../counter/counter.pug
 
 mixin dropdown(options = {})
@@ -13,11 +13,11 @@ mixin dropdown(options = {})
           .dropdown__counter
             each item in items
               +counter([item.sign, item.name, item.declination])
-          .dropdown__btn
-            .dropdown__btn_function_clear
-              +btn({modifier: 'btn_color_violent', text: 'Очистить', type: 'button', name: 'clear'})
-            .dropdown__btn_function_apply
-              +btn({modifier: 'btn_color_violent', text: 'Применить', type: 'button', name: 'apply'})
+          .dropdown__button
+            .dropdown__button_function_clear
+              +button({modifier: 'button_color_violent', text: 'Очистить', type: 'button', name: 'clear'})
+            .dropdown__button_function_apply
+              +button({modifier: 'button_color_violent', text: 'Применить', type: 'button', name: 'apply'})
     when 'noButtons'
       .dropdown.js-dropdown
         .dropdown__input.js-dropdown__input

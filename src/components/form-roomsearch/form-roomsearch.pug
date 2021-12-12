@@ -1,6 +1,6 @@
 include ../date-dropdown/date-dropdown.pug
 include ../dropdown/dropdown.pug
-include ../btn/btn.pug
+include ../button/button.pug
 
 
 mixin form-roomsearch()
@@ -33,4 +33,4 @@ mixin form-roomsearch()
         declination: 'гость, гостя, гостей',
       }))
     .form-roomsearch__submission
-      +btn({modifier: 'btn_size_long', text: 'Подобрать номер', type: 'submit'})
+      +button({modifier: 'button_size_long', text: 'Подобрать номер', type: 'submit'})

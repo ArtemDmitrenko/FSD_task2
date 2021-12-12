@@ -3,7 +3,7 @@
 @import "../../nullstyle.scss";
 @import "Components/header/header.scss";
 @import "Components/logo/logo.scss";
-@import "Components/btn/btn.scss";
+@import "Components/button/button.scss";
 @import "Components/nav-menu/nav-menu.scss";
 @import "Components/footer/footer.scss";
 @import "Components/social-nets/social-nets.scss";
@@ -15,7 +15,7 @@
 @import "Components/counter/counter.scss";
 @import "Components/footer-tab/footer-tab.scss";
 @import "Components/range-slider/range-slider.scss";
-@import "Components/checkbox-btn/checkbox-btn.scss";
+@import "Components/checkbox-button/checkbox-button.scss";
 @import "Components/room/room.scss";
 @import "Components/rate-button/rate-button.scss";
 @import "Components/pagination/pagination.scss";
@@ -45,7 +45,7 @@
     margin-top: 41px;
     margin-bottom: 29px;
   }
-  &__checkbox-btn {
+  &__checkbox-button {
     margin-top: 38px;
     margin-bottom: 31px;
   }

@@ -1,4 +1,4 @@
-import CheckboxBtn from "Components/checkbox-btn/checkbox-btn";
+import CheckboxButton from "Components/checkbox-button/checkbox-button";
 import DateDropdown from "Components/date-dropdown/date-dropdown";
 import Input from "Components/input/input";
 import LikeButton from "Components/like-button/like-button";
@@ -13,7 +13,7 @@ export default class FormElements {
   }
 
   init() {
-    const checkboxLists = document.querySelectorAll(".js-checkbox-btn");
+    const checkboxLists = document.querySelectorAll(".js-checkbox-button");
     const dateDropdowns = document.querySelectorAll(".js-date-dropdown");
     const maskedInput = document.querySelector('[name|="birthday"]');
     const likeButtons = document.querySelectorAll(".js-like-button__button");
@@ -21,7 +21,7 @@ export default class FormElements {
     const dropdowns = document.querySelectorAll(".js-dropdown");
     const pagination = document.querySelector(".js-pagination");
     checkboxLists.forEach((checkboxList) => {
-      new CheckboxBtn(checkboxList);
+      new CheckboxButton(checkboxList);
     });
     dateDropdowns.forEach((dateDropdown, index) => {
       new DateDropdown(dateDropdown, index);
@@ -74,81 +74,81 @@ export default class FormElements {
     const dropdownExpanded = document.querySelector(
       ".form-elements__element_expanded"
     );
-    const btnPlusBedrooms = dropdownExpanded.querySelectorAll(
-      ".counter__btn_value_plus"
+    const buttonPlusBedrooms = dropdownExpanded.querySelectorAll(
+      ".counter__button_value_plus"
     )[0];
-    const btnPlusBeds = dropdownExpanded.querySelectorAll(
-      ".counter__btn_value_plus"
+    const buttonPlusBeds = dropdownExpanded.querySelectorAll(
+      ".counter__button_value_plus"
     )[1];
     setTimeout(function () {
       $(inputOfdropdownExpanded).trigger("click");
-      $(btnPlusBedrooms).trigger("click");
-      $(btnPlusBedrooms).trigger("click");
-      $(btnPlusBeds).trigger("click");
-      $(btnPlusBeds).trigger("click");
+      $(buttonPlusBedrooms).trigger("click");
+      $(buttonPlusBedrooms).trigger("click");
+      $(buttonPlusBeds).trigger("click");
+      $(buttonPlusBeds).trigger("click");
     }, 30);
 
     // Checkbox
-    const checkbox = document.querySelectorAll(".checkbox-btn")[1];
-    const btnTable = checkbox.querySelectorAll(".checkbox-btn__label")[1];
-    const btnChair = checkbox.querySelectorAll(".checkbox-btn__label")[2];
-    const btnBed = checkbox.querySelectorAll(".checkbox-btn__label")[3];
+    const checkbox = document.querySelectorAll(".checkbox-button")[1];
+    const buttonTable = checkbox.querySelectorAll(".checkbox-button__label")[1];
+    const buttonChair = checkbox.querySelectorAll(".checkbox-button__label")[2];
+    const buttonBed = checkbox.querySelectorAll(".checkbox-button__label")[3];
     setTimeout(function () {
       $(checkbox).trigger("click");
-      $(btnTable).trigger("click");
-      $(btnChair).trigger("click");
-      $(btnBed).trigger("click");
+      $(buttonTable).trigger("click");
+      $(buttonChair).trigger("click");
+      $(buttonBed).trigger("click");
     }, 10);
 
     // Checkbox buttons
     const checkbox1 = document.querySelectorAll(
-      ".form-elements__checkbox-btn"
+      ".form-elements__checkbox-button"
     )[2];
-    const checkboxbtnAnimals = checkbox1.querySelectorAll(
-      ".checkbox-btn__label"
+    const checkboxbuttonAnimals = checkbox1.querySelectorAll(
+      ".checkbox-button__label"
     )[1];
-    const checkboxbtnGuests = checkbox1.querySelectorAll(
-      ".checkbox-btn__label"
+    const checkboxbuttonGuests = checkbox1.querySelectorAll(
+      ".checkbox-button__label"
     )[2];
     setTimeout(function () {
-      $(checkboxbtnAnimals).trigger("click");
-      $(checkboxbtnGuests).trigger("click");
+      $(checkboxbuttonAnimals).trigger("click");
+      $(checkboxbuttonGuests).trigger("click");
     }, 10);
 
     // Radio buttons
-    const radioBtn = document.querySelectorAll(".radio-buttons__label")[0];
+    const radioButton = document.querySelectorAll(".radio-buttons__label")[0];
     setTimeout(function () {
-      $(radioBtn).trigger("click");
+      $(radioButton).trigger("click");
     }, 10);
 
     // Toggle label
-    const toggleBtn = document.querySelectorAll(".toggle__label")[0];
+    const toggleButton = document.querySelectorAll(".toggle__label")[0];
     setTimeout(function () {
-      $(toggleBtn).trigger("click");
+      $(toggleButton).trigger("click");
     }, 10);
 
-    // Like btn
-    const likeBtn = document.querySelectorAll(".like-button__button")[1];
+    // Like button
+    const likeButton = document.querySelectorAll(".like-button__button")[1];
     setTimeout(function () {
-      $(likeBtn).trigger("click");
+      $(likeButton).trigger("click");
     }, 10);
 
     // DropdownGuests
     const dropdowmGuests = document.querySelectorAll(
       ".form-elements__dropdown"
     )[3];
-    const dropdownGuestsBtn = dropdowmGuests.querySelector(".input__element");
+    const dropdownGuestsButton = dropdowmGuests.querySelector(".input__element");
     setTimeout(function () {
-      $(dropdownGuestsBtn).trigger("click");
+      $(dropdownGuestsButton).trigger("click");
     }, 30);
 
     // Buttons
-    const btnRow1 = document.querySelector(".form-elements__btn-row1");
-    const hoveredBtnInRow1 = btnRow1.querySelectorAll(".btn")[1];
-    hoveredBtnInRow1.classList.add("form-elements__btn_hovereded");
-    const btnRow2 = document.querySelector(".form-elements__btn-row2");
-    const hoveredBtnInRow2 = btnRow2.querySelectorAll(".btn_with-border")[1];
-    hoveredBtnInRow2.classList.add("form-elements__btn_hovereded");
+    const buttonRow1 = document.querySelector(".form-elements__button-row1");
+    const hoveredButtonInRow1 = buttonRow1.querySelectorAll(".button")[1];
+    hoveredButtonInRow1.classList.add("form-elements__button_hovereded");
+    const buttonRow2 = document.querySelector(".form-elements__button-row2");
+    const hoveredButtonInRow2 = buttonRow2.querySelectorAll(".button_with-border")[1];
+    hoveredButtonInRow2.classList.add("form-elements__button_hovereded");
 
     // DropdownGuests
     const inputOfdropdownGuestsExpanded =
@@ -156,24 +156,24 @@ export default class FormElements {
     const dropdownGuestsExpanded = document.querySelector(
       ".form-elements__dropdown_expandedGuests"
     );
-    const btnPlusAdults = dropdownGuestsExpanded.querySelectorAll(
-      ".counter__btn_value_plus"
+    const buttonPlusAdults = dropdownGuestsExpanded.querySelectorAll(
+      ".counter__button_value_plus"
     )[0];
-    const btnPlusChildren = dropdownGuestsExpanded.querySelectorAll(
-      ".counter__btn_value_plus"
+    const buttonPlusChildren = dropdownGuestsExpanded.querySelectorAll(
+      ".counter__button_value_plus"
     )[1];
     setTimeout(function () {
       $(inputOfdropdownGuestsExpanded).trigger("click");
-      $(btnPlusAdults).trigger("click");
-      $(btnPlusAdults).trigger("click");
-      $(btnPlusChildren).trigger("click");
+      $(buttonPlusAdults).trigger("click");
+      $(buttonPlusAdults).trigger("click");
+      $(buttonPlusChildren).trigger("click");
     }, 30);
 
-    // Like btn in Review
+    // Like button in Review
     const review = document.querySelector(".review__like-button");
-    const reviewLikeBtn = review.querySelector(".like-button__button");
+    const reviewLikeButton = review.querySelector(".like-button__button");
     setTimeout(function () {
-      $(reviewLikeBtn).trigger("click");
+      $(reviewLikeButton).trigger("click");
     }, 15);
   }
 }

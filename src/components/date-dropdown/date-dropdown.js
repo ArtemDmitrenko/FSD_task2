@@ -26,14 +26,14 @@ export default class dateDropdown {
     this.datepickerContainer = document.querySelector(
       `.datepicker${this.index}`
     );
-    this.btnApply = this.datepickerContainer.querySelector(
+    this.buttonApply = this.datepickerContainer.querySelector(
       'span[data-action="today"]'
     );
-    this.btnApply.textContent = "Применить";
+    this.buttonApply.textContent = "Применить";
   }
 
   addEventListeners() {
-    this.btnApply.addEventListener("click", this.handleBtnApplyClick);
+    this.buttonApply.addEventListener("click", this.handleButtonApplyClick);
     if (!this.rangeDropdown) {
       this.inputTo.addEventListener("click", this.handleInputToClick);
     }
@@ -75,7 +75,7 @@ export default class dateDropdown {
       .data("datepicker");
   }
 
-  handleBtnApplyClick = () => {
+  handleButtonApplyClick = () => {
     this.myDatapicker.hide();
   };
 

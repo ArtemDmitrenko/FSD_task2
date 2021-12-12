@@ -12,7 +12,7 @@ export default class LikeButton {
   }
 
   addEventListeners() {
-    this.item.addEventListener("click", this.handleLikeBtnClick);
+    this.item.addEventListener("click", this.handleLikeButtonClick);
   }
 
   isLiked() {
@@ -34,7 +34,7 @@ export default class LikeButton {
     this.numberOfLikes.classList.remove("like-button__counter_active");
   }
 
-  handleLikeBtnClick = () => {
+  handleLikeButtonClick = () => {
     if (this.isLiked()) {
       this.heart.innerHTML = "favorite_border";
       this.heart.classList.remove("like-button__image_active");

@@ -2,7 +2,7 @@ extends ../../templates/template.pug
 include ../../components/date-dropdown/date-dropdown.pug
 include ../../components/dropdown/dropdown.pug
 include ../../components/range-slider/range-slider.pug
-include ../../components/checkbox-btn/checkbox-btn.pug
+include ../../components/checkbox-button/checkbox-button.pug
 include ../../components/room/room.pug
 include ../../components/rate-button/rate-button.pug
 include ../../components/pagination/pagination.pug
@@ -40,10 +40,10 @@ block main
         })
       .search-room__range-slider
         +range-slider()
-      .search-room__checkbox-btn
-        +checkbox-btn({name: 'Правила дома', expandable: false, list: ['Можно курить', 'Можно с питомцами', 'Можно пригласить гостей (до 10 человек)']})
+      .search-room__checkbox-button
+        +checkbox-button({name: 'Правила дома', expandable: false, list: ['Можно курить', 'Можно с питомцами', 'Можно пригласить гостей (до 10 человек)']})
       .search-room__rich-checkbox
-        +checkbox-btn({expandable: false, richCheckbox: 'true', name: 'Доступность', list: ['Широкий коридор', 'Помощник для инвалидов'], sublist: ['Ширина коридоров в номере не менее 91 см.', 'На 1 этаже вас встретит специалист  и проводит до номера.']})
+        +checkbox-button({expandable: false, richCheckbox: 'true', name: 'Доступность', list: ['Широкий коридор', 'Помощник для инвалидов'], sublist: ['Ширина коридоров в номере не менее 91 см.', 'На 1 этаже вас встретит специалист  и проводит до номера.']})
       .search-room__dropdown-rooms
         +dropdown({
           name: 'roomsBeds', 
@@ -66,7 +66,7 @@ block main
           ]
         })
       .search-room__expandable-checkbox
-        +checkbox-btn({expandable: true, name: 'Дополнительные удобства', list: ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь']})
+        +checkbox-button({expandable: true, name: 'Дополнительные удобства', list: ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь']})
     section.search-room__content
       h1.search-room__title Номера, которые мы для вас подобрали
       .search-room__rooms

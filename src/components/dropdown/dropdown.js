@@ -3,7 +3,7 @@ export default class Dropdown {
     this.item = item;
     this.init();
     this.addEventListeners();
-    this.disableMinusBtn();
+    this.disableMinusButton();
   }
 
   init() {
@@ -16,8 +16,8 @@ export default class Dropdown {
       this.dropdownList.querySelectorAll(".js-counter__value");
     if (this.isWithButtonsDropdown) {
       this.infants = this.item.querySelector('input[name = "infants"]');
-      this.btnApply = this.dropdownList.querySelector('button[name = "apply"]');
-      this.btnClear = this.dropdownList.querySelector('button[name = "clear"]');
+      this.buttonApply = this.dropdownList.querySelector('button[name = "apply"]');
+      this.buttonClear = this.dropdownList.querySelector('button[name = "clear"]');
       this.defaultValue = this.dropdownInput.dataset.value;
     }
   }
@@ -27,7 +27,7 @@ export default class Dropdown {
     document.addEventListener("click", this.handleDocumentClick);
     this.dropdownList.addEventListener("click", this.handleMinusOrPlusClick);
     if (this.isWithButtonsDropdown) {
-      this.btnClear.addEventListener("click", this.handleBtnClearClick);
+      this.buttonClear.addEventListener("click", this.handleButtonClearClick);
     }
   }
 
@@ -48,7 +48,7 @@ export default class Dropdown {
     const conditionForClosingDropdown2 =
       this.isDropdownOpened() &&
       this.isWithButtonsDropdown &&
-      target === this.btnApply;
+      target === this.buttonApply;
     if (conditionForClosingDropdown1) {
       this.closeDropdown();
     }
@@ -73,12 +73,12 @@ export default class Dropdown {
     const { target } = e;
     const counter = target.closest(".js-counter__enter");
     if (counter) {
-      const minus = counter.querySelector(".js-counter__btn_value_minus");
+      const minus = counter.querySelector(".js-counter__button_value_minus");
       const counterValue = counter.querySelector(".js-counter__value");
-      if (target.classList.contains("js-counter__btn_value_plus")) {
+      if (target.classList.contains("js-counter__button_value_plus")) {
         this.increment(counterValue, minus);
       }
-      if (target.classList.contains("js-counter__btn_value_minus")) {
+      if (target.classList.contains("js-counter__button_value_minus")) {
         this.decrement(counterValue, minus);
       }
       this.updateInput();
@@ -97,13 +97,13 @@ export default class Dropdown {
     }
   }
 
-  handleBtnClearClick = () => {
+  handleButtonClearClick = () => {
     this.input.value = this.defaultValue;
     this.counterValueArr.forEach((item) => {
       item.value = 0;
     });
-    this.disableMinusBtn();
-    this.hideBtnClear();
+    this.disableMinusButton();
+    this.hideButtonClear();
   };
 
   isDropdownOpened() {
@@ -114,11 +114,11 @@ export default class Dropdown {
     return this.input.getAttribute("dropdownType") === "withButtons";
   }
 
-  hideBtnClear() {
-    this.btnClear.classList.add("btn_hidden");
+  hideButtonClear() {
+    this.buttonClear.classList.add("button_hidden");
   }
 
-  disableMinusBtn() {
+  disableMinusButton() {
     this.counterValueArr.forEach((item) => {
       if (Number(item.value) === 0) {
         item.previousElementSibling.setAttribute("disabled", "disabled");
@@ -145,9 +145,9 @@ export default class Dropdown {
       }
       if (sum === 0) {
         this.input.value = this.defaultValue;
-        this.hideBtnClear();
+        this.hideButtonClear();
       } else {
-        this.btnClear.classList.remove("btn_hidden");
+        this.buttonClear.classList.remove("button_hidden");
       }
     } else {
       const itemsText = [];

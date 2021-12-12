@@ -3,7 +3,7 @@ include ../../components/UIkit/logo-UIkit/logo-UIkit.pug
 include ../../components/input/input.pug
 include ../../components/dropdown/dropdown.pug
 include ../../components/date-dropdown/date-dropdown.pug
-include ../../components/checkbox-btn/checkbox-btn.pug
+include ../../components/checkbox-button/checkbox-button.pug
 include ../../components/room-info/room-info.pug
 include ../../components/radio-buttons/radio-buttons.pug
 include ../../components/toggle/toggle.pug
@@ -13,7 +13,7 @@ include ../../components/bullet-list/bullet-list.pug
 include ../../components/review/review.pug
 include ../../components/pagination/pagination.pug
 include ../../components/range-slider/range-slider.pug
-include ../../components/btn/btn.pug
+include ../../components/button/button.pug
 
 
 
@@ -106,17 +106,17 @@ block content
               },
             ]
           })
-        .form-elements__checkbox-btn.form-elements__element.form-elements__checkbox-btn_not-expandable
-          +checkbox-btn({expandable: true, name: 'Expandable checkbox list', list: ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь'], forLabel: '1'})
-        .form-elements__checkbox-btn.form-elements__element
-          +checkbox-btn({expandable: true, name: 'Expandable checkbox list', list: ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь'], forLabel: '2'})
+        .form-elements__checkbox-button.form-elements__element.form-elements__checkbox-button_not-expandable
+          +checkbox-button({expandable: true, name: 'Expandable checkbox list', list: ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь'], forLabel: '1'})
+        .form-elements__checkbox-button.form-elements__element
+          +checkbox-button({expandable: true, name: 'Expandable checkbox list', list: ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь'], forLabel: '2'})
         .form-elements__room-details.form-elements__element
           +room-info({title: '', name: ['Комфорт', 'Удобство'], description: ['Шумопоглощающие стены', 'Окно в каждой из спален'], image: ['insert_emoticon', 'location_city']})
       .form-elements__global-row2
         .form-elements__sub-row
           .form-elements__sub-row1
-            .form-elements__checkbox-btn.form-elements__element
-              +checkbox-btn({expandable: false, name: 'Checkbox buttons', list: ['Можно курить', 'Можно с питомцами', 'Можно пригласить гостей (до 10 человек)']})
+            .form-elements__checkbox-button.form-elements__element
+              +checkbox-button({expandable: false, name: 'Checkbox buttons', list: ['Можно курить', 'Можно с питомцами', 'Можно пригласить гостей (до 10 человек)']})
             .form-elements__radio-buttons.form-elements__element
               +radio-buttons({name: 'Radio Buttons', list: ['Мужчина', 'Женщина']})
             .form-elements__toggle.form-elements__element
@@ -151,24 +151,24 @@ block content
                 ],
                 declination: 'гость, гостя, гостей',
               })
-            .form-elements__checkbox-btn.form-elements__element
-              +checkbox-btn({expandable: false, richCheckbox: 'true', name: 'Rich checkbox buttons', list: ['Широкий коридор', 'Помощник для инвалидов'], sublist: ['Ширина коридоров в номере не менее 91 см.', 'На 1 этаже вас встретит специалист  и проводит до номера.']})
+            .form-elements__checkbox-button.form-elements__element
+              +checkbox-button({expandable: false, richCheckbox: 'true', name: 'Rich checkbox buttons', list: ['Широкий коридор', 'Помощник для инвалидов'], sublist: ['Ширина коридоров в номере не менее 91 см.', 'На 1 этаже вас встретит специалист  и проводит до номера.']})
           .form-elements__sub-row2
             .form-elements__range-slider.js-form-elements__range-slider.form-elements__element
               +range-slider()
-            .form-elements__btn.form-elements__element
-              .form-elements__btn-title Buttons
-                .form-elements__btn-row1
-                  +btn({modifier: 'small-btn_color_gradient', text: 'click me'})
-                  +btn({modifier: 'small-btn_color_gradient', text: 'click me'})
-                .form-elements__btn-row2
-                  +btn({modifier: 'small-btn_with_border', text: 'click me'})
-                  +btn({modifier: 'small-btn_with_border', text: 'click me'})
-                .form-elements__btn-row3
-                  +btn({  modifier: 'btn_color_violent', text: 'click me'})
-                  +btn({ modifier: 'btn_color_black', text: 'click me'})
-                .form-elements__btn-row4
-                  +btn({modifier: 'btn_size_long', text: 'перейти к оплате'})
+            .form-elements__button.form-elements__element
+              .form-elements__button-title Buttons
+                .form-elements__button-row1
+                  +button({modifier: 'small-button_color_gradient', text: 'click me'})
+                  +button({modifier: 'small-button_color_gradient', text: 'click me'})
+                .form-elements__button-row2
+                  +button({modifier: 'small-button_with_border', text: 'click me'})
+                  +button({modifier: 'small-button_with_border', text: 'click me'})
+                .form-elements__button-row3
+                  +button({  modifier: 'button_color_violent', text: 'click me'})
+                  +button({ modifier: 'button_color_black', text: 'click me'})
+                .form-elements__button-row4
+                  +button({modifier: 'button_size_long', text: 'перейти к оплате'})
             .form-elements__pagination.form-elements__element
               .form-elements__pagination-title Pagination
                 +pagination()

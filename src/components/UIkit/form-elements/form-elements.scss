@@ -67,41 +67,41 @@
       margin-bottom: 255px;
     }
   }
-  &__btn-title,
+  &__button-title,
   &__pagination-title {
     @extend %h3;
   }
 
-  &__btn-row1 {
+  &__button-row1 {
     display: flex;
     margin-top: 15px;
     margin-bottom: 31px;
-    & .btn_color_gradient:first-child {
+    & .button_color_gradient:first-child {
       margin-right: 20px;
     }
   }
-  &__btn-row2 {
+  &__button-row2 {
     display: flex;
-    & .btn_with-border:first-child {
+    & .button_with-border:first-child {
       margin-right: 20px;
     }
   }
-  &__btn-row3 {
+  &__button-row3 {
     display: flex;
     margin-top: 30px;
     margin-bottom: 29px;
     margin-left: -3px;
-    & .btn:first-child {
+    & .button:first-child {
       margin-right: 9px;
     }
   }
-  &__btn_hovered {
+  &__button_hovered {
     opacity: 0.5;
   }
   &__subscription-input {
     width: 266px;
   }
-  &__checkbox-btn {
+  &__checkbox-button {
     &_not-expandable {
       margin-bottom: 50px;
     }
@@ -124,7 +124,7 @@
     margin-top: 8px;
     margin-bottom: 25px;
   }
-  &__btn {
+  &__button {
     margin-bottom: 40px;
   }
   &__pagination {

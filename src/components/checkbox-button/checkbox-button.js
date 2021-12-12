@@ -1,4 +1,4 @@
-export default class CheckboxBtn {
+export default class CheckboxButton {
   constructor(checkboxList) {
     this.checkboxList = checkboxList;
     this.init();
@@ -7,7 +7,7 @@ export default class CheckboxBtn {
 
   init() {
     this.cbList = this.checkboxList.querySelector(
-      ".js-checkbox-btn__expandableForm"
+      ".js-checkbox-button__expandableForm"
     );
     this.checkmark = this.checkboxList.querySelector(".js-checkmark");
   }
@@ -18,7 +18,7 @@ export default class CheckboxBtn {
 
   handleCheckboxClick = () => {
     if (this.isExpanded()) {
-      this.cbList.classList.toggle("checkbox-btn__expandableForm_show");
+      this.cbList.classList.toggle("checkbox-button__expandableForm_show");
       this.checkmark.classList.toggle("checkmark_direction_down");
       this.checkmark.classList.toggle("checkmark_direction_up");
     }
@@ -26,7 +26,7 @@ export default class CheckboxBtn {
 
   isExpanded() {
     return this.checkboxList.firstElementChild.classList.contains(
-      "js-checkbox-btn__expandableName"
+      "js-checkbox-button__expandableName"
     );
   }
 }

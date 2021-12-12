@@ -7,7 +7,7 @@ $height-l: 44px;
 // Dimensions for empty buttons
 $width-e: auto;
 $height-e: auto;
-.btn {
+.button {
   @extend %h3;
   display: block;
   box-sizing: border-box;

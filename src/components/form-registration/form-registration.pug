@@ -1,7 +1,7 @@
 include ../input/input.pug
 include ../radio-buttons/radio-buttons.pug
 include ../toggle/toggle.pug
-include ../btn/btn.pug
+include ../button/button.pug
 include ../link/link.pug
 
 mixin form-registration()
@@ -23,7 +23,7 @@ mixin form-registration()
         .form-registration__offers
             +toggle({label: 'Получать спецпредложения'})    
         .form-registration__submit
-            +btn({modifier: 'btn_size_long', text: 'Перейти к оплате', type: 'submit'})
+            +button({modifier: 'button_size_long', text: 'Перейти к оплате', type: 'submit'})
         .form-registration_is-registered
             .form-registration_is-registered_on-toxin
                 p.form-registration__text Уже есть аккаунт на Toxin
