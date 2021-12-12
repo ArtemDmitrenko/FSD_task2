@@ -8,17 +8,17 @@ include ../checkmark/checkmark.pug
   menuItems[0].subname[0].href - ссылка элемента подменю
   
 mixin nav-menu(menuItems)
-    nav.nav-menu.js-nav-menu
-        ul.nav-menu__list
-            - for (let i = 0; i < menuItems.length; i ++)
-                if !menuItems[i].submenu
-                    li.nav-menu__item    
-                        a.nav-menu__link.js-nav-menu__link(href = menuItems[i].href)= menuItems[i].name
-                else
-                    li.nav-menu__item.js-nav-menu__item_with-dropdown 
-                        a.nav-menu__link.js-nav-menu__link(href = menuItems[i].href)= menuItems[i].name
-                            +checkmark()
-                        ul.nav-menu__sub-list.js-nav-menu__sub-list
-                            - for (let j = 0; j < menuItems[i].submenu.length; j ++) 
-                                li.nav-menu__sub-item
-                                    a.nav-menu__sub-link(href = menuItems[i].submenu[j].subhref)= menuItems[i].submenu[j].subname 
+  nav.nav-menu.js-nav-menu
+    ul.nav-menu__list
+      - for (let i = 0; i < menuItems.length; i ++)
+        if !menuItems[i].submenu
+          li.nav-menu__item    
+            a.nav-menu__link.js-nav-menu__link(href = menuItems[i].href)= menuItems[i].name
+        else
+          li.nav-menu__item.js-nav-menu__item_with-dropdown 
+            a.nav-menu__link.js-nav-menu__link(href = menuItems[i].href)= menuItems[i].name
+              +checkmark()
+            ul.nav-menu__sub-list.js-nav-menu__sub-list
+              - for (let j = 0; j < menuItems[i].submenu.length; j ++) 
+                li.nav-menu__sub-item
+                  a.nav-menu__sub-link(href = menuItems[i].submenu[j].subhref)= menuItems[i].submenu[j].subname 

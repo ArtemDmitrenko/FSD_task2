@@ -7,30 +7,30 @@
 include ../checkmark/checkmark.pug
 
 mixin checkbox-button(options)
-    - const {name, expandable, richCheckbox, list, forLabel} = options
-    .checkbox-button.js-checkbox-button
-        if options.expandable
-            .checkbox-button__expandableName.js-checkbox-button__expandableName
-                .checkbox-button__title= options.name
-                +checkmark()
-            form.checkbox-button__expandableForm.js-checkbox-button__expandableForm(name="checkbox-button" method="get")
-                each nameOfButton in options.list
-                    .checkbox-button__item
-                        input.checkbox-button__input(type="checkbox", id="ecb" + forLabel + options.list.indexOf(nameOfButton))
-                        label.checkbox-button__label(for="ecb" + forLabel + options.list.indexOf(nameOfButton))= nameOfButton    
-        else 
-            .checkbox-button__name
-                .checkbox-button__title= options.name
-            if options.richCheckbox
-                form.checkbox-button__form(name="richCheckbox-button" method="get")
-                    each nameOfButton in options.list
-                        .checkbox-button__item
-                            input.checkbox-button__input(type="checkbox", id="rcb" + options.list.indexOf(nameOfButton))
-                            label.checkbox-button__label.checkbox-button__label_rich(for="rcb" + options.list.indexOf(nameOfButton))= nameOfButton
-                            p.checkbox-button__sublabel= options.sublist[options.list.indexOf(nameOfButton)]
-            else
-                form.checkbox-button__form(name="checkbox-button" method="get")
-                    each nameOfButton in options.list
-                        .checkbox-button__item
-                            input.checkbox-button__input(type="checkbox", id="cb" + options.list.indexOf(nameOfButton))
-                            label.checkbox-button__label(for="cb" + options.list.indexOf(nameOfButton))= nameOfButton
+  - const {name, expandable, richCheckbox, list, forLabel} = options
+  .checkbox-button.js-checkbox-button
+    if options.expandable
+      .checkbox-button__expandableName.js-checkbox-button__expandableName
+        .checkbox-button__title= options.name
+        +checkmark()
+      form.checkbox-button__expandableForm.js-checkbox-button__expandableForm(name="checkbox-button" method="get")
+        each nameOfButton in options.list
+          .checkbox-button__item
+            input.checkbox-button__input(type="checkbox", id="ecb" + forLabel + options.list.indexOf(nameOfButton))
+            label.checkbox-button__label(for="ecb" + forLabel + options.list.indexOf(nameOfButton))= nameOfButton    
+    else 
+      .checkbox-button__name
+        .checkbox-button__title= options.name
+      if options.richCheckbox
+        form.checkbox-button__form(name="richCheckbox-button" method="get")
+          each nameOfButton in options.list
+            .checkbox-button__item
+              input.checkbox-button__input(type="checkbox", id="rcb" + options.list.indexOf(nameOfButton))
+              label.checkbox-button__label.checkbox-button__label_rich(for="rcb" + options.list.indexOf(nameOfButton))= nameOfButton
+              p.checkbox-button__sublabel= options.sublist[options.list.indexOf(nameOfButton)]
+      else
+        form.checkbox-button__form(name="checkbox-button" method="get")
+          each nameOfButton in options.list
+            .checkbox-button__item
+              input.checkbox-button__input(type="checkbox", id="cb" + options.list.indexOf(nameOfButton))
+              label.checkbox-button__label(for="cb" + options.list.indexOf(nameOfButton))= nameOfButton

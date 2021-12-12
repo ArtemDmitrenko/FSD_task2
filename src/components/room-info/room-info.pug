@@ -5,13 +5,13 @@
   options.image - image of item
 
 mixin room-info(options)
-    - const {title, name, description, image} = options
-    .room-info
-        if title
-            h2.room-info__title= title
-        - for (let i = 0; i < name.length; i ++)
-            .room-info__all
-                .room-info__image= image[i]
-                .room-info__text
-                    h3.room-info__name= name[i]
-                    p.room-info__description= description[i]
+  - const {title, name, description, image} = options
+  .room-info
+    if title
+      h2.room-info__title= title
+    - for (let i = 0; i < name.length; i ++)
+      .room-info__all
+        .room-info__image= image[i]
+        .room-info__text
+          h3.room-info__name= name[i]
+          p.room-info__description= description[i]

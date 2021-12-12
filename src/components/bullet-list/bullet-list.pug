@@ -3,10 +3,10 @@
   options.list - list of items
 
 mixin bullet-list(options)
-    - const {name, list} = options
-    .bullet-list
-        if name
-            h3.bullet-list__name= name
-        ul.bullet-list__list
-            each nameOfItem in list
-                li.bullet-list__item= list[list.indexOf(nameOfItem)]
+  - const {name, list} = options
+  .bullet-list
+    if name
+      h3.bullet-list__name= name
+    ul.bullet-list__list
+      each nameOfItem in list
+        li.bullet-list__item= list[list.indexOf(nameOfItem)]

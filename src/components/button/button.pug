@@ -9,20 +9,20 @@
 //-     small-button_with_border
 
 mixin button(options)
-    - const {modifier, text, type, name} = options
+  - const {modifier, text, type, name} = options
 
-    case modifier
-      when "button_with-border"
-        .button_with-border
-            button(type = type).button.button__text #{text}
-      when "button_size_long"
-        button(type = type).button.button_size_long #{text} <span class='button__arrow'></span>
-      when "small-button_color_gradient"
-        button(type = type).button.button_color_gradient.button_color_size_small #{text}
-      when "small-button_with_border"
-        .button_with-border.button_size_low
-            button(type = type).button.button__text.button__text_header #{text}
-      when "button_color_violent"
-        button(type = type class = "button" class = "button_color_violent" name = name) #{text}
-      when "button_color_black"
-        button(type = type class = "button" class = "button_color_black" name = name) #{text}
+  case modifier
+    when "button_with-border"
+      .button_with-border
+        button(type = type).button.button__text #{text}
+    when "button_size_long"
+      button(type = type).button.button_size_long #{text} <span class='button__arrow'></span>
+    when "small-button_color_gradient"
+      button(type = type).button.button_color_gradient.button_color_size_small #{text}
+    when "small-button_with_border"
+      .button_with-border.button_size_low
+        button(type = type).button.button__text.button__text_header #{text}
+    when "button_color_violent"
+      button(type = type class = "button" class = "button_color_violent" name = name) #{text}
+    when "button_color_black"
+      button(type = type class = "button" class = "button_color_black" name = name) #{text}

@@ -2,10 +2,10 @@ extends ../../templates/template.pug
 include ../../components/registration-form/registration-form.pug
 
 block title
-    title Registration
+  title Registration
 
 block main
-    main.registration
-        img(src=require("./registration.png").default, alt="registration").registration__image
-        .registration__form
-            +registration-form()
+  main.registration
+    img(src=require("./registration.png").default, alt="registration").registration__image
+    .registration__form
+      +registration-form()

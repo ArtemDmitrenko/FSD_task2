@@ -6,45 +6,45 @@ include ../../components/diagram/diagram.pug
 include ../../components/confirmation-form/confirmation-form.pug
 
 block title
-    title Room Details
+  title Room Details
 
 block main
-    main.room-details
-        section.room-details__foto
-            .room-details__foto-part1
-                img(src=require("./img/img1.png").default, alt="img1").room-details__image
-            .room-details__foto-part2
-                .room-details__foto-part2-el1
-                    img(src=require("./img/img2.png").default, alt="img2").room-details__image
-                .room-details__foto-part2-el2
-                    img(src=require("./img/img3.png").default, alt="img3").room-details__image
-        section.room-details__content
-            .room-details__total
-                .room-details__column1
-                    .room-details__line1
-                        .room-details__info
-                            +room-info({title: 'Сведения о номере', name: ['Комфорт', 'Удобство', 'Уют'], description: ['Шумопоглощающие стены', 'Окно в каждой из спален', 'Номер оснащён камином'], image: ['insert_emoticon', 'location_city', 'whatshot']})
-                        h1.room-details__impression Впечатления от номера
-                            .room-details__diagram
-                                +diagram({good: "65", amazing: "130", notbad: "65", bad: "0"})
-                    .room-details__review
-                        .room-details__review-title
-                            h2.room-details__review-text Отзывы посетителей номера
-                            p.room-details__review-number-of-reviews 2 отзыва
-                        .room-details__review-block
-                            .room-details__review-block-item
-                                +review({nameOfFile: 'sarafanov', name: 'Мурад Сарафанов', date: '5 дней назад', numberOfLikes: '11', textOfReview: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'})
-                            .room-details__review-block-item
-                                +review({nameOfFile: 'steklyshkova', name: 'Патрисия Стёклышкова', date: 'Неделю назад', numberOfLikes: '2', textOfReview: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент'})
-                    .room-details__line2    
-                        .room-details__rules
-                            h2.room-details__rules-title Правила
-                            .room-details__rules-list
-                                +bullet-list({list: ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00']})
-                        .room-details__cancel
-                            h2.room-details__cancel-title Отмена
-                            p.room-details__cancel-text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
-                .room-details__column2
-                    .room-details__confirmation-form
-                        +confirmation-form()
-        .room-details__grey-line
+  main.room-details
+    section.room-details__foto
+      .room-details__foto-part1
+        img(src=require("./img/img1.png").default, alt="img1").room-details__image
+      .room-details__foto-part2
+        .room-details__foto-part2-el1
+          img(src=require("./img/img2.png").default, alt="img2").room-details__image
+        .room-details__foto-part2-el2
+          img(src=require("./img/img3.png").default, alt="img3").room-details__image
+    section.room-details__content
+      .room-details__total
+        .room-details__column1
+          .room-details__line1
+            .room-details__info
+              +room-info({title: 'Сведения о номере', name: ['Комфорт', 'Удобство', 'Уют'], description: ['Шумопоглощающие стены', 'Окно в каждой из спален', 'Номер оснащён камином'], image: ['insert_emoticon', 'location_city', 'whatshot']})
+            h1.room-details__impression Впечатления от номера
+              .room-details__diagram
+                +diagram({good: "65", amazing: "130", notbad: "65", bad: "0"})
+          .room-details__review
+            .room-details__review-title
+              h2.room-details__review-text Отзывы посетителей номера
+              p.room-details__review-number-of-reviews 2 отзыва
+            .room-details__review-block
+              .room-details__review-block-item
+                +review({nameOfFile: 'sarafanov', name: 'Мурад Сарафанов', date: '5 дней назад', numberOfLikes: '11', textOfReview: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'})
+              .room-details__review-block-item
+                +review({nameOfFile: 'steklyshkova', name: 'Патрисия Стёклышкова', date: 'Неделю назад', numberOfLikes: '2', textOfReview: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент'})
+          .room-details__line2    
+            .room-details__rules
+              h2.room-details__rules-title Правила
+              .room-details__rules-list
+                +bullet-list({list: ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00']})
+            .room-details__cancel
+              h2.room-details__cancel-title Отмена
+              p.room-details__cancel-text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+        .room-details__column2
+          .room-details__confirmation-form
+            +confirmation-form()
+    .room-details__grey-line

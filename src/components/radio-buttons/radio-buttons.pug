@@ -3,11 +3,11 @@
   options.list - array of buttons
 
 mixin radio-buttons(options)
-    - const {name, list, required} = options
-    .radio-buttons
-        if name
-            h3.radio-buttons__name= name
-        each nameOfButton in options.list
-            .radio-buttons__item
-                input.radio-buttons__input(type="radio", id="rb1" + options.list.indexOf(nameOfButton), name="gender", value=nameOfButton, required = required)
-                label.radio-buttons__label(for="rb1" + options.list.indexOf(nameOfButton))= nameOfButton  
+  - const {name, list, required} = options
+  .radio-buttons
+    if name
+      h3.radio-buttons__name= name
+    each nameOfButton in options.list
+      .radio-buttons__item
+        input.radio-buttons__input(type="radio", id="rb1" + options.list.indexOf(nameOfButton), name="gender", value=nameOfButton, required = required)
+        label.radio-buttons__label(for="rb1" + options.list.indexOf(nameOfButton))= nameOfButton  

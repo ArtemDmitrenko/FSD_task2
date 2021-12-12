@@ -3,17 +3,17 @@ include ../button/button.pug
 include ../link/link.pug
 
 mixin log-in-form()
-    form(action="#" method="post").log-in-form
-        h1.log-in-form__title Войти
-        .log-in-form__email
-            +input({name: 'E-mail', type: 'email', placeholder: 'Email', required: 'required'})
-        .log-in-form__password
-            +input({name: 'Password', type: 'text', placeholder: 'Пароль', required: 'required'})
-        .log-in-form__submit
-            +button({modifier: 'button_size_long', text: 'Войти', type: 'submit'})
-        .log-in-form__registered
-            .log-in-form__registered-on-Toxin
-                p.log-in-form__text Нет аккаунта на Toxin?
-            .log-in-form__link
-                +link({link: './registration.html', text: 'Создать', type: 'big'})
+  form(action="#" method="post").log-in-form
+    h1.log-in-form__title Войти
+    .log-in-form__email
+      +input({name: 'E-mail', type: 'email', placeholder: 'Email', required: 'required'})
+    .log-in-form__password
+      +input({name: 'Password', type: 'text', placeholder: 'Пароль', required: 'required'})
+    .log-in-form__submit
+      +button({modifier: 'button_size_long', text: 'Войти', type: 'submit'})
+    .log-in-form__registered
+      .log-in-form__registered-on-Toxin
+        p.log-in-form__text Нет аккаунта на Toxin?
+      .log-in-form__link
+        +link({link: './registration.html', text: 'Создать', type: 'big'})
 

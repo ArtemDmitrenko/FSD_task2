@@ -3,10 +3,10 @@
   options.label - label of toggle
 
 mixin toggle(options)
-    - const {name, label} = options
-    .toggle
-        if name
-            h3.toggle__name= name
-        .toggle__item
-            input.toggle__input(type="checkbox", id="toggle", name="Special offers")
-            label.toggle__label(for="toggle")= label  
+  - const {name, label} = options
+  .toggle
+    if name
+      h3.toggle__name= name
+    .toggle__item
+      input.toggle__input(type="checkbox", id="toggle", name="Special offers")
+      label.toggle__label(for="toggle")= label  

@@ -4,22 +4,22 @@ include ../nav-menu/nav-menu.pug
 include ../link/link.pug
 
 mixin header(options)
-    -   const {modifier} = options
-    - const menuItems = require('../../templates/menu-items.json')
-    header.header.js-header
-        .header__container.js-header__container
-            .header__content
-                a.header__link(href="./landing-page.html") 
-                    +logo()
-                .header__with-nav-menu-buttons.js-header__with-nav-menu-buttons
-                    +nav-menu(menuItems)
-                    if modifier == "Registered"
-                        .header__line
-                        .header__user-name Юлий Цезарь
-                    else
-                        .header__link
-                            +link({link: './sign-in.html', text: 'Войти', type: 'small'})
-                        .header__link-sign
-                            +link({link: './registration.html', text: 'Зарегистрироваться', type: 'purple'})
-                .header__burger.js-header__burger
-                    span
+  - const {modifier} = options
+  - const menuItems = require('../../templates/menu-items.json')
+  header.header.js-header
+    .header__container.js-header__container
+      .header__content
+        a.header__link(href="./landing-page.html") 
+          +logo()
+        .header__with-nav-menu-buttons.js-header__with-nav-menu-buttons
+          +nav-menu(menuItems)
+          if modifier == "Registered"
+            .header__line
+            .header__user-name Юлий Цезарь
+          else
+            .header__link
+              +link({link: './sign-in.html', text: 'Войти', type: 'small'})
+            .header__link-sign
+              +link({link: './registration.html', text: 'Зарегистрироваться', type: 'purple'})
+        .header__burger.js-header__burger
+          span

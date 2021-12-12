@@ -5,14 +5,14 @@ include ../like-button/like-button.pug
   options.list - list of items
 
 mixin review(options)
-    - const {nameOfFile, name, date, numberOfLikes, textOfReview} = options;
-    .review
-        .review__part1
-            img.review__image(src=require(`../../../src/components/review/${nameOfFile}.png`).default, alt=`${name}`)
-            .review__description
-                h3.review__name= name
-                p.review__date= date
-        .review__part2
-            .review__like-button
-                +like-button({numberOfLikes: numberOfLikes})
-            p.review__text= textOfReview
+  - const {nameOfFile, name, date, numberOfLikes, textOfReview} = options;
+  .review
+    .review__part1
+      img.review__image(src=require(`../../../src/components/review/${nameOfFile}.png`).default, alt=`${name}`)
+      .review__description
+        h3.review__name= name
+        p.review__date= date
+    .review__part2
+      .review__like-button
+        +like-button({numberOfLikes: numberOfLikes})
+      p.review__text= textOfReview
