@@ -8,5 +8,6 @@ mixin toggle(options)
     if name
       h3.toggle__name= name
     .toggle__item
-      input.toggle__input(type="checkbox", id="toggle", name="Special offers")
-      label.toggle__label(for="toggle")= label  
+      label.toggle__label
+        input.toggle__input(type="checkbox", name="Special offers")
+        span.toggle__text= label

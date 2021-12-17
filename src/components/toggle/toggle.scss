@@ -4,6 +4,9 @@
     @extend %h3;
     margin-bottom: 15px;
   }
+  &__text {
+    padding-left: 50px;
+  }
   &__input {
     position: relative;
     width: 0;
@@ -15,7 +18,6 @@
       box-sizing: border-box;
       width: 40px;
       height: 20px;
-      margin: 0;
       border: solid 1px $dark25;
       border-radius: 10px;
       content: "";
@@ -45,14 +47,9 @@
     }
   }
   &__label {
-    display: inline-block;
-    margin-left: 46px;
+    display: flex;
     color: $dark75;
     cursor: pointer;
     @extend %font-body;
-    @media screen and (max-width: 420px) {
-      max-width: 150px;
-      margin-left: 50px;
-    }
   }
 }
