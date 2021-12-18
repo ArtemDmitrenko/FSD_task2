@@ -16,8 +16,12 @@ export default class Dropdown {
       this.dropdownList.querySelectorAll(".js-counter__value");
     if (this.isWithButtonsDropdown) {
       this.infants = this.item.querySelector('input[name = "infants"]');
-      this.buttonApply = this.dropdownList.querySelector('button[name = "apply"]');
-      this.buttonClear = this.dropdownList.querySelector('button[name = "clear"]');
+      this.buttonApply = this.dropdownList.querySelector(
+        'button[name = "apply"]'
+      );
+      this.buttonClear = this.dropdownList.querySelector(
+        'button[name = "clear"]'
+      );
       this.defaultValue = this.dropdownInput.dataset.value;
     }
   }
@@ -73,12 +77,12 @@ export default class Dropdown {
     const { target } = e;
     const counter = target.closest(".js-counter__enter");
     if (counter) {
-      const minus = counter.querySelector(".js-counter__button_value_minus");
+      const minus = counter.querySelector(".js-counter__decrement");
       const counterValue = counter.querySelector(".js-counter__value");
-      if (target.classList.contains("js-counter__button_value_plus")) {
+      if (target.classList.contains("js-counter__increment")) {
         this.increment(counterValue, minus);
       }
-      if (target.classList.contains("js-counter__button_value_minus")) {
+      if (target.classList.contains("js-counter__decrement")) {
         this.decrement(counterValue, minus);
       }
       this.updateInput();

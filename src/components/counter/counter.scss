@@ -24,6 +24,8 @@
     width: 30px;
     height: 30px;
     color: $dark50;
+    font-size: unset;
+    line-height: 1px;
     background-color: #fff;
     border-color: $dark25;
     border-width: 1px;
@@ -47,18 +49,8 @@
       );
       box-shadow: 0 0 hsl(5, 60%, 60%);
     }
-    &_value {
-      &_plus {
-        font-size: unset;
-        line-height: 1px;
-      }
-      &_minus {
-        font-size: unset;
-        line-height: 1px;
-        &:disabled {
-          opacity: 0.38;
-        }
-      }
+    &:disabled {
+      opacity: 0.38;
     }
   }
 }
