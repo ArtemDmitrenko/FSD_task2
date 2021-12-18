@@ -27,20 +27,20 @@
   src: url(../assets/fonts/montserrat-regular.eot);
   src: local("☺"), url(../assets/fonts/montserrat-regular.woff) format("woff"), url(../assets/fonts/montserrat-regular.ttf) format("truetype"), url(../assets/fonts/montserrat-regular.svg) format("svg"); }
 
-.header__user-name, .nav-menu__link, .nav-menu__sub-link, .form-registration__text, .input__description, .input__element, .footer-tab__text, .radio-buttons__label, .toggle__label, .footer-big__text, .footer-big__item_line-height_24, .footer-big__link, .footer-big__copyright {
+.header__user-name, .nav-menu__link, .nav-menu__sub-link, .log-in-form__text, .input__description, .input__element, .footer-tab__text, .radio-buttons__content, .toggle__label, .footer-big__text, .footer-big__item_line-height_24, .footer-big__link, .footer-big__copyright {
   color: #1f2041;
   font-weight: 400;
   font-size: 14px;
   font-family: "Montserrat", "Arial", sans-serif; }
 
-.btn, .nav-menu__link_active, .input__heading, .radio-buttons__name, .toggle__name, .link, .footer-big__title {
+.button, .nav-menu__link_active, .input__heading, .radio-buttons__name, .toggle__name, .link, .footer-big__title {
   color: #1f2041;
   font-weight: 700;
   font-size: 12px;
   font-family: "Montserrat", "Arial", sans-serif;
   text-transform: uppercase; }
 
-.form-registration__title {
+.log-in-form__title {
   color: #1f2041;
   font-weight: 700;
   font-size: 24px;
@@ -119,17 +119,17 @@ a {
     @media screen and (max-width: 992px) {
       .header__link {
         display: none; } }
-    .header__link .btn_with-border {
+    .header__link .button_with-border {
       width: 83px;
       height: 29px; }
-    .header__link .btn__text {
+    .header__link .button__text {
       line-height: 20px; }
   .header__link-sign {
     width: 196px; }
     @media screen and (max-width: 992px) {
       .header__link-sign {
         display: none; } }
-    .header__link-sign .btn_color_gradient {
+    .header__link-sign .button_color_gradient {
       width: 100%;
       height: 34px; }
   .header__line {
@@ -200,7 +200,7 @@ a {
 .logo {
   height: 40px; }
 
-.btn {
+.button {
   display: block;
   box-sizing: border-box;
   letter-spacing: -0.01em;
@@ -208,20 +208,20 @@ a {
   border: none;
   outline: none;
   cursor: pointer; }
-  .btn_color_gradient {
+  .button_color_gradient {
     width: 99px;
     height: 44px;
     color: #fff;
     background-image: linear-gradient(to bottom, #bc9cff, #8ba4f9);
     border-radius: 22px;
     transition: opacity 0.4s ease; }
-    .btn_color_gradient:hover {
+    .button_color_gradient:hover {
       opacity: 0.5;
       transition: opacity 0.4s ease; }
-  .btn_size_small {
+  .button_size_small {
     width: 196px;
     height: 34px; }
-  .btn_with-border {
+  .button_with-border {
     width: 95px;
     height: 40px;
     background-image: linear-gradient(white, white), linear-gradient(to bottom, #bc9cff, #8ba4f9);
@@ -230,39 +230,39 @@ a {
     border: double 2px transparent;
     border-radius: 26px;
     transition: opacity 0.4s ease; }
-    .btn_with-border:hover {
+    .button_with-border:hover {
       opacity: 0.5;
       transition: opacity 0.4s ease; }
-  .btn_size_low {
+  .button_size_low {
     width: calc(87px - 4px);
     height: calc(34px - 4px); }
-  .btn__text {
+  .button__text {
     margin: 0 auto;
     color: #bc9cff;
     line-height: 40px; }
-    .btn__text_header {
+    .button__text_header {
       margin-top: 5px;
       line-height: 30px; }
-  .btn_color_violent {
+  .button_color_violent {
     width: auto;
     height: auto;
     color: #bc9cff; }
-  .btn_color_black {
+  .button_color_black {
     width: auto;
     height: auto;
     color: #1f2041;
     opacity: 0.5; }
-  .btn_size_long {
+  .button_size_long {
     width: 100%;
     height: 44px;
     color: #fff;
     background-image: linear-gradient(to bottom, #bc9cff, #8ba4f9);
     border-radius: 22px;
     transition: opacity 0.4s ease; }
-    .btn_size_long:hover {
+    .button_size_long:hover {
       opacity: 0.5;
       transition: opacity 0.4s ease; }
-  .btn__arrow {
+  .button__arrow {
     position: relative;
     top: -9px;
     left: 92%;
@@ -270,7 +270,7 @@ a {
     width: 15px;
     height: 2px;
     background-color: #fff; }
-    .btn__arrow::after {
+    .button__arrow::after {
       position: absolute;
       top: -3px;
       right: -3px;
@@ -279,7 +279,7 @@ a {
       background-color: #fff;
       transform: rotate(45deg);
       content: ""; }
-    .btn__arrow::before {
+    .button__arrow::before {
       position: absolute;
       top: 3px;
       right: -3px;
@@ -289,9 +289,9 @@ a {
       transform: rotate(-45deg);
       content: ""; }
     @media screen and (max-width: 420px) {
-      .btn__arrow {
+      .button__arrow {
         left: 90%; } }
-  .btn_hidden {
+  .button_hidden {
     display: none; }
 
 .nav-menu__list {
@@ -337,7 +337,7 @@ a {
 .social-nets__link {
   padding-left: 22px; }
 
-.arrow_direction_right {
+.arrow {
   position: relative;
   display: block;
   width: 15px;
@@ -358,12 +358,6 @@ a {
     height: 2px;
     transform: rotate(-45deg);
     content: ""; }
-
-.arrow_direction_left {
-  position: relative;
-  display: block;
-  width: 15px;
-  height: 2px; }
   .arrow_direction_left::after {
     position: absolute;
     top: 3px;
@@ -380,20 +374,18 @@ a {
     height: 2px;
     transform: rotate(-45deg);
     content: ""; }
-
-.arrow_color_purple {
-  background-color: #bc9cff; }
-  .arrow_color_purple::after {
+  .arrow_color_purple {
     background-color: #bc9cff; }
-  .arrow_color_purple::before {
-    background-color: #bc9cff; }
-
-.arrow_color_white {
-  background-color: white; }
-  .arrow_color_white::after {
+    .arrow_color_purple::after {
+      background-color: #bc9cff; }
+    .arrow_color_purple::before {
+      background-color: #bc9cff; }
+  .arrow_color_white {
     background-color: white; }
-  .arrow_color_white::before {
-    background-color: white; }
+    .arrow_color_white::after {
+      background-color: white; }
+    .arrow_color_white::before {
+      background-color: white; }
 
 .checkmark {
   display: inline-block;
@@ -412,7 +404,7 @@ a {
     margin: 4px 7px -3px 9.5px;
     transform: rotate(225deg); }
 
-.form-registration {
+.log-in-form {
   box-sizing: border-box;
   max-width: 380px;
   padding: 30px;
@@ -420,35 +412,23 @@ a {
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 4px;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.12); }
-  .form-registration__title {
+  .log-in-form__title {
     margin-top: 8px;
-    margin-bottom: 19px; }
-  .form-registration__name {
+    margin-bottom: 18px; }
+  .log-in-form__email {
     margin-bottom: 10px; }
-  .form-registration__surname {
-    margin-bottom: 10px; }
-  .form-registration__gender {
-    margin-bottom: 45px; }
-  .form-registration__email {
-    margin-top: 40px;
-    margin-bottom: 10px; }
-  .form-registration__offers {
-    margin-top: 10px;
-    margin-bottom: 17px; }
-    @media screen and (max-width: 330px) {
-      .form-registration__offers .toggle__input {
-        vertical-align: top; } }
-  .form-registration__submit {
-    margin-bottom: 29px; }
-  .form-registration_is-registered {
+  .log-in-form__submit {
+    margin-top: 22px;
+    margin-bottom: 28px; }
+  .log-in-form__registered {
     display: flex;
     align-items: center;
     justify-content: space-between; }
-  .form-registration__text {
+  .log-in-form__text {
     color: #000; }
     @media screen and (max-width: 420px) {
-      .form-registration__text {
-        max-width: 140px; } }
+      .log-in-form__text {
+        max-width: 115px; } }
 
 .input {
   position: relative;
@@ -578,65 +558,72 @@ a {
   .footer-tab__social-nets {
     padding-right: 22px; }
 
-.radio-buttons__item {
-  display: inline;
-  margin-right: 11px;
-  padding-bottom: 5px;
-  cursor: pointer; }
-
 .radio-buttons__name {
   margin-bottom: 17px; }
 
-.radio-buttons__input {
-  margin: 0;
-  vertical-align: middle;
+.radio-buttons__group {
+  display: flex;
+  justify-content: space-between;
+  max-width: 220px; }
+
+.radio-buttons__label {
+  position: relative;
+  display: inline-flex;
+  outline: none;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+.radio-buttons__content {
+  display: flex;
+  align-items: center;
+  color: rgba(31, 32, 65, 0.5);
   cursor: pointer; }
-  .radio-buttons__input::before {
-    position: relative;
-    top: -5px;
-    left: -1px;
-    display: inline-block;
-    width: 18px;
-    height: 18px;
-    background-color: white;
+  .radio-buttons__content::before {
+    box-sizing: border-box;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
     border: 1px solid rgba(31, 32, 65, 0.25);
-    border-radius: 18px;
-    visibility: visible;
+    border-radius: 50%;
     content: ""; }
-  .radio-buttons__input:checked::before {
-    position: relative;
-    top: -5px;
-    left: -1px;
-    display: inline-block;
-    width: 18px;
-    height: 18px;
-    border: 1px solid #bc9cff;
-    border-radius: 18px;
-    visibility: visible;
-    content: ""; }
-  .radio-buttons__input:checked::after {
-    position: relative;
-    top: -24px;
-    left: 3px;
-    display: inline-block;
+  .radio-buttons__content::after {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    display: none;
     width: 12px;
     height: 12px;
     background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
-    border-radius: 12px;
-    visibility: visible;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
     content: ""; }
-  .radio-buttons__input:checked + label {
-    color: rgba(31, 32, 65, 0.75); }
 
-.radio-buttons__label {
-  margin-left: 16px;
-  color: rgba(31, 32, 65, 0.5);
-  cursor: pointer; }
+.radio-buttons__input {
+  position: absolute;
+  z-index: -1;
+  width: 0;
+  opacity: 0; }
+  .radio-buttons__input:focus + .radio-buttons__content {
+    color: #1f2041; }
+    .radio-buttons__input:focus + .radio-buttons__content::before {
+      box-shadow: 3px 3px 3px #bc9cff; }
+
+.radio-buttons__input:checked + .radio-buttons__content {
+  color: #1f2041; }
+  .radio-buttons__input:checked + .radio-buttons__content::before {
+    border-color: #bc9cff; }
+  .radio-buttons__input:checked + .radio-buttons__content::after {
+    display: block; }
 
 .toggle {
   padding-bottom: 10px; }
   .toggle__name {
     margin-bottom: 15px; }
+  .toggle__text {
+    padding-left: 50px; }
   .toggle__input {
     position: relative;
     width: 0;
@@ -648,7 +635,6 @@ a {
       box-sizing: border-box;
       width: 40px;
       height: 20px;
-      margin: 0;
       border: solid 1px rgba(31, 32, 65, 0.25);
       border-radius: 10px;
       content: ""; }
@@ -669,14 +655,9 @@ a {
       transform: translateX(18px);
       transition: 0.4s; }
   .toggle__label {
-    display: inline-block;
-    margin-left: 46px;
+    display: flex;
     color: rgba(31, 32, 65, 0.75);
     cursor: pointer; }
-    @media screen and (max-width: 420px) {
-      .toggle__label {
-        max-width: 150px;
-        margin-left: 50px; } }
 
 .link {
   display: block;
@@ -779,28 +760,27 @@ a {
   .footer-big__form .input__element {
     padding-right: 45px; }
 
-.registration {
+.sign-in {
   position: relative;
   flex: 1 0 auto;
-  height: 684px; }
-  .registration__image {
+  height: 702px; }
+  .sign-in__image {
     width: 100%;
     height: 100%;
     -o-object-fit: cover;
        object-fit: cover; }
-  .registration__form {
+  .sign-in__form {
     position: absolute;
-    top: 2.8%;
+    top: 50%;
     left: 50%;
     width: 380px;
-    padding-right: 8px;
-    padding-left: 8px;
+    margin-top: -180px;
+    padding-right: 20px;
+    padding-left: 20px;
     transform: translate(-50%, 0); }
     @media screen and (max-width: 420px) {
-      .registration__form {
+      .sign-in__form {
         width: -webkit-fit-content;
         width: -moz-fit-content;
         width: fit-content; } }
 
-
-/*# sourceMappingURL=registration.css.map*/

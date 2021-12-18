@@ -28,26 +28,26 @@
   src: url(../assets/fonts/montserrat-regular.eot);
   src: local("☺"), url(../assets/fonts/montserrat-regular.woff) format("woff"), url(../assets/fonts/montserrat-regular.ttf) format("truetype"), url(../assets/fonts/montserrat-regular.svg) format("svg"); }
 
-.header__user-name, .nav-menu__link, .nav-menu__sub-link, .input__description, .input__element, .footer-tab__text, .room-info__description, .review__date, .review__text, .like-button__counter, .bullet-list__item, .diagram__list-item, .form-confirmation__price span, .form-confirmation__text, .form-confirmation__sum, .datepicker--cells, .footer-big__text, .footer-big__item_line-height_24, .footer-big__link, .footer-big__copyright, .room-details__review-number-of-reviews, .room-details__cancel-text {
+.header__user-name, .nav-menu__link, .nav-menu__sub-link, .input__description, .input__element, .footer-tab__text, .room-info__description, .review__date, .review__text, .like-button__counter, .bullet-list__item, .diagram__list-item, .confirmation-form__price span, .confirmation-form__text, .confirmation-form__sum, .datepicker--cells, .footer-big__text, .footer-big__item_line-height_24, .footer-big__link, .footer-big__copyright, .room-details__review-number-of-reviews, .room-details__cancel-text {
   color: #1f2041;
   font-weight: 400;
   font-size: 14px;
   font-family: "Montserrat", "Arial", sans-serif; }
 
-.btn, .nav-menu__link_active, .input__heading, .room-info__name, .review__name, .like-button__name, .bullet-list__name, .diagram__total span, .form-confirmation__room-type, .form-confirmation__price, .form-confirmation__letter, .datepicker--day-name, .datepicker--button, .counter__name, .counter__value, .link, .footer-big__title {
+.button, .nav-menu__link_active, .input__heading, .room-info__name, .review__name, .like-button__name, .bullet-list__name, .diagram__total span, .confirmation-form__room-type, .confirmation-form__price, .confirmation-form__letter, .datepicker--day-name, .datepicker--button, .counter__name, .counter__value, .link, .footer-big__title {
   color: #1f2041;
   font-weight: 700;
   font-size: 12px;
   font-family: "Montserrat", "Arial", sans-serif;
   text-transform: uppercase; }
 
-.room-info__title, .form-confirmation__final, .form-confirmation__rubles, .room-details__impression, .room-details__review-text, .room-details__rules-title, .room-details__cancel-title {
+.room-info__title, .confirmation-form__final, .confirmation-form__rubles, .room-details__impression, .room-details__review-text, .room-details__rules-title, .room-details__cancel-title {
   color: #1f2041;
   font-weight: 700;
   font-size: 19px;
   font-family: "Quicksand", "Arial", sans-serif; }
 
-.diagram__total, .form-confirmation__room-number {
+.diagram__total, .confirmation-form__room-number {
   color: #1f2041;
   font-weight: 700;
   font-size: 24px;
@@ -126,17 +126,17 @@ a {
     @media screen and (max-width: 992px) {
       .header__link {
         display: none; } }
-    .header__link .btn_with-border {
+    .header__link .button_with-border {
       width: 83px;
       height: 29px; }
-    .header__link .btn__text {
+    .header__link .button__text {
       line-height: 20px; }
   .header__link-sign {
     width: 196px; }
     @media screen and (max-width: 992px) {
       .header__link-sign {
         display: none; } }
-    .header__link-sign .btn_color_gradient {
+    .header__link-sign .button_color_gradient {
       width: 100%;
       height: 34px; }
   .header__line {
@@ -207,7 +207,7 @@ a {
 .logo {
   height: 40px; }
 
-.btn {
+.button {
   display: block;
   box-sizing: border-box;
   letter-spacing: -0.01em;
@@ -215,20 +215,20 @@ a {
   border: none;
   outline: none;
   cursor: pointer; }
-  .btn_color_gradient {
+  .button_color_gradient {
     width: 99px;
     height: 44px;
     color: #fff;
     background-image: linear-gradient(to bottom, #bc9cff, #8ba4f9);
     border-radius: 22px;
     transition: opacity 0.4s ease; }
-    .btn_color_gradient:hover {
+    .button_color_gradient:hover {
       opacity: 0.5;
       transition: opacity 0.4s ease; }
-  .btn_size_small {
+  .button_size_small {
     width: 196px;
     height: 34px; }
-  .btn_with-border {
+  .button_with-border {
     width: 95px;
     height: 40px;
     background-image: linear-gradient(white, white), linear-gradient(to bottom, #bc9cff, #8ba4f9);
@@ -237,39 +237,39 @@ a {
     border: double 2px transparent;
     border-radius: 26px;
     transition: opacity 0.4s ease; }
-    .btn_with-border:hover {
+    .button_with-border:hover {
       opacity: 0.5;
       transition: opacity 0.4s ease; }
-  .btn_size_low {
+  .button_size_low {
     width: calc(87px - 4px);
     height: calc(34px - 4px); }
-  .btn__text {
+  .button__text {
     margin: 0 auto;
     color: #bc9cff;
     line-height: 40px; }
-    .btn__text_header {
+    .button__text_header {
       margin-top: 5px;
       line-height: 30px; }
-  .btn_color_violent {
+  .button_color_violent {
     width: auto;
     height: auto;
     color: #bc9cff; }
-  .btn_color_black {
+  .button_color_black {
     width: auto;
     height: auto;
     color: #1f2041;
     opacity: 0.5; }
-  .btn_size_long {
+  .button_size_long {
     width: 100%;
     height: 44px;
     color: #fff;
     background-image: linear-gradient(to bottom, #bc9cff, #8ba4f9);
     border-radius: 22px;
     transition: opacity 0.4s ease; }
-    .btn_size_long:hover {
+    .button_size_long:hover {
       opacity: 0.5;
       transition: opacity 0.4s ease; }
-  .btn__arrow {
+  .button__arrow {
     position: relative;
     top: -9px;
     left: 92%;
@@ -277,7 +277,7 @@ a {
     width: 15px;
     height: 2px;
     background-color: #fff; }
-    .btn__arrow::after {
+    .button__arrow::after {
       position: absolute;
       top: -3px;
       right: -3px;
@@ -286,7 +286,7 @@ a {
       background-color: #fff;
       transform: rotate(45deg);
       content: ""; }
-    .btn__arrow::before {
+    .button__arrow::before {
       position: absolute;
       top: 3px;
       right: -3px;
@@ -296,9 +296,9 @@ a {
       transform: rotate(-45deg);
       content: ""; }
     @media screen and (max-width: 420px) {
-      .btn__arrow {
+      .button__arrow {
         left: 90%; } }
-  .btn_hidden {
+  .button_hidden {
     display: none; }
 
 .nav-menu__list {
@@ -344,7 +344,7 @@ a {
 .social-nets__link {
   padding-left: 22px; }
 
-.arrow_direction_right {
+.arrow {
   position: relative;
   display: block;
   width: 15px;
@@ -365,12 +365,6 @@ a {
     height: 2px;
     transform: rotate(-45deg);
     content: ""; }
-
-.arrow_direction_left {
-  position: relative;
-  display: block;
-  width: 15px;
-  height: 2px; }
   .arrow_direction_left::after {
     position: absolute;
     top: 3px;
@@ -387,20 +381,18 @@ a {
     height: 2px;
     transform: rotate(-45deg);
     content: ""; }
-
-.arrow_color_purple {
-  background-color: #bc9cff; }
-  .arrow_color_purple::after {
+  .arrow_color_purple {
     background-color: #bc9cff; }
-  .arrow_color_purple::before {
-    background-color: #bc9cff; }
-
-.arrow_color_white {
-  background-color: white; }
-  .arrow_color_white::after {
+    .arrow_color_purple::after {
+      background-color: #bc9cff; }
+    .arrow_color_purple::before {
+      background-color: #bc9cff; }
+  .arrow_color_white {
     background-color: white; }
-  .arrow_color_white::before {
-    background-color: white; }
+    .arrow_color_white::after {
+      background-color: white; }
+    .arrow_color_white::before {
+      background-color: white; }
 
 .checkmark {
   display: inline-block;
@@ -748,7 +740,7 @@ a {
       .diagram__legend {
         margin-left: 0; } }
 
-.form-confirmation {
+.confirmation-form {
   box-sizing: border-box;
   max-width: 380px;
   padding: 30px 30px 30px 28px;
@@ -756,66 +748,66 @@ a {
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 4px;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.12); }
-  .form-confirmation__room-description {
+  .confirmation-form__room-description {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
     margin-top: 10px;
     margin-bottom: 40px; }
-  .form-confirmation__room-number {
+  .confirmation-form__room-number {
     display: inline-block; }
-    .form-confirmation__room-number span {
+    .confirmation-form__room-number span {
       font-size: 14px; }
-  .form-confirmation__room-type {
+  .confirmation-form__room-type {
     display: inline-block;
     margin-left: 5px;
     color: #bc9cff; }
-  .form-confirmation__price {
+  .confirmation-form__price {
     color: rgba(31, 32, 65, 0.5);
     font-size: 14px; }
-    .form-confirmation__price span {
+    .confirmation-form__price span {
       color: rgba(31, 32, 65, 0.5);
       font-size: 12px;
       text-transform: none; }
-  .form-confirmation__dates {
+  .confirmation-form__dates {
     display: flex;
     justify-content: space-between;
     margin-bottom: 40px; }
-  .form-confirmation__part {
+  .confirmation-form__part {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
     margin-bottom: 15px;
     margin-left: 3px; }
-  .form-confirmation__text {
+  .confirmation-form__text {
     display: inline-block;
     max-width: 214px;
     color: rgba(31, 32, 65, 0.75);
     line-height: 18px; }
-  .form-confirmation__sum {
+  .confirmation-form__sum {
     display: inline-block;
     margin-left: 5px;
     color: rgba(31, 32, 65, 0.75);
     line-height: 18px; }
-  .form-confirmation__total {
+  .confirmation-form__total {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
     margin-top: 29px;
     margin-left: 3px; }
-  .form-confirmation__ellipsis {
+  .confirmation-form__ellipsis {
     box-sizing: border-box;
     width: 57%;
     height: 1px;
     border: 1px dashed rgba(31, 32, 65, 0.25); }
     @media screen and (max-width: 386px) {
-      .form-confirmation__ellipsis {
+      .confirmation-form__ellipsis {
         width: 40%; } }
-  .form-confirmation__guests {
+  .confirmation-form__guests {
     margin-bottom: 21px; }
-  .form-confirmation__submit {
+  .confirmation-form__submit {
     margin-top: 17px; }
-  .form-confirmation__info {
+  .confirmation-form__info {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -826,12 +818,12 @@ a {
     border: 1px solid rgba(31, 32, 65, 0.25);
     border-radius: 50%; }
     @media screen and (max-width: 360px) {
-      .form-confirmation__info {
+      .confirmation-form__info {
         display: none; } }
-  .form-confirmation__letter {
+  .confirmation-form__letter {
     color: rgba(31, 32, 65, 0.25);
     text-transform: none; }
-  .form-confirmation__text-info {
+  .confirmation-form__text-info {
     display: flex; }
 
 .date-dropdown {
@@ -998,7 +990,7 @@ a {
       z-index: 10;
       opacity: 1;
       transition: opacity 0.4s ease; }
-  .dropdown__btn {
+  .dropdown__button {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -1022,31 +1014,27 @@ a {
     text-align: center;
     border: none;
     outline: none; }
-  .counter__btn {
+  .counter__button {
     width: 30px;
     height: 30px;
     color: rgba(31, 32, 65, 0.5);
+    font-size: unset;
+    line-height: 1px;
     background-color: #fff;
     border-color: rgba(31, 32, 65, 0.25);
     border-width: 1px;
     border-radius: 50%;
     outline-style: none;
     cursor: pointer; }
-    .counter__btn:hover {
+    .counter__button:hover {
       background-image: radial-gradient(ellipse farthest-corner at 50% 50%, #e9e7e1, #cfcccc); }
-    .counter__btn:active {
+    .counter__button:active {
       width: 30px;
       height: 30px;
       background: -webkit-linear-gradient(top, #979595, #656161 90%);
       box-shadow: 0 0 #d6665c; }
-    .counter__btn_value_plus {
-      font-size: unset;
-      line-height: 1px; }
-    .counter__btn_value_minus {
-      font-size: unset;
-      line-height: 1px; }
-      .counter__btn_value_minus:disabled {
-        opacity: 0.38; }
+    .counter__button:disabled {
+      opacity: 0.38; }
 
 .link {
   display: block;
@@ -1268,5 +1256,3 @@ a {
     height: 1px;
     background-color: #f4f4f6; }
 
-
-/*# sourceMappingURL=room-details.css.map*/
