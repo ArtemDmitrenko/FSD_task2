@@ -4,26 +4,19 @@ include ../counter/counter.pug
 
 mixin dropdown(options = {})
   - const {name, dropdownType, heading, value, description, items, declination} = options;
-  case dropdownType
-    when 'withButtons'
-      .dropdown.js-dropdown
-        .dropdown__input.js-dropdown__input(data-declination=declination data-value=value)
-          +input({heading: heading, description: description, name: name, dropdownType: dropdownType, type: 'text', value: value, dropdown: true, readonly: true})
-        .dropdown__list.js-dropdown__list
-          .dropdown__counter
-            each item in items
-              +counter([item.sign, item.name, item.declination])
+  
+    .dropdown.js-dropdown
+      .dropdown__input.js-dropdown__input(data-declination=declination data-value=value)
+        +input({heading: heading, description: description, name: name, dropdownType: dropdownType, type: 'text', value: value, dropdown: true, readonly: true})
+      .dropdown__list.js-dropdown__list
+        .dropdown__counter
+          each item in items
+            +counter([item.sign, item.name, item.declination])
+        if dropdownType === 'withButtons'
           .dropdown__button
             .dropdown__button_function_clear
               +button({modifier: 'button_color_violent', text: 'Очистить', type: 'button', name: 'clear'})
             .dropdown__button_function_apply
               +button({modifier: 'button_color_violent', text: 'Применить', type: 'button', name: 'apply'})
-    when 'noButtons'
-      .dropdown.js-dropdown
-        .dropdown__input.js-dropdown__input
-          +input({heading: heading, description: description, name: name, dropdownType: dropdownType, type: 'text', value: value, dropdown: true, readonly: true})
-        .dropdown__list.js-dropdown__list
-          .dropdown__counter
-            each item in items
-              +counter([item.sign, item.name, item.declination])
+
 
