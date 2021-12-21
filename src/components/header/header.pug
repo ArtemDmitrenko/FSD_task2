@@ -1,7 +1,6 @@
 include ../button/button.pug
 include ../logo/logo.pug
 include ../nav-menu/nav-menu.pug
-include ../link/link.pug
 
 mixin header(options)
   - const {modifier} = options
@@ -18,8 +17,8 @@ mixin header(options)
             .header__user-name Юлий Цезарь
           else
             .header__link
-              +link({link: './sign-in.html', text: 'Войти', type: 'small'})
+              +button({assignment: 'reference', style: 'bordered', size: 'small', text: 'Войти', href: './sign-in.html'})
             .header__link-sign
-              +link({link: './registration.html', text: 'Зарегистрироваться', type: 'purple'})
+              +button({assignment: 'reference', style: 'solid', size: 'small', text: 'Зарегистрироваться', href: './registration.html'})
         .header__burger.js-header__burger
           span

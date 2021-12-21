@@ -1,6 +1,5 @@
 include ../input/input.pug
 include ../button/button.pug
-include ../link/link.pug
 
 mixin log-in-form()
   form(action="#" method="post").log-in-form
@@ -10,10 +9,9 @@ mixin log-in-form()
     .log-in-form__password
       +input({name: 'Password', type: 'text', placeholder: 'Пароль', required: 'required'})
     .log-in-form__submit
-      +button({style: 'directed', size: 'big', text: 'Войти', type: 'submit'})
+      +button({assignment: 'button', style: 'directed', size: 'big', text: 'Войти', type: 'submit'})
     .log-in-form__registered
       .log-in-form__registered-on-Toxin
         p.log-in-form__text Нет аккаунта на Toxin?
       .log-in-form__link
-        +link({link: './registration.html', text: 'Создать', type: 'big'})
-
+        +button({assignment: 'reference', style: 'bordered', size: 'big', text: 'Создать', href: './registration.html'})

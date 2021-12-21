@@ -1,28 +1,29 @@
 mixin button(options)
-  - const {style, size, color, text, type, name} = options
+  - const {assignment, style, size, color, text, type, name, href} = options
 
-  case style
-    when "bordered"
-      case size 
-        when "small"
-          button(type = type).button.button_bordered.button_size_small #{text}
-        when "big"
-          button(type = type).button.button_bordered.button_size_big #{text}  
-    when "directed"
-      case size 
-        when "small"
-          button(type = type).button.button_directed.button_size_small #{text}
-        when "big"
-          button(type = type).button.button_directed.button_size_big #{text}
-    when "solid"
-      case size 
-        when "small"
-          button(type = type).button.button_solid.button_size_small #{text}
-        when "big"
-          button(type = type).button.button_solid.button_size_big #{text}
-    when "texted"
-      case color 
-        when "violent"
-          button(type = type name = name).button.button_texted.button_color_violent #{text}
-        when "black"
-          button(type = type name = name).button.button_texted.button_color_black #{text}
+  case assignment
+    when "button"
+      button(
+        type = type
+        name = name
+        class = style === "bordered" ? "button_bordered" : "" 
+        class = style === "directed" ? "button_directed" : "" 
+        class = style === "solid" ? "button_solid" : "" 
+        class = style === "texted" ? "button_texted" : "" 
+        class = size === "small" ? "button_size_small" : ""
+        class = size === "big" ? "button_size_big" : "" 
+        class = color === "violent" ? "button_color_violent" : "" 
+        class = color === "black" ? "button_color_black" : "" 
+      ).button #{text}
+    when "reference"
+      a(
+        href = href
+        class = style === "bordered" ? "button_bordered" : "" 
+        class = style === "directed" ? "button_directed" : "" 
+        class = style === "solid" ? "button_solid" : "" 
+        class = style === "texted" ? "button_texted" : "" 
+        class = size === "small" ? "button_size_small" : ""
+        class = size === "big" ? "button_size_big" : "" 
+        class = color === "violent" ? "button_color_violent" : "" 
+        class = color === "black" ? "button_color_black" : "" 
+      ).button #{text}
