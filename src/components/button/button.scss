@@ -16,21 +16,52 @@ $height-e: auto;
   border: none;
   outline: none;
   cursor: pointer;
-  &_color_gradient {
-    width: $width-s;
-    height: $height-s;
-    color: #fff;
-    background-image: linear-gradient(to bottom, $purple, #8ba4f9);
-    border-radius: 22px;
-    transition: opacity 0.4s ease;
-    &:hover {
-      opacity: 0.5;
+  &_color {
+    &_gradient {
+      width: $width-s;
+      height: $height-s;
+      color: #fff;
+      background-image: linear-gradient(to bottom, $purple, #8ba4f9);
+      border-radius: 22px;
       transition: opacity 0.4s ease;
+      &:hover {
+        opacity: 0.5;
+        transition: opacity 0.4s ease;
+      }
+    }
+    &_violent {
+      width: auto;
+      height: auto;
+      color: $purple;
+    }
+    &_black {
+      width: auto;
+      height: auto;
+      color: $dark100;
+      opacity: 0.5;
     }
   }
-  &_size_small {
-    width: 196px;
-    height: 34px;
+  &_size {
+    &_small {
+      width: 196px;
+      height: 34px;
+    }
+    &_low {
+      width: calc(87px - 4px);
+      height: calc(34px - 4px);
+    }
+    &_long {
+      width: $width-l;
+      height: $height-l;
+      color: #fff;
+      background-image: linear-gradient(to bottom, $purple, #8ba4f9);
+      border-radius: 22px;
+      transition: opacity 0.4s ease;
+      &:hover {
+        opacity: 0.5;
+        transition: opacity 0.4s ease;
+      }
+    }
   }
   &_with-border {
     width: $width-s - 4px;
@@ -47,10 +78,6 @@ $height-e: auto;
       transition: opacity 0.4s ease;
     }
   }
-  &_size_low {
-    width: calc(87px - 4px);
-    height: calc(34px - 4px);
-  }
   &__text {
     margin: 0 auto;
     color: $purple;
@@ -58,29 +85,6 @@ $height-e: auto;
     &_header {
       margin-top: 5px;
       line-height: 30px;
-    }
-  }
-  &_color_violent {
-    width: auto;
-    height: auto;
-    color: $purple;
-  }
-  &_color_black {
-    width: auto;
-    height: auto;
-    color: $dark100;
-    opacity: 0.5;
-  }
-  &_size_long {
-    width: $width-l;
-    height: $height-l;
-    color: #fff;
-    background-image: linear-gradient(to bottom, $purple, #8ba4f9);
-    border-radius: 22px;
-    transition: opacity 0.4s ease;
-    &:hover {
-      opacity: 0.5;
-      transition: opacity 0.4s ease;
     }
   }
   &__arrow {

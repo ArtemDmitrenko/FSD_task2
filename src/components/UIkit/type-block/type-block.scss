@@ -6,20 +6,24 @@
     line-height: normal;
     text-align: right;
     opacity: 0.25;
-    &_fsize_12 {
-      font-size: 12px;
+    &_fsize {
+      &_12 {
+        font-size: 12px;
+      }
+      &_14 {
+        font-size: 14px;
+      }
+      &_19 {
+        font-size: 19px;
+      }
+      &_24 {
+        font-size: 24px;
+      }
     }
-    &_fsize_14 {
-      font-size: 14px;
-    }
-    &_fsize_19 {
-      font-size: 19px;
-    }
-    &_fsize_24 {
-      font-size: 24px;
-    }
-    &_line-height_24 {
-      line-height: 24px;
+    &_line-height {
+      &_24 {
+        line-height: 24px;
+      }
     }
   }
   &__description {
