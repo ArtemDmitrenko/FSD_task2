@@ -1,28 +1,28 @@
-//- modifiers for buttons (types of buttons in project):
-//-     button_color_gradient
-//-     button_with-border
-//-     button_color_violent
-//-     button_color_black
-//-     button_size_long
-//- Buttons for header (smaller):
-//-     small-button_color_gradient
-//-     small-button_with_border
-
 mixin button(options)
-  - const {modifier, text, type, name} = options
+  - const {style, size, color, text, type, name} = options
 
-  case modifier
-    when "button_with-border"
-      .button_with-border
-        button(type = type).button.button__text #{text}
-    when "button_size_long"
-      button(type = type).button.button_size_long #{text} <span class='button__arrow'></span>
-    when "small-button_color_gradient"
-      button(type = type).button.button_color_gradient.button_color_size_small #{text}
-    when "small-button_with_border"
-      .button_with-border.button_size_low
-        button(type = type).button.button__text.button__text_header #{text}
-    when "button_color_violent"
-      button(type = type class = "button" class = "button_color_violent" name = name) #{text}
-    when "button_color_black"
-      button(type = type class = "button" class = "button_color_black" name = name) #{text}
+  case style
+    when "bordered"
+      case size 
+        when "small"
+          button(type = type).button.button_bordered.button_size_small #{text}
+        when "big"
+          button(type = type).button.button_bordered.button_size_big #{text}  
+    when "directed"
+      case size 
+        when "small"
+          button(type = type).button.button_directed.button_size_small #{text}
+        when "big"
+          button(type = type).button.button_directed.button_size_big #{text}
+    when "solid"
+      case size 
+        when "small"
+          button(type = type).button.button_solid.button_size_small #{text}
+        when "big"
+          button(type = type).button.button_solid.button_size_big #{text}
+    when "texted"
+      case color 
+        when "violent"
+          button(type = type name = name).button.button_texted.button_color_violent #{text}
+        when "black"
+          button(type = type name = name).button.button_texted.button_color_black #{text}

@@ -8,6 +8,7 @@ export default class Dropdown {
 
   init() {
     this.dropdownList = this.item.querySelector(".js-dropdown__list");
+    console.log(this.dropdownList);
     this.input = this.item.querySelector(".js-input__element");
     this.dropdownInput = this.item.querySelector(".js-dropdown__input");
     this.isApplied = false;

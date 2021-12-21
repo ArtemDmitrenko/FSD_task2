@@ -73,16 +73,14 @@
   }
 
   &__button-row1 {
-    display: flex;
     margin-top: 15px;
     margin-bottom: 31px;
-    & .button_color_gradient:first-child {
+    & .button_solid:first-child {
       margin-right: 20px;
     }
   }
   &__button-row2 {
-    display: flex;
-    & .button_with-border:first-child {
+    & .button_bordered:first-child {
       margin-right: 20px;
     }
   }

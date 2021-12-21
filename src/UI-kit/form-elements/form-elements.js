@@ -137,7 +137,8 @@ export default class FormElements {
     const dropdowmGuests = document.querySelectorAll(
       ".form-elements__dropdown"
     )[3];
-    const dropdownGuestsButton = dropdowmGuests.querySelector(".input__element");
+    const dropdownGuestsButton =
+      dropdowmGuests.querySelector(".input__element");
     setTimeout(function () {
       $(dropdownGuestsButton).trigger("click");
     }, 30);
@@ -147,7 +148,8 @@ export default class FormElements {
     const hoveredButtonInRow1 = buttonRow1.querySelectorAll(".button")[1];
     hoveredButtonInRow1.classList.add("form-elements__button_hovereded");
     const buttonRow2 = document.querySelector(".form-elements__button-row2");
-    const hoveredButtonInRow2 = buttonRow2.querySelectorAll(".button_with-border")[1];
+    const hoveredButtonInRow2 =
+      buttonRow2.querySelectorAll(".button_bordered")[1];
     hoveredButtonInRow2.classList.add("form-elements__button_hovereded");
 
     // DropdownGuests

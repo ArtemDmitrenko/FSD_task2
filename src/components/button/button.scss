@@ -1,34 +1,95 @@
-// Dimensions for short buttons
-$width-s: 99px;
-$height-s: 44px;
-// Dimensions for long buttons
-$width-l: 100%;
-$height-l: 44px;
-// Dimensions for empty buttons
-$width-e: auto;
-$height-e: auto;
 .button {
   @extend %h3;
-  display: block;
-  box-sizing: border-box;
-  letter-spacing: -0.01em;
-  background: none;
+  position: relative;
+  padding-right: 20px;
+  padding-left: 20px;
+  text-decoration: none;
+  background-color: #fff;
   border: none;
-  outline: none;
   cursor: pointer;
-  &_color {
-    &_gradient {
-      width: $width-s;
-      height: $height-s;
-      color: #fff;
-      background-image: linear-gradient(to bottom, $purple, #8ba4f9);
-      border-radius: 22px;
+  &:disabled {
+    opacity: 0.5;
+    transition: opacity 0.4s ease;
+  }
+  &_bordered {
+    position: relative;
+    color: $purple;
+    &::before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      padding: 2px;
+      background: linear-gradient(to top, #8ba4f9, $purple);
+      border-radius: 26px;
+      content: "";
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+    }
+    &:hover::before {
+      opacity: 0.5;
       transition: opacity 0.4s ease;
-      &:hover {
-        opacity: 0.5;
-        transition: opacity 0.4s ease;
+    }
+  }
+  &_directed {
+    position: relative;
+    width: 100%;
+    padding-right: 45px;
+    padding-left: 45px;
+    color: #fff;
+    text-align: center;
+    background: linear-gradient(to bottom, $purple, #8ba4f9);
+    border-radius: 22px;
+    transition: opacity 0.4s ease;
+    &:hover {
+      opacity: 0.5;
+      transition: opacity 0.4s ease;
+    }
+    &::before {
+      position: absolute;
+      top: 50%;
+      right: 17px;
+      width: 10px;
+      height: 10px;
+      border: 2px solid white;
+      border-bottom: none;
+      border-left: none;
+      transform: translate(-50%, -50%) rotate(45deg);
+      content: "";
+    }
+    &::after {
+      position: absolute;
+      top: 50%;
+      right: 15px;
+      width: 15px;
+      height: 2px;
+      background-color: white;
+      transform: translate(-50%, -50%);
+      content: "";
+    }
+    @media (max-width: 420px) {
+      padding-right: 15px;
+      padding-left: 15px;
+      &::before,
+      &::after {
+        content: none;
       }
     }
+  }
+  &_solid {
+    color: #fff;
+    background: linear-gradient(to bottom, $purple, #8ba4f9);
+    border-radius: 22px;
+    &:hover {
+      opacity: 0.5;
+      transition: opacity 0.4s ease;
+    }
+  }
+  &_texted {
+    padding: 0;
+  }
+  &_color {
     &_violent {
       width: auto;
       height: auto;
@@ -43,80 +104,12 @@ $height-e: auto;
   }
   &_size {
     &_small {
-      width: 196px;
-      height: 34px;
+      padding-top: 9px;
+      padding-bottom: 10px;
     }
-    &_low {
-      width: calc(87px - 4px);
-      height: calc(34px - 4px);
-    }
-    &_long {
-      width: $width-l;
-      height: $height-l;
-      color: #fff;
-      background-image: linear-gradient(to bottom, $purple, #8ba4f9);
-      border-radius: 22px;
-      transition: opacity 0.4s ease;
-      &:hover {
-        opacity: 0.5;
-        transition: opacity 0.4s ease;
-      }
-    }
-  }
-  &_with-border {
-    width: $width-s - 4px;
-    height: $height-s - 4px;
-    background-image: linear-gradient(white, white),
-      linear-gradient(to bottom, $purple, #8ba4f9);
-    background-clip: content-box, border-box;
-    background-origin: border-box;
-    border: double 2px transparent;
-    border-radius: 26px;
-    transition: opacity 0.4s ease;
-    &:hover {
-      opacity: 0.5;
-      transition: opacity 0.4s ease;
-    }
-  }
-  &__text {
-    margin: 0 auto;
-    color: $purple;
-    line-height: $height-s - 4px;
-    &_header {
-      margin-top: 5px;
-      line-height: 30px;
-    }
-  }
-  &__arrow {
-    position: relative;
-    top: -9px;
-    left: 92%;
-    display: block;
-    width: 15px;
-    height: 2px;
-    background-color: #fff;
-    &::after {
-      position: absolute;
-      top: -3px;
-      right: -3px;
-      width: 10px;
-      height: 2px;
-      background-color: #fff;
-      transform: rotate(45deg);
-      content: "";
-    }
-    &::before {
-      position: absolute;
-      top: 3px;
-      right: -3px;
-      width: 10px;
-      height: 2px;
-      background-color: #fff;
-      transform: rotate(-45deg);
-      content: "";
-    }
-    @media screen and (max-width: 420px) {
-      left: 90%;
+    &_big {
+      padding-top: 14px;
+      padding-bottom: 15px;
     }
   }
   &_hidden {
