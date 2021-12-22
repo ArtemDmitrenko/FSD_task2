@@ -68,6 +68,7 @@
     }
   }
   &__date-dropdown {
+    position: relative;
     &::placeholder {
       color: #1f2041;
       opacity: 0.75;
@@ -76,8 +77,30 @@
   }
   &__checkmark {
     position: absolute;
-    top: 12px;
-    right: 11px;
+    top: 0;
+    right: 0;
+    display: inline-block;
+    padding: 10px;
+    font-weight: normal;
+    font-size: 24px;
+    font-family: "MaterialIcons-Regular";
+    font-style: normal;
+    line-height: 1;
+    direction: ltr;
+    letter-spacing: normal;
+    white-space: nowrap;
+    text-transform: none;
+    word-wrap: normal;
+    background-color: $dark50;
+    -webkit-background-clip: text;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    -webkit-text-fill-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "liga";
   }
   &__subscription {
     position: absolute;
@@ -86,11 +109,31 @@
   }
   &__default-button {
     position: absolute;
-    top: 8px;
-    left: -38px;
+    top: -12px;
+    right: 0;
+    display: inline-block;
+    padding: 10px;
+    color: $purple;
+    font-weight: normal;
+    font-size: 24px;
+    font-family: "MaterialIcons-Regular";
+    font-style: normal;
+    line-height: 1;
+    direction: ltr;
+    letter-spacing: normal;
+    white-space: nowrap;
+    text-transform: none;
+    word-wrap: normal;
     background: #fff;
+    background-color: $purple;
+    -webkit-background-clip: text;
     border: none;
     outline: none;
     cursor: pointer;
+    -webkit-text-fill-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "liga";
   }
 }

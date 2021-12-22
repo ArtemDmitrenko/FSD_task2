@@ -4,15 +4,13 @@
     options.richCheckbox - if list is rich checkbox buttons
     options.list[0...i] - name of buttons
     
-include ../checkmark/checkmark.pug
-
 mixin checkbox-button(options)
   - const {name, expandable, richCheckbox, list, forLabel} = options
   .checkbox-button.js-checkbox-button
     if options.expandable
       .checkbox-button__expandableName.js-checkbox-button__expandableName
         .checkbox-button__title= options.name
-        +checkmark()
+        span.checkbox-button__checkmark.js-checkbox-button__checkmark expand_more
       form.checkbox-button__expandableForm.js-checkbox-button__expandableForm(name="checkbox-button" method="get")
         each nameOfButton in options.list
           .checkbox-button__item

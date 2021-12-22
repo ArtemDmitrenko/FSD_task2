@@ -1,12 +1,11 @@
-include ../../arrow/arrow.pug
 include ../../button/button.pug
 
 mixin calendar()
   .calendar
     .calendar__row1
-      +arrow({color: 'purple', direction: 'left'})
+      span.calendar__arrow arrow_back
       .calendar__month Август 2019
-      +arrow({color: 'purple', direction: 'right'})
+      span.calendar__arrow arrow_forward
     .calendar__row2
       .calendar__all-days
         .calendar__day-in-week Пн

@@ -10,7 +10,7 @@ export default class NavMenu {
       ".js-nav-menu__item_with-dropdown"
     );
     this.subLists = this.item.querySelectorAll(".js-nav-menu__sub-list");
-    this.checkmarks = this.item.querySelectorAll(".js-checkmark");
+    this.checkmarks = this.item.querySelectorAll(".js-nav-menu__checkmark");
   }
 
   addEventListeners() {
@@ -25,8 +25,7 @@ export default class NavMenu {
 
   handleMenuItemClick(i) {
     this.subLists[i].classList.toggle("show");
-    this.checkmarks[i].classList.toggle("checkmark_direction_down");
-    this.checkmarks[i].classList.toggle("checkmark_direction_up");
+    this.checkmarks[i].classList.toggle("nav-menu__checkmark_direction_up");
   }
 
   handleDocumentClick = (event) => {
@@ -38,8 +37,9 @@ export default class NavMenu {
       ) {
         if (this.subLists[i].classList.contains("show")) {
           this.subLists[i].classList.remove("show");
-          this.checkmarks[i].classList.toggle("checkmark_direction_down");
-          this.checkmarks[i].classList.toggle("checkmark_direction_up");
+          this.checkmarks[i].classList.toggle(
+            "nav-menu__checkmark_direction_up"
+          );
         }
       }
     }

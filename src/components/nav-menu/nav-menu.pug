@@ -1,4 +1,3 @@
-include ../checkmark/checkmark.pug
 
 //-
   menuItems - массив с элементами меню
@@ -17,7 +16,7 @@ mixin nav-menu(menuItems)
         else
           li.nav-menu__item.js-nav-menu__item_with-dropdown 
             a.nav-menu__link.js-nav-menu__link(href = menuItems[i].href)= menuItems[i].name
-              +checkmark()
+              span.nav-menu__checkmark.js-nav-menu__checkmark expand_more
             ul.nav-menu__sub-list.js-nav-menu__sub-list
               - for (let j = 0; j < menuItems[i].submenu.length; j ++) 
                 li.nav-menu__sub-item

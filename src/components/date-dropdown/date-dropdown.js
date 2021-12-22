@@ -63,8 +63,8 @@ export default class dateDropdown {
       classes: `datepicker${index}`,
       bindedInputFrom: this.inputFrom,
       bindedInputTo: this.inputTo,
-      prevHtml: `<span class="arrow_direction_left arrow_color_purple"></span>`,
-      nextHtml: `<span class="arrow_direction_right arrow_color_purple"></span>`,
+      prevHtml: `<span class="date-dropdown__arrow">arrow_back</span>`,
+      nextHtml: `<span class="date-dropdown__arrow">arrow_forward</span>`,
       onSelect: function (fd, d, picker) {
         $(this.bindedInputFrom).val(fd.split(",")[0]);
         $(this.bindedInputTo).val(fd.split(",")[1]);

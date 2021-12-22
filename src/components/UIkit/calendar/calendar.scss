@@ -8,16 +8,32 @@
   &__row1 {
     display: flex;
     justify-content: space-between;
-    margin-top: 18px;
-    margin-bottom: 41px;
-    & .arrow_direction_left {
-      margin-top: 12px;
-      margin-left: 26px;
-    }
-    & .arrow_direction_right {
-      margin-top: 12px;
-      margin-right: 26px;
-    }
+    margin: 18px 26px 41px 26px;
+  }
+  &__arrow {
+    display: inline-block;
+    color: $purple;
+    font-weight: normal;
+    font-size: 24px;
+    font-family: "MaterialIcons-Regular";
+    font-style: normal;
+    line-height: 1;
+    direction: ltr;
+    letter-spacing: normal;
+    white-space: nowrap;
+    text-transform: none;
+    word-wrap: normal;
+    background: #fff;
+    background-color: $purple;
+    -webkit-background-clip: text;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    -webkit-text-fill-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "liga";
   }
   &__row2 {
     width: 256px;
