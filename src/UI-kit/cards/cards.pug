@@ -9,24 +9,24 @@ include ../../components/UIkit/calendar/calendar.pug
 
 
 block title
-    title Cards
+  title Cards
 
 block content
-    .cards
-        .cards__logo-UIkit
-            +logo-UIkit()
-        .cards__all-items
-            .cards__room-search
-                +room-search-form()
-            .cards__registration
-                +registration-form()
-            .cards__confirmation
-                +confirmation-form()
-            .cards__log-in
-                +log-in-form()
-            .cards__datepicker
-                +calendar()
-            .cards__room
-                +room({addressOfRoom: 'room1', numberOfImage: ["image11", "image12", "image13", "image14"], roomNumber: '888', lux: true, price: '9 990₽', rate: '5', numberOfReviews: '145'})
-            .cards__room
-                +room({addressOfRoom: 'room2', numberOfImage: ["image21", "image22", "image23", "image24"], roomNumber: '840', price: '9 990₽', rate: '4', numberOfReviews: '65'})
+  .cards
+    .cards__logo-UIkit
+      +logo-UIkit()
+    .cards__all-items
+      .cards__room-search
+        +room-search-form()
+      .cards__registration
+        +registration-form()
+      .cards__confirmation
+        +confirmation-form()
+      .cards__log-in
+        +log-in-form()
+      .cards__datepicker
+        +calendar()
+      .cards__room
+        +room({addressOfRoom: 'room1', numberOfImage: ["image11", "image12", "image13", "image14"], roomNumber: '888', lux: true, price: '9 990₽', rate: '5', numberOfReviews: '145'})
+      .cards__room
+        +room({addressOfRoom: 'room2', numberOfImage: ["image21", "image22", "image23", "image24"], roomNumber: '840', price: '9 990₽', rate: '4', numberOfReviews: '65'})
