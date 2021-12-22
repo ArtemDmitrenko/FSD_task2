@@ -79,10 +79,10 @@ export default class Dropdown {
     if (counter) {
       const minus = counter.querySelector(".js-counter__decrement");
       const counterValue = counter.querySelector(".js-counter__value");
-      if (target.classList.contains("js-counter__increment")) {
+      if (target.innerHTML === "+") {
         this.increment(counterValue, minus);
       }
-      if (target.classList.contains("js-counter__decrement")) {
+      if (target.innerHTML === "-") {
         this.decrement(counterValue, minus);
       }
       this.updateInput();
