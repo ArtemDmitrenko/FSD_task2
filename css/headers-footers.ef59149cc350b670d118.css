@@ -33,7 +33,7 @@
   font-size: 14px;
   font-family: "Montserrat", "Arial", sans-serif; }
 
-.button, .nav-menu__link_active, .input__heading, .link {
+.button, .nav-menu__link_active, .input__heading {
   color: #1f2041;
   font-weight: 700;
   font-size: 12px;
@@ -134,19 +134,14 @@ a {
     @media screen and (max-width: 992px) {
       .header__link {
         display: none; } }
-    .header__link .button_with-border {
+    .header__link .button_bordered {
       width: 83px;
       height: 29px; }
-    .header__link .button__text {
-      line-height: 20px; }
   .header__link-sign {
     width: 196px; }
     @media screen and (max-width: 992px) {
       .header__link-sign {
         display: none; } }
-    .header__link-sign .button_color_gradient {
-      width: 100%;
-      height: 34px; }
   .header__line {
     height: 30px;
     margin-right: 20px;
@@ -216,48 +211,87 @@ a {
   height: 40px; }
 
 .button {
-  display: block;
-  box-sizing: border-box;
-  letter-spacing: -0.01em;
-  background: none;
+  position: relative;
+  padding-right: 20px;
+  padding-left: 20px;
+  text-decoration: none;
+  background-color: #fff;
   border: none;
-  outline: none;
   cursor: pointer; }
-  .button_color_gradient {
-    width: 99px;
-    height: 44px;
+  .button:disabled {
+    opacity: 0.5;
+    transition: opacity 0.4s ease; }
+  .button_bordered {
+    position: relative;
+    color: #bc9cff; }
+    .button_bordered::before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      padding: 2px;
+      background: linear-gradient(to top, #8ba4f9, #bc9cff);
+      border-radius: 26px;
+      content: "";
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+              mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+              mask-composite: exclude; }
+    .button_bordered:hover::before {
+      opacity: 0.5;
+      transition: opacity 0.4s ease; }
+  .button_directed {
+    position: relative;
+    width: 100%;
+    padding-right: 45px;
+    padding-left: 45px;
     color: #fff;
-    background-image: linear-gradient(to bottom, #bc9cff, #8ba4f9);
+    text-align: center;
+    background: linear-gradient(to bottom, #bc9cff, #8ba4f9);
     border-radius: 22px;
     transition: opacity 0.4s ease; }
-    .button_color_gradient:hover {
+    .button_directed:hover {
       opacity: 0.5;
       transition: opacity 0.4s ease; }
-  .button_size_small {
-    width: 196px;
-    height: 34px; }
-  .button_with-border {
-    width: 95px;
-    height: 40px;
-    background-image: linear-gradient(white, white), linear-gradient(to bottom, #bc9cff, #8ba4f9);
-    background-clip: content-box, border-box;
-    background-origin: border-box;
-    border: double 2px transparent;
-    border-radius: 26px;
-    transition: opacity 0.4s ease; }
-    .button_with-border:hover {
+    .button_directed::before {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      display: inline-block;
+      font-weight: normal;
+      font-size: 24px;
+      font-family: "MaterialIcons-Regular";
+      font-style: normal;
+      line-height: 1;
+      direction: ltr;
+      letter-spacing: normal;
+      white-space: nowrap;
+      text-transform: none;
+      word-wrap: normal;
+      background-color: #fff;
+      -webkit-background-clip: text;
+      content: "arrow_forward";
+      -webkit-text-fill-color: transparent;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      -moz-osx-font-smoothing: grayscale;
+      font-feature-settings: "liga"; }
+    @media (max-width: 420px) {
+      .button_directed {
+        padding-right: 15px;
+        padding-left: 15px; }
+        .button_directed::before, .button_directed::after {
+          content: none; } }
+  .button_solid {
+    color: #fff;
+    background: linear-gradient(to bottom, #bc9cff, #8ba4f9);
+    border-radius: 22px; }
+    .button_solid:hover {
       opacity: 0.5;
       transition: opacity 0.4s ease; }
-  .button_size_low {
-    width: calc(87px - 4px);
-    height: calc(34px - 4px); }
-  .button__text {
-    margin: 0 auto;
-    color: #bc9cff;
-    line-height: 40px; }
-    .button__text_header {
-      margin-top: 5px;
-      line-height: 30px; }
+  .button_texted {
+    padding: 0; }
   .button_color_violent {
     width: auto;
     height: auto;
@@ -267,50 +301,44 @@ a {
     height: auto;
     color: #1f2041;
     opacity: 0.5; }
-  .button_size_long {
-    width: 100%;
-    height: 44px;
-    color: #fff;
-    background-image: linear-gradient(to bottom, #bc9cff, #8ba4f9);
-    border-radius: 22px;
-    transition: opacity 0.4s ease; }
-    .button_size_long:hover {
-      opacity: 0.5;
-      transition: opacity 0.4s ease; }
-  .button__arrow {
-    position: relative;
-    top: -9px;
-    left: 92%;
-    display: block;
-    width: 15px;
-    height: 2px;
-    background-color: #fff; }
-    .button__arrow::after {
-      position: absolute;
-      top: -3px;
-      right: -3px;
-      width: 10px;
-      height: 2px;
-      background-color: #fff;
-      transform: rotate(45deg);
-      content: ""; }
-    .button__arrow::before {
-      position: absolute;
-      top: 3px;
-      right: -3px;
-      width: 10px;
-      height: 2px;
-      background-color: #fff;
-      transform: rotate(-45deg);
-      content: ""; }
-    @media screen and (max-width: 420px) {
-      .button__arrow {
-        left: 90%; } }
+  .button_size_small {
+    padding-top: 9px;
+    padding-bottom: 10px; }
+  .button_size_big {
+    padding-top: 14px;
+    padding-bottom: 15px; }
   .button_hidden {
     display: none; }
 
 .nav-menu__list {
   display: flex; }
+
+.nav-menu__checkmark {
+  display: inline-block;
+  font-weight: normal;
+  font-size: 24px;
+  font-family: "MaterialIcons-Regular";
+  font-style: normal;
+  line-height: 1;
+  direction: ltr;
+  letter-spacing: normal;
+  white-space: nowrap;
+  text-transform: none;
+  vertical-align: middle;
+  word-wrap: normal;
+  background-color: rgba(31, 32, 65, 0.75);
+  -webkit-background-clip: text;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 0.4s transform;
+  -webkit-text-fill-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "liga"; }
+  .nav-menu__checkmark_direction_up {
+    transform: rotate(180deg); }
 
 .nav-menu__item {
   position: relative;
@@ -449,136 +477,78 @@ a {
       .input__element {
         padding-right: 5px;
         padding-left: 5px; } }
-  .input__date-dropdown::-moz-placeholder {
-    color: #1f2041;
-    opacity: 0.75;
-    -moz-transition: all 0.4s ease;
-    transition: all 0.4s ease; }
-  .input__date-dropdown:-ms-input-placeholder {
-    color: #1f2041;
-    opacity: 0.75;
-    -ms-transition: all 0.4s ease;
-    transition: all 0.4s ease; }
-  .input__date-dropdown::placeholder {
-    color: #1f2041;
-    opacity: 0.75;
-    transition: all 0.4s ease; }
+  .input__date-dropdown {
+    position: relative; }
+    .input__date-dropdown::-moz-placeholder {
+      color: #1f2041;
+      opacity: 0.75;
+      -moz-transition: all 0.4s ease;
+      transition: all 0.4s ease; }
+    .input__date-dropdown:-ms-input-placeholder {
+      color: #1f2041;
+      opacity: 0.75;
+      -ms-transition: all 0.4s ease;
+      transition: all 0.4s ease; }
+    .input__date-dropdown::placeholder {
+      color: #1f2041;
+      opacity: 0.75;
+      transition: all 0.4s ease; }
   .input__checkmark {
     position: absolute;
-    top: 12px;
-    right: 11px; }
+    top: 0;
+    right: 0;
+    display: inline-block;
+    padding: 10px;
+    font-weight: normal;
+    font-size: 24px;
+    font-family: "MaterialIcons-Regular";
+    font-style: normal;
+    line-height: 1;
+    direction: ltr;
+    letter-spacing: normal;
+    white-space: nowrap;
+    text-transform: none;
+    word-wrap: normal;
+    background-color: rgba(31, 32, 65, 0.5);
+    -webkit-background-clip: text;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    -webkit-text-fill-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "liga"; }
   .input__subscription {
     position: absolute;
     top: 12px;
     right: 0; }
   .input__default-button {
     position: absolute;
-    top: 8px;
-    left: -38px;
+    top: -12px;
+    right: 0;
+    display: inline-block;
+    padding: 10px;
+    color: #bc9cff;
+    font-weight: normal;
+    font-size: 24px;
+    font-family: "MaterialIcons-Regular";
+    font-style: normal;
+    line-height: 1;
+    direction: ltr;
+    letter-spacing: normal;
+    white-space: nowrap;
+    text-transform: none;
+    word-wrap: normal;
     background: #fff;
+    background-color: #bc9cff;
+    -webkit-background-clip: text;
     border: none;
     outline: none;
-    cursor: pointer; }
-
-.arrow {
-  position: relative;
-  display: block;
-  width: 15px;
-  height: 2px; }
-  .arrow_direction_right::after {
-    position: absolute;
-    top: -3px;
-    right: -3px;
-    width: 10px;
-    height: 2px;
-    transform: rotate(45deg);
-    content: ""; }
-  .arrow_direction_right::before {
-    position: absolute;
-    top: 3px;
-    right: -3px;
-    width: 10px;
-    height: 2px;
-    transform: rotate(-45deg);
-    content: ""; }
-  .arrow_direction_left::after {
-    position: absolute;
-    top: 3px;
-    right: 7px;
-    width: 10px;
-    height: 2px;
-    transform: rotate(45deg);
-    content: ""; }
-  .arrow_direction_left::before {
-    position: absolute;
-    top: -3px;
-    right: 7px;
-    width: 10px;
-    height: 2px;
-    transform: rotate(-45deg);
-    content: ""; }
-  .arrow_color_purple {
-    background-color: #bc9cff; }
-    .arrow_color_purple::after {
-      background-color: #bc9cff; }
-    .arrow_color_purple::before {
-      background-color: #bc9cff; }
-  .arrow_color_white {
-    background-color: white; }
-    .arrow_color_white::after {
-      background-color: white; }
-    .arrow_color_white::before {
-      background-color: white; }
-
-.checkmark {
-  display: inline-block;
-  width: 7px;
-  height: 7px;
-  color: rgba(31, 32, 65, 0.5);
-  background: none;
-  border: solid;
-  border-width: 0 2px 2px 0; }
-  .checkmark_direction_down {
-    margin-right: 7px;
-    margin-bottom: 2px;
-    margin-left: 9.5px;
-    transform: rotate(45deg); }
-  .checkmark_direction_up {
-    margin: 4px 7px -3px 9.5px;
-    transform: rotate(225deg); }
-
-.link {
-  display: block;
-  box-sizing: border-box;
-  letter-spacing: -0.01em;
-  text-align: center;
-  background-clip: content-box, border-box;
-  background-origin: border-box;
-  border: double 2px transparent;
-  cursor: pointer;
-  transition: opacity 0.4s ease; }
-  .link:hover {
-    opacity: 0.5;
-    transition: opacity 0.4s ease; }
-  .link_size_big {
-    width: 95px;
-    height: 45px;
-    color: #bc9cff;
-    line-height: 40px;
-    background-image: linear-gradient(white, white), linear-gradient(to bottom, #bc9cff, #8ba4f9);
-    border-radius: 26px; }
-  .link_size_small {
-    width: 95px;
-    height: 34px;
-    color: #bc9cff;
-    line-height: 32px;
-    background-image: linear-gradient(white, white), linear-gradient(to bottom, #bc9cff, #8ba4f9);
-    border-radius: 26px; }
-  .link_color_purple {
-    width: 196px;
-    height: 36px;
-    color: #fff;
-    line-height: 32px;
-    background-image: linear-gradient(to bottom, #bc9cff, #8ba4f9);
-    border-radius: 22px; }
+    cursor: pointer;
+    -webkit-text-fill-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "liga"; }
 
