@@ -5,36 +5,30 @@
     options.list[0...i] - name of buttons
     
 mixin checkbox-button(options)
-  - const {name, expandable, richCheckbox, list, forLabel} = options
+  - const {name, expandable, richCheckbox, list, sublist, forLabel} = options
+  mixin listOfOptions
+    each nameOfButton in list
+      .checkbox-button__item
+        label.checkbox-button__label
+          input.checkbox-button__input(type="checkbox")
+          span.checkbox-button__indicator
+          if richCheckbox
+            span.checkbox-button__text.checkbox-button__text_rich= nameOfButton
+            span.checkbox-button__sublabel= sublist[list.indexOf(nameOfButton)]
+          else
+            span.checkbox-button__text= nameOfButton
+
   .checkbox-button.js-checkbox-button
-    if options.expandable
-      .checkbox-button__expandable-name.js-checkbox-button__expandable-name
-        .checkbox-button__title= options.name
+    div(class = expandable === true ? "checkbox-button__expandable-name js-checkbox-button__expandable-name" : "checkbox-button__name")
+      .checkbox-button__title= name
+      if expandable
         span.checkbox-button__checkmark.js-checkbox-button__checkmark expand_more
+    if expandable
       form.checkbox-button__expandable-form.js-checkbox-button__expandable-form(name="checkbox-button" method="get")
-        each nameOfButton in options.list
-          .checkbox-button__item
-            label.checkbox-button__label
-              input.checkbox-button__input(type="checkbox")
-              span.checkbox-button__indicator
-              span.checkbox-button__text= nameOfButton
+        +listOfOptions
+    else if richCheckbox
+      form.checkbox-button__form(name="richCheckbox-button" method="get")
+        +listOfOptions
     else
-      .checkbox-button__name
-        .checkbox-button__title= options.name
-      if options.richCheckbox
-        form.checkbox-button__form(name="richCheckbox-button" method="get")
-          each nameOfButton in options.list
-            .checkbox-button__item
-              label.checkbox-button__label
-                input.checkbox-button__input(type="checkbox")
-                span.checkbox-button__indicator
-                span.checkbox-button__text.checkbox-button__text_rich= nameOfButton
-                span.checkbox-button__sublabel= options.sublist[options.list.indexOf(nameOfButton)]
-      else
-        form.checkbox-button__form(name="checkbox-button" method="get")
-          each nameOfButton in options.list
-            .checkbox-button__item
-              label.checkbox-button__label
-                input.checkbox-button__input(type="checkbox")
-                span.checkbox-button__indicator
-                span.checkbox-button__text= nameOfButton
+      form.checkbox-button__form(name="checkbox-button" method="get")
+        +listOfOptions
