@@ -57,9 +57,9 @@ block content
         .form-elements__masked-input.form-elements__element
           +input({heading: 'masked text field', name: 'birthday', type: 'text', placeholder: 'ДД.ММ.ГГГГ', required: true})
         .form-elements__datepicker.form-elements__datepicker_range-in-two.form-elements__element
-          +date-dropdown({heading1: 'date Dropdown', heading2: 'date Dropdown', name: 'Dates in 2 inputs'})
+          +date-dropdown({twoInputsTitleFrom: 'date Dropdown', twoInputsTitleTo: 'date Dropdown', name: 'twoInputs'})
         .form-elements__datepicker.form-elements__datepicker_range-in-one.form-elements__element
-          +date-dropdown({heading: 'filter date dropdown', name: 'Dates in 1 input'})
+          +date-dropdown({oneInputTitle: 'filter date dropdown', name: 'oneInput'})
         .form-elements__subscription-input.form-elements__element 
           +input({heading: 'subscription text field', name: 'email', type: 'email', placeholder: 'Email', required: true, subscription: true})
         .form-elements__dropdown.form-elements__element.form-elements__element_not-expanded

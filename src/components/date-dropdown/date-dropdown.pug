@@ -1,12 +1,13 @@
 include ../input/input.pug
 
 mixin date-dropdown(options)
-  - const {heading, heading1, heading2, name, value, value1, value2} = options
+  - const {oneInputTitle, oneInputValue, twoInputsTitleFrom, twoInputsTitleTo, twoInputsValueFrom, twoInputsValueTo, name} = options
   .date-dropdown.js-date-dropdown
-    if name == "Dates in 1 input"
-      .date-dropdown_is-one-input
-        +input({heading: heading, name: name, value: value, type: "text", placeholder: "ДД.ММ.ГГГГ", dateDropdown: true, required: 'required', readonly: readonly})
-    else 
-      .date-dropdown_is-two-inputs
-        +input({heading: heading1, name: name, value: value1, type: "text", placeholder: "ДД.ММ.ГГГГ", dateDropdown: true, fromOrTo: "from", required: 'required'})
-        +input({heading: heading2, name: name, value: value2, type: "text", placeholder: "ДД.ММ.ГГГГ", dateDropdown: true, fromOrTo: "to", required: 'required'})
+    case name
+      when "oneInput"
+        .date-dropdown_number-of-inputs_one
+          +input({heading: oneInputTitle, name: name, value: oneInputValue, type: "text", placeholder: "ДД.ММ.ГГГГ", dateDropdown: true, required: 'required', readonly: readonly})
+      when "twoInputs"
+        .date-dropdown_number-of-inputs_two
+          +input({heading: twoInputsTitleFrom, name: name, value: twoInputsValueFrom, type: "text", placeholder: "ДД.ММ.ГГГГ", dateDropdown: true, fromOrTo: "from", required: 'required'})
+          +input({heading: twoInputsTitleTo, name: name, value: twoInputsValueTo, type: "text", placeholder: "ДД.ММ.ГГГГ", dateDropdown: true, fromOrTo: "to", required: 'required'})

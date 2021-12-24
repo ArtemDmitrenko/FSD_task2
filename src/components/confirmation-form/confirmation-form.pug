@@ -12,7 +12,7 @@ mixin confirmation-form()
       h3.confirmation-form__price 9 990₽ <span>в сутки</span>
     .confirmation-form__dates
       .confirmation-form__check-in
-        +date-dropdown({heading1: 'Прибытие', heading2: 'Выезд', name: 'Dates in 2 inputs', value1: '19.08.2019', value2: '23.08.2019', required: 'required'})
+        +date-dropdown({twoInputsTitleFrom: 'Прибытие', twoInputsTitleTo: 'Выезд', name: 'twoInputs', twoInputsValueFrom: '19.08.2019', twoInputsValueTo: '23.08.2019', required: 'required'})
     .confirmation-form__guests
       +dropdown({
         name: 'guests', 

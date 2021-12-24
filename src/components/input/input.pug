@@ -19,14 +19,14 @@ mixin input(options = {})
       if heading
         .input__heading= heading
       case name
-        when 'Dates in 2 inputs'
+        when 'twoInputs'
           if fromOrTo == 'from'
             input.input__element.js-input__element.input__date-dropdown.js-input__date-dropdown_value_from(value = value heading = heading name = name type = type placeholder = placeholder readonly = 'readonly' dateDropdown = dateDropdown required = required)
           else 
             input.input__element.js-input__element.input__date-dropdown.js-input__date-dropdown_value_to(value = value heading = heading name = name type = type placeholder = placeholder readonly = 'readonly' dateDropdown = dateDropdown required = required)
           span.input__checkmark expand_more
 
-        when 'Dates in 1 input'
+        when 'oneInput'
           input.input__element.js-input__element.input__date-dropdown.js-input__date-dropdown_with-range(value = value heading = heading name = name type = type placeholder = placeholder readonly = 'readonly' dateDropdown = dateDropdown required = required)
           span.input__checkmark expand_more
   else
