@@ -46,9 +46,9 @@ export default class dateDropdown {
       range: true,
       multipleDatesSeparator: " - ",
       dateFormat: "dd M",
-      classes: `datepicker${index}`,
-      prevHtml: `<span class="arrow_direction_left arrow_color_purple"></span>`,
-      nextHtml: `<span class="arrow_direction_right arrow_color_purple"></span>`,
+      classes: `datepicker${index} date-dropdown__container`,
+      prevHtml: `<span class="date-dropdown__arrow">arrow_back</span>`,
+      nextHtml: `<span class="date-dropdown__arrow">arrow_forward</span>`,
     };
     this.myDatapicker = $(this.rangeDropdown)
       .datepicker(options)
@@ -60,7 +60,7 @@ export default class dateDropdown {
       clearButton: true,
       todayButton: true,
       range: true,
-      classes: `datepicker${index}`,
+      classes: `datepicker${index} date-dropdown__container`,
       bindedInputFrom: this.inputFrom,
       bindedInputTo: this.inputTo,
       prevHtml: `<span class="date-dropdown__arrow">arrow_back</span>`,
