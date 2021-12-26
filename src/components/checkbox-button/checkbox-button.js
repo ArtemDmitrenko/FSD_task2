@@ -20,7 +20,7 @@ export default class CheckboxButton {
 
   handleCheckboxClick = () => {
     if (this.isExpanded()) {
-      this.cbList.classList.toggle("checkbox-button__expandable-form_show");
+      this.cbList.classList.toggle("checkbox-button__expandable-form_opened");
       this.checkmark.classList.toggle(
         "checkbox-button__checkmark_direction_up"
       );
