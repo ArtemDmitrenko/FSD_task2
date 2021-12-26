@@ -38,7 +38,7 @@ export default class Dropdown {
   toggleDropdown = () => {
     this.input.classList.toggle("input__element_border-radius_0");
     this.input.classList.toggle("input__element_with-bright-border");
-    this.dropdownList.classList.toggle("dropdown__list_show");
+    this.dropdownList.classList.toggle("dropdown__list_opened");
     if (this.isDropdownOpened()) {
       this.updateInput();
     }
@@ -77,7 +77,8 @@ export default class Dropdown {
     const { target } = e;
     const counter = target.closest(".js-counter__enter");
     if (counter) {
-      const minus = counter.querySelector(".js-counter__decrement");
+      const minus = counter.querySelector(".js-counter__button");
+      console.log(minus);
       const counterValue = counter.querySelector(".js-counter__value");
       if (target.innerHTML === "+") {
         this.increment(counterValue, minus);
