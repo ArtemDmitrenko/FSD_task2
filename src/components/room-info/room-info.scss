@@ -15,24 +15,15 @@
   }
   &__image {
     display: inline-block;
-    color: #bc9cff;
-    font-weight: normal;
     font-size: 48px;
     font-family: "MaterialIcons-Regular";
-    font-style: normal;
-    line-height: 1;
-    direction: ltr;
-    letter-spacing: normal;
-    white-space: nowrap;
     text-transform: none;
-    word-wrap: normal;
     background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     -moz-osx-font-smoothing: grayscale;
-    font-feature-settings: "liga";
   }
   &__name {
     @extend %h3;

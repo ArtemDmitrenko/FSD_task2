@@ -1,20 +1,14 @@
 .nav-menu {
   &__list {
     display: flex;
+    align-items: baseline;
   }
   &__checkmark {
     display: inline-block;
-    font-weight: normal;
     font-size: 24px;
     font-family: "MaterialIcons-Regular";
-    font-style: normal;
-    line-height: 1;
-    direction: ltr;
-    letter-spacing: normal;
-    white-space: nowrap;
     text-transform: none;
     vertical-align: middle;
-    word-wrap: normal;
     background-color: $dark75;
     -webkit-background-clip: text;
     border: none;
@@ -25,7 +19,6 @@
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     -moz-osx-font-smoothing: grayscale;
-    font-feature-settings: "liga";
     &_direction_up {
       transform: rotate(180deg);
     }

@@ -113,16 +113,9 @@
 .slick-prev::before,
 .slick-next::before {
   display: inline-block;
-  font-weight: normal;
   font-size: 24px;
   font-family: "MaterialIcons-Regular";
-  font-style: normal;
-  line-height: 1;
-  direction: ltr;
-  letter-spacing: normal;
-  white-space: nowrap;
   text-transform: none;
-  word-wrap: normal;
   background-color: #fff;
   -webkit-background-clip: text;
   opacity: 1;
@@ -130,7 +123,6 @@
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
-  font-feature-settings: "liga";
 }
 
 .slick-list {
