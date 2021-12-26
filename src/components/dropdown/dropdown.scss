@@ -4,9 +4,6 @@
   & input {
     cursor: pointer;
   }
-  & .checkmark {
-    z-index: -99;
-  }
   &__list {
     position: absolute;
     z-index: -1;
