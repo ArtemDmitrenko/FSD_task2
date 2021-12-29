@@ -178,7 +178,6 @@ a {
       transform: rotate(-38deg);
       transition: 0.4s; } }
   @media screen and (max-width: 992px) {
-    .header .checkmark,
     .header .nav-menu__sub-list {
       display: none; } }
   @media screen and (max-width: 992px) {
@@ -247,21 +246,14 @@ a {
       font-weight: normal;
       font-size: 24px;
       font-family: "MaterialIcons-Regular";
-      font-style: normal;
-      line-height: 1;
-      direction: ltr;
-      letter-spacing: normal;
-      white-space: nowrap;
       text-transform: none;
-      word-wrap: normal;
       background-color: #fff;
       -webkit-background-clip: text;
       content: "arrow_forward";
       -webkit-text-fill-color: transparent;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
-      -moz-osx-font-smoothing: grayscale;
-      font-feature-settings: "liga"; }
+      -moz-osx-font-smoothing: grayscale; }
     @media (max-width: 420px) {
       .button_directed {
         padding-right: 15px;
@@ -296,21 +288,15 @@ a {
     display: none; }
 
 .nav-menu__list {
-  display: flex; }
+  display: flex;
+  align-items: baseline; }
 
 .nav-menu__checkmark {
   display: inline-block;
-  font-weight: normal;
   font-size: 24px;
   font-family: "MaterialIcons-Regular";
-  font-style: normal;
-  line-height: 1;
-  direction: ltr;
-  letter-spacing: normal;
-  white-space: nowrap;
   text-transform: none;
   vertical-align: middle;
-  word-wrap: normal;
   background-color: rgba(31, 32, 65, 0.75);
   -webkit-background-clip: text;
   border: none;
@@ -320,8 +306,7 @@ a {
   -webkit-text-fill-color: transparent;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  -moz-osx-font-smoothing: grayscale;
-  font-feature-settings: "liga"; }
+  -moz-osx-font-smoothing: grayscale; }
   .nav-menu__checkmark_direction_up {
     transform: rotate(180deg); }
 
@@ -501,16 +486,9 @@ a {
     right: 0;
     display: inline-block;
     padding: 10px;
-    font-weight: normal;
     font-size: 24px;
     font-family: "MaterialIcons-Regular";
-    font-style: normal;
-    line-height: 1;
-    direction: ltr;
-    letter-spacing: normal;
-    white-space: nowrap;
     text-transform: none;
-    word-wrap: normal;
     background-color: rgba(31, 32, 65, 0.5);
     -webkit-background-clip: text;
     border: none;
@@ -519,8 +497,7 @@ a {
     -webkit-text-fill-color: transparent;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
-    -moz-osx-font-smoothing: grayscale;
-    font-feature-settings: "liga"; }
+    -moz-osx-font-smoothing: grayscale; }
   .input__subscription {
     position: absolute;
     top: 12px;
@@ -531,18 +508,9 @@ a {
     right: 0;
     display: inline-block;
     padding: 10px;
-    color: #bc9cff;
-    font-weight: normal;
     font-size: 24px;
     font-family: "MaterialIcons-Regular";
-    font-style: normal;
-    line-height: 1;
-    direction: ltr;
-    letter-spacing: normal;
-    white-space: nowrap;
     text-transform: none;
-    word-wrap: normal;
-    background: #fff;
     background-color: #bc9cff;
     -webkit-background-clip: text;
     border: none;
@@ -551,8 +519,7 @@ a {
     -webkit-text-fill-color: transparent;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
-    -moz-osx-font-smoothing: grayscale;
-    font-feature-settings: "liga"; }
+    -moz-osx-font-smoothing: grayscale; }
 
 .footer-tab {
   display: none;
