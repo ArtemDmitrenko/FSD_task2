@@ -42,24 +42,6 @@ export default class FormElements {
     const inputWithHover = document.querySelector('[name="Text"]');
     inputWithHover.classList.add("input__element_hovered");
 
-    // Datapicker
-    const func1 = () => {
-      const datapickerWithData = document.querySelector(
-        ".js-input__date-dropdown_value_to"
-      );
-      datapickerWithData.value = "19.08.2019";
-    };
-    setTimeout(func1, 15);
-
-    // Datapicker with range
-    const func2 = () => {
-      const datapickerWithRange = document.querySelector(
-        ".js-input__date-dropdown_with-range"
-      );
-      datapickerWithRange.value = "19 авг - 23 авг";
-    };
-    setTimeout(func2, 20);
-
     // DropdownBeds
     const func3 = () => {
       const dropdownDefault =

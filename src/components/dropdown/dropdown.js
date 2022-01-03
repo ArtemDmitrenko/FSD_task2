@@ -14,7 +14,7 @@ export default class Dropdown {
     this.counterArr = this.dropdownList.querySelectorAll(".js-counter");
     this.counterValueArr =
       this.dropdownList.querySelectorAll(".js-counter__value");
-    if (this.isWithButtonsDropdown) {
+    if (this.isWithButtons) {
       this.infants = this.item.querySelector('input[name = "infants"]');
       this.buttonApply = this.dropdownList.querySelector(
         'button[name = "apply"]'
@@ -30,7 +30,7 @@ export default class Dropdown {
     this.dropdownInput.addEventListener("click", this.toggleDropdown);
     document.addEventListener("click", this.handleDocumentClick);
     this.dropdownList.addEventListener("click", this.handleMinusOrPlusClick);
-    if (this.isWithButtonsDropdown) {
+    if (this.isWithButtons) {
       this.buttonClear.addEventListener("click", this.handleButtonClearClick);
     }
   }
@@ -51,7 +51,7 @@ export default class Dropdown {
       this.isDropdownOpened() && !closestDropdown;
     const conditionForClosingDropdown2 =
       this.isDropdownOpened() &&
-      this.isWithButtonsDropdown &&
+      this.isWithButtons &&
       target === this.buttonApply;
     if (conditionForClosingDropdown1) {
       this.closeDropdown();
@@ -66,7 +66,7 @@ export default class Dropdown {
     if (this.isApplied) {
       this.toggleDropdown();
     } else {
-      if (this.isWithButtonsDropdown) {
+      if (this.isWithButtons) {
         this.input.value = this.defaultValue;
       }
       this.toggleDropdown();
@@ -78,7 +78,6 @@ export default class Dropdown {
     const counter = target.closest(".js-counter__enter");
     if (counter) {
       const minus = counter.querySelector(".js-counter__button");
-      console.log(minus);
       const counterValue = counter.querySelector(".js-counter__value");
       if (target.innerHTML === "+") {
         this.increment(counterValue, minus);
@@ -115,8 +114,8 @@ export default class Dropdown {
     return this.input.classList.contains("input__element_border-radius_0");
   }
 
-  get isWithButtonsDropdown() {
-    return this.input.getAttribute("dropdownType") === "withButtons";
+  get isWithButtons() {
+    return this.item.dataset.buttons === "";
   }
 
   hideButtonClear() {
@@ -132,7 +131,7 @@ export default class Dropdown {
   }
 
   updateInput() {
-    if (this.isWithButtonsDropdown) {
+    if (this.isWithButtons) {
       let infants = Number(this.infants.value);
       let sum = 0;
       this.counterValueArr.forEach((item) => {

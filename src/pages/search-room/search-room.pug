@@ -14,11 +14,11 @@ block main
   main.search-room
     section.search-room__sidebar
       .search-room__filter-date-dropdown
-        +date-dropdown({oneInputTitle: 'Даты пребывания в отеле', name: 'oneInput'})
+        +date-dropdown({titleFrom: 'Даты пребывания в отеле'})
       .search-room__dropdown-guests
         +dropdown({
           name: 'guests', 
-          dropdownType: 'withButtons', 
+          withButtons: true, 
           heading: 'Гости', 
           value: 'Сколько гостей',
           items: [
@@ -47,7 +47,6 @@ block main
       .search-room__dropdown-rooms
         +dropdown({
           name: 'roomsBeds', 
-          dropdownType: 'noButtons', 
           heading: 'удобства номера', 
           items: [
             {

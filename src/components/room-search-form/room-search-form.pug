@@ -8,11 +8,11 @@ mixin room-search-form()
     h1.room-search-form__title Найдём номера под ваши пожелания
     .room-search-form__dates
       .room-search-form__check-in
-        +date-dropdown({twoInputsTitleFrom: 'Прибытие', twoInputsTitleTo: 'Выезд', name: 'twoInputs'})
+        +date-dropdown({titleFrom: 'Прибытие', titleTo: 'Выезд', separatedInputs: true})
     .room-search-form__guests
       +dropdown(({
         name: 'guests', 
-        dropdownType: 'withButtons', 
+        withButtons: true, 
         heading: 'Гости', 
         value: 'Сколько гостей',
         items: [

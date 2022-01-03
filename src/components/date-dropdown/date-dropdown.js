@@ -9,18 +9,14 @@ export default class dateDropdown {
   }
 
   init() {
-    this.rangeDropdown = this.item.querySelector(
-      ".js-input__date-dropdown_with-range"
-    );
+    if (!this.item.attributes["data-separatedinputs"]) {
+      this.rangeDropdown = this.item.querySelector(".js-input__element");
+    }
     if (this.rangeDropdown) {
       this.addDateDropdownForRangeInOneInput(this.index);
     } else {
-      this.inputFrom = this.item.querySelector(
-        ".js-input__date-dropdown_value_from"
-      );
-      this.inputTo = this.item.querySelector(
-        ".js-input__date-dropdown_value_to"
-      );
+      this.inputFrom = this.item.querySelector(".js-date-dropdown__from input");
+      this.inputTo = this.item.querySelector(".js-date-dropdown__to input");
       this.addDateDropdownForTwoInputs(this.index);
     }
     this.datepickerContainer = document.querySelector(
