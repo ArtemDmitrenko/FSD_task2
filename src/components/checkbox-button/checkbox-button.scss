@@ -1,7 +1,17 @@
 .checkbox-button {
   max-width: 222px;
-  &__name,
-  &__expandable-name {
+  &_expandable {
+    & .checkbox-button__form {
+      z-index: -1;
+      display: none;
+      transition: opacity 0.4s ease;
+      &_opened {
+        z-index: 10;
+        display: block;
+      }
+    }
+  }
+  &__name {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -40,15 +50,6 @@
     font-size: 12px;
     line-height: 14px;
   }
-  &__expandable-form {
-    z-index: -1;
-    display: none;
-    transition: opacity 0.4s ease;
-    &_opened {
-      z-index: 10;
-      display: block;
-    }
-  }
   &__item {
     margin-top: 12px;
     &:last-child .checkbox-button__sublabel {
@@ -60,10 +61,6 @@
     display: flex;
     flex-direction: column;
   }
-  &__input {
-    position: absolute;
-    opacity: 0;
-  }
   &__indicator {
     position: absolute;
     left: 1px;
@@ -72,6 +69,10 @@
     border: 1px solid rgba(31, 32, 65, 0.25);
     border-radius: 4px;
     cursor: pointer;
+  }
+  &__input {
+    position: absolute;
+    opacity: 0;
   }
   &__input:checked {
     & + .checkbox-button__indicator {

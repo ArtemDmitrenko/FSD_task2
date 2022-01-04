@@ -6,15 +6,17 @@
     
 mixin checkbox-button(options)
   - const {name, expandable, richCheckbox, list, sublist, forLabel} = options
+  - const styles = expandable ? "checkbox-button__expandable-form js-checkbox-button__expandable-form" : "checkbox-button__form";
 
-  div(class = expandable ? "checkbox-button checkbox-button_expandable js-checkbox-button js-checkbox-button_expandable" : "checkbox-button js-checkbox-button")
-    .checkbox-button__name
+  .checkbox-button.js-checkbox-button
+    div(class = expandable ? "checkbox-button__expandable-name js-checkbox-button__expandable-name" : "checkbox-button__name")
       .checkbox-button__title= name
       if expandable
         span.checkbox-button__checkmark.js-checkbox-button__checkmark expand_more
-    form.checkbox-button__form.js-checkbox-button__form(
+    form(
       name = richCheckbox ? "richCheckbox-button" : "checkbox-button" 
       method = "get"
+      class = styles
     )
       each nameOfButton in list
         .checkbox-button__item
