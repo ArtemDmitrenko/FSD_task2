@@ -1,4 +1,4 @@
-import Inputmask from 'inputmask';
+import Inputmask from "inputmask";
 
 export default class Input {
   constructor(item) {
@@ -10,7 +10,7 @@ export default class Input {
     Inputmask({
       placeholder: "ДД.ММ.ГГГГ",
       alias: "datetime",
-      inputFormat: "dd.mm.yyyy"
+      inputFormat: "dd.mm.yyyy",
     }).mask(this.item);
   }
 }

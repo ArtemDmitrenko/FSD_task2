@@ -10,7 +10,9 @@ export default class dateDropdown {
 
   init() {
     if (!this.item.attributes["data-separatedinputs"]) {
-      this.rangeDropdown = this.item.querySelector(".js-input__element");
+      this.rangeDropdown = this.item.querySelector(
+        ".js-date-dropdown__from input"
+      );
     }
     if (this.rangeDropdown) {
       this.addDateDropdownForRangeInOneInput(this.index);

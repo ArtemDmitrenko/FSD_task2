@@ -73,22 +73,7 @@
     border-radius: 4px;
     cursor: pointer;
   }
-  &__text {
-    @extend %font-body;
-    padding-top: 1px;
-    padding-left: 30px;
-    color: $dark50;
-    cursor: pointer;
-    &_rich {
-      @extend %h3;
-      width: 101%;
-      color: $dark75;
-      font-size: 14px;
-      text-transform: none;
-    }
-  }
-
-  input[type="checkbox"]:checked {
+  &__input:checked {
     & + .checkbox-button__indicator {
       border: 1px solid $purple;
     }
@@ -104,6 +89,20 @@
       border-image-slice: 1;
       transform: translate(-50%, -50%) rotate(135deg);
       content: "";
+    }
+  }
+  &__text {
+    @extend %font-body;
+    padding-top: 1px;
+    padding-left: 30px;
+    color: $dark50;
+    cursor: pointer;
+    &_rich {
+      @extend %h3;
+      width: 101%;
+      color: $dark75;
+      font-size: 14px;
+      text-transform: none;
     }
   }
 }
