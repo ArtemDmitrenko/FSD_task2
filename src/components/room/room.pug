@@ -3,7 +3,7 @@ include ../rate-button/rate-button.pug
 mixin room(options)
   - const {addressOfRoom, numberOfImage, roomNumber, lux, price, rate, numberOfReviews} = options
   .room
-    .room__card.js-room__card.slider
+    .room__card.js-room__card
       each image in numberOfImage
         img(src=require(`../../components/room/${addressOfRoom}/${image}.png`).default, alt="Photo").foto
     .room__room-description

@@ -10,8 +10,8 @@ mixin log-in-form()
       +input({name: 'Password', type: 'text', placeholder: 'Пароль', required: 'required'})
     .log-in-form__submit
       +button({assignment: 'button', style: 'directed', size: 'big', text: 'Войти', type: 'submit'})
-    .log-in-form__registered
-      .log-in-form__registered-on-Toxin
+    .log-in-form__registration
+      .log-in-form__registration-on-toxin
         p.log-in-form__text Нет аккаунта на Toxin?
       .log-in-form__link
         +button({assignment: 'reference', style: 'bordered', size: 'big', text: 'Создать', href: './registration.html'})

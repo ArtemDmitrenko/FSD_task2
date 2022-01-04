@@ -78,7 +78,7 @@
       display: block;
       width: 40px;
       height: 35px;
-      & span,
+      & .header__burger-element,
       &::after,
       &::before {
         position: absolute;
@@ -87,7 +87,7 @@
         margin: 0 auto;
         background: #515758;
       }
-      & span {
+      & .header__burger-element {
         top: 16px;
       }
       &::after,
@@ -107,7 +107,7 @@
   }
   &_with-opened-burger {
     @media screen and (max-width: 992px) {
-      & span {
+      & .header__burger-element {
         opacity: 0;
         transition: 0.5s;
       }
