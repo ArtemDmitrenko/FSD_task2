@@ -1,10 +1,11 @@
-[  
+[
   {
+    "name": "navigation",
     "title": "Навигация",
     "items": [
       {
-      "item": "О нас",
-      "href": "https://www.mock-link.com/"
+        "item": "О нас",
+        "href": "https://www.mock-link.com/"
       },
       {
         "item": "Новости",
@@ -21,10 +22,12 @@
     ]
   },
   {
+    "name": "about",
     "title": "О нас",
-    "items": [{
-      "item": "О сервисе",
-      "href": "https://www.mock-link.com/"
+    "items": [
+      {
+        "item": "О сервисе",
+        "href": "https://www.mock-link.com/"
       },
       {
         "item": "Наша команда",
@@ -41,10 +44,12 @@
     ]
   },
   {
+    "name": "support",
     "title": "Служба поддержки",
-    "items": [{
-      "item": "Соглашения",
-      "href": "https://www.mock-link.com/"
+    "items": [
+      {
+        "item": "Соглашения",
+        "href": "https://www.mock-link.com/"
       },
       {
         "item": "Сообщества",

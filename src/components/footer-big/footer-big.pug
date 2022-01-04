@@ -4,30 +4,29 @@ include ../input/input.pug
 
 mixin footer-big(footerItems)
   .footer-big
-      .footer-big__half1
+      .footer-big__top
         .footer-big__container
-          .footer-big__top
-            .footer-big__column1
-              .footer-big__logo
-                +logo()
+          .footer-big__content
+            .footer-big__logo
+              +logo()
               p.footer-big__text Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
             - for (let i = 0; i < footerItems.length; i ++)
-              div(class="footer-big__column" + (i+2))
-                ul.footer-big__navigation
+              div(class="footer-big__" + footerItems[i].name)
+                ul.footer-big__list
                   li.footer-big__title= footerItems[i].title
                   - for (let y = 0; y < footerItems[i].items.length; y ++)
                     li.footer-big__item
                       a.footer-big__link(href=footerItems[i].items[y].href)=footerItems[i].items[y].item
-            .footer-big__column5
-              ul.footer-big__subscription
+            .footer-big__subscription
+              ul.footer-big__subscription-content
                 li.footer-big__title.footer-big__title_line-height_24 Подписка
                 li.footer-big__item_line-height_24 Получайте специальные предложения и новости сервиса
                 li.footer-big__item
                   form.footer-big__form(action="https://www.mock-link.com/")
                     +input({name: 'email', type: 'email', placeholder: 'Email', required: true, subscription: true})                                        
-      .footer-big__half2
+      .footer-big__bottom
         .footer-big__container
-          .footer-big__bottom
+          .footer-big__main
             p.footer-big__copyright Copyright © 2018 Toxin отель. Все права зачищены.
             .footer-big__social
               +social-nets()
