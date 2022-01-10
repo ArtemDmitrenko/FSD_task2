@@ -1,6 +1,6 @@
 export default class CheckboxButton {
   constructor(checkboxList) {
-    this.checkboxList = checkboxList;
+    this.checkboxList = checkboxList.querySelector(".js-checkbox-button");
     this.init();
     this.addEventListeners();
   }

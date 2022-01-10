@@ -1,7 +1,7 @@
 import CheckboxButton from "Components/checkbox-button/checkbox-button";
 import DateDropdown from "Components/date-dropdown/date-dropdown";
 import Input from "Components/input/input";
-import LikeButton from "Components/like-button/like-button";
+import Review from "Components/review/review";
 import RangeSlider from "Components/range-slider/range-slider";
 import Dropdown from "Components/dropdown/dropdown";
 import Pagination from "Components/pagination/pagination";
@@ -13,17 +13,21 @@ export default class FormElements {
   }
 
   init() {
-    const checkboxLists = document.querySelectorAll(".js-checkbox-button");
+    const checkboxLists = document.querySelectorAll(
+      ".js-form-elements__checkbox-button"
+    );
     const dateDropdowns = document.querySelectorAll(
       ".js-form-elements__datepicker"
     );
     const maskedInput = document.querySelector(
       ".js-form-elements__masked-input"
     );
-    const likeButtons = document.querySelectorAll(".js-like-button__button");
-    const rangeSlider = document.querySelector(".js-range-slider");
+    const reviews = document.querySelectorAll(".js-form-elements__review");
+    const rangeSlider = document.querySelector(
+      ".js-form-elements__range-slider"
+    );
     const dropdowns = document.querySelectorAll(".js-form-elements__dropdown");
-    const pagination = document.querySelector(".js-pagination");
+    const pagination = document.querySelector(".js-form-elements__pagination");
     checkboxLists.forEach((checkboxList) => {
       new CheckboxButton(checkboxList);
     });
@@ -31,8 +35,8 @@ export default class FormElements {
       new DateDropdown(dateDropdown, index);
     });
     new Input(maskedInput, "masked");
-    likeButtons.forEach((likeButton) => {
-      new LikeButton(likeButton);
+    reviews.forEach((review) => {
+      new Review(review);
     });
     new RangeSlider(rangeSlider);
     dropdowns.forEach((dropdown) => {

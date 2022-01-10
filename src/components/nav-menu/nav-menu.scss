@@ -49,6 +49,11 @@
     background-color: white;
     opacity: 0;
     transition: opacity 0.4s ease;
+    &_opened {
+      z-index: 1;
+      opacity: 1;
+      transition: opacity 0.4s ease;
+    }
   }
   &__sub-link {
     @extend %font-body;
@@ -57,10 +62,4 @@
   &__sub-item {
     padding-top: 10px;
   }
-}
-
-.show {
-  z-index: 1;
-  opacity: 1;
-  transition: opacity 0.4s ease;
 }

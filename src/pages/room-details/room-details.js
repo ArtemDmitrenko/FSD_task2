@@ -1,7 +1,7 @@
-import Diagram from 'Components/diagram/diagram';
-import Header from 'Components/header/header';
-import LikeButton from 'Components/like-button/like-button';
-import FormConfirmation from 'Components/confirmation-form/confirmation-form'
+import Diagram from "Components/diagram/diagram";
+import Header from "Components/header/header";
+import Review from "Components/review/review";
+import FormConfirmation from "Components/confirmation-form/confirmation-form";
 
 export default class RoomDetails {
   constructor() {
@@ -9,15 +9,19 @@ export default class RoomDetails {
   }
 
   init() {
-    const formConfirmation = document.querySelector('.js-confirmation-form');
-    const diagram = document.querySelector('.js-diagram');
-    const header = document.querySelector('.js-header');
-    const likeButtons = document.querySelectorAll('.js-like-button__button');
+    const formConfirmation = document.querySelector(
+      ".js-room-details__confirmation-form"
+    );
+    const diagram = document.querySelector(".js-room-details__diagram");
+    const header = document.querySelector("header");
+    const reviews = document.querySelectorAll(
+      ".js-room-details__review-block-item"
+    );
     new FormConfirmation(formConfirmation);
     new Diagram(diagram);
     new Header(header);
-    likeButtons.forEach((likeButton) => {
-      new LikeButton(likeButton);
+    reviews.forEach((review) => {
+      new Review(review);
     });
   }
 }

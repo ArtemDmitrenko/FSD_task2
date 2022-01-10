@@ -3,7 +3,7 @@ import Dropdown from "Components/dropdown/dropdown";
 
 export default class FormConfirmation {
   constructor(form) {
-    this.form = form;
+    this.form = form.querySelector(".js-confirmation-form");
     this.init();
     this.findDateDropdown();
     this.findDropdown();

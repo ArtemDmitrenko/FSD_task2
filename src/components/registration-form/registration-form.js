@@ -2,7 +2,7 @@ import Input from "Components/input/input";
 
 export default class FormRegistration {
   constructor(form) {
-    this.form = form;
+    this.form = form.querySelector(".js-registration-form");
     this.init();
     this.findMaskedInput();
   }

@@ -2,7 +2,7 @@ import "paginationjs";
 
 export default class Pagination {
   constructor(item) {
-    this.item = item;
+    this.item = item.querySelector(".js-pagination");
     this.init();
     this.callPluginPagination();
     this.createSign(1, 12);

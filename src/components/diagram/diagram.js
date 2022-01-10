@@ -1,6 +1,6 @@
 export default class Diagram {
   constructor(item) {
-    this.item = item;
+    this.item = item.querySelector(".js-diagram");
     this.init();
     this.getAttributes();
     this.calcSumOfReviews();

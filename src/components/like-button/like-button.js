@@ -1,6 +1,6 @@
 export default class LikeButton {
   constructor(item) {
-    this.item = item;
+    this.item = item.querySelector(".js-like-button__button");
     this.init();
     this.addEventListeners();
   }

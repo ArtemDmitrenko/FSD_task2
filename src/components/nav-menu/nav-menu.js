@@ -1,6 +1,6 @@
 export default class NavMenu {
   constructor(item) {
-    this.item = item;
+    this.item = item.querySelector(".js-nav-menu");
     this.init();
     this.addEventListeners();
   }
@@ -24,7 +24,7 @@ export default class NavMenu {
   }
 
   handleMenuItemClick(i) {
-    this.subLists[i].classList.toggle("show");
+    this.subLists[i].classList.toggle("nav-menu__sub-list_opened");
     this.checkmarks[i].classList.toggle("nav-menu__checkmark_direction_up");
   }
 
@@ -35,8 +35,8 @@ export default class NavMenu {
           .getElementsByClassName("js-nav-menu__item_with-dropdown")
           [i].contains(event.target)
       ) {
-        if (this.subLists[i].classList.contains("show")) {
-          this.subLists[i].classList.remove("show");
+        if (this.subLists[i].classList.contains("nav-menu__sub-list_opened")) {
+          this.subLists[i].classList.remove("nav-menu__sub-list_opened");
           this.checkmarks[i].classList.toggle(
             "nav-menu__checkmark_direction_up"
           );
@@ -44,4 +44,8 @@ export default class NavMenu {
       }
     }
   };
+
+  get navLinks() {
+    return this.item.querySelectorAll(".js-nav-menu__link");
+  }
 }

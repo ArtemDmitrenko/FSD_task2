@@ -2,7 +2,7 @@ import "ion-rangeslider";
 
 export default class RangeSlider {
   constructor(item) {
-    this.item = item;
+    this.item = item.querySelector(".js-range-slider");
     this.init();
   }
 
