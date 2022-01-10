@@ -4,7 +4,6 @@
   display: flex;
   gap: 20px;
   width: 100%;
-  cursor: pointer;
   &__from,
   &__to {
     width: 100%;
@@ -21,21 +20,10 @@
     -webkit-background-clip: text;
     border: none;
     outline: none;
-    cursor: pointer;
     -webkit-text-fill-color: transparent;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     -moz-osx-font-smoothing: grayscale;
-  }
-  & .input__checkmark {
-    @media screen and (max-width: 390px) {
-      display: none;
-    }
-  }
-  & .input__date-dropdown {
-    @media screen and (max-width: 390px) {
-      padding-left: 5px;
-    }
   }
   &__container {
     width: 318px;

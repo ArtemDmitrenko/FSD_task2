@@ -43,10 +43,6 @@
     @media screen and (max-width: 992px) {
       display: none;
     }
-    & .button_bordered {
-      width: 83px;
-      height: 29px;
-    }
   }
   &__link-sign {
     width: 196px;
@@ -123,24 +119,4 @@
       }
     }
   }
-  & .nav-menu__sub-list {
-    @media screen and (max-width: 992px) {
-      display: none;
-    }
-  }
-  & .nav-menu__list {
-    @media screen and (max-width: 992px) {
-      display: block;
-      text-align: left;
-    }
-  }
-  & .nav-menu__list li {
-    @media screen and (max-width: 992px) {
-      margin: 40px 0 40px 20px;
-    }
-  }
-}
-
-.fixed-page {
-  overflow: hidden;
 }

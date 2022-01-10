@@ -1,12 +1,13 @@
 mixin input(options = {})
   - const {heading, description, name, value, placeholder, expandable, subscription, type, required, readonly} = options
+  - const inputStyles = 
   
   .input
     if heading
       .input__heading= heading
     if description
       .input__description= description
-    input.input__element.js-input__element(name = name type = type value = value placeholder = placeholder readonly = readonly subscription = subscription required = required)
+    input.input__element.js-input__element(class = subscription ? 'input__element_directed' : '' name = name type = type value = value placeholder = placeholder readonly = readonly subscription = subscription required = required)
     if expandable
       span.input__checkmark expand_more
     if subscription
