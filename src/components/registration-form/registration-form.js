@@ -8,10 +8,12 @@ export default class FormRegistration {
   }
 
   init() {
-    this.maskedInput = this.form.querySelector('[name|="birthday"]');
+    this.maskedInput = this.form.querySelector(
+      ".js-registration-form__birthday"
+    );
   }
 
   findMaskedInput() {
-    new Input(this.maskedInput);
+    new Input(this.maskedInput, "masked");
   }
 }

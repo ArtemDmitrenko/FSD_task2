@@ -6,10 +6,10 @@ include ../button/button.pug
 mixin room-search-form()
   form(action="#" method="post").room-search-form.js-room-search-form
     h1.room-search-form__title Найдём номера под ваши пожелания
-    .room-search-form__dates
+    .room-search-form__dates.js-room-search-form__dates
       .room-search-form__check-in
         +date-dropdown({titleFrom: 'Прибытие', titleTo: 'Выезд', separatedInputs: true})
-    .room-search-form__guests
+    .room-search-form__guests.js-room-search-form__guests
       +dropdown(({
         name: 'guests', 
         withButtons: true, 

@@ -31,7 +31,7 @@ block content
           +input({heading: 'text field', description: 'default', name: 'email', type: 'email', placeholder: 'Email', required: true})
         .form-elements__text-field.form-elements__element
           +input({heading: 'text field', description: 'Hover / Focus', name: 'Text', type: 'email', placeholder: 'This is pretty awesome', required: true})
-        .form-elements__dropdown.form-elements__element 
+        .form-elements__dropdown.js-form-elements__dropdown.form-elements__element 
           +dropdown({
             name: 'guests', 
             withButtons: true, 
@@ -54,15 +54,15 @@ block content
             ],
             declination: 'гость, гостя, гостей',
           })
-        .form-elements__masked-input.form-elements__element
+        .form-elements__masked-input.js-form-elements__masked-input.form-elements__element
           +input({heading: 'masked text field', name: 'birthday', type: 'text', placeholder: 'ДД.ММ.ГГГГ', required: true})
-        .form-elements__datepicker.form-elements__datepicker_range-in-two.form-elements__element
+        .form-elements__datepicker.js-form-elements__datepicker.form-elements__datepicker_range-in-two.form-elements__element
           +date-dropdown({titleFrom: 'date Dropdown', titleTo: 'date Dropdown', defaultValueTo: '19.08.2019', separatedInputs: true})
-        .form-elements__datepicker.form-elements__datepicker_range-in-one.form-elements__element
+        .form-elements__datepicker.js-form-elements__datepicker.form-elements__datepicker_range-in-one.form-elements__element
           +date-dropdown({titleFrom: 'filter date dropdown', defaultValueFrom: '19 авг - 23 авг'})
         .form-elements__subscription-input.form-elements__element 
           +input({heading: 'subscription text field', name: 'email', type: 'email', placeholder: 'Email', required: true, subscription: true})
-        .form-elements__dropdown.form-elements__element.form-elements__element_not-expanded
+        .form-elements__dropdown.js-form-elements__dropdown.form-elements__element.form-elements__element_not-expanded
           +dropdown({
             name: 'roomsBeds', 
             heading: 'dropdown', 
@@ -83,7 +83,7 @@ block content
               },
             ]
           })
-        .form-elements__dropdown.form-elements__element.form-elements__element_expanded
+        .form-elements__dropdown.js-form-elements__dropdown.form-elements__element.form-elements__element_expanded
           +dropdown({
             name: 'roomsBeds', 
             heading: 'dropdown', 
@@ -126,7 +126,7 @@ block content
             .form-elements__rate-button.form-elements__element
               +rate-button({name: 'Rate button', value: '4'})
               +rate-button({value: '5'})
-            .form-elements__dropdown.form-elements__dropdown_with-guests.form-elements__element 
+            .form-elements__dropdown.js-form-elements__dropdown.form-elements__dropdown_with-guests.form-elements__element 
               +dropdown({
                 name: 'guests', 
                 withButtons: true, 
@@ -170,7 +170,7 @@ block content
             .form-elements__pagination.form-elements__element
               .form-elements__pagination-title Pagination
                 +pagination()
-            .form-elements__dropdown.form-elements__dropdown_with-guests.form-elements__element.form-elements__dropdown_expandedGuests
+            .form-elements__dropdown.js-form-elements__dropdown.form-elements__dropdown_with-guests.form-elements__element.form-elements__dropdown_expandedGuests
               +dropdown({
                 name: 'guests', 
                 withButtons: true, 

@@ -12,7 +12,7 @@ mixin registration-form()
       +input({name: 'Surname', type: 'text', placeholder: 'Фамилия', required: 'required'})
     .registration-form__gender
       +radio-buttons({list: ['Мужчина', 'Женщина'], required: 'required'})
-    .registration-form__birthday
+    .registration-form__birthday.js-registration-form__birthday
       +input({heading: 'Дата рождения', name: 'birthday', type: 'text', placeholder: 'ДД.ММ.ГГГГ', required: 'required'})
     .registration-form__enter
       .registration-form__email

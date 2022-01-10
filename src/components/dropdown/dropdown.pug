@@ -11,12 +11,13 @@ mixin dropdown(options = {})
       .dropdown__list.js-dropdown__list
         .dropdown__counter
           each item in items
-            +counter([item.sign, item.name, item.declination])
+            .dropdown__counter-item.js-dropdown__counter-item
+              +counter([item.sign, item.name, item.declination])
         if withButtons
           .dropdown__buttons
-            .dropdown__button
+            .dropdown__button-clear.js-dropdown__button-clear
               +button({assignment: 'button', style: 'texted', color: 'violent', text: 'Очистить', type: 'button', name: 'clear'})
-            .dropdown__button
+            .dropdown__button-apply.js-dropdown__button-apply
               +button({assignment: 'button', style: 'texted', color: 'violent', text: 'Применить', type: 'button', name: 'apply'})
 
 

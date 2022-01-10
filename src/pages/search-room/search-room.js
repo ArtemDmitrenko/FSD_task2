@@ -13,12 +13,19 @@ export default class SearchRoom {
 
   init() {
     const checkboxLists = document.querySelectorAll(".js-checkbox-button");
-    const dateDropdowns = document.querySelectorAll(".js-date-dropdown");
+    const dateDropdowns = document.querySelectorAll(
+      ".js-search-room__filter-date-dropdown"
+    );
     const header = document.querySelector(".js-header");
     const pagination = document.querySelector(".js-pagination");
     const rangeSlider = document.querySelector(".js-range-slider");
     const carousels = document.querySelectorAll(".js-room__card");
-    const dropdowns = document.querySelectorAll(".js-dropdown");
+    const guestDropdown = document.querySelector(
+      ".js-search-room__dropdown-guests"
+    );
+    const roomDropdown = document.querySelector(
+      ".js-search-room__dropdown-rooms"
+    );
     checkboxLists.forEach((checkboxList) => {
       new CheckboxButton(checkboxList);
     });
@@ -31,8 +38,7 @@ export default class SearchRoom {
     carousels.forEach((carousel) => {
       new Carousel(carousel);
     });
-    dropdowns.forEach((dropdown) => {
-      new Dropdown(dropdown);
-    });
+    new Dropdown(guestDropdown);
+    new Dropdown(roomDropdown);
   }
 }

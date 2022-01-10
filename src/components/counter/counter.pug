@@ -3,6 +3,6 @@ mixin counter(options = [])
   .counter.js-counter
     p.counter__name= sign
     .counter__enter.js-counter__enter
-      button(type="button").counter__button.js-counter__button -
+      button(type="button" data-operator='minus').counter__button.js-counter__button -
       input(name=name type="text" value=defaultValue data-declination=declination readonly).counter__value.js-counter__value
-      button(type="button").counter__button +
+      button(type="button" data-operator='plus').counter__button +

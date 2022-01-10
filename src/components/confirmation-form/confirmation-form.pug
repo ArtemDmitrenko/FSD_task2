@@ -10,10 +10,10 @@ mixin confirmation-form()
         h1.confirmation-form__room-number <span>№</span> 888
         h3.confirmation-form__room-type Люкс
       h3.confirmation-form__price 9 990₽ <span>в сутки</span>
-    .confirmation-form__dates
+    .confirmation-form__dates.js-confirmation-form__dates
       .confirmation-form__check-in
         +date-dropdown({titleFrom: 'Прибытие', titleTo: 'Выезд', separatedInputs: true})
-    .confirmation-form__guests
+    .confirmation-form__guests.js-confirmation-form__guests
       +dropdown({
         name: 'guests', 
         withButtons: true, 

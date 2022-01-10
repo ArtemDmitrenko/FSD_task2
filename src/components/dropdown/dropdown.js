@@ -1,6 +1,10 @@
+import Input from "Components/input/input";
+import Counter from "Components/counter/counter";
+import Button from "Components/button/button";
+
 export default class Dropdown {
   constructor(item) {
-    this.item = item;
+    this.item = item.querySelector(".js-dropdown");
     this.init();
     this.addEventListeners();
     this.disableMinusButton();
@@ -8,22 +12,40 @@ export default class Dropdown {
 
   init() {
     this.dropdownList = this.item.querySelector(".js-dropdown__list");
-    this.input = this.item.querySelector(".js-input__element");
+    this.inputInstance = new Input(this.item);
+    this.input = this.inputInstance.inputElement;
     this.dropdownInput = this.item.querySelector(".js-dropdown__input");
+
     this.isApplied = false;
-    this.counterArr = this.dropdownList.querySelectorAll(".js-counter");
-    this.counterValueArr =
-      this.dropdownList.querySelectorAll(".js-counter__value");
+
+    const dropdownCounterArray = this.item.querySelectorAll(
+      ".js-dropdown__counter-item"
+    );
+    this.counterArr = [];
+    this.counterValueArr = [];
+    dropdownCounterArray.forEach((item) => {
+      const counter = new Counter(item);
+      this.counterArr.push(counter);
+      this.counterValueArr.push(counter.value);
+    });
+
     if (this.isWithButtons) {
-      this.infants = this.item.querySelector('input[name = "infants"]');
+      this.findInfantsInput();
       this.buttonApply = this.dropdownList.querySelector(
-        'button[name = "apply"]'
+        ".js-dropdown__button-apply"
       );
       this.buttonClear = this.dropdownList.querySelector(
-        'button[name = "clear"]'
+        ".js-dropdown__button-clear"
       );
+      this.buttonClearInstance = new Button(this.buttonClear);
       this.defaultValue = this.dropdownInput.dataset.value;
     }
+  }
+
+  findInfantsInput() {
+    this.counterArr.forEach((counter) => {
+      if (counter.isAttributeNameInfants) this.infants = counter.value;
+    });
   }
 
   addEventListeners() {
@@ -36,8 +58,7 @@ export default class Dropdown {
   }
 
   toggleDropdown = () => {
-    this.input.classList.toggle("input__element_border-radius_0");
-    this.input.classList.toggle("input__element_with-bright-border");
+    this.inputInstance.changeBorder();
     this.dropdownList.classList.toggle("dropdown__list_opened");
     if (this.isDropdownOpened()) {
       this.updateInput();
@@ -75,31 +96,8 @@ export default class Dropdown {
 
   handleMinusOrPlusClick = (e) => {
     const { target } = e;
-    const counter = target.closest(".js-counter__enter");
-    if (counter) {
-      const minus = counter.querySelector(".js-counter__button");
-      const counterValue = counter.querySelector(".js-counter__value");
-      if (target.innerHTML === "+") {
-        this.increment(counterValue, minus);
-      }
-      if (target.innerHTML === "-") {
-        this.decrement(counterValue, minus);
-      }
-      this.updateInput();
-    }
+    if (target.closest(".js-dropdown__counter-item")) this.updateInput();
   };
-
-  increment(counterValue, minus) {
-    counterValue.value = Number(counterValue.value) + 1;
-    minus.removeAttribute("disabled", "disabled");
-  }
-
-  decrement(counterValue, minus) {
-    counterValue.value = Number(counterValue.value) - 1;
-    if (Number(counterValue.value) === 0) {
-      minus.setAttribute("disabled", "disabled");
-    }
-  }
 
   handleButtonClearClick = () => {
     this.input.value = this.defaultValue;
@@ -111,7 +109,7 @@ export default class Dropdown {
   };
 
   isDropdownOpened() {
-    return this.input.classList.contains("input__element_border-radius_0");
+    return this.inputInstance.isZeroBorderRadius;
   }
 
   get isWithButtons() {
@@ -119,14 +117,12 @@ export default class Dropdown {
   }
 
   hideButtonClear() {
-    this.buttonClear.classList.add("button_hidden");
+    this.buttonClearInstance.hideButton();
   }
 
   disableMinusButton() {
-    this.counterValueArr.forEach((item) => {
-      if (Number(item.value) === 0) {
-        item.previousElementSibling.setAttribute("disabled", "disabled");
-      }
+    this.counterArr.forEach((counter) => {
+      counter.disableMinusButton();
     });
   }
 
@@ -151,7 +147,7 @@ export default class Dropdown {
         this.input.value = this.defaultValue;
         this.hideButtonClear();
       } else {
-        this.buttonClear.classList.remove("button_hidden");
+        this.buttonClearInstance.showButton();
       }
     } else {
       const itemsText = [];

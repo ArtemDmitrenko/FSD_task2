@@ -14,11 +14,15 @@ export default class FormElements {
 
   init() {
     const checkboxLists = document.querySelectorAll(".js-checkbox-button");
-    const dateDropdowns = document.querySelectorAll(".js-date-dropdown");
-    const maskedInput = document.querySelector('[name|="birthday"]');
+    const dateDropdowns = document.querySelectorAll(
+      ".js-form-elements__datepicker"
+    );
+    const maskedInput = document.querySelector(
+      ".js-form-elements__masked-input"
+    );
     const likeButtons = document.querySelectorAll(".js-like-button__button");
     const rangeSlider = document.querySelector(".js-range-slider");
-    const dropdowns = document.querySelectorAll(".js-dropdown");
+    const dropdowns = document.querySelectorAll(".js-form-elements__dropdown");
     const pagination = document.querySelector(".js-pagination");
     checkboxLists.forEach((checkboxList) => {
       new CheckboxButton(checkboxList);
@@ -26,7 +30,7 @@ export default class FormElements {
     dateDropdowns.forEach((dateDropdown, index) => {
       new DateDropdown(dateDropdown, index);
     });
-    new Input(maskedInput);
+    new Input(maskedInput, "masked");
     likeButtons.forEach((likeButton) => {
       new LikeButton(likeButton);
     });

@@ -10,8 +10,10 @@ export default class FormConfirmation {
   }
 
   init() {
-    this.dateDropdowns = this.form.querySelectorAll(".js-date-dropdown");
-    this.dropdown = this.form.querySelector(".js-dropdown");
+    this.dateDropdowns = this.form.querySelectorAll(
+      ".js-confirmation-form__dates"
+    );
+    this.dropdown = this.form.querySelector(".js-confirmation-form__guests");
   }
 
   findDateDropdown() {

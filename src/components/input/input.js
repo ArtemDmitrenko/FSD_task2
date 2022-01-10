@@ -1,16 +1,31 @@
 import Inputmask from "inputmask";
 
 export default class Input {
-  constructor(item) {
-    this.item = item;
-    this.init();
+  constructor(item, masked) {
+    this.input = item.querySelector(".js-input__element");
+    if (masked) {
+      this.initWithMask();
+    }
   }
 
-  init() {
+  initWithMask() {
     Inputmask({
       placeholder: "ДД.ММ.ГГГГ",
       alias: "datetime",
       inputFormat: "dd.mm.yyyy",
-    }).mask(this.item);
+    }).mask(this.input);
+  }
+
+  changeBorder() {
+    this.input.classList.toggle("input__element_border-radius_0");
+    this.input.classList.toggle("input__element_with-bright-border");
+  }
+
+  get inputElement() {
+    return this.input;
+  }
+
+  get isZeroBorderRadius() {
+    return this.input.classList.contains("input__element_border-radius_0");
   }
 }

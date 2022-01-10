@@ -1,25 +1,30 @@
 import "air-datepicker";
 
+import Input from "Components/input/input";
+
 export default class dateDropdown {
   constructor(item, index) {
-    this.item = item;
+    this.item = item.querySelector(".js-date-dropdown");
     this.index = index;
     this.init();
     this.addEventListeners();
   }
 
   init() {
-    if (!this.item.attributes["data-separatedinputs"]) {
-      this.rangeDropdown = this.item.querySelector(
-        ".js-date-dropdown__from input"
+    if (this.isSeparatedInputs()) {
+      const dateDropdownFrom = this.item.querySelector(
+        ".js-date-dropdown__from"
       );
-    }
-    if (this.rangeDropdown) {
-      this.addDateDropdownForRangeInOneInput(this.index);
-    } else {
-      this.inputFrom = this.item.querySelector(".js-date-dropdown__from input");
-      this.inputTo = this.item.querySelector(".js-date-dropdown__to input");
+      const dateDropdownTo = this.item.querySelector(".js-date-dropdown__to");
+      const from = new Input(dateDropdownFrom);
+      const to = new Input(dateDropdownTo);
+      this.inputFrom = from.inputElement;
+      this.inputTo = to.inputElement;
       this.addDateDropdownForTwoInputs(this.index);
+    } else {
+      const input = new Input(this.item);
+      this.rangeInput = input.inputElement;
+      this.addDateDropdownForRangeInOneInput(this.index);
     }
     this.datepickerContainer = document.querySelector(
       `.datepicker${this.index}`
@@ -30,9 +35,13 @@ export default class dateDropdown {
     this.buttonApply.textContent = "Применить";
   }
 
+  isSeparatedInputs() {
+    return this.item.attributes["data-separatedinputs"];
+  }
+
   addEventListeners() {
     this.buttonApply.addEventListener("click", this.handleButtonApplyClick);
-    if (!this.rangeDropdown) {
+    if (!this.rangeInput) {
       this.inputTo.addEventListener("click", this.handleInputToClick);
     }
   }
@@ -48,7 +57,7 @@ export default class dateDropdown {
       prevHtml: `<span class="date-dropdown__arrow">arrow_back</span>`,
       nextHtml: `<span class="date-dropdown__arrow">arrow_forward</span>`,
     };
-    this.myDatapicker = $(this.rangeDropdown)
+    this.myDatapicker = $(this.rangeInput)
       .datepicker(options)
       .data("datepicker");
   }

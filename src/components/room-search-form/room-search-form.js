@@ -10,8 +10,10 @@ export default class FormRoomSearch {
   }
 
   init() {
-    this.dateDropdowns = this.form.querySelectorAll(".js-date-dropdown");
-    this.dropdown = this.form.querySelector(".js-dropdown");
+    this.dateDropdowns = this.form.querySelectorAll(
+      ".js-room-search-form__dates"
+    );
+    this.dropdown = this.form.querySelector(".js-room-search-form__guests");
   }
 
   findDateDropdown() {

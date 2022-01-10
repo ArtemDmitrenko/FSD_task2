@@ -17,9 +17,9 @@ mixin button(options)
         type = type
         name = name
         class = styles
-      ).button #{text}
+      ).button.js-button #{text}
     when "reference"
       a(
         href = href
         class = styles
-      ).button #{text}
+      ).button.js-button #{text}
