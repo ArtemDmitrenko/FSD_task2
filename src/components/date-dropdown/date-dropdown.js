@@ -2,7 +2,7 @@ import "air-datepicker";
 
 import Input from "Components/input/input";
 
-export default class dateDropdown {
+export default class DateDropdown {
   constructor(item, index) {
     this.item = item.querySelector(".js-date-dropdown");
     this.index = index;
@@ -68,19 +68,20 @@ export default class dateDropdown {
       todayButton: true,
       range: true,
       classes: `datepicker${index} date-dropdown__container`,
-      bindedInputFrom: this.inputFrom,
-      bindedInputTo: this.inputTo,
       prevHtml: `<span class="date-dropdown__arrow">arrow_back</span>`,
       nextHtml: `<span class="date-dropdown__arrow">arrow_forward</span>`,
-      onSelect: function (fd, d, picker) {
-        $(this.bindedInputFrom).val(fd.split(",")[0]);
-        $(this.bindedInputTo).val(fd.split(",")[1]);
-      },
+      onSelect: this.handleDateClick,
     };
     this.myDatapicker = $(this.inputFrom)
       .datepicker(options)
       .data("datepicker");
   }
+
+  handleDateClick = () => {
+    const date = this.myDatapicker._prevOnSelectValue;
+    $(this.inputFrom).val(date.split(",")[0]);
+    $(this.inputTo).val(date.split(",")[1]);
+  };
 
   handleButtonApplyClick = () => {
     this.myDatapicker.hide();
