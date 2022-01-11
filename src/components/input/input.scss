@@ -46,13 +46,11 @@
       opacity: 0.75;
       transition: all 0.4s ease;
     }
-    &_border-radius {
-      &_0 {
-        border-bottom-right-radius: 0;
-        border-bottom-left-radius: 0;
-      }
+    &_straightened {
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
     }
-    &_with-bright-border {
+    &_border-color_bright {
       border-color: rgba(31, 32, 65, 0.5);
     }
     &_hovered {

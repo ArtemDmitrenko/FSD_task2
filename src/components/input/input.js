@@ -17,8 +17,8 @@ export default class Input {
   }
 
   changeBorder() {
-    this.input.classList.toggle("input__element_border-radius_0");
-    this.input.classList.toggle("input__element_with-bright-border");
+    this.input.classList.toggle("input__element_straightened");
+    this.input.classList.toggle("input__element_border-color_bright");
   }
 
   get inputElement() {
@@ -26,6 +26,6 @@ export default class Input {
   }
 
   get isZeroBorderRadius() {
-    return this.input.classList.contains("input__element_border-radius_0");
+    return this.input.classList.contains("input__element_straightened");
   }
 }
