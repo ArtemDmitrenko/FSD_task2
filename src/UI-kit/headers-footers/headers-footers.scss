@@ -1,8 +1,7 @@
 @import "../../colors.scss";
 @import "../../fonts.scss";
 @import "../../nullstyle.scss";
-@import "Components/UIkit/headers-footers/headers-footers.scss";
-@import "Components/UIkit/logo-UIkit/logo-UIkit.scss";
+@import "Components/logo-UIkit/logo-UIkit.scss";
 @import "Components/header/header.scss";
 @import "Components/logo/logo.scss";
 @import "Components/button/button.scss";
@@ -11,3 +10,30 @@
 @import "Components/footer-tab/footer-tab.scss";
 @import "Components/social-nets/social-nets.scss";
 @import "Components/input/input.scss";
+
+.headers-footers {
+  background-color: #f4f4f6;
+  &__not-registered {
+    margin-top: 62px;
+  }
+  &__registered {
+    margin-top: 40px;
+  }
+  &__logo-UIkit {
+    padding: 30px 0 0 30px;
+  }
+  &__footer-wide {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  &__footer-tab {
+    padding-bottom: 140px;
+
+    & .footer-tab {
+      display: block;
+    }
+    & .footer-tab__content {
+      padding-top: 120px;
+    }
+  }
+}

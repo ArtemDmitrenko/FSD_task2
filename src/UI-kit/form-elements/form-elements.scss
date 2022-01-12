@@ -1,8 +1,7 @@
 @import "../../colors.scss";
 @import "../../fonts.scss";
 @import "../../nullstyle.scss";
-@import "Components/UIkit/form-elements/form-elements.scss";
-@import "Components/UIkit/logo-UIkit/logo-UIkit.scss";
+@import "Components/logo-UIkit/logo-UIkit.scss";
 @import "Components/input/input.scss";
 @import "Components/dropdown/dropdown.scss";
 @import "Components/button/button.scss";
@@ -18,3 +17,139 @@
 @import "Components/review/review.scss";
 @import "Components/pagination/pagination.scss";
 @import "Components/range-slider/range-slider.scss";
+
+.form-elements {
+  &__logo-UIkit {
+    padding: 30px 0 0 30px;
+  }
+  &__all-items {
+    display: flex;
+    margin: 85px 0 90px 141px;
+  }
+  &__global-row2 {
+    margin-top: -20px;
+  }
+  &__global-row1 {
+    margin-right: 126px;
+  }
+  &__sub-row {
+    display: flex;
+  }
+  &__sub-row1,
+  &__sub-row2,
+  &__global-row1 {
+    width: 320px;
+  }
+  &__sub-row2 {
+    margin-left: 71px;
+  }
+  &__element {
+    margin-bottom: 41px;
+    &_expanded {
+      width: 266px;
+      margin-bottom: 172px;
+    }
+    &_not-expanded {
+      width: 266px;
+      margin-top: 120px;
+      margin-bottom: 40px;
+    }
+  }
+  &__datepicker {
+    display: flex;
+    margin-top: 60px;
+    &_range-in-one {
+      width: 266px;
+      margin-bottom: 62px;
+    }
+  }
+  &__like-button {
+    position: relative;
+    display: flex;
+    & .like-button:nth-child(2) {
+      position: absolute;
+      bottom: 0;
+      left: 50px;
+    }
+  }
+  &__rate-button {
+    position: relative;
+    display: flex;
+    margin-bottom: 212px;
+    & .rate-button:nth-child(2) {
+      position: absolute;
+      bottom: 0;
+      left: 140px;
+    }
+  }
+  &__dropdown {
+    &_with-guests {
+      margin-bottom: 255px;
+    }
+  }
+  &__button-title,
+  &__pagination-title {
+    @extend %h3;
+  }
+
+  &__button-row1 {
+    margin-top: 15px;
+    margin-bottom: 31px;
+    & .button_solid:first-child {
+      margin-right: 20px;
+    }
+  }
+  &__button-row2 {
+    & .button_bordered:first-child {
+      margin-right: 20px;
+    }
+  }
+  &__button-row3 {
+    display: flex;
+    margin-top: 30px;
+    margin-bottom: 29px;
+    margin-left: -3px;
+    & .button:first-child {
+      margin-right: 9px;
+    }
+  }
+  &__button_hovered {
+    opacity: 0.5;
+  }
+  &__subscription-input {
+    width: 266px;
+  }
+  &__checkbox-list {
+    &_not-expandable {
+      margin-bottom: 50px;
+    }
+  }
+  &__room-details {
+    margin-top: 103px;
+  }
+  &__toggle {
+    margin-bottom: 38px;
+
+    & .toggle {
+      margin-bottom: 8px;
+    }
+  }
+  &__review {
+    width: 710px;
+    margin-top: 189px;
+  }
+  &__range-slider {
+    margin-top: 8px;
+    margin-bottom: 25px;
+  }
+  &__button {
+    margin-bottom: 40px;
+  }
+  &__pagination {
+    margin-bottom: 257px;
+    & .pagination__container {
+      margin-top: 16px;
+      margin-left: 2px;
+    }
+  }
+}

@@ -1,4 +1,4 @@
-import CheckboxButton from "Components/checkbox-button/checkbox-button";
+import CheckboxButton from "Components/checkbox-list/checkbox-list";
 import DateDropdown from "Components/date-dropdown/date-dropdown";
 import Header from "Components/header/header";
 import Pagination from "Components/pagination/pagination";

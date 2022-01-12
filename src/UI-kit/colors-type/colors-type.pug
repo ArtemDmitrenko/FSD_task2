@@ -1,7 +1,7 @@
 extends ../../templates/template-UIKit.pug
-include ../../components/UIkit/logo-UIkit/logo-UIkit.pug
-include ../../components/UIkit/color-block/color-block.pug
-include ../../components/UIkit/type-block/type-block.pug
+include ../../components/logo-UIkit/logo-UIkit.pug
+include ../../components/color-block/color-block.pug
+include ../../components/type-block/type-block.pug
 
 block title
   title Colors&type
@@ -11,7 +11,7 @@ block content
     .colors-types__logo
       +logo-UIkit()
     .colors-types__item
-      .colors
+      .colors-types__colors
         +color-block({name: "Dark Shade 100%", hex: "#1F2041"})
         +color-block({name: "Dark Shade 75%", hex: "#1F2041"})
         +color-block({name: "Dark Shade 50%", hex: "#1F2041"})
@@ -19,7 +19,7 @@ block content
         +color-block({name: "Dark Shade 5%", hex: "#1F2041"})
         +color-block({name: "Purple", hex: "#BC9CFF"})
         +color-block({name: "Green", hex: "#6FCF97"})
-      .types
+      .colors-types__types
         +type-block({name: "H1", text: "This one is the sub-section or widget title"})
         +type-block({name: "H2", text: "Next one is the item title inside widgets"})
         +type-block({name: "H3", text: "This is a label or CTA text"})

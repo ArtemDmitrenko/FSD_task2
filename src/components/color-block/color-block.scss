@@ -1,4 +1,9 @@
 .color-block {
+  &__item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
   &__name {
     @extend %h2;
     margin-bottom: 6px;

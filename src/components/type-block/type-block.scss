@@ -1,4 +1,6 @@
 .type-block {
+  display: flex;
+  margin-bottom: 50px;
   &__name {
     @extend %font-body;
     width: 40px;
