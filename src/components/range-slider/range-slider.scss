@@ -1,6 +1,19 @@
 @import "../../../node_modules/ion-rangeslider/css/ion.rangeSlider.min.css";
 
-.range-slider-container {
+.range-slider {
+  position: relative;
+  &__title {
+    position: absolute;
+    @extend %h3;
+    bottom: 48px;
+  }
+  &__description {
+    position: absolute;
+    bottom: -9px;
+    color: $dark50;
+    font-size: 12px;
+    @extend %font-body;
+  }
   .irs {
     width: 266px;
     & .irs-handle {
@@ -32,18 +45,6 @@
       position: absolute;
       right: 0;
       bottom: 49px;
-      color: $dark50;
-      font-size: 12px;
-      @extend %font-body;
-    }
-    & .title {
-      position: absolute;
-      @extend %h3;
-      bottom: 48px;
-    }
-    & .description {
-      position: absolute;
-      bottom: -9px;
       color: $dark50;
       font-size: 12px;
       @extend %font-body;

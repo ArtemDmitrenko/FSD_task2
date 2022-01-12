@@ -1,3 +1,9 @@
-mixin range-slider()
-  .range-slider-container
-    input.range-slider.js-range-slider(type="text" name="my_range" value="")
+mixin range-slider(options)
+  - const {title, description} = options
+
+  .range-slider
+    if title
+      span.range-slider__title= title
+    if description
+      span.range-slider__description= description
+    input.range-slider__item.js-range-slider__item(type="text" name="my_range" value="")
