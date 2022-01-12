@@ -1,7 +1,7 @@
-.checkbox-button {
+.checkbox-list {
   max-width: 222px;
   &_expandable {
-    & .checkbox-button__form {
+    & .checkbox-list__form {
       z-index: -1;
       display: none;
       transition: opacity 0.4s ease;
@@ -52,7 +52,7 @@
   }
   &__item {
     margin-top: 12px;
-    &:last-child .checkbox-button__sublabel {
+    &:last-child .checkbox-list__sublabel {
       width: 102%;
     }
   }
@@ -75,10 +75,10 @@
     opacity: 0;
   }
   &__input:checked {
-    & + .checkbox-button__indicator {
+    & + .checkbox-list__indicator {
       border: 1px solid $purple;
     }
-    & + .checkbox-button__indicator::before {
+    & + .checkbox-list__indicator::before {
       position: absolute;
       top: 45%;
       left: 50%;

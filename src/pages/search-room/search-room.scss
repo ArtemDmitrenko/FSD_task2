@@ -13,7 +13,7 @@
 @import "Components/counter/counter.scss";
 @import "Components/footer-tab/footer-tab.scss";
 @import "Components/range-slider/range-slider.scss";
-@import "Components/checkbox-button/checkbox-button.scss";
+@import "Components/checkbox-list/checkbox-list.scss";
 @import "Components/room/room.scss";
 @import "Components/rate-button/rate-button.scss";
 @import "Components/pagination/pagination.scss";
@@ -42,7 +42,7 @@
     margin-top: 41px;
     margin-bottom: 29px;
   }
-  &__checkbox-button {
+  &__checkbox-list {
     margin-top: 38px;
     margin-bottom: 31px;
   }

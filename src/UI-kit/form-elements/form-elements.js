@@ -1,4 +1,4 @@
-import CheckboxButton from "Components/checkbox-button/checkbox-button";
+import CheckboxButton from "Components/checkbox-list/checkbox-list";
 import DateDropdown from "Components/date-dropdown/date-dropdown";
 import Input from "Components/input/input";
 import Review from "Components/review/review";
@@ -14,7 +14,7 @@ export default class FormElements {
 
   init() {
     const checkboxLists = document.querySelectorAll(
-      ".js-form-elements__checkbox-button"
+      ".js-form-elements__checkbox-list"
     );
     const dateDropdowns = document.querySelectorAll(
       ".js-form-elements__datepicker"
@@ -79,10 +79,10 @@ export default class FormElements {
     }, 30);
 
     // Checkbox
-    const checkbox = document.querySelectorAll(".checkbox-button")[1];
-    const buttonTable = checkbox.querySelectorAll(".checkbox-button__label")[1];
-    const buttonChair = checkbox.querySelectorAll(".checkbox-button__label")[2];
-    const buttonBed = checkbox.querySelectorAll(".checkbox-button__label")[3];
+    const checkbox = document.querySelectorAll(".checkbox-list")[1];
+    const buttonTable = checkbox.querySelectorAll(".checkbox-list__label")[1];
+    const buttonChair = checkbox.querySelectorAll(".checkbox-list__label")[2];
+    const buttonBed = checkbox.querySelectorAll(".checkbox-list__label")[3];
     setTimeout(function () {
       $(checkbox).trigger("click");
       $(buttonTable).trigger("click");
@@ -92,13 +92,13 @@ export default class FormElements {
 
     // Checkbox buttons
     const checkbox1 = document.querySelectorAll(
-      ".form-elements__checkbox-button"
+      ".form-elements__checkbox-list"
     )[2];
     const checkboxbuttonAnimals = checkbox1.querySelectorAll(
-      ".checkbox-button__label"
+      ".checkbox-list__label"
     )[1];
     const checkboxbuttonGuests = checkbox1.querySelectorAll(
-      ".checkbox-button__label"
+      ".checkbox-list__label"
     )[2];
     setTimeout(function () {
       $(checkboxbuttonAnimals).trigger("click");
