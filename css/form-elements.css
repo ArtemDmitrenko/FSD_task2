@@ -29,13 +29,13 @@
   src: url(../assets/fonts/montserrat-regular.eot);
   src: local("☺"), url(../assets/fonts/montserrat-regular.woff) format("woff"), url(../assets/fonts/montserrat-regular.ttf) format("truetype"), url(../assets/fonts/montserrat-regular.svg) format("svg"); }
 
-.input__description, .input__element, .date-dropdown__container .datepicker--cells, .checkbox-button__sublabel, .checkbox-button__text, .room-info__description, .radio-buttons__content, .toggle__label, .like-button__counter, .bullet-list__item, .review__date, .review__text, .paginationjs-ellipsis > a, .paginationjs-page > a, .pagination__container .paginationjs__legend, .irs .sign, .irs .description {
+.input__description, .input__element, .date-dropdown__container .datepicker--cells, .checkbox-list__sublabel, .checkbox-list__text, .room-info__description, .radio-buttons__content, .toggle__label, .like-button__counter, .bullet-list__item, .review__date, .review__text, .pagination__container, .pagination__container .paginationjs-ellipsis > a, .pagination__container .paginationjs-page > a, .pagination__container .paginationjs__legend, .range-slider__description, .range-slider .irs .sign {
   color: #1f2041;
   font-weight: 400;
   font-size: 14px;
   font-family: "Montserrat", "Arial", sans-serif; }
 
-.form-elements__button-title, .form-elements__pagination-title, .input__heading, .button, .counter__name, .counter__value, .date-dropdown__container .datepicker--day-name, .date-dropdown__container .datepicker--button, .checkbox-button__title, .checkbox-button__text_rich, .room-info__name, .radio-buttons__name, .toggle__name, .like-button__name, .rate-button__name, .bullet-list__name, .review__name, .irs .title {
+.input__heading, .button, .counter__name, .counter__value, .date-dropdown__container .datepicker--day-name, .date-dropdown__container .datepicker--button, .checkbox-list__title, .checkbox-list__text_rich, .room-info__name, .radio-buttons__name, .toggle__name, .like-button__name, .rate-button__name, .bullet-list__name, .review__name, .range-slider__title, .form-elements__button-title, .form-elements__pagination-title {
   color: #1f2041;
   font-weight: 700;
   font-size: 12px;
@@ -81,116 +81,6 @@ ul {
 
 a {
   text-decoration: none; }
-
-.form-elements__logo-UIkit {
-  padding: 30px 0 0 30px; }
-
-.form-elements__all-items {
-  display: flex;
-  margin: 85px 0 90px 141px; }
-
-.form-elements__global-row2 {
-  margin-top: -20px; }
-
-.form-elements__global-row1 {
-  margin-right: 126px; }
-
-.form-elements__sub-row {
-  display: flex; }
-
-.form-elements__sub-row1, .form-elements__sub-row2, .form-elements__global-row1 {
-  width: 320px; }
-
-.form-elements__sub-row2 {
-  margin-left: 71px; }
-
-.form-elements__element {
-  margin-bottom: 41px; }
-  .form-elements__element_expanded {
-    width: 266px;
-    margin-bottom: 172px; }
-  .form-elements__element_not-expanded {
-    width: 266px;
-    margin-top: 120px;
-    margin-bottom: 40px; }
-
-.form-elements__datepicker {
-  display: flex;
-  margin-top: 60px; }
-  .form-elements__datepicker_range-in-one {
-    width: 266px;
-    margin-bottom: 62px; }
-
-.form-elements__like-button {
-  position: relative;
-  display: flex; }
-  .form-elements__like-button .like-button:nth-child(2) {
-    position: absolute;
-    bottom: 0;
-    left: 50px; }
-
-.form-elements__rate-button {
-  position: relative;
-  display: flex;
-  margin-bottom: 212px; }
-  .form-elements__rate-button .rate-button:nth-child(2) {
-    position: absolute;
-    bottom: 0;
-    left: 140px; }
-
-.form-elements__dropdown_with-guests {
-  margin-bottom: 255px; }
-
-.form-elements__button-row1 {
-  margin-top: 15px;
-  margin-bottom: 31px; }
-  .form-elements__button-row1 .button_solid:first-child {
-    margin-right: 20px; }
-
-.form-elements__button-row2 .button_bordered:first-child {
-  margin-right: 20px; }
-
-.form-elements__button-row3 {
-  display: flex;
-  margin-top: 30px;
-  margin-bottom: 29px;
-  margin-left: -3px; }
-  .form-elements__button-row3 .button:first-child {
-    margin-right: 9px; }
-
-.form-elements__button_hovered {
-  opacity: 0.5; }
-
-.form-elements__subscription-input {
-  width: 266px; }
-
-.form-elements__checkbox-button_not-expandable {
-  margin-bottom: 50px; }
-
-.form-elements__room-details {
-  margin-top: 103px; }
-
-.form-elements__toggle {
-  margin-bottom: 38px; }
-  .form-elements__toggle .toggle {
-    margin-bottom: 8px; }
-
-.form-elements__review {
-  width: 710px;
-  margin-top: 189px; }
-
-.form-elements__range-slider {
-  margin-top: 8px;
-  margin-bottom: 25px; }
-
-.form-elements__button {
-  margin-bottom: 40px; }
-
-.form-elements__pagination {
-  margin-bottom: 257px; }
-  .form-elements__pagination .pagination__container {
-    margin-top: 16px;
-    margin-left: 2px; }
 
 .logo-UIkit {
   display: block; }
@@ -249,10 +139,10 @@ a {
     .input__element:hover::placeholder, .input__element:focus::placeholder {
       opacity: 0.75;
       transition: all 0.4s ease; }
-    .input__element_border-radius_0 {
+    .input__element_straightened {
       border-bottom-right-radius: 0;
       border-bottom-left-radius: 0; }
-    .input__element_with-bright-border {
+    .input__element_border-color_bright {
       border-color: rgba(31, 32, 65, 0.5); }
     .input__element_hovered {
       border-color: rgba(31, 32, 65, 0.5); }
@@ -271,6 +161,8 @@ a {
       .input__element {
         padding-right: 5px;
         padding-left: 5px; } }
+    .input__element_directed {
+      padding-right: 45px; }
   .input__date-dropdown {
     position: relative; }
     .input__date-dropdown::-moz-placeholder {
@@ -305,6 +197,9 @@ a {
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     -moz-osx-font-smoothing: grayscale; }
+    @media screen and (max-width: 390px) {
+      .input__checkmark {
+        display: none; } }
   .input__subscription {
     position: absolute;
     top: 12px;
@@ -489,13 +384,11 @@ a {
       opacity: 0.38; }
 
 .date-dropdown {
-  width: 100%;
-  cursor: pointer; }
-  .date-dropdown_number-of-inputs_two {
-    display: flex;
-    justify-content: space-between; }
-    .date-dropdown_number-of-inputs_two > .input {
-      width: 47%; }
+  display: flex;
+  gap: 20px;
+  width: 100%; }
+  .date-dropdown__from, .date-dropdown__to {
+    width: 100%; }
   .date-dropdown input {
     cursor: pointer; }
   .date-dropdown__arrow {
@@ -507,17 +400,10 @@ a {
     -webkit-background-clip: text;
     border: none;
     outline: none;
-    cursor: pointer;
     -webkit-text-fill-color: transparent;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     -moz-osx-font-smoothing: grayscale; }
-  @media screen and (max-width: 390px) {
-    .date-dropdown .input__checkmark {
-      display: none; } }
-  @media screen and (max-width: 390px) {
-    .date-dropdown .input__date-dropdown {
-      padding-left: 5px; } }
   .date-dropdown__container {
     width: 318px;
     font-family: none; }
@@ -620,16 +506,23 @@ a {
     .date-dropdown__container .datepicker--cell-year.-other-decade- {
       opacity: 0.25; }
 
-.checkbox-button {
+.checkbox-list {
   max-width: 222px; }
-  .checkbox-button__name, .checkbox-button__expandable-name {
+  .checkbox-list_expandable .checkbox-list__form {
+    z-index: -1;
+    display: none;
+    transition: opacity 0.4s ease; }
+    .checkbox-list_expandable .checkbox-list__form_opened {
+      z-index: 10;
+      display: block; }
+  .checkbox-list__name {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 256px;
     margin-bottom: 17px;
     cursor: pointer; }
-  .checkbox-button__checkmark {
+  .checkbox-list__checkmark {
     display: inline-block;
     color: #bc9cff;
     font-size: 24px;
@@ -645,33 +538,23 @@ a {
     text-rendering: optimizeLegibility;
     -moz-osx-font-smoothing: grayscale;
     transition: 0.4s transform; }
-    .checkbox-button__checkmark_direction_up {
+    .checkbox-list__checkmark_direction_up {
       transform: rotate(180deg); }
-  .checkbox-button__sublabel {
+  .checkbox-list__sublabel {
     margin-top: 7px;
     margin-left: 31px;
     color: rgba(31, 32, 65, 0.5);
     font-size: 12px;
     line-height: 14px; }
-  .checkbox-button__expandable-form {
-    z-index: -1;
-    display: none;
-    transition: opacity 0.4s ease; }
-    .checkbox-button__expandable-form_opened {
-      z-index: 10;
-      display: block; }
-  .checkbox-button__item {
+  .checkbox-list__item {
     margin-top: 12px; }
-    .checkbox-button__item:last-child .checkbox-button__sublabel {
+    .checkbox-list__item:last-child .checkbox-list__sublabel {
       width: 102%; }
-  .checkbox-button__label {
+  .checkbox-list__label {
     position: relative;
     display: flex;
     flex-direction: column; }
-  .checkbox-button__input {
-    position: absolute;
-    opacity: 0; }
-  .checkbox-button__indicator {
+  .checkbox-list__indicator {
     position: absolute;
     left: 1px;
     width: 20px;
@@ -679,19 +562,12 @@ a {
     border: 1px solid rgba(31, 32, 65, 0.25);
     border-radius: 4px;
     cursor: pointer; }
-  .checkbox-button__text {
-    padding-top: 1px;
-    padding-left: 30px;
-    color: rgba(31, 32, 65, 0.5);
-    cursor: pointer; }
-    .checkbox-button__text_rich {
-      width: 101%;
-      color: rgba(31, 32, 65, 0.75);
-      font-size: 14px;
-      text-transform: none; }
-  .checkbox-button input[type="checkbox"]:checked + .checkbox-button__indicator {
+  .checkbox-list__input {
+    position: absolute;
+    opacity: 0; }
+  .checkbox-list__input:checked + .checkbox-list__indicator {
     border: 1px solid #bc9cff; }
-  .checkbox-button input[type="checkbox"]:checked + .checkbox-button__indicator::before {
+  .checkbox-list__input:checked + .checkbox-list__indicator::before {
     position: absolute;
     top: 45%;
     left: 50%;
@@ -704,6 +580,16 @@ a {
     border-image-slice: 1;
     transform: translate(-50%, -50%) rotate(135deg);
     content: ""; }
+  .checkbox-list__text {
+    padding-top: 1px;
+    padding-left: 30px;
+    color: rgba(31, 32, 65, 0.5);
+    cursor: pointer; }
+    .checkbox-list__text_rich {
+      width: 101%;
+      color: rgba(31, 32, 65, 0.75);
+      font-size: 14px;
+      text-transform: none; }
 
 .room-info {
   max-width: 260px; }
@@ -957,118 +843,232 @@ a {
 .pagination__data {
   display: none; }
 
-.paginationjs-pages > ul {
-  display: flex;
-  min-width: 241px; }
-
-.paginationjs-prev {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 40px;
-  height: 40px;
-  background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
-  border-radius: 20px; }
-  .paginationjs-prev > a {
-    display: inline-block;
-    font-size: 24px;
-    font-family: "MaterialIcons-Regular";
-    text-transform: none;
-    background-color: #fff;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-    -moz-osx-font-smoothing: grayscale; }
-
-.paginationjs-ellipsis {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px; }
-  .paginationjs-ellipsis > a {
-    color: rgba(31, 32, 65, 0.5);
-    font-size: 12px; }
-
-.paginationjs-next {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 40px;
-  height: 40px;
-  background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
-  border-radius: 20px; }
-  .paginationjs-next > a {
-    display: inline-block;
-    font-weight: normal;
-    font-size: 24px;
-    font-family: "MaterialIcons-Regular";
-    text-transform: none;
-    background-color: #fff;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-    -moz-osx-font-smoothing: grayscale; }
-
-.paginationjs-page {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 40px;
-  height: 40px; }
-  .paginationjs-page > a {
-    color: rgba(31, 32, 65, 0.5);
-    font-size: 12px; }
-  .paginationjs-page.active {
-    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
-    border-radius: 20px; }
-    .paginationjs-page.active > a {
-      color: white; }
-
-.pagination__container .paginationjs__legend {
+.pagination__container {
   margin-top: 10px;
   margin-left: 5px;
   color: rgba(31, 32, 65, 0.75);
   text-transform: none; }
+  .pagination__container .paginationjs-pages > ul {
+    display: flex;
+    min-width: 241px; }
+  .pagination__container .paginationjs-prev {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    height: 40px;
+    background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+    border-radius: 20px; }
+    .pagination__container .paginationjs-prev > a {
+      display: inline-block;
+      font-size: 24px;
+      font-family: "MaterialIcons-Regular";
+      text-transform: none;
+      background-color: #fff;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      -moz-osx-font-smoothing: grayscale; }
+  .pagination__container .paginationjs-ellipsis {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px; }
+    .pagination__container .paginationjs-ellipsis > a {
+      color: rgba(31, 32, 65, 0.5);
+      font-size: 12px; }
+  .pagination__container .paginationjs-next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    height: 40px;
+    background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+    border-radius: 20px; }
+    .pagination__container .paginationjs-next > a {
+      display: inline-block;
+      font-weight: normal;
+      font-size: 24px;
+      font-family: "MaterialIcons-Regular";
+      text-transform: none;
+      background-color: #fff;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      -moz-osx-font-smoothing: grayscale; }
+  .pagination__container .paginationjs-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    height: 40px; }
+    .pagination__container .paginationjs-page > a {
+      color: rgba(31, 32, 65, 0.5);
+      font-size: 12px; }
+    .pagination__container .paginationjs-page.active {
+      background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+      border-radius: 20px; }
+      .pagination__container .paginationjs-page.active > a {
+        color: white; }
+  .pagination__container .paginationjs__legend {
+    margin-top: 10px;
+    margin-left: 5px;
+    color: rgba(31, 32, 65, 0.75);
+    text-transform: none; }
 
-.irs {
-  width: 266px; }
-  .irs .irs-handle {
-    width: 16px;
-    height: 16px;
-    background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
-    border: 2px solid #fff;
-    border-radius: 10px;
-    box-shadow: none;
-    cursor: pointer; }
-  .irs .irs-line {
-    top: 30px;
-    box-sizing: border-box;
-    height: 6px;
-    background: #fff;
-    border: 1px solid rgba(31, 32, 65, 0.25);
-    border-radius: 3px; }
-  .irs .irs-bar {
-    top: 30px;
-    height: 6px;
-    background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
-    border: none;
-    border-radius: 3px;
-    box-shadow: none; }
-  .irs .sign {
-    position: absolute;
-    right: 0;
-    bottom: 49px;
-    color: rgba(31, 32, 65, 0.5);
-    font-size: 12px; }
-  .irs .title {
+.range-slider {
+  position: relative; }
+  .range-slider__title {
     position: absolute;
     bottom: 48px; }
-  .irs .description {
+  .range-slider__description {
     position: absolute;
     bottom: -9px;
     color: rgba(31, 32, 65, 0.5);
     font-size: 12px; }
+  .range-slider .irs {
+    width: 266px; }
+    .range-slider .irs .irs-handle {
+      width: 16px;
+      height: 16px;
+      background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+      border: 2px solid #fff;
+      border-radius: 10px;
+      box-shadow: none;
+      cursor: pointer; }
+    .range-slider .irs .irs-line {
+      top: 30px;
+      box-sizing: border-box;
+      height: 6px;
+      background: #fff;
+      border: 1px solid rgba(31, 32, 65, 0.25);
+      border-radius: 3px; }
+    .range-slider .irs .irs-bar {
+      top: 30px;
+      height: 6px;
+      background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+      border: none;
+      border-radius: 3px;
+      box-shadow: none; }
+    .range-slider .irs .sign {
+      position: absolute;
+      right: 0;
+      bottom: 49px;
+      color: rgba(31, 32, 65, 0.5);
+      font-size: 12px; }
 
+.form-elements__logo-UIkit {
+  padding: 30px 0 0 30px; }
+
+.form-elements__all-items {
+  display: flex;
+  margin: 85px 0 90px 141px; }
+
+.form-elements__global-row2 {
+  margin-top: -20px; }
+
+.form-elements__global-row1 {
+  margin-right: 126px; }
+
+.form-elements__sub-row {
+  display: flex; }
+
+.form-elements__sub-row1, .form-elements__sub-row2, .form-elements__global-row1 {
+  width: 320px; }
+
+.form-elements__sub-row2 {
+  margin-left: 71px; }
+
+.form-elements__element {
+  margin-bottom: 41px; }
+  .form-elements__element_expanded {
+    width: 266px;
+    margin-bottom: 172px; }
+  .form-elements__element_not-expanded {
+    width: 266px;
+    margin-top: 120px;
+    margin-bottom: 40px; }
+
+.form-elements__datepicker {
+  display: flex;
+  margin-top: 60px; }
+  .form-elements__datepicker_range-in-one {
+    width: 266px;
+    margin-bottom: 62px; }
+
+.form-elements__like-button {
+  position: relative;
+  display: flex; }
+  .form-elements__like-button .like-button:nth-child(2) {
+    position: absolute;
+    bottom: 0;
+    left: 50px; }
+
+.form-elements__rate-button {
+  position: relative;
+  display: flex;
+  margin-bottom: 212px; }
+  .form-elements__rate-button .rate-button:nth-child(2) {
+    position: absolute;
+    bottom: 0;
+    left: 140px; }
+
+.form-elements__dropdown_with-guests {
+  margin-bottom: 255px; }
+
+.form-elements__button-row1 {
+  margin-top: 15px;
+  margin-bottom: 31px; }
+  .form-elements__button-row1 .button_solid:first-child {
+    margin-right: 20px; }
+
+.form-elements__button-row2 .button_bordered:first-child {
+  margin-right: 20px; }
+
+.form-elements__button-row3 {
+  display: flex;
+  margin-top: 30px;
+  margin-bottom: 29px;
+  margin-left: -3px; }
+  .form-elements__button-row3 .button:first-child {
+    margin-right: 9px; }
+
+.form-elements__button_hovered {
+  opacity: 0.5; }
+
+.form-elements__subscription-input {
+  width: 266px; }
+
+.form-elements__checkbox-list_not-expandable {
+  margin-bottom: 50px; }
+
+.form-elements__room-details {
+  margin-top: 103px; }
+
+.form-elements__toggle {
+  margin-bottom: 38px; }
+  .form-elements__toggle .toggle {
+    margin-bottom: 8px; }
+
+.form-elements__review {
+  width: 710px;
+  margin-top: 189px; }
+
+.form-elements__range-slider {
+  margin-top: 8px;
+  margin-bottom: 25px; }
+
+.form-elements__button {
+  margin-bottom: 40px; }
+
+.form-elements__pagination {
+  margin-bottom: 257px; }
+  .form-elements__pagination .pagination__container {
+    margin-top: 16px;
+    margin-left: 2px; }
+
+
+/*# sourceMappingURL=form-elements.css.map*/
