@@ -31,8 +31,8 @@ export default class SearchRoom {
     checkboxLists.forEach((checkboxList) => {
       new CheckboxButton(checkboxList);
     });
-    dateDropdowns.forEach((dateDropdown, index) => {
-      new DateDropdown(dateDropdown, index);
+    dateDropdowns.forEach((dateDropdown) => {
+      new DateDropdown(dateDropdown);
     });
     new Header(header);
     new Pagination(pagination);

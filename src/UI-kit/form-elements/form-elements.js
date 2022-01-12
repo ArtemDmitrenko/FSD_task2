@@ -31,8 +31,8 @@ export default class FormElements {
     checkboxLists.forEach((checkboxList) => {
       new CheckboxButton(checkboxList);
     });
-    dateDropdowns.forEach((dateDropdown, index) => {
-      new DateDropdown(dateDropdown, index);
+    dateDropdowns.forEach((dateDropdown) => {
+      new DateDropdown(dateDropdown);
     });
     new Input(maskedInput, "masked");
     reviews.forEach((review) => {

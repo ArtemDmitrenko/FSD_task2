@@ -3,9 +3,8 @@ import "air-datepicker";
 import Input from "Components/input/input";
 
 export default class DateDropdown {
-  constructor(item, index) {
+  constructor(item) {
     this.item = item.querySelector(".js-date-dropdown");
-    this.index = index;
     this.init();
     this.addEventListeners();
   }
@@ -20,19 +19,30 @@ export default class DateDropdown {
       const to = new Input(dateDropdownTo);
       this.inputFrom = from.inputElement;
       this.inputTo = to.inputElement;
-      this.addDateDropdownForTwoInputs(this.index);
+      this.addDateDropdownForTwoInputs();
     } else {
       const input = new Input(this.item);
       this.rangeInput = input.inputElement;
-      this.addDateDropdownForRangeInOneInput(this.index);
+      this.addDateDropdownForRangeInOneInput();
     }
-    this.datepickerContainer = document.querySelector(
-      `.datepicker${this.index}`
+    this.addButtonApply();
+  }
+
+  addButtonApply() {
+    const buttonApply =
+      '<span class="datepicker--button" data-action="hide">Применить</span>';
+    const clearButtonsArray = document.querySelectorAll(
+      '.datepicker--button[data-action="clear"]'
     );
-    this.buttonApply = this.datepickerContainer.querySelector(
-      'span[data-action="today"]'
-    );
-    this.buttonApply.textContent = "Применить";
+    clearButtonsArray.forEach((item) => {
+      const buttonsContainer = item.closest(".datepicker--buttons");
+      const applyButton = buttonsContainer.querySelector(
+        '.datepicker--button[data-action="hide"]'
+      );
+      if (!applyButton) {
+        item.insertAdjacentHTML("beforebegin", buttonApply);
+      }
+    });
   }
 
   isSeparatedInputs() {
@@ -40,20 +50,18 @@ export default class DateDropdown {
   }
 
   addEventListeners() {
-    this.buttonApply.addEventListener("click", this.handleButtonApplyClick);
     if (!this.rangeInput) {
       this.inputTo.addEventListener("click", this.handleInputToClick);
     }
   }
 
-  addDateDropdownForRangeInOneInput(index) {
+  addDateDropdownForRangeInOneInput() {
     const options = {
       clearButton: true,
-      todayButton: true,
       range: true,
       multipleDatesSeparator: " - ",
       dateFormat: "dd M",
-      classes: `datepicker${index} date-dropdown__container`,
+      classes: `datepicker date-dropdown__container`,
       prevHtml: `<span class="date-dropdown__arrow">arrow_back</span>`,
       nextHtml: `<span class="date-dropdown__arrow">arrow_forward</span>`,
     };
@@ -62,12 +70,11 @@ export default class DateDropdown {
       .data("datepicker");
   }
 
-  addDateDropdownForTwoInputs(index) {
+  addDateDropdownForTwoInputs() {
     const options = {
       clearButton: true,
-      todayButton: true,
       range: true,
-      classes: `datepicker${index} date-dropdown__container`,
+      classes: `datepicker date-dropdown__container`,
       prevHtml: `<span class="date-dropdown__arrow">arrow_back</span>`,
       nextHtml: `<span class="date-dropdown__arrow">arrow_forward</span>`,
       onSelect: this.handleDateClick,

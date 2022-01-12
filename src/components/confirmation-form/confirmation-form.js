@@ -17,8 +17,8 @@ export default class FormConfirmation {
   }
 
   findDateDropdown() {
-    this.dateDropdowns.forEach((dateDropdown, index) => {
-      new DateDropdown(dateDropdown, index);
+    this.dateDropdowns.forEach((dateDropdown) => {
+      new DateDropdown(dateDropdown);
     });
   }
 
