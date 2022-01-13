@@ -45,7 +45,7 @@ block main
           +checkbox-list({name: 'Правила дома', isExpandable: false, list: ['Можно курить', 'Можно с питомцами', 'Можно пригласить гостей (до 10 человек)']})
       .search-room__checkbox.js-search-room__checkbox
         .search-room__rich-checkbox
-          +checkbox-list({isExpandable: false, isRichCheckbox: true, name: 'Доступность', list: ['Широкий коридор', 'Помощник для инвалидов'], sublist: ['Ширина коридоров в номере не менее 91 см.', 'На 1 этаже вас встретит специалист  и проводит до номера.']})
+          +checkbox-list({isExpandable: false, withDescription: true, name: 'Доступность', list: ['Широкий коридор', 'Помощник для инвалидов'], sublist: ['Ширина коридоров в номере не менее 91 см.', 'На 1 этаже вас встретит специалист  и проводит до номера.']})
       .search-room__dropdown-rooms.js-search-room__dropdown-rooms
         +dropdown({
           name: 'roomsBeds', 
