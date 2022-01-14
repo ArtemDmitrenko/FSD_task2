@@ -1,17 +1,17 @@
 //-
   options.title - main title
-  options.name - name of item
-  options.description - description of item
-  options.image - image of item
+  options.roomInfo.name - name of item
+  options.roomInfo.description - description of item
+  options.roomInfo.image - image of item
 
 mixin room-info(options)
-  - const {title, name, description, image} = options
+  - const { title, roomInfo } = options
   .room-info
     if title
       h2.room-info__title= title
-    - for (let i = 0; i < name.length; i ++)
+    each item in roomInfo
       .room-info__all
-        .room-info__image= image[i]
+        .room-info__image= item.image
         .room-info__text
-          h3.room-info__name= name[i]
-          p.room-info__description= description[i]
+          h3.room-info__name= item.name
+          p.room-info__description= item.description

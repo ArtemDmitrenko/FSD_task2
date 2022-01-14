@@ -10,13 +10,13 @@ mixin footer-big(footerItems)
             .footer-big__logo
               +logo()
               p.footer-big__text Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
-            - for (let i = 0; i < footerItems.length; i ++)
-              div(class="footer-big__" + footerItems[i].name)
+            each section in footerItems
+              div(class="footer-big__" + section.name)
                 ul.footer-big__list
-                  li.footer-big__title= footerItems[i].title
-                  - for (let y = 0; y < footerItems[i].items.length; y ++)
+                  li.footer-big__title= section.title
+                  each title in section.items
                     li.footer-big__item
-                      a.footer-big__link(href=footerItems[i].items[y].href)=footerItems[i].items[y].item
+                      a.footer-big__link(href=title.href)=title.item
             .footer-big__subscription
               ul.footer-big__subscription-content
                 li.footer-big__title.footer-big__title_line-height_24 Подписка

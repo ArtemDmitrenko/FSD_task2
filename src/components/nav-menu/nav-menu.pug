@@ -9,15 +9,15 @@
 mixin nav-menu(menuItems)
   nav.nav-menu.js-nav-menu
     ul.nav-menu__list
-      - for (let i = 0; i < menuItems.length; i ++)
-        if !menuItems[i].submenu
+      each item in menuItems
+        if !item.submenu
           li.nav-menu__item    
-            a.nav-menu__link.js-nav-menu__link(href = menuItems[i].href)= menuItems[i].name
+            a.nav-menu__link.js-nav-menu__link(href = item.href)= item.name
         else
           li.nav-menu__item.js-nav-menu__item_with-dropdown 
-            a.nav-menu__link.js-nav-menu__link(href = menuItems[i].href)= menuItems[i].name
+            a.nav-menu__link.js-nav-menu__link(href = item.href)= item.name
               span.nav-menu__checkmark.js-nav-menu__checkmark expand_more
             ul.nav-menu__sub-list.js-nav-menu__sub-list
-              - for (let j = 0; j < menuItems[i].submenu.length; j ++) 
+              each subItem in item.submenu
                 li.nav-menu__sub-item
-                  a.nav-menu__sub-link(href = menuItems[i].submenu[j].subhref)= menuItems[i].submenu[j].subname 
+                  a.nav-menu__sub-link(href = subItem.subhref)= subItem.subname

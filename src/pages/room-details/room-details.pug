@@ -23,7 +23,11 @@ block main
         .room-details__column1
           .room-details__line1
             .room-details__info
-              +room-info({title: 'Сведения о номере', name: ['Комфорт', 'Удобство', 'Уют'], description: ['Шумопоглощающие стены', 'Окно в каждой из спален', 'Номер оснащён камином'], image: ['insert_emoticon', 'location_city', 'whatshot']})
+              +room-info({title: 'Сведения о номере', roomInfo: [
+                { name:'Комфорт', description: 'Шумопоглощающие стены', image: 'insert_emoticon' }, 
+                { name:'Удобство', description: 'Окно в каждой из спален', image: 'location_city' },
+                { name:'Уют', description: 'Номер оснащён камином', image: 'whatshot' }
+              ]})              
             h1.room-details__impression Впечатления от номера
               .room-details__diagram.js-room-details__diagram
                 +diagram({good: "65", amazing: "130", notbad: "65", bad: "0"})

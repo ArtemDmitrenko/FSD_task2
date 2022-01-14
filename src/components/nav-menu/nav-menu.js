@@ -15,12 +15,9 @@ export default class NavMenu {
 
   addEventListeners() {
     document.addEventListener("click", this.handleDocumentClick);
-    for (let i = 0; i < this.dropdownButtons.length; i++) {
-      this.dropdownButtons[i].addEventListener(
-        "click",
-        this.handleMenuItemClick.bind(this, i)
-      );
-    }
+    this.dropdownButtons.forEach((item, i) => {
+      item.addEventListener("click", this.handleMenuItemClick.bind(this, i));
+    });
   }
 
   handleMenuItemClick(i) {
@@ -29,7 +26,7 @@ export default class NavMenu {
   }
 
   handleDocumentClick = (event) => {
-    for (let i = 0; i < this.dropdownButtons.length; i++) {
+    this.dropdownButtons.forEach((item, i) => {
       if (
         !document
           .getElementsByClassName("js-nav-menu__item_with-dropdown")
@@ -42,7 +39,7 @@ export default class NavMenu {
           );
         }
       }
-    }
+    });
   };
 
   get navLinks() {
