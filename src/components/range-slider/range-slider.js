@@ -24,7 +24,6 @@ export default class RangeSlider {
       hide_min_max: true,
       hide_from_to: true,
       skin: "big",
-      extra_classes: "js-irs__scale",
     };
     $(this.item).ionRangeSlider(options);
     $(this.item).on("change", this.getFromAndTo);
