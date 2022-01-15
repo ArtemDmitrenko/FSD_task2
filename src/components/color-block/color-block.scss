@@ -20,26 +20,26 @@
     width: 70px;
     height: 70px;
     border-radius: 6px;
-  }
-  &__color_dark_5 {
-    background-color: $dark5;
-  }
-  &__color_dark_25 {
-    background-color: $dark25;
-  }
-  &__color_dark_50 {
-    background-color: $dark50;
-  }
-  &__color_dark_75 {
-    background-color: $dark75;
-  }
-  &__color_dark_100 {
-    background-color: $dark100;
-  }
-  &__color_green {
-    background-color: $green;
-  }
-  &__color_purple {
-    background-color: $purple;
+    &_dark {
+      background-color: $dark100;
+    }
+    &_light-dark {
+      background-color: $dark75;
+    }
+    &_grey {
+      background-color: $dark50;
+    }
+    &_light-grey {
+      background-color: $dark25;
+    }
+    &_light {
+      background-color: $dark5;
+    }
+    &_green {
+      background-color: $green;
+    }
+    &_purple {
+      background-color: $purple;
+    }
   }
 }
