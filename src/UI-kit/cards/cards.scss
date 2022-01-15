@@ -15,7 +15,6 @@
 @import "Components/log-in-form/log-in-form.scss";
 @import "Components/room/room.scss";
 @import "Components/rate-button/rate-button.scss";
-@import "Components/calendar/calendar.scss";
 
 .cards {
   background-color: #f4f4f6;
@@ -37,6 +36,7 @@
     margin-left: 20px;
   }
   &__log-in {
+    margin-bottom: 250px;
     margin-left: 20px;
   }
   &__room {
@@ -45,7 +45,7 @@
   }
   &__datepicker {
     width: 302px;
-    margin-bottom: 38px;
+    margin-bottom: 360px;
     margin-left: 20px;
   }
 }

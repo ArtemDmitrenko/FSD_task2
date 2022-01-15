@@ -97,4 +97,18 @@ export default class DateDropdown {
   handleInputToClick = () => {
     this.myDatapicker.show();
   };
+
+  selectDate(date) {
+    this.myDatapicker.selectDate(date);
+  }
+
+  offset(value) {
+    this.myDatapicker.update({
+      offset: value,
+    });
+  }
+
+  showDatepicker() {
+    this.myDatapicker.show();
+  }
 }

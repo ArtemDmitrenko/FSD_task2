@@ -5,7 +5,8 @@ include ../../components/registration-form/registration-form.pug
 include ../../components/confirmation-form/confirmation-form.pug
 include ../../components/log-in-form/log-in-form.pug
 include ../../components/room/room.pug
-include ../../components/calendar/calendar.pug
+include ../../components/date-dropdown/date-dropdown.pug
+
 
 
 block title
@@ -24,8 +25,8 @@ block content
         +confirmation-form()
       .cards__log-in
         +log-in-form()
-      .cards__datepicker
-        +calendar()
+      .cards__datepicker.js-cards__datepicker
+        +date-dropdown({})
       .cards__room.js-cards__room
         +room({addressOfRoom: 'room1', numberOfImage: ["image11", "image12", "image13", "image14"], roomNumber: '888', lux: true, price: '9 990₽', rate: '5', numberOfReviews: '145'})
       .cards__room.js-cards__room
