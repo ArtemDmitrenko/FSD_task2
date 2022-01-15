@@ -42,10 +42,26 @@ block main
         +range-slider({title: 'Диапазон цены', description: 'Стоимость за сутки пребывания в номере'})
       .search-room__checkbox.js-search-room__checkbox
         .search-room__checkbox-list
-          +checkbox-list({name: 'Правила дома', isExpandable: false, list: ['Можно курить', 'Можно с питомцами', 'Можно пригласить гостей (до 10 человек)']})
+          +checkbox-list({
+            name: 'Правила дома', 
+            isExpandable: false, 
+            list: [
+              {item: 'Можно курить'},  
+              {item: 'Можно с питомцами'},
+              {item: 'Можно пригласить гостей (до 10 человек)'}  
+            ]
+          })
       .search-room__checkbox.js-search-room__checkbox
         .search-room__rich-checkbox
-          +checkbox-list({isExpandable: false, withDescription: true, name: 'Доступность', list: ['Широкий коридор', 'Помощник для инвалидов'], sublist: ['Ширина коридоров в номере не менее 91 см.', 'На 1 этаже вас встретит специалист  и проводит до номера.']})
+          +checkbox-list({
+            isExpandable: false, 
+            withDescription: true, 
+            name: 'Доступность', 
+            list: [
+              {item: 'Широкий коридор', subItem: 'Ширина коридоров в номере не менее 91 см.'},  
+              {item: 'Помощник для инвалидов', subItem: 'На 1 этаже вас встретит специалист  и проводит до номера.'}  
+            ]
+          })
       .search-room__dropdown-rooms.js-search-room__dropdown-rooms
         +dropdown({
           name: 'roomsBeds', 
@@ -68,7 +84,18 @@ block main
         })
       .search-room__checkbox.js-search-room__checkbox
         .search-room__expandable-checkbox
-        +checkbox-list({isExpandable: true, name: 'Дополнительные удобства', list: ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь']})
+        +checkbox-list({
+          isExpandable: true, 
+          name: 'Дополнительные удобства', 
+          list: [
+            {item: 'Завтрак'},  
+            {item: 'Письменный стол'},
+            {item: 'Стул для кормления'},
+            {item: 'Кроватка'},
+            {item: 'Телевизор'},  
+            {item: 'Шампунь'}
+          ]
+        })
     section.search-room__content
       h1.search-room__title Номера, которые мы для вас подобрали
       .search-room__rooms

@@ -22,10 +22,10 @@ mixin checkbox-list(options)
             input.checkbox-list__input(type="checkbox")
             span.checkbox-list__indicator
             if withDescription
-              span.checkbox-list__text.checkbox-list__text_rich= nameOfButton
-              span.checkbox-list__sublabel= sublist[list.indexOf(nameOfButton)]
+              span.checkbox-list__text.checkbox-list__text_rich= nameOfButton.item
+              span.checkbox-list__sublabel= nameOfButton.subItem
             else
-              span.checkbox-list__text= nameOfButton
+              span.checkbox-list__text= nameOfButton.item
 
       
 

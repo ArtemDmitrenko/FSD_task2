@@ -105,9 +105,31 @@ block content
             ]
           })
         .form-elements__checkbox-list.js-form-elements__checkbox-list.form-elements__element.form-elements__checkbox-list_not-expandable
-          +checkbox-list({isExpandable: true, name: 'Expandable checkbox list', list: ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь']})
+          +checkbox-list({
+            isExpandable: true, 
+            name: 'Expandable checkbox list', 
+            list: [
+              {item: 'Завтрак'},  
+              {item: 'Письменный стол'},
+              {item: 'Стул для кормления'},
+              {item: 'Кроватка'},
+              {item: 'Телевизор'},  
+              {item: 'Шампунь'}
+            ]
+          })
         .form-elements__checkbox-list.js-form-elements__checkbox-list.form-elements__element
-          +checkbox-list({isExpandable: true, name: 'Expandable checkbox list', list: ['Завтрак', 'Письменный стол', 'Стул для кормления', 'Кроватка', 'Телевизор', 'Шампунь']})
+          +checkbox-list({
+            isExpandable: true, 
+            name: 'Expandable checkbox list', 
+            list: [
+              {item: 'Завтрак'},  
+              {item: 'Письменный стол'},
+              {item: 'Стул для кормления'},
+              {item: 'Кроватка'},
+              {item: 'Телевизор'},  
+              {item: 'Шампунь'}
+            ]
+          })
         .form-elements__room-details.form-elements__element
           +room-info({title: 'Сведения о номере', roomInfo: [
             { name:'Комфорт', description: 'Шумопоглощающие стены', image: 'insert_emoticon' }, 
@@ -117,7 +139,15 @@ block content
         .form-elements__sub-row
           .form-elements__sub-row1
             .form-elements__checkbox-list.js-form-elements__checkbox-list.form-elements__element
-              +checkbox-list({isExpandable: false, name: 'Checkbox buttons', list: ['Можно курить', 'Можно с питомцами', 'Можно пригласить гостей (до 10 человек)']})
+              +checkbox-list({
+                isExpandable: false, 
+                name: 'Checkbox buttons',
+                list: [
+                  {item: 'Можно курить'},  
+                  {item: 'Можно с питомцами'},
+                  {item: 'Можно пригласить гостей (до 10 человек)'}  
+                ]
+              })
             .form-elements__radio-buttons.form-elements__element
               +radio-buttons({name: 'Radio Buttons', list: ['Мужчина', 'Женщина']})
             .form-elements__toggle.form-elements__element
@@ -153,7 +183,15 @@ block content
                 declination: 'гость, гостя, гостей',
               })
             .form-elements__checkbox-list.js-form-elements__checkbox-list.form-elements__element
-              +checkbox-list({isExpandable: false, withDescription: true, name: 'Rich checkbox buttons', list: ['Широкий коридор', 'Помощник для инвалидов'], sublist: ['Ширина коридоров в номере не менее 91 см.', 'На 1 этаже вас встретит специалист  и проводит до номера.']})
+              +checkbox-list({
+                isExpandable: false, 
+                withDescription: true, 
+                name: 'Rich checkbox buttons', 
+                list: [
+                  {item: 'Широкий коридор', subItem: 'Ширина коридоров в номере не менее 91 см.'},  
+                  {item: 'Помощник для инвалидов', subItem: 'На 1 этаже вас встретит специалист  и проводит до номера.'}  
+                ]
+              })
           .form-elements__sub-row2
             .form-elements__range-slider.js-form-elements__range-slider.form-elements__element
               +range-slider({title: 'Range slider'})
