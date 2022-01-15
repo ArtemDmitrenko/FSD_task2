@@ -15,8 +15,8 @@ export default class Dropdown {
     this.inputInstance = new Input(this.item);
     this.input = this.inputInstance.inputElement;
     this.dropdownInput = this.item.querySelector(".js-dropdown__input");
-
     this.isApplied = false;
+    this.isWithButtons = this.item.hasAttribute("data-buttons");
 
     const dropdownCounterArray = this.item.querySelectorAll(
       ".js-dropdown__counter-item"
@@ -110,10 +110,6 @@ export default class Dropdown {
 
   isDropdownOpened() {
     return this.inputInstance.isZeroBorderRadius;
-  }
-
-  get isWithButtons() {
-    return this.item.dataset.buttons === "";
   }
 
   hideButtonClear() {
