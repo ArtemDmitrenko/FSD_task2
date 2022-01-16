@@ -4,25 +4,22 @@ export default class Diagram {
     this.init();
     this.getAttributes();
     this.calcSumOfReviews();
-    this.calcLengthsOfAllReviews();
     this.drawElementsOfDiagram();
-    this.printAllNumberOfReviews();
+    this.showAmount();
   }
 
   init() {
     this.lengthOfCircle = 364.424672;
     this.$svg = this.item.querySelector(".js-diagram__chart");
     this.wholeNumberOfReviews = this.item.querySelector(".js-diagram__total");
-  }
-
-  getAttributeInNumber(review) {
-    return Number(this.item.dataset[review]);
+    this.offset = 2;
   }
 
   getAttributes() {
-    this.model = { good: 0, amazing: 0, notbad: 0, bad: 0 };
-    for (let review in this.model) {
-      this.model[review] = this.getAttributeInNumber(review);
+    const data = this.item.dataset;
+    this.model = {};
+    for (let item in data) {
+      this.model[item] = this.getAttributeInNumber(data[item]);
     }
   }
 
@@ -32,72 +29,56 @@ export default class Diagram {
     );
   }
 
-  calcLengthOfOneReview(numberOfReview) {
-    return (this.lengthOfCircle * numberOfReview) / this.sum;
-  }
-
-  calcLengthsOfAllReviews() {
-    this.goodInPixels = this.calcLengthOfOneReview(this.model.good);
-    this.amazingInPixels = this.calcLengthOfOneReview(this.model.amazing);
-    this.notbadInPixels = this.calcLengthOfOneReview(this.model.notbad);
-    this.badInPixels = this.calcLengthOfOneReview(this.model.bad);
-  }
-
   drawElementsOfDiagram() {
-    if (this.model.good) {
+    let summaryValue = 0;
+    for (let item in this.model) {
+      const value = this.calcLengthOfOneReview(this.model[item]);
       this.$svg.insertAdjacentHTML(
         "beforeend",
         `
-        <circle class='diagram__unit diagram__unit_good' r='58' cx='50%' cy="50%" stroke="url(#linear-gradient-green)" style="stroke-dasharray: ${
-          this.goodInPixels - 2
-        } ${this.lengthOfCircle}; stroke-dashoffset: -1">
+        <circle class='diagram__unit' r='58' cx='50%' cy="50%" stroke="url(#${item})" style="stroke-dasharray: ${value} ${
+          this.lengthOfCircle
+        }; stroke-dashoffset: ${-(summaryValue + 1)}">
         `
       );
-    }
-    if (this.model.amazing) {
-      this.$svg.insertAdjacentHTML(
-        "beforeend",
-        `
-        <circle class='diagram__unit diagram__unit_good' r='58' cx='50%' cy="50%" stroke="url(#linear-gradient-yellow)" style="stroke-dasharray: ${
-          this.amazingInPixels - 2
-        } ${this.lengthOfCircle}; stroke-dashoffset: ${-(
-          this.goodInPixels + 1
-        )}">
-        `
-      );
-    }
-    if (this.model.notbad) {
-      this.$svg.insertAdjacentHTML(
-        "beforeend",
-        `
-        <circle class='diagram__unit diagram__unit_good' r='58' cx='50%' cy="50%" stroke="url(#linear-gradient-purple)" style="stroke-dasharray: ${
-          this.notbadInPixels - 2
-        } ${this.lengthOfCircle}; stroke-dashoffset: ${-(
-          this.amazingInPixels +
-          this.goodInPixels +
-          1
-        )}">
-        `
-      );
-    }
-    if (this.model.bad) {
-      this.$svg.insertAdjacentHTML(
-        "beforeend",
-        `
-        <circle class='diagram__unit diagram__unit_good' r='58' cx='50%' cy="50%" stroke="url(#linear-gradient-black)" style="stroke-dasharray: ${
-          this.badInPixels - 2
-        } ${this.lengthOfCircle}; stroke-dashoffset: ${-(
-          this.notbadInPixels +
-          this.amazingInPixels +
-          this.goodInPixels +
-          1
-        )}">
-        `
-      );
+      summaryValue += value + this.offset;
     }
   }
 
-  printAllNumberOfReviews() {
-    this.wholeNumberOfReviews.innerHTML = `${this.sum}<br><span>голосов</span>`;
+  showAmount() {
+    this.declinationArr =
+      this.wholeNumberOfReviews.dataset.declination.split(", ");
+    this.mainText = this.declinate(this.declinationArr);
+    this.wholeNumberOfReviews.innerHTML = `${this.sum}<br><span>${this.mainText}</span>`;
+  }
+
+  getAttributeInNumber(item) {
+    return Number(item);
+  }
+
+  calcLengthOfOneReview(numberOfReview) {
+    const value =
+      (this.lengthOfCircle * numberOfReview) / this.sum - this.offset;
+    if (value <= 0) {
+      return 0;
+    } else {
+      return value;
+    }
+  }
+
+  declinate(type) {
+    const remain =
+      this.sum % 10 === 2 || this.sum % 10 === 3 || this.sum % 10 === 4;
+    let result;
+    if (this.sum > 10 && this.sum < 15) {
+      result = `${type[2]}`;
+    } else if (this.sum % 10 === 1) {
+      result = `${type[0]}`;
+    } else if (remain) {
+      result = `${type[1]}`;
+    } else {
+      result = `${type[2]}`;
+    }
+    return result;
   }
 }

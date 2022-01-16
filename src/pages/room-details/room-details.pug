@@ -30,7 +30,36 @@ block main
               ]})              
             h1.room-details__impression Впечатления от номера
               .room-details__diagram.js-room-details__diagram
-                +diagram({good: "65", amazing: "130", notbad: "65", bad: "0"})
+                +diagram({
+                  declination: 'голос, голоса, голосов',
+                  dataArray: 
+                  [
+                    {
+                      name: 'good',
+                      value: '65',
+                      sign: 'Хорошо',
+                      gradientColors: ["#6FCF97", "#66D2EA"]
+                    },
+                    {
+                      name: 'amazing',
+                      value: '130',
+                      sign: 'Великолепно',
+                      gradientColors: ["#FFE39C", "#FFBA9C"]
+                    },
+                    {
+                      name: 'notbad',
+                      value: '65',
+                      sign: 'Удовлетворительно',
+                      gradientColors: ["#BC9CFF", "#8BA4F9"]
+                    },
+                    {
+                      name: 'bad',
+                      value: '0',
+                      sign: 'Разочарован',
+                      gradientColors: ["#909090", "#3D4975"]
+                    }
+                  ]
+                })
           .room-details__review
             .room-details__review-title
               h2.room-details__review-text Отзывы посетителей номера
