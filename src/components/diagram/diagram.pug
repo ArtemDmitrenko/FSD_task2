@@ -11,14 +11,16 @@ mixin diagram(options)
   .diagram.js-diagram&attributes(dataArrayAttributes)
     .diagram__block
       svg.diagram__chart.js-diagram__chart(width="120" height="120" viewBox="0 0 120 120")
-        each item in dataArray 
-          linearGradient(id=`${item.name}` x1="0" x2="0" y1="0" y2="1")
-            stop(offset="0%" stop-color=`${item.gradientColors[0]}`)
-            stop(offset="100%" stop-color=`${item.gradientColors[1]}`)
+        each item in dataArray
+          - const { name, gradientColors } = item
+          linearGradient(id=`${name}` x1="0" x2="0" y1="0" y2="1")
+            stop(offset="0%" stop-color=`${gradientColors.from}`)
+            stop(offset="100%" stop-color=`${gradientColors.to}`)
       h1.diagram__total.js-diagram__total&attributes(declinationAttributes)
     .diagram__legend
       ul.diagram__list
-        each item in dataArray 
+        each item in dataArray
+          - const { sign, gradientColors } = item
           li.diagram__list-item
-            .diagram__point(style=`background: linear-gradient(180deg, ${item.gradientColors[0]} 0%, ${item.gradientColors[1]} 100%);`)
-            .diagram__text= item.sign
+            .diagram__point(style=`background: linear-gradient(180deg, ${gradientColors.from} 0%, ${gradientColors.to} 100%);`)
+            .diagram__text= sign
