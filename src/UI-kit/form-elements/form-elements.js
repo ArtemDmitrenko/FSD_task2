@@ -1,4 +1,4 @@
-import CheckboxButton from "Components/checkbox-list/checkbox-list";
+import CheckboxList from "Components/checkbox-list/checkbox-list";
 import DateDropdown from "Components/date-dropdown/date-dropdown";
 import Input from "Components/input/input";
 import Review from "Components/review/review";
@@ -29,7 +29,7 @@ export default class FormElements {
     const dropdowns = document.querySelectorAll(".js-form-elements__dropdown");
     const pagination = document.querySelector(".js-form-elements__pagination");
     checkboxLists.forEach((checkboxList) => {
-      new CheckboxButton(checkboxList);
+      new CheckboxList(checkboxList);
     });
     dateDropdowns.forEach((dateDropdown) => {
       new DateDropdown(dateDropdown);
@@ -94,15 +94,15 @@ export default class FormElements {
     const checkbox1 = document.querySelectorAll(
       ".form-elements__checkbox-list"
     )[2];
-    const checkboxbuttonAnimals = checkbox1.querySelectorAll(
+    const checkboxListAnimals = checkbox1.querySelectorAll(
       ".checkbox-list__label"
     )[1];
-    const checkboxbuttonGuests = checkbox1.querySelectorAll(
+    const checkboxListGuests = checkbox1.querySelectorAll(
       ".checkbox-list__label"
     )[2];
     setTimeout(function () {
-      $(checkboxbuttonAnimals).trigger("click");
-      $(checkboxbuttonGuests).trigger("click");
+      $(checkboxListAnimals).trigger("click");
+      $(checkboxListGuests).trigger("click");
     }, 10);
 
     // Radio buttons

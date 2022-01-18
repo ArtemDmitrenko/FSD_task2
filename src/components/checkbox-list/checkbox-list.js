@@ -1,4 +1,4 @@
-export default class CheckboxButton {
+export default class CheckboxList {
   constructor(checkboxListContainer) {
     this.checkboxList =
       checkboxListContainer.querySelector(".js-checkbox-list");

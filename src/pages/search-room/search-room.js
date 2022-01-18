@@ -1,4 +1,4 @@
-import CheckboxButton from "Components/checkbox-list/checkbox-list";
+import CheckboxList from "Components/checkbox-list/checkbox-list";
 import DateDropdown from "Components/date-dropdown/date-dropdown";
 import Header from "Components/header/header";
 import Pagination from "Components/pagination/pagination";
@@ -29,7 +29,7 @@ export default class SearchRoom {
       ".js-search-room__dropdown-rooms"
     );
     checkboxLists.forEach((checkboxList) => {
-      new CheckboxButton(checkboxList);
+      new CheckboxList(checkboxList);
     });
     dateDropdowns.forEach((dateDropdown) => {
       new DateDropdown(dateDropdown);
