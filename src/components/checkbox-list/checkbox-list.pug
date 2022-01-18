@@ -5,7 +5,7 @@
     options.list[0...i] - name of buttons
     
 mixin checkbox-list(options)
-  - const { name, isExpandable, withDescription, list, sublist } = options
+  - const { name, isExpandable, withDescription, list } = options
 
   div(class = isExpandable ? "checkbox-list checkbox-list_expandable js-checkbox-list js-checkbox-list_expandable" : "checkbox-list js-checkbox-list")
     .checkbox-list__name
@@ -17,15 +17,16 @@ mixin checkbox-list(options)
       method = "get"
     )
       each nameOfButton in list
+        - const { item, subItem } = nameOfButton
         .checkbox-list__item
           label.checkbox-list__label
             input.checkbox-list__input(type="checkbox")
             span.checkbox-list__indicator
             if withDescription
-              span.checkbox-list__text.checkbox-list__text_rich= nameOfButton.item
-              span.checkbox-list__sublabel= nameOfButton.subItem
+              span.checkbox-list__text.checkbox-list__text_rich= item
+              span.checkbox-list__sublabel= subItem
             else
-              span.checkbox-list__text= nameOfButton.item
+              span.checkbox-list__text= item
 
       
 
