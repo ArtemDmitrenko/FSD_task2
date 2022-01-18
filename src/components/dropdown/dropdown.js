@@ -16,7 +16,7 @@ export default class Dropdown {
     this.input = this.inputInstance.inputElement;
     this.dropdownInput = this.item.querySelector(".js-dropdown__input");
     this.isApplied = false;
-    this.isWithButtons = this.item.hasAttribute("data-buttons");
+    this.withButtons = this.item.hasAttribute("data-buttons");
 
     const dropdownCounterArray = this.item.querySelectorAll(
       ".js-dropdown__counter-item"
@@ -29,7 +29,7 @@ export default class Dropdown {
       this.counterValueArr.push(counter.value);
     });
 
-    if (this.isWithButtons) {
+    if (this.withButtons) {
       this.findInfantsInput();
       this.buttonApply = this.dropdownList.querySelector(
         ".js-dropdown__button-apply"
@@ -52,7 +52,7 @@ export default class Dropdown {
     this.dropdownInput.addEventListener("click", this.toggleDropdown);
     document.addEventListener("click", this.handleDocumentClick);
     this.dropdownList.addEventListener("click", this.handleMinusOrPlusClick);
-    if (this.isWithButtons) {
+    if (this.withButtons) {
       this.buttonClear.addEventListener("click", this.handleButtonClearClick);
     }
   }
@@ -72,7 +72,7 @@ export default class Dropdown {
       this.isDropdownOpened() && !closestDropdown;
     const conditionForClosingDropdown2 =
       this.isDropdownOpened() &&
-      this.isWithButtons &&
+      this.withButtons &&
       target === this.buttonApply;
     if (conditionForClosingDropdown1) {
       this.closeDropdown();
@@ -87,7 +87,7 @@ export default class Dropdown {
     if (this.isApplied) {
       this.toggleDropdown();
     } else {
-      if (this.isWithButtons) {
+      if (this.withButtons) {
         this.input.value = this.defaultValue;
       }
       this.toggleDropdown();
@@ -123,7 +123,7 @@ export default class Dropdown {
   }
 
   updateInput() {
-    if (this.isWithButtons) {
+    if (this.withButtons) {
       let infants = Number(this.infants.value);
       let sum = 0;
       this.counterValueArr.forEach((item) => {

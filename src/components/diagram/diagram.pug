@@ -1,7 +1,7 @@
 mixin diagram(options)
   - const { declination, dataArray } = options;
-  - var dataArrayAttributes = {};
-  - var declinationAttributes = {};
+  - let dataArrayAttributes = {};
+  - let declinationAttributes = {};
 
   -  dataArray.forEach((item, i) => { 
   -    dataArrayAttributes[`data-${item.name}`] = `${item.value}`;
