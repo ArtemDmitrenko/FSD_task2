@@ -34,7 +34,10 @@ export default class SearchRoom {
     dateDropdowns.forEach((dateDropdown) => {
       new DateDropdown(dateDropdown);
     });
+
+    this.header = document.querySelector("header");
     new Header(header);
+
     new Pagination(pagination);
     new RangeSlider(rangeSlider);
     rooms.forEach((room) => {

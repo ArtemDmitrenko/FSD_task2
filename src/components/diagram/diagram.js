@@ -16,11 +16,12 @@ export default class Diagram {
   }
 
   getAttributes() {
-    const data = this.item.dataset;
+    const data = JSON.parse(this.item.dataset.array);
     this.model = {};
-    for (let item in data) {
-      this.model[item] = this.getAttributeInNumber(data[item]);
-    }
+    data.forEach((item) => {
+      const { name, value } = item;
+      this.model[name] = this.getAttributeInNumber(value);
+    });
   }
 
   calcSumOfReviews() {
