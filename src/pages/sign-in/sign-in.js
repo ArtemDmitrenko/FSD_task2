@@ -1,4 +1,4 @@
-import Header from "Components/header/header";
+import HeaderInit from "Components/header/header-init";
 
 export default class SignIn {
   constructor() {
@@ -6,7 +6,6 @@ export default class SignIn {
   }
 
   init() {
-    const header = document.querySelector("header");
-    new Header(header);
+    new HeaderInit();
   }
 }

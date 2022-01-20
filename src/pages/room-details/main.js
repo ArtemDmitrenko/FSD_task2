@@ -1,6 +1,6 @@
-import RoomDetails from './room-details';
-import './room-details.scss';
+import RoomDetails from "./room-details";
+import "./room-details.scss";
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   new RoomDetails();
-})
+});

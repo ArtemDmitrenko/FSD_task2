@@ -1,6 +1,6 @@
 import CheckboxList from "Components/checkbox-list/checkbox-list";
 import DateDropdown from "Components/date-dropdown/date-dropdown";
-import Header from "Components/header/header";
+import HeaderInit from "Components/header/header-init";
 import Pagination from "Components/pagination/pagination";
 import RangeSlider from "Components/range-slider/range-slider";
 import Room from "Components/room/room";
@@ -34,10 +34,7 @@ export default class SearchRoom {
     dateDropdowns.forEach((dateDropdown) => {
       new DateDropdown(dateDropdown);
     });
-
-    this.header = document.querySelector("header");
-    new Header(header);
-
+    new HeaderInit();
     new Pagination(pagination);
     new RangeSlider(rangeSlider);
     rooms.forEach((room) => {

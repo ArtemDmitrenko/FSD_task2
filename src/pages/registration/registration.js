@@ -1,4 +1,4 @@
-import Header from "Components/header/header";
+import HeaderInit from "Components/header/header-init";
 import FormRegistration from "Components/registration-form/registration-form";
 
 export default class Registration {
@@ -7,9 +7,8 @@ export default class Registration {
   }
 
   init() {
-    const header = document.querySelector("header");
     const formRegistration = document.querySelector(".js-registration__form");
-    new Header(header);
+    new HeaderInit();
     new FormRegistration(formRegistration);
   }
 }
