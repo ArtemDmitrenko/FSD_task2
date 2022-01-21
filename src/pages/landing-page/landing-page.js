@@ -1,5 +1,5 @@
-import HeaderInit from "Components/header/header-init";
-import RoomSearchFormInit from "Components/room-search-form/room-search-form-init";
+import headerInit from "Components/header/header-init";
+import roomSearchFormInit from "Components/room-search-form/room-search-form-init";
 
 export default class LandingPage {
   constructor() {
@@ -7,7 +7,7 @@ export default class LandingPage {
   }
 
   init() {
-    new HeaderInit();
-    new RoomSearchFormInit();
+    headerInit();
+    roomSearchFormInit();
   }
 }

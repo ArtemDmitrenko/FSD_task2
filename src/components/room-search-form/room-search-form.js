@@ -1,7 +1,7 @@
 import DateDropdown from "Components/date-dropdown/date-dropdown";
 import Dropdown from "Components/dropdown/dropdown";
 
-export default class FormRoomSearch {
+export default class RoomSearchForm {
   constructor(form) {
     this.form = form;
     this.init();

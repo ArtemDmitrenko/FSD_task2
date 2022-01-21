@@ -1,7 +1,7 @@
 import Diagram from "Components/diagram/diagram";
-import HeaderInit from "Components/header/header-init";
+import headerInit from "Components/header/header-init";
 import Review from "Components/review/review";
-import FormConfirmation from "Components/confirmation-form/confirmation-form";
+import СonfirmationForm from "Components/confirmation-form/confirmation-form";
 
 export default class RoomDetails {
   constructor() {
@@ -9,16 +9,16 @@ export default class RoomDetails {
   }
 
   init() {
-    const formConfirmation = document.querySelector(
+    const сonfirmationForm = document.querySelector(
       ".js-room-details__confirmation-form"
     );
     const diagram = document.querySelector(".js-room-details__diagram");
     const reviews = document.querySelectorAll(
       ".js-room-details__review-block-item"
     );
-    new FormConfirmation(formConfirmation);
+    new СonfirmationForm(сonfirmationForm);
     new Diagram(diagram);
-    new HeaderInit();
+    headerInit();
     reviews.forEach((review) => {
       new Review(review);
     });

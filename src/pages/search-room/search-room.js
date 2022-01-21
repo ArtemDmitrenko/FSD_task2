@@ -1,10 +1,10 @@
 import CheckboxList from "Components/checkbox-list/checkbox-list";
 import DateDropdown from "Components/date-dropdown/date-dropdown";
-import HeaderInit from "Components/header/header-init";
 import Pagination from "Components/pagination/pagination";
 import RangeSlider from "Components/range-slider/range-slider";
 import Room from "Components/room/room";
 import Dropdown from "Components/dropdown/dropdown";
+import headerInit from "Components/header/header-init";
 
 export default class SearchRoom {
   constructor() {
@@ -18,7 +18,6 @@ export default class SearchRoom {
     const dateDropdowns = document.querySelectorAll(
       ".js-search-room__filter-date-dropdown"
     );
-    const header = document.querySelector("header");
     const pagination = document.querySelector(".js-search-room__pagination");
     const rangeSlider = document.querySelector(".js-search-room__range-slider");
     const rooms = document.querySelectorAll(".js-search-room__card");
@@ -34,7 +33,6 @@ export default class SearchRoom {
     dateDropdowns.forEach((dateDropdown) => {
       new DateDropdown(dateDropdown);
     });
-    new HeaderInit();
     new Pagination(pagination);
     new RangeSlider(rangeSlider);
     rooms.forEach((room) => {
@@ -42,5 +40,6 @@ export default class SearchRoom {
     });
     new Dropdown(guestDropdown);
     new Dropdown(roomDropdown);
+    headerInit();
   }
 }

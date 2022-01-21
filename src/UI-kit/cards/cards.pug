@@ -7,8 +7,6 @@ include ../../components/log-in-form/log-in-form.pug
 include ../../components/room/room.pug
 include ../../components/date-dropdown/date-dropdown.pug
 
-
-
 block title
   title Cards
 
@@ -16,7 +14,7 @@ block content
   .cards
     .cards__logo-UIkit
       +logo-UIkit()
-    .cards__all-items
+    .cards__items
       .cards__room-search.js-cards__room-search
         +room-search-form()
       .cards__registration.js-cards__registration

@@ -22,25 +22,25 @@
   &__logo-UIkit {
     padding: 30px 0 0 30px;
   }
-  &__all-items {
+  &__items {
     display: flex;
     margin: 85px 0 90px 141px;
   }
-  &__global-row2 {
+  &__second-column {
     margin-top: -20px;
   }
-  &__global-row1 {
+  &__first-column {
     margin-right: 126px;
   }
-  &__sub-row {
+  &__upper-part {
     display: flex;
   }
-  &__sub-row1,
-  &__sub-row2,
-  &__global-row1 {
+  &__upper-part1,
+  &__upper-part2,
+  &__first-column {
     width: 320px;
   }
-  &__sub-row2 {
+  &__upper-part2 {
     margin-left: 71px;
   }
   &__element {

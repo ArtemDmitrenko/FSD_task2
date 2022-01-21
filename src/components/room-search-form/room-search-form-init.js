@@ -1,9 +1,7 @@
-import FormRoomSearch from "./room-search-form";
+import RoomSearchForm from "./room-search-form";
 
-export default class RoomSearchFormInit {
-  constructor() {
-    document.querySelectorAll(".js-room-search-form").forEach((item) => {
-      new FormRoomSearch(item);
-    });
-  }
+export default function roomSearchFormInit() {
+  document.querySelectorAll(".js-room-search-form").forEach((item) => {
+    new RoomSearchForm(item);
+  });
 }

@@ -1,4 +1,4 @@
-import HeaderInit from "Components/header/header-init";
+import headerInit from "Components/header/header-init";
 
 export default class SignIn {
   constructor() {
@@ -6,6 +6,6 @@ export default class SignIn {
   }
 
   init() {
-    new HeaderInit();
+    headerInit();
   }
 }

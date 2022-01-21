@@ -1,6 +1,6 @@
 import Input from "Components/input/input";
 
-export default class FormRegistration {
+export default class RegistrationForm {
   constructor(form) {
     this.form = form.querySelector(".js-registration-form");
     this.init();

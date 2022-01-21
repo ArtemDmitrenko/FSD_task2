@@ -21,10 +21,7 @@ export default class NavMenu {
   }
 
   handleMenuItemClick(i) {
-    console.log("clickkkk");
-    console.log(this.subLists[i]);
     this.subLists[i].classList.toggle("nav-menu__sub-list_opened");
-    console.log(this.subLists[i]);
     this.checkmarks[i].classList.toggle("nav-menu__checkmark_direction_up");
   }
 

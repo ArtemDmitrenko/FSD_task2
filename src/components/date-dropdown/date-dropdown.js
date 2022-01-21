@@ -111,4 +111,8 @@ export default class DateDropdown {
   showDatepicker() {
     this.myDatapicker.show();
   }
+
+  getStayingInputFrom() {
+    return this.inputFrom;
+  }
 }
