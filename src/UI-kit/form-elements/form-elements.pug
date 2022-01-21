@@ -37,6 +37,7 @@ block content
               withButtons: true, 
               heading: 'dropdown', 
               value: 'Сколько гостей',
+              description: '',
               items: [
                 {
                   name: 'adults', 
@@ -70,8 +71,10 @@ block content
           .form-elements__dropdown.js-form-elements__dropdown
             +dropdown({
               name: 'roomsBeds', 
+              withButtons: false, 
               heading: 'dropdown', 
-              description: 'default', 
+              description: 'default',
+              value: '',
               items: [
                 {
                   name: 'bedrooms', 
@@ -86,14 +89,17 @@ block content
                   sign: 'ванные комнаты', 
                   declination: 'ванная комната, ванные комнаты, ванных комнат'
                 },
-              ]
+              ],
+              declination: '',
             })
         .form-elements__element.form-elements__element_expanded
           .form-elements__dropdown.js-form-elements__dropdown
             +dropdown({
               name: 'roomsBeds', 
+              withButtons: false, 
               heading: 'dropdown', 
-              description: 'expanded', 
+              description: 'expanded',
+              value: '',
               items: [
                 {
                   name: 'bedrooms', 
@@ -108,7 +114,8 @@ block content
                   sign: 'ванные комнаты', 
                   declination: 'ванная комната, ванные комнаты, ванных комнат'
                 },
-              ]
+              ],
+              declination: ''
             })
         .form-elements__element
           .form-elements__checkbox-list.js-form-elements__checkbox-list.form-elements__checkbox-list_not-expandable
@@ -180,6 +187,7 @@ block content
                   withButtons: true, 
                   heading: 'dropdown', 
                   value: 'Сколько гостей',
+                  description: '',
                   items: [
                     {
                       name: 'adults', 
@@ -237,6 +245,7 @@ block content
                   withButtons: true, 
                   heading: 'dropdown', 
                   value: 'Сколько гостей',
+                  description: '',
                   items: [
                     {
                       name: 'adults', 
