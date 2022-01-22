@@ -1,11 +1,13 @@
-//-
-  options.title - main title
-  options.roomInfo.name - name of item
-  options.roomInfo.description - description of item
-  options.roomInfo.image - image of item
-
 mixin room-info(options)
-  - const { title, roomInfo } = options
+  - 
+    const { title = 'Сведения о номере', roomInfo = 
+      [
+        { name:'Комфорт', description: 'Шумопоглощающие стены', image: 'insert_emoticon' }, 
+        { name:'Удобство', description: 'Окно в каждой из спален', image: 'location_city' },
+        { name:'Уют', description: 'Номер оснащён камином', image: 'whatshot' }
+      ]
+    } = options
+  
   .room-info
     if title
       h2.room-info__title= title

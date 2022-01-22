@@ -1,13 +1,10 @@
-//-
-  options.name - title of list
-  options.label - label of toggle
-
 mixin toggle(options)
-  - const {name, label} = options
+  - const { name = 'Toggle', label = 'Получать спецпредложения' } = options
+  
   .toggle
     if name
       h3.toggle__name= name
     .toggle__item
       label.toggle__label
-        input.toggle__input(type="checkbox", name="Special offers")
+        input.toggle__input(type='checkbox', name='Special offers')
         span.toggle__text= label

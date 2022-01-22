@@ -22,7 +22,7 @@ mixin dropdown(options = {})
       }
     ];
 
-  - const { name='guests', withButtons=true, heading='Гости', value='Сколько гостей', description='description', items=defaultItems, declination='гость, гостя, гостей' } = options;
+  - const { name = 'guests', withButtons = true, heading = 'Гости', value = 'Сколько гостей', description = 'description', items = defaultItems, declination = 'гость, гостя, гостей' } = options;
 
     .dropdown.js-dropdown(data-buttons = withButtons)
       .dropdown__input.js-dropdown__input(data-declination = declination data-value = value)

@@ -1,32 +1,29 @@
-//- 
-    options.name - title of buttons list
-    options.expandable - if list is expandable
-    options.richCheckbox - if list is rich checkbox buttons
-    options.list[0...i] - name of buttons
-    
 mixin checkbox-list(options)
-  - const { name, isExpandable, withDescription, list } = options
+  - 
+    const defaultList = [
+      {item: 'Можно курить'},  
+      {item: 'Можно с питомцами'} 
+    ];
 
-  div(class = isExpandable ? "checkbox-list checkbox-list_expandable js-checkbox-list js-checkbox-list_expandable" : "checkbox-list js-checkbox-list")
+    const { name = 'Title', isExpandable = false, withDescription = false, list = defaultList } = options;
+
+  div(class = isExpandable ? 'checkbox-list checkbox-list_expandable js-checkbox-list js-checkbox-list_expandable' : 'checkbox-list js-checkbox-list')
     .checkbox-list__name
       .checkbox-list__title= name
       if isExpandable
         span.checkbox-list__checkmark.js-checkbox-list__checkmark expand_more
     form.checkbox-list__form.js-checkbox-list__form(
-      name = withDescription ? "richCheckbox-list" : "checkbox-list" 
-      method = "get"
+      name = withDescription ? 'richCheckbox-list' : 'checkbox-list' 
+      method = 'get'
     )
       each nameOfButton in list
         - const { item, subItem } = nameOfButton
         .checkbox-list__item
           label.checkbox-list__label
-            input.checkbox-list__input(type="checkbox")
+            input.checkbox-list__input(type='checkbox')
             span.checkbox-list__indicator
             if withDescription
               span.checkbox-list__text.checkbox-list__text_rich= item
               span.checkbox-list__sublabel= subItem
             else
               span.checkbox-list__text= item
-
-      
-

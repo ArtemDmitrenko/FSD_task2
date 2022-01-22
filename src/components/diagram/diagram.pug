@@ -1,14 +1,43 @@
 mixin diagram(options)
-  - const { declination, dataArray } = options;
+  - 
+    const defaultDataArray = 
+    [
+      {
+        name: 'good',
+        value: '65',
+        sign: 'Хорошо',
+        gradientColors: {from: '#6FCF97', to: '#66D2EA'}
+      },
+      {
+        name: 'amazing',
+        value: '130',
+        sign: 'Великолепно',
+        gradientColors: {from: '#FFE39C', to: '#FFBA9C'}
+      },
+      {
+        name: 'notbad',
+        value: '65',
+        sign: 'Удовлетворительно',
+        gradientColors: {from: '#BC9CFF', to: '#8BA4F9'}
+      },
+      {
+        name: 'bad',
+        value: '0',
+        sign: 'Разочарован',
+        gradientColors: {from: '#909090', to: '#3D4975'}
+      }
+    ]
+
+    const { declination = 'голос, голоса, голосов', dataArray = defaultDataArray } = options;
 
   .diagram.js-diagram(data-array=dataArray)
     .diagram__block
-      svg.diagram__chart.js-diagram__chart(width="120" height="120" viewBox="0 0 120 120")
+      svg.diagram__chart.js-diagram__chart(width='120' height='120' viewBox='0 0 120 120')
         each item in dataArray
           - const { name, gradientColors } = item
-          linearGradient(id=`${name}` x1="0" x2="0" y1="0" y2="1")
-            stop(offset="0%" stop-color=`${gradientColors.from}`)
-            stop(offset="100%" stop-color=`${gradientColors.to}`)
+          linearGradient(id=`${name}` x1='0' x2='0' y1='0' y2='1')
+            stop(offset='0%' stop-color=`${gradientColors.from}`)
+            stop(offset='100%' stop-color=`${gradientColors.to}`)
       h1.diagram__total.js-diagram__total(data-declination=declination)
     .diagram__legend
       ul.diagram__list

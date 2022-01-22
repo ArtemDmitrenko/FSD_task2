@@ -1,17 +1,18 @@
 mixin type-block(options)
-  - const {name, text} = options
+  - const {name = 'H1', text = 'Description'} = options
+  
   .type-block
     case name 
-      when "H1"
+      when 'H1'
         p.type-block__name.type-block__name_fsize_24= name
         p.type-block__description.type-block__description_h1= text
-      when "H2"
+      when 'H2'
         p.type-block__name.type-block__name_fsize_19= name
         p.type-block__description.type-block__description_h2= text
-      when "H3"
+      when 'H3'
         p.type-block__name.type-block__name_fsize_12= name
         p.type-block__description.type-block__description_h3= text
-      when "Body"
+      when 'Body'
         p.type-block__name.type-block__name_line-height_24= name
         p.type-block__description.type-block__description_font-body= text
 

@@ -3,16 +3,17 @@ include ../logo/logo.pug
 include ../nav-menu/nav-menu.pug
 
 mixin header(options)
-  - const { modifier } = options
+  - const { modifier = 'notRegistered' } = options
   - const menuItems = require('../../templates/menu-items.json')
+  
   header.header.js-header
     .header__container.js-header__container
       .header__content
-        a.header__link(href="./landing-page.html") 
+        a.header__link(href='./landing-page.html') 
           +logo()
         .header__with-nav-menu-buttons.js-header__with-nav-menu-buttons
           +nav-menu(menuItems)
-          if modifier == "Registered"
+          if modifier == 'Registered'
             .header__line
             .header__user-name Юлий Цезарь
           else

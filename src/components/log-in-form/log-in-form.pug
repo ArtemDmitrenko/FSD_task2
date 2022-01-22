@@ -2,12 +2,12 @@ include ../input/input.pug
 include ../button/button.pug
 
 mixin log-in-form()
-  form(action="#" method="post").log-in-form
+  form(action='#' method='post').log-in-form
     h1.log-in-form__title Войти
     .log-in-form__email
-      +input({name: 'E-mail', type: 'email', placeholder: 'Email', required: 'required'})
+      +input({ heading: '', description: '', name: 'E-mail', type: 'email', placeholder: 'Email', required: 'required'})
     .log-in-form__password
-      +input({name: 'Password', type: 'text', placeholder: 'Пароль', required: 'required'})
+      +input({ heading: '', description: '', name: 'Password', type: 'text', placeholder: 'Пароль', required: 'required'})
     .log-in-form__submit
       +button({assignment: 'button', style: 'directed', size: 'big', text: 'Войти', type: 'submit'})
     .log-in-form__registration

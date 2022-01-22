@@ -1,12 +1,10 @@
-
-//-
-  menuItems - массив с элементами меню
-  menuItems[0].name - имя элемента меню
-  menuItems[0].href - ссылка элемента меню
-  menuItems[0].subname[0].name - имя элемента подменю
-  menuItems[0].subname[0].href - ссылка элемента подменю
-  
 mixin nav-menu(menuItems)
+  - 
+    const defaultMenuItems = require('Components/nav-menu/default-nav-menu-items.json')
+    if (!menuItems) {
+      menuItems = defaultMenuItems
+    }
+
   nav.nav-menu.js-nav-menu
     ul.nav-menu__list
       each item in menuItems

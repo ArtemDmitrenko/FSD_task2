@@ -1,5 +1,5 @@
 mixin input(options = {})
-  - const {heading, description, name, value, placeholder, expandable, subscription, type, required, readonly} = options
+  - const { heading = 'title', description = 'description', name = 'email', value = '', placeholder = '', expandable = false, subscription = false, type = 'email', required = true, readonly = false } = options
   
   .input
     if heading

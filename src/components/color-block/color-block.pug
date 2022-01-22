@@ -1,21 +1,22 @@
 mixin color-block(options)
-  - const { name, hex, text } = options
+  - const { name = 'dark', hex = '#1F2041', text = 'Dark Shade 100%' } = options
+  
   .color-block
     .color-block__item
       case name 
-        when "dark"
+        when 'dark'
           .color-block__color.color-block__color_dark
-        when "light-dark"
+        when 'light-dark'
           .color-block__color.color-block__color_light-dark
-        when "grey"
+        when 'grey'
           .color-block__color.color-block__color_grey
-        when "light-grey"
+        when 'light-grey'
           .color-block__color.color-block__color_light-grey
-        when "light"
+        when 'light'
           .color-block__color.color-block__color_light
-        when "purple"
+        when 'purple'
           .color-block__color.color-block__color_purple
-        when "green"
+        when 'green'
           .color-block__color.color-block__color_green
       .color-block__description
           p.color-block__name= text

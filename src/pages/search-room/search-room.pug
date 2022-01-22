@@ -14,7 +14,7 @@ block main
   main.search-room
     section.search-room__sidebar
       .search-room__filter-date-dropdown.js-search-room__filter-date-dropdown
-        +date-dropdown({titleFrom: 'Даты пребывания в отеле'})
+        +date-dropdown({ titleFrom: 'Даты пребывания в отеле', separatedInputs: false })
       .search-room__dropdown-guests.js-search-room__dropdown-guests
         +dropdown({
           name: 'guests', 
@@ -81,7 +81,10 @@ block main
               sign: 'ванные комнаты', 
               declination: 'ванная комната, ванные комнаты, ванных комнат'
             },
-          ]
+          ],
+          withButtons: false,
+          value: '', 
+          description: ''
         })
       .search-room__checkbox.js-search-room__checkbox
         .search-room__expandable-checkbox

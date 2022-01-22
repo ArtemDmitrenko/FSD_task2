@@ -4,7 +4,7 @@ include ../dropdown/dropdown.pug
 include ../button/button.pug
 
 mixin confirmation-form()
-  form(action="#" method="post").confirmation-form.js-confirmation-form
+  form(action='#' method='post').confirmation-form.js-confirmation-form
     .confirmation-form__room-description
       .confirmation-form__room-block
         h1.confirmation-form__room-number <span>№</span> 888
@@ -12,7 +12,7 @@ mixin confirmation-form()
       h3.confirmation-form__price 9 990₽ <span>в сутки</span>
     .confirmation-form__dates.js-confirmation-form__dates
       .confirmation-form__check-in
-        +date-dropdown({titleFrom: 'Прибытие', titleTo: 'Выезд', separatedInputs: true})
+        +date-dropdown({titleFrom: 'Прибытие', titleTo: 'Выезд', separatedInputs: true })
     .confirmation-form__guests.js-confirmation-form__guests
       +dropdown({
         name: 'guests', 

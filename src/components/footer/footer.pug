@@ -1,7 +1,16 @@
 include ../footer-big/footer-big.pug
 include ../footer-tab/footer-tab.pug
 
+
+
 mixin footer(footerItems)
+  
+  - 
+    const defaultFooterItems = require("Components/footer/default-footer-items.json")
+    if (!footerItems) {
+      footerItems = defaultFooterItems
+    }
+
   footer.footer
     +footer-big(footerItems)
     +footer-tab()

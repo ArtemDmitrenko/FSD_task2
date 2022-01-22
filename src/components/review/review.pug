@@ -1,11 +1,8 @@
 include ../like-button/like-button.pug
 
-//-
-  options.name - title of list
-  options.list - list of items
-
 mixin review(options)
-  - const {nameOfFile, name, date, numberOfLikes, textOfReview} = options;
+  - const { nameOfFile = 'file name', name = 'Иван Иванов', date = '3 дня назад', numberOfLikes = '0', textOfReview = 'Комментарий' } = options;
+  
   .review.js-review
     .review__part1
       img.review__image(src=require(`../../../src/components/review/${nameOfFile}.png`).default, alt=`${name}`)
@@ -14,5 +11,5 @@ mixin review(options)
         p.review__date= date
     .review__part2
       .review__like-button.js-review__like-button
-        +like-button({numberOfLikes: numberOfLikes})
+        +like-button({numberOfLikes: numberOfLikes, name: '' })
       p.review__text= textOfReview

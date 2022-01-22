@@ -7,18 +7,18 @@ mixin registration-form()
   form(action="#" method="post").registration-form.js-registration-form
     h1.registration-form__title Регистрация аккаунта
     .registration-form__name
-      +input({name: 'Name', type: 'text', placeholder: 'Имя', required: 'required'})
+      +input({heading: '', description: '', name: 'Name', type: 'text', placeholder: 'Имя', required: 'required'})
     .registration-form__surname
-      +input({name: 'Surname', type: 'text', placeholder: 'Фамилия', required: 'required'})
+      +input({heading: '', description: '', name: 'Surname', type: 'text', placeholder: 'Фамилия', required: 'required'})
     .registration-form__gender
-      +radio-buttons({list: ['Мужчина', 'Женщина'], required: 'required'})
+      +radio-buttons({ name: '', list: ['Мужчина', 'Женщина'] })
     .registration-form__birthday.js-registration-form__birthday
-      +input({heading: 'Дата рождения', name: 'birthday', type: 'text', placeholder: 'ДД.ММ.ГГГГ', required: 'required'})
+      +input({description: '', heading: 'Дата рождения', name: 'birthday', type: 'text', placeholder: 'ДД.ММ.ГГГГ', required: 'required'})
     .registration-form__enter
       .registration-form__email
-        +input({heading: 'Данные для входа в сервис', name: 'E-mail', type: 'email', placeholder: 'Email', required: 'required'})
+        +input({description: '', heading: 'Данные для входа в сервис', name: 'E-mail', type: 'email', placeholder: 'Email', required: 'required'})
       .registration-form__password
-        +input({name: 'Password', type: 'text', placeholder: 'Пароль', required: 'required'})
+        +input({heading: '', description: '', name: 'Password', type: 'text', placeholder: 'Пароль', required: 'required'})
     .registration-form__offers
       +toggle({label: 'Получать спецпредложения'})    
     .registration-form__submit

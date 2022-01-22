@@ -1,10 +1,11 @@
 include ../input/input.pug
 
 mixin date-dropdown(options)
-  - const {titleFrom, titleTo, defaultValueFrom, defaultValueTo, separatedInputs} = options
+  - const { titleFrom = 'from', titleTo = 'to', defaultValueFrom = '', defaultValueTo = '', separatedInputs = true } = options
+  
   .date-dropdown.js-date-dropdown(data-separatedInputs = separatedInputs)
     .date-dropdown__from.js-date-dropdown__from
-      +input({heading: titleFrom, name: "dateFrom", value: defaultValueFrom, type: "text", placeholder: "ДД.ММ.ГГГГ", required: 'required', expandable: true, readonly: true})
+      +input({heading: titleFrom, name: 'dateFrom', value: defaultValueFrom, type: 'text', placeholder: 'ДД.ММ.ГГГГ', required: 'required', expandable: true, readonly: true, description: false })
     if separatedInputs
       .date-dropdown__to.js-date-dropdown__to
-        +input({heading: titleTo, name: "dateTo", value: defaultValueTo, type: "text", placeholder: "ДД.ММ.ГГГГ", required: 'required', expandable: true, readonly: true})
+        +input({heading: titleTo, name: 'dateTo', value: defaultValueTo, type: 'text', placeholder: 'ДД.ММ.ГГГГ', required: 'required', expandable: true, readonly: true, description: false })

@@ -3,6 +3,12 @@ include ../social-nets/social-nets.pug
 include ../input/input.pug
 
 mixin footer-big(footerItems)
+  - 
+    const defaultFooterItems = require("Components/footer-big/default-footer-items.json")
+    if (!footerItems) {
+      footerItems = defaultFooterItems
+    }
+    
   .footer-big
       .footer-big__top
         .footer-big__container
@@ -23,7 +29,7 @@ mixin footer-big(footerItems)
                 li.footer-big__item_line-height_24 Получайте специальные предложения и новости сервиса
                 li.footer-big__item
                   form.footer-big__form(action="https://www.mock-link.com/")
-                    +input({name: 'email', type: 'email', placeholder: 'Email', required: true, subscription: true})                                        
+                    +input({heading: '', description: '', name: 'email', type: 'email', placeholder: 'Email', required: true, subscription: true})                                        
       .footer-big__bottom
         .footer-big__container
           .footer-big__main
