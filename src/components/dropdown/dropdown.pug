@@ -9,16 +9,19 @@ mixin dropdown(options = {})
         name: 'adults', 
         sign: 'взрослые', 
         declination: 'взрослый, взрослых, взрослых',
+        defaultValue: 1
       },
       {
         name: 'children', 
         sign: 'дети', 
         declination: 'дети, детей, детей',
+        defaultValue: 0
       },
       {
-        name: 'infants', 
-        sign: 'младенцы', 
+        name: 'infants',
+        sign: 'младенцы',
         declination: 'младенец, младенца, младенцев',
+        defaultValue: 0
       }
     ];
 
@@ -30,8 +33,9 @@ mixin dropdown(options = {})
       .dropdown__list.js-dropdown__list
         .dropdown__counter
           each item in items
+            - const { name, sign, declination, defaultValue } = item
             .dropdown__counter-item.js-dropdown__counter-item
-              +counter([item.sign, item.name, item.declination])
+              +counter([ sign, name, declination, defaultValue ])
         if withButtons
           .dropdown__buttons
             .dropdown__button-clear.js-dropdown__button-clear

@@ -1,8 +1,8 @@
 mixin checkbox-list(options)
   - 
     const defaultList = [
-      {item: 'Можно курить'},  
-      {item: 'Можно с питомцами'} 
+      {item: 'Можно курить', checked: false},  
+      {item: 'Можно с питомцами', checked: false} 
     ];
 
     const { name = 'Title', isExpandable = false, withDescription = false, list = defaultList } = options;
@@ -17,10 +17,10 @@ mixin checkbox-list(options)
       method = 'get'
     )
       each nameOfButton in list
-        - const { item, subItem } = nameOfButton
+        - const { item, subItem, checked } = nameOfButton
         .checkbox-list__item
           label.checkbox-list__label
-            input.checkbox-list__input(type='checkbox')
+            input.checkbox-list__input(type='checkbox', checked=checked)
             span.checkbox-list__indicator
             if withDescription
               span.checkbox-list__text.checkbox-list__text_rich= item

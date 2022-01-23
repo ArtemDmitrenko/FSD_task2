@@ -19,15 +19,18 @@ mixin room-search-form()
           {
             name: 'adults', 
             sign: 'взрослые', 
-            declination: 'взрослый, взрослых, взрослых'
+            declination: 'взрослый, взрослых, взрослых',
+            defaultValue: 2
           },{
             name: 'children', 
             sign: 'дети', 
             declination: 'дети, детей, детей',
+            defaultValue: 0
           },{
             name: 'infants', 
             sign: 'младенцы', 
-            declination: 'младенец, младенца, младенцев'
+            declination: 'младенец, младенца, младенцев',
+            defaultValue: 0
           },
         ],
         declination: 'гость, гостя, гостей',

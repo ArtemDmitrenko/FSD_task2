@@ -10,4 +10,8 @@ export default class Button {
   showButton() {
     this.button.classList.remove("button_hidden");
   }
+
+  hoverButton() {
+    this.button.classList.add("button_hovered");
+  }
 }

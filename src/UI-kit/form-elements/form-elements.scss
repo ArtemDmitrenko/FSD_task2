@@ -32,15 +32,15 @@
   &__first-column {
     margin-right: 126px;
   }
-  &__upper-part {
+  &__buttons {
     display: flex;
   }
-  &__upper-part1,
-  &__upper-part2,
+  &__sub-column1,
+  &__sub-column2,
   &__first-column {
     width: 320px;
   }
-  &__upper-part2 {
+  &__sub-column2 {
     margin-left: 71px;
   }
   &__element {
@@ -58,15 +58,17 @@
   &__datepicker {
     display: flex;
     margin-top: 60px;
-    &_range-in-one {
+    &_range-in-one-input {
       width: 266px;
       margin-bottom: 62px;
     }
   }
-  &__like-button {
+  &__like-buttons {
     position: relative;
     display: flex;
-    & .like-button:nth-child(2) {
+  }
+  &__like-button {
+    &_clicked {
       position: absolute;
       bottom: 0;
       left: 50px;
@@ -75,11 +77,11 @@
   &__rate-button {
     position: relative;
     display: flex;
-    margin-bottom: 212px;
-    & .rate-button:nth-child(2) {
+    margin-bottom: 200px;
+    > :nth-child(2) {
       position: absolute;
       bottom: 0;
-      left: 140px;
+      left: 160px;
     }
   }
   &__dropdown {
@@ -93,14 +95,16 @@
   }
 
   &__button-row1 {
+    display: flex;
     margin-top: 15px;
     margin-bottom: 31px;
-    & .button_solid:first-child {
+    > :first-child {
       margin-right: 20px;
     }
   }
   &__button-row2 {
-    & .button_bordered:first-child {
+    display: flex;
+    > :first-child {
       margin-right: 20px;
     }
   }
@@ -109,7 +113,7 @@
     margin-top: 30px;
     margin-bottom: 29px;
     margin-left: -3px;
-    & .button:first-child {
+    > :first-child {
       margin-right: 9px;
     }
   }
@@ -129,8 +133,7 @@
   }
   &__toggle {
     margin-bottom: 38px;
-
-    & .toggle {
+    &_checked {
       margin-bottom: 8px;
     }
   }
@@ -142,14 +145,13 @@
     margin-top: 8px;
     margin-bottom: 25px;
   }
-  &__button {
+  &__all-button {
     margin-bottom: 40px;
   }
   &__pagination {
-    margin-bottom: 257px;
-    & .pagination__container {
-      margin-top: 16px;
-      margin-left: 2px;
-    }
+    margin-bottom: 275px;
+  }
+  &__opened-dropdown_with-guests {
+    margin-bottom: 260px;
   }
 }

@@ -14,10 +14,10 @@
 
 .headers-footers {
   background-color: #f4f4f6;
-  &__not-registered {
+  &__header-not-registered-user {
     margin-top: 62px;
   }
-  &__registered {
+  &__header-registered-user {
     margin-top: 40px;
   }
   &__logo-UIkit {
@@ -28,13 +28,8 @@
     margin-bottom: 40px;
   }
   &__footer-tab {
-    padding-bottom: 140px;
-
-    & .footer-tab {
+    > :first-child {
       display: block;
-    }
-    & .footer-tab__content {
-      padding-top: 120px;
     }
   }
 }

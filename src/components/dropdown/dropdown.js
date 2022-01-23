@@ -8,6 +8,7 @@ export default class Dropdown {
     this.init();
     this.addEventListeners();
     this.disableMinusButton();
+    this.updateInput();
   }
 
   init() {

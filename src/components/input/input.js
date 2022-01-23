@@ -21,6 +21,10 @@ export default class Input {
     this.input.classList.toggle("input__element_border-color_bright");
   }
 
+  makeBorderBright() {
+    this.input.classList.toggle("input__element_hovered");
+  }
+
   get inputElement() {
     return this.input;
   }

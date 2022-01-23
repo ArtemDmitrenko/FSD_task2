@@ -29,4 +29,9 @@ export default class CheckboxList {
   isExpandable() {
     return this.checkboxList.classList.contains("js-checkbox-list_expandable");
   }
+
+  expandCheckbox() {
+    this.checkboxListForm.classList.toggle("checkbox-list__form_opened");
+    this.checkmark.classList.toggle("checkbox-list__checkmark_direction_up");
+  }
 }

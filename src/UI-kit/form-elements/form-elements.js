@@ -5,11 +5,13 @@ import Review from "Components/review/review";
 import RangeSlider from "Components/range-slider/range-slider";
 import Dropdown from "Components/dropdown/dropdown";
 import Pagination from "Components/pagination/pagination";
+import Toggle from "Components/toggle/toggle";
+import LikeButton from "Components/like-button/like-button";
+import Button from "Components/button/button";
 
 export default class FormElements {
   constructor() {
     this.init();
-    this.makeLikeOnFigma();
   }
 
   init() {
@@ -27,7 +29,26 @@ export default class FormElements {
       ".js-form-elements__range-slider"
     );
     const dropdowns = document.querySelectorAll(".js-form-elements__dropdown");
+    const openedDropdownContainers = document.querySelectorAll(
+      ".js-form-elements__opened-dropdown"
+    );
     const pagination = document.querySelector(".js-form-elements__pagination");
+    const hoveredTextInputContainer = document.querySelector(
+      ".js-form-elements__hovered-text-field"
+    );
+    const openedCheckboxList = document.querySelector(
+      ".js-form-elements__opened-checkbox-list"
+    );
+    const checkedToggle = document.querySelector(
+      ".js-form-elements__toggle_checked"
+    );
+    const clickedLikeButtons = document.querySelectorAll(
+      ".js-form-elements__like-button_clicked,.js-form-elements__review"
+    );
+    const hoveredButtons = document.querySelectorAll(
+      ".js-form-elements__button-solid_hovered,.js-form-elements__button-bordered_hovered"
+    );
+
     checkboxLists.forEach((checkboxList) => {
       new CheckboxList(checkboxList);
     });
@@ -43,129 +64,17 @@ export default class FormElements {
       new Dropdown(dropdown);
     });
     new Pagination(pagination);
-  }
-
-  makeLikeOnFigma() {
-    // Hovered input
-    const inputWithHover = document.querySelector('[name="Text"]');
-    inputWithHover.classList.add("input__element_hovered");
-
-    // DropdownBeds
-    const func3 = () => {
-      const dropdownDefault =
-        document.querySelectorAll('[name="roomsBeds"]')[0];
-      dropdownDefault.value = "2 спальни, 2 кровати...";
-    };
-    setTimeout(func3, 10);
-
-    // DropdownBeds
-    const inputOfdropdownExpanded =
-      document.querySelectorAll('[name="roomsBeds"]')[1];
-    const dropdownExpanded = document.querySelector(
-      ".form-elements__element_expanded"
-    );
-    const buttonPlusBedrooms = dropdownExpanded.querySelectorAll(
-      ".counter__button_value_plus"
-    )[0];
-    const buttonPlusBeds = dropdownExpanded.querySelectorAll(
-      ".counter__button_value_plus"
-    )[1];
-    setTimeout(function () {
-      $(inputOfdropdownExpanded).trigger("click");
-      $(buttonPlusBedrooms).trigger("click");
-      $(buttonPlusBedrooms).trigger("click");
-      $(buttonPlusBeds).trigger("click");
-      $(buttonPlusBeds).trigger("click");
-    }, 30);
-
-    // Checkbox
-    const checkbox = document.querySelectorAll(".checkbox-list")[1];
-    const buttonTable = checkbox.querySelectorAll(".checkbox-list__label")[1];
-    const buttonChair = checkbox.querySelectorAll(".checkbox-list__label")[2];
-    const buttonBed = checkbox.querySelectorAll(".checkbox-list__label")[3];
-    setTimeout(function () {
-      $(checkbox).trigger("click");
-      $(buttonTable).trigger("click");
-      $(buttonChair).trigger("click");
-      $(buttonBed).trigger("click");
-    }, 10);
-
-    // Checkbox buttons
-    const checkbox1 = document.querySelectorAll(
-      ".form-elements__checkbox-list"
-    )[2];
-    const checkboxListAnimals = checkbox1.querySelectorAll(
-      ".checkbox-list__label"
-    )[1];
-    const checkboxListGuests = checkbox1.querySelectorAll(
-      ".checkbox-list__label"
-    )[2];
-    setTimeout(function () {
-      $(checkboxListAnimals).trigger("click");
-      $(checkboxListGuests).trigger("click");
-    }, 10);
-
-    // Radio buttons
-    const radioButton = document.querySelectorAll(".radio-buttons__label")[0];
-    setTimeout(function () {
-      $(radioButton).trigger("click");
-    }, 10);
-
-    // Toggle label
-    const toggleButton = document.querySelectorAll(".toggle__label")[0];
-    setTimeout(function () {
-      $(toggleButton).trigger("click");
-    }, 10);
-
-    // Like button
-    const likeButton = document.querySelectorAll(".like-button__button")[1];
-    setTimeout(function () {
-      $(likeButton).trigger("click");
-    }, 10);
-
-    // DropdownGuests
-    const dropdowmGuests = document.querySelectorAll(
-      ".form-elements__dropdown"
-    )[3];
-    const dropdownGuestsButton =
-      dropdowmGuests.querySelector(".input__element");
-    setTimeout(function () {
-      $(dropdownGuestsButton).trigger("click");
-    }, 30);
-
-    // Buttons
-    const buttonRow1 = document.querySelector(".form-elements__button-row1");
-    const hoveredButtonInRow1 = buttonRow1.querySelectorAll(".button")[1];
-    hoveredButtonInRow1.classList.add("form-elements__button_hovereded");
-    const buttonRow2 = document.querySelector(".form-elements__button-row2");
-    const hoveredButtonInRow2 =
-      buttonRow2.querySelectorAll(".button_bordered")[1];
-    hoveredButtonInRow2.classList.add("form-elements__button_hovereded");
-
-    // DropdownGuests
-    const inputOfdropdownGuestsExpanded =
-      document.querySelectorAll('[name="guests"]')[2];
-    const dropdownGuestsExpanded = document.querySelector(
-      ".form-elements__dropdown_expandedGuests"
-    );
-    const buttonPlusAdults = dropdownGuestsExpanded.querySelectorAll(
-      ".counter__button_value_plus"
-    )[0];
-    const buttonPlusChildren = dropdownGuestsExpanded.querySelectorAll(
-      ".counter__button_value_plus"
-    )[1];
-    setTimeout(function () {
-      $(inputOfdropdownGuestsExpanded).trigger("click");
-      $(buttonPlusAdults).trigger("click");
-      $(buttonPlusAdults).trigger("click");
-      $(buttonPlusChildren).trigger("click");
-    }, 30);
-
-    // Like button in Review
-    const review = document.querySelector(".review__like-button");
-    const reviewLikeButton = review.querySelector(".like-button__button");
-    setTimeout(function () {
-      $(reviewLikeButton).trigger("click");
-    }, 15);
+    new Input(hoveredTextInputContainer).makeBorderBright();
+    openedDropdownContainers.forEach((item) => {
+      new Dropdown(item).toggleDropdown();
+    });
+    new CheckboxList(openedCheckboxList).expandCheckbox();
+    new Toggle(checkedToggle).checkToggle();
+    clickedLikeButtons.forEach((item) => {
+      new LikeButton(item).handleLikeButtonClick();
+    });
+    hoveredButtons.forEach((item) => {
+      new Button(item).hoverButton();
+    });
   }
 }
