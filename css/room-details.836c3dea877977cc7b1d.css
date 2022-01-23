@@ -277,6 +277,9 @@ a {
     padding-bottom: 15px; }
   .button_hidden {
     display: none; }
+  .button_hovered {
+    opacity: 0.5;
+    transition: opacity 0.4s ease; }
 
 .nav-menu__list {
   display: flex;
@@ -502,6 +505,7 @@ a {
       padding: 50px; } }
   .footer-tab__content {
     margin: auto;
+    padding-top: 120px;
     text-align: center; }
   .footer-tab__text {
     padding: 20px 0 24px;
@@ -642,16 +646,9 @@ a {
     border-radius: 5px;
     content: ""; }
 
-.diagram__list-item_description_amazing::before, .diagram__list-item_description_good::before, .diagram__list-item_description_notBad::before, .diagram__list-item_description_bad::before {
-  display: inline-block;
-  width: 10.43px;
-  height: 10px;
-  margin-right: 5px;
-  border-radius: 5px;
-  content: ""; }
-
 .diagram {
-  display: flex; }
+  display: flex;
+  align-items: end; }
   @media screen and (max-width: 376px) {
     .diagram {
       display: block; } }
@@ -661,17 +658,18 @@ a {
   .diagram__unit {
     fill: none;
     stroke-width: 4; }
+  .diagram__point {
+    display: inline-block;
+    width: 10.43px;
+    height: 10px;
+    margin-right: 5px;
+    border-radius: 5px;
+    content: ""; }
   .diagram__list-item {
+    display: flex;
+    align-items: baseline;
     margin-bottom: 6px;
     color: rgba(31, 32, 65, 0.75); }
-    .diagram__list-item_description_amazing::before {
-      background: linear-gradient(180deg, #ffe39c 0%, #ffba9c 100%); }
-    .diagram__list-item_description_good::before {
-      background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%); }
-    .diagram__list-item_description_notBad::before {
-      background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%); }
-    .diagram__list-item_description_bad::before {
-      background: linear-gradient(180deg, #909090 0%, #3d4975 100%); }
   .diagram__total {
     position: absolute;
     top: 33%;
@@ -687,7 +685,6 @@ a {
         left: 11%; } }
   .diagram__legend {
     min-width: 162px;
-    margin-top: 29px;
     margin-left: 30px; }
     @media screen and (max-width: 376px) {
       .diagram__legend {
@@ -901,6 +898,8 @@ a {
     .date-dropdown__container .datepicker--cell-day.-other-month-,
     .date-dropdown__container .datepicker--cell-year.-other-decade- {
       opacity: 0.25; }
+    .date-dropdown__container .datepicker--pointer {
+      display: none; }
 
 .dropdown {
   position: relative;

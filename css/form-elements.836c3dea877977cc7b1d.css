@@ -344,6 +344,9 @@ a {
     padding-bottom: 15px; }
   .button_hidden {
     display: none; }
+  .button_hovered {
+    opacity: 0.5;
+    transition: opacity 0.4s ease; }
 
 .counter {
   display: flex;
@@ -505,6 +508,8 @@ a {
     .date-dropdown__container .datepicker--cell-day.-other-month-,
     .date-dropdown__container .datepicker--cell-year.-other-decade- {
       opacity: 0.25; }
+    .date-dropdown__container .datepicker--pointer {
+      display: none; }
 
 .checkbox-list {
   max-width: 222px; }
@@ -963,23 +968,23 @@ a {
 .form-elements__logo-UIkit {
   padding: 30px 0 0 30px; }
 
-.form-elements__all-items {
+.form-elements__items {
   display: flex;
   margin: 85px 0 90px 141px; }
 
-.form-elements__global-row2 {
+.form-elements__second-column {
   margin-top: -20px; }
 
-.form-elements__global-row1 {
+.form-elements__first-column {
   margin-right: 126px; }
 
-.form-elements__sub-row {
+.form-elements__buttons {
   display: flex; }
 
-.form-elements__sub-row1, .form-elements__sub-row2, .form-elements__global-row1 {
+.form-elements__sub-column1, .form-elements__sub-column2, .form-elements__first-column {
   width: 320px; }
 
-.form-elements__sub-row2 {
+.form-elements__sub-column2 {
   margin-left: 71px; }
 
 .form-elements__element {
@@ -995,45 +1000,49 @@ a {
 .form-elements__datepicker {
   display: flex;
   margin-top: 60px; }
-  .form-elements__datepicker_range-in-one {
+  .form-elements__datepicker_range-in-one-input {
     width: 266px;
     margin-bottom: 62px; }
 
-.form-elements__like-button {
+.form-elements__like-buttons {
   position: relative;
   display: flex; }
-  .form-elements__like-button .like-button:nth-child(2) {
-    position: absolute;
-    bottom: 0;
-    left: 50px; }
+
+.form-elements__like-button_clicked {
+  position: absolute;
+  bottom: 0;
+  left: 50px; }
 
 .form-elements__rate-button {
   position: relative;
   display: flex;
-  margin-bottom: 212px; }
-  .form-elements__rate-button .rate-button:nth-child(2) {
+  margin-bottom: 200px; }
+  .form-elements__rate-button > :nth-child(2) {
     position: absolute;
     bottom: 0;
-    left: 140px; }
+    left: 160px; }
 
 .form-elements__dropdown_with-guests {
   margin-bottom: 255px; }
 
 .form-elements__button-row1 {
+  display: flex;
   margin-top: 15px;
   margin-bottom: 31px; }
-  .form-elements__button-row1 .button_solid:first-child {
+  .form-elements__button-row1 > :first-child {
     margin-right: 20px; }
 
-.form-elements__button-row2 .button_bordered:first-child {
-  margin-right: 20px; }
+.form-elements__button-row2 {
+  display: flex; }
+  .form-elements__button-row2 > :first-child {
+    margin-right: 20px; }
 
 .form-elements__button-row3 {
   display: flex;
   margin-top: 30px;
   margin-bottom: 29px;
   margin-left: -3px; }
-  .form-elements__button-row3 .button:first-child {
+  .form-elements__button-row3 > :first-child {
     margin-right: 9px; }
 
 .form-elements__button_hovered {
@@ -1050,7 +1059,7 @@ a {
 
 .form-elements__toggle {
   margin-bottom: 38px; }
-  .form-elements__toggle .toggle {
+  .form-elements__toggle_checked {
     margin-bottom: 8px; }
 
 .form-elements__review {
@@ -1061,12 +1070,12 @@ a {
   margin-top: 8px;
   margin-bottom: 25px; }
 
-.form-elements__button {
+.form-elements__all-button {
   margin-bottom: 40px; }
 
 .form-elements__pagination {
-  margin-bottom: 257px; }
-  .form-elements__pagination .pagination__container {
-    margin-top: 16px;
-    margin-left: 2px; }
+  margin-bottom: 275px; }
+
+.form-elements__opened-dropdown_with-guests {
+  margin-bottom: 260px; }
 

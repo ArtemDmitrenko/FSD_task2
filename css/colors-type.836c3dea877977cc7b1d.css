@@ -106,27 +106,20 @@ a {
   width: 70px;
   height: 70px;
   border-radius: 6px; }
-
-.color-block__color_dark_5 {
-  background-color: rgba(31, 32, 65, 0.05); }
-
-.color-block__color_dark_25 {
-  background-color: rgba(31, 32, 65, 0.25); }
-
-.color-block__color_dark_50 {
-  background-color: rgba(31, 32, 65, 0.5); }
-
-.color-block__color_dark_75 {
-  background-color: rgba(31, 32, 65, 0.75); }
-
-.color-block__color_dark_100 {
-  background-color: #1f2041; }
-
-.color-block__color_green {
-  background-color: #6fcf97; }
-
-.color-block__color_purple {
-  background-color: #bc9cff; }
+  .color-block__color_dark {
+    background-color: #1f2041; }
+  .color-block__color_light-dark {
+    background-color: rgba(31, 32, 65, 0.75); }
+  .color-block__color_grey {
+    background-color: rgba(31, 32, 65, 0.5); }
+  .color-block__color_light-grey {
+    background-color: rgba(31, 32, 65, 0.25); }
+  .color-block__color_light {
+    background-color: rgba(31, 32, 65, 0.05); }
+  .color-block__color_green {
+    background-color: #6fcf97; }
+  .color-block__color_purple {
+    background-color: #bc9cff; }
 
 .logo-UIkit {
   display: block; }
@@ -157,15 +150,15 @@ a {
   .type-block__description_h2 {
     width: 282px; }
 
-.colors-types__logo {
+.colors-type__logo {
   margin: 30px 0 0 30px; }
 
-.colors-types__item {
+.colors-type__item {
   display: flex;
   justify-content: space-between;
   padding: 67px 191px 145px 150px; }
 
-.colors-types__types__item {
+.colors-type__types__item {
   display: flex;
   margin-bottom: 50px; }
 
