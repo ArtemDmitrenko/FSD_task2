@@ -11,7 +11,7 @@ mixin registration-form()
     .registration-form__surname
       +input({heading: '', description: '', name: 'Surname', type: 'text', placeholder: 'Фамилия', required: 'required'})
     .registration-form__gender
-      +radio-buttons({ name: '', list: ['Мужчина', 'Женщина'] })
+      +radio-buttons({ name: '', list: [{ text: 'Мужчина', checked: true}, { text: 'Женщина'}] })
     .registration-form__birthday.js-registration-form__birthday
       +input({description: '', heading: 'Дата рождения', name: 'birthday', type: 'text', placeholder: 'ДД.ММ.ГГГГ', required: 'required'})
     .registration-form__enter
@@ -20,7 +20,7 @@ mixin registration-form()
       .registration-form__password
         +input({heading: '', description: '', name: 'Password', type: 'text', placeholder: 'Пароль', required: 'required'})
     .registration-form__offers
-      +toggle({label: 'Получать спецпредложения'})    
+      +toggle({label: 'Получать спецпредложения', name: ''})    
     .registration-form__submit
       +button({assignment: 'button', style: 'directed', size: 'big', text: 'Перейти к оплате', type: 'submit'})
     .registration-form__login
