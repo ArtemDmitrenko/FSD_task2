@@ -17,33 +17,38 @@ export default class Diagram {
 
   getAttributes() {
     const data = JSON.parse(this.item.dataset.array);
-    this.model = {};
+    this.model = [];
     data.forEach((item) => {
       const { name, value } = item;
-      this.model[name] = this.getAttributeInNumber(value);
+      const obj = {};
+      obj.key = name;
+      obj.value = this.getAttributeInNumber(value);
+      this.model.push(obj);
     });
   }
 
   calcSumOfReviews() {
-    this.sum = Object.values(this.model).reduce(
-      (previousValue, currentValue) => previousValue + currentValue
-    );
+    this.sum = 0;
+    this.model.forEach((item) => {
+      this.sum += item.value;
+    });
   }
 
   drawElementsOfDiagram() {
     let summaryValue = 0;
-    for (let item in this.model) {
-      const value = this.calcLengthOfOneReview(this.model[item]);
+    this.model.forEach((item) => {
+      const { key, value } = item;
+      const amount = this.calcLengthOfOneReview(value);
       this.$svg.insertAdjacentHTML(
         "beforeend",
         `
-        <circle class='diagram__unit' r='58' cx='50%' cy="50%" stroke="url(#${item})" style="stroke-dasharray: ${value} ${
+        <circle class='diagram__unit' r='58' cx='50%' cy="50%" stroke="url(#${key})" style="stroke-dasharray: ${amount} ${
           this.lengthOfCircle
         }; stroke-dashoffset: ${-(summaryValue + 1)}">
         `
       );
-      summaryValue += value + this.offset;
-    }
+      summaryValue += amount + this.offset;
+    });
   }
 
   showAmount() {
