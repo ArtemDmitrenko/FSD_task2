@@ -1,16 +1,7 @@
-include ../footer-big/footer-big.pug
-include ../footer-tab/footer-tab.pug
+include ../desktop-footer/desktop-footer.pug
+include ../mobile-footer/mobile-footer.pug
 
-
-
-mixin footer(footerItems)
-  
-  - 
-    const defaultFooterItems = require("Components/footer/default-footer-items.json")
-    if (!footerItems) {
-      footerItems = defaultFooterItems
-    }
-
+mixin footer(footerItems = [{"name": "about", "title": "О нас", "items": [{ "item": "О нас", "href": "https://www.mock-link.com/"}]}])
   footer.footer
-    +footer-big(footerItems)
-    +footer-tab()
+    +desktop-footer(footerItems)
+    +mobile-footer()

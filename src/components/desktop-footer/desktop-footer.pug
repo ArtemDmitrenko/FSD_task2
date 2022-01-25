@@ -1,0 +1,32 @@
+include ../logo/logo.pug
+include ../social-nets/social-nets.pug
+include ../input/input.pug
+
+mixin desktop-footer(footerItems = [{"name": "about", "title": "О нас", "items": [{ "item": "О нас", "href": "https://www.mock-link.com/"}]}])
+  .desktop-footer
+    .desktop-footer__top
+      .desktop-footer__container
+        .desktop-footer__content
+          .desktop-footer__logo
+            +logo()
+            p.desktop-footer__text Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
+          each section in footerItems
+            div(class="desktop-footer__" + section.name)
+              ul.desktop-footer__list
+                li.desktop-footer__title= section.title
+                each title in section.items
+                  li.desktop-footer__item
+                    a.desktop-footer__link(href=title.href)=title.item
+          .desktop-footer__subscription
+            ul.desktop-footer__subscription-content
+              li.desktop-footer__title.desktop-footer__title_line-height_24 Подписка
+              li.desktop-footer__item_line-height_24 Получайте специальные предложения и новости сервиса
+              li.desktop-footer__item
+                form.desktop-footer__form(action="https://www.mock-link.com/")
+                  +input({heading: '', description: '', name: 'email', type: 'email', placeholder: 'Email', required: true, subscription: true})                                        
+    .desktop-footer__bottom
+      .desktop-footer__container
+        .desktop-footer__main
+          p.desktop-footer__copyright Copyright © 2018 Toxin отель. Все права зачищены.
+          .desktop-footer__social
+            +social-nets()

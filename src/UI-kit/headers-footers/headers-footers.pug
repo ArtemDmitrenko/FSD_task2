@@ -2,7 +2,7 @@ extends ../../templates/template-UIKit.pug
 include ../../components/logo-UIkit/logo-UIkit.pug
 include ../../components/header/header.pug
 include ../../components/footer/footer.pug
-include ../../components/footer-tab/footer-tab.pug
+include ../../components/mobile-footer/mobile-footer.pug
 
 block footerItems 
   - const footerItems = require('../../templates/footer-items.json')
@@ -21,4 +21,4 @@ block content
     .headers-footers__footer-wide
       +footer(footerItems)
     .headers-footers__footer-tab
-      +footer-tab()
+      +mobile-footer()
