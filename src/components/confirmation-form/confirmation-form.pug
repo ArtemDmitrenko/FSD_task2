@@ -18,17 +18,18 @@ mixin confirmation-form()
         name: 'guests', 
         withButtons: true, 
         heading: 'гости', 
-        value: '3 гостя',
         description: '',
         items: [
           {
             name: 'adults', 
             sign: 'взрослые', 
-            declination: 'взрослый, взрослых, взрослых'
+            declination: 'взрослый, взрослых, взрослых',
+            defaultValue: 2
           },{
             name: 'children', 
             sign: 'дети', 
             declination: 'дети, детей, детей',
+            defaultValue: 1
           },{
             name: 'infants', 
             sign: 'младенцы', 

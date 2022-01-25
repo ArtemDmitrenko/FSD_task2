@@ -1,5 +1,6 @@
 .checkbox-list {
   max-width: 222px;
+  user-select: none;
   &_expandable {
     & .checkbox-list__form {
       z-index: -1;

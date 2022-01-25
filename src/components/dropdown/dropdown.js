@@ -74,7 +74,7 @@ export default class Dropdown {
     const conditionForClosingDropdown2 =
       this.isDropdownOpened() &&
       this.withButtons &&
-      target === this.buttonApply;
+      target.parentNode === this.buttonApply;
     if (conditionForClosingDropdown1) {
       this.closeDropdown();
     }

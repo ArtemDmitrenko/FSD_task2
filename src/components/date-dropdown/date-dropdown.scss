@@ -26,7 +26,7 @@
     -moz-osx-font-smoothing: grayscale;
   }
   &__container {
-    width: 318px;
+    box-sizing: border-box;
     font-family: none;
     @media screen and (max-width: 360px) {
       width: 260px;

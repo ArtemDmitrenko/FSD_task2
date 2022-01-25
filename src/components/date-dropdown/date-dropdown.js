@@ -68,6 +68,7 @@ export default class DateDropdown {
     this.myDatapicker = $(this.rangeInput)
       .datepicker(options)
       .data("datepicker");
+    this.setCalendarWidthForRangeInOneInput();
   }
 
   addDateDropdownForTwoInputs() {
@@ -82,6 +83,20 @@ export default class DateDropdown {
     this.myDatapicker = $(this.inputFrom)
       .datepicker(options)
       .data("datepicker");
+    this.setCalendarWidthForTwoInputs();
+  }
+
+  setCalendarWidthForRangeInOneInput() {
+    const inputWidth = this.rangeInput.offsetWidth;
+    this.myDatapicker.$datepicker.css("width", inputWidth);
+  }
+
+  setCalendarWidthForTwoInputs() {
+    const inputFromLeft = this.inputFrom.getBoundingClientRect().x;
+    const inputToLeft = this.inputTo.getBoundingClientRect().x;
+    const inputToWidth = this.inputTo.getBoundingClientRect().width;
+    const calendarWidth = inputToLeft + inputToWidth - inputFromLeft;
+    this.myDatapicker.$datepicker.css("width", calendarWidth);
   }
 
   handleDateClick = () => {

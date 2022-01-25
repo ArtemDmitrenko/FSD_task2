@@ -1,11 +1,15 @@
 .like-button {
+  user-select: none;
   &__name {
     @extend %h3;
     margin-bottom: 15px;
   }
   &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     box-sizing: border-box;
-    width: 40px;
+    min-width: 40px;
     height: 20px;
     background-color: #fff;
     border: solid 1px $dark25;
@@ -41,7 +45,6 @@
   }
   &__image {
     display: inline-block;
-    margin-left: -7px;
     font-size: 10px;
     font-family: "MaterialIcons-Regular";
     text-transform: none;
