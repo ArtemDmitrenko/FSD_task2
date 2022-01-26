@@ -61,18 +61,19 @@
   &__title {
     @extend %h3;
     padding-bottom: 21px;
-    &_line-height_24 {
-      padding-bottom: 18px;
-    }
+  }
+  &__subscription-title {
+    @extend %h3;
+    padding-bottom: 18px;
   }
   &__item {
     padding-bottom: 20px;
-    &_line-height_24 {
-      padding-bottom: 22px;
-      line-height: 24px;
-      opacity: 0.75;
-      @extend %font-body;
-    }
+  }
+  &__subscription-item {
+    padding-bottom: 22px;
+    line-height: 24px;
+    opacity: 0.75;
+    @extend %font-body;
   }
   &__link {
     @extend %font-body;

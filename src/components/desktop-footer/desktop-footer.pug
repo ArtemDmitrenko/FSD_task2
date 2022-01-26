@@ -21,8 +21,8 @@ mixin desktop-footer(footerItems = [{"name": "about", "title": "О нас", "ite
                     a.desktop-footer__link(href=href)= item
           .desktop-footer__subscription
             ul.desktop-footer__subscription-content
-              li.desktop-footer__title.desktop-footer__title_line-height_24 Подписка
-              li.desktop-footer__item_line-height_24 Получайте специальные предложения и новости сервиса
+              li.desktop-footer__subscription-title Подписка
+              li.desktop-footer__subscription-item Получайте специальные предложения и новости сервиса
               li.desktop-footer__item
                 form.desktop-footer__form(action="https://www.mock-link.com/")
                   +input({heading: '', description: '', name: 'email', type: 'email', placeholder: 'Email', required: true, subscription: true})                                        
