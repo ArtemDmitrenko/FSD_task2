@@ -27,20 +27,20 @@
   src: url(../assets/fonts/montserrat-regular.eot);
   src: local("☺"), url(../assets/fonts/montserrat-regular.woff) format("woff"), url(../assets/fonts/montserrat-regular.ttf) format("truetype"), url(../assets/fonts/montserrat-regular.svg) format("svg"); }
 
-.header__user-name, .nav-menu__link, .nav-menu__sub-link, .registration-form__text, .input__description, .input__element, .mobile-footer__text, .radio-buttons__content, .toggle__label, .desktop-footer__text, .desktop-footer__item_line-height_24, .desktop-footer__link, .desktop-footer__copyright {
+.header__user-name, .nav-menu__link, .nav-menu__sub-link, .log-in-form__text, .input__description, .input__element, .mobile-footer__text, .radio-buttons__content, .toggle__label, .desktop-footer__text, .desktop-footer__subscription-item, .desktop-footer__link, .desktop-footer__copyright {
   color: #1f2041;
   font-weight: 400;
   font-size: 14px;
   font-family: "Montserrat", "Arial", sans-serif; }
 
-.button, .nav-menu__link_active, .input__heading, .radio-buttons__name, .toggle__name, .desktop-footer__title {
+.button, .nav-menu__link_active, .input__heading, .radio-buttons__name, .toggle__name, .desktop-footer__title, .desktop-footer__subscription-title {
   color: #1f2041;
   font-weight: 700;
   font-size: 12px;
   font-family: "Montserrat", "Arial", sans-serif;
   text-transform: uppercase; }
 
-.registration-form__title {
+.log-in-form__title {
   color: #1f2041;
   font-weight: 700;
   font-size: 24px;
@@ -346,7 +346,7 @@ a {
 .social-nets__link {
   padding-left: 22px; }
 
-.registration-form {
+.log-in-form {
   box-sizing: border-box;
   max-width: 380px;
   padding: 30px;
@@ -354,35 +354,23 @@ a {
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 4px;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.12); }
-  .registration-form__title {
+  .log-in-form__title {
     margin-top: 8px;
-    margin-bottom: 19px; }
-  .registration-form__name {
+    margin-bottom: 18px; }
+  .log-in-form__email {
     margin-bottom: 10px; }
-  .registration-form__surname {
-    margin-bottom: 10px; }
-  .registration-form__gender {
-    margin-bottom: 45px; }
-  .registration-form__email {
-    margin-top: 40px;
-    margin-bottom: 10px; }
-  .registration-form__offers {
-    margin-top: 10px;
-    margin-bottom: 17px; }
-    @media screen and (max-width: 330px) {
-      .registration-form__offers .toggle__input {
-        vertical-align: top; } }
-  .registration-form__submit {
-    margin-bottom: 29px; }
-  .registration-form__login {
+  .log-in-form__submit {
+    margin-top: 22px;
+    margin-bottom: 28px; }
+  .log-in-form__registration {
     display: flex;
     align-items: center;
     justify-content: space-between; }
-  .registration-form__text {
+  .log-in-form__text {
     color: #000; }
     @media screen and (max-width: 420px) {
-      .registration-form__text {
-        max-width: 140px; } }
+      .log-in-form__text {
+        max-width: 115px; } }
 
 .input {
   position: relative;
@@ -700,39 +688,40 @@ a {
     padding-top: 104px; }
   .desktop-footer__title {
     padding-bottom: 21px; }
-    .desktop-footer__title_line-height_24 {
-      padding-bottom: 18px; }
+  .desktop-footer__subscription-title {
+    padding-bottom: 18px; }
   .desktop-footer__item {
     padding-bottom: 20px; }
-    .desktop-footer__item_line-height_24 {
-      padding-bottom: 22px;
-      line-height: 24px;
-      opacity: 0.75; }
+  .desktop-footer__subscription-item {
+    padding-bottom: 22px;
+    line-height: 24px;
+    opacity: 0.75; }
   .desktop-footer__link {
     opacity: 0.5; }
   .desktop-footer__copyright {
     padding: 26px 0;
     opacity: 0.75; }
 
-.registration {
+.sign-in {
   position: relative;
   flex: 1 0 auto;
-  height: 684px; }
-  .registration__image {
+  height: 702px; }
+  .sign-in__image {
     width: 100%;
     height: 100%;
     -o-object-fit: cover;
        object-fit: cover; }
-  .registration__form {
+  .sign-in__form {
     position: absolute;
-    top: 2.8%;
+    top: 50%;
     left: 50%;
     width: 380px;
-    padding-right: 8px;
-    padding-left: 8px;
+    margin-top: -180px;
+    padding-right: 20px;
+    padding-left: 20px;
     transform: translate(-50%, 0); }
     @media screen and (max-width: 420px) {
-      .registration__form {
+      .sign-in__form {
         width: -webkit-fit-content;
         width: -moz-fit-content;
         width: fit-content; } }

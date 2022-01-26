@@ -365,7 +365,7 @@ a {
     text-align: center;
     border: none;
     outline: none; }
-  .counter__button {
+  .counter__increment, .counter__decrement {
     width: 30px;
     height: 30px;
     color: rgba(31, 32, 65, 0.5);
@@ -377,14 +377,14 @@ a {
     border-radius: 50%;
     outline-style: none;
     cursor: pointer; }
-    .counter__button:hover {
+    .counter__increment:hover, .counter__decrement:hover {
       background-image: radial-gradient(ellipse farthest-corner at 50% 50%, #e9e7e1, #cfcccc); }
-    .counter__button:active {
+    .counter__increment:active, .counter__decrement:active {
       width: 30px;
       height: 30px;
       background: -webkit-linear-gradient(top, #979595, #656161 90%);
       box-shadow: 0 0 #d6665c; }
-    .counter__button:disabled {
+    .counter__increment:disabled, .counter__decrement:disabled {
       opacity: 0.38; }
 
 .date-dropdown {

@@ -28,13 +28,13 @@
   src: url(../assets/fonts/montserrat-regular.eot);
   src: local("☺"), url(../assets/fonts/montserrat-regular.woff) format("woff"), url(../assets/fonts/montserrat-regular.ttf) format("truetype"), url(../assets/fonts/montserrat-regular.svg) format("svg"); }
 
-.header__user-name, .nav-menu__link, .nav-menu__sub-link, .date-dropdown__container .datepicker--cells, .input__description, .input__element, .mobile-footer__text, .desktop-footer__text, .desktop-footer__item_line-height_24, .desktop-footer__link, .desktop-footer__copyright, .landing-page__text {
+.header__user-name, .nav-menu__link, .nav-menu__sub-link, .date-dropdown__container .datepicker--cells, .input__description, .input__element, .mobile-footer__text, .desktop-footer__text, .desktop-footer__subscription-item, .desktop-footer__link, .desktop-footer__copyright, .landing-page__text {
   color: #1f2041;
   font-weight: 400;
   font-size: 14px;
   font-family: "Montserrat", "Arial", sans-serif; }
 
-.button, .nav-menu__link_active, .date-dropdown__container .datepicker--day-name, .date-dropdown__container .datepicker--button, .input__heading, .counter__name, .counter__value, .desktop-footer__title {
+.button, .nav-menu__link_active, .date-dropdown__container .datepicker--day-name, .date-dropdown__container .datepicker--button, .input__heading, .counter__name, .counter__value, .desktop-footer__title, .desktop-footer__subscription-title {
   color: #1f2041;
   font-weight: 700;
   font-size: 12px;
@@ -675,7 +675,7 @@ a {
     text-align: center;
     border: none;
     outline: none; }
-  .counter__button {
+  .counter__increment, .counter__decrement {
     width: 30px;
     height: 30px;
     color: rgba(31, 32, 65, 0.5);
@@ -687,14 +687,14 @@ a {
     border-radius: 50%;
     outline-style: none;
     cursor: pointer; }
-    .counter__button:hover {
+    .counter__increment:hover, .counter__decrement:hover {
       background-image: radial-gradient(ellipse farthest-corner at 50% 50%, #e9e7e1, #cfcccc); }
-    .counter__button:active {
+    .counter__increment:active, .counter__decrement:active {
       width: 30px;
       height: 30px;
       background: -webkit-linear-gradient(top, #979595, #656161 90%);
       box-shadow: 0 0 #d6665c; }
-    .counter__button:disabled {
+    .counter__increment:disabled, .counter__decrement:disabled {
       opacity: 0.38; }
 
 .mobile-footer {
@@ -769,14 +769,14 @@ a {
     padding-top: 104px; }
   .desktop-footer__title {
     padding-bottom: 21px; }
-    .desktop-footer__title_line-height_24 {
-      padding-bottom: 18px; }
+  .desktop-footer__subscription-title {
+    padding-bottom: 18px; }
   .desktop-footer__item {
     padding-bottom: 20px; }
-    .desktop-footer__item_line-height_24 {
-      padding-bottom: 22px;
-      line-height: 24px;
-      opacity: 0.75; }
+  .desktop-footer__subscription-item {
+    padding-bottom: 22px;
+    line-height: 24px;
+    opacity: 0.75; }
   .desktop-footer__link {
     opacity: 0.5; }
   .desktop-footer__copyright {
