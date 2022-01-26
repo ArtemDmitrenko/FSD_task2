@@ -17,13 +17,12 @@ export default class Diagram {
 
   getAttributes() {
     const data = JSON.parse(this.item.dataset.array);
-    this.model = [];
-    data.forEach((item) => {
+    this.model = data.map((item) => {
       const { name, value } = item;
-      const obj = {};
-      obj.key = name;
-      obj.value = this.getAttributeInNumber(value);
-      this.model.push(obj);
+      return {
+        key: name,
+        value: this.getAttributeInNumber(value),
+      };
     });
   }
 
