@@ -20,7 +20,8 @@
     outline: none;
     @extend %h3;
   }
-  &__button {
+  &__increment,
+  &__decrement {
     width: 30px;
     height: 30px;
     color: $dark50;

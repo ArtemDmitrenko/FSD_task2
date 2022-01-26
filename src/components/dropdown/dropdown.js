@@ -18,18 +18,14 @@ export default class Dropdown {
     this.dropdownInput = this.item.querySelector(".js-dropdown__input");
     this.isApplied = false;
     this.withButtons = this.item.hasAttribute("data-buttons");
-
     const dropdownCounterArray = this.item.querySelectorAll(
       ".js-dropdown__counter-item"
     );
     this.counterArr = [];
-    this.counterValueArr = [];
     dropdownCounterArray.forEach((item) => {
       const counter = new Counter(item);
       this.counterArr.push(counter);
-      this.counterValueArr.push(counter.value);
     });
-
     if (this.withButtons) {
       this.findInfantsInput();
       this.buttonApply = this.dropdownList.querySelector(
@@ -44,9 +40,10 @@ export default class Dropdown {
   }
 
   findInfantsInput() {
-    this.counterArr.forEach((counter) => {
-      if (counter.isAttributeNameInfants) this.infants = counter.value;
-    });
+    const infantCounter = this.counterArr.find((counter) =>
+      counter.isAttributeNameInfants()
+    );
+    this.infants = infantCounter.counterInput;
   }
 
   addEventListeners() {
@@ -102,8 +99,8 @@ export default class Dropdown {
 
   handleButtonClearClick = () => {
     this.input.value = this.defaultValue;
-    this.counterValueArr.forEach((item) => {
-      item.value = 0;
+    this.counterArr.forEach((item) => {
+      item.clearInput();
     });
     this.disableMinusButton();
     this.hideButtonClear();
@@ -127,8 +124,8 @@ export default class Dropdown {
     if (this.withButtons) {
       let infants = Number(this.infants.value);
       let sum = 0;
-      this.counterValueArr.forEach((item) => {
-        sum += Number(item.value);
+      this.counterArr.forEach((item) => {
+        sum += item.counterValue;
       });
       const declinationArr = this.dropdownInput.dataset.declination.split(", ");
       const infantsDeclinationArr =
@@ -148,10 +145,10 @@ export default class Dropdown {
       }
     } else {
       const itemsText = [];
-      this.counterValueArr.forEach((item) => {
-        const numberItemValue = Number(item.value);
+      this.counterArr.forEach((item) => {
+        const declinationArr = item.getDatasetArray();
+        const numberItemValue = item.counterValue;
         if (numberItemValue !== 0) {
-          const declinationArr = item.dataset.declination.split(", ");
           itemsText.push(this.declinate(declinationArr, numberItemValue));
         }
       });
