@@ -96,7 +96,7 @@
     -moz-osx-font-smoothing: grayscale;
     pointer-events: none;
     @media screen and (max-width: 390px) {
-      display: none;
+      padding-right: 0;
     }
   }
   &__subscription {

@@ -103,6 +103,9 @@
     align-items: baseline;
     justify-content: space-between;
     margin-bottom: 19px;
+    @media screen and (max-width: 576px) {
+      display: block;
+    }
   }
   &__review-text {
     @extend %h2;
@@ -113,7 +116,7 @@
     margin-right: 2px;
     color: $dark50;
     @media screen and (max-width: 576px) {
-      display: none;
+      margin-top: 10px;
     }
   }
   &__review-block-item {

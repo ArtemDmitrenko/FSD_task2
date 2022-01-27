@@ -75,6 +75,9 @@
           to(rgba(139, 164, 249, 0.15))
         );
         content: "";
+        @media screen and (max-width: 390px) {
+          height: 30px;
+        }
       }
     }
     .datepicker--cell.-range-to- {
@@ -96,6 +99,9 @@
           to(rgba(139, 164, 249, 0.15))
         );
         content: "";
+        @media screen and (max-width: 390px) {
+          height: 30px;
+        }
       }
     }
     .datepicker--cell.-selected-,
@@ -126,6 +132,9 @@
     }
     .datepicker--cell-day {
       opacity: 0.5;
+      @media screen and (max-width: 390px) {
+        height: 30px;
+      }
     }
     .datepicker--nav {
       padding: 15px 17px 25px 17px;

@@ -64,11 +64,11 @@ export default class DateDropdown {
       classes: `datepicker date-dropdown__container`,
       prevHtml: `<span class="date-dropdown__arrow">arrow_back</span>`,
       nextHtml: `<span class="date-dropdown__arrow">arrow_forward</span>`,
+      onShow: this.setCalendarWidthForRangeInOneInput,
     };
     this.myDatapicker = $(this.rangeInput)
       .datepicker(options)
       .data("datepicker");
-    this.setCalendarWidthForRangeInOneInput();
   }
 
   addDateDropdownForTwoInputs() {
@@ -79,19 +79,19 @@ export default class DateDropdown {
       prevHtml: `<span class="date-dropdown__arrow">arrow_back</span>`,
       nextHtml: `<span class="date-dropdown__arrow">arrow_forward</span>`,
       onSelect: this.handleDateClick,
+      onShow: this.setCalendarWidthForTwoInputs,
     };
     this.myDatapicker = $(this.inputFrom)
       .datepicker(options)
       .data("datepicker");
-    this.setCalendarWidthForTwoInputs();
   }
 
-  setCalendarWidthForRangeInOneInput() {
+  setCalendarWidthForRangeInOneInput = () => {
     const inputWidth = this.rangeInput.offsetWidth;
     this.myDatapicker.$datepicker.css("width", inputWidth);
   }
 
-  setCalendarWidthForTwoInputs() {
+  setCalendarWidthForTwoInputs = () => {
     const inputFromLeft = this.inputFrom.getBoundingClientRect().x;
     const inputToLeft = this.inputTo.getBoundingClientRect().x;
     const inputToWidth = this.inputTo.getBoundingClientRect().width;
