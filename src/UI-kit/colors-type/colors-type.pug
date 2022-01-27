@@ -1,5 +1,5 @@
 extends ../../templates/template-UIKit.pug
-include ../../components/logo-UIkit/logo-UIkit.pug
+include ../../components/logo-uikit/logo-uikit.pug
 include ../../components/color-block/color-block.pug
 include ../../components/type-block/type-block.pug
 
@@ -9,7 +9,7 @@ block title
 block content
   .colors-type
     .colors-type__logo
-      +logo-UIkit()
+      +logo-uikit()
     .colors-type__item
       .colors-type__colors
         +color-block({name: "dark", hex: "#1F2041", text: "Dark Shade 100%"})

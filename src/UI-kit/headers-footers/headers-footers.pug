@@ -1,5 +1,5 @@
 extends ../../templates/template-UIKit.pug
-include ../../components/logo-UIkit/logo-UIkit.pug
+include ../../components/logo-uikit/logo-uikit.pug
 include ../../components/header/header.pug
 include ../../components/footer/footer.pug
 include ../../components/mobile-footer/mobile-footer.pug
@@ -12,8 +12,8 @@ block title
 
 block content
   .headers-footers
-    .headers-footers__logo-UIkit
-      +logo-UIkit()
+    .headers-footers__logo-uikit
+      +logo-uikit()
     .headers-footers__header-not-registered-user
       +header({modifier: "notRegistered"})
     .headers-footers__header-registered-user

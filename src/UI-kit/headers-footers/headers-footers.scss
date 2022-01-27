@@ -1,7 +1,7 @@
 @import "../../colors.scss";
 @import "../../fonts.scss";
 @import "../../nullstyle.scss";
-@import "Components/logo-UIkit/logo-UIkit.scss";
+@import "Components/logo-uikit/logo-uikit.scss";
 @import "Components/header/header.scss";
 @import "Components/logo/logo.scss";
 @import "Components/button/button.scss";
@@ -20,7 +20,7 @@
   &__header-registered-user {
     margin-top: 40px;
   }
-  &__logo-UIkit {
+  &__logo-uikit {
     padding: 30px 0 0 30px;
   }
   &__footer-wide {

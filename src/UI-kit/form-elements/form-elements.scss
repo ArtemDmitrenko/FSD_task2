@@ -1,7 +1,7 @@
 @import "../../colors.scss";
 @import "../../fonts.scss";
 @import "../../nullstyle.scss";
-@import "Components/logo-UIkit/logo-UIkit.scss";
+@import "Components/logo-uikit/logo-uikit.scss";
 @import "Components/input/input.scss";
 @import "Components/dropdown/dropdown.scss";
 @import "Components/button/button.scss";
@@ -19,7 +19,7 @@
 @import "Components/range-slider/range-slider.scss";
 
 .form-elements {
-  &__logo-UIkit {
+  &__logo-uikit {
     padding: 30px 0 0 30px;
   }
   &__items {

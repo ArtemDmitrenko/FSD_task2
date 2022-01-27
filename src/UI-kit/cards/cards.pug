@@ -1,5 +1,5 @@
 extends ../../templates/template-UIKit.pug
-include ../../components/logo-UIkit/logo-UIkit.pug
+include ../../components/logo-uikit/logo-uikit.pug
 include ../../components/room-search-form/room-search-form.pug
 include ../../components/registration-form/registration-form.pug
 include ../../components/confirmation-form/confirmation-form.pug
@@ -12,8 +12,8 @@ block title
 
 block content
   .cards
-    .cards__logo-UIkit
-      +logo-UIkit()
+    .cards__logo-uikit
+      +logo-uikit()
     .cards__items
       .cards__room-search.js-cards__room-search
         +room-search-form()
