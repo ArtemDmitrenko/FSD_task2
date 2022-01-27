@@ -16,10 +16,7 @@ export default class LikeButton {
   }
 
   isLiked() {
-    if (this.heart.innerHTML === "favorite_border") {
-      return false;
-    }
-    return true;
+    return this.heart.innerHTML !== "favorite_border";
   }
 
   plusLike() {
