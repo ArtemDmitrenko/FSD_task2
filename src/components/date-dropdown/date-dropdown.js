@@ -89,7 +89,7 @@ export default class DateDropdown {
   setCalendarWidthForRangeInOneInput = () => {
     const inputWidth = this.rangeInput.offsetWidth;
     this.myDatapicker.$datepicker.css("width", inputWidth);
-  }
+  };
 
   setCalendarWidthForTwoInputs = () => {
     const inputFromLeft = this.inputFrom.getBoundingClientRect().x;
@@ -97,7 +97,7 @@ export default class DateDropdown {
     const inputToWidth = this.inputTo.getBoundingClientRect().width;
     const calendarWidth = inputToLeft + inputToWidth - inputFromLeft;
     this.myDatapicker.$datepicker.css("width", calendarWidth);
-  }
+  };
 
   handleDateClick = () => {
     const date = this.myDatapicker._prevOnSelectValue;

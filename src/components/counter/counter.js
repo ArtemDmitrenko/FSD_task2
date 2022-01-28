@@ -37,8 +37,8 @@ export default class Counter {
     return this.counterInput.dataset.declination.split(", ");
   }
 
-  isAttributeNameInfants() {
-    return this.counterInput.name === "infants";
+  isSeparatedOutput() {
+    return this.counterInput.dataset.separated !== undefined;
   }
 
   get counterValue() {

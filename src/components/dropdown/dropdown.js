@@ -27,7 +27,7 @@ export default class Dropdown {
       this.counterArr.push(counter);
     });
     if (this.withButtons) {
-      this.findInfantsInput();
+      this.findSeparateInputValue();
       this.buttonApply = this.dropdownList.querySelector(
         ".js-dropdown__button-apply"
       );
@@ -39,11 +39,11 @@ export default class Dropdown {
     }
   }
 
-  findInfantsInput() {
-    const infantCounter = this.counterArr.find((counter) =>
-      counter.isAttributeNameInfants()
+  findSeparateInputValue() {
+    const separateCounter = this.counterArr.find((counter) =>
+      counter.isSeparatedOutput()
     );
-    this.infants = infantCounter.counterInput;
+    this.separateInput = separateCounter.counterInput;
   }
 
   addEventListeners() {
@@ -122,20 +122,23 @@ export default class Dropdown {
 
   updateInput() {
     if (this.withButtons) {
-      let infants = Number(this.infants.value);
+      let separateValue = Number(this.separateInput.value);
       let sum = 0;
       this.counterArr.forEach((item) => {
         sum += item.counterValue;
       });
       const declinationArr = this.dropdownInput.dataset.declination.split(", ");
-      const infantsDeclinationArr =
-        this.infants.dataset.declination.split(", ");
+      const declinationArrForSeparatedInput =
+        this.separateInput.dataset.declination.split(", ");
       const mainText = this.declinate(declinationArr, sum);
-      const infantsText = this.declinate(infantsDeclinationArr, infants);
-      if (infants === 0) {
+      const textForSeparatedInput = this.declinate(
+        declinationArrForSeparatedInput,
+        separateValue
+      );
+      if (separateValue === 0) {
         this.input.value = `${mainText}`;
       } else {
-        this.input.value = `${mainText}, ${infantsText}`;
+        this.input.value = `${mainText}, ${textForSeparatedInput}`;
       }
       if (sum === 0) {
         this.input.value = this.defaultValue;
