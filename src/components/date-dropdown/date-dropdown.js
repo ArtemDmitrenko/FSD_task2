@@ -29,20 +29,13 @@ export default class DateDropdown {
   }
 
   addButtonApply() {
+    const datepickerContainer = this.myDatapicker.$datepicker[0];
     const buttonApply =
       '<span class="datepicker--button" data-action="hide">Применить</span>';
-    const clearButtonsArray = document.querySelectorAll(
+    const clearButton = datepickerContainer.querySelector(
       '.datepicker--button[data-action="clear"]'
     );
-    clearButtonsArray.forEach((item) => {
-      const buttonsContainer = item.closest(".datepicker--buttons");
-      const applyButton = buttonsContainer.querySelector(
-        '.datepicker--button[data-action="hide"]'
-      );
-      if (!applyButton) {
-        item.insertAdjacentHTML("beforebegin", buttonApply);
-      }
-    });
+    clearButton.insertAdjacentHTML("beforebegin", buttonApply);
   }
 
   isSeparatedInputs() {

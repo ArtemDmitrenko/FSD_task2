@@ -66,16 +66,15 @@ export default class Dropdown {
   handleDocumentClick = (e) => {
     const { target } = e;
     const closestDropdown = target.closest(".js-dropdown");
-    const conditionForClosingDropdown1 =
-      this.isDropdownOpened() && !closestDropdown;
-    const conditionForClosingDropdown2 =
+    const clickOutsideDropdown = this.isDropdownOpened() && !closestDropdown;
+    const clickOnApplyButton =
       this.isDropdownOpened() &&
       this.withButtons &&
       target.parentNode === this.buttonApply;
-    if (conditionForClosingDropdown1) {
+    if (clickOutsideDropdown) {
       this.closeDropdown();
     }
-    if (conditionForClosingDropdown2) {
+    if (clickOnApplyButton) {
       this.isApplied = true;
       this.toggleDropdown();
     }
@@ -149,7 +148,7 @@ export default class Dropdown {
     } else {
       const itemsText = [];
       this.counterArr.forEach((item) => {
-        const declinationArr = item.getDatasetArray();
+        const declinationArr = item.getDeclinationArray();
         const numberItemValue = item.counterValue;
         if (numberItemValue !== 0) {
           itemsText.push(this.declinate(declinationArr, numberItemValue));

@@ -1,8 +1,12 @@
 export default class Counter {
   constructor(item) {
     this.counterInput = item.querySelector(".js-counter__value");
-    this.minus = item.querySelector(".js-counter__decrement");
-    this.plus = item.querySelector(".js-counter__increment");
+    this.minus = item.querySelector(
+      ".js-counter__decrement, button[data-operator='minus']"
+    );
+    this.plus = item.querySelector(
+      ".js-counter__increment, button[data-operator='plus']"
+    );
     this.addEventListeners();
   }
 
@@ -33,7 +37,7 @@ export default class Counter {
     this.counterInput.value = 0;
   }
 
-  getDatasetArray() {
+  getDeclinationArray() {
     return this.counterInput.dataset.declination.split(", ");
   }
 
