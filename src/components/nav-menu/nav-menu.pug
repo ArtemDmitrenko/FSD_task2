@@ -1,21 +1,17 @@
-mixin nav-menu(menuItems)
-  - 
-    const defaultMenuItems = require('Components/nav-menu/default-nav-menu-items.json')
-    if (!menuItems) {
-      menuItems = defaultMenuItems
-    }
-
+mixin nav-menu(menuItems = [{}])
   nav.nav-menu.js-nav-menu
     ul.nav-menu__list
       each item in menuItems
-        if !item.submenu
-          li.nav-menu__item    
-            a.nav-menu__link.js-nav-menu__link(href = item.href)= item.name
+        - const { name="О нас", href="https://www.mock-link.com/", submenu } = item
+        if !submenu
+          li.nav-menu__item
+            a.nav-menu__link.js-nav-menu__link(href = href)= name
         else
           li.nav-menu__item.js-nav-menu__item_with-dropdown 
-            a.nav-menu__link.js-nav-menu__link(href = item.href)= item.name
+            .nav-menu__link.js-nav-menu__link= name
               span.nav-menu__checkmark.js-nav-menu__checkmark expand_more
             ul.nav-menu__sub-list.js-nav-menu__sub-list
-              each subItem in item.submenu
+              each subItem in submenu
+                - const { subname="Услуга 1", subhref="https://www.mock-link.com/" } = subItem
                 li.nav-menu__sub-item
-                  a.nav-menu__sub-link(href = subItem.subhref)= subItem.subname
+                  a.nav-menu__sub-link(href = subhref)= subname
