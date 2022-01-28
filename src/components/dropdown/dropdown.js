@@ -40,10 +40,9 @@ export default class Dropdown {
   }
 
   findSeparateInputValue() {
-    const separateCounter = this.counterArr.find((counter) =>
+    this.separateInput = this.counterArr.find((counter) =>
       counter.isSeparatedOutput()
     );
-    this.separateInput = separateCounter.counterInput;
   }
 
   addEventListeners() {
@@ -66,15 +65,16 @@ export default class Dropdown {
   handleDocumentClick = (e) => {
     const { target } = e;
     const closestDropdown = target.closest(".js-dropdown");
-    const clickOutsideDropdown = this.isDropdownOpened() && !closestDropdown;
-    const clickOnApplyButton =
+    const isClickedOutsideDropdown =
+      this.isDropdownOpened() && !closestDropdown;
+    const isApplyButtonClicked =
       this.isDropdownOpened() &&
       this.withButtons &&
       target.parentNode === this.buttonApply;
-    if (clickOutsideDropdown) {
+    if (isClickedOutsideDropdown) {
       this.closeDropdown();
     }
-    if (clickOnApplyButton) {
+    if (isApplyButtonClicked) {
       this.isApplied = true;
       this.toggleDropdown();
     }
@@ -121,14 +121,13 @@ export default class Dropdown {
 
   updateInput() {
     if (this.withButtons) {
-      let separateValue = Number(this.separateInput.value);
-      let sum = 0;
-      this.counterArr.forEach((item) => {
-        sum += item.counterValue;
-      });
+      const separateValue = this.separateInput.counterValue;
+      const sum = this.counterArr.reduce((previousValue, currentValue) => {
+        return previousValue + currentValue.counterValue;
+      }, 0);
       const declinationArr = this.dropdownInput.dataset.declination.split(", ");
       const declinationArrForSeparatedInput =
-        this.separateInput.dataset.declination.split(", ");
+        this.separateInput.getDeclinationArray();
       const mainText = this.declinate(declinationArr, sum);
       const textForSeparatedInput = this.declinate(
         declinationArrForSeparatedInput,
