@@ -27,9 +27,14 @@ export default class Diagram {
   }
 
   calcSumOfReviews() {
-    this.sum = 0;
-    this.model.forEach((item) => {
-      this.sum += item.value;
+    this.sum = this.model.reduce((previousValue, currentValue) => {
+      if (
+        typeof currentValue === "object" &&
+        typeof previousValue === "number"
+      ) {
+        return currentValue.value + previousValue;
+      }
+      return previousValue.value + currentValue.value;
     });
   }
 
