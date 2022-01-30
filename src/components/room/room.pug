@@ -1,6 +1,6 @@
 include ../rate-button/rate-button.pug
 
-mixin room(options)
+mixin room(options = {})
   - const { addressOfRoom = 'room1', numberOfImage = ["image11", "image12", "image13", "image14"], roomNumber = '888', lux = false, price = '1 990₽', rate = '5', numberOfReviews = '100' } = options
   
   .room

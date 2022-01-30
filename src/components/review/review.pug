@@ -1,6 +1,6 @@
 include ../like-button/like-button.pug
 
-mixin review(options)
+mixin review(options = {})
   - const { nameOfFile = 'file name', name = 'Иван Иванов', date = '3 дня назад', numberOfLikes = '0', textOfReview = 'Комментарий' } = options;
   
   .review.js-review

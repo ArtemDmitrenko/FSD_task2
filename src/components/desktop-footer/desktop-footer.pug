@@ -2,7 +2,8 @@ include ../logo/logo.pug
 include ../social-nets/social-nets.pug
 include ../input/input.pug
 
-mixin desktop-footer(footerItems = [{"name": "about", "title": "О нас", "items": [{ "item": "О нас", "href": "https://www.mock-link.com/"}]}])
+mixin desktop-footer(options = {})
+  - const { footerItems = [{}] } = options
   .desktop-footer
     .desktop-footer__top
       .desktop-footer__container
@@ -11,7 +12,7 @@ mixin desktop-footer(footerItems = [{"name": "about", "title": "О нас", "ite
             +logo()
             p.desktop-footer__text Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
           each section in footerItems
-            - const { name, title, items } = section
+            - const { name = 'about', title = 'О нас', items = [{ "item": "О сервисе", "href": "https://www.mock-link.com/"}, { "item": "Наша команда", "href": "https://www.mock-link.com/"}] } = section
             div(class="desktop-footer__" + name)
               ul.desktop-footer__list
                 li.desktop-footer__title= title

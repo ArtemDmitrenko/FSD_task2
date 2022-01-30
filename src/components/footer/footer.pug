@@ -1,7 +1,7 @@
 include ../desktop-footer/desktop-footer.pug
 include ../mobile-footer/mobile-footer.pug
 
-mixin footer(footerItems = [{"name": "about", "title": "О нас", "items": [{ "item": "О нас", "href": "https://www.mock-link.com/"}]}])
+mixin footer(options = {})
   footer.footer
-    +desktop-footer(footerItems)
+    +desktop-footer(options)
     +mobile-footer()

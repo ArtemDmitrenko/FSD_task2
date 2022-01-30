@@ -38,7 +38,7 @@ mixin dropdown(options = {})
           each item in items
             - const { name, sign, declination, defaultValue, isSeparated } = item
             .dropdown__counter-item.js-dropdown__counter-item
-              +counter([ sign, name, declination, defaultValue, isSeparated ])
+              +counter({ sign, name, declination, defaultValue, isSeparated })
         if withButtons
           .dropdown__buttons
             .dropdown__button-clear.js-dropdown__button-clear

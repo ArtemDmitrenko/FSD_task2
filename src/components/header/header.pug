@@ -12,7 +12,7 @@ mixin header(options)
         a.header__link(href='./landing-page.html') 
           +logo()
         .header__with-nav-menu-buttons.js-header__with-nav-menu-buttons
-          +nav-menu(menuItems)
+          +nav-menu({menuItems})
           if modifier == 'Registered'
             .header__line
             .header__user-name Юлий Цезарь
