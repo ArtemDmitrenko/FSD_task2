@@ -33,7 +33,9 @@ export default class SearchRoom {
     dateDropdowns.forEach((dateDropdown) => {
       new DateDropdown(dateDropdown);
     });
-    new Pagination(pagination);
+    const NUMBER_OF_ROOMS = 170;
+    const PAGE_SIZE = 12;
+    new Pagination(pagination, NUMBER_OF_ROOMS, PAGE_SIZE);
     new RangeSlider(rangeSlider);
     rooms.forEach((room) => {
       new Room(room);

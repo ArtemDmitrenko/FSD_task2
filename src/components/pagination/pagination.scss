@@ -3,8 +3,17 @@
   &__data {
     display: none;
   }
+  &__legend {
+    @extend %font-body;
+    margin-top: 10px;
+    color: $dark75;
+    text-transform: none;
+  }
   &__container {
     @extend %font-body;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-top: 10px;
     margin-left: 5px;
     color: $dark75;
@@ -92,11 +101,10 @@
         }
       }
       &__legend {
-        @extend %font-body;
-        margin-top: 10px;
-        margin-left: 5px;
-        color: $dark75;
-        text-transform: none;
+        // @extend %font-body;
+        // margin-top: 10px;
+        // color: $dark75;
+        // text-transform: none;
       }
     }
   }

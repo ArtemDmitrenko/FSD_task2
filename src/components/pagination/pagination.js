@@ -1,60 +1,40 @@
 import "paginationjs";
 
 export default class Pagination {
-  constructor(item) {
+  constructor(item, amount, pageSize) {
     this.item = item.querySelector(".js-pagination");
     this.init();
-    this.callPluginPagination();
-    this.createSign(1, 12);
+    this.callPluginPagination(amount, pageSize);
+    this.createSign(1, pageSize);
   }
 
   init() {
     this.paginationContainer = this.item.querySelector(
       ".js-pagination__container"
     );
-    this.paginationData = this.item.querySelector(".js-pagination__data");
-    this.pagCon = this.item.querySelector(".paginationjs");
   }
 
-  simpleTemplating(data) {
-    let html = "<ul>";
-    $.each(data, function (index, item) {
-      html += "<li>" + item + "</li>";
-    });
-    html += "</ul>";
-    return html;
-  }
-
-  callPluginPagination() {
+  callPluginPagination(amount, pageSize) {
     const options = {
-      dataSource: function (done) {
-        let result = [];
-        for (let i = 1; i < 170; i++) {
-          result.push(i);
-        }
-        done(result);
-      },
-      pageSize: 12,
+      dataSource: this.createDataSource(amount),
+      pageSize: pageSize,
       autoHidePrevious: true,
       autoHideNext: true,
       pageRange: 1,
       nextText: "arrow_forward",
       prevText: "arrow_back",
-      bindedSimpleTemplating: this.simpleTemplating,
-      callback: function (data, pagination) {
-        var html = this.bindedSimpleTemplating(data);
-        $(this.paginationData).html(html);
-      },
     };
     $(this.paginationContainer).pagination(options);
   }
 
+  createDataSource(amount) {
+    return Array.from({ length: amount }, (e, i) => i + 1);
+  }
+
   createSign(from, to) {
-    $(this.pagCon).after(
-      $("<div>", {
-        class: "paginationjs__legend",
-        text: from + " – " + to + " из 100+ вариантов аренды",
-      })
+    this.paginationContainer.insertAdjacentHTML(
+      "beforeend",
+      `<span class="pagination__legend">${from} – ${to} из 100+ вариантов аренды</span>`
     );
   }
 }
