@@ -5,6 +5,7 @@ include ../button/button.pug
 
 mixin confirmation-form(options = {})
   - const { roomNumber = '888', roomType = 'люкс', costPerDay = '9 990₽', unit = 'в сутки', calculation = '9 990₽ х 4 суток', costForStaying = '39 960₽', discount = '2 179₽', serviceFee = '0₽', additionalServiceFee = '300₽', totalCost = '38 081₽' } = options;
+  
   form(action='#' method='post').confirmation-form.js-confirmation-form
     .confirmation-form__room-description
       .confirmation-form__room-block
