@@ -4,7 +4,7 @@ export default class RegistrationForm {
   constructor(form) {
     this.form = form.querySelector(".js-registration-form");
     this.init();
-    this.findMaskedInput();
+    this.initMaskedInput();
   }
 
   init() {
@@ -13,7 +13,7 @@ export default class RegistrationForm {
     );
   }
 
-  findMaskedInput() {
+  initMaskedInput() {
     new Input(this.maskedInput, "masked");
   }
 }

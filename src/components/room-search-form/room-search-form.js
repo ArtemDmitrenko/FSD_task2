@@ -5,8 +5,8 @@ export default class RoomSearchForm {
   constructor(form) {
     this.form = form;
     this.init();
-    this.findDateDropdown();
-    this.findDropdown();
+    this.initDateDropdowns();
+    this.initDropdown();
   }
 
   init() {
@@ -16,13 +16,13 @@ export default class RoomSearchForm {
     this.dropdown = this.form.querySelector(".js-room-search-form__guests");
   }
 
-  findDateDropdown() {
+  initDateDropdowns() {
     this.dateDropdowns.forEach((dateDropdown) => {
       new DateDropdown(dateDropdown);
     });
   }
 
-  findDropdown() {
+  initDropdown() {
     new Dropdown(this.dropdown);
   }
 }
