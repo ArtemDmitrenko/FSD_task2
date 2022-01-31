@@ -28,17 +28,17 @@
     margin: 0 auto;
     padding: 0 20px;
   }
-  &__foto {
+  &__photo {
     display: flex;
     width: 100%;
     height: 485px;
   }
-  &__foto-part1 {
+  &__photo-part1 {
     flex-shrink: 1;
     width: 100%;
     height: 100%;
   }
-  &__foto-part2 {
+  &__photo-part2 {
     display: flex;
     flex-direction: column;
     flex-shrink: 2.14;
@@ -48,13 +48,13 @@
       display: none;
     }
   }
-  &__foto-part2-el1 {
+  &__photo-part2-el1 {
     height: 50%;
     & img {
       transform: scale(-1, 1);
     }
   }
-  &__foto-part2-el2 {
+  &__photo-part2-el2 {
     height: 50%;
   }
   &__image {

@@ -4,15 +4,15 @@ mixin type-block(options = {})
   .type-block
     case name 
       when 'H1'
-        p.type-block__name.type-block__name_fsize_24= name
-        p.type-block__description.type-block__description_h1= text
+        p.type-block__name.type-block__name_text-type_widget-title= name
+        p.type-block__description.type-block__description_text-type_widget-title= text
       when 'H2'
-        p.type-block__name.type-block__name_fsize_19= name
-        p.type-block__description.type-block__description_h2= text
+        p.type-block__name.type-block__name_text-type_item-title= name
+        p.type-block__description.type-block__description_text-type_item-title= text
       when 'H3'
-        p.type-block__name.type-block__name_fsize_12= name
-        p.type-block__description.type-block__description_h3= text
+        p.type-block__name.type-block__name_text-type_label= name
+        p.type-block__description.type-block__description_text-type_label= text
       when 'Body'
-        p.type-block__name.type-block__name_line-height_24= name
-        p.type-block__description.type-block__description_font-body= text
+        p.type-block__name.type-block__name_text-type_paragraph= name
+        p.type-block__description.type-block__description_text-type_paragraph= text
 

@@ -8,18 +8,18 @@
     line-height: normal;
     text-align: right;
     opacity: 0.25;
-    &_fsize {
-      &_12 {
-        font-size: 12px;
+    &_text-type {
+      &_widget-title {
+        font-size: 24px;
       }
-      &_14 {
-        font-size: 14px;
-      }
-      &_19 {
+      &_item-title {
         font-size: 19px;
       }
-      &_24 {
-        font-size: 24px;
+      &_label {
+        font-size: 14px;
+      }
+      &_paragraph {
+        font-size: 12px;
       }
     }
     &_line-height {
@@ -29,20 +29,22 @@
     }
   }
   &__description {
-    &_font-body {
-      @extend %font-body;
-      width: 308px;
-    }
-    &_h1 {
-      @extend %h1;
-      width: 336px;
-    }
-    &_h2 {
-      @extend %h2;
-      width: 282px;
-    }
-    &_h3 {
-      @extend %h3;
+    &_text-type {
+      &_paragraph {
+        @extend %font-body;
+        width: 308px;
+      }
+      &_widget-title {
+        @extend %h1;
+        width: 336px;
+      }
+      &_item-title {
+        @extend %h2;
+        width: 282px;
+      }
+      &_label {
+        @extend %h3;
+      }
     }
   }
 }
