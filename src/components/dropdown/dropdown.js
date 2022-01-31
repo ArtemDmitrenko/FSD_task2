@@ -93,7 +93,9 @@ export default class Dropdown {
 
   handleMinusOrPlusClick = (e) => {
     const { target } = e;
-    if (target.closest(".js-dropdown__counter-item")) this.updateInput();
+    if (target.closest(".js-dropdown__counter-item")) {
+      this.updateInput();
+    } 
   };
 
   handleButtonClearClick = () => {
