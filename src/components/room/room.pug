@@ -1,7 +1,16 @@
 include ../rate-button/rate-button.pug
 
 mixin room(options = {})
-  - const { addressOfRoom = 'room1', images = ["image11", "image12", "image13", "image14"], roomNumber = '888', lux = false, price = '1 990₽', rate = '5', numberOfReviews = '100' } = options
+  - 
+    const { 
+      addressOfRoom = 'room1', 
+      images = ["image11", "image12", "image13", "image14"], 
+      roomNumber = '888', 
+      lux = false, 
+      price = '1 990₽', 
+      rate = '5', 
+      numberOfReviews = '100' 
+    } = options
   
   .room
     .room__card.js-room__card

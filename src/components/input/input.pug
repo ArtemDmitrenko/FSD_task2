@@ -1,15 +1,26 @@
 mixin input(options = {})
-  - const { heading = 'title', description = 'description', name = 'email', value = '', placeholder = '', expandable = false, subscription = false, type = 'email', required = true, readonly = false } = options
-  
+  - 
+    const { 
+      heading = 'title', 
+      description = 'description', 
+      name = 'email', 
+      value = '', 
+      placeholder = '', 
+      expandable = false, 
+      subscription = false, 
+      type = 'email', 
+      required, 
+      readonly = false 
+    } = options
+
   .input
     if heading
       .input__heading= heading
     if description
       .input__description= description
-    input.input__element.js-input__element(class = subscription ? 'input__element_directed' : '' name = name type = type value = value placeholder = placeholder readonly = readonly subscription = subscription required = required)
+    input.input__element.js-input__element(class = subscription ? 'input__element_directed' : '', name = name, type = type, value = value, placeholder = placeholder, readonly, subscription = subscription, required)
     if expandable
       span.input__checkmark expand_more
     if subscription
       .input__subscription
         button(type="submit").input__default-button arrow_forward
-  
