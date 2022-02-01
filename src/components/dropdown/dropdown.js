@@ -21,10 +21,9 @@ export default class Dropdown {
     const dropdownCounterArray = this.item.querySelectorAll(
       ".js-dropdown__counter-item"
     );
-    this.counterArr = [];
-    dropdownCounterArray.forEach((item) => {
-      const counter = new Counter(item);
-      this.counterArr.push(counter);
+
+    this.counterArr = Array.from(dropdownCounterArray, (item) => {
+      return new Counter(item);
     });
     if (this.withButtons) {
       this.findSeparateInputValue();
@@ -95,7 +94,7 @@ export default class Dropdown {
     const { target } = e;
     if (target.closest(".js-dropdown__counter-item")) {
       this.updateInput();
-    } 
+    }
   };
 
   handleButtonClearClick = () => {
@@ -147,12 +146,11 @@ export default class Dropdown {
         this.buttonClearInstance.showButton();
       }
     } else {
-      const itemsText = [];
-      this.counterArr.forEach((item) => {
+      const itemsText = Array.from(this.counterArr, (item) => {
         const declinationArr = item.getDeclinationArray();
         const numberItemValue = item.counterValue;
         if (numberItemValue !== 0) {
-          itemsText.push(this.declinate(declinationArr, numberItemValue));
+          return this.declinate(declinationArr, numberItemValue);
         }
       });
       if (itemsText.length === 1) {
