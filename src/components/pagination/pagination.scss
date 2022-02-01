@@ -1,5 +1,9 @@
 .pagination {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   user-select: none;
+
   &__data {
     display: none;
   }
@@ -11,11 +15,7 @@
   }
   &__container {
     @extend %font-body;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     margin-top: 10px;
-    margin-left: 5px;
     color: $dark75;
     text-transform: none;
     .paginationjs {

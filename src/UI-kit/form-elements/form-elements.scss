@@ -149,6 +149,9 @@
     margin-bottom: 40px;
   }
   &__pagination {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     margin-bottom: 275px;
   }
   &__opened-dropdown_with-guests {

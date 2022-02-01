@@ -63,7 +63,10 @@ export default class FormElements {
     dropdowns.forEach((dropdown) => {
       new Dropdown(dropdown);
     });
-    new Pagination(pagination);
+    const NUMBER_OF_ROOMS = 170;
+    const PAGE_SIZE = 12;
+    const SIGN_TEXT = "вариантов аренды";
+    new Pagination(pagination, NUMBER_OF_ROOMS, PAGE_SIZE, SIGN_TEXT);
     new Input(hoveredTextInputContainer).makeBorderBright();
     openedDropdownContainers.forEach((item) => {
       new Dropdown(item).toggleDropdown();
