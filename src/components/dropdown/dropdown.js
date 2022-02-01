@@ -80,14 +80,10 @@ export default class Dropdown {
   };
 
   closeDropdown() {
-    if (this.isApplied) {
-      this.toggleDropdown();
-    } else {
-      if (this.withButtons) {
-        this.input.value = this.defaultValue;
-      }
-      this.toggleDropdown();
+    if (this.withButtons) {
+      this.input.value = this.defaultValue;
     }
+    this.toggleDropdown();
   }
 
   handleMinusOrPlusClick = (e) => {
@@ -122,46 +118,77 @@ export default class Dropdown {
 
   updateInput() {
     if (this.withButtons) {
-      const separateValue = this.separateInput.counterValue;
-      const sum = this.counterArr.reduce((previousValue, currentValue) => {
-        return previousValue + currentValue.counterValue;
-      }, 0);
-      const declinationArr = this.dropdownInput.dataset.declination.split(", ");
-      const declinationArrForSeparatedInput =
-        this.separateInput.getDeclinationArray();
-      const mainText = this.declinate(declinationArr, sum);
-      const textForSeparatedInput = this.declinate(
-        declinationArrForSeparatedInput,
-        separateValue
-      );
-      if (separateValue === 0) {
-        this.input.value = `${mainText}`;
-      } else {
-        this.input.value = `${mainText}, ${textForSeparatedInput}`;
-      }
-      if (sum === 0) {
-        this.input.value = this.defaultValue;
-        this.hideButtonClear();
-      } else {
-        this.buttonClearInstance.showButton();
-      }
+      this.updateInputForDropdownWithButtons();
     } else {
-      const itemsText = Array.from(this.counterArr, (item) => {
-        const declinationArr = item.getDeclinationArray();
-        const numberItemValue = item.counterValue;
-        if (numberItemValue !== 0) {
-          return this.declinate(declinationArr, numberItemValue);
-        }
-      });
-      if (itemsText.length === 1) {
-        this.input.value = itemsText[0];
-      } else if (itemsText.length === 2) {
-        this.input.value = `${itemsText[0]}, ${itemsText[1]}`;
-      } else if (itemsText.length >= 3) {
-        this.input.value = `${itemsText[0]}, ${itemsText[1]}...`;
-      } else {
-        this.input.value = "";
+      this.updateInputForDropdownWithoutButtons();
+    }
+  }
+
+  updateInputForDropdownWithButtons() {
+    const inputData = this.getInputDataForDropdownWithButton();
+    this.showInputForDropdownWithButtons(inputData);
+  }
+
+  getInputDataForDropdownWithButton() {
+    const separateValue = this.separateInput.counterValue;
+    const sum = this.counterArr.reduce((previousValue, currentValue) => {
+      return previousValue + currentValue.counterValue;
+    }, 0);
+    const declinationArr = this.dropdownInput.dataset.declination.split(", ");
+    const declinationArrForSeparatedInput =
+      this.separateInput.getDeclinationArray();
+    const mainText = this.declinate(declinationArr, sum);
+    const textForSeparatedInput = this.declinate(
+      declinationArrForSeparatedInput,
+      separateValue
+    );
+    return {
+      mainText: mainText,
+      mainValue: sum,
+      separateText: textForSeparatedInput,
+      separateValue,
+    };
+  }
+
+  showInputForDropdownWithButtons(data) {
+    const { mainText, mainValue, separateText, separateValue } = data;
+    if (separateValue === 0) {
+      this.input.value = `${mainText}`;
+    } else {
+      this.input.value = `${mainText}, ${separateText}`;
+    }
+    if (mainValue === 0) {
+      this.input.value = this.defaultValue;
+      this.hideButtonClear();
+    } else {
+      this.buttonClearInstance.showButton();
+    }
+  }
+
+  updateInputForDropdownWithoutButtons() {
+    const itemsTextArray = this.getInputDataForDropdownWithoutButton();
+    this.showInputForDropdownWithoutButtons(itemsTextArray);
+  }
+
+  getInputDataForDropdownWithoutButton() {
+    return Array.from(this.counterArr, (item) => {
+      const declinationArr = item.getDeclinationArray();
+      const numberItemValue = item.counterValue;
+      if (numberItemValue !== 0) {
+        return this.declinate(declinationArr, numberItemValue);
       }
+    }).filter((item) => item !== undefined);
+  }
+
+  showInputForDropdownWithoutButtons(itemsTextArray) {
+    if (itemsTextArray.length === 1) {
+      this.input.value = itemsTextArray[0];
+    } else if (itemsTextArray.length === 2) {
+      this.input.value = `${itemsTextArray[0]}, ${itemsTextArray[1]}`;
+    } else if (itemsTextArray.length >= 3) {
+      this.input.value = `${itemsTextArray[0]}, ${itemsTextArray[1]}...`;
+    } else {
+      this.input.value = "";
     }
   }
 
@@ -174,6 +201,8 @@ export default class Dropdown {
       result = `${sum} ${type[0]}`;
     } else if (remain) {
       result = `${sum} ${type[1]}`;
+    } else if (sum == 0) {
+      result = "";
     } else {
       result = `${sum} ${type[2]}`;
     }
