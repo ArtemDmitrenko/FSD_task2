@@ -23,6 +23,6 @@ export default class СonfirmationForm {
   }
 
   getStayingInputFrom() {
-    this.dateDropdown.getStayingInputFrom();
+    return this.dateDropdown.getStayingInputFrom();
   }
 }

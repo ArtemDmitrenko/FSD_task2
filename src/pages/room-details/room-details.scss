@@ -24,21 +24,27 @@
   flex: 1 0 auto;
   border-bottom: 1px solid rgba(31, 32, 65, 0.25);
   &__content {
+    display: flex;
+    justify-content: space-between;
     max-width: 1160px;
     margin: 0 auto;
     padding: 0 20px;
+    @media screen and (max-width: 960px) {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
   }
   &__photo {
     display: flex;
     width: 100%;
     height: 485px;
   }
-  &__photo-part1 {
+  &__main-photo-part {
     flex-shrink: 1;
     width: 100%;
     height: 100%;
   }
-  &__photo-part2 {
+  &__minor-photo-part {
     display: flex;
     flex-direction: column;
     flex-shrink: 2.14;
@@ -48,29 +54,22 @@
       display: none;
     }
   }
-  &__photo-part2-el1 {
+  &__mirrored-photo {
     height: 50%;
-    & img {
+    .room-details__image {
       transform: scale(-1, 1);
     }
   }
-  &__photo-part2-el2 {
+  &__minor-photo {
     height: 50%;
   }
+
   &__image {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
-  &__total {
-    display: flex;
-    justify-content: space-between;
-    @media screen and (max-width: 960px) {
-      flex-direction: column-reverse;
-      align-items: center;
-    }
-  }
-  &__column2 {
+  &__confirmation {
     min-width: 360px;
     margin-top: 70px;
     margin-left: 20px;
@@ -133,7 +132,7 @@
       margin-left: 0;
     }
   }
-  &__cancel {
+  &__cancellation {
     max-width: 342px;
     margin-left: 69px;
     @media screen and (max-width: 576px) {
@@ -141,22 +140,22 @@
       margin-left: 0;
     }
   }
-  &__cancel-title {
+  &__cancellation-title {
     @extend %h2;
     margin-bottom: 16px;
   }
-  &__cancel-text {
+  &__cancellation-text {
     @extend %font-body;
     color: $dark75;
     line-height: 24px;
   }
-  &__line1 {
+  &__impressions-info {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 69px;
   }
-  &__line2 {
+  &__rules-cancellation {
     display: flex;
     margin-top: 32px;
     margin-bottom: 62px;

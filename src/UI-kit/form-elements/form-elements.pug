@@ -1,4 +1,4 @@
-extends ../../templates/template-UIKit.pug
+extends ../../templates/template-uikit.pug
 include ../../components/logo-uikit/logo-uikit.pug
 include ../../components/input/input.pug
 include ../../components/dropdown/dropdown.pug
@@ -64,7 +64,7 @@ block content
         .form-elements__element 
           .form-elements__datepicker.js-form-elements__datepicker.form-elements__datepicker_range-in-one-input
             +date-dropdown({titleFrom: 'filter date dropdown', defaultValueFrom: '19 авг - 23 авг', separatedInputs: false })
-        .form-elements__element  
+        .form-elements__element
           .form-elements__subscription-input
             +input({heading: 'subscription text field', name: 'email', type: 'email', placeholder: 'Email', required: true, subscription: true })
         .form-elements__element.form-elements__element_not-expanded
