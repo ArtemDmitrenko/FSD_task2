@@ -38,9 +38,10 @@ export default class Pagination {
     const from = data[0];
     const to = data[data.length - 1];
     const total = pagination.totalNumber;
-    if (total)
+    if (total) {
       this.legend.innerHTML = `${from} – ${to} из ${
         total > 100 ? "100+" : total
       } ${this.signText}`;
+    }
   }
 }
