@@ -171,13 +171,15 @@ export default class Dropdown {
   }
 
   getInputDataForDropdownWithoutButton() {
-    return Array.from(this.counterArr, (item) => {
-      const declinationArr = item.getDeclinationArray();
-      const numberItemValue = item.counterValue;
+    return this.counterArr.reduce((previousValue, currentCounter) => {
+      const declinationArr = currentCounter.getDeclinationArray();
+      const numberItemValue = currentCounter.counterValue;
       if (numberItemValue !== 0) {
-        return this.declinate(declinationArr, numberItemValue);
+        const newItem = this.declinate(declinationArr, numberItemValue);
+        return [...previousValue, newItem];
       }
-    }).filter((item) => item !== undefined);
+      return previousValue;
+    }, []);
   }
 
   showInputForDropdownWithoutButtons(itemsTextArray) {
