@@ -1,9 +1,5 @@
-//-
-  options.name - title of list
-  options.list - list of items
-
-mixin bullet-list(options)
-  - const { name = 'Title', list = ['Нельзя с питомцами', 'Без вечеринок и мероприятий'] } = options
+mixin bullet-list(options = {})
+  - const { name = '', list = ['Нельзя с питомцами', 'Без вечеринок и мероприятий'] } = options
   
   .bullet-list
     if name

@@ -1,15 +1,15 @@
-mixin checkbox-list(options)
+mixin checkbox-list(options = {})
   - 
     const defaultList = [
       {item: 'Можно курить', checked: false},  
       {item: 'Можно с питомцами', checked: false} 
     ];
 
-    const { name = 'Title', isExpandable = false, withDescription = false, list = defaultList } = options;
+    const { title = 'Title', isExpandable = false, withDescription = false, list = defaultList } = options;
 
   div(class = isExpandable ? 'checkbox-list checkbox-list_expandable js-checkbox-list js-checkbox-list_expandable' : 'checkbox-list js-checkbox-list')
     .checkbox-list__name
-      .checkbox-list__title= name
+      .checkbox-list__title= title
       if isExpandable
         span.checkbox-list__checkmark.js-checkbox-list__checkmark expand_more
     form.checkbox-list__form.js-checkbox-list__form(

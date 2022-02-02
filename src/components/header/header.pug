@@ -2,7 +2,7 @@ include ../button/button.pug
 include ../logo/logo.pug
 include ../nav-menu/nav-menu.pug
 
-mixin header(options)
+mixin header(options = {})
   - const { modifier = 'notRegistered' } = options
   - const menuItems = require('../../templates/menu-items.json')
   

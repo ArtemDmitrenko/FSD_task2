@@ -1,10 +1,10 @@
 mixin rate-button(options = {})
-  - const { name = 'name', value = '5' } = options
+  - const { title = '', value = '5' } = options
   - const maxValue = 5
 
   .rate-button
-    if name
-      h3.rate-button__name= name
+    if title
+      h3.rate-button__name= title
     - for (let i = 0; i < value; i ++)
       .rate-button__stars star
     - for (let i = 0; i < (maxValue - value); i ++)

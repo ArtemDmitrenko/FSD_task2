@@ -21,7 +21,7 @@ block main
           withButtons: true, 
           heading: 'Гости', 
           value: 'Сколько гостей',
-          description: '',
+          declination: 'гость, гостя, гостей',
           items: [
             {
               name: 'adults', 
@@ -38,14 +38,13 @@ block main
               isSeparated: true
             },
           ],
-          declination: 'гость, гостя, гостей',
         })
       .search-room__range-slider.js-search-room__range-slider
         +range-slider({title: 'Диапазон цены', description: 'Стоимость за сутки пребывания в номере'})
       .search-room__checkbox.js-search-room__checkbox
         .search-room__checkbox-list
           +checkbox-list({
-            name: 'Правила дома', 
+            title: 'Правила дома', 
             isExpandable: false, 
             list: [
               {item: 'Можно курить'},  
@@ -58,7 +57,7 @@ block main
           +checkbox-list({
             isExpandable: false, 
             withDescription: true, 
-            name: 'Доступность', 
+            title: 'Доступность', 
             list: [
               {item: 'Широкий коридор', subItem: 'Ширина коридоров в номере не менее 91 см.'},  
               {item: 'Помощник для инвалидов', subItem: 'На 1 этаже вас встретит специалист  и проводит до номера.'}  
@@ -86,14 +85,12 @@ block main
             },
           ],
           withButtons: false,
-          value: '', 
-          description: ''
         })
       .search-room__checkbox.js-search-room__checkbox
         .search-room__expandable-checkbox
         +checkbox-list({
           isExpandable: true, 
-          name: 'Дополнительные удобства', 
+          title: 'Дополнительные удобства', 
           list: [
             {item: 'Завтрак'},  
             {item: 'Письменный стол'},

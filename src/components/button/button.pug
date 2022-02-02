@@ -1,4 +1,4 @@
-mixin button(options)
+mixin button(options = {})
   - const { assignment = 'button', style = 'solid', size = '', color = '', text = 'click me', type = 'button', name = 'btn', href = 'https://www.mock-link.com/' } = options;
   - const bordered = style === 'bordered' ? 'button_bordered' : '';
   - const directed = style === 'directed' ? 'button_directed' : '';

@@ -1,10 +1,10 @@
 include ../input/input.pug
 
-mixin date-dropdown(options)
+mixin date-dropdown(options = {})
   - 
     const { 
-      titleFrom = 'from', 
-      titleTo = 'to', 
+      titleFrom = '', 
+      titleTo = '', 
       defaultValueFrom = '', 
       defaultValueTo = '', 
       separatedInputs = true, 

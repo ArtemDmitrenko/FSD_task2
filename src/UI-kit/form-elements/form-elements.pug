@@ -37,7 +37,7 @@ block content
               withButtons: true, 
               heading: 'dropdown', 
               value: 'Сколько гостей',
-              description: '',
+              declination: 'гость, гостя, гостей',
               items: [
                 {
                   name: 'adults', 
@@ -54,7 +54,6 @@ block content
                   isSeparated: true
                 },
               ],
-              declination: 'гость, гостя, гостей',
             })
         .form-elements__element
           .form-elements__masked-input.js-form-elements__masked-input
@@ -67,7 +66,7 @@ block content
             +date-dropdown({titleFrom: 'filter date dropdown', defaultValueFrom: '19 авг - 23 авг', separatedInputs: false })
         .form-elements__element  
           .form-elements__subscription-input
-            +input({heading: 'subscription text field', name: 'email', type: 'email', placeholder: 'Email', required: true, subscription: true, description: false})
+            +input({heading: 'subscription text field', name: 'email', type: 'email', placeholder: 'Email', required: true, subscription: true })
         .form-elements__element.form-elements__element_not-expanded
           .form-elements__dropdown.js-form-elements__dropdown
             +dropdown({
@@ -93,7 +92,6 @@ block content
                   defaultValue: 2
                 },
               ],
-              declination: '',
             })
         .form-elements__element.form-elements__element_expanded
           .form-elements__opened-dropdown.js-form-elements__opened-dropdown
@@ -102,7 +100,6 @@ block content
               withButtons: false, 
               heading: 'dropdown', 
               description: 'expanded',
-              value: '',
               items: [
                 {
                   name: 'bedrooms', 
@@ -121,13 +118,12 @@ block content
                   defaultValue: 0
                 },
               ],
-              declination: ''
             })
         .form-elements__element
           .form-elements__checkbox-list.js-form-elements__checkbox-list.form-elements__checkbox-list_not-expandable
             +checkbox-list({
               isExpandable: true, 
-              name: 'Expandable checkbox list', 
+              title: 'Expandable checkbox list', 
               list: [
                 {item: 'Завтрак'},  
                 {item: 'Письменный стол'},
@@ -141,7 +137,7 @@ block content
           .form-elements__opened-checkbox-list.js-form-elements__opened-checkbox-list
             +checkbox-list({
               isExpandable: true, 
-              name: 'Expandable checkbox list', 
+              title: 'Expandable checkbox list', 
               list: [
                 {item: 'Завтрак'},  
                 {item: 'Письменный стол', checked: true},
@@ -164,7 +160,7 @@ block content
               .form-elements__checkbox-list.js-form-elements__checkbox-list
                 +checkbox-list({
                   isExpandable: false, 
-                  name: 'Checkbox buttons',
+                  title: 'Checkbox buttons',
                   list: [
                     {item: 'Можно курить'},  
                     {item: 'Можно с питомцами', checked: true},
@@ -184,17 +180,17 @@ block content
               .form-elements__toggle.form-elements__toggle_checked.js-form-elements__toggle_checked
                 +toggle({name: 'Toggle', label: 'Получать спецпредложения'})
               .form-elements__toggle
-                +toggle({name: '', label: 'Получать спецпредложения'})
+                +toggle({label: 'Получать спецпредложения'})
             .form-elements__element
               .form-elements__like-buttons
                 .form-elements__like-button
-                  +like-button({name: 'Like button', numberOfLikes: '1'})
+                  +like-button({title: 'Like button', numberOfLikes: '1'})
                 .form-elements__like-button_clicked.js-form-elements__like-button_clicked
-                  +like-button({name: '', numberOfLikes: '9999'})
+                  +like-button({numberOfLikes: '9999'})
             .form-elements__element
               .form-elements__rate-button
-                +rate-button({name: 'Rate button', value: '4'})
-                +rate-button({name: '', value: '5'})
+                +rate-button({title: 'Rate button', value: '4'})
+                +rate-button({value: '5'})
             .form-elements__element 
               .form-elements__opened-dropdown.js-form-elements__opened-dropdown.form-elements__opened-dropdown_with-guests
                 +dropdown({
@@ -202,7 +198,7 @@ block content
                   withButtons: true, 
                   heading: 'dropdown', 
                   value: 'Сколько гостей',
-                  description: '',
+                  declination: 'гость, гостя, гостей',
                   items: [
                     {
                       name: 'adults', 
@@ -219,14 +215,13 @@ block content
                       isSeparated: true
                     },
                   ],
-                  declination: 'гость, гостя, гостей',
                 })
             .form-elements__element
               .form-elements__checkbox-list.js-form-elements__checkbox-list
                 +checkbox-list({
                   isExpandable: false, 
                   withDescription: true, 
-                  name: 'Rich checkbox buttons', 
+                  title: 'Rich checkbox buttons', 
                   list: [
                     {item: 'Широкий коридор', subItem: 'Ширина коридоров в номере не менее 91 см.'},  
                     {item: 'Помощник для инвалидов', subItem: 'На 1 этаже вас встретит специалист  и проводит до номера.'}  
@@ -235,7 +230,7 @@ block content
           .form-elements__sub-column2
             .form-elements__element
               .form-elements__range-slider.js-form-elements__range-slider
-                +range-slider({title: 'Range slider', description: ''})
+                +range-slider({title: 'Range slider'})
             .form-elements__element
               .form-elements__all-button
                 .form-elements__button-title Buttons
@@ -265,7 +260,7 @@ block content
                   withButtons: true, 
                   heading: 'dropdown', 
                   value: 'Сколько гостей',
-                  description: '',
+                  declination: 'гость, гостя, гостей',
                   items: [
                     {
                       name: 'adults', 
@@ -284,11 +279,10 @@ block content
                       isSeparated: true
                     },
                   ],
-                  declination: 'гость, гостя, гостей',
                 })
             .form-elements__element
               .form-elements__bullet-list
                 +bullet-list({name: 'Bullet list', list: ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00']})
         .form-elements__element
           .form-elements__review.js-form-elements__review
-            +review({nameOfFile: 'sarafanov', name: 'Мурад Сарафанов', date: '5 дней назад', numberOfLikes: '11', textOfReview: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'})
+            +review({nameOfFile: 'sarafanov', title: 'Мурад Сарафанов', date: '5 дней назад', numberOfLikes: '11', textOfReview: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'})

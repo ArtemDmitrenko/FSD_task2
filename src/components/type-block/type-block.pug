@@ -1,18 +1,18 @@
 mixin type-block(options = {})
-  - const { name = 'H1', text = 'Description' } = options
+  - const { title = 'H1', text = 'Description' } = options
   
   .type-block
-    case name 
+    case title 
       when 'H1'
-        p.type-block__name.type-block__name_text-type_widget-title= name
+        p.type-block__name.type-block__name_text-type_widget-title= title
         p.type-block__description.type-block__description_text-type_widget-title= text
       when 'H2'
-        p.type-block__name.type-block__name_text-type_item-title= name
+        p.type-block__name.type-block__name_text-type_item-title= title
         p.type-block__description.type-block__description_text-type_item-title= text
       when 'H3'
-        p.type-block__name.type-block__name_text-type_label= name
+        p.type-block__name.type-block__name_text-type_label= title
         p.type-block__description.type-block__description_text-type_label= text
       when 'Body'
-        p.type-block__name.type-block__name_text-type_paragraph= name
+        p.type-block__name.type-block__name_text-type_paragraph= title
         p.type-block__description.type-block__description_text-type_paragraph= text
 

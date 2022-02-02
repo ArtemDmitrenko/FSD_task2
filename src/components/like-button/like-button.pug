@@ -1,9 +1,9 @@
 mixin like-button(options = {})
-  - const { name = 'like-button', numberOfLikes = '0' } = options
+  - const { title = '', numberOfLikes = '0' } = options
   
   .like-button.js-like-button
-    if name
-      h3.like-button__name= name
+    if title
+      h3.like-button__name= title
     button.like-button__button.js-like-button__button(type='button')
       span.like-button__image.js-like-button__image favorite_border
       .like-button__counter.js-like-button__counter= numberOfLikes

@@ -66,14 +66,14 @@ block main
               p.room-details__review-number-of-reviews 2 отзыва
             .room-details__review-block
               .room-details__review-block-item.js-room-details__review-block-item
-                +review({nameOfFile: 'sarafanov', name: 'Мурад Сарафанов', date: '5 дней назад', numberOfLikes: '1', textOfReview: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'})
+                +review({nameOfFile: 'sarafanov', title: 'Мурад Сарафанов', date: '5 дней назад', numberOfLikes: '1', textOfReview: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'})
               .room-details__review-block-item.js-room-details__review-block-item
-                +review({nameOfFile: 'steklyshkova', name: 'Патрисия Стёклышкова', date: 'Неделю назад', numberOfLikes: '2', textOfReview: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент'})
+                +review({nameOfFile: 'steklyshkova', title: 'Патрисия Стёклышкова', date: 'Неделю назад', numberOfLikes: '2', textOfReview: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент'})
           .room-details__line2    
             .room-details__rules
               h2.room-details__rules-title Правила
               .room-details__rules-list
-                +bullet-list({name: '', list: ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00']})
+                +bullet-list({list: ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00']})
             .room-details__cancel
               h2.room-details__cancel-title Отмена
               p.room-details__cancel-text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.

@@ -1,9 +1,9 @@
 mixin color-block(options)
-  - const { name = 'dark', hex = '#1F2041', text = 'Dark Shade 100%' } = options
+  - const { color = 'dark', hex = '#1F2041', text = 'Dark Shade 100%' } = options
   
   .color-block
     .color-block__item
-      case name 
+      case color 
         when 'dark'
           .color-block__color.color-block__color_dark
         when 'light-dark'

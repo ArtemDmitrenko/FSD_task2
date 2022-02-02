@@ -14,7 +14,7 @@ mixin room-search-form()
         withButtons: true, 
         heading: 'Гости', 
         value: 'Сколько гостей',
-        description: '',
+        declination: 'гость, гостя, гостей',
         items: [
           {
             name: 'adults', 
@@ -34,7 +34,6 @@ mixin room-search-form()
             isSeparated: true
           },
         ],
-        declination: 'гость, гостя, гостей',
       }))
     .room-search-form__submission
       +button({assignment: 'button', style: 'directed', size: 'big', text: 'Подобрать номер', type: 'submit'})
