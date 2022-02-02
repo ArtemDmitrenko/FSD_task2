@@ -27,26 +27,26 @@
   src: url(../assets/fonts/montserrat-regular.eot);
   src: local("☺"), url(../assets/fonts/montserrat-regular.woff) format("woff"), url(../assets/fonts/montserrat-regular.ttf) format("truetype"), url(../assets/fonts/montserrat-regular.svg) format("svg"); }
 
-.type-block__name, .type-block__description_font-body {
+.type-block__name, .type-block__description_text-type_paragraph {
   color: #1f2041;
   font-weight: 400;
   font-size: 14px;
   font-family: "Montserrat", "Arial", sans-serif; }
 
-.type-block__description_h3 {
+.type-block__description_text-type_label {
   color: #1f2041;
   font-weight: 700;
   font-size: 12px;
   font-family: "Montserrat", "Arial", sans-serif;
   text-transform: uppercase; }
 
-.color-block__name, .type-block__description_h2 {
+.color-block__name, .type-block__description_text-type_item-title {
   color: #1f2041;
   font-weight: 700;
   font-size: 19px;
   font-family: "Quicksand", "Arial", sans-serif; }
 
-.type-block__description_h1 {
+.type-block__description_text-type_widget-title {
   color: #1f2041;
   font-weight: 700;
   font-size: 24px;
@@ -121,7 +121,7 @@ a {
   .color-block__color_purple {
     background-color: #bc9cff; }
 
-.logo-UIkit {
+.logo-uikit {
   display: block; }
 
 .type-block {
@@ -133,21 +133,19 @@ a {
     line-height: normal;
     text-align: right;
     opacity: 0.25; }
-    .type-block__name_fsize_12 {
-      font-size: 12px; }
-    .type-block__name_fsize_14 {
-      font-size: 14px; }
-    .type-block__name_fsize_19 {
-      font-size: 19px; }
-    .type-block__name_fsize_24 {
+    .type-block__name_text-type_widget-title {
       font-size: 24px; }
-    .type-block__name_line-height_24 {
-      line-height: 24px; }
-  .type-block__description_font-body {
+    .type-block__name_text-type_item-title {
+      font-size: 19px; }
+    .type-block__name_text-type_label {
+      font-size: 14px; }
+    .type-block__name_text-type_paragraph {
+      font-size: 12px; }
+  .type-block__description_text-type_paragraph {
     width: 308px; }
-  .type-block__description_h1 {
+  .type-block__description_text-type_widget-title {
     width: 336px; }
-  .type-block__description_h2 {
+  .type-block__description_text-type_item-title {
     width: 282px; }
 
 .colors-type__logo {

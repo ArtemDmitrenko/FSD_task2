@@ -40,3 +40,18 @@
   src: url(../assets/fonts/materialicons-regular.eot);
   src: local("☺"), url(../assets/fonts/materialicons-regular.woff) format("woff"), url(../assets/fonts/materialicons-regular.ttf) format("truetype"), url(../assets/fonts/materialicons-regular.svg) format("svg"); }
 
+.content__ui-kit {
+  display: flex;
+  flex-direction: column;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content; }
+
+.content__pages {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content; }
+
+.content__item {
+  width: inherit; }
+
