@@ -59,7 +59,7 @@ export default class FormElements {
     reviews.forEach((review) => {
       new Review(review);
     });
-    new RangeSlider(rangeSlider);
+    new RangeSlider({ item: rangeSlider });
     dropdowns.forEach((dropdown) => {
       new Dropdown(dropdown);
     });

@@ -37,7 +37,7 @@ export default class SearchRoom {
     const PAGE_SIZE = 12;
     const SIGN_TEXT = "вариантов аренды";
     new Pagination(pagination, NUMBER_OF_ROOMS, PAGE_SIZE, SIGN_TEXT);
-    new RangeSlider(rangeSlider);
+    new RangeSlider({ item: rangeSlider });
     rooms.forEach((room) => {
       new Room(room);
     });

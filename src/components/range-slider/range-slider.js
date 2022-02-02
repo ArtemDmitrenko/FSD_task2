@@ -1,8 +1,22 @@
 import "ion-rangeslider";
 
 export default class RangeSlider {
-  constructor(item) {
+  constructor(options) {
+    const {
+      item,
+      min = 0,
+      max = 15000,
+      from = 5000,
+      to = 10000,
+      postfix = "₽",
+    } = options;
     this.item = item.querySelector(".js-range-slider__item");
+    this.min = min;
+    this.max = max;
+    this.from = from;
+    this.to = to;
+    this.postfix = postfix;
+
     this.init();
   }
 
@@ -14,11 +28,11 @@ export default class RangeSlider {
   showRangeSlider() {
     const options = {
       type: "double",
-      min: 0,
-      max: 15000,
-      from: 5000,
-      to: 10000,
-      postfix: "₽",
+      min: this.min,
+      max: this.max,
+      from: this.from,
+      to: this.to,
+      postfix: this.postfix,
       values_separator: " - ",
       decorate_both: true,
       hide_min_max: true,
