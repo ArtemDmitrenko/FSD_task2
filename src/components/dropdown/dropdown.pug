@@ -41,7 +41,7 @@ mixin dropdown(options = {})
 
   .dropdown.js-dropdown(data-buttons = withButtons)
     .dropdown__input.js-dropdown__input(data-declination = declination data-value = value)
-      +input({heading, description, name, type: 'text', value, expandable, readonly})
+      +input({heading, description, name, type: 'text', value, expandable: true, readonly})
     .dropdown__list.js-dropdown__list
       .dropdown__counter
         each item in items

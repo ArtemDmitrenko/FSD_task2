@@ -4,8 +4,8 @@
   display: flex;
   gap: 20px;
   width: 100%;
-  @media screen and (max-width: 350px) {
-    gap: 6px;
+  @media screen and (max-width: 390px) {
+    gap: 15px;
   }
   &__from,
   &__to {
