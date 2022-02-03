@@ -11,12 +11,12 @@ mixin review(options = {})
     } = options;
   
   .review.js-review
-    .review__part1
+    .review__author
       img.review__image(src=require(`../../../src/components/review/${nameOfFile}.png`).default, alt=`${title}`)
       .review__description
         h3.review__name= title
         p.review__date= date
-    .review__part2
+    .review__content
       .review__like-button.js-review__like-button
         +like-button({ numberOfLikes })
       p.review__text= textOfReview

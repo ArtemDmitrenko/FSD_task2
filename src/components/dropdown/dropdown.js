@@ -126,7 +126,7 @@ export default class Dropdown {
 
   updateInputForDropdownWithButtons() {
     const inputData = this.getInputDataForDropdownWithButton();
-    this.showInputForDropdownWithButtons(inputData);
+    this.setInputForDropdownWithButtons(inputData);
   }
 
   getInputDataForDropdownWithButton() {
@@ -150,7 +150,7 @@ export default class Dropdown {
     };
   }
 
-  showInputForDropdownWithButtons(data) {
+  setInputForDropdownWithButtons(data) {
     const { mainText, mainValue, separateText, separateValue } = data;
     if (separateValue === 0) {
       this.input.value = `${mainText}`;
@@ -167,7 +167,7 @@ export default class Dropdown {
 
   updateInputForDropdownWithoutButtons() {
     const itemsTextArray = this.getInputDataForDropdownWithoutButton();
-    this.showInputForDropdownWithoutButtons(itemsTextArray);
+    this.setInputForDropdownWithoutButtons(itemsTextArray);
   }
 
   getInputDataForDropdownWithoutButton() {
@@ -182,7 +182,7 @@ export default class Dropdown {
     }, []);
   }
 
-  showInputForDropdownWithoutButtons(itemsTextArray) {
+  setInputForDropdownWithoutButtons(itemsTextArray) {
     if (itemsTextArray.length === 1) {
       this.input.value = itemsTextArray[0];
     } else if (itemsTextArray.length === 2) {
