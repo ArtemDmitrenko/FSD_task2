@@ -12,37 +12,44 @@ export default class SearchRoom {
   }
 
   init() {
-    const checkboxLists = document.querySelectorAll(
-      ".js-search-room__checkbox"
-    );
-    const dateDropdowns = document.querySelectorAll(
+    this.findElements();
+    this.initElements();
+  }
+
+  findElements() {
+    this.checkboxLists = document.querySelectorAll(".js-search-room__checkbox");
+    this.dateDropdowns = document.querySelectorAll(
       ".js-search-room__filter-date-dropdown"
     );
-    const pagination = document.querySelector(".js-search-room__pagination");
-    const rangeSlider = document.querySelector(".js-search-room__range-slider");
-    const rooms = document.querySelectorAll(".js-search-room__card");
-    const guestDropdown = document.querySelector(
+    this.pagination = document.querySelector(".js-search-room__pagination");
+    this.rangeSlider = document.querySelector(".js-search-room__range-slider");
+    this.rooms = document.querySelectorAll(".js-search-room__card");
+    this.guestDropdown = document.querySelector(
       ".js-search-room__dropdown-guests"
     );
-    const roomDropdown = document.querySelector(
+    this.roomDropdown = document.querySelector(
       ".js-search-room__dropdown-rooms"
     );
-    checkboxLists.forEach((checkboxList) => {
-      new CheckboxList(checkboxList);
-    });
-    dateDropdowns.forEach((dateDropdown) => {
-      new DateDropdown(dateDropdown);
-    });
+  }
+
+  initElements() {
     const NUMBER_OF_ROOMS = 170;
     const PAGE_SIZE = 12;
     const SIGN_TEXT = "вариантов аренды";
-    new Pagination(pagination, NUMBER_OF_ROOMS, PAGE_SIZE, SIGN_TEXT);
-    new RangeSlider({ item: rangeSlider });
-    rooms.forEach((room) => {
+
+    new Pagination(this.pagination, NUMBER_OF_ROOMS, PAGE_SIZE, SIGN_TEXT);
+    this.checkboxLists.forEach((checkboxList) => {
+      new CheckboxList(checkboxList);
+    });
+    this.dateDropdowns.forEach((dateDropdown) => {
+      new DateDropdown(dateDropdown);
+    });
+    new RangeSlider({ item: this.rangeSlider });
+    this.rooms.forEach((room) => {
       new Room(room);
     });
-    new Dropdown(guestDropdown);
-    new Dropdown(roomDropdown);
+    new Dropdown(this.guestDropdown);
+    new Dropdown(this.roomDropdown);
     headerInit();
   }
 }
