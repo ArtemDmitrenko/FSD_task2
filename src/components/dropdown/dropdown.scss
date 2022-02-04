@@ -7,7 +7,7 @@
   &__list {
     position: absolute;
     z-index: -1;
-    width: -webkit-fill-available;
+    width: fill-available;
     background-color: white;
     border: 1px solid $dark50;
     border-top: none;

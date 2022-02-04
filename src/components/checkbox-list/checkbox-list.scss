@@ -1,5 +1,5 @@
 .checkbox-list {
-  max-width: 222px;
+  max-width: 256px;
   user-select: none;
   &_expandable {
     & .checkbox-list__form {
@@ -16,7 +16,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 256px;
     margin-bottom: 17px;
     cursor: pointer;
   }
@@ -53,9 +52,6 @@
   }
   &__item {
     margin-top: 12px;
-    &:last-child .checkbox-list__sublabel {
-      width: 102%;
-    }
   }
   &__label {
     position: relative;
@@ -101,7 +97,6 @@
     cursor: pointer;
     &_rich {
       @extend %h3;
-      width: 101%;
       color: $dark75;
       font-size: 14px;
       text-transform: none;

@@ -45,17 +45,6 @@
     }
   }
   &__link-sign {
-    width: 196px;
-    @media screen and (max-width: 992px) {
-      display: none;
-    }
-  }
-  &__line {
-    height: 30px;
-    margin-right: 20px;
-    border-color: $dark100;
-    border-left: 1px solid;
-    opacity: 0.1;
     @media screen and (max-width: 992px) {
       display: none;
     }

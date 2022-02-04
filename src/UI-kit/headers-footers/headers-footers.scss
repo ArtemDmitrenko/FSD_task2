@@ -28,6 +28,8 @@
     margin-bottom: 40px;
   }
   &__footer-tab {
+    max-width: 768px;
+    margin: 0 auto;
     > :first-child {
       display: block;
     }

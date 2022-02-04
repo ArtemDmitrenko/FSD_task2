@@ -3,13 +3,12 @@
 .date-dropdown {
   display: flex;
   gap: 20px;
-  width: 100%;
-  @media screen and (max-width: 390px) {
-    gap: 15px;
-  }
   &__from,
   &__to {
     width: 100%;
+  }
+  @media screen and (max-width: 390px) {
+    gap: 15px;
   }
   & input {
     cursor: pointer;
