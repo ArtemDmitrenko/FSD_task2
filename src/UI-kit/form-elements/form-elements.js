@@ -11,72 +11,75 @@ import Button from "Components/button/button";
 
 export default class FormElements {
   constructor() {
-    this.init();
+    this.findElements();
+    this.initElements();
   }
 
-  init() {
-    const checkboxLists = document.querySelectorAll(
+  findElements() {
+    this.checkboxLists = document.querySelectorAll(
       ".js-form-elements__checkbox-list"
     );
-    const dateDropdowns = document.querySelectorAll(
+    this.dateDropdowns = document.querySelectorAll(
       ".js-form-elements__datepicker"
     );
-    const maskedInput = document.querySelector(
+    this.maskedInput = document.querySelector(
       ".js-form-elements__masked-input"
     );
-    const reviews = document.querySelectorAll(".js-form-elements__review");
-    const rangeSlider = document.querySelector(
+    this.reviews = document.querySelectorAll(".js-form-elements__review");
+    this.rangeSlider = document.querySelector(
       ".js-form-elements__range-slider"
     );
-    const dropdowns = document.querySelectorAll(".js-form-elements__dropdown");
-    const openedDropdownContainers = document.querySelectorAll(
+    this.dropdowns = document.querySelectorAll(".js-form-elements__dropdown");
+    this.openedDropdownContainers = document.querySelectorAll(
       ".js-form-elements__opened-dropdown"
     );
-    const pagination = document.querySelector(".js-form-elements__pagination");
-    const hoveredTextInputContainer = document.querySelector(
+    this.pagination = document.querySelector(".js-form-elements__pagination");
+    this.hoveredTextInputContainer = document.querySelector(
       ".js-form-elements__hovered-text-field"
     );
-    const openedCheckboxList = document.querySelector(
+    this.openedCheckboxList = document.querySelector(
       ".js-form-elements__opened-checkbox-list"
     );
-    const checkedToggle = document.querySelector(
+    this.checkedToggle = document.querySelector(
       ".js-form-elements__toggle_checked"
     );
-    const clickedLikeButtons = document.querySelectorAll(
+    this.clickedLikeButtons = document.querySelectorAll(
       ".js-form-elements__like-button_clicked,.js-form-elements__review"
     );
-    const hoveredButtons = document.querySelectorAll(
+    this.hoveredButtons = document.querySelectorAll(
       ".js-form-elements__button-solid_hovered,.js-form-elements__button-bordered_hovered"
     );
+  }
 
-    checkboxLists.forEach((checkboxList) => {
+  initElements() {
+    this.checkboxLists.forEach((checkboxList) => {
       new CheckboxList(checkboxList);
     });
-    dateDropdowns.forEach((dateDropdown) => {
+    this.dateDropdowns.forEach((dateDropdown) => {
       new DateDropdown(dateDropdown);
     });
-    new Input(maskedInput, "masked");
-    reviews.forEach((review) => {
+    new Input(this.maskedInput, "masked");
+    this.reviews.forEach((review) => {
       new Review(review);
     });
-    new RangeSlider({ item: rangeSlider });
-    dropdowns.forEach((dropdown) => {
+    new RangeSlider({ item: this.rangeSlider });
+    this.dropdowns.forEach((dropdown) => {
       new Dropdown(dropdown);
     });
     const NUMBER_OF_ROOMS = 170;
     const PAGE_SIZE = 12;
     const SIGN_TEXT = "вариантов аренды";
-    new Pagination(pagination, NUMBER_OF_ROOMS, PAGE_SIZE, SIGN_TEXT);
-    new Input(hoveredTextInputContainer).makeBorderBright();
-    openedDropdownContainers.forEach((item) => {
+    new Pagination(this.pagination, NUMBER_OF_ROOMS, PAGE_SIZE, SIGN_TEXT);
+    new Input(this.hoveredTextInputContainer).makeBorderBright();
+    this.openedDropdownContainers.forEach((item) => {
       new Dropdown(item).toggleDropdown();
     });
-    new CheckboxList(openedCheckboxList).expandCheckbox();
-    new Toggle(checkedToggle).checkToggle();
-    clickedLikeButtons.forEach((item) => {
+    new CheckboxList(this.openedCheckboxList).expandCheckbox();
+    new Toggle(this.checkedToggle).checkToggle();
+    this.clickedLikeButtons.forEach((item) => {
       new LikeButton(item).handleLikeButtonClick();
     });
-    hoveredButtons.forEach((item) => {
+    this.hoveredButtons.forEach((item) => {
       new Button(item).hoverButton();
     });
   }
