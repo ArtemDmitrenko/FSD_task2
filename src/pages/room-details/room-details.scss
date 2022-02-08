@@ -121,7 +121,10 @@
     margin-bottom: 23px;
   }
   &__rules-list {
-    width: 292px;
+    max-width: 292px;
+    @media screen and (max-width: 576px) {
+      max-width: 100%;
+    }
   }
   &__rules-title {
     @extend %h2;
@@ -135,6 +138,7 @@
     max-width: 342px;
     margin-left: 69px;
     @media screen and (max-width: 576px) {
+      max-width: 100%;
       margin-top: 20px;
       margin-left: 0;
     }
