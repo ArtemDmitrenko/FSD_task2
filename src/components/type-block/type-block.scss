@@ -14,12 +14,15 @@
       }
       &_item-title {
         font-size: 19px;
+        line-height: 1.5;
       }
       &_label {
         font-size: 14px;
+        line-height: 1.1;
       }
       &_paragraph {
         font-size: 12px;
+        letter-spacing: 1px;
       }
     }
   }
@@ -28,14 +31,19 @@
       &_paragraph {
         @extend %font-body;
         width: 308px;
+        line-height: 21px;
       }
       &_widget-title {
+        width: 381px;
+        line-height: 1.2;
+        letter-spacing: 1.2px;
         @extend %h1;
-        width: 336px;
       }
       &_item-title {
+        width: 328px;
+        line-height: 1.35;
+        letter-spacing: 0.85px;
         @extend %h2;
-        width: 282px;
       }
       &_label {
         @extend %h3;

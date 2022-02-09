@@ -27,22 +27,23 @@ block main
               { name:'Удобство', description: 'Окно в каждой из спален', image: 'location_city' },
               { name:'Уют', description: 'Номер оснащён камином', image: 'whatshot' }
             ]})              
-          h1.room-details__impression Впечатления от номера
+          .room-details____diagram-container
+            h1.room-details__impression Впечатления от номера
             .room-details__diagram.js-room-details__diagram
               +diagram({
                 declination: 'голос, голоса, голосов',
                 dataArray: 
                 [
                   {
-                    name: 'good',
+                    name: 'amazing',
                     value: '65',
-                    sign: 'Хорошо',
+                    sign: 'Великолепно',
                     gradientColors: {from: "#6FCF97", to: "#66D2EA"}
                   },
                   {
-                    name: 'amazing',
+                    name: 'good',
                     value: '130',
-                    sign: 'Великолепно',
+                    sign: 'Хорошо',
                     gradientColors: {from: "#FFE39C", to: "#FFBA9C"}
                   },
                   {
@@ -72,7 +73,7 @@ block main
           .room-details__rules
             h2.room-details__rules-title Правила
             .room-details__rules-list
-              +bullet-list({list: ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00']})
+              +bullet-list({list: ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00']})
           .room-details__cancellation
             h2.room-details__cancellation-title Отмена
             p.room-details__cancellation-text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.

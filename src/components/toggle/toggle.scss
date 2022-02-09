@@ -3,7 +3,8 @@
   user-select: none;
   &__name {
     @extend %h3;
-    margin-bottom: 15px;
+    margin-bottom: 19px;
+    line-height: 6px;
   }
   &__text {
     padding-left: 50px;

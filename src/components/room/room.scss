@@ -6,6 +6,9 @@
   background-color: #fff;
   border-radius: 0 0 4px 4px;
   box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
+  .slick-dotted.slick-slider {
+    margin-bottom: 0;
+  }
   &__card {
     .slick-prev {
       left: 0;
@@ -104,15 +107,12 @@
     .slick-dots li.slick-active button::before {
       opacity: 1;
     }
-    .slick-dotted.slick-slider {
-      margin-bottom: 0;
-    }
   }
   &__room-description {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
-    margin: 21px 17px 10px 19px;
+    margin: 19px 17px 10px 21px;
   }
   &__room-number {
     @extend %h1;
@@ -125,7 +125,7 @@
   &__room-type {
     @extend %h3;
     display: inline-block;
-    margin-left: 5px;
+    margin-left: 7px;
     color: $purple;
   }
   &__price {
@@ -141,7 +141,6 @@
   }
   &__review {
     @extend %h3;
-    margin-bottom: 2px;
     color: $dark50;
     font-size: 14px;
     & span {
@@ -153,7 +152,7 @@
   }
   &__line {
     height: 1px;
-    margin: 0 20px 8px 20px;
+    margin: 0 20px 9px 20px;
     background: rgba(31, 32, 65, 0.1);
   }
   &__rate {
@@ -161,6 +160,15 @@
     align-items: center;
     justify-content: space-between;
     margin: 0 20px 0 20px;
-    padding-bottom: 14px;
+    padding-bottom: 15px;
+  }
+  &__photo {
+    // width: 117%;
+    // max-width: 100vw;
+    // height: 227px;
+    object-fit: 60px 50px;
+    // object-fit: -7px 79px;
+    // object-position: -5px -51px;
+    // overflow: hidden;
   }
 }

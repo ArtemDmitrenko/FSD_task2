@@ -47,7 +47,7 @@
     margin-bottom: 41px;
     &_expanded {
       width: 266px;
-      margin-bottom: 172px;
+      margin-bottom: 167px;
     }
     &_not-expanded {
       width: 266px;
@@ -56,7 +56,6 @@
     }
   }
   &__datepicker {
-    display: flex;
     margin-top: 60px;
     &_range-in-one-input {
       width: 266px;
@@ -77,11 +76,11 @@
   &__rate-button {
     position: relative;
     display: flex;
-    margin-bottom: 200px;
+    margin-bottom: 207px;
     > :nth-child(2) {
       position: absolute;
       bottom: 0;
-      left: 160px;
+      left: 140px;
     }
   }
   &__dropdown {
@@ -111,10 +110,10 @@
   &__button-row3 {
     display: flex;
     margin-top: 30px;
-    margin-bottom: 29px;
-    margin-left: -3px;
+    margin-bottom: 31px;
+    margin-left: 2px;
     > :first-child {
-      margin-right: 9px;
+      margin-right: 20px;
     }
   }
   &__button_hovered {
@@ -125,11 +124,11 @@
   }
   &__checkbox-list {
     &_not-expandable {
-      margin-bottom: 50px;
+      margin-bottom: 40px;
     }
   }
   &__room-details {
-    margin-top: 103px;
+    margin-top: 53px;
   }
   &__toggle {
     margin-bottom: 38px;
@@ -139,11 +138,12 @@
   }
   &__review {
     width: 710px;
-    margin-top: 189px;
+    margin-top: 191px;
   }
   &__range-slider {
+    width: 267px;
     margin-top: 8px;
-    margin-bottom: 25px;
+    margin-bottom: -16px;
   }
   &__all-button {
     margin-bottom: 40px;
@@ -152,9 +152,15 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-bottom: 275px;
+    margin-bottom: 257px;
   }
   &__opened-dropdown_with-guests {
-    margin-bottom: 260px;
+    margin-bottom: 257px;
+  }
+  &__radio-buttons {
+    padding-top: 6px;
+  }
+  &__bullet-list {
+    width: 260px;
   }
 }

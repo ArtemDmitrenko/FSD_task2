@@ -149,7 +149,7 @@ block content
             })
         .form-elements__element
           .form-elements__room-details
-            +room-info({title: 'Сведения о номере', roomInfo: [
+            +room-info({roomInfo: [
               { name:'Комфорт', description: 'Шумопоглощающие стены', image: 'insert_emoticon' }, 
               { name:'Удобство', description: 'Окно в каждой из спален', image: 'location_city' }
             ]})              
@@ -184,9 +184,9 @@ block content
             .form-elements__element
               .form-elements__like-buttons
                 .form-elements__like-button
-                  +like-button({title: 'Like button', numberOfLikes: '1'})
+                  +like-button({title: 'Like button', numberOfLikes: '2'})
                 .form-elements__like-button_clicked.js-form-elements__like-button_clicked
-                  +like-button({numberOfLikes: '9999'})
+                  +like-button({numberOfLikes: '11'})
             .form-elements__element
               .form-elements__rate-button
                 +rate-button({title: 'Rate button', value: '4'})
@@ -223,7 +223,7 @@ block content
                   withDescription: true, 
                   title: 'Rich checkbox buttons', 
                   list: [
-                    {item: 'Широкий коридор', subItem: 'Ширина коридоров в номере не менее 91 см.'},  
+                    {item: 'Широкий коридор', subItem: 'Ширина коридоров в номере не менее 91 см.'},  
                     {item: 'Помощник для инвалидов', subItem: 'На 1 этаже вас встретит специалист  и проводит до номера.'}  
                   ]
                 })

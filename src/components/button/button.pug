@@ -1,15 +1,16 @@
 mixin button(options = {})
-  - const { assignment = 'button', style = 'solid', size = '', color = '', text = 'click me', type = 'button', name = 'btn', href = 'https://www.mock-link.com/' } = options;
+  - const { assignment = 'button', style = 'solid', size = '', length = '', color = '', text = 'click me', type = 'button', name = 'btn', href = 'https://www.mock-link.com/' } = options;
   - const bordered = style === 'bordered' ? 'button_bordered' : '';
   - const directed = style === 'directed' ? 'button_directed' : '';
   - const solid = style === 'solid' ? 'button_solid' : '';
   - const texted = style === 'texted' ? 'button_texted' : '';
   - const small = size === 'small' ? 'button_size_small' : '';
   - const big = size === 'big' ? 'button_size_big' : '';
+  - const long = length === 'long' ? 'button_size_long' : '';
   - const violent = color === 'violent' ? 'button_color_violent' : '';
   - const black = color === 'black' ? 'button_color_black' : '';
 
-  - const styles = `${bordered} ${directed} ${solid} ${texted} ${small} ${big} ${violent} ${black}`;
+  - const styles = `${bordered} ${directed} ${solid} ${texted} ${small} ${big} ${long} ${violent} ${black}`;
 
   case assignment
     when 'button'

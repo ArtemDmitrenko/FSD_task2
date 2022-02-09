@@ -18,15 +18,16 @@
   flex: 1 0 auto;
   min-height: 684px;
   background-image: url("./registration.png");
-  background-position: center;
-  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 49% 52%;
+  background-size: 106.5% 163%;
   &__form {
     display: flex;
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
     height: 100%;
-
+    padding-left: 6px;
     @media screen and (max-width: 420px) {
       width: fit-content;
     }

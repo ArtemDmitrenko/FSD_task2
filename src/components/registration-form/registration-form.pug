@@ -22,9 +22,9 @@ mixin registration-form()
     .registration-form__offers
       +toggle({label: 'Получать спецпредложения'})    
     .registration-form__submit
-      +button({assignment: 'button', style: 'directed', size: 'big', text: 'Перейти к оплате', type: 'submit'})
+      +button({assignment: 'button', style: 'directed', size: 'big', text: 'Зарегистрироваться', type: 'submit'})
     .registration-form__login
       .registration-form__login-on-toxin
         p.registration-form__text Уже есть аккаунт на Toxin
       .registration-form__link
-        +button({assignment: 'reference', style: 'bordered', size: 'big', text: 'Войти', href: './sign-in.html'})
+        +button({assignment: 'reference', style: 'bordered', size: 'big', length: 'long', text: 'Войти', href: './sign-in.html'})

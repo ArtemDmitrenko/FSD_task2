@@ -3,6 +3,7 @@
   &__title {
     @extend %h2;
     margin-bottom: 19px;
+    letter-spacing: 1.1px;
   }
   &__all {
     display: flex;

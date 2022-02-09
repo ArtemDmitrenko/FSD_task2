@@ -2,14 +2,15 @@
   box-sizing: border-box;
   width: 100%;
   max-width: 380px;
-  padding: 30px;
+  padding: 29px;
   background-color: #fff;
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 4px;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.12);
   &__title {
     margin-top: 8px;
-    margin-bottom: 19px;
+    margin-bottom: 20px;
+    letter-spacing: 1.6px;
     @extend %h1;
   }
   &__name {
@@ -19,7 +20,7 @@
     margin-bottom: 10px;
   }
   &__gender {
-    margin-bottom: 45px;
+    margin-bottom: 40px;
   }
   &__email {
     margin-top: 40px;
@@ -35,12 +36,13 @@
     }
   }
   &__submit {
-    margin-bottom: 29px;
+    margin-bottom: 41px;
   }
   &__login {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 14px;
   }
   &__text {
     @extend %font-body;

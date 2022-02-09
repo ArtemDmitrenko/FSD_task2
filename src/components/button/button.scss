@@ -35,7 +35,7 @@
   &_directed {
     position: relative;
     width: 100%;
-    padding-right: 45px;
+    padding-right: 49px;
     padding-left: 45px;
     color: #fff;
     text-align: center;
@@ -105,6 +105,9 @@
     &_big {
       padding-top: 14px;
       padding-bottom: 15px;
+    }
+    &_long {
+      padding: 14px 26px 15px 26px;
     }
   }
   &_hidden {

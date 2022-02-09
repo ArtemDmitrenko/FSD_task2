@@ -69,6 +69,7 @@
     justify-content: space-between;
     margin-top: 29px;
     margin-left: 3px;
+    letter-spacing: 1px;
   }
   &__final {
     @extend %h2;
@@ -89,7 +90,7 @@
     margin-bottom: 21px;
   }
   &__submit {
-    margin-top: 17px;
+    margin-top: 21px;
   }
   &__info {
     display: flex;

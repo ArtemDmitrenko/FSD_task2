@@ -14,7 +14,7 @@ block main
   main.search-room
     section.search-room__sidebar
       .search-room__filter-date-dropdown.js-search-room__filter-date-dropdown
-        +date-dropdown({ titleFrom: 'Даты пребывания в отеле', separatedInputs: false })
+        +date-dropdown({ titleFrom: 'Даты пребывания в отеле', separatedInputs: false, defaultValueFrom: '19 авг - 23 авг' })
       .search-room__dropdown-guests.js-search-room__dropdown-guests
         +dropdown({
           name: 'guests', 
@@ -26,7 +26,8 @@ block main
             {
               name: 'adults', 
               sign: 'взрослые', 
-              declination: 'взрослый, взрослых, взрослых'
+              declination: 'взрослый, взрослых, взрослых',
+              defaultValue: 2
             },{
               name: 'children', 
               sign: 'дети', 
@@ -35,7 +36,8 @@ block main
               name: 'infants', 
               sign: 'младенцы', 
               declination: 'младенец, младенца, младенцев',
-              isSeparated: true
+              isSeparated: true,
+              defaultValue: 1
             },
           ],
         })
@@ -48,8 +50,8 @@ block main
             isExpandable: false, 
             list: [
               {item: 'Можно курить'},  
-              {item: 'Можно с питомцами'},
-              {item: 'Можно пригласить гостей (до 10 человек)'}  
+              {item: 'Можно с питомцами', checked: true},
+              {item: 'Можно пригласить гостей (до 10 человек)', checked: true}  
             ]
           })
       .search-room__checkbox.js-search-room__checkbox
@@ -59,7 +61,7 @@ block main
             withDescription: true, 
             title: 'Доступность', 
             list: [
-              {item: 'Широкий коридор', subItem: 'Ширина коридоров в номере не менее 91 см.'},  
+              {item: 'Широкий коридор', subItem: 'Ширина коридоров в номере не менее 91 см.'},  
               {item: 'Помощник для инвалидов', subItem: 'На 1 этаже вас встретит специалист  и проводит до номера.'}  
             ]
           })
@@ -72,12 +74,12 @@ block main
               name: 'bedrooms', 
               sign: 'спальни', 
               declination: 'спальня, спальни, спален',
-              defaultValue: 1
+              defaultValue: 2
             }, {
               name: 'beds', 
               sign: 'кровати', 
               declination: 'кровать, кровати, кроватей',
-              defaultValue: 1
+              defaultValue: 2
             },{
               name: 'bathrooms', 
               sign: 'ванные комнаты', 

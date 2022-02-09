@@ -16,7 +16,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 17px;
+    margin-bottom: 20px;
     cursor: pointer;
   }
   &__checkmark {
@@ -41,17 +41,21 @@
   }
   &__title {
     @extend %h3;
+    line-height: 1;
   }
   &__sublabel {
     @extend %font-body;
-    margin-top: 7px;
-    margin-left: 31px;
+    margin-top: 5px;
+    margin-left: 30px;
     color: $dark50;
     font-size: 12px;
     line-height: 14px;
+    :first-child {
+      max-width: 190px;
+    }
   }
   &__item {
-    margin-top: 12px;
+    margin-top: 11px;
   }
   &__label {
     position: relative;
@@ -61,8 +65,8 @@
   &__indicator {
     position: absolute;
     left: 1px;
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     border: 1px solid rgba(31, 32, 65, 0.25);
     border-radius: 4px;
     cursor: pointer;
@@ -90,8 +94,9 @@
     }
   }
   &__text {
+    max-width: 81%;
     @extend %font-body;
-    padding-top: 1px;
+    padding-top: 0.8px;
     padding-left: 30px;
     color: $dark50;
     cursor: pointer;

@@ -7,11 +7,12 @@
   &__name {
     @extend %h2;
     margin-bottom: 6px;
+    letter-spacing: 0.9px;
   }
   &__hex {
     color: $dark100;
     font-size: 19px;
-    font-family: "Conv_Quicksand-Regular", sans-serif;
+    @extend %font-body;
   }
   &__description {
     margin-left: 40px;

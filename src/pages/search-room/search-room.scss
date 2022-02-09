@@ -25,6 +25,7 @@
   justify-content: space-between;
   max-width: 1160px;
   margin: 0 auto;
+  margin-bottom: 77px;
   padding: 0 20px;
   @media screen and (max-width: 600px) {
     display: block;
@@ -44,11 +45,11 @@
   }
   &__checkbox-list {
     margin-top: 38px;
-    margin-bottom: 31px;
+    margin-bottom: 32px;
   }
   &__dropdown-rooms {
-    margin-top: 47px;
-    margin-bottom: 30px;
+    margin-top: 49px;
+    margin-bottom: 25px;
   }
   &__rooms {
     display: flex;
@@ -59,16 +60,19 @@
     @extend %h1;
     margin-top: 28px;
     margin-bottom: 19px;
+    line-height: 1.4;
+    letter-spacing: 1.17px;
   }
   &__pagination {
     width: 16em;
-    margin-top: 19px;
+    margin-top: 8px;
     margin-right: auto;
     margin-left: auto;
+    padding-right: 14px;
   }
   &__card {
     margin-right: 6px;
-    margin-bottom: 21px;
+    margin-bottom: 20px;
     margin-left: 6px;
   }
   &__range-slider {

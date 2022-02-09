@@ -9,6 +9,8 @@ export default class Room {
   init() {
     $(this.item).slick({
       dots: true,
+      variableWidth: true,
+      width: 150,
     });
   }
 }
