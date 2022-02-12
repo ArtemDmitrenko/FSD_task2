@@ -20,16 +20,16 @@
   background-image: url("./registration.png");
   background-repeat: no-repeat;
   background-position: 49% 52%;
-  background-size: 106.5% 163%;
+  background-size: cover;
   &__form {
     display: flex;
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
     height: 100%;
-    padding-left: 6px;
-    @media screen and (max-width: 420px) {
-      width: fit-content;
+    padding: 20px 20px;
+    @media screen and (max-width: 390px) {
+      padding: 20px 10px;
     }
   }
 }

@@ -22,10 +22,14 @@
   background-image: url(./registration.png);
   background-repeat: no-repeat;
   background-position: 48% 53%;
-  background-size: 107% 161%;
+  background-size: cover;
   &__form {
     display: flex;
     justify-content: center;
     width: fill-available;
+    padding: 20px;
+    @media screen and (max-width: 390px) {
+      padding: 20px 10px;
+    }
   }
 }

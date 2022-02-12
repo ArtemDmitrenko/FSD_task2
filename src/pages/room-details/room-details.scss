@@ -33,6 +33,9 @@
       flex-direction: column-reverse;
       align-items: center;
     }
+    @media screen and (max-width: 390px) {
+      padding: 0 10px;
+    }
   }
   &__photo {
     display: flex;
@@ -68,12 +71,6 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
-  &__image-minor {
-    width: 159%;
-    height: 148%;
-    margin-top: -78px;
-    margin-left: -175px;
   }
   &__confirmation {
     min-width: 360px;
