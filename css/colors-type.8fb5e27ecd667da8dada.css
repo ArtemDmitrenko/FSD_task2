@@ -27,7 +27,7 @@
   src: url(../assets/fonts/montserrat-regular.eot);
   src: local("☺"), url(../assets/fonts/montserrat-regular.woff) format("woff"), url(../assets/fonts/montserrat-regular.ttf) format("truetype"), url(../assets/fonts/montserrat-regular.svg) format("svg"); }
 
-.type-block__name, .type-block__description_text-type_paragraph {
+.color-block__hex, .type-block__name, .type-block__description_text-type_paragraph {
   color: #1f2041;
   font-weight: 400;
   font-size: 14px;
@@ -92,12 +92,12 @@ a {
   margin-bottom: 20px; }
 
 .color-block__name {
-  margin-bottom: 6px; }
+  margin-bottom: 6px;
+  letter-spacing: 0.9px; }
 
 .color-block__hex {
   color: #1f2041;
-  font-size: 19px;
-  font-family: "Conv_Quicksand-Regular", sans-serif; }
+  font-size: 19px; }
 
 .color-block__description {
   margin-left: 40px; }
@@ -136,17 +136,25 @@ a {
     .type-block__name_text-type_widget-title {
       font-size: 24px; }
     .type-block__name_text-type_item-title {
-      font-size: 19px; }
+      font-size: 19px;
+      line-height: 1.5; }
     .type-block__name_text-type_label {
-      font-size: 14px; }
+      font-size: 14px;
+      line-height: 1.1; }
     .type-block__name_text-type_paragraph {
-      font-size: 12px; }
+      font-size: 12px;
+      letter-spacing: 1px; }
   .type-block__description_text-type_paragraph {
-    width: 308px; }
+    width: 308px;
+    line-height: 21px; }
   .type-block__description_text-type_widget-title {
-    width: 336px; }
+    width: 381px;
+    line-height: 1.2;
+    letter-spacing: 1.2px; }
   .type-block__description_text-type_item-title {
-    width: 282px; }
+    width: 328px;
+    line-height: 1.35;
+    letter-spacing: 0.85px; }
 
 .colors-type__logo {
   margin: 30px 0 0 30px; }
@@ -154,7 +162,7 @@ a {
 .colors-type__item {
   display: flex;
   justify-content: space-between;
-  padding: 67px 191px 145px 150px; }
+  padding: 67px 145px 145px 150px; }
 
 .colors-type__types__item {
   display: flex;

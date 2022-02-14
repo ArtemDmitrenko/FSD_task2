@@ -94,7 +94,7 @@ a {
     left: 1px; }
   .input__description {
     position: absolute;
-    top: -23px;
+    top: -20px;
     right: 0;
     color: rgba(31, 32, 65, 0.5);
     font-size: 12px;
@@ -106,9 +106,10 @@ a {
     width: 100%;
     height: 44px;
     padding-right: 15px;
-    padding-left: 15px;
+    padding-left: 14px;
     color: rgba(31, 32, 65, 0.75);
     line-height: 24px;
+    letter-spacing: -0.2px;
     border-color: rgba(31, 32, 65, 0.25);
     border-width: 1px;
     border-radius: 4px;
@@ -232,6 +233,8 @@ a {
     position: absolute;
     z-index: -1;
     width: -webkit-fill-available;
+    width: -moz-available;
+    width: fill-available;
     background-color: white;
     border: 1px solid rgba(31, 32, 65, 0.5);
     border-top: none;
@@ -286,7 +289,7 @@ a {
   .button_directed {
     position: relative;
     width: 100%;
-    padding-right: 45px;
+    padding-right: 49px;
     padding-left: 45px;
     color: #fff;
     text-align: center;
@@ -342,6 +345,8 @@ a {
   .button_size_big {
     padding-top: 14px;
     padding-bottom: 15px; }
+  .button_size_long {
+    padding: 14px 26px 15px 26px; }
   .button_hidden {
     display: none; }
   .button_hovered {
@@ -388,13 +393,12 @@ a {
 
 .date-dropdown {
   display: flex;
-  gap: 20px;
-  width: 100%; }
+  gap: 20px; }
+  .date-dropdown__from, .date-dropdown__to {
+    width: 100%; }
   @media screen and (max-width: 390px) {
     .date-dropdown {
       gap: 15px; } }
-  .date-dropdown__from, .date-dropdown__to {
-    width: 100%; }
   .date-dropdown input {
     cursor: pointer; }
   .date-dropdown__arrow {
@@ -521,7 +525,7 @@ a {
       display: none; }
 
 .checkbox-list {
-  max-width: 222px;
+  max-width: 256px;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -537,8 +541,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 256px;
-    margin-bottom: 17px;
+    margin-bottom: 20px;
     cursor: pointer; }
   .checkbox-list__checkmark {
     display: inline-block;
@@ -558,16 +561,18 @@ a {
     transition: 0.4s transform; }
     .checkbox-list__checkmark_direction_up {
       transform: rotate(180deg); }
+  .checkbox-list__title {
+    line-height: 1; }
   .checkbox-list__sublabel {
-    margin-top: 7px;
-    margin-left: 31px;
+    margin-top: 5px;
+    margin-left: 30px;
     color: rgba(31, 32, 65, 0.5);
     font-size: 12px;
     line-height: 14px; }
+    .checkbox-list__sublabel :first-child {
+      max-width: 190px; }
   .checkbox-list__item {
-    margin-top: 12px; }
-    .checkbox-list__item:last-child .checkbox-list__sublabel {
-      width: 102%; }
+    margin-top: 11px; }
   .checkbox-list__label {
     position: relative;
     display: flex;
@@ -575,8 +580,8 @@ a {
   .checkbox-list__indicator {
     position: absolute;
     left: 1px;
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     border: 1px solid rgba(31, 32, 65, 0.25);
     border-radius: 4px;
     cursor: pointer; }
@@ -599,12 +604,12 @@ a {
     transform: translate(-50%, -50%) rotate(135deg);
     content: ""; }
   .checkbox-list__text {
-    padding-top: 1px;
+    max-width: 81%;
+    padding-top: 0.8px;
     padding-left: 30px;
     color: rgba(31, 32, 65, 0.5);
     cursor: pointer; }
     .checkbox-list__text_rich {
-      width: 101%;
       color: rgba(31, 32, 65, 0.75);
       font-size: 14px;
       text-transform: none; }
@@ -612,7 +617,8 @@ a {
 .room-info {
   max-width: 260px; }
   .room-info__title {
-    margin-bottom: 19px; }
+    margin-bottom: 19px;
+    letter-spacing: 1.1px; }
   .room-info__all {
     display: flex;
     margin-bottom: 20px;
@@ -706,7 +712,8 @@ a {
       -ms-user-select: none;
           user-select: none; }
   .toggle__name {
-    margin-bottom: 15px; }
+    margin-bottom: 19px;
+    line-height: 6px; }
   .toggle__text {
     padding-left: 50px; }
   .toggle__input {
@@ -750,7 +757,8 @@ a {
       -ms-user-select: none;
           user-select: none; }
   .like-button__name {
-    margin-bottom: 15px; }
+    margin-bottom: 21px;
+    line-height: 0.3; }
   .like-button__button {
     display: flex;
     align-items: center;
@@ -809,6 +817,7 @@ a {
     display: inline-block;
     font-size: 24px;
     font-family: "MaterialIcons-Regular";
+    letter-spacing: -4px;
     text-transform: none;
     background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
     -webkit-background-clip: text;
@@ -823,7 +832,8 @@ a {
 .bullet-list__item {
   margin-bottom: 10px;
   color: rgba(31, 32, 65, 0.75);
-  line-height: 24px; }
+  line-height: 24px;
+  letter-spacing: -0.1px; }
   .bullet-list__item::before {
     display: inline-block;
     width: 10.43px;
@@ -833,16 +843,15 @@ a {
     border-radius: 5px;
     content: ""; }
 
-.review__part1 {
+.review__author {
   display: flex; }
 
-.review__part2 {
+.review__content {
   display: flex; }
 
 .review__image {
   box-sizing: border-box;
   width: 48px;
-  height: auto;
   margin-bottom: 10px;
   border: 2px solid #fff;
   border-radius: 24px;
@@ -885,7 +894,7 @@ a {
     color: rgba(31, 32, 65, 0.75);
     text-transform: none; }
   .pagination__container {
-    margin-top: 10px;
+    margin-top: 15px;
     color: rgba(31, 32, 65, 0.75);
     text-transform: none; }
     .pagination__container .paginationjs-pages > ul {
@@ -964,36 +973,34 @@ a {
     bottom: -9px;
     color: rgba(31, 32, 65, 0.5);
     font-size: 12px; }
-  .range-slider .irs {
-    width: 266px; }
-    .range-slider .irs .irs-handle {
-      width: 16px;
-      height: 16px;
-      background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
-      border: 2px solid #fff;
-      border-radius: 10px;
-      box-shadow: none;
-      cursor: pointer; }
-    .range-slider .irs .irs-line {
-      top: 30px;
-      box-sizing: border-box;
-      height: 6px;
-      background: #fff;
-      border: 1px solid rgba(31, 32, 65, 0.25);
-      border-radius: 3px; }
-    .range-slider .irs .irs-bar {
-      top: 30px;
-      height: 6px;
-      background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
-      border: none;
-      border-radius: 3px;
-      box-shadow: none; }
-    .range-slider .irs .sign {
-      position: absolute;
-      right: 0;
-      bottom: 49px;
-      color: rgba(31, 32, 65, 0.5);
-      font-size: 12px; }
+  .range-slider .irs .irs-handle {
+    width: 16px;
+    height: 16px;
+    background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+    border: 2px solid #fff;
+    border-radius: 10px;
+    box-shadow: none;
+    cursor: pointer; }
+  .range-slider .irs .irs-line {
+    top: 30px;
+    box-sizing: border-box;
+    height: 6px;
+    background: #fff;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    border-radius: 3px; }
+  .range-slider .irs .irs-bar {
+    top: 30px;
+    height: 6px;
+    background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+    border: none;
+    border-radius: 3px;
+    box-shadow: none; }
+  .range-slider .irs .sign {
+    position: absolute;
+    right: 0;
+    bottom: 49px;
+    color: rgba(31, 32, 65, 0.5);
+    font-size: 12px; }
 
 .form-elements__logo-uikit {
   padding: 30px 0 0 30px; }
@@ -1021,14 +1028,13 @@ a {
   margin-bottom: 41px; }
   .form-elements__element_expanded {
     width: 266px;
-    margin-bottom: 172px; }
+    margin-bottom: 167px; }
   .form-elements__element_not-expanded {
     width: 266px;
     margin-top: 120px;
     margin-bottom: 40px; }
 
 .form-elements__datepicker {
-  display: flex;
   margin-top: 60px; }
   .form-elements__datepicker_range-in-one-input {
     width: 266px;
@@ -1046,11 +1052,11 @@ a {
 .form-elements__rate-button {
   position: relative;
   display: flex;
-  margin-bottom: 200px; }
+  margin-bottom: 207px; }
   .form-elements__rate-button > :nth-child(2) {
     position: absolute;
     bottom: 0;
-    left: 160px; }
+    left: 140px; }
 
 .form-elements__dropdown_with-guests {
   margin-bottom: 255px; }
@@ -1070,10 +1076,10 @@ a {
 .form-elements__button-row3 {
   display: flex;
   margin-top: 30px;
-  margin-bottom: 29px;
-  margin-left: -3px; }
+  margin-bottom: 31px;
+  margin-left: 2px; }
   .form-elements__button-row3 > :first-child {
-    margin-right: 9px; }
+    margin-right: 20px; }
 
 .form-elements__button_hovered {
   opacity: 0.5; }
@@ -1082,10 +1088,10 @@ a {
   width: 266px; }
 
 .form-elements__checkbox-list_not-expandable {
-  margin-bottom: 50px; }
+  margin-bottom: 40px; }
 
 .form-elements__room-details {
-  margin-top: 103px; }
+  margin-top: 53px; }
 
 .form-elements__toggle {
   margin-bottom: 38px; }
@@ -1094,11 +1100,12 @@ a {
 
 .form-elements__review {
   width: 710px;
-  margin-top: 189px; }
+  margin-top: 191px; }
 
 .form-elements__range-slider {
+  width: 267px;
   margin-top: 8px;
-  margin-bottom: 25px; }
+  margin-bottom: -16px; }
 
 .form-elements__all-button {
   margin-bottom: 40px; }
@@ -1107,8 +1114,14 @@ a {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-bottom: 275px; }
+  margin-bottom: 257px; }
 
 .form-elements__opened-dropdown_with-guests {
-  margin-bottom: 260px; }
+  margin-bottom: 257px; }
+
+.form-elements__radio-buttons {
+  padding-top: 6px; }
+
+.form-elements__bullet-list {
+  width: 260px; }
 
