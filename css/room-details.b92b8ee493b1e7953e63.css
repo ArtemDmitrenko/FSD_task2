@@ -1104,11 +1104,6 @@ a {
   .room-details__impression {
     max-width: 320px;
     letter-spacing: 1.1px; }
-  .room-details__info {
-    margin-right: 70px; }
-    @media screen and (max-width: 576px) {
-      .room-details__info {
-        margin-right: 0; } }
   .room-details__review {
     max-width: 712px;
     margin-top: -7px; }
@@ -1164,9 +1159,13 @@ a {
   .room-details__impressions-info {
     display: flex;
     flex-wrap: wrap;
+    gap: 70px;
     justify-content: space-between;
     max-width: 673px;
     margin-top: 69px; }
+    @media screen and (max-width: 1057px) {
+      .room-details__impressions-info {
+        justify-content: center; } }
   .room-details__rules-cancellation {
     display: flex;
     margin-top: 32px;
