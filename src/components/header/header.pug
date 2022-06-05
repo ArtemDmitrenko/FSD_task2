@@ -18,8 +18,20 @@ mixin header(options = {})
             .header__user-name Юлий Цезарь
           else
             .header__link
-              +button({assignment: 'reference', style: 'bordered', size: 'small', text: 'Войти', href: './sign-in.html'})
+              +button({
+                type: 'reference',
+                style: 'bordered',
+                size: 'small',
+                text: 'Войти',
+                href: './sign-in.html'
+              })
             .header__link-sign
-              +button({assignment: 'reference', style: 'solid', size: 'small', text: 'Зарегистрироваться', href: './registration.html'})
+              +button({
+                type: 'reference',
+                style: 'solid',
+                size: 'small',
+                text: 'Зарегистрироваться',
+                href: './registration.html'
+              })
         .header__burger.js-header__burger
           span.header__burger-element

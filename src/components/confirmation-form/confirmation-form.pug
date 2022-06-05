@@ -73,8 +73,10 @@ mixin confirmation-form(options = {})
       h2.confirmation-form__ellipsis
       h2.confirmation-form__rubles= totalCost
     .confirmation-form__submit
-      +button({assignment: 'button', style: 'directed', size: 'big', text: 'Забронировать', type: 'submit'})
-
-
-
-
+      +button({
+        style: 'directed',
+        name: 'button',
+        size: 'big',
+        text: 'Забронировать',
+        type: 'submit'
+      })

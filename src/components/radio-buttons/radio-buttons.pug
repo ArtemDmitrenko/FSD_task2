@@ -1,5 +1,14 @@
 mixin radio-buttons(options = {})
-  - const { title = '', name = 'gender', list = [{text: 'Мужчина', checked: true}, {text: 'Женщина', checked: false}], required } = options
+  - 
+    const { 
+      title = '',
+      name = 'gender',
+      list = [
+        {text: 'Мужчина', checked: true},
+        {text: 'Женщина', checked: false}
+      ],
+      required
+    } = options
   
   .radio-buttons
     if title
@@ -9,5 +18,11 @@ mixin radio-buttons(options = {})
         - const { text, checked } = nameOfButton
         .radio-buttons__item
           label.radio-buttons__label  
-            input.radio-buttons__input(type='radio', name=name, value=text, checked=checked, required=required)
+            input.radio-buttons__input(
+              type = 'radio', 
+              name = name,
+              value = text,
+              checked = checked,
+              required = required
+            )
             span.radio-buttons__content= text

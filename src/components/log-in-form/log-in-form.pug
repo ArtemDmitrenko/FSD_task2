@@ -5,13 +5,35 @@ mixin log-in-form()
   form(action='#' method='post').log-in-form
     h1.log-in-form__title Войти
     .log-in-form__email
-      +input({ name: 'E-mail', type: 'email', placeholder: 'Email', required})
+      +input({
+        name: 'E-mail',
+        type: 'email',
+        placeholder: 'Email',
+        required
+      })
     .log-in-form__password
-      +input({ name: 'Password', type: 'text', placeholder: 'Пароль', required})
+      +input({
+        name: 'Password',
+        type: 'text',
+        placeholder: 'Пароль',
+        required
+      })
     .log-in-form__submit
-      +button({assignment: 'button', style: 'directed', size: 'big', text: 'Войти', type: 'submit'})
+      +button({
+        name: 'button',
+        style: 'directed',
+        size: 'big',
+        text: 'Войти',
+        type: 'submit'
+      })
     .log-in-form__registration
       .log-in-form__registration-on-toxin
         p.log-in-form__text Нет аккаунта на Toxin?
       .log-in-form__link
-        +button({assignment: 'reference', style: 'bordered', size: 'big', text: 'Создать', href: './registration.html'})
+        +button({
+          type: 'reference',
+          style: 'bordered',
+          size: 'big',
+          text: 'Создать',
+          href: './registration.html'
+        })

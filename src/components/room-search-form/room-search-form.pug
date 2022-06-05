@@ -36,4 +36,10 @@ mixin room-search-form()
         ],
       }))
     .room-search-form__submission
-      +button({assignment: 'button', style: 'directed', size: 'big', text: 'Подобрать номер', type: 'submit'})
+      +button({
+        name: 'button',
+        style: 'directed',
+        size: 'big',
+        text: 'Подобрать номер',
+        type: 'submit'
+      })

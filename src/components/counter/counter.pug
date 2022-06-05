@@ -12,5 +12,12 @@ mixin counter(options = {})
     p.counter__name= sign
     .counter__enter.js-counter__enter
       button(type='button' data-operator='minus').counter__decrement.js-counter__decrement -
-      input(name=name type='text' value=defaultValue data-declination=declination data-separated=isSeparated readonly).counter__value.js-counter__value
+      input(
+        name = name 
+        type = 'text'
+        value = defaultValue
+        data-declination = declination
+        data-separated = isSeparated
+        readonly
+      ).counter__value.js-counter__value
       button(type='button' data-operator='plus').counter__increment.js-counter__increment +

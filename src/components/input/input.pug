@@ -18,7 +18,18 @@ mixin input(options = {})
       .input__heading= heading
     if description
       .input__description= description
-    input.input__element.js-input__element(class = subscription ? 'input__element_directed' : '', name = name, type = type, value = value, placeholder = placeholder, readonly, subscription = subscription, required)
+    input.input__element.js-input__element(
+      class = subscription
+        ? 'input__element_directed'
+        : '',
+      name = name,
+      type = type,
+      value = value,
+      placeholder = placeholder,
+      readonly,
+      subscription = subscription,
+      required
+    )
     if expandable
       span.input__checkmark expand_more
     if subscription

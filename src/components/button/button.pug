@@ -1,26 +1,47 @@
 mixin button(options = {})
-  - const { assignment = 'button', style = 'solid', size = '', length = '', color = '', text = 'click me', type = 'button', name = 'btn', href = 'https://www.mock-link.com/' } = options;
-  - const bordered = style === 'bordered' ? 'button_bordered' : '';
-  - const directed = style === 'directed' ? 'button_directed' : '';
-  - const solid = style === 'solid' ? 'button_solid' : '';
-  - const texted = style === 'texted' ? 'button_texted' : '';
-  - const small = size === 'small' ? 'button_size_small' : '';
-  - const big = size === 'big' ? 'button_size_big' : '';
-  - const long = length === 'long' ? 'button_size_long' : '';
-  - const violent = color === 'violent' ? 'button_color_violent' : '';
-  - const black = color === 'black' ? 'button_color_black' : '';
+  - 
+    const { 
+        style = 'solid',
+        size = '',
+        length = '',
+        color = '',
+        text = 'click me',
+        type = 'button',
+        name = false,
+        href = false
+    } = options;
+    const sizeModifiers = {
+      small: 'button_size_small',
+      big: 'button_size_big'
+    }
+    const styleModifiers = {
+      bordered: 'button_bordered',
+      directed: 'button_directed',
+      solid: 'button_solid',
+      texted: 'button_texted'
+    }
+    const colorModifiers = {
+      violent: 'button_color_violent',
+      black: 'button_color_black'
+    }
+    const lengthModifiers = {
+      long: 'button_size_long',
+    }
+    const classes = [
+      sizeModifiers[size],
+      styleModifiers[style],
+      colorModifiers[color],
+      lengthModifiers[length]
+    ]
+    const tag = type === 'reference' ? 'a' : 'button';
+    const buttonType = type === 'reference' ? false : type;
+    const buttonName = type === 'reference' ? false : name;
+    const referenceLink = type === 'reference' ? href : false;
 
-  - const styles = `${bordered} ${directed} ${solid} ${texted} ${small} ${big} ${long} ${violent} ${black}`;
-
-  case assignment
-    when 'button'
-      button(
-        type = type
-        name = name
-        class = styles
-      ).button.js-button #{text}
-    when 'reference'
-      a(
-        href = href
-        class = styles
-      ).button.js-button #{text}
+  #{tag}( 
+    type = buttonType
+    name = buttonName
+    href = referenceLink
+    class = classes
+  ).button.js-button #{text}
+  

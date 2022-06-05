@@ -38,21 +38,46 @@ mixin dropdown(options = {})
       declination = '',
     } = options;
       
-
   .dropdown.js-dropdown(data-buttons = withButtons)
     .dropdown__input.js-dropdown__input(data-declination = declination data-value = value)
-      +input({heading, description, name, type: 'text', value, expandable: true, readonly})
+      +input({
+        heading,
+        description,
+        name,
+        type: 'text',
+        value,
+        expandable: true,
+        readonly
+      })
     .dropdown__list.js-dropdown__list
       .dropdown__counter
         each item in items
           - const { name, sign, declination, defaultValue, isSeparated } = item
           .dropdown__counter-item.js-dropdown__counter-item
-            +counter({ sign, name, declination, defaultValue, isSeparated })
+            +counter({
+              sign,
+              name,
+              declination,
+              defaultValue,
+              isSeparated
+            })
       if withButtons
         .dropdown__buttons
           .dropdown__button-clear.js-dropdown__button-clear
-            +button({assignment: 'button', style: 'texted', color: 'violent', text: 'Очистить', type: 'button', name: 'clear'})
+            +button({
+              style: 'texted',
+              color: 'violent',
+              text: 'Очистить',
+              type: 'button',
+              name: 'clear'
+            })
           .dropdown__button-apply.js-dropdown__button-apply
-            +button({assignment: 'button', style: 'texted', color: 'violent', text: 'Применить', type: 'button', name: 'apply'})
+            +button({
+              style: 'texted',
+              color: 'violent',
+              text: 'Применить',
+              type: 'button',
+              name: 'apply'
+            })
 
 

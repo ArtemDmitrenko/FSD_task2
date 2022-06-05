@@ -6,4 +6,8 @@ mixin range-slider(options = {})
       span.range-slider__title= title
     if description
       span.range-slider__description= description
-    input(type='text', name=name, value='').range-slider__item.js-range-slider__item
+    input(
+      type = 'text',
+      name = name,
+      value = ''
+    ).range-slider__item.js-range-slider__item

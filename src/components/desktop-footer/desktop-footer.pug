@@ -13,7 +13,15 @@ mixin desktop-footer(options = {})
             +logo()
             p.desktop-footer__text Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
           each section in footerItems
-            - const { name = 'about', title = 'О нас', items = [{ "item": "О сервисе", "href": "https://www.mock-link.com/"}, { "item": "Наша команда", "href": "https://www.mock-link.com/"}] } = section
+            - 
+              const { 
+                name = 'about',
+                title = 'О нас',
+                items = [
+                  { "item": "О сервисе", "href": "https://www.mock-link.com/" },
+                  { "item": "Наша команда", "href": "https://www.mock-link.com/" },
+                ]
+              } = section
             div(class="desktop-footer__" + name)
               ul.desktop-footer__list
                 li.desktop-footer__title= title
@@ -27,7 +35,13 @@ mixin desktop-footer(options = {})
               li.desktop-footer__subscription-item Получайте специальные предложения и новости сервиса
               li.desktop-footer__item
                 form.desktop-footer__form(action="https://www.mock-link.com/")
-                  +input({name: 'email', type: 'email', placeholder: 'Email', required, subscription: true})                                        
+                  +input({
+                    name: 'email',
+                    type: 'email',
+                    placeholder: 'Email',
+                    required,
+                    subscription: true
+                  })                                        
     .desktop-footer__bottom
       .desktop-footer__container
         .desktop-footer__main

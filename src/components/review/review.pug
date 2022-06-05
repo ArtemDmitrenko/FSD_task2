@@ -12,7 +12,10 @@ mixin review(options = {})
   
   .review.js-review
     .review__author
-      img.review__image(src=require(`../../../src/components/review/${nameOfFile}.png`).default, alt=`${title}`)
+      img.review__image(
+        src=require(`../../../src/components/review/${nameOfFile}.png`).default,
+        alt=`${title}`
+      )
       .review__description
         h3.review__name= title
         p.review__date= date

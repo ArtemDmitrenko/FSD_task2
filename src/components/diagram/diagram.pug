@@ -28,7 +28,10 @@ mixin diagram(options = {})
       }
     ]
 
-    const { declination = 'голос, голоса, голосов', dataArray = defaultDataArray } = options;
+    const { 
+      declination = 'голос, голоса, голосов',
+      dataArray = defaultDataArray 
+    } = options;
 
   .diagram.js-diagram(data-array=dataArray)
     .diagram__block

@@ -17,7 +17,27 @@ mixin date-dropdown(options = {})
   
   .date-dropdown.js-date-dropdown(data-separatedInputs = separatedInputs)
     .date-dropdown__from.js-date-dropdown__from
-      +input({heading: titleFrom, name: nameFrom, value: defaultValueFrom, type: 'text', placeholder, required, expandable, readonly: true, description })
+      +input({
+        heading: titleFrom,
+        name: nameFrom,
+        value: defaultValueFrom,
+        type: 'text',
+        placeholder,
+        required,
+        expandable,
+        readonly: true,
+        description
+      })
     if separatedInputs
       .date-dropdown__to.js-date-dropdown__to
-        +input({heading: titleTo, name: nameTo, value: defaultValueTo, type: 'text', placeholder, required, expandable, readonly: true, description })
+        +input({
+          heading: titleTo,
+          name: nameTo,
+          value: defaultValueTo,
+          type: 'text',
+          placeholder, 
+          required,
+          expandable,
+          readonly: true,
+          description
+        })

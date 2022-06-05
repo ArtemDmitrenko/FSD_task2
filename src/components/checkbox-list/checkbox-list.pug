@@ -5,9 +5,18 @@ mixin checkbox-list(options = {})
       {item: 'Можно с питомцами', checked: false} 
     ];
 
-    const { title = 'Title', isExpandable = false, withDescription = false, list = defaultList } = options;
+    const {
+      title = 'Title',
+      isExpandable = false,
+      withDescription = false,
+      list = defaultList
+    } = options;
 
-  div(class = isExpandable ? 'checkbox-list checkbox-list_expandable js-checkbox-list js-checkbox-list_expandable' : 'checkbox-list js-checkbox-list')
+  div(
+      class = isExpandable
+      ? 'checkbox-list checkbox-list_expandable js-checkbox-list js-checkbox-list_expandable'
+      : 'checkbox-list js-checkbox-list'
+    )
     .checkbox-list__name
       .checkbox-list__title= title
       if isExpandable
