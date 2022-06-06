@@ -16,7 +16,7 @@ mixin room(options = {})
     .room__card.js-room__card
       each image in images
         img(
-          src=require(`../../components/room/${addressOfRoom}/${image}.png`).default
+          src=require(`../../components/room/${addressOfRoom}/${image}.jpg`).default
           alt=`Room number ${roomNumber}`
         ).room__photo
     .room__room-description
